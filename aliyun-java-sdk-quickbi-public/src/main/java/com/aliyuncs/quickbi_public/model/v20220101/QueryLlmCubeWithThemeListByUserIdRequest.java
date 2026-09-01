@@ -27,7 +27,7 @@ public class QueryLlmCubeWithThemeListByUserIdRequest extends RpcAcsRequest<Quer
 
 	private String userId;
 	public QueryLlmCubeWithThemeListByUserIdRequest() {
-		super("quickbi-public", "2022-01-01", "QueryLlmCubeWithThemeListByUserId", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryLlmCubeWithThemeListByUserId", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

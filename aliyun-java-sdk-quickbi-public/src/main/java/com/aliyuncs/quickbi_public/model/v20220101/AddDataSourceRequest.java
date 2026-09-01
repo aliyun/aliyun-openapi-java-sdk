@@ -27,7 +27,7 @@ public class AddDataSourceRequest extends RpcAcsRequest<AddDataSourceResponse> {
 
 	private String addModel;
 	public AddDataSourceRequest() {
-		super("quickbi-public", "2022-01-01", "AddDataSource", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AddDataSource", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

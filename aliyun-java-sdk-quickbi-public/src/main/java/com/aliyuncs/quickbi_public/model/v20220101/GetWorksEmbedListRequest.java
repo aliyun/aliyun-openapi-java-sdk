@@ -35,7 +35,7 @@ public class GetWorksEmbedListRequest extends RpcAcsRequest<GetWorksEmbedListRes
 
 	private Integer pageNo;
 	public GetWorksEmbedListRequest() {
-		super("quickbi-public", "2022-01-01", "GetWorksEmbedList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "GetWorksEmbedList", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

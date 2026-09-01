@@ -36,7 +36,7 @@ public class ListRecentViewReportsRequest extends RpcAcsRequest<ListRecentViewRe
 
 	private String treeType;
 	public ListRecentViewReportsRequest() {
-		super("quickbi-public", "2022-01-01", "ListRecentViewReports", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListRecentViewReports", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

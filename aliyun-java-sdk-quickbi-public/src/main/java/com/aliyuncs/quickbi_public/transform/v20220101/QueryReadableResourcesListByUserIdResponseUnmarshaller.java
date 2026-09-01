@@ -33,26 +33,26 @@ public class QueryReadableResourcesListByUserIdResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryReadableResourcesListByUserIdResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setCreateTime(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].CreateTime"));
-			data.setDescription(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Description"));
-			data.setModifyName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ModifyName"));
-			data.setModifyTime(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ModifyTime"));
-			data.setOwnerId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].OwnerId"));
-			data.setOwnerName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].OwnerName"));
-			data.setSecurityLevel(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].SecurityLevel"));
 			data.setStatus(_ctx.integerValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Status"));
-			data.setThirdPartAuthFlag(_ctx.integerValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ThirdPartAuthFlag"));
-			data.setWorkName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorkName"));
+			data.setModifyTime(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ModifyTime"));
+			data.setOwnerName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].OwnerName"));
+			data.setDescription(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Description"));
 			data.setWorkType(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorkType"));
-			data.setWorksId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorksId"));
+			data.setModifyName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ModifyName"));
+			data.setCreateTime(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].CreateTime"));
 			data.setWorkspaceId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorkspaceId"));
+			data.setThirdPartAuthFlag(_ctx.integerValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].ThirdPartAuthFlag"));
+			data.setOwnerId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].OwnerId"));
+			data.setSecurityLevel(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].SecurityLevel"));
+			data.setWorkName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorkName"));
 			data.setWorkspaceName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorkspaceName"));
+			data.setWorksId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].WorksId"));
 
 			Directory directory = new Directory();
-			directory.setId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.Id"));
-			directory.setName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.Name"));
 			directory.setPathId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.PathId"));
+			directory.setId(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.Id"));
 			directory.setPathName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.PathName"));
+			directory.setName(_ctx.stringValue("QueryReadableResourcesListByUserIdResponse.Result["+ i +"].Directory.Name"));
 			data.setDirectory(directory);
 
 			result.add(data);

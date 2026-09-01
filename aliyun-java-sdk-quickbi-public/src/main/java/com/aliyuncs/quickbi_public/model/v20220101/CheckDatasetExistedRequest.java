@@ -27,7 +27,7 @@ public class CheckDatasetExistedRequest extends RpcAcsRequest<CheckDatasetExiste
 
 	private String cubeId;
 	public CheckDatasetExistedRequest() {
-		super("quickbi-public", "2022-01-01", "CheckDatasetExisted", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CheckDatasetExisted", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

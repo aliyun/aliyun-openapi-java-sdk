@@ -30,7 +30,7 @@ public class UpdateUserTagValueRequest extends RpcAcsRequest<UpdateUserTagValueR
 
 	private String tagId;
 	public UpdateUserTagValueRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateUserTagValue", "2.2.0");
+		super("quickbi-public", "2022-01-01", "UpdateUserTagValue", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

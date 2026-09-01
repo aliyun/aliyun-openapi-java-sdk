@@ -23,8 +23,8 @@ public class CreateDatasetResponseUnmarshaller {
 	public static CreateDatasetResponse unmarshall(CreateDatasetResponse createDatasetResponse, UnmarshallerContext _ctx) {
 		
 		createDatasetResponse.setRequestId(_ctx.stringValue("CreateDatasetResponse.RequestId"));
-		createDatasetResponse.setResult(_ctx.stringValue("CreateDatasetResponse.Result"));
 		createDatasetResponse.setSuccess(_ctx.booleanValue("CreateDatasetResponse.Success"));
+		createDatasetResponse.setResult(_ctx.stringValue("CreateDatasetResponse.Result"));
 	 
 	 	return createDatasetResponse;
 	}

@@ -23,8 +23,8 @@ public class SmartqAuthTransferResponseUnmarshaller {
 	public static SmartqAuthTransferResponse unmarshall(SmartqAuthTransferResponse smartqAuthTransferResponse, UnmarshallerContext _ctx) {
 		
 		smartqAuthTransferResponse.setRequestId(_ctx.stringValue("SmartqAuthTransferResponse.RequestId"));
-		smartqAuthTransferResponse.setResult(_ctx.booleanValue("SmartqAuthTransferResponse.Result"));
 		smartqAuthTransferResponse.setSuccess(_ctx.booleanValue("SmartqAuthTransferResponse.Success"));
+		smartqAuthTransferResponse.setResult(_ctx.booleanValue("SmartqAuthTransferResponse.Result"));
 	 
 	 	return smartqAuthTransferResponse;
 	}

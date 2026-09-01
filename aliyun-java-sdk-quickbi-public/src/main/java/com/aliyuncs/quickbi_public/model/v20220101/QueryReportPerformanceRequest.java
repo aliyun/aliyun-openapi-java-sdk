@@ -38,7 +38,7 @@ public class QueryReportPerformanceRequest extends RpcAcsRequest<QueryReportPerf
 
 	private String workspaceId;
 	public QueryReportPerformanceRequest() {
-		super("quickbi-public", "2022-01-01", "QueryReportPerformance", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryReportPerformance", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

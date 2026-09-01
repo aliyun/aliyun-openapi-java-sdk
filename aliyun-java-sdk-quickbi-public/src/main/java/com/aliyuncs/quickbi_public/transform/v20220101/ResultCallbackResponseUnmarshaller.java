@@ -23,8 +23,8 @@ public class ResultCallbackResponseUnmarshaller {
 	public static ResultCallbackResponse unmarshall(ResultCallbackResponse resultCallbackResponse, UnmarshallerContext _ctx) {
 		
 		resultCallbackResponse.setRequestId(_ctx.stringValue("ResultCallbackResponse.RequestId"));
-		resultCallbackResponse.setResult(_ctx.booleanValue("ResultCallbackResponse.Result"));
 		resultCallbackResponse.setSuccess(_ctx.booleanValue("ResultCallbackResponse.Success"));
+		resultCallbackResponse.setResult(_ctx.booleanValue("ResultCallbackResponse.Result"));
 	 
 	 	return resultCallbackResponse;
 	}

@@ -29,7 +29,7 @@ public class QueryDataRangeRequest extends RpcAcsRequest<QueryDataRangeResponse>
 
 	private String keyword;
 	public QueryDataRangeRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDataRange", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryDataRange", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

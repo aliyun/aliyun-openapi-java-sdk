@@ -27,10 +27,10 @@ public class QueryLastAccelerationEngineJobResponseUnmarshaller {
 		queryLastAccelerationEngineJobResponse.setSuccess(_ctx.booleanValue("QueryLastAccelerationEngineJobResponse.Success"));
 
 		Result result = new Result();
-		result.setJobHistoryId(_ctx.stringValue("QueryLastAccelerationEngineJobResponse.Result.JobHistoryId"));
 		result.setStatus(_ctx.stringValue("QueryLastAccelerationEngineJobResponse.Result.Status"));
 		result.setGmtCreate(_ctx.stringValue("QueryLastAccelerationEngineJobResponse.Result.GmtCreate"));
 		result.setGmtModified(_ctx.stringValue("QueryLastAccelerationEngineJobResponse.Result.GmtModified"));
+		result.setJobHistoryId(_ctx.stringValue("QueryLastAccelerationEngineJobResponse.Result.JobHistoryId"));
 		queryLastAccelerationEngineJobResponse.setResult(result);
 	 
 	 	return queryLastAccelerationEngineJobResponse;

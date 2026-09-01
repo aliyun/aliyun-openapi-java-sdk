@@ -33,17 +33,17 @@ public class QueryCopilotEmbedConfigResponseUnmarshaller {
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setAgentName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].AgentName"));
-			resultItem.setCopilotId(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CopilotId"));
-			resultItem.setCreateUser(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUser"));
-			resultItem.setCreateUserName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUserName"));
 			resultItem.setModifyUser(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ModifyUser"));
 			resultItem.setModuleName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ModuleName"));
+			resultItem.setCreateUser(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUser"));
+			resultItem.setAgentName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].AgentName"));
+			resultItem.setCreateUserName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CreateUserName"));
 			resultItem.setShowName(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].ShowName"));
+			resultItem.setCopilotId(_ctx.stringValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].CopilotId"));
 
 			DataRange dataRange = new DataRange();
-			dataRange.setAllCube(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllCube"));
 			dataRange.setAllTheme(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllTheme"));
+			dataRange.setAllCube(_ctx.booleanValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.AllCube"));
 
 			List<String> llmCubes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryCopilotEmbedConfigResponse.Result["+ i +"].DataRange.LlmCubes.Length"); j++) {

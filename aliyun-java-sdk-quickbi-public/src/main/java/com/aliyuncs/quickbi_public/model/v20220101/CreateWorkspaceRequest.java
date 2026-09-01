@@ -41,7 +41,7 @@ public class CreateWorkspaceRequest extends RpcAcsRequest<CreateWorkspaceRespons
 
 	private Boolean useComment;
 	public CreateWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "CreateWorkspace", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CreateWorkspace", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -57,7 +57,7 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalPages;
+		private Integer pre;
 
 		private Integer totalNum;
 
@@ -65,18 +65,18 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private Integer pre;
-
 		private Integer next;
+
+		private Integer totalPages;
 
 		private List<DataItem> data;
 
-		public Integer getTotalPages() {
-			return this.totalPages;
+		public Integer getPre() {
+			return this.pre;
 		}
 
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setPre(Integer pre) {
+			this.pre = pre;
 		}
 
 		public Integer getTotalNum() {
@@ -103,20 +103,20 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPre() {
-			return this.pre;
-		}
-
-		public void setPre(Integer pre) {
-			this.pre = pre;
-		}
-
 		public Integer getNext() {
 			return this.next;
 		}
 
 		public void setNext(Integer next) {
 			this.next = next;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public List<DataItem> getData() {
@@ -129,23 +129,31 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 
 		public static class DataItem {
 
+			private Integer jobStatus;
+
 			private String cubeId;
 
 			private String cubeName;
 
-			private String creatorName;
-
 			private String size;
+
+			private String jobHistoryId;
 
 			private String lastModifyTime;
 
-			private String enableQuickindexTime;
+			private String creatorName;
 
 			private String jobId;
 
-			private Integer jobStatus;
+			private String enableQuickindexTime;
 
-			private String jobHistoryId;
+			public Integer getJobStatus() {
+				return this.jobStatus;
+			}
+
+			public void setJobStatus(Integer jobStatus) {
+				this.jobStatus = jobStatus;
+			}
 
 			public String getCubeId() {
 				return this.cubeId;
@@ -163,20 +171,20 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 				this.cubeName = cubeName;
 			}
 
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
-			}
-
 			public String getSize() {
 				return this.size;
 			}
 
 			public void setSize(String size) {
 				this.size = size;
+			}
+
+			public String getJobHistoryId() {
+				return this.jobHistoryId;
+			}
+
+			public void setJobHistoryId(String jobHistoryId) {
+				this.jobHistoryId = jobHistoryId;
 			}
 
 			public String getLastModifyTime() {
@@ -187,12 +195,12 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 				this.lastModifyTime = lastModifyTime;
 			}
 
-			public String getEnableQuickindexTime() {
-				return this.enableQuickindexTime;
+			public String getCreatorName() {
+				return this.creatorName;
 			}
 
-			public void setEnableQuickindexTime(String enableQuickindexTime) {
-				this.enableQuickindexTime = enableQuickindexTime;
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
 			}
 
 			public String getJobId() {
@@ -203,20 +211,12 @@ public class ListAccelerationOfWorkspaceResponse extends AcsResponse {
 				this.jobId = jobId;
 			}
 
-			public Integer getJobStatus() {
-				return this.jobStatus;
+			public String getEnableQuickindexTime() {
+				return this.enableQuickindexTime;
 			}
 
-			public void setJobStatus(Integer jobStatus) {
-				this.jobStatus = jobStatus;
-			}
-
-			public String getJobHistoryId() {
-				return this.jobHistoryId;
-			}
-
-			public void setJobHistoryId(String jobHistoryId) {
-				this.jobHistoryId = jobHistoryId;
+			public void setEnableQuickindexTime(String enableQuickindexTime) {
+				this.enableQuickindexTime = enableQuickindexTime;
 			}
 		}
 	}

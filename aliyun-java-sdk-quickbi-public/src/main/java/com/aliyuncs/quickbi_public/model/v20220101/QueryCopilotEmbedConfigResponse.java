@@ -57,53 +57,21 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String agentName;
-
-		private String copilotId;
-
-		private String createUser;
-
-		private String createUserName;
-
 		private String modifyUser;
 
 		private String moduleName;
 
+		private String createUser;
+
+		private String agentName;
+
+		private String createUserName;
+
 		private String showName;
 
+		private String copilotId;
+
 		private DataRange dataRange;
-
-		public String getAgentName() {
-			return this.agentName;
-		}
-
-		public void setAgentName(String agentName) {
-			this.agentName = agentName;
-		}
-
-		public String getCopilotId() {
-			return this.copilotId;
-		}
-
-		public void setCopilotId(String copilotId) {
-			this.copilotId = copilotId;
-		}
-
-		public String getCreateUser() {
-			return this.createUser;
-		}
-
-		public void setCreateUser(String createUser) {
-			this.createUser = createUser;
-		}
-
-		public String getCreateUserName() {
-			return this.createUserName;
-		}
-
-		public void setCreateUserName(String createUserName) {
-			this.createUserName = createUserName;
-		}
 
 		public String getModifyUser() {
 			return this.modifyUser;
@@ -121,12 +89,44 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 			this.moduleName = moduleName;
 		}
 
+		public String getCreateUser() {
+			return this.createUser;
+		}
+
+		public void setCreateUser(String createUser) {
+			this.createUser = createUser;
+		}
+
+		public String getAgentName() {
+			return this.agentName;
+		}
+
+		public void setAgentName(String agentName) {
+			this.agentName = agentName;
+		}
+
+		public String getCreateUserName() {
+			return this.createUserName;
+		}
+
+		public void setCreateUserName(String createUserName) {
+			this.createUserName = createUserName;
+		}
+
 		public String getShowName() {
 			return this.showName;
 		}
 
 		public void setShowName(String showName) {
 			this.showName = showName;
+		}
+
+		public String getCopilotId() {
+			return this.copilotId;
+		}
+
+		public void setCopilotId(String copilotId) {
+			this.copilotId = copilotId;
 		}
 
 		public DataRange getDataRange() {
@@ -139,21 +139,13 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 		public static class DataRange {
 
-			private Boolean allCube;
-
 			private Boolean allTheme;
+
+			private Boolean allCube;
 
 			private List<String> llmCubes;
 
 			private List<String> themes;
-
-			public Boolean getAllCube() {
-				return this.allCube;
-			}
-
-			public void setAllCube(Boolean allCube) {
-				this.allCube = allCube;
-			}
 
 			public Boolean getAllTheme() {
 				return this.allTheme;
@@ -161,6 +153,14 @@ public class QueryCopilotEmbedConfigResponse extends AcsResponse {
 
 			public void setAllTheme(Boolean allTheme) {
 				this.allTheme = allTheme;
+			}
+
+			public Boolean getAllCube() {
+				return this.allCube;
+			}
+
+			public void setAllCube(Boolean allCube) {
+				this.allCube = allCube;
 			}
 
 			public List<String> getLlmCubes() {

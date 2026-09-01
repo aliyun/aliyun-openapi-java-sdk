@@ -37,7 +37,7 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 	private String workspaceId;
 	public CreateDatasetRequest() {
-		super("quickbi-public", "2022-01-01", "CreateDataset", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CreateDataset", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

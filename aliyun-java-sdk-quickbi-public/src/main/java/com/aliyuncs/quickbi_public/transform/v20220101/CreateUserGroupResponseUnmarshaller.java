@@ -23,8 +23,8 @@ public class CreateUserGroupResponseUnmarshaller {
 	public static CreateUserGroupResponse unmarshall(CreateUserGroupResponse createUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		createUserGroupResponse.setRequestId(_ctx.stringValue("CreateUserGroupResponse.RequestId"));
-		createUserGroupResponse.setResult(_ctx.stringValue("CreateUserGroupResponse.Result"));
 		createUserGroupResponse.setSuccess(_ctx.booleanValue("CreateUserGroupResponse.Success"));
+		createUserGroupResponse.setResult(_ctx.stringValue("CreateUserGroupResponse.Result"));
 	 
 	 	return createUserGroupResponse;
 	}

@@ -32,7 +32,7 @@ public class ListFavoriteReportsRequest extends RpcAcsRequest<ListFavoriteReport
 
 	private String treeType;
 	public ListFavoriteReportsRequest() {
-		super("quickbi-public", "2022-01-01", "ListFavoriteReports", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListFavoriteReports", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

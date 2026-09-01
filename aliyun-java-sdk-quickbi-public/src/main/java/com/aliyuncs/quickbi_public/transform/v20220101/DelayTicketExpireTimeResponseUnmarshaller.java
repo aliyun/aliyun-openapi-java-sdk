@@ -23,8 +23,8 @@ public class DelayTicketExpireTimeResponseUnmarshaller {
 	public static DelayTicketExpireTimeResponse unmarshall(DelayTicketExpireTimeResponse delayTicketExpireTimeResponse, UnmarshallerContext _ctx) {
 		
 		delayTicketExpireTimeResponse.setRequestId(_ctx.stringValue("DelayTicketExpireTimeResponse.RequestId"));
-		delayTicketExpireTimeResponse.setResult(_ctx.booleanValue("DelayTicketExpireTimeResponse.Result"));
 		delayTicketExpireTimeResponse.setSuccess(_ctx.booleanValue("DelayTicketExpireTimeResponse.Success"));
+		delayTicketExpireTimeResponse.setResult(_ctx.booleanValue("DelayTicketExpireTimeResponse.Result"));
 	 
 	 	return delayTicketExpireTimeResponse;
 	}

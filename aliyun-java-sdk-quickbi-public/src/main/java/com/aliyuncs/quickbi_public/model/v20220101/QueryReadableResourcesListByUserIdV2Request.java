@@ -31,7 +31,7 @@ public class QueryReadableResourcesListByUserIdV2Request extends RpcAcsRequest<Q
 
 	private String workspaceId;
 	public QueryReadableResourcesListByUserIdV2Request() {
-		super("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserIdV2", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserIdV2", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

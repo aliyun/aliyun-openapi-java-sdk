@@ -31,25 +31,25 @@ public class ListAccelerationOfWorkspaceResponseUnmarshaller {
 		listAccelerationOfWorkspaceResponse.setSuccess(_ctx.booleanValue("ListAccelerationOfWorkspaceResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalPages(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.TotalPages"));
+		result.setPre(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.Pre"));
 		result.setTotalNum(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.PageSize"));
-		result.setPre(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.Pre"));
 		result.setNext(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.Next"));
+		result.setTotalPages(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListAccelerationOfWorkspaceResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setJobStatus(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].JobStatus"));
 			dataItem.setCubeId(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].CubeId"));
 			dataItem.setCubeName(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].CubeName"));
-			dataItem.setCreatorName(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].CreatorName"));
 			dataItem.setSize(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].Size"));
-			dataItem.setLastModifyTime(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].LastModifyTime"));
-			dataItem.setEnableQuickindexTime(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].EnableQuickindexTime"));
-			dataItem.setJobId(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].JobId"));
-			dataItem.setJobStatus(_ctx.integerValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].JobStatus"));
 			dataItem.setJobHistoryId(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].JobHistoryId"));
+			dataItem.setLastModifyTime(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].LastModifyTime"));
+			dataItem.setCreatorName(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].CreatorName"));
+			dataItem.setJobId(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].JobId"));
+			dataItem.setEnableQuickindexTime(_ctx.stringValue("ListAccelerationOfWorkspaceResponse.Result.Data["+ i +"].EnableQuickindexTime"));
 
 			data.add(dataItem);
 		}

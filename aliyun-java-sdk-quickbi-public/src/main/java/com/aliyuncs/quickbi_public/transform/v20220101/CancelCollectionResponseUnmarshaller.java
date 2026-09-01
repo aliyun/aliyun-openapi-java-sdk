@@ -23,8 +23,8 @@ public class CancelCollectionResponseUnmarshaller {
 	public static CancelCollectionResponse unmarshall(CancelCollectionResponse cancelCollectionResponse, UnmarshallerContext _ctx) {
 		
 		cancelCollectionResponse.setRequestId(_ctx.stringValue("CancelCollectionResponse.RequestId"));
-		cancelCollectionResponse.setResult(_ctx.booleanValue("CancelCollectionResponse.Result"));
 		cancelCollectionResponse.setSuccess(_ctx.booleanValue("CancelCollectionResponse.Success"));
+		cancelCollectionResponse.setResult(_ctx.booleanValue("CancelCollectionResponse.Result"));
 	 
 	 	return cancelCollectionResponse;
 	}

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserGroupListByParentIdResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserGroupListByParentIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,54 +57,30 @@ public class QueryUserGroupListByParentIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String createTime;
-
-		private String createUser;
-
-		private String identifiedPath;
-
-		private String modifiedTime;
+		private String parentUserGroupId;
 
 		private String modifyUser;
 
-		private String parentUserGroupId;
+		private String modifiedTime;
 
-		private String userGroupDescription;
+		private String createTime;
+
+		private String identifiedPath;
 
 		private String userGroupId;
 
 		private String userGroupName;
 
-		public String getCreateTime() {
-			return this.createTime;
+		private String createUser;
+
+		private String userGroupDescription;
+
+		public String getParentUserGroupId() {
+			return this.parentUserGroupId;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getCreateUser() {
-			return this.createUser;
-		}
-
-		public void setCreateUser(String createUser) {
-			this.createUser = createUser;
-		}
-
-		public String getIdentifiedPath() {
-			return this.identifiedPath;
-		}
-
-		public void setIdentifiedPath(String identifiedPath) {
-			this.identifiedPath = identifiedPath;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
+		public void setParentUserGroupId(String parentUserGroupId) {
+			this.parentUserGroupId = parentUserGroupId;
 		}
 
 		public String getModifyUser() {
@@ -115,20 +91,28 @@ public class QueryUserGroupListByParentIdResponse extends AcsResponse {
 			this.modifyUser = modifyUser;
 		}
 
-		public String getParentUserGroupId() {
-			return this.parentUserGroupId;
+		public String getModifiedTime() {
+			return this.modifiedTime;
 		}
 
-		public void setParentUserGroupId(String parentUserGroupId) {
-			this.parentUserGroupId = parentUserGroupId;
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
 		}
 
-		public String getUserGroupDescription() {
-			return this.userGroupDescription;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setUserGroupDescription(String userGroupDescription) {
-			this.userGroupDescription = userGroupDescription;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getIdentifiedPath() {
+			return this.identifiedPath;
+		}
+
+		public void setIdentifiedPath(String identifiedPath) {
+			this.identifiedPath = identifiedPath;
 		}
 
 		public String getUserGroupId() {
@@ -145,6 +129,22 @@ public class QueryUserGroupListByParentIdResponse extends AcsResponse {
 
 		public void setUserGroupName(String userGroupName) {
 			this.userGroupName = userGroupName;
+		}
+
+		public String getCreateUser() {
+			return this.createUser;
+		}
+
+		public void setCreateUser(String createUser) {
+			this.createUser = createUser;
+		}
+
+		public String getUserGroupDescription() {
+			return this.userGroupDescription;
+		}
+
+		public void setUserGroupDescription(String userGroupDescription) {
+			this.userGroupDescription = userGroupDescription;
 		}
 	}
 

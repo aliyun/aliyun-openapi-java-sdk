@@ -27,22 +27,22 @@ public class GetDataSourceConnectionInfoResponseUnmarshaller {
 		getDataSourceConnectionInfoResponse.setSuccess(_ctx.booleanValue("GetDataSourceConnectionInfoResponse.Success"));
 
 		Result result = new Result();
+		result.setModifyUser(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ModifyUser"));
 		result.setAddress(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Address"));
-		result.setAuthLevel(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.AuthLevel"));
-		result.setCreatorId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.CreatorId"));
-		result.setDsId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsId"));
-		result.setDsType(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsType"));
-		result.setDsVersion(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsVersion"));
 		result.setInstance(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Instance"));
 		result.setInstanceId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.InstanceId"));
-		result.setModifyUser(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ModifyUser"));
-		result.setNoSasl(_ctx.booleanValue("GetDataSourceConnectionInfoResponse.Result.NoSasl"));
-		result.setParentDsType(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ParentDsType"));
+		result.setCreatorId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.CreatorId"));
 		result.setPort(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Port"));
-		result.setProject(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Project"));
 		result.setSchema(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Schema"));
-		result.setShowName(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ShowName"));
 		result.setWorkspaceId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.WorkspaceId"));
+		result.setDsId(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsId"));
+		result.setParentDsType(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ParentDsType"));
+		result.setDsVersion(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsVersion"));
+		result.setShowName(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.ShowName"));
+		result.setAuthLevel(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.AuthLevel"));
+		result.setDsType(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.DsType"));
+		result.setProject(_ctx.stringValue("GetDataSourceConnectionInfoResponse.Result.Project"));
+		result.setNoSasl(_ctx.booleanValue("GetDataSourceConnectionInfoResponse.Result.NoSasl"));
 		getDataSourceConnectionInfoResponse.setResult(result);
 	 
 	 	return getDataSourceConnectionInfoResponse;

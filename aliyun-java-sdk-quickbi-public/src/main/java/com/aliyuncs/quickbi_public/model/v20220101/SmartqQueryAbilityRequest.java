@@ -32,7 +32,7 @@ public class SmartqQueryAbilityRequest extends RpcAcsRequest<SmartqQueryAbilityR
 
 	private String multipleCubeIds;
 	public SmartqQueryAbilityRequest() {
-		super("quickbi-public", "2022-01-01", "SmartqQueryAbility", "2.2.0");
+		super("quickbi-public", "2022-01-01", "SmartqQueryAbility", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

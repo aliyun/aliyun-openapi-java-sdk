@@ -23,8 +23,8 @@ public class SaveFavoritesResponseUnmarshaller {
 	public static SaveFavoritesResponse unmarshall(SaveFavoritesResponse saveFavoritesResponse, UnmarshallerContext _ctx) {
 		
 		saveFavoritesResponse.setRequestId(_ctx.stringValue("SaveFavoritesResponse.RequestId"));
-		saveFavoritesResponse.setResult(_ctx.booleanValue("SaveFavoritesResponse.Result"));
 		saveFavoritesResponse.setSuccess(_ctx.booleanValue("SaveFavoritesResponse.Success"));
+		saveFavoritesResponse.setResult(_ctx.booleanValue("SaveFavoritesResponse.Result"));
 	 
 	 	return saveFavoritesResponse;
 	}

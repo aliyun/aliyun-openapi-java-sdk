@@ -32,26 +32,15 @@ public class SmartqQueryAbilityResponseUnmarshaller {
 		smartqQueryAbilityResponse.setSuccess(_ctx.booleanValue("SmartqQueryAbilityResponse.Success"));
 
 		Result result = new Result();
-		result.setChartType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ChartType"));
-		result.setLogicSql(_ctx.stringValue("SmartqQueryAbilityResponse.Result.LogicSql"));
 		result.setConclusionText(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ConclusionText"));
+		result.setLogicSql(_ctx.stringValue("SmartqQueryAbilityResponse.Result.LogicSql"));
+		result.setChartType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.ChartType"));
 
 		List<String> dataList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.DataList.Length"); i++) {
 			dataList.add(_ctx.stringValue("SmartqQueryAbilityResponse.Result.DataList["+ i +"]"));
 		}
 		result.setDataList(dataList);
-
-		List<MetaTypeItem> metaType = new ArrayList<MetaTypeItem>();
-		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.MetaType.Length"); i++) {
-			MetaTypeItem metaTypeItem = new MetaTypeItem();
-			metaTypeItem.setKey(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Key"));
-			metaTypeItem.setValue(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Value"));
-			metaTypeItem.setType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Type"));
-
-			metaType.add(metaTypeItem);
-		}
-		result.setMetaType(metaType);
 
 		List<ValuesItem> values = new ArrayList<ValuesItem>();
 		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.Values.Length"); i++) {
@@ -66,6 +55,17 @@ public class SmartqQueryAbilityResponseUnmarshaller {
 			values.add(valuesItem);
 		}
 		result.setValues(values);
+
+		List<MetaTypeItem> metaType = new ArrayList<MetaTypeItem>();
+		for (int i = 0; i < _ctx.lengthValue("SmartqQueryAbilityResponse.Result.MetaType.Length"); i++) {
+			MetaTypeItem metaTypeItem = new MetaTypeItem();
+			metaTypeItem.setType(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Type"));
+			metaTypeItem.setValue(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Value"));
+			metaTypeItem.setKey(_ctx.stringValue("SmartqQueryAbilityResponse.Result.MetaType["+ i +"].Key"));
+
+			metaType.add(metaTypeItem);
+		}
+		result.setMetaType(metaType);
 		smartqQueryAbilityResponse.setResult(result);
 	 
 	 	return smartqQueryAbilityResponse;

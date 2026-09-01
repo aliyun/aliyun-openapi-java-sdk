@@ -23,8 +23,8 @@ public class UpdateDataLevelPermissionStatusResponseUnmarshaller {
 	public static UpdateDataLevelPermissionStatusResponse unmarshall(UpdateDataLevelPermissionStatusResponse updateDataLevelPermissionStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateDataLevelPermissionStatusResponse.setRequestId(_ctx.stringValue("UpdateDataLevelPermissionStatusResponse.RequestId"));
-		updateDataLevelPermissionStatusResponse.setResult(_ctx.booleanValue("UpdateDataLevelPermissionStatusResponse.Result"));
 		updateDataLevelPermissionStatusResponse.setSuccess(_ctx.booleanValue("UpdateDataLevelPermissionStatusResponse.Success"));
+		updateDataLevelPermissionStatusResponse.setResult(_ctx.booleanValue("UpdateDataLevelPermissionStatusResponse.Result"));
 	 
 	 	return updateDataLevelPermissionStatusResponse;
 	}

@@ -26,7 +26,7 @@ public class DataSourceBloodRequest extends RpcAcsRequest<DataSourceBloodRespons
 
 	private String dataSourceId;
 	public DataSourceBloodRequest() {
-		super("quickbi-public", "2022-01-01", "DataSourceBlood", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DataSourceBlood", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

@@ -27,7 +27,7 @@ public class CheckOrganizationMemberRequest extends RpcAcsRequest<CheckOrganizat
 
 	private String userId;
 	public CheckOrganizationMemberRequest() {
-		super("quickbi-public", "2022-01-01", "CheckOrganizationMember", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CheckOrganizationMember", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

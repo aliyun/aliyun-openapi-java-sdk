@@ -31,21 +31,21 @@ public class GetMailTaskListResponseUnmarshaller {
 		getMailTaskListResponse.setSuccess(_ctx.booleanValue("GetMailTaskListResponse.Success"));
 
 		Result result = new Result();
+		result.setPre(_ctx.integerValue("GetMailTaskListResponse.Result.Pre"));
+		result.setTotalNum(_ctx.integerValue("GetMailTaskListResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("GetMailTaskListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("GetMailTaskListResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("GetMailTaskListResponse.Result.TotalNum"));
-		result.setTotalPages(_ctx.integerValue("GetMailTaskListResponse.Result.TotalPages"));
-		result.setPre(_ctx.integerValue("GetMailTaskListResponse.Result.Pre"));
 		result.setNext(_ctx.integerValue("GetMailTaskListResponse.Result.Next"));
+		result.setTotalPages(_ctx.integerValue("GetMailTaskListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMailTaskListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setMailId(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].MailId"));
-			dataItem.setPaused(_ctx.booleanValue("GetMailTaskListResponse.Result.Data["+ i +"].Paused"));
+			dataItem.setSubscribeName(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].SubscribeName"));
 			dataItem.setBizOwnerUserId(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].BizOwnerUserId"));
 			dataItem.setBizOwnerName(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].BizOwnerName"));
-			dataItem.setSubscribeName(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].SubscribeName"));
+			dataItem.setMailId(_ctx.stringValue("GetMailTaskListResponse.Result.Data["+ i +"].MailId"));
+			dataItem.setPaused(_ctx.booleanValue("GetMailTaskListResponse.Result.Data["+ i +"].Paused"));
 
 			data.add(dataItem);
 		}

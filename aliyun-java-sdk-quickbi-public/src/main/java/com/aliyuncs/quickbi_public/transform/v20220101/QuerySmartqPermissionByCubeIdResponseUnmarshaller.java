@@ -27,9 +27,9 @@ public class QuerySmartqPermissionByCubeIdResponseUnmarshaller {
 		querySmartqPermissionByCubeIdResponse.setSuccess(_ctx.booleanValue("QuerySmartqPermissionByCubeIdResponse.Success"));
 
 		Result result = new Result();
-		result.setHasPerssion(_ctx.booleanValue("QuerySmartqPermissionByCubeIdResponse.Result.HasPerssion"));
 		result.setCubeId(_ctx.stringValue("QuerySmartqPermissionByCubeIdResponse.Result.CubeId"));
 		result.setCubeName(_ctx.stringValue("QuerySmartqPermissionByCubeIdResponse.Result.CubeName"));
+		result.setHasPerssion(_ctx.booleanValue("QuerySmartqPermissionByCubeIdResponse.Result.HasPerssion"));
 		querySmartqPermissionByCubeIdResponse.setResult(result);
 	 
 	 	return querySmartqPermissionByCubeIdResponse;

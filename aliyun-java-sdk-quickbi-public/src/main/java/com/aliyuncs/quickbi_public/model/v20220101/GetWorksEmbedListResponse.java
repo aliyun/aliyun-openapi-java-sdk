@@ -57,22 +57,22 @@ public class GetWorksEmbedListResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Long pageNo;
+		private Long totalNum;
 
 		private Long pageSize;
 
-		private Long totalNum;
+		private Long pageNo;
 
 		private Long totalPages;
 
 		private List<DataItem> data;
 
-		public Long getPageNo() {
-			return this.pageNo;
+		public Long getTotalNum() {
+			return this.totalNum;
 		}
 
-		public void setPageNo(Long pageNo) {
-			this.pageNo = pageNo;
+		public void setTotalNum(Long totalNum) {
+			this.totalNum = totalNum;
 		}
 
 		public Long getPageSize() {
@@ -83,12 +83,12 @@ public class GetWorksEmbedListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getTotalNum() {
-			return this.totalNum;
+		public Long getPageNo() {
+			return this.pageNo;
 		}
 
-		public void setTotalNum(Long totalNum) {
-			this.totalNum = totalNum;
+		public void setPageNo(Long pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public Long getTotalPages() {
@@ -111,13 +111,13 @@ public class GetWorksEmbedListResponse extends AcsResponse {
 
 			private String embedTime;
 
-			private String worksId;
+			private String worksType;
 
 			private String worksName;
 
-			private String worksType;
-
 			private String workspaceId;
+
+			private String worksId;
 
 			public String getEmbedTime() {
 				return this.embedTime;
@@ -125,22 +125,6 @@ public class GetWorksEmbedListResponse extends AcsResponse {
 
 			public void setEmbedTime(String embedTime) {
 				this.embedTime = embedTime;
-			}
-
-			public String getWorksId() {
-				return this.worksId;
-			}
-
-			public void setWorksId(String worksId) {
-				this.worksId = worksId;
-			}
-
-			public String getWorksName() {
-				return this.worksName;
-			}
-
-			public void setWorksName(String worksName) {
-				this.worksName = worksName;
 			}
 
 			public String getWorksType() {
@@ -151,12 +135,28 @@ public class GetWorksEmbedListResponse extends AcsResponse {
 				this.worksType = worksType;
 			}
 
+			public String getWorksName() {
+				return this.worksName;
+			}
+
+			public void setWorksName(String worksName) {
+				this.worksName = worksName;
+			}
+
 			public String getWorkspaceId() {
 				return this.workspaceId;
 			}
 
 			public void setWorkspaceId(String workspaceId) {
 				this.workspaceId = workspaceId;
+			}
+
+			public String getWorksId() {
+				return this.worksId;
+			}
+
+			public void setWorksId(String worksId) {
+				this.worksId = worksId;
 			}
 		}
 	}

@@ -28,7 +28,7 @@ public class AddUserGroupMembersRequest extends RpcAcsRequest<AddUserGroupMember
 
 	private String userGroupIds;
 	public AddUserGroupMembersRequest() {
-		super("quickbi-public", "2022-01-01", "AddUserGroupMembers", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AddUserGroupMembers", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

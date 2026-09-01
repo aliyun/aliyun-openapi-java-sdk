@@ -32,7 +32,7 @@ public class ListOrganizationRoleUsersRequest extends RpcAcsRequest<ListOrganiza
 
 	private String keyword;
 	public ListOrganizationRoleUsersRequest() {
-		super("quickbi-public", "2022-01-01", "ListOrganizationRoleUsers", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListOrganizationRoleUsers", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

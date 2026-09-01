@@ -27,7 +27,7 @@ public class QueryDatasetSmartqStatusRequest extends RpcAcsRequest<QueryDatasetS
 
 	private String cubeId;
 	public QueryDatasetSmartqStatusRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDatasetSmartqStatus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryDatasetSmartqStatus", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -36,7 +36,7 @@ public class CreateTicket4CopilotRequest extends RpcAcsRequest<CreateTicket4Copi
 
 	private Integer ticketNum;
 	public CreateTicket4CopilotRequest() {
-		super("quickbi-public", "2022-01-01", "CreateTicket4Copilot", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CreateTicket4Copilot", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

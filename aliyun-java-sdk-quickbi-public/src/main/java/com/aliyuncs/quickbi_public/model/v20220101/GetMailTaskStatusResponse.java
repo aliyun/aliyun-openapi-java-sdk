@@ -61,9 +61,9 @@ public class GetMailTaskStatusResponse extends AcsResponse {
 
 		private String mailId;
 
-		private String status;
-
 		private Long taskId;
+
+		private String status;
 
 		public String getExecTime() {
 			return this.execTime;
@@ -81,20 +81,20 @@ public class GetMailTaskStatusResponse extends AcsResponse {
 			this.mailId = mailId;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Long getTaskId() {
 			return this.taskId;
 		}
 
 		public void setTaskId(Long taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

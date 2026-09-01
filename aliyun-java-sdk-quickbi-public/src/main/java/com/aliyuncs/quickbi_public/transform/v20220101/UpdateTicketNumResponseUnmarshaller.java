@@ -23,8 +23,8 @@ public class UpdateTicketNumResponseUnmarshaller {
 	public static UpdateTicketNumResponse unmarshall(UpdateTicketNumResponse updateTicketNumResponse, UnmarshallerContext _ctx) {
 		
 		updateTicketNumResponse.setRequestId(_ctx.stringValue("UpdateTicketNumResponse.RequestId"));
-		updateTicketNumResponse.setResult(_ctx.booleanValue("UpdateTicketNumResponse.Result"));
 		updateTicketNumResponse.setSuccess(_ctx.booleanValue("UpdateTicketNumResponse.Success"));
+		updateTicketNumResponse.setResult(_ctx.booleanValue("UpdateTicketNumResponse.Result"));
 	 
 	 	return updateTicketNumResponse;
 	}

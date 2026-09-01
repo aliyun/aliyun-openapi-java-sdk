@@ -27,7 +27,7 @@ public class ClearDynamicTagCacheRequest extends RpcAcsRequest<ClearDynamicTagCa
 
 	private String configId;
 	public ClearDynamicTagCacheRequest() {
-		super("quickbi-public", "2022-01-01", "ClearDynamicTagCache", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ClearDynamicTagCache", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

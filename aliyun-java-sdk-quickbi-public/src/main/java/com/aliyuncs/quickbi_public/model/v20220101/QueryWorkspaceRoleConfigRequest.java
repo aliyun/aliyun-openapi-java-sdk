@@ -26,7 +26,7 @@ public class QueryWorkspaceRoleConfigRequest extends RpcAcsRequest<QueryWorkspac
 
 	private Long roleId;
 	public QueryWorkspaceRoleConfigRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorkspaceRoleConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryWorkspaceRoleConfig", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

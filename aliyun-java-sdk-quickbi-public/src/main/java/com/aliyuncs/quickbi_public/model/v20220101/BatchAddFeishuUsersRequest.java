@@ -34,7 +34,7 @@ public class BatchAddFeishuUsersRequest extends RpcAcsRequest<BatchAddFeishuUser
 
 	private String feishuUsers;
 	public BatchAddFeishuUsersRequest() {
-		super("quickbi-public", "2022-01-01", "BatchAddFeishuUsers", "2.2.0");
+		super("quickbi-public", "2022-01-01", "BatchAddFeishuUsers", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

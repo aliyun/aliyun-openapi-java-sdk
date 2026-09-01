@@ -23,8 +23,8 @@ public class UpdateCubeBySqlResponseUnmarshaller {
 	public static UpdateCubeBySqlResponse unmarshall(UpdateCubeBySqlResponse updateCubeBySqlResponse, UnmarshallerContext _ctx) {
 		
 		updateCubeBySqlResponse.setRequestId(_ctx.stringValue("UpdateCubeBySqlResponse.RequestId"));
-		updateCubeBySqlResponse.setResult(_ctx.booleanValue("UpdateCubeBySqlResponse.Result"));
 		updateCubeBySqlResponse.setSuccess(_ctx.booleanValue("UpdateCubeBySqlResponse.Success"));
+		updateCubeBySqlResponse.setResult(_ctx.booleanValue("UpdateCubeBySqlResponse.Result"));
 	 
 	 	return updateCubeBySqlResponse;
 	}

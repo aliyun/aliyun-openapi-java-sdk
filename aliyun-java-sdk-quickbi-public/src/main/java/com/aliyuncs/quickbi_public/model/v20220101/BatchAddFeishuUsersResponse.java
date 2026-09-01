@@ -57,19 +57,11 @@ public class BatchAddFeishuUsersResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer failCount;
-
 		private Integer okCount;
 
+		private Integer failCount;
+
 		private List<FailResultsItem> failResults;
-
-		public Integer getFailCount() {
-			return this.failCount;
-		}
-
-		public void setFailCount(Integer failCount) {
-			this.failCount = failCount;
-		}
 
 		public Integer getOkCount() {
 			return this.okCount;
@@ -77,6 +69,14 @@ public class BatchAddFeishuUsersResponse extends AcsResponse {
 
 		public void setOkCount(Integer okCount) {
 			this.okCount = okCount;
+		}
+
+		public Integer getFailCount() {
+			return this.failCount;
+		}
+
+		public void setFailCount(Integer failCount) {
+			this.failCount = failCount;
 		}
 
 		public List<FailResultsItem> getFailResults() {
@@ -101,18 +101,18 @@ public class BatchAddFeishuUsersResponse extends AcsResponse {
 
 			public static class FailInfosItem {
 
-				private String code;
+				private String input;
 
 				private String codeDesc;
 
-				private String input;
+				private String code;
 
-				public String getCode() {
-					return this.code;
+				public String getInput() {
+					return this.input;
 				}
 
-				public void setCode(String code) {
-					this.code = code;
+				public void setInput(String input) {
+					this.input = input;
 				}
 
 				public String getCodeDesc() {
@@ -123,12 +123,12 @@ public class BatchAddFeishuUsersResponse extends AcsResponse {
 					this.codeDesc = codeDesc;
 				}
 
-				public String getInput() {
-					return this.input;
+				public String getCode() {
+					return this.code;
 				}
 
-				public void setInput(String input) {
-					this.input = input;
+				public void setCode(String code) {
+					this.code = code;
 				}
 			}
 		}

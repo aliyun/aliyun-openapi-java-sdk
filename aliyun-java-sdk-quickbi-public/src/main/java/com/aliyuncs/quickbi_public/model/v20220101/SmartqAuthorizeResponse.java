@@ -61,9 +61,9 @@ public class SmartqAuthorizeResponse extends AcsResponse {
 
 		private String llmCube;
 
-		private String llmCubeTheme;
-
 		private String detailMessage;
+
+		private String llmCubeTheme;
 
 		public String getUserId() {
 			return this.userId;
@@ -81,20 +81,20 @@ public class SmartqAuthorizeResponse extends AcsResponse {
 			this.llmCube = llmCube;
 		}
 
-		public String getLlmCubeTheme() {
-			return this.llmCubeTheme;
-		}
-
-		public void setLlmCubeTheme(String llmCubeTheme) {
-			this.llmCubeTheme = llmCubeTheme;
-		}
-
 		public String getDetailMessage() {
 			return this.detailMessage;
 		}
 
 		public void setDetailMessage(String detailMessage) {
 			this.detailMessage = detailMessage;
+		}
+
+		public String getLlmCubeTheme() {
+			return this.llmCubeTheme;
+		}
+
+		public void setLlmCubeTheme(String llmCubeTheme) {
+			this.llmCubeTheme = llmCubeTheme;
 		}
 	}
 

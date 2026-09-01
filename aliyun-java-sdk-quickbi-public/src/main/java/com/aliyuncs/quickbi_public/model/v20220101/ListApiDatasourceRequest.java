@@ -32,7 +32,7 @@ public class ListApiDatasourceRequest extends RpcAcsRequest<ListApiDatasourceRes
 
 	private String workspaceId;
 	public ListApiDatasourceRequest() {
-		super("quickbi-public", "2022-01-01", "ListApiDatasource", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListApiDatasource", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

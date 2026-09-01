@@ -27,7 +27,7 @@ public class ManualRunMailTaskRequest extends RpcAcsRequest<ManualRunMailTaskRes
 
 	private String mailId;
 	public ManualRunMailTaskRequest() {
-		super("quickbi-public", "2022-01-01", "ManualRunMailTask", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ManualRunMailTask", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -32,14 +32,14 @@ public class ListDataSourceResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataSourceResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setCreatorId(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].CreatorId"));
-			data.setCreatorName(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].CreatorName"));
-			data.setDatasourceId(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].DatasourceId"));
 			data.setGmtCreate(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].GmtCreate"));
+			data.setDatasourceId(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].DatasourceId"));
+			data.setCreatorId(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].CreatorId"));
 			data.setGmtModified(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].GmtModified"));
-			data.setShowName(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].ShowName"));
-			data.setDsType(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].DsType"));
 			data.setParentDsType(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].ParentDsType"));
+			data.setShowName(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].ShowName"));
+			data.setCreatorName(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].CreatorName"));
+			data.setDsType(_ctx.stringValue("ListDataSourceResponse.Result["+ i +"].DsType"));
 
 			result.add(data);
 		}

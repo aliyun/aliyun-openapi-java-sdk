@@ -40,12 +40,12 @@ public class QueryDataResponseUnmarshaller {
 		List<HeadersItem> headers = new ArrayList<HeadersItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataResponse.Result.Headers.Length"); i++) {
 			HeadersItem headersItem = new HeadersItem();
-			headersItem.setAggregator(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Aggregator"));
+			headersItem.setType(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Type"));
 			headersItem.setColumn(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Column"));
+			headersItem.setLabel(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Label"));
+			headersItem.setAggregator(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Aggregator"));
 			headersItem.setDataType(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].DataType"));
 			headersItem.setGranularity(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Granularity"));
-			headersItem.setLabel(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Label"));
-			headersItem.setType(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].Type"));
 			headersItem.setOriginalColumn(_ctx.stringValue("QueryDataResponse.Result.Headers["+ i +"].OriginalColumn"));
 
 			headers.add(headersItem);

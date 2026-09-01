@@ -23,8 +23,8 @@ public class DeleteDataLevelRuleConfigResponseUnmarshaller {
 	public static DeleteDataLevelRuleConfigResponse unmarshall(DeleteDataLevelRuleConfigResponse deleteDataLevelRuleConfigResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataLevelRuleConfigResponse.setRequestId(_ctx.stringValue("DeleteDataLevelRuleConfigResponse.RequestId"));
-		deleteDataLevelRuleConfigResponse.setResult(_ctx.booleanValue("DeleteDataLevelRuleConfigResponse.Result"));
 		deleteDataLevelRuleConfigResponse.setSuccess(_ctx.booleanValue("DeleteDataLevelRuleConfigResponse.Success"));
+		deleteDataLevelRuleConfigResponse.setResult(_ctx.booleanValue("DeleteDataLevelRuleConfigResponse.Result"));
 	 
 	 	return deleteDataLevelRuleConfigResponse;
 	}

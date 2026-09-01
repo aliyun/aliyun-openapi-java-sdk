@@ -89,17 +89,9 @@ public class ListDataLevelPermissionWhiteListResponse extends AcsResponse {
 
 		public static class UsersModel {
 
-			private List<String> userGroups;
-
 			private List<String> users;
 
-			public List<String> getUserGroups() {
-				return this.userGroups;
-			}
-
-			public void setUserGroups(List<String> userGroups) {
-				this.userGroups = userGroups;
-			}
+			private List<String> userGroups;
 
 			public List<String> getUsers() {
 				return this.users;
@@ -107,6 +99,14 @@ public class ListDataLevelPermissionWhiteListResponse extends AcsResponse {
 
 			public void setUsers(List<String> users) {
 				this.users = users;
+			}
+
+			public List<String> getUserGroups() {
+				return this.userGroups;
+			}
+
+			public void setUserGroups(List<String> userGroups) {
+				this.userGroups = userGroups;
 			}
 		}
 	}

@@ -57,17 +57,9 @@ public class DataSetBloodResponse extends AcsResponse {
 
 	public static class WorksModels {
 
-		private String worksId;
-
 		private String worksType;
 
-		public String getWorksId() {
-			return this.worksId;
-		}
-
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
-		}
+		private String worksId;
 
 		public String getWorksType() {
 			return this.worksType;
@@ -75,6 +67,14 @@ public class DataSetBloodResponse extends AcsResponse {
 
 		public void setWorksType(String worksType) {
 			this.worksType = worksType;
+		}
+
+		public String getWorksId() {
+			return this.worksId;
+		}
+
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
 		}
 	}
 

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUserGroupInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class GetUserGroupInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,46 +57,30 @@ public class GetUserGroupInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String createTime;
-
-		private String createUser;
-
-		private String identifiedPath;
+		private String modifyUser;
 
 		private String modifiedTime;
 
-		private String modifyUser;
+		private String usergroupDesc;
+
+		private String createTime;
+
+		private String identifiedPath;
+
+		private String createUser;
 
 		private String parentUsergroupId;
 
-		private String usergroupDesc;
+		private String usergroupName;
 
 		private String usergroupId;
 
-		private String usergroupName;
-
-		public String getCreateTime() {
-			return this.createTime;
+		public String getModifyUser() {
+			return this.modifyUser;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getCreateUser() {
-			return this.createUser;
-		}
-
-		public void setCreateUser(String createUser) {
-			this.createUser = createUser;
-		}
-
-		public String getIdentifiedPath() {
-			return this.identifiedPath;
-		}
-
-		public void setIdentifiedPath(String identifiedPath) {
-			this.identifiedPath = identifiedPath;
+		public void setModifyUser(String modifyUser) {
+			this.modifyUser = modifyUser;
 		}
 
 		public String getModifiedTime() {
@@ -107,12 +91,36 @@ public class GetUserGroupInfoResponse extends AcsResponse {
 			this.modifiedTime = modifiedTime;
 		}
 
-		public String getModifyUser() {
-			return this.modifyUser;
+		public String getUsergroupDesc() {
+			return this.usergroupDesc;
 		}
 
-		public void setModifyUser(String modifyUser) {
-			this.modifyUser = modifyUser;
+		public void setUsergroupDesc(String usergroupDesc) {
+			this.usergroupDesc = usergroupDesc;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getIdentifiedPath() {
+			return this.identifiedPath;
+		}
+
+		public void setIdentifiedPath(String identifiedPath) {
+			this.identifiedPath = identifiedPath;
+		}
+
+		public String getCreateUser() {
+			return this.createUser;
+		}
+
+		public void setCreateUser(String createUser) {
+			this.createUser = createUser;
 		}
 
 		public String getParentUsergroupId() {
@@ -123,12 +131,12 @@ public class GetUserGroupInfoResponse extends AcsResponse {
 			this.parentUsergroupId = parentUsergroupId;
 		}
 
-		public String getUsergroupDesc() {
-			return this.usergroupDesc;
+		public String getUsergroupName() {
+			return this.usergroupName;
 		}
 
-		public void setUsergroupDesc(String usergroupDesc) {
-			this.usergroupDesc = usergroupDesc;
+		public void setUsergroupName(String usergroupName) {
+			this.usergroupName = usergroupName;
 		}
 
 		public String getUsergroupId() {
@@ -137,14 +145,6 @@ public class GetUserGroupInfoResponse extends AcsResponse {
 
 		public void setUsergroupId(String usergroupId) {
 			this.usergroupId = usergroupId;
-		}
-
-		public String getUsergroupName() {
-			return this.usergroupName;
-		}
-
-		public void setUsergroupName(String usergroupName) {
-			this.usergroupName = usergroupName;
 		}
 	}
 

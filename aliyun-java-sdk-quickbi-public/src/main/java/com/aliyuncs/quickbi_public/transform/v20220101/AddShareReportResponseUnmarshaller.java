@@ -23,8 +23,8 @@ public class AddShareReportResponseUnmarshaller {
 	public static AddShareReportResponse unmarshall(AddShareReportResponse addShareReportResponse, UnmarshallerContext _ctx) {
 		
 		addShareReportResponse.setRequestId(_ctx.stringValue("AddShareReportResponse.RequestId"));
-		addShareReportResponse.setResult(_ctx.booleanValue("AddShareReportResponse.Result"));
 		addShareReportResponse.setSuccess(_ctx.booleanValue("AddShareReportResponse.Success"));
+		addShareReportResponse.setResult(_ctx.booleanValue("AddShareReportResponse.Result"));
 	 
 	 	return addShareReportResponse;
 	}

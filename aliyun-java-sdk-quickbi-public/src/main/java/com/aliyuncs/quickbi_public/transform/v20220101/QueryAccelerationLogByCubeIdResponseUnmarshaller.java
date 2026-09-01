@@ -31,22 +31,22 @@ public class QueryAccelerationLogByCubeIdResponseUnmarshaller {
 		queryAccelerationLogByCubeIdResponse.setSuccess(_ctx.booleanValue("QueryAccelerationLogByCubeIdResponse.Success"));
 
 		Result result = new Result();
-		result.setTotalPages(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.TotalPages"));
+		result.setPre(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.Pre"));
 		result.setTotalNum(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.PageSize"));
-		result.setPre(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.Pre"));
 		result.setNext(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.Next"));
+		result.setTotalPages(_ctx.integerValue("QueryAccelerationLogByCubeIdResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAccelerationLogByCubeIdResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setJobId(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JobId"));
-			dataItem.setJobHistoryId(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JobHistoryId"));
-			dataItem.setJonStartDate(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JonStartDate"));
 			dataItem.setJobStatus(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JobStatus"));
-			dataItem.setDuration(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].Duration"));
+			dataItem.setJonStartDate(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JonStartDate"));
 			dataItem.setLog(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].Log"));
+			dataItem.setJobHistoryId(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JobHistoryId"));
+			dataItem.setDuration(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].Duration"));
+			dataItem.setJobId(_ctx.stringValue("QueryAccelerationLogByCubeIdResponse.Result.Data["+ i +"].JobId"));
 
 			data.add(dataItem);
 		}

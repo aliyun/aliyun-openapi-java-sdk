@@ -56,21 +56,13 @@ public class QueryLastAccelerationEngineJobResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String jobHistoryId;
-
 		private String status;
 
 		private String gmtCreate;
 
 		private String gmtModified;
 
-		public String getJobHistoryId() {
-			return this.jobHistoryId;
-		}
-
-		public void setJobHistoryId(String jobHistoryId) {
-			this.jobHistoryId = jobHistoryId;
-		}
+		private String jobHistoryId;
 
 		public String getStatus() {
 			return this.status;
@@ -94,6 +86,14 @@ public class QueryLastAccelerationEngineJobResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getJobHistoryId() {
+			return this.jobHistoryId;
+		}
+
+		public void setJobHistoryId(String jobHistoryId) {
+			this.jobHistoryId = jobHistoryId;
 		}
 	}
 

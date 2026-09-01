@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,15 +57,23 @@ public class QueryUserListResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private Integer totalPages;
 
 		private List<DataItem> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -81,14 +89,6 @@ public class QueryUserListResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
 		}
 
 		public Integer getTotalPages() {
@@ -109,33 +109,41 @@ public class QueryUserListResponse extends AcsResponse {
 
 		public static class DataItem {
 
+			private Boolean isDeleted;
+
 			private String accountId;
-
-			private String accountName;
-
-			private Boolean adminUser;
-
-			private Boolean authAdminUser;
 
 			private String email;
 
-			private Long joinedDate;
+			private String nickName;
 
 			private Long lastLoginTime;
-
-			private String nickName;
 
 			private String phone;
 
 			private String userId;
 
+			private Boolean adminUser;
+
+			private Long joinedDate;
+
 			private Integer userType;
 
-			private Boolean isDeleted;
+			private Boolean authAdminUser;
+
+			private String accountName;
+
+			private List<String> copilotModules;
 
 			private List<Long> roleIdList;
 
-			private List<String> copilotModules;
+			public Boolean getIsDeleted() {
+				return this.isDeleted;
+			}
+
+			public void setIsDeleted(Boolean isDeleted) {
+				this.isDeleted = isDeleted;
+			}
 
 			public String getAccountId() {
 				return this.accountId;
@@ -143,30 +151,6 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setAccountId(String accountId) {
 				this.accountId = accountId;
-			}
-
-			public String getAccountName() {
-				return this.accountName;
-			}
-
-			public void setAccountName(String accountName) {
-				this.accountName = accountName;
-			}
-
-			public Boolean getAdminUser() {
-				return this.adminUser;
-			}
-
-			public void setAdminUser(Boolean adminUser) {
-				this.adminUser = adminUser;
-			}
-
-			public Boolean getAuthAdminUser() {
-				return this.authAdminUser;
-			}
-
-			public void setAuthAdminUser(Boolean authAdminUser) {
-				this.authAdminUser = authAdminUser;
 			}
 
 			public String getEmail() {
@@ -177,12 +161,12 @@ public class QueryUserListResponse extends AcsResponse {
 				this.email = email;
 			}
 
-			public Long getJoinedDate() {
-				return this.joinedDate;
+			public String getNickName() {
+				return this.nickName;
 			}
 
-			public void setJoinedDate(Long joinedDate) {
-				this.joinedDate = joinedDate;
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 
 			public Long getLastLoginTime() {
@@ -191,14 +175,6 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setLastLoginTime(Long lastLoginTime) {
 				this.lastLoginTime = lastLoginTime;
-			}
-
-			public String getNickName() {
-				return this.nickName;
-			}
-
-			public void setNickName(String nickName) {
-				this.nickName = nickName;
 			}
 
 			public String getPhone() {
@@ -217,6 +193,22 @@ public class QueryUserListResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
+			public Boolean getAdminUser() {
+				return this.adminUser;
+			}
+
+			public void setAdminUser(Boolean adminUser) {
+				this.adminUser = adminUser;
+			}
+
+			public Long getJoinedDate() {
+				return this.joinedDate;
+			}
+
+			public void setJoinedDate(Long joinedDate) {
+				this.joinedDate = joinedDate;
+			}
+
 			public Integer getUserType() {
 				return this.userType;
 			}
@@ -225,20 +217,20 @@ public class QueryUserListResponse extends AcsResponse {
 				this.userType = userType;
 			}
 
-			public Boolean getIsDeleted() {
-				return this.isDeleted;
+			public Boolean getAuthAdminUser() {
+				return this.authAdminUser;
 			}
 
-			public void setIsDeleted(Boolean isDeleted) {
-				this.isDeleted = isDeleted;
+			public void setAuthAdminUser(Boolean authAdminUser) {
+				this.authAdminUser = authAdminUser;
 			}
 
-			public List<Long> getRoleIdList() {
-				return this.roleIdList;
+			public String getAccountName() {
+				return this.accountName;
 			}
 
-			public void setRoleIdList(List<Long> roleIdList) {
-				this.roleIdList = roleIdList;
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 
 			public List<String> getCopilotModules() {
@@ -247,6 +239,14 @@ public class QueryUserListResponse extends AcsResponse {
 
 			public void setCopilotModules(List<String> copilotModules) {
 				this.copilotModules = copilotModules;
+			}
+
+			public List<Long> getRoleIdList() {
+				return this.roleIdList;
+			}
+
+			public void setRoleIdList(List<Long> roleIdList) {
+				this.roleIdList = roleIdList;
 			}
 		}
 	}

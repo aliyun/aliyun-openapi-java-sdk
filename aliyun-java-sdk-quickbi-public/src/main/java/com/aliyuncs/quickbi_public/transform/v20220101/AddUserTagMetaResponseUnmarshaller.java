@@ -23,8 +23,8 @@ public class AddUserTagMetaResponseUnmarshaller {
 	public static AddUserTagMetaResponse unmarshall(AddUserTagMetaResponse addUserTagMetaResponse, UnmarshallerContext _ctx) {
 		
 		addUserTagMetaResponse.setRequestId(_ctx.stringValue("AddUserTagMetaResponse.RequestId"));
-		addUserTagMetaResponse.setResult(_ctx.stringValue("AddUserTagMetaResponse.Result"));
 		addUserTagMetaResponse.setSuccess(_ctx.booleanValue("AddUserTagMetaResponse.Success"));
+		addUserTagMetaResponse.setResult(_ctx.stringValue("AddUserTagMetaResponse.Result"));
 	 
 	 	return addUserTagMetaResponse;
 	}

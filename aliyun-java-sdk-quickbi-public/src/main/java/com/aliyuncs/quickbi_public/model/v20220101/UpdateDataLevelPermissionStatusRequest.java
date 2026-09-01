@@ -30,7 +30,7 @@ public class UpdateDataLevelPermissionStatusRequest extends RpcAcsRequest<Update
 
 	private String ruleType;
 	public UpdateDataLevelPermissionStatusRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "UpdateDataLevelPermissionStatus", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

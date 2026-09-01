@@ -57,29 +57,21 @@ public class QueryAuditLogResponse extends AcsResponse {
 
 	public static class LogApiResultModel {
 
-		private String gmtCreate;
-
 		private String operatorAccountName;
 
+		private String gmtCreate;
+
 		private String operatorName;
-
-		private String operatorType;
-
-		private String targetName;
 
 		private String targetType;
 
 		private String workspaceId;
 
+		private String targetName;
+
+		private String operatorType;
+
 		private String targetId;
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
 
 		public String getOperatorAccountName() {
 			return this.operatorAccountName;
@@ -89,28 +81,20 @@ public class QueryAuditLogResponse extends AcsResponse {
 			this.operatorAccountName = operatorAccountName;
 		}
 
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
 		public String getOperatorName() {
 			return this.operatorName;
 		}
 
 		public void setOperatorName(String operatorName) {
 			this.operatorName = operatorName;
-		}
-
-		public String getOperatorType() {
-			return this.operatorType;
-		}
-
-		public void setOperatorType(String operatorType) {
-			this.operatorType = operatorType;
-		}
-
-		public String getTargetName() {
-			return this.targetName;
-		}
-
-		public void setTargetName(String targetName) {
-			this.targetName = targetName;
 		}
 
 		public String getTargetType() {
@@ -127,6 +111,22 @@ public class QueryAuditLogResponse extends AcsResponse {
 
 		public void setWorkspaceId(String workspaceId) {
 			this.workspaceId = workspaceId;
+		}
+
+		public String getTargetName() {
+			return this.targetName;
+		}
+
+		public void setTargetName(String targetName) {
+			this.targetName = targetName;
+		}
+
+		public String getOperatorType() {
+			return this.operatorType;
+		}
+
+		public void setOperatorType(String operatorType) {
+			this.operatorType = operatorType;
 		}
 
 		public String getTargetId() {

@@ -40,7 +40,7 @@ public class AddUserRequest extends RpcAcsRequest<AddUserResponse> {
 
 	private Integer userType;
 	public AddUserRequest() {
-		super("quickbi-public", "2022-01-01", "AddUser", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AddUser", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

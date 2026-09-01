@@ -34,7 +34,7 @@ public class ListWorkspaceRoleUsersRequest extends RpcAcsRequest<ListWorkspaceRo
 
 	private String workspaceId;
 	public ListWorkspaceRoleUsersRequest() {
-		super("quickbi-public", "2022-01-01", "ListWorkspaceRoleUsers", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListWorkspaceRoleUsers", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

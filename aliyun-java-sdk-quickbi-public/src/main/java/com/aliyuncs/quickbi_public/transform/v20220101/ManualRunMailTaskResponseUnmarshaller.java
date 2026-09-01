@@ -23,8 +23,8 @@ public class ManualRunMailTaskResponseUnmarshaller {
 	public static ManualRunMailTaskResponse unmarshall(ManualRunMailTaskResponse manualRunMailTaskResponse, UnmarshallerContext _ctx) {
 		
 		manualRunMailTaskResponse.setRequestId(_ctx.stringValue("ManualRunMailTaskResponse.RequestId"));
-		manualRunMailTaskResponse.setResult(_ctx.booleanValue("ManualRunMailTaskResponse.Result"));
 		manualRunMailTaskResponse.setSuccess(_ctx.booleanValue("ManualRunMailTaskResponse.Success"));
+		manualRunMailTaskResponse.setResult(_ctx.booleanValue("ManualRunMailTaskResponse.Result"));
 	 
 	 	return manualRunMailTaskResponse;
 	}

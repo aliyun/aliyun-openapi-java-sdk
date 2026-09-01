@@ -28,7 +28,7 @@ public class QueryUserInfoByAccountRequest extends RpcAcsRequest<QueryUserInfoBy
 
 	private String account;
 	public QueryUserInfoByAccountRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserInfoByAccount", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryUserInfoByAccount", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

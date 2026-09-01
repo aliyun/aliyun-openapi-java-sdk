@@ -29,7 +29,7 @@ public class TransferUsergroupRequest extends RpcAcsRequest<TransferUsergroupRes
 
 	private String userGroupId;
 	public TransferUsergroupRequest() {
-		super("quickbi-public", "2022-01-01", "TransferUsergroup", "2.2.0");
+		super("quickbi-public", "2022-01-01", "TransferUsergroup", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

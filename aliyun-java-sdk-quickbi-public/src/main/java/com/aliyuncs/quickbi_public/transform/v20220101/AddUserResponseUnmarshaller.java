@@ -30,14 +30,14 @@ public class AddUserResponseUnmarshaller {
 		addUserResponse.setSuccess(_ctx.booleanValue("AddUserResponse.Success"));
 
 		Result result = new Result();
-		result.setAccountName(_ctx.stringValue("AddUserResponse.Result.AccountName"));
-		result.setAdminUser(_ctx.booleanValue("AddUserResponse.Result.AdminUser"));
-		result.setAuthAdminUser(_ctx.booleanValue("AddUserResponse.Result.AuthAdminUser"));
 		result.setEmail(_ctx.stringValue("AddUserResponse.Result.Email"));
-		result.setNickName(_ctx.stringValue("AddUserResponse.Result.NickName"));
 		result.setPhone(_ctx.stringValue("AddUserResponse.Result.Phone"));
 		result.setUserId(_ctx.stringValue("AddUserResponse.Result.UserId"));
+		result.setAdminUser(_ctx.booleanValue("AddUserResponse.Result.AdminUser"));
+		result.setNickName(_ctx.stringValue("AddUserResponse.Result.NickName"));
 		result.setUserType(_ctx.integerValue("AddUserResponse.Result.UserType"));
+		result.setAuthAdminUser(_ctx.booleanValue("AddUserResponse.Result.AuthAdminUser"));
+		result.setAccountName(_ctx.stringValue("AddUserResponse.Result.AccountName"));
 
 		List<Long> roleIdList = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("AddUserResponse.Result.RoleIdList.Length"); i++) {

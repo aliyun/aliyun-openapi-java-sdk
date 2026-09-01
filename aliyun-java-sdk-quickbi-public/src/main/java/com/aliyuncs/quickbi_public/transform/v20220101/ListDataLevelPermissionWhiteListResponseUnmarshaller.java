@@ -36,17 +36,17 @@ public class ListDataLevelPermissionWhiteListResponseUnmarshaller {
 
 		UsersModel usersModel = new UsersModel();
 
-		List<String> userGroups = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.UserGroups.Length"); i++) {
-			userGroups.add(_ctx.stringValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.UserGroups["+ i +"]"));
-		}
-		usersModel.setUserGroups(userGroups);
-
 		List<String> users = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.Users.Length"); i++) {
 			users.add(_ctx.stringValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.Users["+ i +"]"));
 		}
 		usersModel.setUsers(users);
+
+		List<String> userGroups = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.UserGroups.Length"); i++) {
+			userGroups.add(_ctx.stringValue("ListDataLevelPermissionWhiteListResponse.Result.UsersModel.UserGroups["+ i +"]"));
+		}
+		usersModel.setUserGroups(userGroups);
 		result.setUsersModel(usersModel);
 		listDataLevelPermissionWhiteListResponse.setResult(result);
 	 

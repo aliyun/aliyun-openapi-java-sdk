@@ -23,8 +23,8 @@ public class DeleteUserTagMetaResponseUnmarshaller {
 	public static DeleteUserTagMetaResponse unmarshall(DeleteUserTagMetaResponse deleteUserTagMetaResponse, UnmarshallerContext _ctx) {
 		
 		deleteUserTagMetaResponse.setRequestId(_ctx.stringValue("DeleteUserTagMetaResponse.RequestId"));
-		deleteUserTagMetaResponse.setResult(_ctx.booleanValue("DeleteUserTagMetaResponse.Result"));
 		deleteUserTagMetaResponse.setSuccess(_ctx.booleanValue("DeleteUserTagMetaResponse.Success"));
+		deleteUserTagMetaResponse.setResult(_ctx.booleanValue("DeleteUserTagMetaResponse.Result"));
 	 
 	 	return deleteUserTagMetaResponse;
 	}

@@ -28,8 +28,8 @@ public class QueryLlmCubeWithThemeListByUserIdResponseUnmarshaller {
 		queryLlmCubeWithThemeListByUserIdResponse.setSuccess(_ctx.booleanValue("QueryLlmCubeWithThemeListByUserIdResponse.Success"));
 
 		Result result = new Result();
-		result.setCubeIds(_ctx.mapValue("QueryLlmCubeWithThemeListByUserIdResponse.Result.CubeIds"));
 		result.setThemeIds(_ctx.mapValue("QueryLlmCubeWithThemeListByUserIdResponse.Result.ThemeIds"));
+		result.setCubeIds(_ctx.mapValue("QueryLlmCubeWithThemeListByUserIdResponse.Result.CubeIds"));
 		queryLlmCubeWithThemeListByUserIdResponse.setResult(result);
 	 
 	 	return queryLlmCubeWithThemeListByUserIdResponse;

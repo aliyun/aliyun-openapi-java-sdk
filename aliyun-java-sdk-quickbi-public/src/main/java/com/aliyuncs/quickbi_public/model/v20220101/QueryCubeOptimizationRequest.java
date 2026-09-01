@@ -26,7 +26,7 @@ public class QueryCubeOptimizationRequest extends RpcAcsRequest<QueryCubeOptimiz
 
 	private String workspaceId;
 	public QueryCubeOptimizationRequest() {
-		super("quickbi-public", "2022-01-01", "QueryCubeOptimization", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryCubeOptimization", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

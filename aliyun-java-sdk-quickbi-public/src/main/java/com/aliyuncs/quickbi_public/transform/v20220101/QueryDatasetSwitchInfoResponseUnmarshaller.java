@@ -28,8 +28,8 @@ public class QueryDatasetSwitchInfoResponseUnmarshaller {
 
 		Result result = new Result();
 		result.setCubeId(_ctx.stringValue("QueryDatasetSwitchInfoResponse.Result.CubeId"));
-		result.setIsOpenColumnLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenColumnLevelPermission"));
 		result.setIsOpenRowLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenRowLevelPermission"));
+		result.setIsOpenColumnLevelPermission(_ctx.integerValue("QueryDatasetSwitchInfoResponse.Result.IsOpenColumnLevelPermission"));
 		queryDatasetSwitchInfoResponse.setResult(result);
 	 
 	 	return queryDatasetSwitchInfoResponse;

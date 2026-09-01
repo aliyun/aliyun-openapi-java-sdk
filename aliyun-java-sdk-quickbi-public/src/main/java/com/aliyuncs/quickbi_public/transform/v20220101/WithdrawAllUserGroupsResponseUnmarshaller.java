@@ -23,8 +23,8 @@ public class WithdrawAllUserGroupsResponseUnmarshaller {
 	public static WithdrawAllUserGroupsResponse unmarshall(WithdrawAllUserGroupsResponse withdrawAllUserGroupsResponse, UnmarshallerContext _ctx) {
 		
 		withdrawAllUserGroupsResponse.setRequestId(_ctx.stringValue("WithdrawAllUserGroupsResponse.RequestId"));
-		withdrawAllUserGroupsResponse.setResult(_ctx.booleanValue("WithdrawAllUserGroupsResponse.Result"));
 		withdrawAllUserGroupsResponse.setSuccess(_ctx.booleanValue("WithdrawAllUserGroupsResponse.Success"));
+		withdrawAllUserGroupsResponse.setResult(_ctx.booleanValue("WithdrawAllUserGroupsResponse.Result"));
 	 
 	 	return withdrawAllUserGroupsResponse;
 	}

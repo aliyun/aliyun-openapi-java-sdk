@@ -31,28 +31,28 @@ public class ListFavoriteReportsResponseUnmarshaller {
 		listFavoriteReportsResponse.setSuccess(_ctx.booleanValue("ListFavoriteReportsResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("ListFavoriteReportsResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("ListFavoriteReportsResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListFavoriteReportsResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("ListFavoriteReportsResponse.Result.TotalNum"));
 		result.setTotalPages(_ctx.integerValue("ListFavoriteReportsResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListFavoriteReportsResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setFavorite(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].Favorite"));
-			dataItem.setFavoriteDate(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].FavoriteDate"));
-			dataItem.setGmtCreate(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtModified(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].GmtModified"));
-			dataItem.setHasEditAuth(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].HasEditAuth"));
-			dataItem.setHasViewAuth(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].HasViewAuth"));
-			dataItem.setName(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].Name"));
 			dataItem.setOwnerName(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setGmtModified(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].GmtModified"));
 			dataItem.setOwnerNum(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].OwnerNum"));
-			dataItem.setPublishStatus(_ctx.integerValue("ListFavoriteReportsResponse.Result.Data["+ i +"].PublishStatus"));
-			dataItem.setTreeId(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].TreeId"));
-			dataItem.setType(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].Type"));
 			dataItem.setWorkspaceId(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setName(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].Name"));
+			dataItem.setGmtCreate(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].GmtCreate"));
+			dataItem.setType(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].Type"));
+			dataItem.setTreeId(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].TreeId"));
 			dataItem.setWorkspaceName(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setHasViewAuth(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].HasViewAuth"));
+			dataItem.setFavoriteDate(_ctx.stringValue("ListFavoriteReportsResponse.Result.Data["+ i +"].FavoriteDate"));
+			dataItem.setHasEditAuth(_ctx.booleanValue("ListFavoriteReportsResponse.Result.Data["+ i +"].HasEditAuth"));
+			dataItem.setPublishStatus(_ctx.integerValue("ListFavoriteReportsResponse.Result.Data["+ i +"].PublishStatus"));
 
 			data.add(dataItem);
 		}

@@ -28,7 +28,7 @@ public class ListDataLevelPermissionWhiteListRequest extends RpcAcsRequest<ListD
 
 	private String ruleType;
 	public ListDataLevelPermissionWhiteListRequest() {
-		super("quickbi-public", "2022-01-01", "ListDataLevelPermissionWhiteList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListDataLevelPermissionWhiteList", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

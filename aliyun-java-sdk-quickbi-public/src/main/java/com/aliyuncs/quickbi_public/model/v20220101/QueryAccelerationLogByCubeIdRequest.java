@@ -35,7 +35,7 @@ public class QueryAccelerationLogByCubeIdRequest extends RpcAcsRequest<QueryAcce
 
 	private Integer pageNo;
 	public QueryAccelerationLogByCubeIdRequest() {
-		super("quickbi-public", "2022-01-01", "QueryAccelerationLogByCubeId", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryAccelerationLogByCubeId", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

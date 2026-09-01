@@ -37,9 +37,9 @@ public class ListWorkspaceUserRolesByUserIdResponseUnmarshaller {
 			data.setWorkspaceName(_ctx.stringValue("ListWorkspaceUserRolesByUserIdResponse.Result["+ i +"].WorkspaceName"));
 
 			RoleModel roleModel = new RoleModel();
+			roleModel.setRoleName(_ctx.stringValue("ListWorkspaceUserRolesByUserIdResponse.Result["+ i +"].RoleModel.RoleName"));
 			roleModel.setRoleId(_ctx.stringValue("ListWorkspaceUserRolesByUserIdResponse.Result["+ i +"].RoleModel.RoleId"));
 			roleModel.setRoleCode(_ctx.stringValue("ListWorkspaceUserRolesByUserIdResponse.Result["+ i +"].RoleModel.RoleCode"));
-			roleModel.setRoleName(_ctx.stringValue("ListWorkspaceUserRolesByUserIdResponse.Result["+ i +"].RoleModel.RoleName"));
 			data.setRoleModel(roleModel);
 
 			result.add(data);

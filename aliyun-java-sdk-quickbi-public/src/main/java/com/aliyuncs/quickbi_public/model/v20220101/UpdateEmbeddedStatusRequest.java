@@ -28,7 +28,7 @@ public class UpdateEmbeddedStatusRequest extends RpcAcsRequest<UpdateEmbeddedSta
 
 	private String worksId;
 	public UpdateEmbeddedStatusRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

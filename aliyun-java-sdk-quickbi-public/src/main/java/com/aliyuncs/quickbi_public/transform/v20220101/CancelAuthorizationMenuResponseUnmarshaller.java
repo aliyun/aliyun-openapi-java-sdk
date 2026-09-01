@@ -23,8 +23,8 @@ public class CancelAuthorizationMenuResponseUnmarshaller {
 	public static CancelAuthorizationMenuResponse unmarshall(CancelAuthorizationMenuResponse cancelAuthorizationMenuResponse, UnmarshallerContext _ctx) {
 		
 		cancelAuthorizationMenuResponse.setRequestId(_ctx.stringValue("CancelAuthorizationMenuResponse.RequestId"));
-		cancelAuthorizationMenuResponse.setResult(_ctx.integerValue("CancelAuthorizationMenuResponse.Result"));
 		cancelAuthorizationMenuResponse.setSuccess(_ctx.booleanValue("CancelAuthorizationMenuResponse.Success"));
+		cancelAuthorizationMenuResponse.setResult(_ctx.integerValue("CancelAuthorizationMenuResponse.Result"));
 	 
 	 	return cancelAuthorizationMenuResponse;
 	}

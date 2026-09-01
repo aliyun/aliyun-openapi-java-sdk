@@ -23,8 +23,8 @@ public class QueryDatasetDetailInfoResponseUnmarshaller {
 	public static QueryDatasetDetailInfoResponse unmarshall(QueryDatasetDetailInfoResponse queryDatasetDetailInfoResponse, UnmarshallerContext _ctx) {
 		
 		queryDatasetDetailInfoResponse.setRequestId(_ctx.stringValue("QueryDatasetDetailInfoResponse.RequestId"));
-		queryDatasetDetailInfoResponse.setResult(_ctx.stringValue("QueryDatasetDetailInfoResponse.Result"));
 		queryDatasetDetailInfoResponse.setSuccess(_ctx.booleanValue("QueryDatasetDetailInfoResponse.Success"));
+		queryDatasetDetailInfoResponse.setResult(_ctx.stringValue("QueryDatasetDetailInfoResponse.Result"));
 	 
 	 	return queryDatasetDetailInfoResponse;
 	}

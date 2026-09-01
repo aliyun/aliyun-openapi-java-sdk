@@ -30,7 +30,7 @@ public class DataSetBloodRequest extends RpcAcsRequest<DataSetBloodResponse> {
 
 	private String worksType;
 	public DataSetBloodRequest() {
-		super("quickbi-public", "2022-01-01", "DataSetBlood", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DataSetBlood", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

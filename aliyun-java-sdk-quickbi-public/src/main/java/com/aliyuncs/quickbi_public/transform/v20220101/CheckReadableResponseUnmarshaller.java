@@ -23,8 +23,8 @@ public class CheckReadableResponseUnmarshaller {
 	public static CheckReadableResponse unmarshall(CheckReadableResponse checkReadableResponse, UnmarshallerContext _ctx) {
 		
 		checkReadableResponse.setRequestId(_ctx.stringValue("CheckReadableResponse.RequestId"));
-		checkReadableResponse.setResult(_ctx.booleanValue("CheckReadableResponse.Result"));
 		checkReadableResponse.setSuccess(_ctx.booleanValue("CheckReadableResponse.Success"));
+		checkReadableResponse.setResult(_ctx.booleanValue("CheckReadableResponse.Result"));
 	 
 	 	return checkReadableResponse;
 	}

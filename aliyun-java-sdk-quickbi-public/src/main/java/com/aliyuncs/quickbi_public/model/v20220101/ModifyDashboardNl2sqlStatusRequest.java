@@ -29,7 +29,7 @@ public class ModifyDashboardNl2sqlStatusRequest extends RpcAcsRequest<ModifyDash
 
 	private Integer status;
 	public ModifyDashboardNl2sqlStatusRequest() {
-		super("quickbi-public", "2022-01-01", "ModifyDashboardNl2sqlStatus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ModifyDashboardNl2sqlStatus", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

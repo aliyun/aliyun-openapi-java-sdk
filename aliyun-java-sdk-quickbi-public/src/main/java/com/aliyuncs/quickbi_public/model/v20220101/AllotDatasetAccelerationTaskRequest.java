@@ -26,7 +26,7 @@ public class AllotDatasetAccelerationTaskRequest extends RpcAcsRequest<AllotData
 
 	private String cubeId;
 	public AllotDatasetAccelerationTaskRequest() {
-		super("quickbi-public", "2022-01-01", "AllotDatasetAccelerationTask", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AllotDatasetAccelerationTask", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

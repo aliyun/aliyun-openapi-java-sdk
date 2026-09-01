@@ -31,31 +31,31 @@ public class QueryApprovalInfoResponseUnmarshaller {
 		queryApprovalInfoResponse.setSuccess(_ctx.booleanValue("QueryApprovalInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setPage(_ctx.integerValue("QueryApprovalInfoResponse.Result.Page"));
 		result.setPageSize(_ctx.integerValue("QueryApprovalInfoResponse.Result.PageSize"));
 		result.setStart(_ctx.integerValue("QueryApprovalInfoResponse.Result.Start"));
 		result.setTotal(_ctx.integerValue("QueryApprovalInfoResponse.Result.Total"));
+		result.setPage(_ctx.integerValue("QueryApprovalInfoResponse.Result.Page"));
 		result.setTotalPages(_ctx.integerValue("QueryApprovalInfoResponse.Result.TotalPages"));
 
 		List<ApprovalsResultModel> data = new ArrayList<ApprovalsResultModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryApprovalInfoResponse.Result.Data.Length"); i++) {
 			ApprovalsResultModel approvalsResultModel = new ApprovalsResultModel();
-			approvalsResultModel.setApplicantId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicantId"));
-			approvalsResultModel.setApplicantName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicantName"));
-			approvalsResultModel.setApplicationId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicationId"));
-			approvalsResultModel.setApplyReason(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplyReason"));
-			approvalsResultModel.setApproverId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApproverId"));
-			approvalsResultModel.setApproverName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApproverName"));
-			approvalsResultModel.setDeleteFlag(_ctx.booleanValue("QueryApprovalInfoResponse.Result.Data["+ i +"].DeleteFlag"));
 			approvalsResultModel.setExpireDate(_ctx.longValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ExpireDate"));
 			approvalsResultModel.setFlagStatus(_ctx.integerValue("QueryApprovalInfoResponse.Result.Data["+ i +"].FlagStatus"));
-			approvalsResultModel.setGmtCreate(_ctx.longValue("QueryApprovalInfoResponse.Result.Data["+ i +"].GmtCreate"));
-			approvalsResultModel.setGmtModified(_ctx.longValue("QueryApprovalInfoResponse.Result.Data["+ i +"].GmtModified"));
-			approvalsResultModel.setHandleReason(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].HandleReason"));
-			approvalsResultModel.setResourceId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ResourceId"));
 			approvalsResultModel.setResourceName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ResourceName"));
+			approvalsResultModel.setApplicantName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicantName"));
+			approvalsResultModel.setGmtModified(_ctx.longValue("QueryApprovalInfoResponse.Result.Data["+ i +"].GmtModified"));
 			approvalsResultModel.setResourceType(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ResourceType"));
+			approvalsResultModel.setHandleReason(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].HandleReason"));
+			approvalsResultModel.setApplyReason(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplyReason"));
+			approvalsResultModel.setDeleteFlag(_ctx.booleanValue("QueryApprovalInfoResponse.Result.Data["+ i +"].DeleteFlag"));
+			approvalsResultModel.setGmtCreate(_ctx.longValue("QueryApprovalInfoResponse.Result.Data["+ i +"].GmtCreate"));
+			approvalsResultModel.setResourceId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ResourceId"));
+			approvalsResultModel.setApplicantId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicantId"));
+			approvalsResultModel.setApproverId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApproverId"));
 			approvalsResultModel.setWorkspaceName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].WorkspaceName"));
+			approvalsResultModel.setApproverName(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApproverName"));
+			approvalsResultModel.setApplicationId(_ctx.stringValue("QueryApprovalInfoResponse.Result.Data["+ i +"].ApplicationId"));
 
 			data.add(approvalsResultModel);
 		}

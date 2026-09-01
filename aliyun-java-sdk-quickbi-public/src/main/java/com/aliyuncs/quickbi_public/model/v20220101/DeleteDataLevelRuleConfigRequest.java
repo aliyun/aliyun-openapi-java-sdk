@@ -28,7 +28,7 @@ public class DeleteDataLevelRuleConfigRequest extends RpcAcsRequest<DeleteDataLe
 
 	private String ruleId;
 	public DeleteDataLevelRuleConfigRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

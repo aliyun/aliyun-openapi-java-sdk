@@ -89,11 +89,19 @@ public class ListWorkspaceUserRolesByUserIdResponse extends AcsResponse {
 
 		public static class RoleModel {
 
+			private String roleName;
+
 			private String roleId;
 
 			private String roleCode;
 
-			private String roleName;
+			public String getRoleName() {
+				return this.roleName;
+			}
+
+			public void setRoleName(String roleName) {
+				this.roleName = roleName;
+			}
 
 			public String getRoleId() {
 				return this.roleId;
@@ -109,14 +117,6 @@ public class ListWorkspaceUserRolesByUserIdResponse extends AcsResponse {
 
 			public void setRoleCode(String roleCode) {
 				this.roleCode = roleCode;
-			}
-
-			public String getRoleName() {
-				return this.roleName;
-			}
-
-			public void setRoleName(String roleName) {
-				this.roleName = roleName;
 			}
 		}
 	}

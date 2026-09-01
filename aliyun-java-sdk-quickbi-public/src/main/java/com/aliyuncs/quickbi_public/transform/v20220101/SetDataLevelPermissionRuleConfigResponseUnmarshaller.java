@@ -23,8 +23,8 @@ public class SetDataLevelPermissionRuleConfigResponseUnmarshaller {
 	public static SetDataLevelPermissionRuleConfigResponse unmarshall(SetDataLevelPermissionRuleConfigResponse setDataLevelPermissionRuleConfigResponse, UnmarshallerContext _ctx) {
 		
 		setDataLevelPermissionRuleConfigResponse.setRequestId(_ctx.stringValue("SetDataLevelPermissionRuleConfigResponse.RequestId"));
-		setDataLevelPermissionRuleConfigResponse.setResult(_ctx.stringValue("SetDataLevelPermissionRuleConfigResponse.Result"));
 		setDataLevelPermissionRuleConfigResponse.setSuccess(_ctx.booleanValue("SetDataLevelPermissionRuleConfigResponse.Success"));
+		setDataLevelPermissionRuleConfigResponse.setResult(_ctx.stringValue("SetDataLevelPermissionRuleConfigResponse.Result"));
 	 
 	 	return setDataLevelPermissionRuleConfigResponse;
 	}

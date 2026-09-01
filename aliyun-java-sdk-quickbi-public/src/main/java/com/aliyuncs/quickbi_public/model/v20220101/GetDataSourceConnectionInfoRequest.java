@@ -27,7 +27,7 @@ public class GetDataSourceConnectionInfoRequest extends RpcAcsRequest<GetDataSou
 
 	private String dsId;
 	public GetDataSourceConnectionInfoRequest() {
-		super("quickbi-public", "2022-01-01", "GetDataSourceConnectionInfo", "2.2.0");
+		super("quickbi-public", "2022-01-01", "GetDataSourceConnectionInfo", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

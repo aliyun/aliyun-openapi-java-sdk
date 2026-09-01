@@ -32,8 +32,8 @@ public class QueryUserTagValueListResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserTagValueListResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setTagId(_ctx.stringValue("QueryUserTagValueListResponse.Result["+ i +"].TagId"));
 			data.setTagName(_ctx.stringValue("QueryUserTagValueListResponse.Result["+ i +"].TagName"));
+			data.setTagId(_ctx.stringValue("QueryUserTagValueListResponse.Result["+ i +"].TagId"));
 			data.setTagValue(_ctx.stringValue("QueryUserTagValueListResponse.Result["+ i +"].TagValue"));
 
 			result.add(data);

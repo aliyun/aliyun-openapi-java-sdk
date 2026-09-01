@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserInfoByUserIdResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserInfoByUserIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,27 +57,37 @@ public class QueryUserInfoByUserIdResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Boolean isDeleted;
+
 		private String accountId;
 
-		private String accountName;
-
-		private Boolean adminUser;
-
-		private Boolean authAdminUser;
-
 		private String email;
-
-		private String nickName;
 
 		private String phone;
 
 		private String userId;
 
+		private Boolean adminUser;
+
+		private String nickName;
+
 		private Integer userType;
+
+		private Boolean authAdminUser;
+
+		private String accountName;
 
 		private List<Long> roleIdList;
 
 		private List<String> copilotModules;
+
+		public Boolean getIsDeleted() {
+			return this.isDeleted;
+		}
+
+		public void setIsDeleted(Boolean isDeleted) {
+			this.isDeleted = isDeleted;
+		}
 
 		public String getAccountId() {
 			return this.accountId;
@@ -87,44 +97,12 @@ public class QueryUserInfoByUserIdResponse extends AcsResponse {
 			this.accountId = accountId;
 		}
 
-		public String getAccountName() {
-			return this.accountName;
-		}
-
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public Boolean getAdminUser() {
-			return this.adminUser;
-		}
-
-		public void setAdminUser(Boolean adminUser) {
-			this.adminUser = adminUser;
-		}
-
-		public Boolean getAuthAdminUser() {
-			return this.authAdminUser;
-		}
-
-		public void setAuthAdminUser(Boolean authAdminUser) {
-			this.authAdminUser = authAdminUser;
-		}
-
 		public String getEmail() {
 			return this.email;
 		}
 
 		public void setEmail(String email) {
 			this.email = email;
-		}
-
-		public String getNickName() {
-			return this.nickName;
-		}
-
-		public void setNickName(String nickName) {
-			this.nickName = nickName;
 		}
 
 		public String getPhone() {
@@ -143,12 +121,44 @@ public class QueryUserInfoByUserIdResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
+		public Boolean getAdminUser() {
+			return this.adminUser;
+		}
+
+		public void setAdminUser(Boolean adminUser) {
+			this.adminUser = adminUser;
+		}
+
+		public String getNickName() {
+			return this.nickName;
+		}
+
+		public void setNickName(String nickName) {
+			this.nickName = nickName;
+		}
+
 		public Integer getUserType() {
 			return this.userType;
 		}
 
 		public void setUserType(Integer userType) {
 			this.userType = userType;
+		}
+
+		public Boolean getAuthAdminUser() {
+			return this.authAdminUser;
+		}
+
+		public void setAuthAdminUser(Boolean authAdminUser) {
+			this.authAdminUser = authAdminUser;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public List<Long> getRoleIdList() {

@@ -23,8 +23,8 @@ public class ClearDynamicTagCacheResponseUnmarshaller {
 	public static ClearDynamicTagCacheResponse unmarshall(ClearDynamicTagCacheResponse clearDynamicTagCacheResponse, UnmarshallerContext _ctx) {
 		
 		clearDynamicTagCacheResponse.setRequestId(_ctx.stringValue("ClearDynamicTagCacheResponse.RequestId"));
-		clearDynamicTagCacheResponse.setResult(_ctx.booleanValue("ClearDynamicTagCacheResponse.Result"));
 		clearDynamicTagCacheResponse.setSuccess(_ctx.booleanValue("ClearDynamicTagCacheResponse.Success"));
+		clearDynamicTagCacheResponse.setResult(_ctx.booleanValue("ClearDynamicTagCacheResponse.Result"));
 	 
 	 	return clearDynamicTagCacheResponse;
 	}

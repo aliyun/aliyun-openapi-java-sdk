@@ -26,9 +26,9 @@ public class ChangeVisibilityModelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer result;
-
 	private Boolean success;
+
+	private Integer result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class ChangeVisibilityModelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getResult() {
-		return this.result;
-	}
-
-	public void setResult(Integer result) {
-		this.result = result;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getResult() {
+		return this.result;
+	}
+
+	public void setResult(Integer result) {
+		this.result = result;
 	}
 
 	@Override

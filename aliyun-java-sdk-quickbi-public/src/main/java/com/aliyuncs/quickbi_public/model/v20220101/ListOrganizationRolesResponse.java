@@ -57,13 +57,21 @@ public class ListOrganizationRolesResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String roleName;
+
 		private Boolean isSystemRole;
 
 		private Long roleId;
 
-		private String roleName;
-
 		private List<AuthConfigListItem> authConfigList;
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
 
 		public Boolean getIsSystemRole() {
 			return this.isSystemRole;
@@ -79,14 +87,6 @@ public class ListOrganizationRolesResponse extends AcsResponse {
 
 		public void setRoleId(Long roleId) {
 			this.roleId = roleId;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
 		}
 
 		public List<AuthConfigListItem> getAuthConfigList() {

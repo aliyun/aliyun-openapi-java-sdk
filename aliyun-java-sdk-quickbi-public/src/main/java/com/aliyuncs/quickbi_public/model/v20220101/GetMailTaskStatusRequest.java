@@ -29,7 +29,7 @@ public class GetMailTaskStatusRequest extends RpcAcsRequest<GetMailTaskStatusRes
 
 	private Long taskId;
 	public GetMailTaskStatusRequest() {
-		super("quickbi-public", "2022-01-01", "GetMailTaskStatus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "GetMailTaskStatus", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

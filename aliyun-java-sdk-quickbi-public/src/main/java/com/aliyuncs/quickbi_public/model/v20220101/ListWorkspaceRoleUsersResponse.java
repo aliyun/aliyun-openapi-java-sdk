@@ -57,15 +57,23 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private Integer totalPages;
 
 		private List<DataItem> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -81,14 +89,6 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
 		}
 
 		public Integer getTotalPages() {
@@ -109,21 +109,13 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String nickName;
-
 			private String userId;
 
 			private String workspaceId;
 
 			private String workspaceName;
 
-			public String getNickName() {
-				return this.nickName;
-			}
-
-			public void setNickName(String nickName) {
-				this.nickName = nickName;
-			}
+			private String nickName;
 
 			public String getUserId() {
 				return this.userId;
@@ -147,6 +139,14 @@ public class ListWorkspaceRoleUsersResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 		}
 	}

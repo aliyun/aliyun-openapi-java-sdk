@@ -58,15 +58,23 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private Integer totalPages;
 
 		private List<QueryDataServiceModel> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -82,14 +90,6 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
 		}
 
 		public Integer getTotalPages() {
@@ -110,52 +110,44 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 		public static class QueryDataServiceModel {
 
-			private String creatorId;
-
-			private String creatorName;
+			private String ownerName;
 
 			private String cubeId;
 
-			private String cubeName;
+			private String creatorId;
+
+			private String modifierName;
+
+			private String gmtModified;
+
+			private String workspaceId;
+
+			private String name;
+
+			private String sid;
 
 			private String desc;
 
 			private String gmtCreate;
 
-			private String gmtModified;
-
-			private String modifierId;
-
-			private String modifierName;
-
-			private String name;
-
 			private String ownerId;
 
-			private String ownerName;
-
-			private String sid;
-
-			private String workspaceId;
+			private String cubeName;
 
 			private String workspaceName;
 
+			private String creatorName;
+
+			private String modifierId;
+
 			private Content content;
 
-			public String getCreatorId() {
-				return this.creatorId;
+			public String getOwnerName() {
+				return this.ownerName;
 			}
 
-			public void setCreatorId(String creatorId) {
-				this.creatorId = creatorId;
-			}
-
-			public String getCreatorName() {
-				return this.creatorName;
-			}
-
-			public void setCreatorName(String creatorName) {
-				this.creatorName = creatorName;
+			public void setOwnerName(String ownerName) {
+				this.ownerName = ownerName;
 			}
 
 			public String getCubeId() {
@@ -166,12 +158,52 @@ public class QueryDataServiceListResponse extends AcsResponse {
 				this.cubeId = cubeId;
 			}
 
-			public String getCubeName() {
-				return this.cubeName;
+			public String getCreatorId() {
+				return this.creatorId;
 			}
 
-			public void setCubeName(String cubeName) {
-				this.cubeName = cubeName;
+			public void setCreatorId(String creatorId) {
+				this.creatorId = creatorId;
+			}
+
+			public String getModifierName() {
+				return this.modifierName;
+			}
+
+			public void setModifierName(String modifierName) {
+				this.modifierName = modifierName;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getWorkspaceId() {
+				return this.workspaceId;
+			}
+
+			public void setWorkspaceId(String workspaceId) {
+				this.workspaceId = workspaceId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getSid() {
+				return this.sid;
+			}
+
+			public void setSid(String sid) {
+				this.sid = sid;
 			}
 
 			public String getDesc() {
@@ -190,38 +222,6 @@ public class QueryDataServiceListResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getModifierId() {
-				return this.modifierId;
-			}
-
-			public void setModifierId(String modifierId) {
-				this.modifierId = modifierId;
-			}
-
-			public String getModifierName() {
-				return this.modifierName;
-			}
-
-			public void setModifierName(String modifierName) {
-				this.modifierName = modifierName;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
 			public String getOwnerId() {
 				return this.ownerId;
 			}
@@ -230,28 +230,12 @@ public class QueryDataServiceListResponse extends AcsResponse {
 				this.ownerId = ownerId;
 			}
 
-			public String getOwnerName() {
-				return this.ownerName;
+			public String getCubeName() {
+				return this.cubeName;
 			}
 
-			public void setOwnerName(String ownerName) {
-				this.ownerName = ownerName;
-			}
-
-			public String getSid() {
-				return this.sid;
-			}
-
-			public void setSid(String sid) {
-				this.sid = sid;
-			}
-
-			public String getWorkspaceId() {
-				return this.workspaceId;
-			}
-
-			public void setWorkspaceId(String workspaceId) {
-				this.workspaceId = workspaceId;
+			public void setCubeName(String cubeName) {
+				this.cubeName = cubeName;
 			}
 
 			public String getWorkspaceName() {
@@ -260,6 +244,22 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public String getCreatorName() {
+				return this.creatorName;
+			}
+
+			public void setCreatorName(String creatorName) {
+				this.creatorName = creatorName;
+			}
+
+			public String getModifierId() {
+				return this.modifierId;
+			}
+
+			public void setModifierId(String modifierId) {
+				this.modifierId = modifierId;
 			}
 
 			public Content getContent() {
@@ -324,30 +324,22 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 				public static class SelectFieldModel {
 
-					private String aggregator;
-
-					private String alias;
+					private String orderby;
 
 					private String desc;
 
-					private String orderby;
+					private String alias;
+
+					private String aggregator;
 
 					private Field field;
 
-					public String getAggregator() {
-						return this.aggregator;
+					public String getOrderby() {
+						return this.orderby;
 					}
 
-					public void setAggregator(String aggregator) {
-						this.aggregator = aggregator;
-					}
-
-					public String getAlias() {
-						return this.alias;
-					}
-
-					public void setAlias(String alias) {
-						this.alias = alias;
+					public void setOrderby(String orderby) {
+						this.orderby = orderby;
 					}
 
 					public String getDesc() {
@@ -358,12 +350,20 @@ public class QueryDataServiceListResponse extends AcsResponse {
 						this.desc = desc;
 					}
 
-					public String getOrderby() {
-						return this.orderby;
+					public String getAlias() {
+						return this.alias;
 					}
 
-					public void setOrderby(String orderby) {
-						this.orderby = orderby;
+					public void setAlias(String alias) {
+						this.alias = alias;
+					}
+
+					public String getAggregator() {
+						return this.aggregator;
+					}
+
+					public void setAggregator(String aggregator) {
+						this.aggregator = aggregator;
 					}
 
 					public Field getField() {
@@ -376,26 +376,34 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 					public static class Field {
 
-						private String caption;
+						private String fid;
+
+						private String type;
 
 						private String column;
 
 						private String dataType;
 
-						private String fid;
-
 						private String granularity;
+
+						private String caption;
 
 						private String name;
 
-						private String type;
-
-						public String getCaption() {
-							return this.caption;
+						public String getFid() {
+							return this.fid;
 						}
 
-						public void setCaption(String caption) {
-							this.caption = caption;
+						public void setFid(String fid) {
+							this.fid = fid;
+						}
+
+						public String getType() {
+							return this.type;
+						}
+
+						public void setType(String type) {
+							this.type = type;
 						}
 
 						public String getColumn() {
@@ -414,20 +422,20 @@ public class QueryDataServiceListResponse extends AcsResponse {
 							this.dataType = dataType;
 						}
 
-						public String getFid() {
-							return this.fid;
-						}
-
-						public void setFid(String fid) {
-							this.fid = fid;
-						}
-
 						public String getGranularity() {
 							return this.granularity;
 						}
 
 						public void setGranularity(String granularity) {
 							this.granularity = granularity;
+						}
+
+						public String getCaption() {
+							return this.caption;
+						}
+
+						public void setCaption(String caption) {
+							this.caption = caption;
 						}
 
 						public String getName() {
@@ -437,32 +445,16 @@ public class QueryDataServiceListResponse extends AcsResponse {
 						public void setName(String name) {
 							this.name = name;
 						}
-
-						public String getType() {
-							return this.type;
-						}
-
-						public void setType(String type) {
-							this.type = type;
-						}
 					}
 				}
 
 				public static class Filter {
 
-					private String logicalOperator;
-
 					private String type;
 
+					private String logicalOperator;
+
 					private List<Map<Object,Object>> filters;
-
-					public String getLogicalOperator() {
-						return this.logicalOperator;
-					}
-
-					public void setLogicalOperator(String logicalOperator) {
-						this.logicalOperator = logicalOperator;
-					}
 
 					public String getType() {
 						return this.type;
@@ -470,6 +462,14 @@ public class QueryDataServiceListResponse extends AcsResponse {
 
 					public void setType(String type) {
 						this.type = type;
+					}
+
+					public String getLogicalOperator() {
+						return this.logicalOperator;
+					}
+
+					public void setLogicalOperator(String logicalOperator) {
+						this.logicalOperator = logicalOperator;
 					}
 
 					public List<Map<Object,Object>> getFilters() {

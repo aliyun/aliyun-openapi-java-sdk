@@ -23,8 +23,8 @@ public class QueryDatasetSmartqStatusResponseUnmarshaller {
 	public static QueryDatasetSmartqStatusResponse unmarshall(QueryDatasetSmartqStatusResponse queryDatasetSmartqStatusResponse, UnmarshallerContext _ctx) {
 		
 		queryDatasetSmartqStatusResponse.setRequestId(_ctx.stringValue("QueryDatasetSmartqStatusResponse.RequestId"));
-		queryDatasetSmartqStatusResponse.setResult(_ctx.booleanValue("QueryDatasetSmartqStatusResponse.Result"));
 		queryDatasetSmartqStatusResponse.setSuccess(_ctx.booleanValue("QueryDatasetSmartqStatusResponse.Success"));
+		queryDatasetSmartqStatusResponse.setResult(_ctx.booleanValue("QueryDatasetSmartqStatusResponse.Result"));
 	 
 	 	return queryDatasetSmartqStatusResponse;
 	}

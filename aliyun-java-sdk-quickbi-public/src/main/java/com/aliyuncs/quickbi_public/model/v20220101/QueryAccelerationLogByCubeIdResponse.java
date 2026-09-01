@@ -57,7 +57,7 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer totalPages;
+		private Integer pre;
 
 		private Integer totalNum;
 
@@ -65,18 +65,18 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private Integer pre;
-
 		private Integer next;
+
+		private Integer totalPages;
 
 		private List<DataItem> data;
 
-		public Integer getTotalPages() {
-			return this.totalPages;
+		public Integer getPre() {
+			return this.pre;
 		}
 
-		public void setTotalPages(Integer totalPages) {
-			this.totalPages = totalPages;
+		public void setPre(Integer pre) {
+			this.pre = pre;
 		}
 
 		public Integer getTotalNum() {
@@ -103,20 +103,20 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getPre() {
-			return this.pre;
-		}
-
-		public void setPre(Integer pre) {
-			this.pre = pre;
-		}
-
 		public Integer getNext() {
 			return this.next;
 		}
 
 		public void setNext(Integer next) {
 			this.next = next;
+		}
+
+		public Integer getTotalPages() {
+			return this.totalPages;
+		}
+
+		public void setTotalPages(Integer totalPages) {
+			this.totalPages = totalPages;
 		}
 
 		public List<DataItem> getData() {
@@ -129,32 +129,24 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String jobId;
-
-			private String jobHistoryId;
+			private String jobStatus;
 
 			private String jonStartDate;
 
-			private String jobStatus;
+			private String log;
+
+			private String jobHistoryId;
 
 			private String duration;
 
-			private String log;
+			private String jobId;
 
-			public String getJobId() {
-				return this.jobId;
+			public String getJobStatus() {
+				return this.jobStatus;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
-			}
-
-			public String getJobHistoryId() {
-				return this.jobHistoryId;
-			}
-
-			public void setJobHistoryId(String jobHistoryId) {
-				this.jobHistoryId = jobHistoryId;
+			public void setJobStatus(String jobStatus) {
+				this.jobStatus = jobStatus;
 			}
 
 			public String getJonStartDate() {
@@ -165,12 +157,20 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 				this.jonStartDate = jonStartDate;
 			}
 
-			public String getJobStatus() {
-				return this.jobStatus;
+			public String getLog() {
+				return this.log;
 			}
 
-			public void setJobStatus(String jobStatus) {
-				this.jobStatus = jobStatus;
+			public void setLog(String log) {
+				this.log = log;
+			}
+
+			public String getJobHistoryId() {
+				return this.jobHistoryId;
+			}
+
+			public void setJobHistoryId(String jobHistoryId) {
+				this.jobHistoryId = jobHistoryId;
 			}
 
 			public String getDuration() {
@@ -181,12 +181,12 @@ public class QueryAccelerationLogByCubeIdResponse extends AcsResponse {
 				this.duration = duration;
 			}
 
-			public String getLog() {
-				return this.log;
+			public String getJobId() {
+				return this.jobId;
 			}
 
-			public void setLog(String log) {
-				this.log = log;
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 		}
 	}

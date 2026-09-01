@@ -34,7 +34,7 @@ public class AddDataLevelPermissionWhiteListRequest extends RpcAcsRequest<AddDat
 
 	private String operateType;
 	public AddDataLevelPermissionWhiteListRequest() {
-		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AddDataLevelPermissionWhiteList", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

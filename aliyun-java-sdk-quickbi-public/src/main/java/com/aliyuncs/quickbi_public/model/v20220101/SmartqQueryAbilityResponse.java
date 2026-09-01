@@ -57,24 +57,24 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String chartType;
+		private String conclusionText;
 
 		private String logicSql;
 
-		private String conclusionText;
-
-		private List<MetaTypeItem> metaType;
+		private String chartType;
 
 		private List<ValuesItem> values;
 
+		private List<MetaTypeItem> metaType;
+
 		private List<String> dataList;
 
-		public String getChartType() {
-			return this.chartType;
+		public String getConclusionText() {
+			return this.conclusionText;
 		}
 
-		public void setChartType(String chartType) {
-			this.chartType = chartType;
+		public void setConclusionText(String conclusionText) {
+			this.conclusionText = conclusionText;
 		}
 
 		public String getLogicSql() {
@@ -85,20 +85,12 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 			this.logicSql = logicSql;
 		}
 
-		public String getConclusionText() {
-			return this.conclusionText;
+		public String getChartType() {
+			return this.chartType;
 		}
 
-		public void setConclusionText(String conclusionText) {
-			this.conclusionText = conclusionText;
-		}
-
-		public List<MetaTypeItem> getMetaType() {
-			return this.metaType;
-		}
-
-		public void setMetaType(List<MetaTypeItem> metaType) {
-			this.metaType = metaType;
+		public void setChartType(String chartType) {
+			this.chartType = chartType;
 		}
 
 		public List<ValuesItem> getValues() {
@@ -109,45 +101,20 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 			this.values = values;
 		}
 
+		public List<MetaTypeItem> getMetaType() {
+			return this.metaType;
+		}
+
+		public void setMetaType(List<MetaTypeItem> metaType) {
+			this.metaType = metaType;
+		}
+
 		public List<String> getDataList() {
 			return this.dataList;
 		}
 
 		public void setDataList(List<String> dataList) {
 			this.dataList = dataList;
-		}
-
-		public static class MetaTypeItem {
-
-			private String key;
-
-			private String value;
-
-			private String type;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
 		}
 
 		public static class ValuesItem {
@@ -160,6 +127,39 @@ public class SmartqQueryAbilityResponse extends AcsResponse {
 
 			public void setRow(List<String> row) {
 				this.row = row;
+			}
+		}
+
+		public static class MetaTypeItem {
+
+			private String type;
+
+			private String value;
+
+			private String key;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

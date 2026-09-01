@@ -23,8 +23,8 @@ public class DeleteUserGroupResponseUnmarshaller {
 	public static DeleteUserGroupResponse unmarshall(DeleteUserGroupResponse deleteUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteUserGroupResponse.setRequestId(_ctx.stringValue("DeleteUserGroupResponse.RequestId"));
-		deleteUserGroupResponse.setResult(_ctx.booleanValue("DeleteUserGroupResponse.Result"));
 		deleteUserGroupResponse.setSuccess(_ctx.booleanValue("DeleteUserGroupResponse.Success"));
+		deleteUserGroupResponse.setResult(_ctx.booleanValue("DeleteUserGroupResponse.Result"));
 	 
 	 	return deleteUserGroupResponse;
 	}

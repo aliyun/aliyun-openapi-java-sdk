@@ -26,7 +26,7 @@ public class QueryCopilotEmbedConfigRequest extends RpcAcsRequest<QueryCopilotEm
 
 	private String keyword;
 	public QueryCopilotEmbedConfigRequest() {
-		super("quickbi-public", "2022-01-01", "QueryCopilotEmbedConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryCopilotEmbedConfig", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

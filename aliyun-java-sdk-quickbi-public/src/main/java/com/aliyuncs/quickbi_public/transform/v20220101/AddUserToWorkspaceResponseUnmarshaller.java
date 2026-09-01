@@ -23,8 +23,8 @@ public class AddUserToWorkspaceResponseUnmarshaller {
 	public static AddUserToWorkspaceResponse unmarshall(AddUserToWorkspaceResponse addUserToWorkspaceResponse, UnmarshallerContext _ctx) {
 		
 		addUserToWorkspaceResponse.setRequestId(_ctx.stringValue("AddUserToWorkspaceResponse.RequestId"));
-		addUserToWorkspaceResponse.setResult(_ctx.booleanValue("AddUserToWorkspaceResponse.Result"));
 		addUserToWorkspaceResponse.setSuccess(_ctx.booleanValue("AddUserToWorkspaceResponse.Success"));
+		addUserToWorkspaceResponse.setResult(_ctx.booleanValue("AddUserToWorkspaceResponse.Result"));
 	 
 	 	return addUserToWorkspaceResponse;
 	}

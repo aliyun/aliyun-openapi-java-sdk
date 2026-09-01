@@ -28,7 +28,7 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 
 	private String transferUserId;
 	public DeleteUserRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteUser", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DeleteUser", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

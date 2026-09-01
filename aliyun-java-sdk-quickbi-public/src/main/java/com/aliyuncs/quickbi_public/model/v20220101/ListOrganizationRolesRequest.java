@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListOrganizationRolesRequest extends RpcAcsRequest<ListOrganizationRolesResponse> {
 	   
 	public ListOrganizationRolesRequest() {
-		super("quickbi-public", "2022-01-01", "ListOrganizationRoles", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListOrganizationRoles", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

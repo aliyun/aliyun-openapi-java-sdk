@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCollectionsResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class ListCollectionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -59,17 +59,17 @@ public class ListCollectionsResponse extends AcsResponse {
 
 		private Integer favoriteId;
 
+		private String worksType;
+
 		private String ownerId;
 
-		private String worksId;
-
 		private String worksName;
-
-		private String worksType;
 
 		private String workspaceId;
 
 		private String workspaceName;
+
+		private String worksId;
 
 		public Integer getFavoriteId() {
 			return this.favoriteId;
@@ -77,6 +77,14 @@ public class ListCollectionsResponse extends AcsResponse {
 
 		public void setFavoriteId(Integer favoriteId) {
 			this.favoriteId = favoriteId;
+		}
+
+		public String getWorksType() {
+			return this.worksType;
+		}
+
+		public void setWorksType(String worksType) {
+			this.worksType = worksType;
 		}
 
 		public String getOwnerId() {
@@ -87,28 +95,12 @@ public class ListCollectionsResponse extends AcsResponse {
 			this.ownerId = ownerId;
 		}
 
-		public String getWorksId() {
-			return this.worksId;
-		}
-
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
-		}
-
 		public String getWorksName() {
 			return this.worksName;
 		}
 
 		public void setWorksName(String worksName) {
 			this.worksName = worksName;
-		}
-
-		public String getWorksType() {
-			return this.worksType;
-		}
-
-		public void setWorksType(String worksType) {
-			this.worksType = worksType;
 		}
 
 		public String getWorkspaceId() {
@@ -125,6 +117,14 @@ public class ListCollectionsResponse extends AcsResponse {
 
 		public void setWorkspaceName(String workspaceName) {
 			this.workspaceName = workspaceName;
+		}
+
+		public String getWorksId() {
+			return this.worksId;
+		}
+
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
 		}
 	}
 

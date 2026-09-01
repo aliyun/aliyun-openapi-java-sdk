@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,21 +57,13 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer failure;
-
 		private Map<Object,Object> failureDetail;
-
-		private Integer success;
 
 		private Integer total;
 
-		public Integer getFailure() {
-			return this.failure;
-		}
+		private Integer failure;
 
-		public void setFailure(Integer failure) {
-			this.failure = failure;
-		}
+		private Integer success;
 
 		public Map<Object,Object> getFailureDetail() {
 			return this.failureDetail;
@@ -81,20 +73,28 @@ public class UpdateWorkspaceUsersRoleResponse extends AcsResponse {
 			this.failureDetail = failureDetail;
 		}
 
-		public Integer getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Integer success) {
-			this.success = success;
-		}
-
 		public Integer getTotal() {
 			return this.total;
 		}
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getFailure() {
+			return this.failure;
+		}
+
+		public void setFailure(Integer failure) {
+			this.failure = failure;
+		}
+
+		public Integer getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Integer success) {
+			this.success = success;
 		}
 	}
 

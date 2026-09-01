@@ -29,7 +29,7 @@ public class QueryUserByMobileAccountRequest extends RpcAcsRequest<QueryUserByMo
 
 	private String mobileType;
 	public QueryUserByMobileAccountRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserByMobileAccount", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryUserByMobileAccount", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

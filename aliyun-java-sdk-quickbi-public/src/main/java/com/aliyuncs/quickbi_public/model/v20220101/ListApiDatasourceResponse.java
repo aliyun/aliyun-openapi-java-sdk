@@ -57,13 +57,21 @@ public class ListApiDatasourceResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private List<DataItem> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -81,14 +89,6 @@ public class ListApiDatasourceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
-		}
-
 		public List<DataItem> getData() {
 			return this.data;
 		}
@@ -99,49 +99,25 @@ public class ListApiDatasourceResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String apiId;
-
-			private String body;
-
-			private Float dataSize;
-
 			private String dateUpdateTime;
 
 			private String gmtCreate;
 
-			private String gmtModified;
-
-			private String jobId;
-
 			private String parameters;
-
-			private String showName;
 
 			private Integer statusType;
 
-			public String getApiId() {
-				return this.apiId;
-			}
+			private Float dataSize;
 
-			public void setApiId(String apiId) {
-				this.apiId = apiId;
-			}
+			private String gmtModified;
 
-			public String getBody() {
-				return this.body;
-			}
+			private String apiId;
 
-			public void setBody(String body) {
-				this.body = body;
-			}
+			private String body;
 
-			public Float getDataSize() {
-				return this.dataSize;
-			}
+			private String showName;
 
-			public void setDataSize(Float dataSize) {
-				this.dataSize = dataSize;
-			}
+			private String jobId;
 
 			public String getDateUpdateTime() {
 				return this.dateUpdateTime;
@@ -159,6 +135,30 @@ public class ListApiDatasourceResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getParameters() {
+				return this.parameters;
+			}
+
+			public void setParameters(String parameters) {
+				this.parameters = parameters;
+			}
+
+			public Integer getStatusType() {
+				return this.statusType;
+			}
+
+			public void setStatusType(Integer statusType) {
+				this.statusType = statusType;
+			}
+
+			public Float getDataSize() {
+				return this.dataSize;
+			}
+
+			public void setDataSize(Float dataSize) {
+				this.dataSize = dataSize;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
@@ -167,20 +167,20 @@ public class ListApiDatasourceResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getApiId() {
+				return this.apiId;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
+			public void setApiId(String apiId) {
+				this.apiId = apiId;
 			}
 
-			public String getParameters() {
-				return this.parameters;
+			public String getBody() {
+				return this.body;
 			}
 
-			public void setParameters(String parameters) {
-				this.parameters = parameters;
+			public void setBody(String body) {
+				this.body = body;
 			}
 
 			public String getShowName() {
@@ -191,12 +191,12 @@ public class ListApiDatasourceResponse extends AcsResponse {
 				this.showName = showName;
 			}
 
-			public Integer getStatusType() {
-				return this.statusType;
+			public String getJobId() {
+				return this.jobId;
 			}
 
-			public void setStatusType(Integer statusType) {
-				this.statusType = statusType;
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 		}
 	}

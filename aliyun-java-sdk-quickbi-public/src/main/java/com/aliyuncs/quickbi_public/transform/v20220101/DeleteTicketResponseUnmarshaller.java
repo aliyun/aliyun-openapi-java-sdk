@@ -23,8 +23,8 @@ public class DeleteTicketResponseUnmarshaller {
 	public static DeleteTicketResponse unmarshall(DeleteTicketResponse deleteTicketResponse, UnmarshallerContext _ctx) {
 		
 		deleteTicketResponse.setRequestId(_ctx.stringValue("DeleteTicketResponse.RequestId"));
-		deleteTicketResponse.setResult(_ctx.booleanValue("DeleteTicketResponse.Result"));
 		deleteTicketResponse.setSuccess(_ctx.booleanValue("DeleteTicketResponse.Success"));
+		deleteTicketResponse.setResult(_ctx.booleanValue("DeleteTicketResponse.Result"));
 	 
 	 	return deleteTicketResponse;
 	}

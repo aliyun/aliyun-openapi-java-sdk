@@ -29,7 +29,7 @@ public class QuerySmartqPermissionByCubeIdRequest extends RpcAcsRequest<QuerySma
 
 	private String cubeId;
 	public QuerySmartqPermissionByCubeIdRequest() {
-		super("quickbi-public", "2022-01-01", "QuerySmartqPermissionByCubeId", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QuerySmartqPermissionByCubeId", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

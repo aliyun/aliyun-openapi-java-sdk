@@ -23,8 +23,8 @@ public class AddUserGroupMembersResponseUnmarshaller {
 	public static AddUserGroupMembersResponse unmarshall(AddUserGroupMembersResponse addUserGroupMembersResponse, UnmarshallerContext _ctx) {
 		
 		addUserGroupMembersResponse.setRequestId(_ctx.stringValue("AddUserGroupMembersResponse.RequestId"));
-		addUserGroupMembersResponse.setResult(_ctx.booleanValue("AddUserGroupMembersResponse.Result"));
 		addUserGroupMembersResponse.setSuccess(_ctx.booleanValue("AddUserGroupMembersResponse.Success"));
+		addUserGroupMembersResponse.setResult(_ctx.booleanValue("AddUserGroupMembersResponse.Result"));
 	 
 	 	return addUserGroupMembersResponse;
 	}

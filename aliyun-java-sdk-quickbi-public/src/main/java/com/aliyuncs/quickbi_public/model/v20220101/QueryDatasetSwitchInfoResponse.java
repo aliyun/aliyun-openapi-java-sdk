@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -58,9 +58,9 @@ public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 
 		private String cubeId;
 
-		private Integer isOpenColumnLevelPermission;
-
 		private Integer isOpenRowLevelPermission;
+
+		private Integer isOpenColumnLevelPermission;
 
 		public String getCubeId() {
 			return this.cubeId;
@@ -70,20 +70,20 @@ public class QueryDatasetSwitchInfoResponse extends AcsResponse {
 			this.cubeId = cubeId;
 		}
 
-		public Integer getIsOpenColumnLevelPermission() {
-			return this.isOpenColumnLevelPermission;
-		}
-
-		public void setIsOpenColumnLevelPermission(Integer isOpenColumnLevelPermission) {
-			this.isOpenColumnLevelPermission = isOpenColumnLevelPermission;
-		}
-
 		public Integer getIsOpenRowLevelPermission() {
 			return this.isOpenRowLevelPermission;
 		}
 
 		public void setIsOpenRowLevelPermission(Integer isOpenRowLevelPermission) {
 			this.isOpenRowLevelPermission = isOpenRowLevelPermission;
+		}
+
+		public Integer getIsOpenColumnLevelPermission() {
+			return this.isOpenColumnLevelPermission;
+		}
+
+		public void setIsOpenColumnLevelPermission(Integer isOpenColumnLevelPermission) {
+			this.isOpenColumnLevelPermission = isOpenColumnLevelPermission;
 		}
 	}
 

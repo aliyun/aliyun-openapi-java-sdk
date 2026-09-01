@@ -32,7 +32,7 @@ public class QueryDataRequest extends RpcAcsRequest<QueryDataResponse> {
 
 	private String apiId;
 	public QueryDataRequest() {
-		super("quickbi-public", "2022-01-01", "QueryData", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryData", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

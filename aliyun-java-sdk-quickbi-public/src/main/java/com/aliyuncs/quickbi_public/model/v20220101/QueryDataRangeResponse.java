@@ -57,17 +57,9 @@ public class QueryDataRangeResponse extends AcsResponse {
 
 	public static class Result {
 
-		private List<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels;
-
 		private List<ApiCopilotThemeModelsItem> apiCopilotThemeModels;
 
-		public List<ApiCopilotLlmCubeModelsItem> getApiCopilotLlmCubeModels() {
-			return this.apiCopilotLlmCubeModels;
-		}
-
-		public void setApiCopilotLlmCubeModels(List<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels) {
-			this.apiCopilotLlmCubeModels = apiCopilotLlmCubeModels;
-		}
+		private List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels;
 
 		public List<ApiCopilotThemeModelsItem> getApiCopilotThemeModels() {
 			return this.apiCopilotThemeModels;
@@ -77,56 +69,23 @@ public class QueryDataRangeResponse extends AcsResponse {
 			this.apiCopilotThemeModels = apiCopilotThemeModels;
 		}
 
-		public static class ApiCopilotLlmCubeModelsItem {
+		public List<ApiCopilotLlmCubeModelsItem2> getApiCopilotLlmCubeModels() {
+			return this.apiCopilotLlmCubeModels;
+		}
 
-			private String alias;
-
-			private String createUser;
-
-			private String llmCubeId;
-
-			public String getAlias() {
-				return this.alias;
-			}
-
-			public void setAlias(String alias) {
-				this.alias = alias;
-			}
-
-			public String getCreateUser() {
-				return this.createUser;
-			}
-
-			public void setCreateUser(String createUser) {
-				this.createUser = createUser;
-			}
-
-			public String getLlmCubeId() {
-				return this.llmCubeId;
-			}
-
-			public void setLlmCubeId(String llmCubeId) {
-				this.llmCubeId = llmCubeId;
-			}
+		public void setApiCopilotLlmCubeModels(List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels) {
+			this.apiCopilotLlmCubeModels = apiCopilotLlmCubeModels;
 		}
 
 		public static class ApiCopilotThemeModelsItem {
 
-			private String createUser;
-
 			private String themeId;
+
+			private String createUser;
 
 			private String themeName;
 
-			private List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1;
-
-			public String getCreateUser() {
-				return this.createUser;
-			}
-
-			public void setCreateUser(String createUser) {
-				this.createUser = createUser;
-			}
+			private List<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels1;
 
 			public String getThemeId() {
 				return this.themeId;
@@ -134,6 +93,14 @@ public class QueryDataRangeResponse extends AcsResponse {
 
 			public void setThemeId(String themeId) {
 				this.themeId = themeId;
+			}
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
 			}
 
 			public String getThemeName() {
@@ -144,21 +111,21 @@ public class QueryDataRangeResponse extends AcsResponse {
 				this.themeName = themeName;
 			}
 
-			public List<ApiCopilotLlmCubeModelsItem2> getApiCopilotLlmCubeModels1() {
+			public List<ApiCopilotLlmCubeModelsItem> getApiCopilotLlmCubeModels1() {
 				return this.apiCopilotLlmCubeModels1;
 			}
 
-			public void setApiCopilotLlmCubeModels1(List<ApiCopilotLlmCubeModelsItem2> apiCopilotLlmCubeModels1) {
+			public void setApiCopilotLlmCubeModels1(List<ApiCopilotLlmCubeModelsItem> apiCopilotLlmCubeModels1) {
 				this.apiCopilotLlmCubeModels1 = apiCopilotLlmCubeModels1;
 			}
 
-			public static class ApiCopilotLlmCubeModelsItem2 {
+			public static class ApiCopilotLlmCubeModelsItem {
 
 				private String alias;
 
-				private String createUser;
-
 				private String llmCubeId;
+
+				private String createUser;
 
 				public String getAlias() {
 					return this.alias;
@@ -168,14 +135,6 @@ public class QueryDataRangeResponse extends AcsResponse {
 					this.alias = alias;
 				}
 
-				public String getCreateUser() {
-					return this.createUser;
-				}
-
-				public void setCreateUser(String createUser) {
-					this.createUser = createUser;
-				}
-
 				public String getLlmCubeId() {
 					return this.llmCubeId;
 				}
@@ -183,6 +142,47 @@ public class QueryDataRangeResponse extends AcsResponse {
 				public void setLlmCubeId(String llmCubeId) {
 					this.llmCubeId = llmCubeId;
 				}
+
+				public String getCreateUser() {
+					return this.createUser;
+				}
+
+				public void setCreateUser(String createUser) {
+					this.createUser = createUser;
+				}
+			}
+		}
+
+		public static class ApiCopilotLlmCubeModelsItem2 {
+
+			private String alias;
+
+			private String llmCubeId;
+
+			private String createUser;
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
+			}
+
+			public String getLlmCubeId() {
+				return this.llmCubeId;
+			}
+
+			public void setLlmCubeId(String llmCubeId) {
+				this.llmCubeId = llmCubeId;
+			}
+
+			public String getCreateUser() {
+				return this.createUser;
+			}
+
+			public void setCreateUser(String createUser) {
+				this.createUser = createUser;
 			}
 		}
 	}

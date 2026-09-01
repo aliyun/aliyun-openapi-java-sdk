@@ -32,7 +32,7 @@ public class QueryDataServiceListRequest extends RpcAcsRequest<QueryDataServiceL
 
 	private String name;
 	public QueryDataServiceListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDataServiceList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryDataServiceList", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

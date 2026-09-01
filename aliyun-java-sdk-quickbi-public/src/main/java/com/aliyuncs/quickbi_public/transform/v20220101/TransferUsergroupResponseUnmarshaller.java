@@ -23,8 +23,8 @@ public class TransferUsergroupResponseUnmarshaller {
 	public static TransferUsergroupResponse unmarshall(TransferUsergroupResponse transferUsergroupResponse, UnmarshallerContext _ctx) {
 		
 		transferUsergroupResponse.setRequestId(_ctx.stringValue("TransferUsergroupResponse.RequestId"));
-		transferUsergroupResponse.setResult(_ctx.booleanValue("TransferUsergroupResponse.Result"));
 		transferUsergroupResponse.setSuccess(_ctx.booleanValue("TransferUsergroupResponse.Success"));
+		transferUsergroupResponse.setResult(_ctx.booleanValue("TransferUsergroupResponse.Result"));
 	 
 	 	return transferUsergroupResponse;
 	}

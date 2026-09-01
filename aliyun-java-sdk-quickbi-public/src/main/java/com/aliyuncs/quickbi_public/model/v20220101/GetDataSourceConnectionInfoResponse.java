@@ -56,37 +56,45 @@ public class GetDataSourceConnectionInfoResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String modifyUser;
+
 		private String address;
-
-		private String authLevel;
-
-		private String creatorId;
-
-		private String dsId;
-
-		private String dsType;
-
-		private String dsVersion;
 
 		private String instance;
 
 		private String instanceId;
 
-		private String modifyUser;
-
-		private Boolean noSasl;
-
-		private String parentDsType;
+		private String creatorId;
 
 		private String port;
 
-		private String project;
-
 		private String schema;
+
+		private String workspaceId;
+
+		private String dsId;
+
+		private String parentDsType;
+
+		private String dsVersion;
 
 		private String showName;
 
-		private String workspaceId;
+		private String authLevel;
+
+		private String dsType;
+
+		private String project;
+
+		private Boolean noSasl;
+
+		public String getModifyUser() {
+			return this.modifyUser;
+		}
+
+		public void setModifyUser(String modifyUser) {
+			this.modifyUser = modifyUser;
+		}
 
 		public String getAddress() {
 			return this.address;
@@ -94,46 +102,6 @@ public class GetDataSourceConnectionInfoResponse extends AcsResponse {
 
 		public void setAddress(String address) {
 			this.address = address;
-		}
-
-		public String getAuthLevel() {
-			return this.authLevel;
-		}
-
-		public void setAuthLevel(String authLevel) {
-			this.authLevel = authLevel;
-		}
-
-		public String getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(String creatorId) {
-			this.creatorId = creatorId;
-		}
-
-		public String getDsId() {
-			return this.dsId;
-		}
-
-		public void setDsId(String dsId) {
-			this.dsId = dsId;
-		}
-
-		public String getDsType() {
-			return this.dsType;
-		}
-
-		public void setDsType(String dsType) {
-			this.dsType = dsType;
-		}
-
-		public String getDsVersion() {
-			return this.dsVersion;
-		}
-
-		public void setDsVersion(String dsVersion) {
-			this.dsVersion = dsVersion;
 		}
 
 		public String getInstance() {
@@ -152,28 +120,12 @@ public class GetDataSourceConnectionInfoResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getModifyUser() {
-			return this.modifyUser;
+		public String getCreatorId() {
+			return this.creatorId;
 		}
 
-		public void setModifyUser(String modifyUser) {
-			this.modifyUser = modifyUser;
-		}
-
-		public Boolean getNoSasl() {
-			return this.noSasl;
-		}
-
-		public void setNoSasl(Boolean noSasl) {
-			this.noSasl = noSasl;
-		}
-
-		public String getParentDsType() {
-			return this.parentDsType;
-		}
-
-		public void setParentDsType(String parentDsType) {
-			this.parentDsType = parentDsType;
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
 		}
 
 		public String getPort() {
@@ -184,20 +136,44 @@ public class GetDataSourceConnectionInfoResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getProject() {
-			return this.project;
-		}
-
-		public void setProject(String project) {
-			this.project = project;
-		}
-
 		public String getSchema() {
 			return this.schema;
 		}
 
 		public void setSchema(String schema) {
 			this.schema = schema;
+		}
+
+		public String getWorkspaceId() {
+			return this.workspaceId;
+		}
+
+		public void setWorkspaceId(String workspaceId) {
+			this.workspaceId = workspaceId;
+		}
+
+		public String getDsId() {
+			return this.dsId;
+		}
+
+		public void setDsId(String dsId) {
+			this.dsId = dsId;
+		}
+
+		public String getParentDsType() {
+			return this.parentDsType;
+		}
+
+		public void setParentDsType(String parentDsType) {
+			this.parentDsType = parentDsType;
+		}
+
+		public String getDsVersion() {
+			return this.dsVersion;
+		}
+
+		public void setDsVersion(String dsVersion) {
+			this.dsVersion = dsVersion;
 		}
 
 		public String getShowName() {
@@ -208,12 +184,36 @@ public class GetDataSourceConnectionInfoResponse extends AcsResponse {
 			this.showName = showName;
 		}
 
-		public String getWorkspaceId() {
-			return this.workspaceId;
+		public String getAuthLevel() {
+			return this.authLevel;
 		}
 
-		public void setWorkspaceId(String workspaceId) {
-			this.workspaceId = workspaceId;
+		public void setAuthLevel(String authLevel) {
+			this.authLevel = authLevel;
+		}
+
+		public String getDsType() {
+			return this.dsType;
+		}
+
+		public void setDsType(String dsType) {
+			this.dsType = dsType;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
+		}
+
+		public Boolean getNoSasl() {
+			return this.noSasl;
+		}
+
+		public void setNoSasl(Boolean noSasl) {
+			this.noSasl = noSasl;
 		}
 	}
 

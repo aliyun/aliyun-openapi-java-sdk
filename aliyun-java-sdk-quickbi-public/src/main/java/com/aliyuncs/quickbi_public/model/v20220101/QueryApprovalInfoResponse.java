@@ -57,25 +57,17 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer page;
-
 		private Integer pageSize;
 
 		private Integer start;
 
 		private Integer total;
 
+		private Integer page;
+
 		private Integer totalPages;
 
 		private List<ApprovalsResultModel> data;
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -101,6 +93,14 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 			this.total = total;
 		}
 
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
+		}
+
 		public Integer getTotalPages() {
 			return this.totalPages;
 		}
@@ -119,93 +119,37 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 		public static class ApprovalsResultModel {
 
-			private String applicantId;
-
-			private String applicantName;
-
-			private String applicationId;
-
-			private String applyReason;
-
-			private String approverId;
-
-			private String approverName;
-
-			private Boolean deleteFlag;
-
 			private Long expireDate;
 
 			private Integer flagStatus;
 
-			private Long gmtCreate;
+			private String resourceName;
+
+			private String applicantName;
 
 			private Long gmtModified;
 
+			private String resourceType;
+
 			private String handleReason;
+
+			private String applyReason;
+
+			private Boolean deleteFlag;
+
+			private Long gmtCreate;
 
 			private String resourceId;
 
-			private String resourceName;
+			private String applicantId;
 
-			private String resourceType;
+			private String approverId;
 
 			private String workspaceName;
 
-			public String getApplicantId() {
-				return this.applicantId;
-			}
+			private String approverName;
 
-			public void setApplicantId(String applicantId) {
-				this.applicantId = applicantId;
-			}
-
-			public String getApplicantName() {
-				return this.applicantName;
-			}
-
-			public void setApplicantName(String applicantName) {
-				this.applicantName = applicantName;
-			}
-
-			public String getApplicationId() {
-				return this.applicationId;
-			}
-
-			public void setApplicationId(String applicationId) {
-				this.applicationId = applicationId;
-			}
-
-			public String getApplyReason() {
-				return this.applyReason;
-			}
-
-			public void setApplyReason(String applyReason) {
-				this.applyReason = applyReason;
-			}
-
-			public String getApproverId() {
-				return this.approverId;
-			}
-
-			public void setApproverId(String approverId) {
-				this.approverId = approverId;
-			}
-
-			public String getApproverName() {
-				return this.approverName;
-			}
-
-			public void setApproverName(String approverName) {
-				this.approverName = approverName;
-			}
-
-			public Boolean getDeleteFlag() {
-				return this.deleteFlag;
-			}
-
-			public void setDeleteFlag(Boolean deleteFlag) {
-				this.deleteFlag = deleteFlag;
-			}
+			private String applicationId;
 
 			public Long getExpireDate() {
 				return this.expireDate;
@@ -223,12 +167,20 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 				this.flagStatus = flagStatus;
 			}
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public String getResourceName() {
+				return this.resourceName;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
+			public void setResourceName(String resourceName) {
+				this.resourceName = resourceName;
+			}
+
+			public String getApplicantName() {
+				return this.applicantName;
+			}
+
+			public void setApplicantName(String applicantName) {
+				this.applicantName = applicantName;
 			}
 
 			public Long getGmtModified() {
@@ -239,12 +191,44 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
+			public String getResourceType() {
+				return this.resourceType;
+			}
+
+			public void setResourceType(String resourceType) {
+				this.resourceType = resourceType;
+			}
+
 			public String getHandleReason() {
 				return this.handleReason;
 			}
 
 			public void setHandleReason(String handleReason) {
 				this.handleReason = handleReason;
+			}
+
+			public String getApplyReason() {
+				return this.applyReason;
+			}
+
+			public void setApplyReason(String applyReason) {
+				this.applyReason = applyReason;
+			}
+
+			public Boolean getDeleteFlag() {
+				return this.deleteFlag;
+			}
+
+			public void setDeleteFlag(Boolean deleteFlag) {
+				this.deleteFlag = deleteFlag;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 
 			public String getResourceId() {
@@ -255,20 +239,20 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 				this.resourceId = resourceId;
 			}
 
-			public String getResourceName() {
-				return this.resourceName;
+			public String getApplicantId() {
+				return this.applicantId;
 			}
 
-			public void setResourceName(String resourceName) {
-				this.resourceName = resourceName;
+			public void setApplicantId(String applicantId) {
+				this.applicantId = applicantId;
 			}
 
-			public String getResourceType() {
-				return this.resourceType;
+			public String getApproverId() {
+				return this.approverId;
 			}
 
-			public void setResourceType(String resourceType) {
-				this.resourceType = resourceType;
+			public void setApproverId(String approverId) {
+				this.approverId = approverId;
 			}
 
 			public String getWorkspaceName() {
@@ -277,6 +261,22 @@ public class QueryApprovalInfoResponse extends AcsResponse {
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public String getApproverName() {
+				return this.approverName;
+			}
+
+			public void setApproverName(String approverName) {
+				this.approverName = approverName;
+			}
+
+			public String getApplicationId() {
+				return this.applicationId;
+			}
+
+			public void setApplicationId(String applicationId) {
+				this.applicationId = applicationId;
 			}
 		}
 	}

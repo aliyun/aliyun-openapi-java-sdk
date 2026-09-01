@@ -23,8 +23,8 @@ public class AllotDatasetAccelerationTaskResponseUnmarshaller {
 	public static AllotDatasetAccelerationTaskResponse unmarshall(AllotDatasetAccelerationTaskResponse allotDatasetAccelerationTaskResponse, UnmarshallerContext _ctx) {
 		
 		allotDatasetAccelerationTaskResponse.setRequestId(_ctx.stringValue("AllotDatasetAccelerationTaskResponse.RequestId"));
-		allotDatasetAccelerationTaskResponse.setResult(_ctx.booleanValue("AllotDatasetAccelerationTaskResponse.Result"));
 		allotDatasetAccelerationTaskResponse.setSuccess(_ctx.booleanValue("AllotDatasetAccelerationTaskResponse.Success"));
+		allotDatasetAccelerationTaskResponse.setResult(_ctx.booleanValue("AllotDatasetAccelerationTaskResponse.Result"));
 	 
 	 	return allotDatasetAccelerationTaskResponse;
 	}

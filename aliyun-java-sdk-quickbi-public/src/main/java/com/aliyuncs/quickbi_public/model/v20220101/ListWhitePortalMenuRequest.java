@@ -27,7 +27,7 @@ public class ListWhitePortalMenuRequest extends RpcAcsRequest<ListWhitePortalMen
 
 	private String dataportalId;
 	public ListWhitePortalMenuRequest() {
-		super("quickbi-public", "2022-01-01", "ListWhitePortalMenu", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListWhitePortalMenu", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

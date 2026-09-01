@@ -23,8 +23,8 @@ public class DataInterpretationResponseUnmarshaller {
 	public static DataInterpretationResponse unmarshall(DataInterpretationResponse dataInterpretationResponse, UnmarshallerContext _ctx) {
 		
 		dataInterpretationResponse.setRequestId(_ctx.stringValue("DataInterpretationResponse.RequestId"));
-		dataInterpretationResponse.setResult(_ctx.stringValue("DataInterpretationResponse.Result"));
 		dataInterpretationResponse.setSuccess(_ctx.booleanValue("DataInterpretationResponse.Success"));
+		dataInterpretationResponse.setResult(_ctx.stringValue("DataInterpretationResponse.Result"));
 	 
 	 	return dataInterpretationResponse;
 	}

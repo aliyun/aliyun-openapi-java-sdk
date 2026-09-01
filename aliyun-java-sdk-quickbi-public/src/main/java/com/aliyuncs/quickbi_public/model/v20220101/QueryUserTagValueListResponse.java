@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserTagValueListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserTagValueListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,19 +57,11 @@ public class QueryUserTagValueListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String tagId;
-
 		private String tagName;
 
+		private String tagId;
+
 		private String tagValue;
-
-		public String getTagId() {
-			return this.tagId;
-		}
-
-		public void setTagId(String tagId) {
-			this.tagId = tagId;
-		}
 
 		public String getTagName() {
 			return this.tagName;
@@ -77,6 +69,14 @@ public class QueryUserTagValueListResponse extends AcsResponse {
 
 		public void setTagName(String tagName) {
 			this.tagName = tagName;
+		}
+
+		public String getTagId() {
+			return this.tagId;
+		}
+
+		public void setTagId(String tagId) {
+			this.tagId = tagId;
 		}
 
 		public String getTagValue() {

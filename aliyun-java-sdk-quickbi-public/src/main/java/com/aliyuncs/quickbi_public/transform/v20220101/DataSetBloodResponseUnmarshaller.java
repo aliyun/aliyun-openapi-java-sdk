@@ -32,8 +32,8 @@ public class DataSetBloodResponseUnmarshaller {
 		List<WorksModels> result = new ArrayList<WorksModels>();
 		for (int i = 0; i < _ctx.lengthValue("DataSetBloodResponse.Result.Length"); i++) {
 			WorksModels worksModels = new WorksModels();
-			worksModels.setWorksId(_ctx.stringValue("DataSetBloodResponse.Result["+ i +"].WorksId"));
 			worksModels.setWorksType(_ctx.stringValue("DataSetBloodResponse.Result["+ i +"].WorksType"));
+			worksModels.setWorksId(_ctx.stringValue("DataSetBloodResponse.Result["+ i +"].WorksId"));
 
 			result.add(worksModels);
 		}

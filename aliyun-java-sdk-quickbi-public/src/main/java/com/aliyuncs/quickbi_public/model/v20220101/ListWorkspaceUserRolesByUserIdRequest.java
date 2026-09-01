@@ -27,7 +27,7 @@ public class ListWorkspaceUserRolesByUserIdRequest extends RpcAcsRequest<ListWor
 
 	private String userId;
 	public ListWorkspaceUserRolesByUserIdRequest() {
-		super("quickbi-public", "2022-01-01", "ListWorkspaceUserRolesByUserId", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListWorkspaceUserRolesByUserId", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

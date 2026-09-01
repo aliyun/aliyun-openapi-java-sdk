@@ -34,8 +34,8 @@ public class GetMailTaskStatusResponseUnmarshaller {
 			DATA dATA = new DATA();
 			dATA.setExecTime(_ctx.stringValue("GetMailTaskStatusResponse.Result["+ i +"].execTime"));
 			dATA.setMailId(_ctx.stringValue("GetMailTaskStatusResponse.Result["+ i +"].mailId"));
-			dATA.setStatus(_ctx.stringValue("GetMailTaskStatusResponse.Result["+ i +"].status"));
 			dATA.setTaskId(_ctx.longValue("GetMailTaskStatusResponse.Result["+ i +"].taskId"));
+			dATA.setStatus(_ctx.stringValue("GetMailTaskStatusResponse.Result["+ i +"].status"));
 
 			result.add(dATA);
 		}

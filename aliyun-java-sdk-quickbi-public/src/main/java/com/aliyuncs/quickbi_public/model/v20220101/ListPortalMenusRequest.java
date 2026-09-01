@@ -28,7 +28,7 @@ public class ListPortalMenusRequest extends RpcAcsRequest<ListPortalMenusRespons
 
 	private String userId;
 	public ListPortalMenusRequest() {
-		super("quickbi-public", "2022-01-01", "ListPortalMenus", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListPortalMenus", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

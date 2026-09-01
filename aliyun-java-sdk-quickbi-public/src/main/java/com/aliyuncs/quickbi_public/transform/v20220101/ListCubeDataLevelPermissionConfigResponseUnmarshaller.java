@@ -23,8 +23,8 @@ public class ListCubeDataLevelPermissionConfigResponseUnmarshaller {
 	public static ListCubeDataLevelPermissionConfigResponse unmarshall(ListCubeDataLevelPermissionConfigResponse listCubeDataLevelPermissionConfigResponse, UnmarshallerContext _ctx) {
 		
 		listCubeDataLevelPermissionConfigResponse.setRequestId(_ctx.stringValue("ListCubeDataLevelPermissionConfigResponse.RequestId"));
-		listCubeDataLevelPermissionConfigResponse.setResult(_ctx.stringValue("ListCubeDataLevelPermissionConfigResponse.Result"));
 		listCubeDataLevelPermissionConfigResponse.setSuccess(_ctx.booleanValue("ListCubeDataLevelPermissionConfigResponse.Success"));
+		listCubeDataLevelPermissionConfigResponse.setResult(_ctx.stringValue("ListCubeDataLevelPermissionConfigResponse.Result"));
 	 
 	 	return listCubeDataLevelPermissionConfigResponse;
 	}

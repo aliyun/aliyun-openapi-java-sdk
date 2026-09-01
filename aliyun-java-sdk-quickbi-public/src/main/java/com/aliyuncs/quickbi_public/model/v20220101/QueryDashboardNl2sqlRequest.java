@@ -29,7 +29,7 @@ public class QueryDashboardNl2sqlRequest extends RpcAcsRequest<QueryDashboardNl2
 
 	private String workspaceId;
 	public QueryDashboardNl2sqlRequest() {
-		super("quickbi-public", "2022-01-01", "QueryDashboardNl2sql", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryDashboardNl2sql", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

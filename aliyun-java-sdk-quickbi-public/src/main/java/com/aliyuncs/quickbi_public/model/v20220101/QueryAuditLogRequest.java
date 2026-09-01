@@ -42,7 +42,7 @@ public class QueryAuditLogRequest extends RpcAcsRequest<QueryAuditLogResponse> {
 
 	private String userAccessDevice;
 	public QueryAuditLogRequest() {
-		super("quickbi-public", "2022-01-01", "QueryAuditLog", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryAuditLog", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

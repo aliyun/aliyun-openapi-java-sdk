@@ -23,8 +23,8 @@ public class CancelReportShareResponseUnmarshaller {
 	public static CancelReportShareResponse unmarshall(CancelReportShareResponse cancelReportShareResponse, UnmarshallerContext _ctx) {
 		
 		cancelReportShareResponse.setRequestId(_ctx.stringValue("CancelReportShareResponse.RequestId"));
-		cancelReportShareResponse.setResult(_ctx.booleanValue("CancelReportShareResponse.Result"));
 		cancelReportShareResponse.setSuccess(_ctx.booleanValue("CancelReportShareResponse.Success"));
+		cancelReportShareResponse.setResult(_ctx.booleanValue("CancelReportShareResponse.Result"));
 	 
 	 	return cancelReportShareResponse;
 	}

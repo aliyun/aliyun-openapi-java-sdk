@@ -37,7 +37,7 @@ public class AddWorksAuthorizationRequest extends RpcAcsRequest<AddWorksAuthoriz
 
 	private String expireDay;
 	public AddWorksAuthorizationRequest() {
-		super("quickbi-public", "2022-01-01", "AddWorksAuthorization", "2.2.0");
+		super("quickbi-public", "2022-01-01", "AddWorksAuthorization", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

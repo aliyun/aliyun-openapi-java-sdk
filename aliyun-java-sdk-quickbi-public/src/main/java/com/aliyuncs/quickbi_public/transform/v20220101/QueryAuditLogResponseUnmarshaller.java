@@ -32,13 +32,13 @@ public class QueryAuditLogResponseUnmarshaller {
 		List<LogApiResultModel> result = new ArrayList<LogApiResultModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAuditLogResponse.Result.Length"); i++) {
 			LogApiResultModel logApiResultModel = new LogApiResultModel();
-			logApiResultModel.setGmtCreate(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].GmtCreate"));
 			logApiResultModel.setOperatorAccountName(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].OperatorAccountName"));
+			logApiResultModel.setGmtCreate(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].GmtCreate"));
 			logApiResultModel.setOperatorName(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].OperatorName"));
-			logApiResultModel.setOperatorType(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].OperatorType"));
-			logApiResultModel.setTargetName(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetName"));
 			logApiResultModel.setTargetType(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetType"));
 			logApiResultModel.setWorkspaceId(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].WorkspaceId"));
+			logApiResultModel.setTargetName(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetName"));
+			logApiResultModel.setOperatorType(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].OperatorType"));
 			logApiResultModel.setTargetId(_ctx.stringValue("QueryAuditLogResponse.Result["+ i +"].TargetId"));
 
 			result.add(logApiResultModel);

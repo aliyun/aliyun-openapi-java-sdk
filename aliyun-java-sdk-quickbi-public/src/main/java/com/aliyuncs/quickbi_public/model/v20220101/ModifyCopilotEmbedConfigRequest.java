@@ -32,7 +32,7 @@ public class ModifyCopilotEmbedConfigRequest extends RpcAcsRequest<ModifyCopilot
 
 	private String agentName;
 	public ModifyCopilotEmbedConfigRequest() {
-		super("quickbi-public", "2022-01-01", "ModifyCopilotEmbedConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ModifyCopilotEmbedConfig", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

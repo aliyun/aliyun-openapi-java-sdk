@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryEmbeddedInfoResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -56,19 +56,11 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Integer embeddedCount;
-
 		private Integer maxCount;
 
+		private Integer embeddedCount;
+
 		private Detail detail;
-
-		public Integer getEmbeddedCount() {
-			return this.embeddedCount;
-		}
-
-		public void setEmbeddedCount(Integer embeddedCount) {
-			this.embeddedCount = embeddedCount;
-		}
 
 		public Integer getMaxCount() {
 			return this.maxCount;
@@ -76,6 +68,14 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 		public void setMaxCount(Integer maxCount) {
 			this.maxCount = maxCount;
+		}
+
+		public Integer getEmbeddedCount() {
+			return this.embeddedCount;
+		}
+
+		public void setEmbeddedCount(Integer embeddedCount) {
+			this.embeddedCount = embeddedCount;
 		}
 
 		public Detail getDetail() {
@@ -88,11 +88,19 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 		public static class Detail {
 
+			private Integer report;
+
 			private Integer dashboardOfflineQuery;
 
 			private Integer page;
 
-			private Integer report;
+			public Integer getReport() {
+				return this.report;
+			}
+
+			public void setReport(Integer report) {
+				this.report = report;
+			}
 
 			public Integer getDashboardOfflineQuery() {
 				return this.dashboardOfflineQuery;
@@ -108,14 +116,6 @@ public class QueryEmbeddedInfoResponse extends AcsResponse {
 
 			public void setPage(Integer page) {
 				this.page = page;
-			}
-
-			public Integer getReport() {
-				return this.report;
-			}
-
-			public void setReport(Integer report) {
-				this.report = report;
 			}
 		}
 	}

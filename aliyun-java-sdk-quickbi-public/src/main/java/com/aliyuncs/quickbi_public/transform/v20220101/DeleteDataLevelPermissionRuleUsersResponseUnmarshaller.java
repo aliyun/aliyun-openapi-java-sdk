@@ -23,8 +23,8 @@ public class DeleteDataLevelPermissionRuleUsersResponseUnmarshaller {
 	public static DeleteDataLevelPermissionRuleUsersResponse unmarshall(DeleteDataLevelPermissionRuleUsersResponse deleteDataLevelPermissionRuleUsersResponse, UnmarshallerContext _ctx) {
 		
 		deleteDataLevelPermissionRuleUsersResponse.setRequestId(_ctx.stringValue("DeleteDataLevelPermissionRuleUsersResponse.RequestId"));
-		deleteDataLevelPermissionRuleUsersResponse.setResult(_ctx.booleanValue("DeleteDataLevelPermissionRuleUsersResponse.Result"));
 		deleteDataLevelPermissionRuleUsersResponse.setSuccess(_ctx.booleanValue("DeleteDataLevelPermissionRuleUsersResponse.Success"));
+		deleteDataLevelPermissionRuleUsersResponse.setResult(_ctx.booleanValue("DeleteDataLevelPermissionRuleUsersResponse.Result"));
 	 
 	 	return deleteDataLevelPermissionRuleUsersResponse;
 	}

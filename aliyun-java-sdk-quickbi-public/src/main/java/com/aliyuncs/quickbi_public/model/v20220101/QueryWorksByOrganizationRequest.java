@@ -34,7 +34,7 @@ public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByO
 
 	private Integer status;
 	public QueryWorksByOrganizationRequest() {
-		super("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryWorksByOrganization", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

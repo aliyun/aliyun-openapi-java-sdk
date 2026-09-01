@@ -23,8 +23,8 @@ public class CheckOrganizationMemberResponseUnmarshaller {
 	public static CheckOrganizationMemberResponse unmarshall(CheckOrganizationMemberResponse checkOrganizationMemberResponse, UnmarshallerContext _ctx) {
 		
 		checkOrganizationMemberResponse.setRequestId(_ctx.stringValue("CheckOrganizationMemberResponse.RequestId"));
-		checkOrganizationMemberResponse.setResult(_ctx.booleanValue("CheckOrganizationMemberResponse.Result"));
 		checkOrganizationMemberResponse.setSuccess(_ctx.booleanValue("CheckOrganizationMemberResponse.Success"));
+		checkOrganizationMemberResponse.setResult(_ctx.booleanValue("CheckOrganizationMemberResponse.Result"));
 	 
 	 	return checkOrganizationMemberResponse;
 	}

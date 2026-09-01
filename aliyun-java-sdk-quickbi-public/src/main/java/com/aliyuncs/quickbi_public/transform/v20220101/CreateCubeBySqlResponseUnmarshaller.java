@@ -23,8 +23,8 @@ public class CreateCubeBySqlResponseUnmarshaller {
 	public static CreateCubeBySqlResponse unmarshall(CreateCubeBySqlResponse createCubeBySqlResponse, UnmarshallerContext _ctx) {
 		
 		createCubeBySqlResponse.setRequestId(_ctx.stringValue("CreateCubeBySqlResponse.RequestId"));
-		createCubeBySqlResponse.setResult(_ctx.stringValue("CreateCubeBySqlResponse.Result"));
 		createCubeBySqlResponse.setSuccess(_ctx.booleanValue("CreateCubeBySqlResponse.Success"));
+		createCubeBySqlResponse.setResult(_ctx.stringValue("CreateCubeBySqlResponse.Result"));
 	 
 	 	return createCubeBySqlResponse;
 	}

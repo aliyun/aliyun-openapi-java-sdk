@@ -27,7 +27,7 @@ public class QueryLastAccelerationEngineJobRequest extends RpcAcsRequest<QueryLa
 
 	private String cubeId;
 	public QueryLastAccelerationEngineJobRequest() {
-		super("quickbi-public", "2022-01-01", "QueryLastAccelerationEngineJob", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryLastAccelerationEngineJob", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

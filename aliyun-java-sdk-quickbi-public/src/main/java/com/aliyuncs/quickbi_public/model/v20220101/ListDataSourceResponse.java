@@ -57,36 +57,28 @@ public class ListDataSourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String creatorId;
-
-		private String creatorName;
+		private String gmtCreate;
 
 		private String datasourceId;
 
-		private String gmtCreate;
+		private String creatorId;
 
 		private String gmtModified;
 
+		private String parentDsType;
+
 		private String showName;
+
+		private String creatorName;
 
 		private String dsType;
 
-		private String parentDsType;
-
-		public String getCreatorId() {
-			return this.creatorId;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setCreatorId(String creatorId) {
-			this.creatorId = creatorId;
-		}
-
-		public String getCreatorName() {
-			return this.creatorName;
-		}
-
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getDatasourceId() {
@@ -97,12 +89,12 @@ public class ListDataSourceResponse extends AcsResponse {
 			this.datasourceId = datasourceId;
 		}
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getCreatorId() {
+			return this.creatorId;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setCreatorId(String creatorId) {
+			this.creatorId = creatorId;
 		}
 
 		public String getGmtModified() {
@@ -113,6 +105,14 @@ public class ListDataSourceResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getParentDsType() {
+			return this.parentDsType;
+		}
+
+		public void setParentDsType(String parentDsType) {
+			this.parentDsType = parentDsType;
+		}
+
 		public String getShowName() {
 			return this.showName;
 		}
@@ -121,20 +121,20 @@ public class ListDataSourceResponse extends AcsResponse {
 			this.showName = showName;
 		}
 
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
+		}
+
 		public String getDsType() {
 			return this.dsType;
 		}
 
 		public void setDsType(String dsType) {
 			this.dsType = dsType;
-		}
-
-		public String getParentDsType() {
-			return this.parentDsType;
-		}
-
-		public void setParentDsType(String parentDsType) {
-			this.parentDsType = parentDsType;
 		}
 	}
 

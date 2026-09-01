@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class ListDynamicTagRequest extends RpcAcsRequest<ListDynamicTagResponse> {
 	   
 	public ListDynamicTagRequest() {
-		super("quickbi-public", "2022-01-01", "ListDynamicTag", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListDynamicTag", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

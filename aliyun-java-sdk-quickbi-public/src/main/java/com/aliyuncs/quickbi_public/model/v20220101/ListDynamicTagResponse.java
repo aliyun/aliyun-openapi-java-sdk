@@ -57,51 +57,19 @@ public class ListDynamicTagResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String organizationId;
-
-		private String configId;
-
-		private String configName;
-
-		private String dsId;
-
 		private String tableName;
 
 		private String columnName;
 
 		private Integer relatedAttribute;
 
-		public String getOrganizationId() {
-			return this.organizationId;
-		}
+		private String configName;
 
-		public void setOrganizationId(String organizationId) {
-			this.organizationId = organizationId;
-		}
+		private String dsId;
 
-		public String getConfigId() {
-			return this.configId;
-		}
+		private String organizationId;
 
-		public void setConfigId(String configId) {
-			this.configId = configId;
-		}
-
-		public String getConfigName() {
-			return this.configName;
-		}
-
-		public void setConfigName(String configName) {
-			this.configName = configName;
-		}
-
-		public String getDsId() {
-			return this.dsId;
-		}
-
-		public void setDsId(String dsId) {
-			this.dsId = dsId;
-		}
+		private String configId;
 
 		public String getTableName() {
 			return this.tableName;
@@ -125,6 +93,38 @@ public class ListDynamicTagResponse extends AcsResponse {
 
 		public void setRelatedAttribute(Integer relatedAttribute) {
 			this.relatedAttribute = relatedAttribute;
+		}
+
+		public String getConfigName() {
+			return this.configName;
+		}
+
+		public void setConfigName(String configName) {
+			this.configName = configName;
+		}
+
+		public String getDsId() {
+			return this.dsId;
+		}
+
+		public void setDsId(String dsId) {
+			this.dsId = dsId;
+		}
+
+		public String getOrganizationId() {
+			return this.organizationId;
+		}
+
+		public void setOrganizationId(String organizationId) {
+			this.organizationId = organizationId;
+		}
+
+		public String getConfigId() {
+			return this.configId;
+		}
+
+		public void setConfigId(String configId) {
+			this.configId = configId;
 		}
 	}
 

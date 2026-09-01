@@ -23,8 +23,8 @@ public class AddWorksAuthorizationResponseUnmarshaller {
 	public static AddWorksAuthorizationResponse unmarshall(AddWorksAuthorizationResponse addWorksAuthorizationResponse, UnmarshallerContext _ctx) {
 		
 		addWorksAuthorizationResponse.setRequestId(_ctx.stringValue("AddWorksAuthorizationResponse.RequestId"));
-		addWorksAuthorizationResponse.setResult(_ctx.stringValue("AddWorksAuthorizationResponse.Result"));
 		addWorksAuthorizationResponse.setSuccess(_ctx.booleanValue("AddWorksAuthorizationResponse.Success"));
+		addWorksAuthorizationResponse.setResult(_ctx.stringValue("AddWorksAuthorizationResponse.Result"));
 	 
 	 	return addWorksAuthorizationResponse;
 	}

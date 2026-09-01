@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDatasetListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,15 +57,23 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private Integer totalPages;
 
 		private List<DataItem> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -81,14 +89,6 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
 		}
 
 		public Integer getTotalPages() {
@@ -109,63 +109,31 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String createTime;
-
-			private String datasetId;
-
-			private String datasetName;
-
-			private String description;
-
 			private String modifyTime;
 
 			private Boolean openOfflineAcceleration;
 
-			private String ownerId;
-
 			private String ownerName;
+
+			private String description;
+
+			private String createTime;
+
+			private String workspaceId;
 
 			private Boolean rowLevel;
 
-			private String workspaceId;
+			private String datasetId;
+
+			private String ownerId;
+
+			private String datasetName;
 
 			private String workspaceName;
 
 			private DataSource dataSource;
 
 			private Directory directory;
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getDatasetId() {
-				return this.datasetId;
-			}
-
-			public void setDatasetId(String datasetId) {
-				this.datasetId = datasetId;
-			}
-
-			public String getDatasetName() {
-				return this.datasetName;
-			}
-
-			public void setDatasetName(String datasetName) {
-				this.datasetName = datasetName;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
 
 			public String getModifyTime() {
 				return this.modifyTime;
@@ -183,20 +151,36 @@ public class QueryDatasetListResponse extends AcsResponse {
 				this.openOfflineAcceleration = openOfflineAcceleration;
 			}
 
-			public String getOwnerId() {
-				return this.ownerId;
-			}
-
-			public void setOwnerId(String ownerId) {
-				this.ownerId = ownerId;
-			}
-
 			public String getOwnerName() {
 				return this.ownerName;
 			}
 
 			public void setOwnerName(String ownerName) {
 				this.ownerName = ownerName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getWorkspaceId() {
+				return this.workspaceId;
+			}
+
+			public void setWorkspaceId(String workspaceId) {
+				this.workspaceId = workspaceId;
 			}
 
 			public Boolean getRowLevel() {
@@ -207,12 +191,28 @@ public class QueryDatasetListResponse extends AcsResponse {
 				this.rowLevel = rowLevel;
 			}
 
-			public String getWorkspaceId() {
-				return this.workspaceId;
+			public String getDatasetId() {
+				return this.datasetId;
 			}
 
-			public void setWorkspaceId(String workspaceId) {
-				this.workspaceId = workspaceId;
+			public void setDatasetId(String datasetId) {
+				this.datasetId = datasetId;
+			}
+
+			public String getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getDatasetName() {
+				return this.datasetName;
+			}
+
+			public void setDatasetName(String datasetName) {
+				this.datasetName = datasetName;
 			}
 
 			public String getWorkspaceName() {
@@ -241,19 +241,11 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 			public static class DataSource {
 
-				private String dsId;
-
 				private String dsName;
 
+				private String dsId;
+
 				private String dsType;
-
-				public String getDsId() {
-					return this.dsId;
-				}
-
-				public void setDsId(String dsId) {
-					this.dsId = dsId;
-				}
 
 				public String getDsName() {
 					return this.dsName;
@@ -261,6 +253,14 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 				public void setDsName(String dsName) {
 					this.dsName = dsName;
+				}
+
+				public String getDsId() {
+					return this.dsId;
+				}
+
+				public void setDsId(String dsId) {
+					this.dsId = dsId;
 				}
 
 				public String getDsType() {
@@ -274,29 +274,13 @@ public class QueryDatasetListResponse extends AcsResponse {
 
 			public static class Directory {
 
-				private String id;
-
-				private String name;
-
 				private String pathId;
+
+				private String id;
 
 				private String pathName;
 
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public String getPathId() {
 					return this.pathId;
@@ -306,12 +290,28 @@ public class QueryDatasetListResponse extends AcsResponse {
 					this.pathId = pathId;
 				}
 
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
 				public String getPathName() {
 					return this.pathName;
 				}
 
 				public void setPathName(String pathName) {
 					this.pathName = pathName;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

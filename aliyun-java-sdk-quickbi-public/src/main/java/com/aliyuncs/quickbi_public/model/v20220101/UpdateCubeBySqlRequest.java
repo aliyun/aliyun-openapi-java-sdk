@@ -37,7 +37,7 @@ public class UpdateCubeBySqlRequest extends RpcAcsRequest<UpdateCubeBySqlRespons
 
 	private String workspaceId;
 	public UpdateCubeBySqlRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateCubeBySql", "2.2.0");
+		super("quickbi-public", "2022-01-01", "UpdateCubeBySql", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

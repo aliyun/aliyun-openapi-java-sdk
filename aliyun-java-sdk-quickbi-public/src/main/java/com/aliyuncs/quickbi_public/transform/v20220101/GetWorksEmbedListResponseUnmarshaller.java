@@ -31,19 +31,19 @@ public class GetWorksEmbedListResponseUnmarshaller {
 		getWorksEmbedListResponse.setSuccess(_ctx.booleanValue("GetWorksEmbedListResponse.Success"));
 
 		Result result = new Result();
-		result.setPageNo(_ctx.longValue("GetWorksEmbedListResponse.Result.PageNo"));
-		result.setPageSize(_ctx.longValue("GetWorksEmbedListResponse.Result.PageSize"));
 		result.setTotalNum(_ctx.longValue("GetWorksEmbedListResponse.Result.TotalNum"));
+		result.setPageSize(_ctx.longValue("GetWorksEmbedListResponse.Result.PageSize"));
+		result.setPageNo(_ctx.longValue("GetWorksEmbedListResponse.Result.PageNo"));
 		result.setTotalPages(_ctx.longValue("GetWorksEmbedListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetWorksEmbedListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setEmbedTime(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].EmbedTime"));
-			dataItem.setWorksId(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorksId"));
-			dataItem.setWorksName(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorksName"));
 			dataItem.setWorksType(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorksType"));
+			dataItem.setWorksName(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorksName"));
 			dataItem.setWorkspaceId(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setWorksId(_ctx.stringValue("GetWorksEmbedListResponse.Result.Data["+ i +"].WorksId"));
 
 			data.add(dataItem);
 		}

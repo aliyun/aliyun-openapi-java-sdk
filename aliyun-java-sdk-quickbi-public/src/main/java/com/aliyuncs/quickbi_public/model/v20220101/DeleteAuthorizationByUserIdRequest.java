@@ -31,7 +31,7 @@ public class DeleteAuthorizationByUserIdRequest extends RpcAcsRequest<DeleteAuth
 
 	private String resourceType;
 	public DeleteAuthorizationByUserIdRequest() {
-		super("quickbi-public", "2022-01-01", "DeleteAuthorizationByUserId", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DeleteAuthorizationByUserId", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

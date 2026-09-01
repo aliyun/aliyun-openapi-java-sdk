@@ -35,7 +35,7 @@ public class DataInterpretationRequest extends RpcAcsRequest<DataInterpretationR
 
 	private String modelCode;
 	public DataInterpretationRequest() {
-		super("quickbi-public", "2022-01-01", "DataInterpretation", "2.2.0");
+		super("quickbi-public", "2022-01-01", "DataInterpretation", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

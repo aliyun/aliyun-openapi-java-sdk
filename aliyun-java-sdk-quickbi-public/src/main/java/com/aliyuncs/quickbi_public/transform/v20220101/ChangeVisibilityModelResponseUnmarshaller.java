@@ -23,8 +23,8 @@ public class ChangeVisibilityModelResponseUnmarshaller {
 	public static ChangeVisibilityModelResponse unmarshall(ChangeVisibilityModelResponse changeVisibilityModelResponse, UnmarshallerContext _ctx) {
 		
 		changeVisibilityModelResponse.setRequestId(_ctx.stringValue("ChangeVisibilityModelResponse.RequestId"));
-		changeVisibilityModelResponse.setResult(_ctx.integerValue("ChangeVisibilityModelResponse.Result"));
 		changeVisibilityModelResponse.setSuccess(_ctx.booleanValue("ChangeVisibilityModelResponse.Success"));
+		changeVisibilityModelResponse.setResult(_ctx.integerValue("ChangeVisibilityModelResponse.Result"));
 	 
 	 	return changeVisibilityModelResponse;
 	}

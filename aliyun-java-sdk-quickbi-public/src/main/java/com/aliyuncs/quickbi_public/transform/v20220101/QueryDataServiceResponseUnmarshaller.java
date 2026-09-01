@@ -40,12 +40,12 @@ public class QueryDataServiceResponseUnmarshaller {
 		List<HeadersItem> headers = new ArrayList<HeadersItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataServiceResponse.Result.Headers.Length"); i++) {
 			HeadersItem headersItem = new HeadersItem();
-			headersItem.setAggregator(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Aggregator"));
+			headersItem.setType(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Type"));
 			headersItem.setColumn(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Column"));
+			headersItem.setLabel(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Label"));
+			headersItem.setAggregator(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Aggregator"));
 			headersItem.setDataType(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].DataType"));
 			headersItem.setGranularity(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Granularity"));
-			headersItem.setLabel(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Label"));
-			headersItem.setType(_ctx.stringValue("QueryDataServiceResponse.Result.Headers["+ i +"].Type"));
 
 			headers.add(headersItem);
 		}

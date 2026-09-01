@@ -27,9 +27,9 @@ public class QueryUserRoleInfoInWorkspaceResponseUnmarshaller {
 		queryUserRoleInfoInWorkspaceResponse.setSuccess(_ctx.booleanValue("QueryUserRoleInfoInWorkspaceResponse.Success"));
 
 		Result result = new Result();
+		result.setRoleName(_ctx.stringValue("QueryUserRoleInfoInWorkspaceResponse.Result.RoleName"));
 		result.setRoleCode(_ctx.stringValue("QueryUserRoleInfoInWorkspaceResponse.Result.RoleCode"));
 		result.setRoleId(_ctx.longValue("QueryUserRoleInfoInWorkspaceResponse.Result.RoleId"));
-		result.setRoleName(_ctx.stringValue("QueryUserRoleInfoInWorkspaceResponse.Result.RoleName"));
 		queryUserRoleInfoInWorkspaceResponse.setResult(result);
 	 
 	 	return queryUserRoleInfoInWorkspaceResponse;

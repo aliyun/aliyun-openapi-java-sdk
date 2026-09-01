@@ -31,38 +31,38 @@ public class QueryUserListResponseUnmarshaller {
 		queryUserListResponse.setSuccess(_ctx.booleanValue("QueryUserListResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("QueryUserListResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryUserListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryUserListResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("QueryUserListResponse.Result.TotalNum"));
 		result.setTotalPages(_ctx.integerValue("QueryUserListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryUserListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setIsDeleted(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].IsDeleted"));
 			dataItem.setAccountId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountId"));
-			dataItem.setAccountName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountName"));
-			dataItem.setAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AdminUser"));
-			dataItem.setAuthAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AuthAdminUser"));
 			dataItem.setEmail(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Email"));
-			dataItem.setJoinedDate(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].JoinedDate"));
-			dataItem.setLastLoginTime(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].LastLoginTime"));
 			dataItem.setNickName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].NickName"));
+			dataItem.setLastLoginTime(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].LastLoginTime"));
 			dataItem.setPhone(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].Phone"));
 			dataItem.setUserId(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].UserId"));
+			dataItem.setAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AdminUser"));
+			dataItem.setJoinedDate(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].JoinedDate"));
 			dataItem.setUserType(_ctx.integerValue("QueryUserListResponse.Result.Data["+ i +"].UserType"));
-			dataItem.setIsDeleted(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].IsDeleted"));
-
-			List<Long> roleIdList = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList.Length"); j++) {
-				roleIdList.add(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList["+ j +"]"));
-			}
-			dataItem.setRoleIdList(roleIdList);
+			dataItem.setAuthAdminUser(_ctx.booleanValue("QueryUserListResponse.Result.Data["+ i +"].AuthAdminUser"));
+			dataItem.setAccountName(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].AccountName"));
 
 			List<String> copilotModules = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].CopilotModules.Length"); j++) {
 				copilotModules.add(_ctx.stringValue("QueryUserListResponse.Result.Data["+ i +"].CopilotModules["+ j +"]"));
 			}
 			dataItem.setCopilotModules(copilotModules);
+
+			List<Long> roleIdList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList.Length"); j++) {
+				roleIdList.add(_ctx.longValue("QueryUserListResponse.Result.Data["+ i +"].RoleIdList["+ j +"]"));
+			}
+			dataItem.setRoleIdList(roleIdList);
 
 			data.add(dataItem);
 		}

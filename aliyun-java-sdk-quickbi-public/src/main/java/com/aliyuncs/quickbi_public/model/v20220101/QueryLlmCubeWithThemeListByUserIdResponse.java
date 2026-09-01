@@ -57,17 +57,9 @@ public class QueryLlmCubeWithThemeListByUserIdResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Map<Object,Object> cubeIds;
-
 		private Map<Object,Object> themeIds;
 
-		public Map<Object,Object> getCubeIds() {
-			return this.cubeIds;
-		}
-
-		public void setCubeIds(Map<Object,Object> cubeIds) {
-			this.cubeIds = cubeIds;
-		}
+		private Map<Object,Object> cubeIds;
 
 		public Map<Object,Object> getThemeIds() {
 			return this.themeIds;
@@ -75,6 +67,14 @@ public class QueryLlmCubeWithThemeListByUserIdResponse extends AcsResponse {
 
 		public void setThemeIds(Map<Object,Object> themeIds) {
 			this.themeIds = themeIds;
+		}
+
+		public Map<Object,Object> getCubeIds() {
+			return this.cubeIds;
+		}
+
+		public void setCubeIds(Map<Object,Object> cubeIds) {
+			this.cubeIds = cubeIds;
 		}
 	}
 

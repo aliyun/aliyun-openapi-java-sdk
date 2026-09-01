@@ -23,8 +23,8 @@ public class CheckDatasetExistedResponseUnmarshaller {
 	public static CheckDatasetExistedResponse unmarshall(CheckDatasetExistedResponse checkDatasetExistedResponse, UnmarshallerContext _ctx) {
 		
 		checkDatasetExistedResponse.setRequestId(_ctx.stringValue("CheckDatasetExistedResponse.RequestId"));
-		checkDatasetExistedResponse.setResult(_ctx.booleanValue("CheckDatasetExistedResponse.Result"));
 		checkDatasetExistedResponse.setSuccess(_ctx.booleanValue("CheckDatasetExistedResponse.Success"));
+		checkDatasetExistedResponse.setResult(_ctx.booleanValue("CheckDatasetExistedResponse.Result"));
 	 
 	 	return checkDatasetExistedResponse;
 	}

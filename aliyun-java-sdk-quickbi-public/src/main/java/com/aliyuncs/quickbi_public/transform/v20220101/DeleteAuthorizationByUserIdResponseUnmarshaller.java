@@ -23,8 +23,8 @@ public class DeleteAuthorizationByUserIdResponseUnmarshaller {
 	public static DeleteAuthorizationByUserIdResponse unmarshall(DeleteAuthorizationByUserIdResponse deleteAuthorizationByUserIdResponse, UnmarshallerContext _ctx) {
 		
 		deleteAuthorizationByUserIdResponse.setRequestId(_ctx.stringValue("DeleteAuthorizationByUserIdResponse.RequestId"));
-		deleteAuthorizationByUserIdResponse.setResult(_ctx.booleanValue("DeleteAuthorizationByUserIdResponse.Result"));
 		deleteAuthorizationByUserIdResponse.setSuccess(_ctx.booleanValue("DeleteAuthorizationByUserIdResponse.Success"));
+		deleteAuthorizationByUserIdResponse.setResult(_ctx.booleanValue("DeleteAuthorizationByUserIdResponse.Result"));
 	 
 	 	return deleteAuthorizationByUserIdResponse;
 	}

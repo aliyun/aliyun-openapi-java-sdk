@@ -31,23 +31,23 @@ public class ListApiDatasourceResponseUnmarshaller {
 		listApiDatasourceResponse.setSuccess(_ctx.booleanValue("ListApiDatasourceResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("ListApiDatasourceResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("ListApiDatasourceResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("ListApiDatasourceResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("ListApiDatasourceResponse.Result.TotalNum"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListApiDatasourceResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setApiId(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].ApiId"));
-			dataItem.setBody(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].Body"));
-			dataItem.setDataSize(_ctx.floatValue("ListApiDatasourceResponse.Result.Data["+ i +"].DataSize"));
 			dataItem.setDateUpdateTime(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].DateUpdateTime"));
 			dataItem.setGmtCreate(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtModified(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].GmtModified"));
-			dataItem.setJobId(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].JobId"));
 			dataItem.setParameters(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].Parameters"));
-			dataItem.setShowName(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].ShowName"));
 			dataItem.setStatusType(_ctx.integerValue("ListApiDatasourceResponse.Result.Data["+ i +"].StatusType"));
+			dataItem.setDataSize(_ctx.floatValue("ListApiDatasourceResponse.Result.Data["+ i +"].DataSize"));
+			dataItem.setGmtModified(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].GmtModified"));
+			dataItem.setApiId(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].ApiId"));
+			dataItem.setBody(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].Body"));
+			dataItem.setShowName(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].ShowName"));
+			dataItem.setJobId(_ctx.stringValue("ListApiDatasourceResponse.Result.Data["+ i +"].JobId"));
 
 			data.add(dataItem);
 		}

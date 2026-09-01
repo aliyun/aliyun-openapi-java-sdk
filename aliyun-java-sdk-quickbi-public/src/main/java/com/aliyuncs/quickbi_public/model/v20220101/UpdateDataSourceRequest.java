@@ -27,7 +27,7 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 
 	private String updateModel;
 	public UpdateDataSourceRequest() {
-		super("quickbi-public", "2022-01-01", "UpdateDataSource", "2.2.0");
+		super("quickbi-public", "2022-01-01", "UpdateDataSource", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

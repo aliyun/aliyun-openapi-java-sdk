@@ -34,8 +34,8 @@ public class SmartqAuthorizeResponseUnmarshaller {
 			Data data = new Data();
 			data.setUserId(_ctx.stringValue("SmartqAuthorizeResponse.Result["+ i +"].UserId"));
 			data.setLlmCube(_ctx.stringValue("SmartqAuthorizeResponse.Result["+ i +"].LlmCube"));
-			data.setLlmCubeTheme(_ctx.stringValue("SmartqAuthorizeResponse.Result["+ i +"].LlmCubeTheme"));
 			data.setDetailMessage(_ctx.stringValue("SmartqAuthorizeResponse.Result["+ i +"].DetailMessage"));
+			data.setLlmCubeTheme(_ctx.stringValue("SmartqAuthorizeResponse.Result["+ i +"].LlmCubeTheme"));
 
 			result.add(data);
 		}

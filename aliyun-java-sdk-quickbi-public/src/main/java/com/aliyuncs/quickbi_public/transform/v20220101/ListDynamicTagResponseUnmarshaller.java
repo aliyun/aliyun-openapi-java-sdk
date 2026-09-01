@@ -32,13 +32,13 @@ public class ListDynamicTagResponseUnmarshaller {
 		List<Data> result = new ArrayList<Data>();
 		for (int i = 0; i < _ctx.lengthValue("ListDynamicTagResponse.Result.Length"); i++) {
 			Data data = new Data();
-			data.setOrganizationId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].OrganizationId"));
-			data.setConfigId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].ConfigId"));
-			data.setConfigName(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].ConfigName"));
-			data.setDsId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].DsId"));
 			data.setTableName(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].TableName"));
 			data.setColumnName(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].ColumnName"));
 			data.setRelatedAttribute(_ctx.integerValue("ListDynamicTagResponse.Result["+ i +"].RelatedAttribute"));
+			data.setConfigName(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].ConfigName"));
+			data.setDsId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].DsId"));
+			data.setOrganizationId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].OrganizationId"));
+			data.setConfigId(_ctx.stringValue("ListDynamicTagResponse.Result["+ i +"].ConfigId"));
 
 			result.add(data);
 		}

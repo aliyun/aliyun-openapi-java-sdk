@@ -23,8 +23,8 @@ public class ListPortalMenusResponseUnmarshaller {
 	public static ListPortalMenusResponse unmarshall(ListPortalMenusResponse listPortalMenusResponse, UnmarshallerContext _ctx) {
 		
 		listPortalMenusResponse.setRequestId(_ctx.stringValue("ListPortalMenusResponse.RequestId"));
-		listPortalMenusResponse.setResult(_ctx.stringValue("ListPortalMenusResponse.Result"));
 		listPortalMenusResponse.setSuccess(_ctx.booleanValue("ListPortalMenusResponse.Success"));
+		listPortalMenusResponse.setResult(_ctx.stringValue("ListPortalMenusResponse.Result"));
 	 
 	 	return listPortalMenusResponse;
 	}

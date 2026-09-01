@@ -28,7 +28,7 @@ public class ListCubeDataLevelPermissionConfigRequest extends RpcAcsRequest<List
 
 	private String ruleType;
 	public ListCubeDataLevelPermissionConfigRequest() {
-		super("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

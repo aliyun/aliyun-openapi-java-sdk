@@ -30,7 +30,7 @@ public class ModifyApiDatasourceParametersRequest extends RpcAcsRequest<ModifyAp
 
 	private String workspaceId;
 	public ModifyApiDatasourceParametersRequest() {
-		super("quickbi-public", "2022-01-01", "ModifyApiDatasourceParameters", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ModifyApiDatasourceParameters", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

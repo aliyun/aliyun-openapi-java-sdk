@@ -26,19 +26,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryDataResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class QueryDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -90,26 +90,26 @@ public class QueryDataResponse extends AcsResponse {
 
 		public static class HeadersItem {
 
-			private String aggregator;
+			private String type;
 
 			private String column;
+
+			private String label;
+
+			private String aggregator;
 
 			private String dataType;
 
 			private String granularity;
 
-			private String label;
-
-			private String type;
-
 			private String originalColumn;
 
-			public String getAggregator() {
-				return this.aggregator;
+			public String getType() {
+				return this.type;
 			}
 
-			public void setAggregator(String aggregator) {
-				this.aggregator = aggregator;
+			public void setType(String type) {
+				this.type = type;
 			}
 
 			public String getColumn() {
@@ -118,6 +118,22 @@ public class QueryDataResponse extends AcsResponse {
 
 			public void setColumn(String column) {
 				this.column = column;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getAggregator() {
+				return this.aggregator;
+			}
+
+			public void setAggregator(String aggregator) {
+				this.aggregator = aggregator;
 			}
 
 			public String getDataType() {
@@ -134,22 +150,6 @@ public class QueryDataResponse extends AcsResponse {
 
 			public void setGranularity(String granularity) {
 				this.granularity = granularity;
-			}
-
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
 			}
 
 			public String getOriginalColumn() {

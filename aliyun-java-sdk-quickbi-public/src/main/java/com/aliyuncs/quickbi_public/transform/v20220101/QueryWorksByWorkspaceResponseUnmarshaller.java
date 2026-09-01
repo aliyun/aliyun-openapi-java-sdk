@@ -32,36 +32,36 @@ public class QueryWorksByWorkspaceResponseUnmarshaller {
 		queryWorksByWorkspaceResponse.setSuccess(_ctx.booleanValue("QueryWorksByWorkspaceResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.TotalNum"));
 		result.setTotalPages(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryWorksByWorkspaceResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAuth3rdFlag(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Auth3rdFlag"));
-			dataItem.setDescription(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Description"));
-			dataItem.setGmtCreate(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].GmtCreate"));
-			dataItem.setGmtModify(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].GmtModify"));
-			dataItem.setModifyName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].ModifyName"));
-			dataItem.setOwnerId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].OwnerId"));
-			dataItem.setOwnerName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].OwnerName"));
-			dataItem.setPublicFlag(_ctx.booleanValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicFlag"));
-			dataItem.setPublicInvalidTime(_ctx.longValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicInvalidTime"));
-			dataItem.setSecurityLevel(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].SecurityLevel"));
 			dataItem.setStatus(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Status"));
-			dataItem.setWorkName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkName"));
+			dataItem.setOwnerName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].OwnerName"));
+			dataItem.setPublicInvalidTime(_ctx.longValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicInvalidTime"));
+			dataItem.setDescription(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Description"));
 			dataItem.setWorkType(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkType"));
-			dataItem.setWorksId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorksId"));
+			dataItem.setModifyName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].ModifyName"));
 			dataItem.setWorkspaceId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setAuth3rdFlag(_ctx.integerValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Auth3rdFlag"));
+			dataItem.setGmtCreate(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].GmtCreate"));
+			dataItem.setOwnerId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].OwnerId"));
+			dataItem.setGmtModify(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].GmtModify"));
+			dataItem.setSecurityLevel(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].SecurityLevel"));
+			dataItem.setWorkName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkName"));
 			dataItem.setWorkspaceName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setPublicFlag(_ctx.booleanValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].PublicFlag"));
+			dataItem.setWorksId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].WorksId"));
 
 			Directory directory = new Directory();
-			directory.setId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.Id"));
-			directory.setName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.Name"));
 			directory.setPathId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.PathId"));
+			directory.setId(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.Id"));
 			directory.setPathName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.PathName"));
+			directory.setName(_ctx.stringValue("QueryWorksByWorkspaceResponse.Result.Data["+ i +"].Directory.Name"));
 			dataItem.setDirectory(directory);
 
 			data.add(dataItem);

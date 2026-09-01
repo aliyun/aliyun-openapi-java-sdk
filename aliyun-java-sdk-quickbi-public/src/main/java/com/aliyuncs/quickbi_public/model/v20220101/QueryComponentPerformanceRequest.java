@@ -38,7 +38,7 @@ public class QueryComponentPerformanceRequest extends RpcAcsRequest<QueryCompone
 
 	private String workspaceId;
 	public QueryComponentPerformanceRequest() {
-		super("quickbi-public", "2022-01-01", "QueryComponentPerformance", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryComponentPerformance", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

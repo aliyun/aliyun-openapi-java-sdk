@@ -30,7 +30,7 @@ public class QueryUserListRequest extends RpcAcsRequest<QueryUserListResponse> {
 
 	private String keyword;
 	public QueryUserListRequest() {
-		super("quickbi-public", "2022-01-01", "QueryUserList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryUserList", "QuickBI");
 		setMethod(MethodType.GET);
 	}
 

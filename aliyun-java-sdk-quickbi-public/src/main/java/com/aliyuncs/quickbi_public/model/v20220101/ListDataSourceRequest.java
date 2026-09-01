@@ -29,7 +29,7 @@ public class ListDataSourceRequest extends RpcAcsRequest<ListDataSourceResponse>
 
 	private String workspaceId;
 	public ListDataSourceRequest() {
-		super("quickbi-public", "2022-01-01", "ListDataSource", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListDataSource", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

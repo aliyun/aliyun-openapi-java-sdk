@@ -32,7 +32,7 @@ public class QueryApprovalInfoRequest extends RpcAcsRequest<QueryApprovalInfoRes
 
 	private Integer status;
 	public QueryApprovalInfoRequest() {
-		super("quickbi-public", "2022-01-01", "QueryApprovalInfo", "2.2.0");
+		super("quickbi-public", "2022-01-01", "QueryApprovalInfo", "QuickBI");
 		setMethod(MethodType.POST);
 	}
 

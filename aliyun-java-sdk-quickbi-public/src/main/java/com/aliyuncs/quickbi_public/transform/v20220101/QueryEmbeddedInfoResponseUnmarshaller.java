@@ -28,13 +28,13 @@ public class QueryEmbeddedInfoResponseUnmarshaller {
 		queryEmbeddedInfoResponse.setSuccess(_ctx.booleanValue("QueryEmbeddedInfoResponse.Success"));
 
 		Result result = new Result();
-		result.setEmbeddedCount(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.EmbeddedCount"));
 		result.setMaxCount(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.MaxCount"));
+		result.setEmbeddedCount(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.EmbeddedCount"));
 
 		Detail detail = new Detail();
+		detail.setReport(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Report"));
 		detail.setDashboardOfflineQuery(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.DashboardOfflineQuery"));
 		detail.setPage(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Page"));
-		detail.setReport(_ctx.integerValue("QueryEmbeddedInfoResponse.Result.Detail.Report"));
 		result.setDetail(detail);
 		queryEmbeddedInfoResponse.setResult(result);
 	 

@@ -57,13 +57,21 @@ public class QueryWorkspaceRoleConfigResponse extends AcsResponse {
 
 	public static class Result {
 
+		private String roleName;
+
 		private Boolean isSystemRole;
 
 		private Long roleId;
 
-		private String roleName;
-
 		private List<AuthConfigListItem> authConfigList;
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
 
 		public Boolean getIsSystemRole() {
 			return this.isSystemRole;
@@ -79,14 +87,6 @@ public class QueryWorkspaceRoleConfigResponse extends AcsResponse {
 
 		public void setRoleId(Long roleId) {
 			this.roleId = roleId;
-		}
-
-		public String getRoleName() {
-			return this.roleName;
-		}
-
-		public void setRoleName(String roleName) {
-			this.roleName = roleName;
 		}
 
 		public List<AuthConfigListItem> getAuthConfigList() {

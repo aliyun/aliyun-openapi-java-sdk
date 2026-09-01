@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryShareListResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryShareListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,45 +57,21 @@ public class QueryShareListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer authPoint;
-
-		private Long expireDate;
-
-		private String reportId;
-
 		private String shareId;
 
 		private String shareToId;
 
-		private String shareToName;
+		private Long expireDate;
 
 		private Integer shareToType;
 
+		private Integer authPoint;
+
+		private String shareToName;
+
+		private String reportId;
+
 		private String shareType;
-
-		public Integer getAuthPoint() {
-			return this.authPoint;
-		}
-
-		public void setAuthPoint(Integer authPoint) {
-			this.authPoint = authPoint;
-		}
-
-		public Long getExpireDate() {
-			return this.expireDate;
-		}
-
-		public void setExpireDate(Long expireDate) {
-			this.expireDate = expireDate;
-		}
-
-		public String getReportId() {
-			return this.reportId;
-		}
-
-		public void setReportId(String reportId) {
-			this.reportId = reportId;
-		}
 
 		public String getShareId() {
 			return this.shareId;
@@ -113,12 +89,12 @@ public class QueryShareListResponse extends AcsResponse {
 			this.shareToId = shareToId;
 		}
 
-		public String getShareToName() {
-			return this.shareToName;
+		public Long getExpireDate() {
+			return this.expireDate;
 		}
 
-		public void setShareToName(String shareToName) {
-			this.shareToName = shareToName;
+		public void setExpireDate(Long expireDate) {
+			this.expireDate = expireDate;
 		}
 
 		public Integer getShareToType() {
@@ -127,6 +103,30 @@ public class QueryShareListResponse extends AcsResponse {
 
 		public void setShareToType(Integer shareToType) {
 			this.shareToType = shareToType;
+		}
+
+		public Integer getAuthPoint() {
+			return this.authPoint;
+		}
+
+		public void setAuthPoint(Integer authPoint) {
+			this.authPoint = authPoint;
+		}
+
+		public String getShareToName() {
+			return this.shareToName;
+		}
+
+		public void setShareToName(String shareToName) {
+			this.shareToName = shareToName;
+		}
+
+		public String getReportId() {
+			return this.reportId;
+		}
+
+		public void setReportId(String reportId) {
+			this.reportId = reportId;
 		}
 
 		public String getShareType() {

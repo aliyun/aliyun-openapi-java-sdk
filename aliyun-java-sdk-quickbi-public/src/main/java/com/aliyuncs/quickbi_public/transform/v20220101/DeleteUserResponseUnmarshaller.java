@@ -23,8 +23,8 @@ public class DeleteUserResponseUnmarshaller {
 	public static DeleteUserResponse unmarshall(DeleteUserResponse deleteUserResponse, UnmarshallerContext _ctx) {
 		
 		deleteUserResponse.setRequestId(_ctx.stringValue("DeleteUserResponse.RequestId"));
-		deleteUserResponse.setResult(_ctx.booleanValue("DeleteUserResponse.Result"));
 		deleteUserResponse.setSuccess(_ctx.booleanValue("DeleteUserResponse.Success"));
+		deleteUserResponse.setResult(_ctx.booleanValue("DeleteUserResponse.Result"));
 	 
 	 	return deleteUserResponse;
 	}

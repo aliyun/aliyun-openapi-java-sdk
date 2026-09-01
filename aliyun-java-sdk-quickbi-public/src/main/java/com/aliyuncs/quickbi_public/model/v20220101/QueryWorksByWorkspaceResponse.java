@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private Result result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Result getResult() {
@@ -57,15 +57,23 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
-
 		private Integer totalPages;
 
 		private List<DataItem> data;
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -81,14 +89,6 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
-		}
-
-		public Integer getTotalNum() {
-			return this.totalNum;
-		}
-
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
 		}
 
 		public Integer getTotalPages() {
@@ -109,86 +109,46 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private Integer auth3rdFlag;
-
-			private String description;
-
-			private String gmtCreate;
-
-			private String gmtModify;
-
-			private String modifyName;
-
-			private String ownerId;
+			private Integer status;
 
 			private String ownerName;
 
-			private Boolean publicFlag;
-
 			private Long publicInvalidTime;
 
-			private String securityLevel;
-
-			private Integer status;
-
-			private String workName;
+			private String description;
 
 			private String workType;
 
-			private String worksId;
+			private String modifyName;
 
 			private String workspaceId;
 
+			private Integer auth3rdFlag;
+
+			private String gmtCreate;
+
+			private String ownerId;
+
+			private String gmtModify;
+
+			private String securityLevel;
+
+			private String workName;
+
 			private String workspaceName;
+
+			private Boolean publicFlag;
+
+			private String worksId;
 
 			private Directory directory;
 
-			public Integer getAuth3rdFlag() {
-				return this.auth3rdFlag;
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setAuth3rdFlag(Integer auth3rdFlag) {
-				this.auth3rdFlag = auth3rdFlag;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getGmtModify() {
-				return this.gmtModify;
-			}
-
-			public void setGmtModify(String gmtModify) {
-				this.gmtModify = gmtModify;
-			}
-
-			public String getModifyName() {
-				return this.modifyName;
-			}
-
-			public void setModifyName(String modifyName) {
-				this.modifyName = modifyName;
-			}
-
-			public String getOwnerId() {
-				return this.ownerId;
-			}
-
-			public void setOwnerId(String ownerId) {
-				this.ownerId = ownerId;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getOwnerName() {
@@ -199,14 +159,6 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 				this.ownerName = ownerName;
 			}
 
-			public Boolean getPublicFlag() {
-				return this.publicFlag;
-			}
-
-			public void setPublicFlag(Boolean publicFlag) {
-				this.publicFlag = publicFlag;
-			}
-
 			public Long getPublicInvalidTime() {
 				return this.publicInvalidTime;
 			}
@@ -215,28 +167,12 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 				this.publicInvalidTime = publicInvalidTime;
 			}
 
-			public String getSecurityLevel() {
-				return this.securityLevel;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setSecurityLevel(String securityLevel) {
-				this.securityLevel = securityLevel;
-			}
-
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
-			public String getWorkName() {
-				return this.workName;
-			}
-
-			public void setWorkName(String workName) {
-				this.workName = workName;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getWorkType() {
@@ -247,12 +183,12 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 				this.workType = workType;
 			}
 
-			public String getWorksId() {
-				return this.worksId;
+			public String getModifyName() {
+				return this.modifyName;
 			}
 
-			public void setWorksId(String worksId) {
-				this.worksId = worksId;
+			public void setModifyName(String modifyName) {
+				this.modifyName = modifyName;
 			}
 
 			public String getWorkspaceId() {
@@ -263,12 +199,76 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 				this.workspaceId = workspaceId;
 			}
 
+			public Integer getAuth3rdFlag() {
+				return this.auth3rdFlag;
+			}
+
+			public void setAuth3rdFlag(Integer auth3rdFlag) {
+				this.auth3rdFlag = auth3rdFlag;
+			}
+
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getOwnerId() {
+				return this.ownerId;
+			}
+
+			public void setOwnerId(String ownerId) {
+				this.ownerId = ownerId;
+			}
+
+			public String getGmtModify() {
+				return this.gmtModify;
+			}
+
+			public void setGmtModify(String gmtModify) {
+				this.gmtModify = gmtModify;
+			}
+
+			public String getSecurityLevel() {
+				return this.securityLevel;
+			}
+
+			public void setSecurityLevel(String securityLevel) {
+				this.securityLevel = securityLevel;
+			}
+
+			public String getWorkName() {
+				return this.workName;
+			}
+
+			public void setWorkName(String workName) {
+				this.workName = workName;
+			}
+
 			public String getWorkspaceName() {
 				return this.workspaceName;
 			}
 
 			public void setWorkspaceName(String workspaceName) {
 				this.workspaceName = workspaceName;
+			}
+
+			public Boolean getPublicFlag() {
+				return this.publicFlag;
+			}
+
+			public void setPublicFlag(Boolean publicFlag) {
+				this.publicFlag = publicFlag;
+			}
+
+			public String getWorksId() {
+				return this.worksId;
+			}
+
+			public void setWorksId(String worksId) {
+				this.worksId = worksId;
 			}
 
 			public Directory getDirectory() {
@@ -281,29 +281,13 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 
 			public static class Directory {
 
-				private String id;
-
-				private String name;
-
 				private String pathId;
+
+				private String id;
 
 				private String pathName;
 
-				public String getId() {
-					return this.id;
-				}
-
-				public void setId(String id) {
-					this.id = id;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public String getPathId() {
 					return this.pathId;
@@ -313,12 +297,28 @@ public class QueryWorksByWorkspaceResponse extends AcsResponse {
 					this.pathId = pathId;
 				}
 
+				public String getId() {
+					return this.id;
+				}
+
+				public void setId(String id) {
+					this.id = id;
+				}
+
 				public String getPathName() {
 					return this.pathName;
 				}
 
 				public void setPathName(String pathName) {
 					this.pathName = pathName;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}

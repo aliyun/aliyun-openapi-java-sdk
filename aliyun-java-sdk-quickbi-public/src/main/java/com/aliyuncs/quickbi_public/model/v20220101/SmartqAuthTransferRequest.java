@@ -29,7 +29,7 @@ public class SmartqAuthTransferRequest extends RpcAcsRequest<SmartqAuthTransferR
 
 	private String originUserId;
 	public SmartqAuthTransferRequest() {
-		super("quickbi-public", "2022-01-01", "SmartqAuthTransfer", "2.2.0");
+		super("quickbi-public", "2022-01-01", "SmartqAuthTransfer", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -37,7 +37,7 @@ public class CreateCubeBySqlRequest extends RpcAcsRequest<CreateCubeBySqlRespons
 
 	private String workspaceId;
 	public CreateCubeBySqlRequest() {
-		super("quickbi-public", "2022-01-01", "CreateCubeBySql", "2.2.0");
+		super("quickbi-public", "2022-01-01", "CreateCubeBySql", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

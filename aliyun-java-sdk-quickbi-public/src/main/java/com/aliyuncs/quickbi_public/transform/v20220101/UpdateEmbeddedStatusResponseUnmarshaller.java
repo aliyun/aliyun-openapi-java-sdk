@@ -23,8 +23,8 @@ public class UpdateEmbeddedStatusResponseUnmarshaller {
 	public static UpdateEmbeddedStatusResponse unmarshall(UpdateEmbeddedStatusResponse updateEmbeddedStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateEmbeddedStatusResponse.setRequestId(_ctx.stringValue("UpdateEmbeddedStatusResponse.RequestId"));
-		updateEmbeddedStatusResponse.setResult(_ctx.integerValue("UpdateEmbeddedStatusResponse.Result"));
 		updateEmbeddedStatusResponse.setSuccess(_ctx.booleanValue("UpdateEmbeddedStatusResponse.Success"));
+		updateEmbeddedStatusResponse.setResult(_ctx.integerValue("UpdateEmbeddedStatusResponse.Result"));
 	 
 	 	return updateEmbeddedStatusResponse;
 	}

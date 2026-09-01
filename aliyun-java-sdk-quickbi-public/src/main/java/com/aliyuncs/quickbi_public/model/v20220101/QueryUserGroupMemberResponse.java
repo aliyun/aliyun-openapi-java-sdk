@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryUserGroupMemberResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,38 +57,22 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String id;
-
-		private Boolean isUserGroup;
-
-		private String name;
+		private String parentUserGroupName;
 
 		private String parentUserGroupId;
 
-		private String parentUserGroupName;
+		private Boolean isUserGroup;
 
-		public String getId() {
-			return this.id;
+		private String id;
+
+		private String name;
+
+		public String getParentUserGroupName() {
+			return this.parentUserGroupName;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public Boolean getIsUserGroup() {
-			return this.isUserGroup;
-		}
-
-		public void setIsUserGroup(Boolean isUserGroup) {
-			this.isUserGroup = isUserGroup;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setParentUserGroupName(String parentUserGroupName) {
+			this.parentUserGroupName = parentUserGroupName;
 		}
 
 		public String getParentUserGroupId() {
@@ -99,12 +83,28 @@ public class QueryUserGroupMemberResponse extends AcsResponse {
 			this.parentUserGroupId = parentUserGroupId;
 		}
 
-		public String getParentUserGroupName() {
-			return this.parentUserGroupName;
+		public Boolean getIsUserGroup() {
+			return this.isUserGroup;
 		}
 
-		public void setParentUserGroupName(String parentUserGroupName) {
-			this.parentUserGroupName = parentUserGroupName;
+		public void setIsUserGroup(Boolean isUserGroup) {
+			this.isUserGroup = isUserGroup;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

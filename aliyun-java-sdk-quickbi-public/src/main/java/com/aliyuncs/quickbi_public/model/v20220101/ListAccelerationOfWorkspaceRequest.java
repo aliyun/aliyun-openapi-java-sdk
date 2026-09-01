@@ -35,7 +35,7 @@ public class ListAccelerationOfWorkspaceRequest extends RpcAcsRequest<ListAccele
 
 	private String workspaceId;
 	public ListAccelerationOfWorkspaceRequest() {
-		super("quickbi-public", "2022-01-01", "ListAccelerationOfWorkspace", "2.2.0");
+		super("quickbi-public", "2022-01-01", "ListAccelerationOfWorkspace", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

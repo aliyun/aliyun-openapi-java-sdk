@@ -32,25 +32,25 @@ public class QueryWorkspaceUserListResponseUnmarshaller {
 		queryWorkspaceUserListResponse.setSuccess(_ctx.booleanValue("QueryWorkspaceUserListResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("QueryWorkspaceUserListResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryWorkspaceUserListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryWorkspaceUserListResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("QueryWorkspaceUserListResponse.Result.TotalNum"));
 		result.setTotalPages(_ctx.integerValue("QueryWorkspaceUserListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryWorkspaceUserListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setAccountId(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].AccountId"));
-			dataItem.setAccountName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].AccountName"));
 			dataItem.setEmail(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Email"));
-			dataItem.setNickName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].NickName"));
 			dataItem.setPhone(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Phone"));
 			dataItem.setUserId(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].UserId"));
+			dataItem.setNickName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].NickName"));
+			dataItem.setAccountName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].AccountName"));
 
 			Role role = new Role();
+			role.setRoleName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Role.RoleName"));
 			role.setRoleCode(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Role.RoleCode"));
 			role.setRoleId(_ctx.longValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Role.RoleId"));
-			role.setRoleName(_ctx.stringValue("QueryWorkspaceUserListResponse.Result.Data["+ i +"].Role.RoleName"));
 			dataItem.setRole(role);
 
 			data.add(dataItem);

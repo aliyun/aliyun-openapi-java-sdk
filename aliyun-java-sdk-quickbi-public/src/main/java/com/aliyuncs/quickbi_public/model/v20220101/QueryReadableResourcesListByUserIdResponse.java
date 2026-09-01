@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Data> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Data> getResult() {
@@ -57,58 +57,42 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String createTime;
-
-		private String description;
-
-		private String modifyName;
+		private Integer status;
 
 		private String modifyTime;
 
-		private String ownerId;
-
 		private String ownerName;
 
-		private String securityLevel;
-
-		private Integer status;
-
-		private Integer thirdPartAuthFlag;
-
-		private String workName;
+		private String description;
 
 		private String workType;
 
-		private String worksId;
+		private String modifyName;
+
+		private String createTime;
 
 		private String workspaceId;
 
+		private Integer thirdPartAuthFlag;
+
+		private String ownerId;
+
+		private String securityLevel;
+
+		private String workName;
+
 		private String workspaceName;
+
+		private String worksId;
 
 		private Directory directory;
 
-		public String getCreateTime() {
-			return this.createTime;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getModifyName() {
-			return this.modifyName;
-		}
-
-		public void setModifyName(String modifyName) {
-			this.modifyName = modifyName;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getModifyTime() {
@@ -119,14 +103,6 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
 		public String getOwnerName() {
 			return this.ownerName;
 		}
@@ -135,36 +111,12 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
-		public String getSecurityLevel() {
-			return this.securityLevel;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSecurityLevel(String securityLevel) {
-			this.securityLevel = securityLevel;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Integer getThirdPartAuthFlag() {
-			return this.thirdPartAuthFlag;
-		}
-
-		public void setThirdPartAuthFlag(Integer thirdPartAuthFlag) {
-			this.thirdPartAuthFlag = thirdPartAuthFlag;
-		}
-
-		public String getWorkName() {
-			return this.workName;
-		}
-
-		public void setWorkName(String workName) {
-			this.workName = workName;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getWorkType() {
@@ -175,12 +127,20 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 			this.workType = workType;
 		}
 
-		public String getWorksId() {
-			return this.worksId;
+		public String getModifyName() {
+			return this.modifyName;
 		}
 
-		public void setWorksId(String worksId) {
-			this.worksId = worksId;
+		public void setModifyName(String modifyName) {
+			this.modifyName = modifyName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getWorkspaceId() {
@@ -191,12 +151,52 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 			this.workspaceId = workspaceId;
 		}
 
+		public Integer getThirdPartAuthFlag() {
+			return this.thirdPartAuthFlag;
+		}
+
+		public void setThirdPartAuthFlag(Integer thirdPartAuthFlag) {
+			this.thirdPartAuthFlag = thirdPartAuthFlag;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getSecurityLevel() {
+			return this.securityLevel;
+		}
+
+		public void setSecurityLevel(String securityLevel) {
+			this.securityLevel = securityLevel;
+		}
+
+		public String getWorkName() {
+			return this.workName;
+		}
+
+		public void setWorkName(String workName) {
+			this.workName = workName;
+		}
+
 		public String getWorkspaceName() {
 			return this.workspaceName;
 		}
 
 		public void setWorkspaceName(String workspaceName) {
 			this.workspaceName = workspaceName;
+		}
+
+		public String getWorksId() {
+			return this.worksId;
+		}
+
+		public void setWorksId(String worksId) {
+			this.worksId = worksId;
 		}
 
 		public Directory getDirectory() {
@@ -209,29 +209,13 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 
 		public static class Directory {
 
-			private String id;
-
-			private String name;
-
 			private String pathId;
+
+			private String id;
 
 			private String pathName;
 
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getPathId() {
 				return this.pathId;
@@ -241,12 +225,28 @@ public class QueryReadableResourcesListByUserIdResponse extends AcsResponse {
 				this.pathId = pathId;
 			}
 
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
 			public String getPathName() {
 				return this.pathName;
 			}
 
 			public void setPathName(String pathName) {
 				this.pathName = pathName;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

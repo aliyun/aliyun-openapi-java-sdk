@@ -56,19 +56,11 @@ public class QuerySmartqPermissionByCubeIdResponse extends AcsResponse {
 
 	public static class Result {
 
-		private Boolean hasPerssion;
-
 		private String cubeId;
 
 		private String cubeName;
 
-		public Boolean getHasPerssion() {
-			return this.hasPerssion;
-		}
-
-		public void setHasPerssion(Boolean hasPerssion) {
-			this.hasPerssion = hasPerssion;
-		}
+		private Boolean hasPerssion;
 
 		public String getCubeId() {
 			return this.cubeId;
@@ -84,6 +76,14 @@ public class QuerySmartqPermissionByCubeIdResponse extends AcsResponse {
 
 		public void setCubeName(String cubeName) {
 			this.cubeName = cubeName;
+		}
+
+		public Boolean getHasPerssion() {
+			return this.hasPerssion;
+		}
+
+		public void setHasPerssion(Boolean hasPerssion) {
+			this.hasPerssion = hasPerssion;
 		}
 	}
 

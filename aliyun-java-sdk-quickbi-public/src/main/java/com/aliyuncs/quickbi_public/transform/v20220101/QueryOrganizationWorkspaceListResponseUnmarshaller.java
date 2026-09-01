@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryOrganizationWorkspaceListResponse;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryOrganizationWorkspaceListResponse.Result;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryOrganizationWorkspaceListResponse.Result.DataItem;
+import com.aliyuncs.quickbi_public.model.v20220101.QueryOrganizationWorkspaceListResponse.Result.DataItem.WorkspaceExportConfig;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,29 +32,41 @@ public class QueryOrganizationWorkspaceListResponseUnmarshaller {
 		queryOrganizationWorkspaceListResponse.setSuccess(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Success"));
 
 		Result result = new Result();
+		result.setTotalNum(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalNum"));
 		result.setPageNum(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.PageNum"));
 		result.setPageSize(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.PageSize"));
-		result.setTotalNum(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalNum"));
 		result.setTotalPages(_ctx.integerValue("QueryOrganizationWorkspaceListResponse.Result.TotalPages"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOrganizationWorkspaceListResponse.Result.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAllowPublishOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowPublishOperation"));
-			dataItem.setAllowShareOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowShareOperation"));
-			dataItem.setCreateTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateTime"));
-			dataItem.setCreateUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUser"));
-			dataItem.setCreateUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUserAccountName"));
-			dataItem.setModifiedTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifiedTime"));
-			dataItem.setModifyUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUser"));
-			dataItem.setModifyUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUserAccountName"));
-			dataItem.setOrganizationId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OrganizationId"));
-			dataItem.setOwner(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].Owner"));
-			dataItem.setOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OwnerAccountName"));
 			dataItem.setWorkspaceDescription(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceDescription"));
-			dataItem.setWorkspaceId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceId"));
-			dataItem.setWorkspaceName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceName"));
 			dataItem.setRealOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].RealOwnerAccountName"));
+			dataItem.setOwner(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].Owner"));
+			dataItem.setModifyUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUser"));
+			dataItem.setCreateTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateTime"));
+			dataItem.setOwnerAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OwnerAccountName"));
+			dataItem.setWorkspaceId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceId"));
+			dataItem.setCreateUser(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUser"));
+			dataItem.setOrganizationId(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].OrganizationId"));
+			dataItem.setModifyUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifyUserAccountName"));
+			dataItem.setModifiedTime(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].ModifiedTime"));
+			dataItem.setAllowShareOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowShareOperation"));
+			dataItem.setWorkspaceName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceName"));
+			dataItem.setAllowPublishOperation(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].AllowPublishOperation"));
+			dataItem.setCreateUserAccountName(_ctx.stringValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].CreateUserAccountName"));
+
+			WorkspaceExportConfig workspaceExportConfig = new WorkspaceExportConfig();
+			workspaceExportConfig.setDefaultExportType(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.DefaultExportType"));
+			workspaceExportConfig.setPdfExport(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.PdfExport"));
+			workspaceExportConfig.setImageExport(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.ImageExport"));
+			workspaceExportConfig.setExportToServer(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.ExportToServer"));
+			workspaceExportConfig.setExportToLocal(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.ExportToLocal"));
+			workspaceExportConfig.setExportMainSwitch(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.ExportMainSwitch"));
+			workspaceExportConfig.setAllowExcelImageFile(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.AllowExcelImageFile"));
+			workspaceExportConfig.setDataExport(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.DataExport"));
+			workspaceExportConfig.setExportToPublicWork(_ctx.booleanValue("QueryOrganizationWorkspaceListResponse.Result.Data["+ i +"].WorkspaceExportConfig.ExportToPublicWork"));
+			dataItem.setWorkspaceExportConfig(workspaceExportConfig);
 
 			data.add(dataItem);
 		}

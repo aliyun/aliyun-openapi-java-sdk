@@ -33,7 +33,7 @@ public class GetMailTaskListRequest extends RpcAcsRequest<GetMailTaskListRespons
 
 	private Integer pageSize;
 	public GetMailTaskListRequest() {
-		super("quickbi-public", "2022-01-01", "GetMailTaskList", "2.2.0");
+		super("quickbi-public", "2022-01-01", "GetMailTaskList", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

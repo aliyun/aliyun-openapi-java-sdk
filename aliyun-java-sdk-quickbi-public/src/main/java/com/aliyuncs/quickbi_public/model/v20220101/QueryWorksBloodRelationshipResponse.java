@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
-	private Boolean success;
-
 	private String requestId;
 
+	private Boolean success;
+
 	private List<Item> result;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Item> getResult() {
@@ -57,35 +57,19 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String componentId;
-
-		private String componentName;
-
 		private Integer componentType;
 
 		private String componentTypeName;
 
+		private String componentName;
+
 		private String componentTypeCnName;
+
+		private String componentId;
 
 		private String datasetId;
 
 		private List<QueryParam> queryParams;
-
-		public String getComponentId() {
-			return this.componentId;
-		}
-
-		public void setComponentId(String componentId) {
-			this.componentId = componentId;
-		}
-
-		public String getComponentName() {
-			return this.componentName;
-		}
-
-		public void setComponentName(String componentName) {
-			this.componentName = componentName;
-		}
 
 		public Integer getComponentType() {
 			return this.componentType;
@@ -103,12 +87,28 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 			this.componentTypeName = componentTypeName;
 		}
 
+		public String getComponentName() {
+			return this.componentName;
+		}
+
+		public void setComponentName(String componentName) {
+			this.componentName = componentName;
+		}
+
 		public String getComponentTypeCnName() {
 			return this.componentTypeCnName;
 		}
 
 		public void setComponentTypeCnName(String componentTypeCnName) {
 			this.componentTypeCnName = componentTypeCnName;
+		}
+
+		public String getComponentId() {
+			return this.componentId;
+		}
+
+		public void setComponentId(String componentId) {
+			this.componentId = componentId;
 		}
 
 		public String getDatasetId() {
@@ -129,29 +129,21 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 		public static class QueryParam {
 
-			private String areaId;
-
 			private String areaName;
-
-			private String caption;
-
-			private String dataType;
-
-			private Boolean isMeasure;
 
 			private String pathId;
 
 			private String uid;
 
+			private Boolean isMeasure;
+
 			private String expression;
 
-			public String getAreaId() {
-				return this.areaId;
-			}
+			private String areaId;
 
-			public void setAreaId(String areaId) {
-				this.areaId = areaId;
-			}
+			private String dataType;
+
+			private String caption;
 
 			public String getAreaName() {
 				return this.areaName;
@@ -159,30 +151,6 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 
 			public void setAreaName(String areaName) {
 				this.areaName = areaName;
-			}
-
-			public String getCaption() {
-				return this.caption;
-			}
-
-			public void setCaption(String caption) {
-				this.caption = caption;
-			}
-
-			public String getDataType() {
-				return this.dataType;
-			}
-
-			public void setDataType(String dataType) {
-				this.dataType = dataType;
-			}
-
-			public Boolean getIsMeasure() {
-				return this.isMeasure;
-			}
-
-			public void setIsMeasure(Boolean isMeasure) {
-				this.isMeasure = isMeasure;
 			}
 
 			public String getPathId() {
@@ -201,12 +169,44 @@ public class QueryWorksBloodRelationshipResponse extends AcsResponse {
 				this.uid = uid;
 			}
 
+			public Boolean getIsMeasure() {
+				return this.isMeasure;
+			}
+
+			public void setIsMeasure(Boolean isMeasure) {
+				this.isMeasure = isMeasure;
+			}
+
 			public String getExpression() {
 				return this.expression;
 			}
 
 			public void setExpression(String expression) {
 				this.expression = expression;
+			}
+
+			public String getAreaId() {
+				return this.areaId;
+			}
+
+			public void setAreaId(String areaId) {
+				this.areaId = areaId;
+			}
+
+			public String getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(String dataType) {
+				this.dataType = dataType;
+			}
+
+			public String getCaption() {
+				return this.caption;
+			}
+
+			public void setCaption(String caption) {
+				this.caption = caption;
 			}
 		}
 	}

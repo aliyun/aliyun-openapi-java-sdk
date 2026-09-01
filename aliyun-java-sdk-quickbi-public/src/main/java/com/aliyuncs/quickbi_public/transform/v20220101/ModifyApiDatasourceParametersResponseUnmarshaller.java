@@ -23,8 +23,8 @@ public class ModifyApiDatasourceParametersResponseUnmarshaller {
 	public static ModifyApiDatasourceParametersResponse unmarshall(ModifyApiDatasourceParametersResponse modifyApiDatasourceParametersResponse, UnmarshallerContext _ctx) {
 		
 		modifyApiDatasourceParametersResponse.setRequestId(_ctx.stringValue("ModifyApiDatasourceParametersResponse.RequestId"));
-		modifyApiDatasourceParametersResponse.setResult(_ctx.booleanValue("ModifyApiDatasourceParametersResponse.Result"));
 		modifyApiDatasourceParametersResponse.setSuccess(_ctx.booleanValue("ModifyApiDatasourceParametersResponse.Success"));
+		modifyApiDatasourceParametersResponse.setResult(_ctx.booleanValue("ModifyApiDatasourceParametersResponse.Result"));
 	 
 	 	return modifyApiDatasourceParametersResponse;
 	}

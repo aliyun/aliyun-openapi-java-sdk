@@ -23,8 +23,8 @@ public class CreateTicket4CopilotResponseUnmarshaller {
 	public static CreateTicket4CopilotResponse unmarshall(CreateTicket4CopilotResponse createTicket4CopilotResponse, UnmarshallerContext _ctx) {
 		
 		createTicket4CopilotResponse.setRequestId(_ctx.stringValue("CreateTicket4CopilotResponse.RequestId"));
-		createTicket4CopilotResponse.setResult(_ctx.stringValue("CreateTicket4CopilotResponse.Result"));
 		createTicket4CopilotResponse.setSuccess(_ctx.booleanValue("CreateTicket4CopilotResponse.Success"));
+		createTicket4CopilotResponse.setResult(_ctx.stringValue("CreateTicket4CopilotResponse.Result"));
 	 
 	 	return createTicket4CopilotResponse;
 	}

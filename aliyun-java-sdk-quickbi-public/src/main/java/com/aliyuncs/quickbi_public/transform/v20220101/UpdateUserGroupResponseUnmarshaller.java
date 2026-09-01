@@ -23,8 +23,8 @@ public class UpdateUserGroupResponseUnmarshaller {
 	public static UpdateUserGroupResponse unmarshall(UpdateUserGroupResponse updateUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateUserGroupResponse.setRequestId(_ctx.stringValue("UpdateUserGroupResponse.RequestId"));
-		updateUserGroupResponse.setResult(_ctx.booleanValue("UpdateUserGroupResponse.Result"));
 		updateUserGroupResponse.setSuccess(_ctx.booleanValue("UpdateUserGroupResponse.Success"));
+		updateUserGroupResponse.setResult(_ctx.booleanValue("UpdateUserGroupResponse.Result"));
 	 
 	 	return updateUserGroupResponse;
 	}

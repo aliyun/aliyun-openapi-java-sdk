@@ -23,8 +23,8 @@ public class AuthorizeMenuResponseUnmarshaller {
 	public static AuthorizeMenuResponse unmarshall(AuthorizeMenuResponse authorizeMenuResponse, UnmarshallerContext _ctx) {
 		
 		authorizeMenuResponse.setRequestId(_ctx.stringValue("AuthorizeMenuResponse.RequestId"));
-		authorizeMenuResponse.setResult(_ctx.integerValue("AuthorizeMenuResponse.Result"));
 		authorizeMenuResponse.setSuccess(_ctx.booleanValue("AuthorizeMenuResponse.Success"));
+		authorizeMenuResponse.setResult(_ctx.integerValue("AuthorizeMenuResponse.Result"));
 	 
 	 	return authorizeMenuResponse;
 	}

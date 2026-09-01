@@ -29,7 +29,7 @@ public class IpWhiteListConfigRequest extends RpcAcsRequest<IpWhiteListConfigRes
 
 	private String operation;
 	public IpWhiteListConfigRequest() {
-		super("quickbi-public", "2022-01-01", "IpWhiteListConfig", "2.2.0");
+		super("quickbi-public", "2022-01-01", "IpWhiteListConfig", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -37,7 +37,7 @@ public class SmartqAuthorizeRequest extends RpcAcsRequest<SmartqAuthorizeRespons
 
 	private String userIds;
 	public SmartqAuthorizeRequest() {
-		super("quickbi-public", "2022-01-01", "SmartqAuthorize", "2.2.0");
+		super("quickbi-public", "2022-01-01", "SmartqAuthorize", "QuickBI");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

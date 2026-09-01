@@ -23,8 +23,8 @@ public class CreateWorkspaceResponseUnmarshaller {
 	public static CreateWorkspaceResponse unmarshall(CreateWorkspaceResponse createWorkspaceResponse, UnmarshallerContext _ctx) {
 		
 		createWorkspaceResponse.setRequestId(_ctx.stringValue("CreateWorkspaceResponse.RequestId"));
-		createWorkspaceResponse.setResult(_ctx.stringValue("CreateWorkspaceResponse.Result"));
 		createWorkspaceResponse.setSuccess(_ctx.booleanValue("CreateWorkspaceResponse.Success"));
+		createWorkspaceResponse.setResult(_ctx.stringValue("CreateWorkspaceResponse.Result"));
 	 
 	 	return createWorkspaceResponse;
 	}

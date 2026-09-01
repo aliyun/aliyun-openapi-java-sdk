@@ -57,19 +57,35 @@ public class GetMailTaskListResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Integer pre;
+
+		private Integer totalNum;
+
 		private Integer pageNum;
 
 		private Integer pageSize;
 
-		private Integer totalNum;
+		private Integer next;
 
 		private Integer totalPages;
 
-		private Integer pre;
-
-		private Integer next;
-
 		private List<DataItem> data;
+
+		public Integer getPre() {
+			return this.pre;
+		}
+
+		public void setPre(Integer pre) {
+			this.pre = pre;
+		}
+
+		public Integer getTotalNum() {
+			return this.totalNum;
+		}
+
+		public void setTotalNum(Integer totalNum) {
+			this.totalNum = totalNum;
+		}
 
 		public Integer getPageNum() {
 			return this.pageNum;
@@ -87,12 +103,12 @@ public class GetMailTaskListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalNum() {
-			return this.totalNum;
+		public Integer getNext() {
+			return this.next;
 		}
 
-		public void setTotalNum(Integer totalNum) {
-			this.totalNum = totalNum;
+		public void setNext(Integer next) {
+			this.next = next;
 		}
 
 		public Integer getTotalPages() {
@@ -101,22 +117,6 @@ public class GetMailTaskListResponse extends AcsResponse {
 
 		public void setTotalPages(Integer totalPages) {
 			this.totalPages = totalPages;
-		}
-
-		public Integer getPre() {
-			return this.pre;
-		}
-
-		public void setPre(Integer pre) {
-			this.pre = pre;
-		}
-
-		public Integer getNext() {
-			return this.next;
-		}
-
-		public void setNext(Integer next) {
-			this.next = next;
 		}
 
 		public List<DataItem> getData() {
@@ -129,30 +129,22 @@ public class GetMailTaskListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private String mailId;
-
-			private Boolean paused;
+			private String subscribeName;
 
 			private String bizOwnerUserId;
 
 			private String bizOwnerName;
 
-			private String subscribeName;
+			private String mailId;
 
-			public String getMailId() {
-				return this.mailId;
+			private Boolean paused;
+
+			public String getSubscribeName() {
+				return this.subscribeName;
 			}
 
-			public void setMailId(String mailId) {
-				this.mailId = mailId;
-			}
-
-			public Boolean getPaused() {
-				return this.paused;
-			}
-
-			public void setPaused(Boolean paused) {
-				this.paused = paused;
+			public void setSubscribeName(String subscribeName) {
+				this.subscribeName = subscribeName;
 			}
 
 			public String getBizOwnerUserId() {
@@ -171,12 +163,20 @@ public class GetMailTaskListResponse extends AcsResponse {
 				this.bizOwnerName = bizOwnerName;
 			}
 
-			public String getSubscribeName() {
-				return this.subscribeName;
+			public String getMailId() {
+				return this.mailId;
 			}
 
-			public void setSubscribeName(String subscribeName) {
-				this.subscribeName = subscribeName;
+			public void setMailId(String mailId) {
+				this.mailId = mailId;
+			}
+
+			public Boolean getPaused() {
+				return this.paused;
+			}
+
+			public void setPaused(Boolean paused) {
+				this.paused = paused;
 			}
 		}
 	}
