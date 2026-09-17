@@ -28,7 +28,7 @@ public class DeleteInstanceKeyPairRequest extends RpcAcsRequest<DeleteInstanceKe
 
 	private String instanceId;
 	public DeleteInstanceKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteInstanceKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteInstanceKeyPair", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

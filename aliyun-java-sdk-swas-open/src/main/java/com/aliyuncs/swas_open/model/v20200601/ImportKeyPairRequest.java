@@ -31,7 +31,7 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 
 	private String keyPairName;
 	public ImportKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ImportKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ImportKeyPair", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

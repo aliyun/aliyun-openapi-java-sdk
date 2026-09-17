@@ -30,7 +30,7 @@ public class ListInstanceStatusRequest extends RpcAcsRequest<ListInstanceStatusR
 
 	private Integer pageSize;
 	public ListInstanceStatusRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListInstanceStatus", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListInstanceStatus", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

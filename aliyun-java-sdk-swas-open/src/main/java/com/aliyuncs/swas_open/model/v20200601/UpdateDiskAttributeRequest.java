@@ -30,7 +30,7 @@ public class UpdateDiskAttributeRequest extends RpcAcsRequest<UpdateDiskAttribut
 
 	private String diskId;
 	public UpdateDiskAttributeRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UpdateDiskAttribute", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "UpdateDiskAttribute", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

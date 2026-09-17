@@ -26,7 +26,7 @@ public class ListInstancePlansModificationRequest extends RpcAcsRequest<ListInst
 
 	private String instanceId;
 	public ListInstancePlansModificationRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListInstancePlansModification", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListInstancePlansModification", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

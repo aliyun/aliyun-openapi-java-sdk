@@ -34,7 +34,7 @@ public class DescribeCloudAssistantAttributesRequest extends RpcAcsRequest<Descr
 
 	private Integer pageSize;
 	public DescribeCloudAssistantAttributesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeCloudAssistantAttributes", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeCloudAssistantAttributes", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

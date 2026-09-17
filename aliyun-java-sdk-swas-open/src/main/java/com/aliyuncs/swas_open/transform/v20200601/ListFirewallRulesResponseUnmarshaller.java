@@ -35,18 +35,19 @@ public class ListFirewallRulesResponseUnmarshaller {
 		List<FirewallRule> firewallRules = new ArrayList<FirewallRule>();
 		for (int i = 0; i < _ctx.lengthValue("ListFirewallRulesResponse.FirewallRules.Length"); i++) {
 			FirewallRule firewallRule = new FirewallRule();
-			firewallRule.setRemark(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Remark"));
+			firewallRule.setPolicy(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Policy"));
+			firewallRule.setInstanceId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].InstanceId"));
 			firewallRule.setPort(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Port"));
 			firewallRule.setRuleId(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleId"));
-			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
-			firewallRule.setPolicy(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Policy"));
 			firewallRule.setSourceCidrIp(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].SourceCidrIp"));
+			firewallRule.setRuleProtocol(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].RuleProtocol"));
+			firewallRule.setRemark(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Remark"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("ListFirewallRulesResponse.FirewallRules["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

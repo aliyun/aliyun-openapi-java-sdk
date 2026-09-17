@@ -34,9 +34,9 @@ public class ListKeyPairsResponseUnmarshaller {
 		List<KeyPair> keyPairs = new ArrayList<KeyPair>();
 		for (int i = 0; i < _ctx.lengthValue("ListKeyPairsResponse.KeyPairs.Length"); i++) {
 			KeyPair keyPair = new KeyPair();
-			keyPair.setCreationTime(_ctx.stringValue("ListKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 			keyPair.setKeyPairName(_ctx.stringValue("ListKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
 			keyPair.setPublicKey(_ctx.stringValue("ListKeyPairsResponse.KeyPairs["+ i +"].PublicKey"));
+			keyPair.setCreationTime(_ctx.stringValue("ListKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 
 			List<String> instanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListKeyPairsResponse.KeyPairs["+ i +"].InstanceIds.Length"); j++) {

@@ -77,26 +77,36 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 	public static class FirewallRule {
 
-		private String remark;
+		private String policy;
+
+		private String instanceId;
 
 		private String port;
 
 		private String ruleId;
 
+		private String sourceCidrIp;
+
 		private String ruleProtocol;
 
-		private String policy;
-
-		private String sourceCidrIp;
+		private String remark;
 
 		private List<Tag> tags;
 
-		public String getRemark() {
-			return this.remark;
+		public String getPolicy() {
+			return this.policy;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setPolicy(String policy) {
+			this.policy = policy;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getPort() {
@@ -115,6 +125,14 @@ public class ListFirewallRulesResponse extends AcsResponse {
 			this.ruleId = ruleId;
 		}
 
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
 		public String getRuleProtocol() {
 			return this.ruleProtocol;
 		}
@@ -123,20 +141,12 @@ public class ListFirewallRulesResponse extends AcsResponse {
 			this.ruleProtocol = ruleProtocol;
 		}
 
-		public String getPolicy() {
-			return this.policy;
+		public String getRemark() {
+			return this.remark;
 		}
 
-		public void setPolicy(String policy) {
-			this.policy = policy;
-		}
-
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
-
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public List<Tag> getTags() {
@@ -149,17 +159,9 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -167,6 +169,14 @@ public class ListFirewallRulesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

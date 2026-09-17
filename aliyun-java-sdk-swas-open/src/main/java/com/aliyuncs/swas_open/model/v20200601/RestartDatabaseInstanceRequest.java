@@ -28,7 +28,7 @@ public class RestartDatabaseInstanceRequest extends RpcAcsRequest<RestartDatabas
 
 	private String databaseInstanceId;
 	public RestartDatabaseInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "RestartDatabaseInstance", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "RestartDatabaseInstance", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

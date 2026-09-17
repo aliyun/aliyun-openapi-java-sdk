@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageSize;
 
@@ -35,20 +35,20 @@ public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 
 	private List<Status> cloudAssistant;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -77,47 +77,23 @@ public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 
 	public static class Status {
 
-		private String instanceId;
-
-		private String cloudAssistantStatus;
-
-		private String lastInvokedTime;
-
 		private String cloudAssistantVersion;
-
-		private Long activeTaskCount;
-
-		private Long invocationCount;
-
-		private String lastHeartbeatTime;
-
-		private String oSType;
 
 		private Boolean supportSessionManager;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
+		private String instanceId;
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private Long invocationCount;
 
-		public String getCloudAssistantStatus() {
-			return this.cloudAssistantStatus;
-		}
+		private String oSType;
 
-		public void setCloudAssistantStatus(String cloudAssistantStatus) {
-			this.cloudAssistantStatus = cloudAssistantStatus;
-		}
+		private String cloudAssistantStatus;
 
-		public String getLastInvokedTime() {
-			return this.lastInvokedTime;
-		}
+		private String lastHeartbeatTime;
 
-		public void setLastInvokedTime(String lastInvokedTime) {
-			this.lastInvokedTime = lastInvokedTime;
-		}
+		private String lastInvokedTime;
+
+		private Long activeTaskCount;
 
 		public String getCloudAssistantVersion() {
 			return this.cloudAssistantVersion;
@@ -127,12 +103,20 @@ public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 			this.cloudAssistantVersion = cloudAssistantVersion;
 		}
 
-		public Long getActiveTaskCount() {
-			return this.activeTaskCount;
+		public Boolean getSupportSessionManager() {
+			return this.supportSessionManager;
 		}
 
-		public void setActiveTaskCount(Long activeTaskCount) {
-			this.activeTaskCount = activeTaskCount;
+		public void setSupportSessionManager(Boolean supportSessionManager) {
+			this.supportSessionManager = supportSessionManager;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getInvocationCount() {
@@ -143,14 +127,6 @@ public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 			this.invocationCount = invocationCount;
 		}
 
-		public String getLastHeartbeatTime() {
-			return this.lastHeartbeatTime;
-		}
-
-		public void setLastHeartbeatTime(String lastHeartbeatTime) {
-			this.lastHeartbeatTime = lastHeartbeatTime;
-		}
-
 		public String getOSType() {
 			return this.oSType;
 		}
@@ -159,12 +135,36 @@ public class DescribeCloudAssistantAttributesResponse extends AcsResponse {
 			this.oSType = oSType;
 		}
 
-		public Boolean getSupportSessionManager() {
-			return this.supportSessionManager;
+		public String getCloudAssistantStatus() {
+			return this.cloudAssistantStatus;
 		}
 
-		public void setSupportSessionManager(Boolean supportSessionManager) {
-			this.supportSessionManager = supportSessionManager;
+		public void setCloudAssistantStatus(String cloudAssistantStatus) {
+			this.cloudAssistantStatus = cloudAssistantStatus;
+		}
+
+		public String getLastHeartbeatTime() {
+			return this.lastHeartbeatTime;
+		}
+
+		public void setLastHeartbeatTime(String lastHeartbeatTime) {
+			this.lastHeartbeatTime = lastHeartbeatTime;
+		}
+
+		public String getLastInvokedTime() {
+			return this.lastInvokedTime;
+		}
+
+		public void setLastInvokedTime(String lastInvokedTime) {
+			this.lastInvokedTime = lastInvokedTime;
+		}
+
+		public Long getActiveTaskCount() {
+			return this.activeTaskCount;
+		}
+
+		public void setActiveTaskCount(Long activeTaskCount) {
+			this.activeTaskCount = activeTaskCount;
 		}
 	}
 

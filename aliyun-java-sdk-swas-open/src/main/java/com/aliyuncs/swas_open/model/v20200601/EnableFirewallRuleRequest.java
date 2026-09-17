@@ -34,7 +34,7 @@ public class EnableFirewallRuleRequest extends RpcAcsRequest<EnableFirewallRuleR
 
 	private String ruleId;
 	public EnableFirewallRuleRequest() {
-		super("SWAS-OPEN", "2020-06-01", "EnableFirewallRule", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "EnableFirewallRule", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

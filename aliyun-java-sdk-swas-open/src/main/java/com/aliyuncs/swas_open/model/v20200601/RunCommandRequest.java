@@ -48,7 +48,7 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private Boolean enableParameter;
 	public RunCommandRequest() {
-		super("SWAS-OPEN", "2020-06-01", "RunCommand", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "RunCommand", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class DescribeInvocationResultRequest extends RpcAcsRequest<DescribeInvoc
 
 	private String instanceId;
 	public DescribeInvocationResultRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeInvocationResult", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeInvocationResult", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

@@ -79,27 +79,27 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		private String status;
 
-		private String creationTime;
-
-		private String sourceDiskId;
-
-		private String snapshotName;
-
 		private String progress;
 
-		private String remark;
-
-		private String snapshotId;
-
-		private String sourceDiskType;
-
-		private String regionId;
+		private String resourceGroupId;
 
 		private String instanceId;
 
 		private String rollbackTime;
 
-		private String resourceGroupId;
+		private String snapshotName;
+
+		private String sourceDiskId;
+
+		private String remark;
+
+		private String snapshotId;
+
+		private String creationTime;
+
+		private String regionId;
+
+		private String sourceDiskType;
 
 		private List<Tag> tags;
 
@@ -111,30 +111,6 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getSourceDiskId() {
-			return this.sourceDiskId;
-		}
-
-		public void setSourceDiskId(String sourceDiskId) {
-			this.sourceDiskId = sourceDiskId;
-		}
-
-		public String getSnapshotName() {
-			return this.snapshotName;
-		}
-
-		public void setSnapshotName(String snapshotName) {
-			this.snapshotName = snapshotName;
-		}
-
 		public String getProgress() {
 			return this.progress;
 		}
@@ -143,36 +119,12 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
-		}
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getSourceDiskType() {
-			return this.sourceDiskType;
-		}
-
-		public void setSourceDiskType(String sourceDiskType) {
-			this.sourceDiskType = sourceDiskType;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getInstanceId() {
@@ -191,12 +143,60 @@ public class ListSnapshotsResponse extends AcsResponse {
 			this.rollbackTime = rollbackTime;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getSnapshotName() {
+			return this.snapshotName;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setSnapshotName(String snapshotName) {
+			this.snapshotName = snapshotName;
+		}
+
+		public String getSourceDiskId() {
+			return this.sourceDiskId;
+		}
+
+		public void setSourceDiskId(String sourceDiskId) {
+			this.sourceDiskId = sourceDiskId;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getSourceDiskType() {
+			return this.sourceDiskType;
+		}
+
+		public void setSourceDiskType(String sourceDiskType) {
+			this.sourceDiskType = sourceDiskType;
 		}
 
 		public List<Tag> getTags() {
@@ -209,17 +209,9 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -227,6 +219,14 @@ public class ListSnapshotsResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

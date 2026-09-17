@@ -36,23 +36,23 @@ public class ListSnapshotsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
 			snapshot.setStatus(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Status"));
-			snapshot.setCreationTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
-			snapshot.setSourceDiskId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
-			snapshot.setSnapshotName(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
 			snapshot.setProgress(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Progress"));
-			snapshot.setRemark(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Remark"));
-			snapshot.setSnapshotId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshot.setSourceDiskType(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
-			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
+			snapshot.setResourceGroupId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
 			snapshot.setInstanceId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
 			snapshot.setRollbackTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RollbackTime"));
-			snapshot.setResourceGroupId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].ResourceGroupId"));
+			snapshot.setSnapshotName(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshot.setSourceDiskId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskId"));
+			snapshot.setRemark(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Remark"));
+			snapshot.setSnapshotId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setCreationTime(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
+			snapshot.setRegionId(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].RegionId"));
+			snapshot.setSourceDiskType(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].SourceDiskType"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("ListSnapshotsResponse.Snapshots["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

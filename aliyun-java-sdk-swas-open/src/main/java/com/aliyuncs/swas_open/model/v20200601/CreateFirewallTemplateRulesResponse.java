@@ -49,11 +49,11 @@ public class CreateFirewallTemplateRulesResponse extends AcsResponse {
 
 		private String firewallTemplateRuleId;
 
-		private String ruleProtocol;
-
 		private String port;
 
 		private String sourceCidrIp;
+
+		private String ruleProtocol;
 
 		private String remark;
 
@@ -63,14 +63,6 @@ public class CreateFirewallTemplateRulesResponse extends AcsResponse {
 
 		public void setFirewallTemplateRuleId(String firewallTemplateRuleId) {
 			this.firewallTemplateRuleId = firewallTemplateRuleId;
-		}
-
-		public String getRuleProtocol() {
-			return this.ruleProtocol;
-		}
-
-		public void setRuleProtocol(String ruleProtocol) {
-			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getPort() {
@@ -87,6 +79,14 @@ public class CreateFirewallTemplateRulesResponse extends AcsResponse {
 
 		public void setSourceCidrIp(String sourceCidrIp) {
 			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getRuleProtocol() {
+			return this.ruleProtocol;
+		}
+
+		public void setRuleProtocol(String ruleProtocol) {
+			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getRemark() {

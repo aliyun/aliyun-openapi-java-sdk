@@ -34,7 +34,7 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 
 	private Integer pageSize;
 	public DescribeCloudAssistantStatusRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeCloudAssistantStatus", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeCloudAssistantStatus", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

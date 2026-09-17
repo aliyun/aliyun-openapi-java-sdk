@@ -23,9 +23,9 @@ public class DescribeMonitorDataResponseUnmarshaller {
 	public static DescribeMonitorDataResponse unmarshall(DescribeMonitorDataResponse describeMonitorDataResponse, UnmarshallerContext _ctx) {
 		
 		describeMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeMonitorDataResponse.RequestId"));
-		describeMonitorDataResponse.setDatapoints(_ctx.stringValue("DescribeMonitorDataResponse.Datapoints"));
-		describeMonitorDataResponse.setPeriod(_ctx.stringValue("DescribeMonitorDataResponse.Period"));
 		describeMonitorDataResponse.setNextToken(_ctx.stringValue("DescribeMonitorDataResponse.NextToken"));
+		describeMonitorDataResponse.setPeriod(_ctx.stringValue("DescribeMonitorDataResponse.Period"));
+		describeMonitorDataResponse.setDatapoints(_ctx.stringValue("DescribeMonitorDataResponse.Datapoints"));
 	 
 	 	return describeMonitorDataResponse;
 	}

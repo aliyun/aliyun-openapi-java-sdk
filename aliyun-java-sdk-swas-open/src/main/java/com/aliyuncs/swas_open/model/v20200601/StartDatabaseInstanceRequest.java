@@ -28,7 +28,7 @@ public class StartDatabaseInstanceRequest extends RpcAcsRequest<StartDatabaseIns
 
 	private String databaseInstanceId;
 	public StartDatabaseInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "StartDatabaseInstance", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "StartDatabaseInstance", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

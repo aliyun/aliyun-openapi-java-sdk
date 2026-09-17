@@ -32,8 +32,8 @@ public class DescribeCloudMonitorAgentStatusesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudMonitorAgentStatusesResponse.InstanceStatusList.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
 			instanceStatus.setStatus(_ctx.stringValue("DescribeCloudMonitorAgentStatusesResponse.InstanceStatusList["+ i +"].Status"));
-			instanceStatus.setInstanceId(_ctx.stringValue("DescribeCloudMonitorAgentStatusesResponse.InstanceStatusList["+ i +"].InstanceId"));
 			instanceStatus.setAutoInstall(_ctx.booleanValue("DescribeCloudMonitorAgentStatusesResponse.InstanceStatusList["+ i +"].AutoInstall"));
+			instanceStatus.setInstanceId(_ctx.stringValue("DescribeCloudMonitorAgentStatusesResponse.InstanceStatusList["+ i +"].InstanceId"));
 
 			instanceStatusList.add(instanceStatus);
 		}

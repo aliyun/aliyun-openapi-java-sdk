@@ -26,7 +26,7 @@ public class DescribeDatabaseInstanceParametersRequest extends RpcAcsRequest<Des
 
 	private String databaseInstanceId;
 	public DescribeDatabaseInstanceParametersRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstanceParameters", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstanceParameters", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

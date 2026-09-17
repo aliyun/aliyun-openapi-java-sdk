@@ -26,17 +26,17 @@ public class DescribeInvocationResultResponseUnmarshaller {
 		describeInvocationResultResponse.setRequestId(_ctx.stringValue("DescribeInvocationResultResponse.RequestId"));
 
 		InvocationResult invocationResult = new InvocationResult();
-		invocationResult.setStartTime(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.StartTime"));
-		invocationResult.setFinishedTime(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.FinishedTime"));
 		invocationResult.setInvocationStatus(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvocationStatus"));
+		invocationResult.setInstanceId(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InstanceId"));
+		invocationResult.setInvokeUser(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeUser"));
 		invocationResult.setExitCode(_ctx.longValue("DescribeInvocationResultResponse.InvocationResult.ExitCode"));
 		invocationResult.setErrorInfo(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.ErrorInfo"));
-		invocationResult.setErrorCode(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.ErrorCode"));
-		invocationResult.setInvokeId(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeId"));
-		invocationResult.setInvokeRecordStatus(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeRecordStatus"));
-		invocationResult.setInvokeUser(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeUser"));
 		invocationResult.setOutput(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.Output"));
-		invocationResult.setInstanceId(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InstanceId"));
+		invocationResult.setStartTime(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.StartTime"));
+		invocationResult.setErrorCode(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.ErrorCode"));
+		invocationResult.setInvokeRecordStatus(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeRecordStatus"));
+		invocationResult.setFinishedTime(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.FinishedTime"));
+		invocationResult.setInvokeId(_ctx.stringValue("DescribeInvocationResultResponse.InvocationResult.InvokeId"));
 		describeInvocationResultResponse.setInvocationResult(invocationResult);
 	 
 	 	return describeInvocationResultResponse;

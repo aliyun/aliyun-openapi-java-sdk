@@ -30,7 +30,7 @@ public class ModifyDatabaseInstanceDescriptionRequest extends RpcAcsRequest<Modi
 
 	private String databaseInstanceDescription;
 	public ModifyDatabaseInstanceDescriptionRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyDatabaseInstanceDescription", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyDatabaseInstanceDescription", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

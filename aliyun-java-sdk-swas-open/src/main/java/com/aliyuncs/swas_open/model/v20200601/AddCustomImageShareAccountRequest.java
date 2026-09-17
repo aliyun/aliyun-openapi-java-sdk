@@ -32,7 +32,7 @@ public class AddCustomImageShareAccountRequest extends RpcAcsRequest<AddCustomIm
 
 	private List<Long> accounts;
 	public AddCustomImageShareAccountRequest() {
-		super("SWAS-OPEN", "2020-06-01", "AddCustomImageShareAccount", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "AddCustomImageShareAccount", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

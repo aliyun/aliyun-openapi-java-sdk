@@ -30,7 +30,7 @@ public class ModifyInstanceVncPasswordRequest extends RpcAcsRequest<ModifyInstan
 
 	private String vncPassword;
 	public ModifyInstanceVncPasswordRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyInstanceVncPassword", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyInstanceVncPassword", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

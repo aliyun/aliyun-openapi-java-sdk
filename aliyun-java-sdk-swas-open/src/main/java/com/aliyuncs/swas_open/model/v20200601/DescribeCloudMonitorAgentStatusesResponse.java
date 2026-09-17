@@ -49,9 +49,9 @@ public class DescribeCloudMonitorAgentStatusesResponse extends AcsResponse {
 
 		private String status;
 
-		private String instanceId;
-
 		private Boolean autoInstall;
+
+		private String instanceId;
 
 		public String getStatus() {
 			return this.status;
@@ -61,20 +61,20 @@ public class DescribeCloudMonitorAgentStatusesResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
 		public Boolean getAutoInstall() {
 			return this.autoInstall;
 		}
 
 		public void setAutoInstall(Boolean autoInstall) {
 			this.autoInstall = autoInstall;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

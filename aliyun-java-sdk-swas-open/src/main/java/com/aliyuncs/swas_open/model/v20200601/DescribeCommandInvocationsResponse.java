@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommandInvocationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Command> commandInvocations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Command> getCommandInvocations() {
@@ -77,38 +77,94 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String invokeId;
+		private String invocationStatus;
+
+		private String parameters;
+
+		private String commandDescription;
+
+		private Long timeout;
+
+		private String workingDir;
+
+		private String commandContent;
+
+		private String commandType;
+
+		private String username;
 
 		private String creationTime;
 
 		private String commandId;
 
-		private String invocationStatus;
-
 		private String commandName;
 
-		private String commandType;
-
-		private String commandDescription;
-
-		private String username;
-
-		private String workingDir;
-
-		private Long timeout;
-
-		private String commandContent;
-
-		private String parameters;
+		private String invokeId;
 
 		private List<InvokeInstance> invokeInstances;
 
-		public String getInvokeId() {
-			return this.invokeId;
+		public String getInvocationStatus() {
+			return this.invocationStatus;
 		}
 
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
+		public void setInvocationStatus(String invocationStatus) {
+			this.invocationStatus = invocationStatus;
+		}
+
+		public String getParameters() {
+			return this.parameters;
+		}
+
+		public void setParameters(String parameters) {
+			this.parameters = parameters;
+		}
+
+		public String getCommandDescription() {
+			return this.commandDescription;
+		}
+
+		public void setCommandDescription(String commandDescription) {
+			this.commandDescription = commandDescription;
+		}
+
+		public Long getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
+		}
+
+		public String getWorkingDir() {
+			return this.workingDir;
+		}
+
+		public void setWorkingDir(String workingDir) {
+			this.workingDir = workingDir;
+		}
+
+		public String getCommandContent() {
+			return this.commandContent;
+		}
+
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
+		}
+
+		public String getCommandType() {
+			return this.commandType;
+		}
+
+		public void setCommandType(String commandType) {
+			this.commandType = commandType;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
 		public String getCreationTime() {
@@ -127,14 +183,6 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 			this.commandId = commandId;
 		}
 
-		public String getInvocationStatus() {
-			return this.invocationStatus;
-		}
-
-		public void setInvocationStatus(String invocationStatus) {
-			this.invocationStatus = invocationStatus;
-		}
-
 		public String getCommandName() {
 			return this.commandName;
 		}
@@ -143,60 +191,12 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 			this.commandName = commandName;
 		}
 
-		public String getCommandType() {
-			return this.commandType;
+		public String getInvokeId() {
+			return this.invokeId;
 		}
 
-		public void setCommandType(String commandType) {
-			this.commandType = commandType;
-		}
-
-		public String getCommandDescription() {
-			return this.commandDescription;
-		}
-
-		public void setCommandDescription(String commandDescription) {
-			this.commandDescription = commandDescription;
-		}
-
-		public String getUsername() {
-			return this.username;
-		}
-
-		public void setUsername(String username) {
-			this.username = username;
-		}
-
-		public String getWorkingDir() {
-			return this.workingDir;
-		}
-
-		public void setWorkingDir(String workingDir) {
-			this.workingDir = workingDir;
-		}
-
-		public Long getTimeout() {
-			return this.timeout;
-		}
-
-		public void setTimeout(Long timeout) {
-			this.timeout = timeout;
-		}
-
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
-		}
-
-		public String getParameters() {
-			return this.parameters;
-		}
-
-		public void setParameters(String parameters) {
-			this.parameters = parameters;
+		public void setInvokeId(String invokeId) {
+			this.invokeId = invokeId;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {
@@ -209,13 +209,11 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 
 		public static class InvokeInstance {
 
-			private String instanceId;
-
-			private String startTime;
+			private String invocationStatus;
 
 			private String finishTime;
 
-			private String invocationStatus;
+			private String instanceId;
 
 			private String output;
 
@@ -223,22 +221,16 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 
 			private String errorInfo;
 
+			private String startTime;
+
 			private String errorCode;
 
-			public String getInstanceId() {
-				return this.instanceId;
+			public String getInvocationStatus() {
+				return this.invocationStatus;
 			}
 
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setInvocationStatus(String invocationStatus) {
+				this.invocationStatus = invocationStatus;
 			}
 
 			public String getFinishTime() {
@@ -249,12 +241,12 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 				this.finishTime = finishTime;
 			}
 
-			public String getInvocationStatus() {
-				return this.invocationStatus;
+			public String getInstanceId() {
+				return this.instanceId;
 			}
 
-			public void setInvocationStatus(String invocationStatus) {
-				this.invocationStatus = invocationStatus;
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getOutput() {
@@ -279,6 +271,14 @@ public class DescribeCommandInvocationsResponse extends AcsResponse {
 
 			public void setErrorInfo(String errorInfo) {
 				this.errorInfo = errorInfo;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getErrorCode() {

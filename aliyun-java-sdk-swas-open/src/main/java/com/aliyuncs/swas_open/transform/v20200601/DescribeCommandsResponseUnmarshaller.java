@@ -30,23 +30,23 @@ public class DescribeCommandsResponseUnmarshaller {
 		
 		describeCommandsResponse.setRequestId(_ctx.stringValue("DescribeCommandsResponse.RequestId"));
 		describeCommandsResponse.setTotalCount(_ctx.integerValue("DescribeCommandsResponse.TotalCount"));
-		describeCommandsResponse.setPageNumber(_ctx.integerValue("DescribeCommandsResponse.PageNumber"));
 		describeCommandsResponse.setPageSize(_ctx.integerValue("DescribeCommandsResponse.PageSize"));
+		describeCommandsResponse.setPageNumber(_ctx.integerValue("DescribeCommandsResponse.PageNumber"));
 
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommandsResponse.Commands.Length"); i++) {
 			Command command = new Command();
-			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
-			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
+			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
+			command.setResourceGroupId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ResourceGroupId"));
+			command.setTimeout(_ctx.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
 			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
 			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
-			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
-			command.setTimeout(_ctx.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
-			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
 			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
+			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
+			command.setCreationTime(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
 			command.setEnableParameter(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
-			command.setResourceGroupId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ResourceGroupId"));
+			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
 
 			List<String> parameterNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames.Length"); j++) {
@@ -54,22 +54,12 @@ public class DescribeCommandsResponseUnmarshaller {
 			}
 			command.setParameterNames(parameterNames);
 
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Value"));
-
-				tags.add(tag);
-			}
-			command.setTags(tags);
-
 			List<ParameterDefinition> parameterDefinitions = new ArrayList<ParameterDefinition>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions.Length"); j++) {
 				ParameterDefinition parameterDefinition = new ParameterDefinition();
-				parameterDefinition.setRequired(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Required"));
-				parameterDefinition.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Description"));
 				parameterDefinition.setDefaultValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].DefaultValue"));
+				parameterDefinition.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Description"));
+				parameterDefinition.setRequired(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].Required"));
 				parameterDefinition.setParameterName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterDefinitions["+ j +"].ParameterName"));
 
 				List<String> possibleValues = new ArrayList<String>();
@@ -81,6 +71,16 @@ public class DescribeCommandsResponseUnmarshaller {
 				parameterDefinitions.add(parameterDefinition);
 			}
 			command.setParameterDefinitions(parameterDefinitions);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCommandsResponse.Commands["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setValue(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Tags["+ j +"].Key"));
+
+				tags.add(tag);
+			}
+			command.setTags(tags);
 
 			commands.add(command);
 		}

@@ -28,7 +28,7 @@ public class StopDatabaseInstanceRequest extends RpcAcsRequest<StopDatabaseInsta
 
 	private String databaseInstanceId;
 	public StopDatabaseInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "StopDatabaseInstance", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "StopDatabaseInstance", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

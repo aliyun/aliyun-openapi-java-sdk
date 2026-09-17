@@ -38,7 +38,7 @@ public class ModifyFirewallRuleRequest extends RpcAcsRequest<ModifyFirewallRuleR
 
 	private String ruleId;
 	public ModifyFirewallRuleRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyFirewallRule", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyFirewallRule", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

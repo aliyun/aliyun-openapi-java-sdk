@@ -26,7 +26,7 @@ public class ListInstancesTrafficPackagesRequest extends RpcAcsRequest<ListInsta
 
 	private String instanceIds;
 	public ListInstancesTrafficPackagesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListInstancesTrafficPackages", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListInstancesTrafficPackages", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

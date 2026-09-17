@@ -36,7 +36,7 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 
 	private List<Tag> tags;
 	public CreateFirewallRulesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRules", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRules", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 
@@ -81,16 +81,13 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
 
 	public static class FirewallRules {
-
-		@SerializedName("RuleProtocol")
-		private String ruleProtocol;
 
 		@SerializedName("Port")
 		private String port;
@@ -98,16 +95,11 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 		@SerializedName("SourceCidrIp")
 		private String sourceCidrIp;
 
+		@SerializedName("RuleProtocol")
+		private String ruleProtocol;
+
 		@SerializedName("Remark")
 		private String remark;
-
-		public String getRuleProtocol() {
-			return this.ruleProtocol;
-		}
-
-		public void setRuleProtocol(String ruleProtocol) {
-			this.ruleProtocol = ruleProtocol;
-		}
 
 		public String getPort() {
 			return this.port;
@@ -125,6 +117,14 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 			this.sourceCidrIp = sourceCidrIp;
 		}
 
+		public String getRuleProtocol() {
+			return this.ruleProtocol;
+		}
+
+		public void setRuleProtocol(String ruleProtocol) {
+			this.ruleProtocol = ruleProtocol;
+		}
+
 		public String getRemark() {
 			return this.remark;
 		}
@@ -136,17 +136,9 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 
 	public static class Tag {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -154,6 +146,14 @@ public class CreateFirewallRulesRequest extends RpcAcsRequest<CreateFirewallRule
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

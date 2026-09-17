@@ -34,8 +34,8 @@ public class ListCustomImageShareAccountsResponseUnmarshaller {
 		List<ImageShareUser> imageShareUsers = new ArrayList<ImageShareUser>();
 		for (int i = 0; i < _ctx.lengthValue("ListCustomImageShareAccountsResponse.ImageShareUsers.Length"); i++) {
 			ImageShareUser imageShareUser = new ImageShareUser();
-			imageShareUser.setUserId(_ctx.longValue("ListCustomImageShareAccountsResponse.ImageShareUsers["+ i +"].UserId"));
 			imageShareUser.setSharedTime(_ctx.stringValue("ListCustomImageShareAccountsResponse.ImageShareUsers["+ i +"].SharedTime"));
+			imageShareUser.setUserId(_ctx.longValue("ListCustomImageShareAccountsResponse.ImageShareUsers["+ i +"].UserId"));
 
 			imageShareUsers.add(imageShareUser);
 		}

@@ -28,7 +28,7 @@ public class ReleasePublicConnectionRequest extends RpcAcsRequest<ReleasePublicC
 
 	private String databaseInstanceId;
 	public ReleasePublicConnectionRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ReleasePublicConnection", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ReleasePublicConnection", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

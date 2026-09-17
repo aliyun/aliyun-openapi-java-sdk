@@ -35,7 +35,7 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private List<String> tagKeys;
 	public UntagResourcesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UntagResources", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "UntagResources", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

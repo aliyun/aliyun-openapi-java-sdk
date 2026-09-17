@@ -47,73 +47,25 @@ public class ListInstancePlansModificationResponse extends AcsResponse {
 
 	public static class Plan {
 
-		private Integer core;
-
-		private Integer bandwidth;
-
-		private Integer diskSize;
-
-		private Integer flow;
-
-		private Integer memory;
-
-		private String planId;
-
 		private String diskType;
 
 		private Double originPrice;
 
-		private String currency;
-
 		private String supportPlatform;
 
-		public Integer getCore() {
-			return this.core;
-		}
+		private Integer memory;
 
-		public void setCore(Integer core) {
-			this.core = core;
-		}
+		private Integer bandwidth;
 
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
+		private String planId;
 
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
+		private String currency;
 
-		public Integer getDiskSize() {
-			return this.diskSize;
-		}
+		private Integer diskSize;
 
-		public void setDiskSize(Integer diskSize) {
-			this.diskSize = diskSize;
-		}
+		private Integer core;
 
-		public Integer getFlow() {
-			return this.flow;
-		}
-
-		public void setFlow(Integer flow) {
-			this.flow = flow;
-		}
-
-		public Integer getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Integer memory) {
-			this.memory = memory;
-		}
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
+		private Integer flow;
 
 		public String getDiskType() {
 			return this.diskType;
@@ -131,6 +83,38 @@ public class ListInstancePlansModificationResponse extends AcsResponse {
 			this.originPrice = originPrice;
 		}
 
+		public String getSupportPlatform() {
+			return this.supportPlatform;
+		}
+
+		public void setSupportPlatform(String supportPlatform) {
+			this.supportPlatform = supportPlatform;
+		}
+
+		public Integer getMemory() {
+			return this.memory;
+		}
+
+		public void setMemory(Integer memory) {
+			this.memory = memory;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
 		public String getCurrency() {
 			return this.currency;
 		}
@@ -139,12 +123,28 @@ public class ListInstancePlansModificationResponse extends AcsResponse {
 			this.currency = currency;
 		}
 
-		public String getSupportPlatform() {
-			return this.supportPlatform;
+		public Integer getDiskSize() {
+			return this.diskSize;
 		}
 
-		public void setSupportPlatform(String supportPlatform) {
-			this.supportPlatform = supportPlatform;
+		public void setDiskSize(Integer diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public Integer getCore() {
+			return this.core;
+		}
+
+		public void setCore(Integer core) {
+			this.core = core;
+		}
+
+		public Integer getFlow() {
+			return this.flow;
+		}
+
+		public void setFlow(Integer flow) {
+			this.flow = flow;
 		}
 	}
 

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AttachKeyPairResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer failCount;
 
 	private List<Result> results;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class AttachKeyPairResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getFailCount() {
@@ -67,21 +67,13 @@ public class AttachKeyPairResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String code;
-
 		private String message;
-
-		private String success;
 
 		private String instanceId;
 
-		public String getCode() {
-			return this.code;
-		}
+		private String code;
 
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String success;
 
 		public String getMessage() {
 			return this.message;
@@ -91,20 +83,28 @@ public class AttachKeyPairResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(String success) {
-			this.success = success;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(String success) {
+			this.success = success;
 		}
 	}
 

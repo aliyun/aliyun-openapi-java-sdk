@@ -32,7 +32,7 @@ public class ModifyDatabaseInstanceParameterRequest extends RpcAcsRequest<Modify
 
 	private String parameters;
 	public ModifyDatabaseInstanceParameterRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyDatabaseInstanceParameter", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyDatabaseInstanceParameter", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

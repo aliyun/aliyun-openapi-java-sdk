@@ -30,7 +30,7 @@ public class InstallCloudAssistantRequest extends RpcAcsRequest<InstallCloudAssi
 	@SerializedName("instanceIds")
 	private List<String> instanceIds;
 	public InstallCloudAssistantRequest() {
-		super("SWAS-OPEN", "2020-06-01", "InstallCloudAssistant", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "InstallCloudAssistant", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

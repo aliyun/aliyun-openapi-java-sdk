@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDatabaseInstanceMetricDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String metricName;
 
-	private String unit;
+	private String requestId;
 
 	private String dataFormat;
 
+	private String unit;
+
 	private String metricData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMetricName() {
 		return this.metricName;
@@ -50,12 +42,12 @@ public class DescribeDatabaseInstanceMetricDataResponse extends AcsResponse {
 		this.metricName = metricName;
 	}
 
-	public String getUnit() {
-		return this.unit;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setUnit(String unit) {
-		this.unit = unit;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDataFormat() {
@@ -64,6 +56,14 @@ public class DescribeDatabaseInstanceMetricDataResponse extends AcsResponse {
 
 	public void setDataFormat(String dataFormat) {
 		this.dataFormat = dataFormat;
+	}
+
+	public String getUnit() {
+		return this.unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 
 	public String getMetricData() {

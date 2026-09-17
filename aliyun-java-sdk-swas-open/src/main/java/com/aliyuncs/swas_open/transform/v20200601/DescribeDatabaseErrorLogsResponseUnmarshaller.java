@@ -27,9 +27,9 @@ public class DescribeDatabaseErrorLogsResponseUnmarshaller {
 	public static DescribeDatabaseErrorLogsResponse unmarshall(DescribeDatabaseErrorLogsResponse describeDatabaseErrorLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeDatabaseErrorLogsResponse.setRequestId(_ctx.stringValue("DescribeDatabaseErrorLogsResponse.RequestId"));
-		describeDatabaseErrorLogsResponse.setPageNumber(_ctx.integerValue("DescribeDatabaseErrorLogsResponse.PageNumber"));
-		describeDatabaseErrorLogsResponse.setPageSize(_ctx.integerValue("DescribeDatabaseErrorLogsResponse.PageSize"));
 		describeDatabaseErrorLogsResponse.setTotalCount(_ctx.integerValue("DescribeDatabaseErrorLogsResponse.TotalCount"));
+		describeDatabaseErrorLogsResponse.setPageSize(_ctx.integerValue("DescribeDatabaseErrorLogsResponse.PageSize"));
+		describeDatabaseErrorLogsResponse.setPageNumber(_ctx.integerValue("DescribeDatabaseErrorLogsResponse.PageNumber"));
 
 		List<ErrorLog> errorLogs = new ArrayList<ErrorLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabaseErrorLogsResponse.ErrorLogs.Length"); i++) {

@@ -28,7 +28,7 @@ public class StartTerminalSessionRequest extends RpcAcsRequest<StartTerminalSess
 
 	private String instanceId;
 	public StartTerminalSessionRequest() {
-		super("SWAS-OPEN", "2020-06-01", "StartTerminalSession", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "StartTerminalSession", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

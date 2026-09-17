@@ -32,26 +32,27 @@ public class ListPlansResponseUnmarshaller {
 		List<Plan> plans = new ArrayList<Plan>();
 		for (int i = 0; i < _ctx.lengthValue("ListPlansResponse.Plans.Length"); i++) {
 			Plan plan = new Plan();
-			plan.setCore(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Core"));
-			plan.setBandwidth(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Bandwidth"));
-			plan.setDiskSize(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].DiskSize"));
-			plan.setFlow(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Flow"));
-			plan.setPlanId(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanId"));
-			plan.setDiskType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].DiskType"));
-			plan.setCurrency(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Currency"));
 			plan.setSupportPlatform(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].SupportPlatform"));
-			plan.setPlanType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanType"));
 			plan.setPublicIpNum(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PublicIpNum"));
-			plan.setIspType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].IspType"));
 			plan.setMemory(_ctx.floatValue("ListPlansResponse.Plans["+ i +"].Memory"));
+			plan.setPlanId(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanId"));
+			plan.setFlow(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Flow"));
+			plan.setDiskType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].DiskType"));
 			plan.setOriginPrice(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].OriginPrice"));
+			plan.setIspType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].IspType"));
+			plan.setBandwidth(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Bandwidth"));
+			plan.setCurrency(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Currency"));
+			plan.setDiskSize(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].DiskSize"));
+			plan.setPlanType(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].PlanType"));
+			plan.setCore(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Core"));
+			plan.setTokens(_ctx.integerValue("ListPlansResponse.Plans["+ i +"].Tokens"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListPlansResponse.Plans["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
+				tag.setColor(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Tags["+ j +"].Color"));
 				tag.setCnTitle(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Tags["+ j +"].CnTitle"));
 				tag.setEnTitle(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Tags["+ j +"].EnTitle"));
-				tag.setColor(_ctx.stringValue("ListPlansResponse.Plans["+ i +"].Tags["+ j +"].Color"));
 
 				tags.add(tag);
 			}

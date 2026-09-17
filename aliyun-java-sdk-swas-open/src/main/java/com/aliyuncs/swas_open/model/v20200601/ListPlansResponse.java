@@ -47,89 +47,35 @@ public class ListPlansResponse extends AcsResponse {
 
 	public static class Plan {
 
-		private Integer core;
-
-		private Integer bandwidth;
-
-		private Integer diskSize;
-
-		private Integer flow;
-
-		private String planId;
-
-		private String diskType;
-
-		private String currency;
-
 		private String supportPlatform;
-
-		private String planType;
 
 		private String publicIpNum;
 
-		private String ispType;
-
 		private Float memory;
+
+		private String planId;
+
+		private Integer flow;
+
+		private String diskType;
 
 		private String originPrice;
 
+		private String ispType;
+
+		private Integer bandwidth;
+
+		private String currency;
+
+		private Integer diskSize;
+
+		private String planType;
+
+		private Integer core;
+
+		private Integer tokens;
+
 		private List<Tag> tags;
-
-		public Integer getCore() {
-			return this.core;
-		}
-
-		public void setCore(Integer core) {
-			this.core = core;
-		}
-
-		public Integer getBandwidth() {
-			return this.bandwidth;
-		}
-
-		public void setBandwidth(Integer bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public Integer getDiskSize() {
-			return this.diskSize;
-		}
-
-		public void setDiskSize(Integer diskSize) {
-			this.diskSize = diskSize;
-		}
-
-		public Integer getFlow() {
-			return this.flow;
-		}
-
-		public void setFlow(Integer flow) {
-			this.flow = flow;
-		}
-
-		public String getPlanId() {
-			return this.planId;
-		}
-
-		public void setPlanId(String planId) {
-			this.planId = planId;
-		}
-
-		public String getDiskType() {
-			return this.diskType;
-		}
-
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
-		}
 
 		public String getSupportPlatform() {
 			return this.supportPlatform;
@@ -137,14 +83,6 @@ public class ListPlansResponse extends AcsResponse {
 
 		public void setSupportPlatform(String supportPlatform) {
 			this.supportPlatform = supportPlatform;
-		}
-
-		public String getPlanType() {
-			return this.planType;
-		}
-
-		public void setPlanType(String planType) {
-			this.planType = planType;
 		}
 
 		public String getPublicIpNum() {
@@ -155,14 +93,6 @@ public class ListPlansResponse extends AcsResponse {
 			this.publicIpNum = publicIpNum;
 		}
 
-		public String getIspType() {
-			return this.ispType;
-		}
-
-		public void setIspType(String ispType) {
-			this.ispType = ispType;
-		}
-
 		public Float getMemory() {
 			return this.memory;
 		}
@@ -171,12 +101,92 @@ public class ListPlansResponse extends AcsResponse {
 			this.memory = memory;
 		}
 
+		public String getPlanId() {
+			return this.planId;
+		}
+
+		public void setPlanId(String planId) {
+			this.planId = planId;
+		}
+
+		public Integer getFlow() {
+			return this.flow;
+		}
+
+		public void setFlow(Integer flow) {
+			this.flow = flow;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
 		public String getOriginPrice() {
 			return this.originPrice;
 		}
 
 		public void setOriginPrice(String originPrice) {
 			this.originPrice = originPrice;
+		}
+
+		public String getIspType() {
+			return this.ispType;
+		}
+
+		public void setIspType(String ispType) {
+			this.ispType = ispType;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
+
+		public Integer getDiskSize() {
+			return this.diskSize;
+		}
+
+		public void setDiskSize(Integer diskSize) {
+			this.diskSize = diskSize;
+		}
+
+		public String getPlanType() {
+			return this.planType;
+		}
+
+		public void setPlanType(String planType) {
+			this.planType = planType;
+		}
+
+		public Integer getCore() {
+			return this.core;
+		}
+
+		public void setCore(Integer core) {
+			this.core = core;
+		}
+
+		public Integer getTokens() {
+			return this.tokens;
+		}
+
+		public void setTokens(Integer tokens) {
+			this.tokens = tokens;
 		}
 
 		public List<Tag> getTags() {
@@ -189,11 +199,19 @@ public class ListPlansResponse extends AcsResponse {
 
 		public static class Tag {
 
+			private String color;
+
 			private String cnTitle;
 
 			private String enTitle;
 
-			private String color;
+			public String getColor() {
+				return this.color;
+			}
+
+			public void setColor(String color) {
+				this.color = color;
+			}
 
 			public String getCnTitle() {
 				return this.cnTitle;
@@ -209,14 +227,6 @@ public class ListPlansResponse extends AcsResponse {
 
 			public void setEnTitle(String enTitle) {
 				this.enTitle = enTitle;
-			}
-
-			public String getColor() {
-				return this.color;
-			}
-
-			public void setColor(String color) {
-				this.color = color;
 			}
 		}
 	}

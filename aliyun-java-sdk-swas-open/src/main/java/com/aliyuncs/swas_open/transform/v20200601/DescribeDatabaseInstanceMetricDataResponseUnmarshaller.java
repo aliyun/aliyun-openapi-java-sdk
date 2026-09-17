@@ -24,8 +24,8 @@ public class DescribeDatabaseInstanceMetricDataResponseUnmarshaller {
 		
 		describeDatabaseInstanceMetricDataResponse.setRequestId(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.RequestId"));
 		describeDatabaseInstanceMetricDataResponse.setMetricName(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.MetricName"));
-		describeDatabaseInstanceMetricDataResponse.setUnit(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.Unit"));
 		describeDatabaseInstanceMetricDataResponse.setDataFormat(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.DataFormat"));
+		describeDatabaseInstanceMetricDataResponse.setUnit(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.Unit"));
 		describeDatabaseInstanceMetricDataResponse.setMetricData(_ctx.stringValue("DescribeDatabaseInstanceMetricDataResponse.MetricData"));
 	 
 	 	return describeDatabaseInstanceMetricDataResponse;

@@ -28,7 +28,7 @@ public class DescribeInstanceKeyPairRequest extends RpcAcsRequest<DescribeInstan
 
 	private String instanceId;
 	public DescribeInstanceKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeInstanceKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeInstanceKeyPair", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

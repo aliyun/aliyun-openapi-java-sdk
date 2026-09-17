@@ -27,24 +27,24 @@ public class DescribeDatabaseSlowLogRecordsResponseUnmarshaller {
 	public static DescribeDatabaseSlowLogRecordsResponse unmarshall(DescribeDatabaseSlowLogRecordsResponse describeDatabaseSlowLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeDatabaseSlowLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.RequestId"));
-		describeDatabaseSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeDatabaseSlowLogRecordsResponse.PageNumber"));
-		describeDatabaseSlowLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeDatabaseSlowLogRecordsResponse.PageSize"));
 		describeDatabaseSlowLogRecordsResponse.setTotalCount(_ctx.integerValue("DescribeDatabaseSlowLogRecordsResponse.TotalCount"));
+		describeDatabaseSlowLogRecordsResponse.setPageSize(_ctx.integerValue("DescribeDatabaseSlowLogRecordsResponse.PageSize"));
+		describeDatabaseSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeDatabaseSlowLogRecordsResponse.PageNumber"));
 		describeDatabaseSlowLogRecordsResponse.setPhysicalIORead(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.PhysicalIORead"));
 		describeDatabaseSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.Engine"));
 
 		List<SlowLog> slowLogs = new ArrayList<SlowLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs.Length"); i++) {
 			SlowLog slowLog = new SlowLog();
-			slowLog.setHostAddress(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].HostAddress"));
 			slowLog.setQueryTimes(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].QueryTimes"));
-			slowLog.setSQLText(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].SQLText"));
-			slowLog.setQueryTimeMS(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].QueryTimeMS"));
-			slowLog.setLockTimes(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].LockTimes"));
 			slowLog.setExecutionStartTime(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].ExecutionStartTime"));
 			slowLog.setReturnRowCounts(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].ReturnRowCounts"));
-			slowLog.setParseRowCounts(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].ParseRowCounts"));
+			slowLog.setLockTimes(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].LockTimes"));
 			slowLog.setDBName(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].DBName"));
+			slowLog.setParseRowCounts(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].ParseRowCounts"));
+			slowLog.setHostAddress(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].HostAddress"));
+			slowLog.setQueryTimeMS(_ctx.longValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].QueryTimeMS"));
+			slowLog.setSQLText(_ctx.stringValue("DescribeDatabaseSlowLogRecordsResponse.SlowLogs["+ i +"].SQLText"));
 
 			slowLogs.add(slowLog);
 		}

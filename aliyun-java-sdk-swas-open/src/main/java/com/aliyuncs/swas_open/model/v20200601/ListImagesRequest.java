@@ -28,7 +28,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String imageIds;
 	public ListImagesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListImages", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListImages", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

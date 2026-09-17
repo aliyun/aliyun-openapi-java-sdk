@@ -34,8 +34,8 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 		List<Status> cloudAssistantStatus = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantStatusResponse.CloudAssistantStatus.Length"); i++) {
 			Status status = new Status();
-			status.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.CloudAssistantStatus["+ i +"].InstanceId"));
 			status.setStatus(_ctx.booleanValue("DescribeCloudAssistantStatusResponse.CloudAssistantStatus["+ i +"].Status"));
+			status.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.CloudAssistantStatus["+ i +"].InstanceId"));
 
 			cloudAssistantStatus.add(status);
 		}

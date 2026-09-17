@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<FirewallTemplate> firewallTemplates;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<FirewallTemplate> getFirewallTemplates() {
@@ -77,41 +77,17 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
 	public static class FirewallTemplate {
 
-		private String firewallTemplateId;
-
-		private String creationTime;
-
-		private String name;
-
 		private String description;
 
 		private String createTime;
 
+		private String creationTime;
+
+		private String firewallTemplateId;
+
+		private String name;
+
 		private List<FirewallTemplateRule> firewallTemplateRules;
-
-		public String getFirewallTemplateId() {
-			return this.firewallTemplateId;
-		}
-
-		public void setFirewallTemplateId(String firewallTemplateId) {
-			this.firewallTemplateId = firewallTemplateId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -129,6 +105,30 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getFirewallTemplateId() {
+			return this.firewallTemplateId;
+		}
+
+		public void setFirewallTemplateId(String firewallTemplateId) {
+			this.firewallTemplateId = firewallTemplateId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		public List<FirewallTemplateRule> getFirewallTemplateRules() {
 			return this.firewallTemplateRules;
 		}
@@ -141,11 +141,11 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
 			private String firewallTemplateRuleId;
 
-			private String ruleProtocol;
-
 			private String port;
 
 			private String sourceCidrIp;
+
+			private String ruleProtocol;
 
 			private String remark;
 
@@ -155,14 +155,6 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
 			public void setFirewallTemplateRuleId(String firewallTemplateRuleId) {
 				this.firewallTemplateRuleId = firewallTemplateRuleId;
-			}
-
-			public String getRuleProtocol() {
-				return this.ruleProtocol;
-			}
-
-			public void setRuleProtocol(String ruleProtocol) {
-				this.ruleProtocol = ruleProtocol;
 			}
 
 			public String getPort() {
@@ -179,6 +171,14 @@ public class DescribeFirewallTemplatesResponse extends AcsResponse {
 
 			public void setSourceCidrIp(String sourceCidrIp) {
 				this.sourceCidrIp = sourceCidrIp;
+			}
+
+			public String getRuleProtocol() {
+				return this.ruleProtocol;
+			}
+
+			public void setRuleProtocol(String ruleProtocol) {
+				this.ruleProtocol = ruleProtocol;
 			}
 
 			public String getRemark() {

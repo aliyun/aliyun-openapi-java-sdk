@@ -26,7 +26,7 @@ public class ListRegionsRequest extends RpcAcsRequest<ListRegionsResponse> {
 
 	private String acceptLanguage;
 	public ListRegionsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListRegions", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListRegions", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

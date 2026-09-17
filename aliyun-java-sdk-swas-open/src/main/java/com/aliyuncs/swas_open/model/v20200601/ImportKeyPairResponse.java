@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportKeyPairResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String keyPairName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getKeyPairName() {
 		return this.keyPairName;
@@ -42,6 +34,14 @@ public class ImportKeyPairResponse extends AcsResponse {
 
 	public void setKeyPairName(String keyPairName) {
 		this.keyPairName = keyPairName;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

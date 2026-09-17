@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCustomImagesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
+
+	private String requestId;
 
 	private String pageSize;
 
@@ -35,20 +35,20 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 	private List<CustomImage> customImages;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getTotalCount() {
 		return this.totalCount;
 	}
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageSize() {
@@ -77,122 +77,58 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 	public static class CustomImage {
 
-		private String creationTime;
-
-		private String dataSnapshotName;
-
-		private String systemSnapshotId;
-
-		private Boolean inShare;
-
-		private Boolean inShareUser;
-
-		private String instanceId;
-
-		private String dataSnapshotId;
-
-		private String regionId;
-
-		private String systemSnapshotName;
+		private String status;
 
 		private String description;
 
-		private String name;
-
-		private String imageId;
-
-		private String status;
-
-		private String instanceName;
+		private Boolean inShare;
 
 		private String resourceGroupId;
 
-		private Long userId;
-
-		private String osType;
-
-		private Integer requiredSystemDiskSize;
+		private String instanceId;
 
 		private Integer requiredDataDiskSize;
 
 		private String sourceImageName;
 
+		private Boolean inShareUser;
+
+		private String systemSnapshotId;
+
+		private String systemSnapshotName;
+
 		private String sourceImageVersion;
+
+		private String dataSnapshotId;
+
+		private Integer requiredSystemDiskSize;
+
+		private String name;
+
+		private String dataSnapshotName;
+
+		private String instanceName;
+
+		private String osType;
+
+		private Long userId;
+
+		private String creationTime;
+
+		private String imageId;
+
+		private String regionId;
 
 		private List<Tag> tags;
 
 		private List<String> createInstances;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getDataSnapshotName() {
-			return this.dataSnapshotName;
-		}
-
-		public void setDataSnapshotName(String dataSnapshotName) {
-			this.dataSnapshotName = dataSnapshotName;
-		}
-
-		public String getSystemSnapshotId() {
-			return this.systemSnapshotId;
-		}
-
-		public void setSystemSnapshotId(String systemSnapshotId) {
-			this.systemSnapshotId = systemSnapshotId;
-		}
-
-		public Boolean getInShare() {
-			return this.inShare;
-		}
-
-		public void setInShare(Boolean inShare) {
-			this.inShare = inShare;
-		}
-
-		public Boolean getInShareUser() {
-			return this.inShareUser;
-		}
-
-		public void setInShareUser(Boolean inShareUser) {
-			this.inShareUser = inShareUser;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getDataSnapshotId() {
-			return this.dataSnapshotId;
-		}
-
-		public void setDataSnapshotId(String dataSnapshotId) {
-			this.dataSnapshotId = dataSnapshotId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getSystemSnapshotName() {
-			return this.systemSnapshotName;
-		}
-
-		public void setSystemSnapshotName(String systemSnapshotName) {
-			this.systemSnapshotName = systemSnapshotName;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getDescription() {
@@ -203,36 +139,12 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getName() {
-			return this.name;
+		public Boolean getInShare() {
+			return this.inShare;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
+		public void setInShare(Boolean inShare) {
+			this.inShare = inShare;
 		}
 
 		public String getResourceGroupId() {
@@ -243,28 +155,12 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public Long getUserId() {
-			return this.userId;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
-
-		public String getOsType() {
-			return this.osType;
-		}
-
-		public void setOsType(String osType) {
-			this.osType = osType;
-		}
-
-		public Integer getRequiredSystemDiskSize() {
-			return this.requiredSystemDiskSize;
-		}
-
-		public void setRequiredSystemDiskSize(Integer requiredSystemDiskSize) {
-			this.requiredSystemDiskSize = requiredSystemDiskSize;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getRequiredDataDiskSize() {
@@ -283,12 +179,116 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.sourceImageName = sourceImageName;
 		}
 
+		public Boolean getInShareUser() {
+			return this.inShareUser;
+		}
+
+		public void setInShareUser(Boolean inShareUser) {
+			this.inShareUser = inShareUser;
+		}
+
+		public String getSystemSnapshotId() {
+			return this.systemSnapshotId;
+		}
+
+		public void setSystemSnapshotId(String systemSnapshotId) {
+			this.systemSnapshotId = systemSnapshotId;
+		}
+
+		public String getSystemSnapshotName() {
+			return this.systemSnapshotName;
+		}
+
+		public void setSystemSnapshotName(String systemSnapshotName) {
+			this.systemSnapshotName = systemSnapshotName;
+		}
+
 		public String getSourceImageVersion() {
 			return this.sourceImageVersion;
 		}
 
 		public void setSourceImageVersion(String sourceImageVersion) {
 			this.sourceImageVersion = sourceImageVersion;
+		}
+
+		public String getDataSnapshotId() {
+			return this.dataSnapshotId;
+		}
+
+		public void setDataSnapshotId(String dataSnapshotId) {
+			this.dataSnapshotId = dataSnapshotId;
+		}
+
+		public Integer getRequiredSystemDiskSize() {
+			return this.requiredSystemDiskSize;
+		}
+
+		public void setRequiredSystemDiskSize(Integer requiredSystemDiskSize) {
+			this.requiredSystemDiskSize = requiredSystemDiskSize;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDataSnapshotName() {
+			return this.dataSnapshotName;
+		}
+
+		public void setDataSnapshotName(String dataSnapshotName) {
+			this.dataSnapshotName = dataSnapshotName;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getOsType() {
+			return this.osType;
+		}
+
+		public void setOsType(String osType) {
+			this.osType = osType;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Tag> getTags() {
@@ -309,17 +309,9 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -327,6 +319,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

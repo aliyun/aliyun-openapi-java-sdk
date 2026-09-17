@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstancePasswordsSettingResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean vncPasswordSetting;
 
 	private Boolean instancePasswordSetting;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getVncPasswordSetting() {
 		return this.vncPasswordSetting;
@@ -52,6 +44,14 @@ public class DescribeInstancePasswordsSettingResponse extends AcsResponse {
 
 	public void setInstancePasswordSetting(Boolean instancePasswordSetting) {
 		this.instancePasswordSetting = instancePasswordSetting;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

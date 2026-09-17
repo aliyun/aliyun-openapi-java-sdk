@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCommandsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Command> commands;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Command> getCommands() {
@@ -77,48 +77,56 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 	public static class Command {
 
-		private String commandId;
+		private String description;
 
-		private String creationTime;
+		private String resourceGroupId;
+
+		private Long timeout;
 
 		private String name;
 
 		private String provider;
 
-		private String type;
-
-		private Long timeout;
-
-		private String description;
-
 		private String workingDir;
 
 		private String commandContent;
 
+		private String type;
+
+		private String creationTime;
+
 		private Boolean enableParameter;
 
-		private String resourceGroupId;
-
-		private List<Tag> tags;
+		private String commandId;
 
 		private List<ParameterDefinition> parameterDefinitions;
 
+		private List<Tag> tags;
+
 		private List<String> parameterNames;
 
-		public String getCommandId() {
-			return this.commandId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCommandId(String commandId) {
-			this.commandId = commandId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Long getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(Long timeout) {
+			this.timeout = timeout;
 		}
 
 		public String getName() {
@@ -137,30 +145,6 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.provider = provider;
 		}
 
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public Long getTimeout() {
-			return this.timeout;
-		}
-
-		public void setTimeout(Long timeout) {
-			this.timeout = timeout;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
 		public String getWorkingDir() {
 			return this.workingDir;
 		}
@@ -177,6 +161,22 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.commandContent = commandContent;
 		}
 
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
 		public Boolean getEnableParameter() {
 			return this.enableParameter;
 		}
@@ -185,20 +185,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.enableParameter = enableParameter;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getCommandId() {
+			return this.commandId;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public List<Tag> getTags() {
-			return this.tags;
-		}
-
-		public void setTags(List<Tag> tags) {
-			this.tags = tags;
+		public void setCommandId(String commandId) {
+			this.commandId = commandId;
 		}
 
 		public List<ParameterDefinition> getParameterDefinitions() {
@@ -209,6 +201,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.parameterDefinitions = parameterDefinitions;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getParameterNames() {
 			return this.parameterNames;
 		}
@@ -217,47 +217,24 @@ public class DescribeCommandsResponse extends AcsResponse {
 			this.parameterNames = parameterNames;
 		}
 
-		public static class Tag {
-
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-		}
-
 		public static class ParameterDefinition {
 
-			private Boolean required;
+			private String defaultValue;
 
 			private String description;
 
-			private String defaultValue;
+			private Boolean required;
 
 			private String parameterName;
 
 			private List<String> possibleValues;
 
-			public Boolean getRequired() {
-				return this.required;
+			public String getDefaultValue() {
+				return this.defaultValue;
 			}
 
-			public void setRequired(Boolean required) {
-				this.required = required;
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
 			}
 
 			public String getDescription() {
@@ -268,12 +245,12 @@ public class DescribeCommandsResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getDefaultValue() {
-				return this.defaultValue;
+			public Boolean getRequired() {
+				return this.required;
 			}
 
-			public void setDefaultValue(String defaultValue) {
-				this.defaultValue = defaultValue;
+			public void setRequired(Boolean required) {
+				this.required = required;
 			}
 
 			public String getParameterName() {
@@ -290,6 +267,29 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 			public void setPossibleValues(List<String> possibleValues) {
 				this.possibleValues = possibleValues;
+			}
+		}
+
+		public static class Tag {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

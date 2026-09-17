@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityAgentStatusResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String clientStatus;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getClientStatus() {
 		return this.clientStatus;
@@ -42,6 +34,14 @@ public class DescribeSecurityAgentStatusResponse extends AcsResponse {
 
 	public void setClientStatus(String clientStatus) {
 		this.clientStatus = clientStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -31,13 +31,13 @@ public class DescribeFirewallTemplateRulesApplyResultResponseUnmarshaller {
 		List<InstanceApplyFirewallTemplateRulesResult> data = new ArrayList<InstanceApplyFirewallTemplateRulesResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFirewallTemplateRulesApplyResultResponse.data.Length"); i++) {
 			InstanceApplyFirewallTemplateRulesResult instanceApplyFirewallTemplateRulesResult = new InstanceApplyFirewallTemplateRulesResult();
-			instanceApplyFirewallTemplateRulesResult.setRuleProtocol(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].RuleProtocol"));
 			instanceApplyFirewallTemplateRulesResult.setPort(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].Port"));
 			instanceApplyFirewallTemplateRulesResult.setSourceCidrIp(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].SourceCidrIp"));
-			instanceApplyFirewallTemplateRulesResult.setRemark(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].Remark"));
-			instanceApplyFirewallTemplateRulesResult.setSuccess(_ctx.booleanValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].Success"));
-			instanceApplyFirewallTemplateRulesResult.setErrorCode(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].ErrorCode"));
 			instanceApplyFirewallTemplateRulesResult.setErrorInfo(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].ErrorInfo"));
+			instanceApplyFirewallTemplateRulesResult.setRuleProtocol(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].RuleProtocol"));
+			instanceApplyFirewallTemplateRulesResult.setErrorCode(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].ErrorCode"));
+			instanceApplyFirewallTemplateRulesResult.setSuccess(_ctx.booleanValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].Success"));
+			instanceApplyFirewallTemplateRulesResult.setRemark(_ctx.stringValue("DescribeFirewallTemplateRulesApplyResultResponse.data["+ i +"].Remark"));
 
 			data.add(instanceApplyFirewallTemplateRulesResult);
 		}

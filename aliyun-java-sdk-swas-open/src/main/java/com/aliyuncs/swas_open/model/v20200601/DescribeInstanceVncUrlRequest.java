@@ -28,7 +28,7 @@ public class DescribeInstanceVncUrlRequest extends RpcAcsRequest<DescribeInstanc
 
 	private String instanceId;
 	public DescribeInstanceVncUrlRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeInstanceVncUrl", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeInstanceVncUrl", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

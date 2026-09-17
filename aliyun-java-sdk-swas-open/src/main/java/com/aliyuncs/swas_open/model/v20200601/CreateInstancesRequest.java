@@ -42,7 +42,7 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 
 	private String chargeType;
 	public CreateInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateInstances", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateInstances", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

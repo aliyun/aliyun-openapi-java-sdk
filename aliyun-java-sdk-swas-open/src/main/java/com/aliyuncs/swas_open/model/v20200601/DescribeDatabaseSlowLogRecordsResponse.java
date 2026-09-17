@@ -25,13 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
-	private Integer totalCount;
+	private Integer pageNumber;
 
 	private Long physicalIORead;
 
@@ -39,20 +39,20 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 
 	private List<SlowLog> slowLogs;
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -63,12 +63,12 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Long getPhysicalIORead() {
@@ -97,31 +97,23 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 
 	public static class SlowLog {
 
-		private String hostAddress;
-
 		private Long queryTimes;
-
-		private String sQLText;
-
-		private Long queryTimeMS;
-
-		private Long lockTimes;
 
 		private String executionStartTime;
 
 		private Long returnRowCounts;
 
-		private Long parseRowCounts;
+		private Long lockTimes;
 
 		private String dBName;
 
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
+		private Long parseRowCounts;
 
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
+		private String hostAddress;
+
+		private Long queryTimeMS;
+
+		private String sQLText;
 
 		public Long getQueryTimes() {
 			return this.queryTimes;
@@ -129,30 +121,6 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 
 		public void setQueryTimes(Long queryTimes) {
 			this.queryTimes = queryTimes;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getQueryTimeMS() {
-			return this.queryTimeMS;
-		}
-
-		public void setQueryTimeMS(Long queryTimeMS) {
-			this.queryTimeMS = queryTimeMS;
-		}
-
-		public Long getLockTimes() {
-			return this.lockTimes;
-		}
-
-		public void setLockTimes(Long lockTimes) {
-			this.lockTimes = lockTimes;
 		}
 
 		public String getExecutionStartTime() {
@@ -171,12 +139,12 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 			this.returnRowCounts = returnRowCounts;
 		}
 
-		public Long getParseRowCounts() {
-			return this.parseRowCounts;
+		public Long getLockTimes() {
+			return this.lockTimes;
 		}
 
-		public void setParseRowCounts(Long parseRowCounts) {
-			this.parseRowCounts = parseRowCounts;
+		public void setLockTimes(Long lockTimes) {
+			this.lockTimes = lockTimes;
 		}
 
 		public String getDBName() {
@@ -185,6 +153,38 @@ public class DescribeDatabaseSlowLogRecordsResponse extends AcsResponse {
 
 		public void setDBName(String dBName) {
 			this.dBName = dBName;
+		}
+
+		public Long getParseRowCounts() {
+			return this.parseRowCounts;
+		}
+
+		public void setParseRowCounts(Long parseRowCounts) {
+			this.parseRowCounts = parseRowCounts;
+		}
+
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
+		}
+
+		public Long getQueryTimeMS() {
+			return this.queryTimeMS;
+		}
+
+		public void setQueryTimeMS(Long queryTimeMS) {
+			this.queryTimeMS = queryTimeMS;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 	}
 

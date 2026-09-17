@@ -32,7 +32,7 @@ public class RemoveCustomImageShareAccountRequest extends RpcAcsRequest<RemoveCu
 
 	private List<Long> accounts;
 	public RemoveCustomImageShareAccountRequest() {
-		super("SWAS-OPEN", "2020-06-01", "RemoveCustomImageShareAccount", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "RemoveCustomImageShareAccount", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

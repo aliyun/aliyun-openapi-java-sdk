@@ -33,7 +33,7 @@ public class ListCustomImageShareAccountsRequest extends RpcAcsRequest<ListCusto
 
 	private Integer pageSize;
 	public ListCustomImageShareAccountsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListCustomImageShareAccounts", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListCustomImageShareAccounts", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class ListKeyPairsRequest extends RpcAcsRequest<ListKeyPairsResponse> {
 
 	private Integer pageSize;
 	public ListKeyPairsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ListKeyPairs", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ListKeyPairs", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.GET);
 	}

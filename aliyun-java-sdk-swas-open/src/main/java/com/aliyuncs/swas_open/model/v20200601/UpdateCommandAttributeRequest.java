@@ -34,7 +34,7 @@ public class UpdateCommandAttributeRequest extends RpcAcsRequest<UpdateCommandAt
 
 	private String name;
 	public UpdateCommandAttributeRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UpdateCommandAttribute", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "UpdateCommandAttribute", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

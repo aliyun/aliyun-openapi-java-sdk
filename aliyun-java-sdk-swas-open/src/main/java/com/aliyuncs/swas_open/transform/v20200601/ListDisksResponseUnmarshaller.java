@@ -35,26 +35,26 @@ public class ListDisksResponseUnmarshaller {
 		List<Disk> disks = new ArrayList<Disk>();
 		for (int i = 0; i < _ctx.lengthValue("ListDisksResponse.Disks.Length"); i++) {
 			Disk disk = new Disk();
-			disk.setCreationTime(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].CreationTime"));
 			disk.setStatus(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Status"));
+			disk.setCategory(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Category"));
+			disk.setResourceGroupId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].ResourceGroupId"));
+			disk.setInstanceId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceId"));
 			disk.setDevice(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Device"));
 			disk.setSize(_ctx.integerValue("ListDisksResponse.Disks["+ i +"].Size"));
-			disk.setDiskName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskName"));
 			disk.setDiskChargeType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskChargeType"));
-			disk.setDiskType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskType"));
-			disk.setCategory(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Category"));
-			disk.setDiskId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskId"));
-			disk.setInstanceId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceId"));
-			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
+			disk.setDiskName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskName"));
 			disk.setRemark(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Remark"));
+			disk.setDiskType(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskType"));
 			disk.setInstanceName(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].InstanceName"));
-			disk.setResourceGroupId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].ResourceGroupId"));
+			disk.setCreationTime(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].CreationTime"));
+			disk.setRegionId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].RegionId"));
+			disk.setDiskId(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].DiskId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("ListDisksResponse.Disks["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

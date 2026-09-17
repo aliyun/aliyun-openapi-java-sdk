@@ -31,11 +31,11 @@ public class ListImagesResponseUnmarshaller {
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("ListImagesResponse.Images.Length"); i++) {
 			Image image = new Image();
-			image.setImageType(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageType"));
-			image.setDescription(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Description"));
 			image.setImageName(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageName"));
-			image.setImageId(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageId"));
+			image.setDescription(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Description"));
 			image.setPlatform(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Platform"));
+			image.setImageId(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageId"));
+			image.setImageType(_ctx.stringValue("ListImagesResponse.Images["+ i +"].ImageType"));
 
 			images.add(image);
 		}

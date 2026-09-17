@@ -31,7 +31,7 @@ public class DeleteFirewallRulesRequest extends RpcAcsRequest<DeleteFirewallRule
 
 	private String instanceId;
 	public DeleteFirewallRulesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallRules", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallRules", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

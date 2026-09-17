@@ -28,7 +28,7 @@ public class AllocatePublicConnectionRequest extends RpcAcsRequest<AllocatePubli
 
 	private String databaseInstanceId;
 	public AllocatePublicConnectionRequest() {
-		super("SWAS-OPEN", "2020-06-01", "AllocatePublicConnection", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "AllocatePublicConnection", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

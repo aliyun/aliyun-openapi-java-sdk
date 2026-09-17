@@ -77,43 +77,35 @@ public class ListDisksResponse extends AcsResponse {
 
 	public static class Disk {
 
-		private String creationTime;
-
 		private String status;
+
+		private String category;
+
+		private String resourceGroupId;
+
+		private String instanceId;
 
 		private String device;
 
 		private Integer size;
 
-		private String diskName;
-
 		private String diskChargeType;
 
-		private String diskType;
-
-		private String category;
-
-		private String diskId;
-
-		private String instanceId;
-
-		private String regionId;
+		private String diskName;
 
 		private String remark;
 
+		private String diskType;
+
 		private String instanceName;
 
-		private String resourceGroupId;
+		private String creationTime;
+
+		private String regionId;
+
+		private String diskId;
 
 		private List<Tag> tags;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -121,6 +113,30 @@ public class ListDisksResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getDevice() {
@@ -139,14 +155,6 @@ public class ListDisksResponse extends AcsResponse {
 			this.size = size;
 		}
 
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
 		public String getDiskChargeType() {
 			return this.diskChargeType;
 		}
@@ -155,44 +163,12 @@ public class ListDisksResponse extends AcsResponse {
 			this.diskChargeType = diskChargeType;
 		}
 
-		public String getDiskType() {
-			return this.diskType;
+		public String getDiskName() {
+			return this.diskName;
 		}
 
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
 		}
 
 		public String getRemark() {
@@ -203,6 +179,14 @@ public class ListDisksResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
+		}
+
 		public String getInstanceName() {
 			return this.instanceName;
 		}
@@ -211,12 +195,28 @@ public class ListDisksResponse extends AcsResponse {
 			this.instanceName = instanceName;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
 		}
 
 		public List<Tag> getTags() {
@@ -229,17 +229,9 @@ public class ListDisksResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -247,6 +239,14 @@ public class ListDisksResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

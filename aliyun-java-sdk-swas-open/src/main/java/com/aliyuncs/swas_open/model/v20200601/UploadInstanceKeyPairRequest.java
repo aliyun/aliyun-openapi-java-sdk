@@ -32,7 +32,7 @@ public class UploadInstanceKeyPairRequest extends RpcAcsRequest<UploadInstanceKe
 
 	private String instanceId;
 	public UploadInstanceKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UploadInstanceKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "UploadInstanceKeyPair", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

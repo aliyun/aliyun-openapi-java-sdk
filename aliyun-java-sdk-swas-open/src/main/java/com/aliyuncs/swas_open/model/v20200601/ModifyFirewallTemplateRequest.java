@@ -25,29 +25,18 @@ import com.aliyuncs.http.MethodType;
 public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallTemplateResponse> {
 	   
 
-	private String firewallTemplateId;
-
 	private String clientToken;
 
 	private String description;
+
+	private String firewallTemplateId;
 
 	private List<FirewallTemplateRule> firewallTemplateRules;
 
 	private String name;
 	public ModifyFirewallTemplateRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyFirewallTemplate", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyFirewallTemplate", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
-	}
-
-	public String getFirewallTemplateId() {
-		return this.firewallTemplateId;
-	}
-
-	public void setFirewallTemplateId(String firewallTemplateId) {
-		this.firewallTemplateId = firewallTemplateId;
-		if(firewallTemplateId != null){
-			putQueryParameter("FirewallTemplateId", firewallTemplateId);
-		}
 	}
 
 	public String getClientToken() {
@@ -72,6 +61,17 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 		}
 	}
 
+	public String getFirewallTemplateId() {
+		return this.firewallTemplateId;
+	}
+
+	public void setFirewallTemplateId(String firewallTemplateId) {
+		this.firewallTemplateId = firewallTemplateId;
+		if(firewallTemplateId != null){
+			putQueryParameter("FirewallTemplateId", firewallTemplateId);
+		}
+	}
+
 	public List<FirewallTemplateRule> getFirewallTemplateRules() {
 		return this.firewallTemplateRules;
 	}
@@ -81,9 +81,9 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 		if (firewallTemplateRules != null) {
 			for (int depth1 = 0; depth1 < firewallTemplateRules.size(); depth1++) {
 				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".FirewallTemplateRuleId" , firewallTemplateRules.get(depth1).getFirewallTemplateRuleId());
-				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".RuleProtocol" , firewallTemplateRules.get(depth1).getRuleProtocol());
 				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".Port" , firewallTemplateRules.get(depth1).getPort());
 				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".SourceCidrIp" , firewallTemplateRules.get(depth1).getSourceCidrIp());
+				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".RuleProtocol" , firewallTemplateRules.get(depth1).getRuleProtocol());
 				putQueryParameter("FirewallTemplateRule." + (depth1 + 1) + ".Remark" , firewallTemplateRules.get(depth1).getRemark());
 			}
 		}	
@@ -104,11 +104,11 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 
 		private String firewallTemplateRuleId;
 
-		private String ruleProtocol;
-
 		private String port;
 
 		private String sourceCidrIp;
+
+		private String ruleProtocol;
 
 		private String remark;
 
@@ -118,14 +118,6 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 
 		public void setFirewallTemplateRuleId(String firewallTemplateRuleId) {
 			this.firewallTemplateRuleId = firewallTemplateRuleId;
-		}
-
-		public String getRuleProtocol() {
-			return this.ruleProtocol;
-		}
-
-		public void setRuleProtocol(String ruleProtocol) {
-			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getPort() {
@@ -142,6 +134,14 @@ public class ModifyFirewallTemplateRequest extends RpcAcsRequest<ModifyFirewallT
 
 		public void setSourceCidrIp(String sourceCidrIp) {
 			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getRuleProtocol() {
+			return this.ruleProtocol;
+		}
+
+		public void setRuleProtocol(String ruleProtocol) {
+			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getRemark() {

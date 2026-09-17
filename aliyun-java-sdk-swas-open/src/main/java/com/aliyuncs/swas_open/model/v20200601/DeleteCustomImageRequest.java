@@ -28,7 +28,7 @@ public class DeleteCustomImageRequest extends RpcAcsRequest<DeleteCustomImageRes
 
 	private String clientToken;
 	public DeleteCustomImageRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteCustomImage", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteCustomImage", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateInstanceKeyPairResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String keyPairName;
 
 	private String fingerprint;
 
 	private String privateKey;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getKeyPairName() {
 		return this.keyPairName;
@@ -62,6 +54,14 @@ public class CreateInstanceKeyPairResponse extends AcsResponse {
 
 	public void setPrivateKey(String privateKey) {
 		this.privateKey = privateKey;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

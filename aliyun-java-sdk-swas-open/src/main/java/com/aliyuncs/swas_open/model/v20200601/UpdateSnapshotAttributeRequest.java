@@ -30,7 +30,7 @@ public class UpdateSnapshotAttributeRequest extends RpcAcsRequest<UpdateSnapshot
 
 	private String remark;
 	public UpdateSnapshotAttributeRequest() {
-		super("SWAS-OPEN", "2020-06-01", "UpdateSnapshotAttribute", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "UpdateSnapshotAttribute", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

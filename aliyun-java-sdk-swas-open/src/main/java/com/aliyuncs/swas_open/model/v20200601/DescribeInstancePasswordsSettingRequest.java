@@ -28,7 +28,7 @@ public class DescribeInstancePasswordsSettingRequest extends RpcAcsRequest<Descr
 
 	private String instanceId;
 	public DescribeInstancePasswordsSettingRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeInstancePasswordsSetting", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeInstancePasswordsSetting", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

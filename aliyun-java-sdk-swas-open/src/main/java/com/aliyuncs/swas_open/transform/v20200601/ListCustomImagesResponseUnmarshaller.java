@@ -35,27 +35,27 @@ public class ListCustomImagesResponseUnmarshaller {
 		List<CustomImage> customImages = new ArrayList<CustomImage>();
 		for (int i = 0; i < _ctx.lengthValue("ListCustomImagesResponse.CustomImages.Length"); i++) {
 			CustomImage customImage = new CustomImage();
-			customImage.setCreationTime(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].CreationTime"));
-			customImage.setDataSnapshotName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotName"));
-			customImage.setSystemSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SystemSnapshotId"));
-			customImage.setInShare(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShare"));
-			customImage.setInShareUser(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShareUser"));
-			customImage.setInstanceId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceId"));
-			customImage.setDataSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotId"));
-			customImage.setRegionId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].RegionId"));
-			customImage.setSystemSnapshotName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SystemSnapshotName"));
-			customImage.setDescription(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Description"));
-			customImage.setName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Name"));
-			customImage.setImageId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ImageId"));
 			customImage.setStatus(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Status"));
-			customImage.setInstanceName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceName"));
+			customImage.setDescription(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Description"));
+			customImage.setInShare(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShare"));
 			customImage.setResourceGroupId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ResourceGroupId"));
-			customImage.setUserId(_ctx.longValue("ListCustomImagesResponse.CustomImages["+ i +"].UserId"));
-			customImage.setOsType(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].OsType"));
-			customImage.setRequiredSystemDiskSize(_ctx.integerValue("ListCustomImagesResponse.CustomImages["+ i +"].RequiredSystemDiskSize"));
+			customImage.setInstanceId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceId"));
 			customImage.setRequiredDataDiskSize(_ctx.integerValue("ListCustomImagesResponse.CustomImages["+ i +"].RequiredDataDiskSize"));
 			customImage.setSourceImageName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SourceImageName"));
+			customImage.setInShareUser(_ctx.booleanValue("ListCustomImagesResponse.CustomImages["+ i +"].InShareUser"));
+			customImage.setSystemSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SystemSnapshotId"));
+			customImage.setSystemSnapshotName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SystemSnapshotName"));
 			customImage.setSourceImageVersion(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].SourceImageVersion"));
+			customImage.setDataSnapshotId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotId"));
+			customImage.setRequiredSystemDiskSize(_ctx.integerValue("ListCustomImagesResponse.CustomImages["+ i +"].RequiredSystemDiskSize"));
+			customImage.setName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Name"));
+			customImage.setDataSnapshotName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].DataSnapshotName"));
+			customImage.setInstanceName(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].InstanceName"));
+			customImage.setOsType(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].OsType"));
+			customImage.setUserId(_ctx.longValue("ListCustomImagesResponse.CustomImages["+ i +"].UserId"));
+			customImage.setCreationTime(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].CreationTime"));
+			customImage.setImageId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].ImageId"));
+			customImage.setRegionId(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].RegionId"));
 
 			List<String> createInstances = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].CreateInstances.Length"); j++) {
@@ -66,8 +66,8 @@ public class ListCustomImagesResponseUnmarshaller {
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags["+ j +"].Key"));
 				tag.setValue(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("ListCustomImagesResponse.CustomImages["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tag);
 			}

@@ -30,7 +30,7 @@ public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 
 	private String instanceIds;
 	public StopInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "StopInstances", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "StopInstances", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

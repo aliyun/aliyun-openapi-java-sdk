@@ -28,21 +28,21 @@ public class DescribeInvocationsResponseUnmarshaller {
 	public static DescribeInvocationsResponse unmarshall(DescribeInvocationsResponse describeInvocationsResponse, UnmarshallerContext _ctx) {
 		
 		describeInvocationsResponse.setRequestId(_ctx.stringValue("DescribeInvocationsResponse.RequestId"));
+		describeInvocationsResponse.setTotalCount(_ctx.integerValue("DescribeInvocationsResponse.TotalCount"));
 		describeInvocationsResponse.setPageSize(_ctx.integerValue("DescribeInvocationsResponse.PageSize"));
 		describeInvocationsResponse.setPageNumber(_ctx.integerValue("DescribeInvocationsResponse.PageNumber"));
-		describeInvocationsResponse.setTotalCount(_ctx.integerValue("DescribeInvocationsResponse.TotalCount"));
 
 		List<Invocation> invocations = new ArrayList<Invocation>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInvocationsResponse.Invocations.Length"); i++) {
 			Invocation invocation = new Invocation();
-			invocation.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CreationTime"));
-			invocation.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvocationStatus"));
-			invocation.setCommandType(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandType"));
 			invocation.setCommandContent(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandContent"));
+			invocation.setInvocationStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvocationStatus"));
 			invocation.setParameters(_ctx.mapValue("DescribeInvocationsResponse.Invocations["+ i +"].Parameters"));
 			invocation.setInvokeStatus(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeStatus"));
-			invocation.setInvokeId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeId"));
+			invocation.setCommandType(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandType"));
+			invocation.setCreationTime(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CreationTime"));
 			invocation.setCommandName(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandName"));
+			invocation.setInvokeId(_ctx.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeId"));
 
 			invocations.add(invocation);
 		}

@@ -27,29 +27,29 @@ public class DescribeDatabaseInstancesResponseUnmarshaller {
 	public static DescribeDatabaseInstancesResponse unmarshall(DescribeDatabaseInstancesResponse describeDatabaseInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeDatabaseInstancesResponse.setRequestId(_ctx.stringValue("DescribeDatabaseInstancesResponse.RequestId"));
+		describeDatabaseInstancesResponse.setTotalCount(_ctx.integerValue("DescribeDatabaseInstancesResponse.TotalCount"));
 		describeDatabaseInstancesResponse.setPageSize(_ctx.integerValue("DescribeDatabaseInstancesResponse.PageSize"));
 		describeDatabaseInstancesResponse.setPageNumber(_ctx.integerValue("DescribeDatabaseInstancesResponse.PageNumber"));
-		describeDatabaseInstancesResponse.setTotalCount(_ctx.integerValue("DescribeDatabaseInstancesResponse.TotalCount"));
 
 		List<DatabaseInstance> databaseInstances = new ArrayList<DatabaseInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDatabaseInstancesResponse.DatabaseInstances.Length"); i++) {
 			DatabaseInstance databaseInstance = new DatabaseInstance();
-			databaseInstance.setRegionId(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].RegionId"));
-			databaseInstance.setDatabaseInstanceId(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceId"));
-			databaseInstance.setDatabaseInstanceName(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceName"));
-			databaseInstance.setDatabaseInstanceEdition(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceEdition"));
-			databaseInstance.setDatabaseVersion(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseVersion"));
-			databaseInstance.setCpu(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].Cpu"));
 			databaseInstance.setMemory(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].Memory"));
-			databaseInstance.setStorage(_ctx.integerValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].Storage"));
-			databaseInstance.setPrivateConnection(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].PrivateConnection"));
+			databaseInstance.setDatabaseInstanceId(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceId"));
 			databaseInstance.setPublicConnection(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].PublicConnection"));
-			databaseInstance.setDatabaseInstanceStatus(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceStatus"));
+			databaseInstance.setCpu(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].Cpu"));
+			databaseInstance.setDatabaseInstanceEdition(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceEdition"));
 			databaseInstance.setBusinessStatus(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].BusinessStatus"));
-			databaseInstance.setCreationTime(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].CreationTime"));
-			databaseInstance.setExpiredTime(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].ExpiredTime"));
-			databaseInstance.setChargeType(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].ChargeType"));
 			databaseInstance.setSuperAccountName(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].SuperAccountName"));
+			databaseInstance.setStorage(_ctx.integerValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].Storage"));
+			databaseInstance.setChargeType(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].ChargeType"));
+			databaseInstance.setExpiredTime(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].ExpiredTime"));
+			databaseInstance.setCreationTime(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].CreationTime"));
+			databaseInstance.setPrivateConnection(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].PrivateConnection"));
+			databaseInstance.setDatabaseInstanceName(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceName"));
+			databaseInstance.setRegionId(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].RegionId"));
+			databaseInstance.setDatabaseVersion(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseVersion"));
+			databaseInstance.setDatabaseInstanceStatus(_ctx.stringValue("DescribeDatabaseInstancesResponse.DatabaseInstances["+ i +"].DatabaseInstanceStatus"));
 
 			databaseInstances.add(databaseInstance);
 		}

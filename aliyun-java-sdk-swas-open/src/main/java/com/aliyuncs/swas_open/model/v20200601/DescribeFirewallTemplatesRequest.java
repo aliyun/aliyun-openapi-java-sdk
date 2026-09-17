@@ -33,7 +33,7 @@ public class DescribeFirewallTemplatesRequest extends RpcAcsRequest<DescribeFire
 
 	private Integer pageSize;
 	public DescribeFirewallTemplatesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplates", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplates", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

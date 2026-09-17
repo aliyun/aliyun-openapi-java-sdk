@@ -40,7 +40,7 @@ public class DescribeCommandInvocationsRequest extends RpcAcsRequest<DescribeCom
 
 	private String invocationStatus;
 	public DescribeCommandInvocationsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeCommandInvocations", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeCommandInvocations", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

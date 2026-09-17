@@ -30,7 +30,7 @@ public class ModifyImageShareStatusRequest extends RpcAcsRequest<ModifyImageShar
 
 	private String operation;
 	public ModifyImageShareStatusRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ModifyImageShareStatus", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ModifyImageShareStatus", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

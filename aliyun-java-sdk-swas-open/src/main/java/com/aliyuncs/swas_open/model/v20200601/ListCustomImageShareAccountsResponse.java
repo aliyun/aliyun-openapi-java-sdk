@@ -77,17 +77,9 @@ public class ListCustomImageShareAccountsResponse extends AcsResponse {
 
 	public static class ImageShareUser {
 
-		private Long userId;
-
 		private String sharedTime;
 
-		public Long getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
+		private Long userId;
 
 		public String getSharedTime() {
 			return this.sharedTime;
@@ -95,6 +87,14 @@ public class ListCustomImageShareAccountsResponse extends AcsResponse {
 
 		public void setSharedTime(String sharedTime) {
 			this.sharedTime = sharedTime;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 	}
 

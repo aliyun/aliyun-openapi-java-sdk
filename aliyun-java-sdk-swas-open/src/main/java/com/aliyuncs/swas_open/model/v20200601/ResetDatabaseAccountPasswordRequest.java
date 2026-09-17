@@ -30,7 +30,7 @@ public class ResetDatabaseAccountPasswordRequest extends RpcAcsRequest<ResetData
 
 	private String accountPassword;
 	public ResetDatabaseAccountPasswordRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ResetDatabaseAccountPassword", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ResetDatabaseAccountPassword", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

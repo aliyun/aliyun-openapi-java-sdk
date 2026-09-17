@@ -29,7 +29,7 @@ public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 
 	private String keyPairName;
 	public CreateKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateKeyPair", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

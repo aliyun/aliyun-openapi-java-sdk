@@ -29,25 +29,25 @@ public class DescribeFirewallTemplatesResponseUnmarshaller {
 		
 		describeFirewallTemplatesResponse.setRequestId(_ctx.stringValue("DescribeFirewallTemplatesResponse.RequestId"));
 		describeFirewallTemplatesResponse.setTotalCount(_ctx.integerValue("DescribeFirewallTemplatesResponse.TotalCount"));
-		describeFirewallTemplatesResponse.setPageNumber(_ctx.integerValue("DescribeFirewallTemplatesResponse.PageNumber"));
 		describeFirewallTemplatesResponse.setPageSize(_ctx.integerValue("DescribeFirewallTemplatesResponse.PageSize"));
+		describeFirewallTemplatesResponse.setPageNumber(_ctx.integerValue("DescribeFirewallTemplatesResponse.PageNumber"));
 
 		List<FirewallTemplate> firewallTemplates = new ArrayList<FirewallTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFirewallTemplatesResponse.FirewallTemplates.Length"); i++) {
 			FirewallTemplate firewallTemplate = new FirewallTemplate();
-			firewallTemplate.setFirewallTemplateId(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateId"));
-			firewallTemplate.setCreationTime(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].CreationTime"));
-			firewallTemplate.setName(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].Name"));
 			firewallTemplate.setDescription(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].Description"));
 			firewallTemplate.setCreateTime(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].CreateTime"));
+			firewallTemplate.setCreationTime(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].CreationTime"));
+			firewallTemplate.setFirewallTemplateId(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateId"));
+			firewallTemplate.setName(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].Name"));
 
 			List<FirewallTemplateRule> firewallTemplateRules = new ArrayList<FirewallTemplateRule>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules.Length"); j++) {
 				FirewallTemplateRule firewallTemplateRule = new FirewallTemplateRule();
 				firewallTemplateRule.setFirewallTemplateRuleId(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].FirewallTemplateRuleId"));
-				firewallTemplateRule.setRuleProtocol(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].RuleProtocol"));
 				firewallTemplateRule.setPort(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].Port"));
 				firewallTemplateRule.setSourceCidrIp(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].SourceCidrIp"));
+				firewallTemplateRule.setRuleProtocol(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].RuleProtocol"));
 				firewallTemplateRule.setRemark(_ctx.stringValue("DescribeFirewallTemplatesResponse.FirewallTemplates["+ i +"].FirewallTemplateRules["+ j +"].Remark"));
 
 				firewallTemplateRules.add(firewallTemplateRule);

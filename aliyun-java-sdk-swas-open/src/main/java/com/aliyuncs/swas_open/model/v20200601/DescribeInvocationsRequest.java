@@ -32,7 +32,7 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private Integer pageSize;
 	public DescribeInvocationsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeInvocations", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeInvocations", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

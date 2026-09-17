@@ -34,7 +34,7 @@ public class CreateFirewallRuleRequest extends RpcAcsRequest<CreateFirewallRuleR
 
 	private String port;
 	public CreateFirewallRuleRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRule", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateFirewallRule", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class InstallCloudMonitorAgentRequest extends RpcAcsRequest<InstallCloudM
 
 	private Boolean force;
 	public InstallCloudMonitorAgentRequest() {
-		super("SWAS-OPEN", "2020-06-01", "InstallCloudMonitorAgent", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "InstallCloudMonitorAgent", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

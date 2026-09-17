@@ -34,7 +34,7 @@ public class DescribeDatabaseSlowLogRecordsRequest extends RpcAcsRequest<Describ
 
 	private Integer pageSize;
 	public DescribeDatabaseSlowLogRecordsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseSlowLogRecords", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseSlowLogRecords", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

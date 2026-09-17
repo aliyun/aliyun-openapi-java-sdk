@@ -29,7 +29,7 @@ public class DeleteFirewallTemplatesRequest extends RpcAcsRequest<DeleteFirewall
 
 	private String clientToken;
 	public DeleteFirewallTemplatesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallTemplates", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallTemplates", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

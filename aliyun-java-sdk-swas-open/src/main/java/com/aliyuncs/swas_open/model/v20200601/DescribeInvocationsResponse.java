@@ -26,15 +26,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInvocationsResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<Invocation> invocations;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,14 +68,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<Invocation> getInvocations() {
 		return this.invocations;
 	}
@@ -78,28 +78,28 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 	public static class Invocation {
 
-		private String creationTime;
+		private String commandContent;
 
 		private String invocationStatus;
-
-		private String commandType;
-
-		private String commandContent;
 
 		private Map<Object,Object> parameters;
 
 		private String invokeStatus;
 
-		private String invokeId;
+		private String commandType;
+
+		private String creationTime;
 
 		private String commandName;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		private String invokeId;
+
+		public String getCommandContent() {
+			return this.commandContent;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setCommandContent(String commandContent) {
+			this.commandContent = commandContent;
 		}
 
 		public String getInvocationStatus() {
@@ -108,22 +108,6 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setInvocationStatus(String invocationStatus) {
 			this.invocationStatus = invocationStatus;
-		}
-
-		public String getCommandType() {
-			return this.commandType;
-		}
-
-		public void setCommandType(String commandType) {
-			this.commandType = commandType;
-		}
-
-		public String getCommandContent() {
-			return this.commandContent;
-		}
-
-		public void setCommandContent(String commandContent) {
-			this.commandContent = commandContent;
 		}
 
 		public Map<Object,Object> getParameters() {
@@ -142,12 +126,20 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.invokeStatus = invokeStatus;
 		}
 
-		public String getInvokeId() {
-			return this.invokeId;
+		public String getCommandType() {
+			return this.commandType;
 		}
 
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
+		public void setCommandType(String commandType) {
+			this.commandType = commandType;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getCommandName() {
@@ -156,6 +148,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setCommandName(String commandName) {
 			this.commandName = commandName;
+		}
+
+		public String getInvokeId() {
+			return this.invokeId;
+		}
+
+		public void setInvokeId(String invokeId) {
+			this.invokeId = invokeId;
 		}
 	}
 

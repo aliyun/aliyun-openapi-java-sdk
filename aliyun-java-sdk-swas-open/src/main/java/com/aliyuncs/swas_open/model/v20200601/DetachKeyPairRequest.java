@@ -32,7 +32,7 @@ public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 
 	private List<String> instanceIdss;
 	public DetachKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DetachKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DetachKeyPair", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

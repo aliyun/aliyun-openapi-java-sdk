@@ -77,68 +77,86 @@ public class ListInstancesResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String status;
+		private String disableReason;
 
-		private String creationTime;
+		private String resourceGroupId;
+
+		private String businessStatus;
+
+		private String publicIpAddress;
 
 		private String innerIpAddress;
 
-		private String chargeType;
+		private Boolean combination;
+
+		private String expiredTime;
+
+		private String imageId;
+
+		private String planType;
+
+		private String commodityCode;
+
+		private String status;
 
 		private String instanceId;
 
 		private String planId;
 
-		private String publicIpAddress;
-
-		private String regionId;
-
-		private String expiredTime;
-
-		private String instanceName;
-
-		private String businessStatus;
-
 		private String ddosStatus;
-
-		private String imageId;
-
-		private String disableReason;
-
-		private Boolean combination;
 
 		private String combinationInstanceId;
 
+		private String instanceName;
+
 		private String uuid;
 
-		private String resourceGroupId;
+		private String chargeType;
 
-		private String planType;
+		private String creationTime;
+
+		private String regionId;
+
+		private List<NetworkAttribute> networkAttributes;
 
 		private List<Tag> tags;
 
 		private List<Disk> disks;
 
-		private List<NetworkAttribute> networkAttributes;
+		private Image image;
 
 		private ResourceSpec resourceSpec;
 
-		private Image image;
-
-		public String getStatus() {
-			return this.status;
+		public String getDisableReason() {
+			return this.disableReason;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDisableReason(String disableReason) {
+			this.disableReason = disableReason;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
+		}
+
+		public String getPublicIpAddress() {
+			return this.publicIpAddress;
+		}
+
+		public void setPublicIpAddress(String publicIpAddress) {
+			this.publicIpAddress = publicIpAddress;
 		}
 
 		public String getInnerIpAddress() {
@@ -149,12 +167,52 @@ public class ListInstancesResponse extends AcsResponse {
 			this.innerIpAddress = innerIpAddress;
 		}
 
-		public String getChargeType() {
-			return this.chargeType;
+		public Boolean getCombination() {
+			return this.combination;
 		}
 
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
+		public void setCombination(Boolean combination) {
+			this.combination = combination;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getPlanType() {
+			return this.planType;
+		}
+
+		public void setPlanType(String planType) {
+			this.planType = planType;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getInstanceId() {
@@ -173,76 +231,12 @@ public class ListInstancesResponse extends AcsResponse {
 			this.planId = planId;
 		}
 
-		public String getPublicIpAddress() {
-			return this.publicIpAddress;
-		}
-
-		public void setPublicIpAddress(String publicIpAddress) {
-			this.publicIpAddress = publicIpAddress;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getBusinessStatus() {
-			return this.businessStatus;
-		}
-
-		public void setBusinessStatus(String businessStatus) {
-			this.businessStatus = businessStatus;
-		}
-
 		public String getDdosStatus() {
 			return this.ddosStatus;
 		}
 
 		public void setDdosStatus(String ddosStatus) {
 			this.ddosStatus = ddosStatus;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
-
-		public String getDisableReason() {
-			return this.disableReason;
-		}
-
-		public void setDisableReason(String disableReason) {
-			this.disableReason = disableReason;
-		}
-
-		public Boolean getCombination() {
-			return this.combination;
-		}
-
-		public void setCombination(Boolean combination) {
-			this.combination = combination;
 		}
 
 		public String getCombinationInstanceId() {
@@ -253,6 +247,14 @@ public class ListInstancesResponse extends AcsResponse {
 			this.combinationInstanceId = combinationInstanceId;
 		}
 
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
 		public String getUuid() {
 			return this.uuid;
 		}
@@ -261,20 +263,36 @@ public class ListInstancesResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
-		public String getPlanType() {
-			return this.planType;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setPlanType(String planType) {
-			this.planType = planType;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public List<NetworkAttribute> getNetworkAttributes() {
+			return this.networkAttributes;
+		}
+
+		public void setNetworkAttributes(List<NetworkAttribute> networkAttributes) {
+			this.networkAttributes = networkAttributes;
 		}
 
 		public List<Tag> getTags() {
@@ -293,22 +311,6 @@ public class ListInstancesResponse extends AcsResponse {
 			this.disks = disks;
 		}
 
-		public List<NetworkAttribute> getNetworkAttributes() {
-			return this.networkAttributes;
-		}
-
-		public void setNetworkAttributes(List<NetworkAttribute> networkAttributes) {
-			this.networkAttributes = networkAttributes;
-		}
-
-		public ResourceSpec getResourceSpec() {
-			return this.resourceSpec;
-		}
-
-		public void setResourceSpec(ResourceSpec resourceSpec) {
-			this.resourceSpec = resourceSpec;
-		}
-
 		public Image getImage() {
 			return this.image;
 		}
@@ -317,183 +319,12 @@ public class ListInstancesResponse extends AcsResponse {
 			this.image = image;
 		}
 
-		public static class Tag {
-
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+		public ResourceSpec getResourceSpec() {
+			return this.resourceSpec;
 		}
 
-		public static class Disk {
-
-			private String creationTime;
-
-			private String status;
-
-			private String device;
-
-			private Integer size;
-
-			private String diskName;
-
-			private String diskChargeType;
-
-			private String diskType;
-
-			private String category;
-
-			private String diskId;
-
-			private String regionId;
-
-			private String remark;
-
-			private String resourceGroupId;
-
-			private List<Tag1> diskTags;
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getDevice() {
-				return this.device;
-			}
-
-			public void setDevice(String device) {
-				this.device = device;
-			}
-
-			public Integer getSize() {
-				return this.size;
-			}
-
-			public void setSize(Integer size) {
-				this.size = size;
-			}
-
-			public String getDiskName() {
-				return this.diskName;
-			}
-
-			public void setDiskName(String diskName) {
-				this.diskName = diskName;
-			}
-
-			public String getDiskChargeType() {
-				return this.diskChargeType;
-			}
-
-			public void setDiskChargeType(String diskChargeType) {
-				this.diskChargeType = diskChargeType;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
-
-			public String getDiskId() {
-				return this.diskId;
-			}
-
-			public void setDiskId(String diskId) {
-				this.diskId = diskId;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getRemark() {
-				return this.remark;
-			}
-
-			public void setRemark(String remark) {
-				this.remark = remark;
-			}
-
-			public String getResourceGroupId() {
-				return this.resourceGroupId;
-			}
-
-			public void setResourceGroupId(String resourceGroupId) {
-				this.resourceGroupId = resourceGroupId;
-			}
-
-			public List<Tag1> getDiskTags() {
-				return this.diskTags;
-			}
-
-			public void setDiskTags(List<Tag1> diskTags) {
-				this.diskTags = diskTags;
-			}
-
-			public static class Tag1 {
-
-				private String key;
-
-				private String value;
-
-				public String getKey() {
-					return this.key;
-				}
-
-				public void setKey(String key) {
-					this.key = key;
-				}
-
-				public String getValue() {
-					return this.value;
-				}
-
-				public void setValue(String value) {
-					this.value = value;
-				}
-			}
+		public void setResourceSpec(ResourceSpec resourceSpec) {
+			this.resourceSpec = resourceSpec;
 		}
 
 		public static class NetworkAttribute {
@@ -539,34 +370,268 @@ public class ListInstancesResponse extends AcsResponse {
 			}
 		}
 
+		public static class Tag {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+		}
+
+		public static class Disk {
+
+			private String status;
+
+			private String category;
+
+			private String resourceGroupId;
+
+			private String device;
+
+			private Integer size;
+
+			private String diskChargeType;
+
+			private String diskName;
+
+			private String remark;
+
+			private String diskType;
+
+			private String creationTime;
+
+			private String regionId;
+
+			private String diskId;
+
+			private List<Tag1> diskTags;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public String getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(String resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Integer getSize() {
+				return this.size;
+			}
+
+			public void setSize(Integer size) {
+				this.size = size;
+			}
+
+			public String getDiskChargeType() {
+				return this.diskChargeType;
+			}
+
+			public void setDiskChargeType(String diskChargeType) {
+				this.diskChargeType = diskChargeType;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
+			}
+
+			public String getRemark() {
+				return this.remark;
+			}
+
+			public void setRemark(String remark) {
+				this.remark = remark;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getDiskId() {
+				return this.diskId;
+			}
+
+			public void setDiskId(String diskId) {
+				this.diskId = diskId;
+			}
+
+			public List<Tag1> getDiskTags() {
+				return this.diskTags;
+			}
+
+			public void setDiskTags(List<Tag1> diskTags) {
+				this.diskTags = diskTags;
+			}
+
+			public static class Tag1 {
+
+				private String value;
+
+				private String key;
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+			}
+		}
+
+		public static class Image {
+
+			private String imageName;
+
+			private String imageVersion;
+
+			private String osType;
+
+			private String imageIconUrl;
+
+			private String imageContact;
+
+			private String imageType;
+
+			public String getImageName() {
+				return this.imageName;
+			}
+
+			public void setImageName(String imageName) {
+				this.imageName = imageName;
+			}
+
+			public String getImageVersion() {
+				return this.imageVersion;
+			}
+
+			public void setImageVersion(String imageVersion) {
+				this.imageVersion = imageVersion;
+			}
+
+			public String getOsType() {
+				return this.osType;
+			}
+
+			public void setOsType(String osType) {
+				this.osType = osType;
+			}
+
+			public String getImageIconUrl() {
+				return this.imageIconUrl;
+			}
+
+			public void setImageIconUrl(String imageIconUrl) {
+				this.imageIconUrl = imageIconUrl;
+			}
+
+			public String getImageContact() {
+				return this.imageContact;
+			}
+
+			public void setImageContact(String imageContact) {
+				this.imageContact = imageContact;
+			}
+
+			public String getImageType() {
+				return this.imageType;
+			}
+
+			public void setImageType(String imageType) {
+				this.imageType = imageType;
+			}
+		}
+
 		public static class ResourceSpec {
 
-			private String diskCategory;
-
-			private Integer cpu;
+			private Double memory;
 
 			private Integer bandwidth;
 
 			private Integer diskSize;
 
-			private Double memory;
+			private String diskCategory;
+
+			private Integer cpu;
 
 			private Double flow;
 
-			public String getDiskCategory() {
-				return this.diskCategory;
+			public Double getMemory() {
+				return this.memory;
 			}
 
-			public void setDiskCategory(String diskCategory) {
-				this.diskCategory = diskCategory;
-			}
-
-			public Integer getCpu() {
-				return this.cpu;
-			}
-
-			public void setCpu(Integer cpu) {
-				this.cpu = cpu;
+			public void setMemory(Double memory) {
+				this.memory = memory;
 			}
 
 			public Integer getBandwidth() {
@@ -585,12 +650,20 @@ public class ListInstancesResponse extends AcsResponse {
 				this.diskSize = diskSize;
 			}
 
-			public Double getMemory() {
-				return this.memory;
+			public String getDiskCategory() {
+				return this.diskCategory;
 			}
 
-			public void setMemory(Double memory) {
-				this.memory = memory;
+			public void setDiskCategory(String diskCategory) {
+				this.diskCategory = diskCategory;
+			}
+
+			public Integer getCpu() {
+				return this.cpu;
+			}
+
+			public void setCpu(Integer cpu) {
+				this.cpu = cpu;
 			}
 
 			public Double getFlow() {
@@ -599,69 +672,6 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setFlow(Double flow) {
 				this.flow = flow;
-			}
-		}
-
-		public static class Image {
-
-			private String osType;
-
-			private String imageName;
-
-			private String imageVersion;
-
-			private String imageType;
-
-			private String imageIconUrl;
-
-			private String imageContact;
-
-			public String getOsType() {
-				return this.osType;
-			}
-
-			public void setOsType(String osType) {
-				this.osType = osType;
-			}
-
-			public String getImageName() {
-				return this.imageName;
-			}
-
-			public void setImageName(String imageName) {
-				this.imageName = imageName;
-			}
-
-			public String getImageVersion() {
-				return this.imageVersion;
-			}
-
-			public void setImageVersion(String imageVersion) {
-				this.imageVersion = imageVersion;
-			}
-
-			public String getImageType() {
-				return this.imageType;
-			}
-
-			public void setImageType(String imageType) {
-				this.imageType = imageType;
-			}
-
-			public String getImageIconUrl() {
-				return this.imageIconUrl;
-			}
-
-			public void setImageIconUrl(String imageIconUrl) {
-				this.imageIconUrl = imageIconUrl;
-			}
-
-			public String getImageContact() {
-				return this.imageContact;
-			}
-
-			public void setImageContact(String imageContact) {
-				this.imageContact = imageContact;
 			}
 		}
 	}

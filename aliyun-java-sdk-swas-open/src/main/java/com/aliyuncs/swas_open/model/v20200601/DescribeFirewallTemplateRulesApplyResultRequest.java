@@ -32,7 +32,7 @@ public class DescribeFirewallTemplateRulesApplyResultRequest extends RpcAcsReque
 
 	private String taskId;
 	public DescribeFirewallTemplateRulesApplyResultRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplateRulesApplyResult", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplateRulesApplyResult", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

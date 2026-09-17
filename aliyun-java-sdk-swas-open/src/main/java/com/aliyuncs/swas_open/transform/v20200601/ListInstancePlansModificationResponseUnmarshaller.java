@@ -31,16 +31,16 @@ public class ListInstancePlansModificationResponseUnmarshaller {
 		List<Plan> plans = new ArrayList<Plan>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancePlansModificationResponse.Plans.Length"); i++) {
 			Plan plan = new Plan();
-			plan.setCore(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Core"));
-			plan.setBandwidth(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Bandwidth"));
-			plan.setDiskSize(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].DiskSize"));
-			plan.setFlow(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Flow"));
-			plan.setMemory(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Memory"));
-			plan.setPlanId(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].PlanId"));
 			plan.setDiskType(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].DiskType"));
 			plan.setOriginPrice(_ctx.doubleValue("ListInstancePlansModificationResponse.Plans["+ i +"].OriginPrice"));
-			plan.setCurrency(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].Currency"));
 			plan.setSupportPlatform(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].SupportPlatform"));
+			plan.setMemory(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Memory"));
+			plan.setBandwidth(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Bandwidth"));
+			plan.setPlanId(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].PlanId"));
+			plan.setCurrency(_ctx.stringValue("ListInstancePlansModificationResponse.Plans["+ i +"].Currency"));
+			plan.setDiskSize(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].DiskSize"));
+			plan.setCore(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Core"));
+			plan.setFlow(_ctx.integerValue("ListInstancePlansModificationResponse.Plans["+ i +"].Flow"));
 
 			plans.add(plan);
 		}

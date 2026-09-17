@@ -30,7 +30,7 @@ public class DescribeDatabaseInstancesRequest extends RpcAcsRequest<DescribeData
 
 	private Integer pageSize;
 	public DescribeDatabaseInstancesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstances", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstances", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

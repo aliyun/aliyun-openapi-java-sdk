@@ -32,7 +32,7 @@ public class AttachKeyPairRequest extends RpcAcsRequest<AttachKeyPairResponse> {
 
 	private List<String> instanceIdss;
 	public AttachKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "AttachKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "AttachKeyPair", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

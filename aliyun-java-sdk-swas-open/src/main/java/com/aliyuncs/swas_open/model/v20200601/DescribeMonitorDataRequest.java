@@ -40,7 +40,7 @@ public class DescribeMonitorDataRequest extends RpcAcsRequest<DescribeMonitorDat
 
 	private String instanceId;
 	public DescribeMonitorDataRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeMonitorData", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeMonitorData", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

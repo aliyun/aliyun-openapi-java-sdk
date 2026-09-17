@@ -31,7 +31,7 @@ public class ApplyFirewallTemplateRequest extends RpcAcsRequest<ApplyFirewallTem
 
 	private List<String> instanceIdss;
 	public ApplyFirewallTemplateRequest() {
-		super("SWAS-OPEN", "2020-06-01", "ApplyFirewallTemplate", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "ApplyFirewallTemplate", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

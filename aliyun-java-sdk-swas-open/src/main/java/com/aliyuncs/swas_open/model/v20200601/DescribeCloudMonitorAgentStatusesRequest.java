@@ -28,7 +28,7 @@ public class DescribeCloudMonitorAgentStatusesRequest extends RpcAcsRequest<Desc
 
 	private String instanceIds;
 	public DescribeCloudMonitorAgentStatusesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeCloudMonitorAgentStatuses", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeCloudMonitorAgentStatuses", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

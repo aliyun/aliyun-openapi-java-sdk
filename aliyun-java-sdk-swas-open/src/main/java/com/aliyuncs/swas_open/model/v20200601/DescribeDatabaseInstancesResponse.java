@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDatabaseInstancesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
 	private String requestId;
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer totalCount;
-
 	private List<DatabaseInstance> databaseInstances;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +67,6 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<DatabaseInstance> getDatabaseInstances() {
 		return this.databaseInstances;
 	}
@@ -77,44 +77,44 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 
 	public static class DatabaseInstance {
 
-		private String regionId;
+		private String memory;
 
 		private String databaseInstanceId;
 
-		private String databaseInstanceName;
-
-		private String databaseInstanceEdition;
-
-		private String databaseVersion;
+		private String publicConnection;
 
 		private String cpu;
 
-		private String memory;
-
-		private Integer storage;
-
-		private String privateConnection;
-
-		private String publicConnection;
-
-		private String databaseInstanceStatus;
+		private String databaseInstanceEdition;
 
 		private String businessStatus;
 
-		private String creationTime;
+		private String superAccountName;
 
-		private String expiredTime;
+		private Integer storage;
 
 		private String chargeType;
 
-		private String superAccountName;
+		private String expiredTime;
 
-		public String getRegionId() {
-			return this.regionId;
+		private String creationTime;
+
+		private String privateConnection;
+
+		private String databaseInstanceName;
+
+		private String regionId;
+
+		private String databaseVersion;
+
+		private String databaseInstanceStatus;
+
+		public String getMemory() {
+			return this.memory;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setMemory(String memory) {
+			this.memory = memory;
 		}
 
 		public String getDatabaseInstanceId() {
@@ -125,28 +125,12 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 			this.databaseInstanceId = databaseInstanceId;
 		}
 
-		public String getDatabaseInstanceName() {
-			return this.databaseInstanceName;
+		public String getPublicConnection() {
+			return this.publicConnection;
 		}
 
-		public void setDatabaseInstanceName(String databaseInstanceName) {
-			this.databaseInstanceName = databaseInstanceName;
-		}
-
-		public String getDatabaseInstanceEdition() {
-			return this.databaseInstanceEdition;
-		}
-
-		public void setDatabaseInstanceEdition(String databaseInstanceEdition) {
-			this.databaseInstanceEdition = databaseInstanceEdition;
-		}
-
-		public String getDatabaseVersion() {
-			return this.databaseVersion;
-		}
-
-		public void setDatabaseVersion(String databaseVersion) {
-			this.databaseVersion = databaseVersion;
+		public void setPublicConnection(String publicConnection) {
+			this.publicConnection = publicConnection;
 		}
 
 		public String getCpu() {
@@ -157,44 +141,12 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 			this.cpu = cpu;
 		}
 
-		public String getMemory() {
-			return this.memory;
+		public String getDatabaseInstanceEdition() {
+			return this.databaseInstanceEdition;
 		}
 
-		public void setMemory(String memory) {
-			this.memory = memory;
-		}
-
-		public Integer getStorage() {
-			return this.storage;
-		}
-
-		public void setStorage(Integer storage) {
-			this.storage = storage;
-		}
-
-		public String getPrivateConnection() {
-			return this.privateConnection;
-		}
-
-		public void setPrivateConnection(String privateConnection) {
-			this.privateConnection = privateConnection;
-		}
-
-		public String getPublicConnection() {
-			return this.publicConnection;
-		}
-
-		public void setPublicConnection(String publicConnection) {
-			this.publicConnection = publicConnection;
-		}
-
-		public String getDatabaseInstanceStatus() {
-			return this.databaseInstanceStatus;
-		}
-
-		public void setDatabaseInstanceStatus(String databaseInstanceStatus) {
-			this.databaseInstanceStatus = databaseInstanceStatus;
+		public void setDatabaseInstanceEdition(String databaseInstanceEdition) {
+			this.databaseInstanceEdition = databaseInstanceEdition;
 		}
 
 		public String getBusinessStatus() {
@@ -205,20 +157,20 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 			this.businessStatus = businessStatus;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getSuperAccountName() {
+			return this.superAccountName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setSuperAccountName(String superAccountName) {
+			this.superAccountName = superAccountName;
 		}
 
-		public String getExpiredTime() {
-			return this.expiredTime;
+		public Integer getStorage() {
+			return this.storage;
 		}
 
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
+		public void setStorage(Integer storage) {
+			this.storage = storage;
 		}
 
 		public String getChargeType() {
@@ -229,12 +181,60 @@ public class DescribeDatabaseInstancesResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
-		public String getSuperAccountName() {
-			return this.superAccountName;
+		public String getExpiredTime() {
+			return this.expiredTime;
 		}
 
-		public void setSuperAccountName(String superAccountName) {
-			this.superAccountName = superAccountName;
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getPrivateConnection() {
+			return this.privateConnection;
+		}
+
+		public void setPrivateConnection(String privateConnection) {
+			this.privateConnection = privateConnection;
+		}
+
+		public String getDatabaseInstanceName() {
+			return this.databaseInstanceName;
+		}
+
+		public void setDatabaseInstanceName(String databaseInstanceName) {
+			this.databaseInstanceName = databaseInstanceName;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDatabaseVersion() {
+			return this.databaseVersion;
+		}
+
+		public void setDatabaseVersion(String databaseVersion) {
+			this.databaseVersion = databaseVersion;
+		}
+
+		public String getDatabaseInstanceStatus() {
+			return this.databaseInstanceStatus;
+		}
+
+		public void setDatabaseInstanceStatus(String databaseInstanceStatus) {
+			this.databaseInstanceStatus = databaseInstanceStatus;
 		}
 	}
 

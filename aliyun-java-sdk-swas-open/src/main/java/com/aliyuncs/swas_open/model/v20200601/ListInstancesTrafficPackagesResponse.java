@@ -47,23 +47,15 @@ public class ListInstancesTrafficPackagesResponse extends AcsResponse {
 
 	public static class InstanceTrafficPackageUsage {
 
-		private String instanceId;
-
 		private Long trafficUsed;
 
-		private Long trafficPackageTotal;
+		private String instanceId;
 
 		private Long trafficPackageRemaining;
 
+		private Long trafficPackageTotal;
+
 		private Long trafficOverflow;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Long getTrafficUsed() {
 			return this.trafficUsed;
@@ -73,12 +65,12 @@ public class ListInstancesTrafficPackagesResponse extends AcsResponse {
 			this.trafficUsed = trafficUsed;
 		}
 
-		public Long getTrafficPackageTotal() {
-			return this.trafficPackageTotal;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setTrafficPackageTotal(Long trafficPackageTotal) {
-			this.trafficPackageTotal = trafficPackageTotal;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Long getTrafficPackageRemaining() {
@@ -87,6 +79,14 @@ public class ListInstancesTrafficPackagesResponse extends AcsResponse {
 
 		public void setTrafficPackageRemaining(Long trafficPackageRemaining) {
 			this.trafficPackageRemaining = trafficPackageRemaining;
+		}
+
+		public Long getTrafficPackageTotal() {
+			return this.trafficPackageTotal;
+		}
+
+		public void setTrafficPackageTotal(Long trafficPackageTotal) {
+			this.trafficPackageTotal = trafficPackageTotal;
 		}
 
 		public Long getTrafficOverflow() {

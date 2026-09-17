@@ -26,7 +26,7 @@ public class DeleteCommandRequest extends RpcAcsRequest<DeleteCommandResponse> {
 
 	private String commandId;
 	public DeleteCommandRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteCommand", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteCommand", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

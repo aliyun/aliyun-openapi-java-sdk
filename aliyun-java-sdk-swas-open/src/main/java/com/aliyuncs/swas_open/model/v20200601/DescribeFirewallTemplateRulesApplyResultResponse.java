@@ -47,27 +47,19 @@ public class DescribeFirewallTemplateRulesApplyResultResponse extends AcsRespons
 
 	public static class InstanceApplyFirewallTemplateRulesResult {
 
-		private String ruleProtocol;
-
 		private String port;
 
 		private String sourceCidrIp;
 
-		private String remark;
+		private String errorInfo;
 
-		private Boolean success;
+		private String ruleProtocol;
 
 		private String errorCode;
 
-		private String errorInfo;
+		private Boolean success;
 
-		public String getRuleProtocol() {
-			return this.ruleProtocol;
-		}
-
-		public void setRuleProtocol(String ruleProtocol) {
-			this.ruleProtocol = ruleProtocol;
-		}
+		private String remark;
 
 		public String getPort() {
 			return this.port;
@@ -85,20 +77,20 @@ public class DescribeFirewallTemplateRulesApplyResultResponse extends AcsRespons
 			this.sourceCidrIp = sourceCidrIp;
 		}
 
-		public String getRemark() {
-			return this.remark;
+		public String getErrorInfo() {
+			return this.errorInfo;
 		}
 
-		public void setRemark(String remark) {
-			this.remark = remark;
+		public void setErrorInfo(String errorInfo) {
+			this.errorInfo = errorInfo;
 		}
 
-		public Boolean getSuccess() {
-			return this.success;
+		public String getRuleProtocol() {
+			return this.ruleProtocol;
 		}
 
-		public void setSuccess(Boolean success) {
-			this.success = success;
+		public void setRuleProtocol(String ruleProtocol) {
+			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getErrorCode() {
@@ -109,12 +101,20 @@ public class DescribeFirewallTemplateRulesApplyResultResponse extends AcsRespons
 			this.errorCode = errorCode;
 		}
 
-		public String getErrorInfo() {
-			return this.errorInfo;
+		public Boolean getSuccess() {
+			return this.success;
 		}
 
-		public void setErrorInfo(String errorInfo) {
-			this.errorInfo = errorInfo;
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 	}
 

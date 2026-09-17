@@ -30,7 +30,7 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 
 	private List<String> keyPairNamess;
 	public DeleteKeyPairsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteKeyPairs", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteKeyPairs", "SimpleApplicationServer");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

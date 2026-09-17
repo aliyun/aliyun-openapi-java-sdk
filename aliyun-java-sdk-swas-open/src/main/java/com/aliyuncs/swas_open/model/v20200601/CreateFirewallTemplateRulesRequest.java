@@ -29,7 +29,7 @@ public class CreateFirewallTemplateRulesRequest extends RpcAcsRequest<CreateFire
 
 	private List<FirewallRule> firewallRules;
 	public CreateFirewallTemplateRulesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateFirewallTemplateRules", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateFirewallTemplateRules", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 
@@ -52,9 +52,9 @@ public class CreateFirewallTemplateRulesRequest extends RpcAcsRequest<CreateFire
 		this.firewallRules = firewallRules;	
 		if (firewallRules != null) {
 			for (int depth1 = 0; depth1 < firewallRules.size(); depth1++) {
-				putQueryParameter("FirewallRule." + (depth1 + 1) + ".RuleProtocol" , firewallRules.get(depth1).getRuleProtocol());
 				putQueryParameter("FirewallRule." + (depth1 + 1) + ".Port" , firewallRules.get(depth1).getPort());
 				putQueryParameter("FirewallRule." + (depth1 + 1) + ".SourceCidrIp" , firewallRules.get(depth1).getSourceCidrIp());
+				putQueryParameter("FirewallRule." + (depth1 + 1) + ".RuleProtocol" , firewallRules.get(depth1).getRuleProtocol());
 				putQueryParameter("FirewallRule." + (depth1 + 1) + ".Remark" , firewallRules.get(depth1).getRemark());
 			}
 		}	
@@ -62,21 +62,13 @@ public class CreateFirewallTemplateRulesRequest extends RpcAcsRequest<CreateFire
 
 	public static class FirewallRule {
 
-		private String ruleProtocol;
-
 		private String port;
 
 		private String sourceCidrIp;
 
+		private String ruleProtocol;
+
 		private String remark;
-
-		public String getRuleProtocol() {
-			return this.ruleProtocol;
-		}
-
-		public void setRuleProtocol(String ruleProtocol) {
-			this.ruleProtocol = ruleProtocol;
-		}
 
 		public String getPort() {
 			return this.port;
@@ -92,6 +84,14 @@ public class CreateFirewallTemplateRulesRequest extends RpcAcsRequest<CreateFire
 
 		public void setSourceCidrIp(String sourceCidrIp) {
 			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getRuleProtocol() {
+			return this.ruleProtocol;
+		}
+
+		public void setRuleProtocol(String ruleProtocol) {
+			this.ruleProtocol = ruleProtocol;
 		}
 
 		public String getRemark() {

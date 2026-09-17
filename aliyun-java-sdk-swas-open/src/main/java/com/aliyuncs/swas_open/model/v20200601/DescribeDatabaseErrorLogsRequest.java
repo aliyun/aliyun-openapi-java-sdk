@@ -34,7 +34,7 @@ public class DescribeDatabaseErrorLogsRequest extends RpcAcsRequest<DescribeData
 
 	private Integer pageSize;
 	public DescribeDatabaseErrorLogsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseErrorLogs", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseErrorLogs", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

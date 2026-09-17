@@ -32,9 +32,9 @@ public class CreateFirewallTemplateRulesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules.Length"); i++) {
 			FirewallTemplateRule firewallTemplateRule = new FirewallTemplateRule();
 			firewallTemplateRule.setFirewallTemplateRuleId(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].FirewallTemplateRuleId"));
-			firewallTemplateRule.setRuleProtocol(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].RuleProtocol"));
 			firewallTemplateRule.setPort(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].Port"));
 			firewallTemplateRule.setSourceCidrIp(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].SourceCidrIp"));
+			firewallTemplateRule.setRuleProtocol(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].RuleProtocol"));
 			firewallTemplateRule.setRemark(_ctx.stringValue("CreateFirewallTemplateRulesResponse.FirewallTemplateRules["+ i +"].Remark"));
 
 			firewallTemplateRules.add(firewallTemplateRule);

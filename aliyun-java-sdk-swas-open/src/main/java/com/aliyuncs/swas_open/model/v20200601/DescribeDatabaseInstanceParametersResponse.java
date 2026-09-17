@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDatabaseInstanceParametersResponse extends AcsResponse {
 
+	private String engineVersion;
+
 	private String requestId;
 
 	private String engine;
 
-	private String engineVersion;
+	private List<RunningParameter> runningParameters;
 
 	private List<ConfigParameter> configParameters;
 
-	private List<RunningParameter> runningParameters;
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,12 +59,12 @@ public class DescribeDatabaseInstanceParametersResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
+	public List<RunningParameter> getRunningParameters() {
+		return this.runningParameters;
 	}
 
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
+	public void setRunningParameters(List<RunningParameter> runningParameters) {
+		this.runningParameters = runningParameters;
 	}
 
 	public List<ConfigParameter> getConfigParameters() {
@@ -67,42 +75,97 @@ public class DescribeDatabaseInstanceParametersResponse extends AcsResponse {
 		this.configParameters = configParameters;
 	}
 
-	public List<RunningParameter> getRunningParameters() {
-		return this.runningParameters;
-	}
+	public static class RunningParameter {
 
-	public void setRunningParameters(List<RunningParameter> runningParameters) {
-		this.runningParameters = runningParameters;
+		private String forceModify;
+
+		private String checkingCode;
+
+		private String parameterValue;
+
+		private String forceRestart;
+
+		private String parameterName;
+
+		private String parameterDescription;
+
+		public String getForceModify() {
+			return this.forceModify;
+		}
+
+		public void setForceModify(String forceModify) {
+			this.forceModify = forceModify;
+		}
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
+
+		public String getParameterValue() {
+			return this.parameterValue;
+		}
+
+		public void setParameterValue(String parameterValue) {
+			this.parameterValue = parameterValue;
+		}
+
+		public String getForceRestart() {
+			return this.forceRestart;
+		}
+
+		public void setForceRestart(String forceRestart) {
+			this.forceRestart = forceRestart;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
 	}
 
 	public static class ConfigParameter {
 
-		private String parameterDescription;
-
-		private String parameterName;
-
-		private String parameterValue;
-
 		private String forceModify;
-
-		private String forceRestart;
 
 		private String checkingCode;
 
-		public String getParameterDescription() {
-			return this.parameterDescription;
+		private String parameterValue;
+
+		private String forceRestart;
+
+		private String parameterName;
+
+		private String parameterDescription;
+
+		public String getForceModify() {
+			return this.forceModify;
 		}
 
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
+		public void setForceModify(String forceModify) {
+			this.forceModify = forceModify;
 		}
 
-		public String getParameterName() {
-			return this.parameterName;
+		public String getCheckingCode() {
+			return this.checkingCode;
 		}
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
 		}
 
 		public String getParameterValue() {
@@ -113,51 +176,12 @@ public class DescribeDatabaseInstanceParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public String getForceModify() {
-			return this.forceModify;
-		}
-
-		public void setForceModify(String forceModify) {
-			this.forceModify = forceModify;
-		}
-
 		public String getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(String forceRestart) {
 			this.forceRestart = forceRestart;
-		}
-
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
-		}
-	}
-
-	public static class RunningParameter {
-
-		private String parameterDescription;
-
-		private String parameterName;
-
-		private String parameterValue;
-
-		private String forceModify;
-
-		private String forceRestart;
-
-		private String checkingCode;
-
-		public String getParameterDescription() {
-			return this.parameterDescription;
-		}
-
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
 		}
 
 		public String getParameterName() {
@@ -168,36 +192,12 @@ public class DescribeDatabaseInstanceParametersResponse extends AcsResponse {
 			this.parameterName = parameterName;
 		}
 
-		public String getParameterValue() {
-			return this.parameterValue;
+		public String getParameterDescription() {
+			return this.parameterDescription;
 		}
 
-		public void setParameterValue(String parameterValue) {
-			this.parameterValue = parameterValue;
-		}
-
-		public String getForceModify() {
-			return this.forceModify;
-		}
-
-		public void setForceModify(String forceModify) {
-			this.forceModify = forceModify;
-		}
-
-		public String getForceRestart() {
-			return this.forceRestart;
-		}
-
-		public void setForceRestart(String forceRestart) {
-			this.forceRestart = forceRestart;
-		}
-
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
 		}
 	}
 

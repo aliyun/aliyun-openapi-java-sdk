@@ -47,22 +47,22 @@ public class ListImagesResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageType;
+		private String imageName;
 
 		private String description;
 
-		private String imageName;
+		private String platform;
 
 		private String imageId;
 
-		private String platform;
+		private String imageType;
 
-		public String getImageType() {
-			return this.imageType;
+		public String getImageName() {
+			return this.imageName;
 		}
 
-		public void setImageType(String imageType) {
-			this.imageType = imageType;
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
 		}
 
 		public String getDescription() {
@@ -73,12 +73,12 @@ public class ListImagesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getImageName() {
-			return this.imageName;
+		public String getPlatform() {
+			return this.platform;
 		}
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
 		public String getImageId() {
@@ -89,12 +89,12 @@ public class ListImagesResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getPlatform() {
-			return this.platform;
+		public String getImageType() {
+			return this.imageType;
 		}
 
-		public void setPlatform(String platform) {
-			this.platform = platform;
+		public void setImageType(String imageType) {
+			this.imageType = imageType;
 		}
 	}
 

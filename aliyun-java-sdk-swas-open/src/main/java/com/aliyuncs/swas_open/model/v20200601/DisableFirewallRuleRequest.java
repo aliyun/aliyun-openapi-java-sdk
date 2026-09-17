@@ -32,7 +32,7 @@ public class DisableFirewallRuleRequest extends RpcAcsRequest<DisableFirewallRul
 
 	private String ruleId;
 	public DisableFirewallRuleRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DisableFirewallRule", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DisableFirewallRule", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

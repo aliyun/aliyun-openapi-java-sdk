@@ -32,7 +32,7 @@ public class LoginInstanceRequest extends RpcAcsRequest<LoginInstanceResponse> {
 
 	private String username;
 	public LoginInstanceRequest() {
-		super("SWAS-OPEN", "2020-06-01", "LoginInstance", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "LoginInstance", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

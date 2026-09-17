@@ -77,21 +77,13 @@ public class ListKeyPairsResponse extends AcsResponse {
 
 	public static class KeyPair {
 
-		private String creationTime;
-
 		private String keyPairName;
 
 		private String publicKey;
 
+		private String creationTime;
+
 		private List<String> instanceIds;
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
 
 		public String getKeyPairName() {
 			return this.keyPairName;
@@ -107,6 +99,14 @@ public class ListKeyPairsResponse extends AcsResponse {
 
 		public void setPublicKey(String publicKey) {
 			this.publicKey = publicKey;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public List<String> getInstanceIds() {

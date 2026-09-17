@@ -31,7 +31,7 @@ public class DeleteFirewallTemplateRulesRequest extends RpcAcsRequest<DeleteFire
 
 	private List<String> firewallTemplateRuleIds;
 	public DeleteFirewallTemplateRulesRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallTemplateRules", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteFirewallTemplateRules", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

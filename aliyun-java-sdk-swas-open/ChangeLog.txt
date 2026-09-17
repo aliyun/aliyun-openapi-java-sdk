@@ -1,3 +1,6 @@
+2026-09-17 Version: 1.8.18
+- SDK update.
+
 2025-12-29 Version: 1.8.17
 - SDK update.
 

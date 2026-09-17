@@ -30,7 +30,7 @@ public class CreateInstanceKeyPairRequest extends RpcAcsRequest<CreateInstanceKe
 
 	private String instanceId;
 	public CreateInstanceKeyPairRequest() {
-		super("SWAS-OPEN", "2020-06-01", "CreateInstanceKeyPair", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "CreateInstanceKeyPair", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

@@ -36,7 +36,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String username;
 	public InvokeCommandRequest() {
-		super("SWAS-OPEN", "2020-06-01", "InvokeCommand", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "InvokeCommand", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

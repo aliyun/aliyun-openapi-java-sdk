@@ -26,11 +26,11 @@ public class DescribeMonitorDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String datapoints;
+	private String nextToken;
 
 	private String period;
 
-	private String nextToken;
+	private String datapoints;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class DescribeMonitorDataResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDatapoints() {
-		return this.datapoints;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setDatapoints(String datapoints) {
-		this.datapoints = datapoints;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public String getPeriod() {
@@ -56,12 +56,12 @@ public class DescribeMonitorDataResponse extends AcsResponse {
 		this.period = period;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getDatapoints() {
+		return this.datapoints;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
+	public void setDatapoints(String datapoints) {
+		this.datapoints = datapoints;
 	}
 
 	@Override

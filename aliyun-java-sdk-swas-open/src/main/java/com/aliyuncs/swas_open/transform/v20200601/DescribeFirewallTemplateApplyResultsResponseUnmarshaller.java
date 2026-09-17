@@ -28,25 +28,25 @@ public class DescribeFirewallTemplateApplyResultsResponseUnmarshaller {
 	public static DescribeFirewallTemplateApplyResultsResponse unmarshall(DescribeFirewallTemplateApplyResultsResponse describeFirewallTemplateApplyResultsResponse, UnmarshallerContext _ctx) {
 		
 		describeFirewallTemplateApplyResultsResponse.setRequestId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.RequestId"));
-		describeFirewallTemplateApplyResultsResponse.setPageNumber(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.PageNumber"));
-		describeFirewallTemplateApplyResultsResponse.setPageSize(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.PageSize"));
 		describeFirewallTemplateApplyResultsResponse.setTotalCount(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.TotalCount"));
+		describeFirewallTemplateApplyResultsResponse.setPageSize(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.PageSize"));
+		describeFirewallTemplateApplyResultsResponse.setPageNumber(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.PageNumber"));
 
 		List<ApplyFirewallTemplateResult> data = new ArrayList<ApplyFirewallTemplateResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFirewallTemplateApplyResultsResponse.data.Length"); i++) {
 			ApplyFirewallTemplateResult applyFirewallTemplateResult = new ApplyFirewallTemplateResult();
-			applyFirewallTemplateResult.setTaskId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].TaskId"));
-			applyFirewallTemplateResult.setFirewallTemplateId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].FirewallTemplateId"));
 			applyFirewallTemplateResult.setStatus(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].Status"));
 			applyFirewallTemplateResult.setTotalCount(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].TotalCount"));
-			applyFirewallTemplateResult.setFailedCount(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].FailedCount"));
+			applyFirewallTemplateResult.setTaskId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].TaskId"));
 			applyFirewallTemplateResult.setCreateTime(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].CreateTime"));
+			applyFirewallTemplateResult.setFirewallTemplateId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].FirewallTemplateId"));
+			applyFirewallTemplateResult.setFailedCount(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].FailedCount"));
 
 			List<ApplyInstanceResult> instanceApplyResults = new ArrayList<ApplyInstanceResult>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].InstanceApplyResults.Length"); j++) {
 				ApplyInstanceResult applyInstanceResult = new ApplyInstanceResult();
-				applyInstanceResult.setInstanceId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].InstanceApplyResults["+ j +"].InstanceId"));
 				applyInstanceResult.setStatus(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].InstanceApplyResults["+ j +"].Status"));
+				applyInstanceResult.setInstanceId(_ctx.stringValue("DescribeFirewallTemplateApplyResultsResponse.data["+ i +"].InstanceApplyResults["+ j +"].InstanceId"));
 
 				instanceApplyResults.add(applyInstanceResult);
 			}

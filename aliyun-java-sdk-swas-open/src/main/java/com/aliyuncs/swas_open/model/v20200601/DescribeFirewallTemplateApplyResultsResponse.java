@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
-	private String requestId;
+	private String totalCount;
 
-	private String pageNumber;
+	private String requestId;
 
 	private String pageSize;
 
-	private String totalCount;
+	private String pageNumber;
 
 	private List<ApplyFirewallTemplateResult> data;
+
+	public String getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public String getPageSize() {
@@ -59,12 +59,12 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public String getTotalCount() {
-		return this.totalCount;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ApplyFirewallTemplateResult> getData() {
@@ -77,35 +77,19 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
 	public static class ApplyFirewallTemplateResult {
 
-		private String taskId;
-
-		private String firewallTemplateId;
-
 		private String status;
 
 		private String totalCount;
 
-		private String failedCount;
+		private String taskId;
 
 		private String createTime;
 
+		private String firewallTemplateId;
+
+		private String failedCount;
+
 		private List<ApplyInstanceResult> instanceApplyResults;
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getFirewallTemplateId() {
-			return this.firewallTemplateId;
-		}
-
-		public void setFirewallTemplateId(String firewallTemplateId) {
-			this.firewallTemplateId = firewallTemplateId;
-		}
 
 		public String getStatus() {
 			return this.status;
@@ -123,12 +107,12 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public String getFailedCount() {
-			return this.failedCount;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setFailedCount(String failedCount) {
-			this.failedCount = failedCount;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public String getCreateTime() {
@@ -137,6 +121,22 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getFirewallTemplateId() {
+			return this.firewallTemplateId;
+		}
+
+		public void setFirewallTemplateId(String firewallTemplateId) {
+			this.firewallTemplateId = firewallTemplateId;
+		}
+
+		public String getFailedCount() {
+			return this.failedCount;
+		}
+
+		public void setFailedCount(String failedCount) {
+			this.failedCount = failedCount;
 		}
 
 		public List<ApplyInstanceResult> getInstanceApplyResults() {
@@ -149,17 +149,9 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
 		public static class ApplyInstanceResult {
 
-			private String instanceId;
-
 			private String status;
 
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
+			private String instanceId;
 
 			public String getStatus() {
 				return this.status;
@@ -167,6 +159,14 @@ public class DescribeFirewallTemplateApplyResultsResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

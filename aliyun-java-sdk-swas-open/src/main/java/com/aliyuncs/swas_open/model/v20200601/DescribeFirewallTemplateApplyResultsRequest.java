@@ -25,8 +25,6 @@ import com.aliyuncs.http.MethodType;
 public class DescribeFirewallTemplateApplyResultsRequest extends RpcAcsRequest<DescribeFirewallTemplateApplyResultsResponse> {
 	   
 
-	private String firewallTemplateId;
-
 	private String clientToken;
 
 	private Integer pageNumber;
@@ -34,20 +32,11 @@ public class DescribeFirewallTemplateApplyResultsRequest extends RpcAcsRequest<D
 	private Integer pageSize;
 
 	private List<String> taskIds;
+
+	private String firewallTemplateId;
 	public DescribeFirewallTemplateApplyResultsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplateApplyResults", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeFirewallTemplateApplyResults", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
-	}
-
-	public String getFirewallTemplateId() {
-		return this.firewallTemplateId;
-	}
-
-	public void setFirewallTemplateId(String firewallTemplateId) {
-		this.firewallTemplateId = firewallTemplateId;
-		if(firewallTemplateId != null){
-			putQueryParameter("FirewallTemplateId", firewallTemplateId);
-		}
 	}
 
 	public String getClientToken() {
@@ -94,6 +83,17 @@ public class DescribeFirewallTemplateApplyResultsRequest extends RpcAcsRequest<D
 				putQueryParameter("TaskId." + (i + 1) , taskIds.get(i));
 			}
 		}	
+	}
+
+	public String getFirewallTemplateId() {
+		return this.firewallTemplateId;
+	}
+
+	public void setFirewallTemplateId(String firewallTemplateId) {
+		this.firewallTemplateId = firewallTemplateId;
+		if(firewallTemplateId != null){
+			putQueryParameter("FirewallTemplateId", firewallTemplateId);
+		}
 	}
 
 	@Override

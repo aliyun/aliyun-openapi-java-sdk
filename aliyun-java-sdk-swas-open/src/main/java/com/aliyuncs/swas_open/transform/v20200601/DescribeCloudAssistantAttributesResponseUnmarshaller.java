@@ -34,15 +34,15 @@ public class DescribeCloudAssistantAttributesResponseUnmarshaller {
 		List<Status> cloudAssistant = new ArrayList<Status>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantAttributesResponse.CloudAssistant.Length"); i++) {
 			Status status = new Status();
-			status.setInstanceId(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].InstanceId"));
-			status.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].CloudAssistantStatus"));
-			status.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].LastInvokedTime"));
 			status.setCloudAssistantVersion(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].CloudAssistantVersion"));
-			status.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].ActiveTaskCount"));
-			status.setInvocationCount(_ctx.longValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].InvocationCount"));
-			status.setLastHeartbeatTime(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].LastHeartbeatTime"));
-			status.setOSType(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].OSType"));
 			status.setSupportSessionManager(_ctx.booleanValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].SupportSessionManager"));
+			status.setInstanceId(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].InstanceId"));
+			status.setInvocationCount(_ctx.longValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].InvocationCount"));
+			status.setOSType(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].OSType"));
+			status.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].CloudAssistantStatus"));
+			status.setLastHeartbeatTime(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].LastHeartbeatTime"));
+			status.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].LastInvokedTime"));
+			status.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantAttributesResponse.CloudAssistant["+ i +"].ActiveTaskCount"));
 
 			cloudAssistant.add(status);
 		}

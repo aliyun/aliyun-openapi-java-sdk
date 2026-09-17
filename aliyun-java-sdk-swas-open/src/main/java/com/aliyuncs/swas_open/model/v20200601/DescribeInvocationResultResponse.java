@@ -46,43 +46,27 @@ public class DescribeInvocationResultResponse extends AcsResponse {
 
 	public static class InvocationResult {
 
-		private String startTime;
-
-		private String finishedTime;
-
 		private String invocationStatus;
+
+		private String instanceId;
+
+		private String invokeUser;
 
 		private Long exitCode;
 
 		private String errorInfo;
 
-		private String errorCode;
+		private String output;
 
-		private String invokeId;
+		private String startTime;
+
+		private String errorCode;
 
 		private String invokeRecordStatus;
 
-		private String invokeUser;
+		private String finishedTime;
 
-		private String output;
-
-		private String instanceId;
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getFinishedTime() {
-			return this.finishedTime;
-		}
-
-		public void setFinishedTime(String finishedTime) {
-			this.finishedTime = finishedTime;
-		}
+		private String invokeId;
 
 		public String getInvocationStatus() {
 			return this.invocationStatus;
@@ -90,6 +74,22 @@ public class DescribeInvocationResultResponse extends AcsResponse {
 
 		public void setInvocationStatus(String invocationStatus) {
 			this.invocationStatus = invocationStatus;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInvokeUser() {
+			return this.invokeUser;
+		}
+
+		public void setInvokeUser(String invokeUser) {
+			this.invokeUser = invokeUser;
 		}
 
 		public Long getExitCode() {
@@ -108,20 +108,28 @@ public class DescribeInvocationResultResponse extends AcsResponse {
 			this.errorInfo = errorInfo;
 		}
 
+		public String getOutput() {
+			return this.output;
+		}
+
+		public void setOutput(String output) {
+			this.output = output;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getErrorCode() {
 			return this.errorCode;
 		}
 
 		public void setErrorCode(String errorCode) {
 			this.errorCode = errorCode;
-		}
-
-		public String getInvokeId() {
-			return this.invokeId;
-		}
-
-		public void setInvokeId(String invokeId) {
-			this.invokeId = invokeId;
 		}
 
 		public String getInvokeRecordStatus() {
@@ -132,28 +140,20 @@ public class DescribeInvocationResultResponse extends AcsResponse {
 			this.invokeRecordStatus = invokeRecordStatus;
 		}
 
-		public String getInvokeUser() {
-			return this.invokeUser;
+		public String getFinishedTime() {
+			return this.finishedTime;
 		}
 
-		public void setInvokeUser(String invokeUser) {
-			this.invokeUser = invokeUser;
+		public void setFinishedTime(String finishedTime) {
+			this.finishedTime = finishedTime;
 		}
 
-		public String getOutput() {
-			return this.output;
+		public String getInvokeId() {
+			return this.invokeId;
 		}
 
-		public void setOutput(String output) {
-			this.output = output;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setInvokeId(String invokeId) {
+			this.invokeId = invokeId;
 		}
 	}
 

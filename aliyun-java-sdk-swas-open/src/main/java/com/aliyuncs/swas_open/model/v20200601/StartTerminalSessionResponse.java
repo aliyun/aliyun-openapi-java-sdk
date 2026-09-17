@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartTerminalSessionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String sessionId;
-
 	private String securityToken;
+
+	private String requestId;
 
 	private String webSocketUrl;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-	}
+	private String sessionId;
 
 	public String getSecurityToken() {
 		return this.securityToken;
@@ -56,12 +40,28 @@ public class StartTerminalSessionResponse extends AcsResponse {
 		this.securityToken = securityToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getWebSocketUrl() {
 		return this.webSocketUrl;
 	}
 
 	public void setWebSocketUrl(String webSocketUrl) {
 		this.webSocketUrl = webSocketUrl;
+	}
+
+	public String getSessionId() {
+		return this.sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
 
 	@Override

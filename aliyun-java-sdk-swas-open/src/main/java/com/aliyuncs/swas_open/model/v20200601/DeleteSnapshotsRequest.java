@@ -28,7 +28,7 @@ public class DeleteSnapshotsRequest extends RpcAcsRequest<DeleteSnapshotsRespons
 
 	private String snapshotIds;
 	public DeleteSnapshotsRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DeleteSnapshots", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DeleteSnapshots", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

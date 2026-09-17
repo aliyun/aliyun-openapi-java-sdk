@@ -31,10 +31,10 @@ public class ListInstancesTrafficPackagesResponseUnmarshaller {
 		List<InstanceTrafficPackageUsage> instanceTrafficPackageUsages = new ArrayList<InstanceTrafficPackageUsage>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages.Length"); i++) {
 			InstanceTrafficPackageUsage instanceTrafficPackageUsage = new InstanceTrafficPackageUsage();
-			instanceTrafficPackageUsage.setInstanceId(_ctx.stringValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].InstanceId"));
 			instanceTrafficPackageUsage.setTrafficUsed(_ctx.longValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].TrafficUsed"));
-			instanceTrafficPackageUsage.setTrafficPackageTotal(_ctx.longValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].TrafficPackageTotal"));
+			instanceTrafficPackageUsage.setInstanceId(_ctx.stringValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].InstanceId"));
 			instanceTrafficPackageUsage.setTrafficPackageRemaining(_ctx.longValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].TrafficPackageRemaining"));
+			instanceTrafficPackageUsage.setTrafficPackageTotal(_ctx.longValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].TrafficPackageTotal"));
 			instanceTrafficPackageUsage.setTrafficOverflow(_ctx.longValue("ListInstancesTrafficPackagesResponse.InstanceTrafficPackageUsages["+ i +"].TrafficOverflow"));
 
 			instanceTrafficPackageUsages.add(instanceTrafficPackageUsage);

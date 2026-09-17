@@ -32,7 +32,7 @@ public class DescribeDatabaseInstanceMetricDataRequest extends RpcAcsRequest<Des
 
 	private String metricName;
 	public DescribeDatabaseInstanceMetricDataRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstanceMetricData", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeDatabaseInstanceMetricData", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 

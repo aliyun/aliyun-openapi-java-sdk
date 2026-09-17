@@ -29,35 +29,35 @@ public class DescribeCommandInvocationsResponseUnmarshaller {
 		
 		describeCommandInvocationsResponse.setRequestId(_ctx.stringValue("DescribeCommandInvocationsResponse.RequestId"));
 		describeCommandInvocationsResponse.setTotalCount(_ctx.integerValue("DescribeCommandInvocationsResponse.TotalCount"));
-		describeCommandInvocationsResponse.setPageNumber(_ctx.integerValue("DescribeCommandInvocationsResponse.PageNumber"));
 		describeCommandInvocationsResponse.setPageSize(_ctx.integerValue("DescribeCommandInvocationsResponse.PageSize"));
+		describeCommandInvocationsResponse.setPageNumber(_ctx.integerValue("DescribeCommandInvocationsResponse.PageNumber"));
 
 		List<Command> commandInvocations = new ArrayList<Command>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCommandInvocationsResponse.CommandInvocations.Length"); i++) {
 			Command command = new Command();
-			command.setInvokeId(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeId"));
+			command.setInvocationStatus(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvocationStatus"));
+			command.setParameters(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Parameters"));
+			command.setCommandDescription(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandDescription"));
+			command.setTimeout(_ctx.longValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Timeout"));
+			command.setWorkingDir(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].WorkingDir"));
+			command.setCommandContent(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandContent"));
+			command.setCommandType(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandType"));
+			command.setUsername(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Username"));
 			command.setCreationTime(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CreationTime"));
 			command.setCommandId(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandId"));
-			command.setInvocationStatus(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvocationStatus"));
 			command.setCommandName(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandName"));
-			command.setCommandType(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandType"));
-			command.setCommandDescription(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandDescription"));
-			command.setUsername(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Username"));
-			command.setWorkingDir(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].WorkingDir"));
-			command.setTimeout(_ctx.longValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Timeout"));
-			command.setCommandContent(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].CommandContent"));
-			command.setParameters(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].Parameters"));
+			command.setInvokeId(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeId"));
 
 			List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances.Length"); j++) {
 				InvokeInstance invokeInstance = new InvokeInstance();
-				invokeInstance.setInstanceId(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].InstanceId"));
-				invokeInstance.setStartTime(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].StartTime"));
-				invokeInstance.setFinishTime(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].FinishTime"));
 				invokeInstance.setInvocationStatus(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].InvocationStatus"));
+				invokeInstance.setFinishTime(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].FinishTime"));
+				invokeInstance.setInstanceId(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].InstanceId"));
 				invokeInstance.setOutput(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].Output"));
 				invokeInstance.setExitCode(_ctx.longValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].ExitCode"));
 				invokeInstance.setErrorInfo(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].ErrorInfo"));
+				invokeInstance.setStartTime(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].StartTime"));
 				invokeInstance.setErrorCode(_ctx.stringValue("DescribeCommandInvocationsResponse.CommandInvocations["+ i +"].InvokeInstances["+ j +"].ErrorCode"));
 
 				invokeInstances.add(invokeInstance);

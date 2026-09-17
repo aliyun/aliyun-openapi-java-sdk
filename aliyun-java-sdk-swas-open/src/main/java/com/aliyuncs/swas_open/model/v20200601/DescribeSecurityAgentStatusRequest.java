@@ -28,7 +28,7 @@ public class DescribeSecurityAgentStatusRequest extends RpcAcsRequest<DescribeSe
 
 	private String instanceId;
 	public DescribeSecurityAgentStatusRequest() {
-		super("SWAS-OPEN", "2020-06-01", "DescribeSecurityAgentStatus", "SWAS-OPEN");
+		super("SWAS-OPEN", "2020-06-01", "DescribeSecurityAgentStatus", "SimpleApplicationServer");
 		setMethod(MethodType.POST);
 	}
 
