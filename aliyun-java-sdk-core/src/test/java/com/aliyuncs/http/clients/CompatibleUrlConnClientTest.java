@@ -71,7 +71,7 @@ public class CompatibleUrlConnClientTest {
         when(config.getSslSocketFactory()).thenReturn(sslSocketFactory);
         when(config.isIgnoreSSLCerts()).thenReturn(false);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mockurl");
         CallBack callback = mock(CallBack.class);
         client.asyncInvoke(request, callback);
         client.close();
@@ -121,7 +121,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         thrown.expect(IllegalArgumentException.class);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         Whitebox.invokeMethod(client, "buildHttpConnection", request);
     }
 
@@ -133,7 +133,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         thrown.expect(IllegalArgumentException.class);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getSysUrl()).thenReturn("sysUrl");
         Whitebox.invokeMethod(client, "buildHttpConnection", request);
     }
@@ -148,7 +148,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         Proxy proxy = Proxy.NO_PROXY;
         PowerMockito.doReturn(proxy).when(client, "calcProxy", any(URL.class), any(HttpRequest.class));
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getSysUrl()).thenReturn("https://www.aliyun.com");
         when(request.getSysConnectTimeout()).thenReturn(120);
@@ -178,7 +178,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         Proxy proxy = Proxy.NO_PROXY;
         PowerMockito.doReturn(proxy).when(client, "calcProxy", any(URL.class), any(HttpRequest.class));
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getHttpContent()).thenReturn("content".getBytes());
         when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getSysUrl()).thenReturn("http://www.aliyun.com");
@@ -196,7 +196,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         Proxy proxy = Proxy.NO_PROXY;
         PowerMockito.doReturn(proxy).when(client, "calcProxy", any(URL.class), any(HttpRequest.class));
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getHttpContent()).thenReturn("content".getBytes());
         when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getSysUrl()).thenReturn("https://www.aliyun.com");
@@ -216,7 +216,7 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
         Proxy proxy = Proxy.NO_PROXY;
         PowerMockito.doReturn(proxy).when(client, "calcProxy", any(URL.class), any(HttpRequest.class));
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getHttpContent()).thenReturn(null);
         when(request.getSysMethod()).thenReturn(MethodType.GET);
         when(request.getSysUrl()).thenReturn("http://www.aliyun.com");
@@ -271,7 +271,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         HttpURLConnection connection = mock(HttpURLConnection.class);
         doThrow(new IOException()).when(connection).connect();
         PowerMockito.doReturn(connection).when(client, "buildHttpConnection", request);
@@ -292,7 +292,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getHttpContent()).thenReturn("http content".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
         doNothing().when(connection).connect();
@@ -316,7 +316,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getSysMethod()).thenReturn(MethodType.GET);
         when(request.getHttpContent()).thenReturn("http content".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
@@ -345,7 +345,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getHttpContent()).thenReturn("http content".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
@@ -373,7 +373,7 @@ public class CompatibleUrlConnClientTest {
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client0 = new CompatibleUrlConnClient(config);
         CompatibleUrlConnClient client = PowerMockito.spy(client0);
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         when(request.getSysMethod()).thenReturn(MethodType.GET);
         when(request.getHttpContent()).thenReturn("".getBytes());
         HttpURLConnection connection = mock(HttpURLConnection.class);
