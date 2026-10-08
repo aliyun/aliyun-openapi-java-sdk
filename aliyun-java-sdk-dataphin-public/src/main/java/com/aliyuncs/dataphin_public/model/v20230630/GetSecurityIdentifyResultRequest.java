@@ -31,7 +31,7 @@ public class GetSecurityIdentifyResultRequest extends RpcAcsRequest<GetSecurityI
 
 	private Long id;
 	public GetSecurityIdentifyResultRequest() {
-		super("dataphin-public", "2023-06-30", "GetSecurityIdentifyResult", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetSecurityIdentifyResult", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

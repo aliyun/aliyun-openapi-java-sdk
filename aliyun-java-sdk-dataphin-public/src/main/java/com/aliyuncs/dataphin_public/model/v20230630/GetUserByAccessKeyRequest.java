@@ -29,7 +29,7 @@ public class GetUserByAccessKeyRequest extends RpcAcsRequest<GetUserByAccessKeyR
 
 	private String opUserId;
 	public GetUserByAccessKeyRequest() {
-		super("dataphin-public", "2023-06-30", "GetUserByAccessKey", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetUserByAccessKey", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

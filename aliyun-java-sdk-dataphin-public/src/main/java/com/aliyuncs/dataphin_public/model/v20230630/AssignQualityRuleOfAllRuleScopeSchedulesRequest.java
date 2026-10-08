@@ -35,7 +35,7 @@ public class AssignQualityRuleOfAllRuleScopeSchedulesRequest extends RpcAcsReque
 	@SerializedName("assignCommand")
 	private AssignCommand assignCommand;
 	public AssignQualityRuleOfAllRuleScopeSchedulesRequest() {
-		super("dataphin-public", "2023-06-30", "AssignQualityRuleOfAllRuleScopeSchedules", "Dataphin");
+		super("dataphin-public", "2023-06-30", "AssignQualityRuleOfAllRuleScopeSchedules", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

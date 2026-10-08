@@ -37,7 +37,7 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String env;
 	public ListInstancesRequest() {
-		super("dataphin-public", "2023-06-30", "ListInstances", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListInstances", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

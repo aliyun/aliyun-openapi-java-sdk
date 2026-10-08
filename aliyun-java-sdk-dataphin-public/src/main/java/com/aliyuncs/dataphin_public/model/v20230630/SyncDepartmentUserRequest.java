@@ -35,7 +35,7 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 	@SerializedName("syncDepartmentUserCommand")
 	private SyncDepartmentUserCommand syncDepartmentUserCommand;
 	public SyncDepartmentUserRequest() {
-		super("dataphin-public", "2023-06-30", "SyncDepartmentUser", "Dataphin");
+		super("dataphin-public", "2023-06-30", "SyncDepartmentUser", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -94,6 +94,9 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 			@SerializedName("SourceUserId")
 			private String sourceUserId;
 
+			@SerializedName("SourceType")
+			private String sourceType;
+
 			public List<String> getDepartmentIdList() {
 				return this.departmentIdList;
 			}
@@ -108,6 +111,14 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 
 			public void setSourceUserId(String sourceUserId) {
 				this.sourceUserId = sourceUserId;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
 			}
 		}
 	}

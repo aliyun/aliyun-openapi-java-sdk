@@ -34,7 +34,7 @@ public class OfflineBizEntityRequest extends RpcAcsRequest<OfflineBizEntityRespo
 	@SerializedName("offlineCommand")
 	private OfflineCommand offlineCommand;
 	public OfflineBizEntityRequest() {
-		super("dataphin-public", "2023-06-30", "OfflineBizEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "OfflineBizEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

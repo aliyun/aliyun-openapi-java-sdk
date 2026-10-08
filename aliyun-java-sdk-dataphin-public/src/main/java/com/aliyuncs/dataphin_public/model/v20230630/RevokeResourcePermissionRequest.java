@@ -35,7 +35,7 @@ public class RevokeResourcePermissionRequest extends RpcAcsRequest<RevokeResourc
 	@SerializedName("revokeCommand")
 	private RevokeCommand revokeCommand;
 	public RevokeResourcePermissionRequest() {
-		super("dataphin-public", "2023-06-30", "RevokeResourcePermission", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RevokeResourcePermission", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

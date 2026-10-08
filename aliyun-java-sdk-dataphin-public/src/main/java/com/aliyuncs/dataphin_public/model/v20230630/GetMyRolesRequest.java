@@ -29,7 +29,7 @@ public class GetMyRolesRequest extends RpcAcsRequest<GetMyRolesResponse> {
 
 	private String opUserId;
 	public GetMyRolesRequest() {
-		super("dataphin-public", "2023-06-30", "GetMyRoles", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetMyRoles", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

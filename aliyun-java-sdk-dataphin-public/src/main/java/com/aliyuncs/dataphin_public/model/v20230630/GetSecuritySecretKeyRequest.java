@@ -31,7 +31,7 @@ public class GetSecuritySecretKeyRequest extends RpcAcsRequest<GetSecuritySecret
 
 	private String name;
 	public GetSecuritySecretKeyRequest() {
-		super("dataphin-public", "2023-06-30", "GetSecuritySecretKey", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetSecuritySecretKey", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

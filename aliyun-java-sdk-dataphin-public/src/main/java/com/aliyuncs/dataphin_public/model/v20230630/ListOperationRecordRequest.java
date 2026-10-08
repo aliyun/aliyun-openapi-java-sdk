@@ -35,7 +35,7 @@ public class ListOperationRecordRequest extends RpcAcsRequest<ListOperationRecor
 	@SerializedName("listCommand")
 	private ListCommand listCommand;
 	public ListOperationRecordRequest() {
-		super("dataphin-public", "2023-06-30", "ListOperationRecord", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListOperationRecord", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

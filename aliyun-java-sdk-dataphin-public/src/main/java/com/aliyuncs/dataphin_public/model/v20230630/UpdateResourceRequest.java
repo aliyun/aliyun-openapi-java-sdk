@@ -34,7 +34,7 @@ public class UpdateResourceRequest extends RpcAcsRequest<UpdateResourceResponse>
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateResourceRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateResource", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateResource", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

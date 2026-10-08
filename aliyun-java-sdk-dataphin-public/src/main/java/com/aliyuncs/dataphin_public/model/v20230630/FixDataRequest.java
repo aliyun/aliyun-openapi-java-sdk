@@ -37,7 +37,7 @@ public class FixDataRequest extends RpcAcsRequest<FixDataResponse> {
 
 	private String env;
 	public FixDataRequest() {
-		super("dataphin-public", "2023-06-30", "FixData", "Dataphin");
+		super("dataphin-public", "2023-06-30", "FixData", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

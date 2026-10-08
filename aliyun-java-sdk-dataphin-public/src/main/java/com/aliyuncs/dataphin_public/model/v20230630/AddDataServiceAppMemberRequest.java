@@ -35,7 +35,7 @@ public class AddDataServiceAppMemberRequest extends RpcAcsRequest<AddDataService
 	@SerializedName("addCommand")
 	private AddCommand addCommand;
 	public AddDataServiceAppMemberRequest() {
-		super("dataphin-public", "2023-06-30", "AddDataServiceAppMember", "Dataphin");
+		super("dataphin-public", "2023-06-30", "AddDataServiceAppMember", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

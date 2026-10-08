@@ -34,7 +34,7 @@ public class CreateStreamBatchJobMappingRequest extends RpcAcsRequest<CreateStre
 	@SerializedName("streamBatchJobMappingCreateCommand")
 	private StreamBatchJobMappingCreateCommand streamBatchJobMappingCreateCommand;
 	public CreateStreamBatchJobMappingRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStreamBatchJobMapping", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateStreamBatchJobMapping", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

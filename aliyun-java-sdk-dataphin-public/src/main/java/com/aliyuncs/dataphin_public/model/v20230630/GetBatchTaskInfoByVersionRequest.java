@@ -35,7 +35,7 @@ public class GetBatchTaskInfoByVersionRequest extends RpcAcsRequest<GetBatchTask
 
 	private Long fileId;
 	public GetBatchTaskInfoByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskInfoByVersion", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskInfoByVersion", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

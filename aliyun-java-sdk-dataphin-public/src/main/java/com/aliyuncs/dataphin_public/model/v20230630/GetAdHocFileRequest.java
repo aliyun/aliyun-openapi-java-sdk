@@ -33,7 +33,7 @@ public class GetAdHocFileRequest extends RpcAcsRequest<GetAdHocFileResponse> {
 
 	private Long fileId;
 	public GetAdHocFileRequest() {
-		super("dataphin-public", "2023-06-30", "GetAdHocFile", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAdHocFile", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

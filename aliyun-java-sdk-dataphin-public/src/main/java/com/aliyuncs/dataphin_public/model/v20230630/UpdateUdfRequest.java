@@ -35,7 +35,7 @@ public class UpdateUdfRequest extends RpcAcsRequest<UpdateUdfResponse> {
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateUdfRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateUdf", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateUdf", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

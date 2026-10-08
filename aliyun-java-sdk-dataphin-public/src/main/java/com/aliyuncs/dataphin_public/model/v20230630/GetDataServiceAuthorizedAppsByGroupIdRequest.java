@@ -33,7 +33,7 @@ public class GetDataServiceAuthorizedAppsByGroupIdRequest extends RpcAcsRequest<
 
 	private Integer projectId;
 	public GetDataServiceAuthorizedAppsByGroupIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceAuthorizedAppsByGroupId", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceAuthorizedAppsByGroupId", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class CreateBizMetricRequest extends RpcAcsRequest<CreateBizMetricRespons
 	@SerializedName("createBizMetricCommand")
 	private CreateBizMetricCommand createBizMetricCommand;
 	public CreateBizMetricRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBizMetric", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateBizMetric", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

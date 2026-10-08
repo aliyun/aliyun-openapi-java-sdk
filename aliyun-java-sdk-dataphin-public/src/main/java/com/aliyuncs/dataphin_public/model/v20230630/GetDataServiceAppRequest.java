@@ -31,7 +31,7 @@ public class GetDataServiceAppRequest extends RpcAcsRequest<GetDataServiceAppRes
 
 	private Integer appId;
 	public GetDataServiceAppRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApp", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApp", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

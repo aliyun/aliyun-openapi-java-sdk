@@ -34,7 +34,7 @@ public class GetBelongAssetMappingRequest extends RpcAcsRequest<GetBelongAssetMa
 	@SerializedName("assetMappingQuery")
 	private AssetMappingQuery assetMappingQuery;
 	public GetBelongAssetMappingRequest() {
-		super("dataphin-public", "2023-06-30", "GetBelongAssetMapping", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBelongAssetMapping", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

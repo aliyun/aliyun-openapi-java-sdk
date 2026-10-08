@@ -36,7 +36,7 @@ public class ListDataServiceApiCallStatisticsRequest extends RpcAcsRequest<ListD
 
 	private Integer projectId;
 	public ListDataServiceApiCallStatisticsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServiceApiCallStatistics", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListDataServiceApiCallStatistics", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

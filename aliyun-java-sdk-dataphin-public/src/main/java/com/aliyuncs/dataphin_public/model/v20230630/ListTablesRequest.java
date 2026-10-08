@@ -15,6 +15,7 @@
 package com.aliyuncs.dataphin_public.model.v20230630;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.ProtocolType;
@@ -34,7 +35,7 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListTablesRequest() {
-		super("dataphin-public", "2023-06-30", "ListTables", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListTables", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -86,6 +87,12 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 		@SerializedName("Keyword")
 		private String keyword;
 
+		@SerializedName("OwnerId")
+		private String ownerId;
+
+		@SerializedName("SubTypes")
+		private List<String> subTypes;
+
 		public Integer getPageNo() {
 			return this.pageNo;
 		}
@@ -116,6 +123,22 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 
 		public void setKeyword(String keyword) {
 			this.keyword = keyword;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public List<String> getSubTypes() {
+			return this.subTypes;
+		}
+
+		public void setSubTypes(List<String> subTypes) {
+			this.subTypes = subTypes;
 		}
 	}
 

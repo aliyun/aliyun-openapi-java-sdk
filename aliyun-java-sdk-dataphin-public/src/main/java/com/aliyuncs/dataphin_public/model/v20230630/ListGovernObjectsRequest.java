@@ -35,7 +35,7 @@ public class ListGovernObjectsRequest extends RpcAcsRequest<ListGovernObjectsRes
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListGovernObjectsRequest() {
-		super("dataphin-public", "2023-06-30", "ListGovernObjects", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListGovernObjects", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

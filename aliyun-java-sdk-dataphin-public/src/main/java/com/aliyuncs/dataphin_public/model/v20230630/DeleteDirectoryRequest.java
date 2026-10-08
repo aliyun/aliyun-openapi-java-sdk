@@ -33,7 +33,7 @@ public class DeleteDirectoryRequest extends RpcAcsRequest<DeleteDirectoryRespons
 
 	private Long fileId;
 	public DeleteDirectoryRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDirectory", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteDirectory", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

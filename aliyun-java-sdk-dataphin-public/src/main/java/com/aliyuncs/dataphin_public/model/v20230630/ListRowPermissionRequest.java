@@ -34,7 +34,7 @@ public class ListRowPermissionRequest extends RpcAcsRequest<ListRowPermissionRes
 	@SerializedName("pageRowPermissionQuery")
 	private PageRowPermissionQuery pageRowPermissionQuery;
 	public ListRowPermissionRequest() {
-		super("dataphin-public", "2023-06-30", "ListRowPermission", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListRowPermission", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

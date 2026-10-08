@@ -37,7 +37,7 @@ public class ExecuteManualNodeRequest extends RpcAcsRequest<ExecuteManualNodeRes
 	@SerializedName("executeCommand")
 	private ExecuteCommand executeCommand;
 	public ExecuteManualNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteManualNode", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ExecuteManualNode", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

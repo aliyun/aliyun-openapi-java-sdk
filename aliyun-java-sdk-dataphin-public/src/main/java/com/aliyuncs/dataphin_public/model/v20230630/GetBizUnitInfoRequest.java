@@ -31,7 +31,7 @@ public class GetBizUnitInfoRequest extends RpcAcsRequest<GetBizUnitInfoResponse>
 
 	private Long id;
 	public GetBizUnitInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetBizUnitInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBizUnitInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

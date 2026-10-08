@@ -35,7 +35,7 @@ public class GetFileStorageCredentialRequest extends RpcAcsRequest<GetFileStorag
 
 	private Long projectId;
 	public GetFileStorageCredentialRequest() {
-		super("dataphin-public", "2023-06-30", "GetFileStorageCredential", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetFileStorageCredential", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -31,7 +31,7 @@ public class GetDataServiceProjectAddableUsersRequest extends RpcAcsRequest<GetD
 
 	private Integer projectId;
 	public GetDataServiceProjectAddableUsersRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceProjectAddableUsers", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceProjectAddableUsers", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

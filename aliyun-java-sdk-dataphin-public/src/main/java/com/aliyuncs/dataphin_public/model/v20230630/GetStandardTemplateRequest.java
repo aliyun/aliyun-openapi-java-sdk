@@ -38,7 +38,7 @@ public class GetStandardTemplateRequest extends RpcAcsRequest<GetStandardTemplat
 
 	private Long id;
 	public GetStandardTemplateRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardTemplate", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetStandardTemplate", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

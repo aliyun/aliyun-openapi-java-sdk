@@ -31,7 +31,7 @@ public class GetDataSourceDependenciesRequest extends RpcAcsRequest<GetDataSourc
 
 	private Long id;
 	public GetDataSourceDependenciesRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataSourceDependencies", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataSourceDependencies", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

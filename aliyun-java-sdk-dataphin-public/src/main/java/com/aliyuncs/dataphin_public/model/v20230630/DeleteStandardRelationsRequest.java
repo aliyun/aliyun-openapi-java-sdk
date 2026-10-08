@@ -35,7 +35,7 @@ public class DeleteStandardRelationsRequest extends RpcAcsRequest<DeleteStandard
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteStandardRelationsRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardRelations", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteStandardRelations", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

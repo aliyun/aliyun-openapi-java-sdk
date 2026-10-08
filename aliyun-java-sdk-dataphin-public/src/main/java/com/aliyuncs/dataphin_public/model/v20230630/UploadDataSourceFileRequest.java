@@ -34,7 +34,7 @@ public class UploadDataSourceFileRequest extends RpcAcsRequest<UploadDataSourceF
 	@SerializedName("uploadCommand")
 	private UploadCommand uploadCommand;
 	public UploadDataSourceFileRequest() {
-		super("dataphin-public", "2023-06-30", "UploadDataSourceFile", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UploadDataSourceFile", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

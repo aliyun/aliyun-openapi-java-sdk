@@ -34,7 +34,7 @@ public class UpsertQualityArchiveTableRequest extends RpcAcsRequest<UpsertQualit
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityArchiveTableRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualityArchiveTable", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpsertQualityArchiveTable", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

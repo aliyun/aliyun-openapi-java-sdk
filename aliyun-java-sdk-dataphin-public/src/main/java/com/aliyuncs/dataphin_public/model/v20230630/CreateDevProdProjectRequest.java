@@ -35,7 +35,7 @@ public class CreateDevProdProjectRequest extends RpcAcsRequest<CreateDevProdProj
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateDevProdProjectRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDevProdProject", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDevProdProject", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

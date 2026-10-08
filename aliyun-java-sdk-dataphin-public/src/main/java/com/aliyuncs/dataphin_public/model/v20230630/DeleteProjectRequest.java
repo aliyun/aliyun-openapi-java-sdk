@@ -31,7 +31,7 @@ public class DeleteProjectRequest extends RpcAcsRequest<DeleteProjectResponse> {
 
 	private Long id;
 	public DeleteProjectRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteProject", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteProject", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

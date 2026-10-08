@@ -35,7 +35,7 @@ public class AddUserGroupMemberRequest extends RpcAcsRequest<AddUserGroupMemberR
 	@SerializedName("addCommand")
 	private AddCommand addCommand;
 	public AddUserGroupMemberRequest() {
-		super("dataphin-public", "2023-06-30", "AddUserGroupMember", "Dataphin");
+		super("dataphin-public", "2023-06-30", "AddUserGroupMember", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

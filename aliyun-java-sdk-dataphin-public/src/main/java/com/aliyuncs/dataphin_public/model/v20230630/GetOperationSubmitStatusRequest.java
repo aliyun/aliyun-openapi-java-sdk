@@ -33,7 +33,7 @@ public class GetOperationSubmitStatusRequest extends RpcAcsRequest<GetOperationS
 
 	private String jobId;
 	public GetOperationSubmitStatusRequest() {
-		super("dataphin-public", "2023-06-30", "GetOperationSubmitStatus", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetOperationSubmitStatus", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

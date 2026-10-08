@@ -35,7 +35,7 @@ public class ListStandardsRequest extends RpcAcsRequest<ListStandardsResponse> {
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListStandardsRequest() {
-		super("dataphin-public", "2023-06-30", "ListStandards", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListStandards", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBatchTaskInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -37,20 +37,20 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 	private TaskInfo taskInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -89,49 +89,45 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private Integer scheduleType;
 
-		private String ownerName;
+		private Boolean conditionScheduleEnable;
 
-		private String nodeName;
+		private String resourceGroupId;
 
 		private String dataSourceSchema;
 
-		private String dagId;
+		private String nodeName;
+
+		private String baseScheduleTemplateName;
+
+		private String developOwnerId;
 
 		private String name;
 
 		private String remark;
 
-		private String developOwnerId;
+		private String validEndDate;
 
 		private String nodeDescription;
-
-		private String developOwnerName;
-
-		private String schedulePeriod;
 
 		private Integer taskType;
 
 		private Boolean rerunable;
 
+		private Long baseScheduleTemplateId;
+
 		private String cronExpression;
 
-		private Boolean paused;
+		private String opsOwnerId;
 
 		private String status;
 
-		private String opsOwnerId;
+		private String validStartDate;
 
 		private Integer priority;
 
 		private String nodeFrom;
 
-		private Long projectId;
-
-		private String operatorUserId;
-
 		private String code;
-
-		private String dataSourceCatalog;
 
 		private String ownerUserId;
 
@@ -141,21 +137,53 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private String nodeId;
 
-		private Boolean published;
-
 		private Long fileId;
+
+		private String prodHttpPath;
+
+		private String devResourceGroupId;
 
 		private Integer nodeStatus;
 
+		private Boolean hasDevNode;
+
+		private String resourceGroupName;
+
+		private String ownerName;
+
+		private String devHttpPath;
+
+		private String dagId;
+
+		private String devResourceGroupName;
+
+		private String developOwnerName;
+
+		private String schedulePeriod;
+
+		private Boolean paused;
+
+		private Long projectId;
+
+		private String conditionScheduleTemplateName;
+
+		private String operatorUserId;
+
+		private Long conditionScheduleTemplateId;
+
+		private String dataSourceCatalog;
+
+		private Boolean published;
+
 		private String dataSourceId;
 
-		private Boolean hasDevNode;
+		private List<ContextParam> contextParamList;
 
 		private List<Param> paramList;
 
-		private List<NodeRelation> upStreamList;
+		private List<ConditionScheduleParam> conditionScheduleParamList;
 
-		private List<String> opsOwnerNameList;
+		private List<NodeRelation> upStreamList;
 
 		private List<String> nodeOutputNameList;
 
@@ -165,9 +193,13 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private List<String> opsOwnerIdList;
 
-		private CustomScheduleConfig customScheduleConfig;
+		private List<String> opsOwnerNameList;
+
+		private List<String> taskTagList;
 
 		private SparkClientInfo sparkClientInfo;
+
+		private CustomScheduleConfig customScheduleConfig;
 
 		public Integer getScheduleType() {
 			return this.scheduleType;
@@ -177,20 +209,20 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.scheduleType = scheduleType;
 		}
 
-		public String getOwnerName() {
-			return this.ownerName;
+		public Boolean getConditionScheduleEnable() {
+			return this.conditionScheduleEnable;
 		}
 
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
+		public void setConditionScheduleEnable(Boolean conditionScheduleEnable) {
+			this.conditionScheduleEnable = conditionScheduleEnable;
 		}
 
-		public String getNodeName() {
-			return this.nodeName;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public String getDataSourceSchema() {
@@ -201,12 +233,28 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.dataSourceSchema = dataSourceSchema;
 		}
 
-		public String getDagId() {
-			return this.dagId;
+		public String getNodeName() {
+			return this.nodeName;
 		}
 
-		public void setDagId(String dagId) {
-			this.dagId = dagId;
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
+		}
+
+		public String getBaseScheduleTemplateName() {
+			return this.baseScheduleTemplateName;
+		}
+
+		public void setBaseScheduleTemplateName(String baseScheduleTemplateName) {
+			this.baseScheduleTemplateName = baseScheduleTemplateName;
+		}
+
+		public String getDevelopOwnerId() {
+			return this.developOwnerId;
+		}
+
+		public void setDevelopOwnerId(String developOwnerId) {
+			this.developOwnerId = developOwnerId;
 		}
 
 		public String getName() {
@@ -225,12 +273,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.remark = remark;
 		}
 
-		public String getDevelopOwnerId() {
-			return this.developOwnerId;
+		public String getValidEndDate() {
+			return this.validEndDate;
 		}
 
-		public void setDevelopOwnerId(String developOwnerId) {
-			this.developOwnerId = developOwnerId;
+		public void setValidEndDate(String validEndDate) {
+			this.validEndDate = validEndDate;
 		}
 
 		public String getNodeDescription() {
@@ -239,22 +287,6 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		public void setNodeDescription(String nodeDescription) {
 			this.nodeDescription = nodeDescription;
-		}
-
-		public String getDevelopOwnerName() {
-			return this.developOwnerName;
-		}
-
-		public void setDevelopOwnerName(String developOwnerName) {
-			this.developOwnerName = developOwnerName;
-		}
-
-		public String getSchedulePeriod() {
-			return this.schedulePeriod;
-		}
-
-		public void setSchedulePeriod(String schedulePeriod) {
-			this.schedulePeriod = schedulePeriod;
 		}
 
 		public Integer getTaskType() {
@@ -273,6 +305,14 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.rerunable = rerunable;
 		}
 
+		public Long getBaseScheduleTemplateId() {
+			return this.baseScheduleTemplateId;
+		}
+
+		public void setBaseScheduleTemplateId(Long baseScheduleTemplateId) {
+			this.baseScheduleTemplateId = baseScheduleTemplateId;
+		}
+
 		public String getCronExpression() {
 			return this.cronExpression;
 		}
@@ -281,12 +321,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.cronExpression = cronExpression;
 		}
 
-		public Boolean getPaused() {
-			return this.paused;
+		public String getOpsOwnerId() {
+			return this.opsOwnerId;
 		}
 
-		public void setPaused(Boolean paused) {
-			this.paused = paused;
+		public void setOpsOwnerId(String opsOwnerId) {
+			this.opsOwnerId = opsOwnerId;
 		}
 
 		public String getStatus() {
@@ -297,12 +337,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getOpsOwnerId() {
-			return this.opsOwnerId;
+		public String getValidStartDate() {
+			return this.validStartDate;
 		}
 
-		public void setOpsOwnerId(String opsOwnerId) {
-			this.opsOwnerId = opsOwnerId;
+		public void setValidStartDate(String validStartDate) {
+			this.validStartDate = validStartDate;
 		}
 
 		public Integer getPriority() {
@@ -321,36 +361,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.nodeFrom = nodeFrom;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
-		public String getOperatorUserId() {
-			return this.operatorUserId;
-		}
-
-		public void setOperatorUserId(String operatorUserId) {
-			this.operatorUserId = operatorUserId;
-		}
-
 		public String getCode() {
 			return this.code;
 		}
 
 		public void setCode(String code) {
 			this.code = code;
-		}
-
-		public String getDataSourceCatalog() {
-			return this.dataSourceCatalog;
-		}
-
-		public void setDataSourceCatalog(String dataSourceCatalog) {
-			this.dataSourceCatalog = dataSourceCatalog;
 		}
 
 		public String getOwnerUserId() {
@@ -385,20 +401,28 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
-		public Boolean getPublished() {
-			return this.published;
-		}
-
-		public void setPublished(Boolean published) {
-			this.published = published;
-		}
-
 		public Long getFileId() {
 			return this.fileId;
 		}
 
 		public void setFileId(Long fileId) {
 			this.fileId = fileId;
+		}
+
+		public String getProdHttpPath() {
+			return this.prodHttpPath;
+		}
+
+		public void setProdHttpPath(String prodHttpPath) {
+			this.prodHttpPath = prodHttpPath;
+		}
+
+		public String getDevResourceGroupId() {
+			return this.devResourceGroupId;
+		}
+
+		public void setDevResourceGroupId(String devResourceGroupId) {
+			this.devResourceGroupId = devResourceGroupId;
 		}
 
 		public Integer getNodeStatus() {
@@ -409,6 +433,126 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.nodeStatus = nodeStatus;
 		}
 
+		public Boolean getHasDevNode() {
+			return this.hasDevNode;
+		}
+
+		public void setHasDevNode(Boolean hasDevNode) {
+			this.hasDevNode = hasDevNode;
+		}
+
+		public String getResourceGroupName() {
+			return this.resourceGroupName;
+		}
+
+		public void setResourceGroupName(String resourceGroupName) {
+			this.resourceGroupName = resourceGroupName;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getDevHttpPath() {
+			return this.devHttpPath;
+		}
+
+		public void setDevHttpPath(String devHttpPath) {
+			this.devHttpPath = devHttpPath;
+		}
+
+		public String getDagId() {
+			return this.dagId;
+		}
+
+		public void setDagId(String dagId) {
+			this.dagId = dagId;
+		}
+
+		public String getDevResourceGroupName() {
+			return this.devResourceGroupName;
+		}
+
+		public void setDevResourceGroupName(String devResourceGroupName) {
+			this.devResourceGroupName = devResourceGroupName;
+		}
+
+		public String getDevelopOwnerName() {
+			return this.developOwnerName;
+		}
+
+		public void setDevelopOwnerName(String developOwnerName) {
+			this.developOwnerName = developOwnerName;
+		}
+
+		public String getSchedulePeriod() {
+			return this.schedulePeriod;
+		}
+
+		public void setSchedulePeriod(String schedulePeriod) {
+			this.schedulePeriod = schedulePeriod;
+		}
+
+		public Boolean getPaused() {
+			return this.paused;
+		}
+
+		public void setPaused(Boolean paused) {
+			this.paused = paused;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getConditionScheduleTemplateName() {
+			return this.conditionScheduleTemplateName;
+		}
+
+		public void setConditionScheduleTemplateName(String conditionScheduleTemplateName) {
+			this.conditionScheduleTemplateName = conditionScheduleTemplateName;
+		}
+
+		public String getOperatorUserId() {
+			return this.operatorUserId;
+		}
+
+		public void setOperatorUserId(String operatorUserId) {
+			this.operatorUserId = operatorUserId;
+		}
+
+		public Long getConditionScheduleTemplateId() {
+			return this.conditionScheduleTemplateId;
+		}
+
+		public void setConditionScheduleTemplateId(Long conditionScheduleTemplateId) {
+			this.conditionScheduleTemplateId = conditionScheduleTemplateId;
+		}
+
+		public String getDataSourceCatalog() {
+			return this.dataSourceCatalog;
+		}
+
+		public void setDataSourceCatalog(String dataSourceCatalog) {
+			this.dataSourceCatalog = dataSourceCatalog;
+		}
+
+		public Boolean getPublished() {
+			return this.published;
+		}
+
+		public void setPublished(Boolean published) {
+			this.published = published;
+		}
+
 		public String getDataSourceId() {
 			return this.dataSourceId;
 		}
@@ -417,12 +561,12 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.dataSourceId = dataSourceId;
 		}
 
-		public Boolean getHasDevNode() {
-			return this.hasDevNode;
+		public List<ContextParam> getContextParamList() {
+			return this.contextParamList;
 		}
 
-		public void setHasDevNode(Boolean hasDevNode) {
-			this.hasDevNode = hasDevNode;
+		public void setContextParamList(List<ContextParam> contextParamList) {
+			this.contextParamList = contextParamList;
 		}
 
 		public List<Param> getParamList() {
@@ -433,20 +577,20 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.paramList = paramList;
 		}
 
+		public List<ConditionScheduleParam> getConditionScheduleParamList() {
+			return this.conditionScheduleParamList;
+		}
+
+		public void setConditionScheduleParamList(List<ConditionScheduleParam> conditionScheduleParamList) {
+			this.conditionScheduleParamList = conditionScheduleParamList;
+		}
+
 		public List<NodeRelation> getUpStreamList() {
 			return this.upStreamList;
 		}
 
 		public void setUpStreamList(List<NodeRelation> upStreamList) {
 			this.upStreamList = upStreamList;
-		}
-
-		public List<String> getOpsOwnerNameList() {
-			return this.opsOwnerNameList;
-		}
-
-		public void setOpsOwnerNameList(List<String> opsOwnerNameList) {
-			this.opsOwnerNameList = opsOwnerNameList;
 		}
 
 		public List<String> getNodeOutputNameList() {
@@ -481,12 +625,20 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.opsOwnerIdList = opsOwnerIdList;
 		}
 
-		public CustomScheduleConfig getCustomScheduleConfig() {
-			return this.customScheduleConfig;
+		public List<String> getOpsOwnerNameList() {
+			return this.opsOwnerNameList;
 		}
 
-		public void setCustomScheduleConfig(CustomScheduleConfig customScheduleConfig) {
-			this.customScheduleConfig = customScheduleConfig;
+		public void setOpsOwnerNameList(List<String> opsOwnerNameList) {
+			this.opsOwnerNameList = opsOwnerNameList;
+		}
+
+		public List<String> getTaskTagList() {
+			return this.taskTagList;
+		}
+
+		public void setTaskTagList(List<String> taskTagList) {
+			this.taskTagList = taskTagList;
 		}
 
 		public SparkClientInfo getSparkClientInfo() {
@@ -495,6 +647,47 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		public void setSparkClientInfo(SparkClientInfo sparkClientInfo) {
 			this.sparkClientInfo = sparkClientInfo;
+		}
+
+		public CustomScheduleConfig getCustomScheduleConfig() {
+			return this.customScheduleConfig;
+		}
+
+		public void setCustomScheduleConfig(CustomScheduleConfig customScheduleConfig) {
+			this.customScheduleConfig = customScheduleConfig;
+		}
+
+		public static class ContextParam {
+
+			private String defaultValue;
+
+			private String desc;
+
+			private String paramKey;
+
+			public String getDefaultValue() {
+				return this.defaultValue;
+			}
+
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
+			}
+
+			public String getDesc() {
+				return this.desc;
+			}
+
+			public void setDesc(String desc) {
+				this.desc = desc;
+			}
+
+			public String getParamKey() {
+				return this.paramKey;
+			}
+
+			public void setParamKey(String paramKey) {
+				this.paramKey = paramKey;
+			}
 		}
 
 		public static class Param {
@@ -520,6 +713,79 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			}
 		}
 
+		public static class ConditionScheduleParam {
+
+			private String scheduleTime;
+
+			private Boolean enable;
+
+			private String cronExpression;
+
+			private String conditionName;
+
+			private Boolean followScheduleParam;
+
+			private Integer nodeStatus;
+
+			private String scheduleConditionJson;
+
+			public String getScheduleTime() {
+				return this.scheduleTime;
+			}
+
+			public void setScheduleTime(String scheduleTime) {
+				this.scheduleTime = scheduleTime;
+			}
+
+			public Boolean getEnable() {
+				return this.enable;
+			}
+
+			public void setEnable(Boolean enable) {
+				this.enable = enable;
+			}
+
+			public String getCronExpression() {
+				return this.cronExpression;
+			}
+
+			public void setCronExpression(String cronExpression) {
+				this.cronExpression = cronExpression;
+			}
+
+			public String getConditionName() {
+				return this.conditionName;
+			}
+
+			public void setConditionName(String conditionName) {
+				this.conditionName = conditionName;
+			}
+
+			public Boolean getFollowScheduleParam() {
+				return this.followScheduleParam;
+			}
+
+			public void setFollowScheduleParam(Boolean followScheduleParam) {
+				this.followScheduleParam = followScheduleParam;
+			}
+
+			public Integer getNodeStatus() {
+				return this.nodeStatus;
+			}
+
+			public void setNodeStatus(Integer nodeStatus) {
+				this.nodeStatus = nodeStatus;
+			}
+
+			public String getScheduleConditionJson() {
+				return this.scheduleConditionJson;
+			}
+
+			public void setScheduleConditionJson(String scheduleConditionJson) {
+				this.scheduleConditionJson = scheduleConditionJson;
+			}
+		}
+
 		public static class NodeRelation {
 
 			private String sourceTableName;
@@ -536,9 +802,9 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 			private Boolean sourceNodeEnabled;
 
-			private String sourceNodeOutputName;
-
 			private String dependStrategy;
+
+			private String sourceNodeOutputName;
 
 			private List<String> fieldList;
 
@@ -600,20 +866,20 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 				this.sourceNodeEnabled = sourceNodeEnabled;
 			}
 
-			public String getSourceNodeOutputName() {
-				return this.sourceNodeOutputName;
-			}
-
-			public void setSourceNodeOutputName(String sourceNodeOutputName) {
-				this.sourceNodeOutputName = sourceNodeOutputName;
-			}
-
 			public String getDependStrategy() {
 				return this.dependStrategy;
 			}
 
 			public void setDependStrategy(String dependStrategy) {
 				this.dependStrategy = dependStrategy;
+			}
+
+			public String getSourceNodeOutputName() {
+				return this.sourceNodeOutputName;
+			}
+
+			public void setSourceNodeOutputName(String sourceNodeOutputName) {
+				this.sourceNodeOutputName = sourceNodeOutputName;
 			}
 
 			public List<String> getFieldList() {
@@ -653,6 +919,19 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 				public void setPeriodOffset(Integer periodOffset) {
 					this.periodOffset = periodOffset;
 				}
+			}
+		}
+
+		public static class SparkClientInfo {
+
+			private String sparkClientVersion;
+
+			public String getSparkClientVersion() {
+				return this.sparkClientVersion;
+			}
+
+			public void setSparkClientVersion(String sparkClientVersion) {
+				this.sparkClientVersion = sparkClientVersion;
 			}
 		}
 
@@ -706,19 +985,6 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 			public void setInterval(Integer interval) {
 				this.interval = interval;
-			}
-		}
-
-		public static class SparkClientInfo {
-
-			private String sparkClientVersion;
-
-			public String getSparkClientVersion() {
-				return this.sparkClientVersion;
-			}
-
-			public void setSparkClientVersion(String sparkClientVersion) {
-				this.sparkClientVersion = sparkClientVersion;
 			}
 		}
 	}

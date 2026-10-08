@@ -37,7 +37,7 @@ public class ExecKgGremlinRequest extends RpcAcsRequest<ExecKgGremlinResponse> {
 
 	private String workspaceId;
 	public ExecKgGremlinRequest() {
-		super("dataphin-public", "2023-06-30", "ExecKgGremlin", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ExecKgGremlin", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

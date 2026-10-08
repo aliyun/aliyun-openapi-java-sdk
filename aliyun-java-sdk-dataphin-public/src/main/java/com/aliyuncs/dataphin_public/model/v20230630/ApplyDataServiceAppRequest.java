@@ -36,7 +36,7 @@ public class ApplyDataServiceAppRequest extends RpcAcsRequest<ApplyDataServiceAp
 
 	private Integer projectId;
 	public ApplyDataServiceAppRequest() {
-		super("dataphin-public", "2023-06-30", "ApplyDataServiceApp", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ApplyDataServiceApp", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

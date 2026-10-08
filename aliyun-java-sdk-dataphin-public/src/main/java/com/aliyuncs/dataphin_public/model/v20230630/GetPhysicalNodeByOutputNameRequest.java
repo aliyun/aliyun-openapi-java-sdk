@@ -33,7 +33,7 @@ public class GetPhysicalNodeByOutputNameRequest extends RpcAcsRequest<GetPhysica
 
 	private String outputName;
 	public GetPhysicalNodeByOutputNameRequest() {
-		super("dataphin-public", "2023-06-30", "GetPhysicalNodeByOutputName", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetPhysicalNodeByOutputName", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

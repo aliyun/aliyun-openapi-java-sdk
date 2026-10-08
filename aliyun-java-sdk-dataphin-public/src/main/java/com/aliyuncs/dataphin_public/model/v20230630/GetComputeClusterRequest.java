@@ -31,7 +31,7 @@ public class GetComputeClusterRequest extends RpcAcsRequest<GetComputeClusterRes
 
 	private Long id;
 	public GetComputeClusterRequest() {
-		super("dataphin-public", "2023-06-30", "GetComputeCluster", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetComputeCluster", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

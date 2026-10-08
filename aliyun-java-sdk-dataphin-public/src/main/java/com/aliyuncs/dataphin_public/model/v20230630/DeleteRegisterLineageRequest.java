@@ -36,7 +36,7 @@ public class DeleteRegisterLineageRequest extends RpcAcsRequest<DeleteRegisterLi
 	@SerializedName("deleteRegisterLineageCommand")
 	private DeleteRegisterLineageCommand deleteRegisterLineageCommand;
 	public DeleteRegisterLineageRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteRegisterLineage", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteRegisterLineage", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

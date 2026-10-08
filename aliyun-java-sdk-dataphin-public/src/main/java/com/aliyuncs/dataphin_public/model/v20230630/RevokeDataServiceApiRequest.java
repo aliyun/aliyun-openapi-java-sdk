@@ -36,7 +36,7 @@ public class RevokeDataServiceApiRequest extends RpcAcsRequest<RevokeDataService
 
 	private Integer projectId;
 	public RevokeDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "RevokeDataServiceApi", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RevokeDataServiceApi", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

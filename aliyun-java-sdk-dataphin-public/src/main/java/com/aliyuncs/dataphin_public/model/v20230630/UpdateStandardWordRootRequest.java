@@ -34,7 +34,7 @@ public class UpdateStandardWordRootRequest extends RpcAcsRequest<UpdateStandardW
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateStandardWordRoot", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateStandardWordRoot", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

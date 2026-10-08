@@ -33,7 +33,7 @@ public class DeleteAdHocFileRequest extends RpcAcsRequest<DeleteAdHocFileRespons
 
 	private Long fileId;
 	public DeleteAdHocFileRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteAdHocFile", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteAdHocFile", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

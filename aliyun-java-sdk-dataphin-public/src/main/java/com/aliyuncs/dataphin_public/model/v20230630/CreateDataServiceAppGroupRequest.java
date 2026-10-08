@@ -31,7 +31,7 @@ public class CreateDataServiceAppGroupRequest extends RpcAcsRequest<CreateDataSe
 
 	private String groupName;
 	public CreateDataServiceAppGroupRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataServiceAppGroup", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDataServiceAppGroup", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

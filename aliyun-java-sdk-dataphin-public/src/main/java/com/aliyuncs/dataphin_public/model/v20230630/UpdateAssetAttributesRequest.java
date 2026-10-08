@@ -35,7 +35,7 @@ public class UpdateAssetAttributesRequest extends RpcAcsRequest<UpdateAssetAttri
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateAssetAttributesRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateAssetAttributes", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateAssetAttributes", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

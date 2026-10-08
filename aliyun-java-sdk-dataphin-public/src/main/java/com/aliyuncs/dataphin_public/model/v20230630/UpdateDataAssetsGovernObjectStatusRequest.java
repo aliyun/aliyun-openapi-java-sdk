@@ -35,7 +35,7 @@ public class UpdateDataAssetsGovernObjectStatusRequest extends RpcAcsRequest<Upd
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDataAssetsGovernObjectStatusRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataAssetsGovernObjectStatus", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDataAssetsGovernObjectStatus", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class ListDatasetsRequest extends RpcAcsRequest<ListDatasetsResponse> {
 	@SerializedName("datasetQuery")
 	private DatasetQuery datasetQuery;
 	public ListDatasetsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDatasets", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListDatasets", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

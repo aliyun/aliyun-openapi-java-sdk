@@ -34,7 +34,7 @@ public class TransferOwnershipForAllObjectRequest extends RpcAcsRequest<Transfer
 	@SerializedName("privilegeTransferRecord")
 	private PrivilegeTransferRecord privilegeTransferRecord;
 	public TransferOwnershipForAllObjectRequest() {
-		super("dataphin-public", "2023-06-30", "TransferOwnershipForAllObject", "Dataphin");
+		super("dataphin-public", "2023-06-30", "TransferOwnershipForAllObject", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

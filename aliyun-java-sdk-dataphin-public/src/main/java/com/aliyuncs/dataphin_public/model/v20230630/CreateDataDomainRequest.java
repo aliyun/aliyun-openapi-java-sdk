@@ -34,7 +34,7 @@ public class CreateDataDomainRequest extends RpcAcsRequest<CreateDataDomainRespo
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateDataDomainRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataDomain", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDataDomain", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

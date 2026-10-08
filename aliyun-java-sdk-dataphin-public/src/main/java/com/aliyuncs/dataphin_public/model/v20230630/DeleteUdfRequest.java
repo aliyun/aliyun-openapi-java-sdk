@@ -35,7 +35,7 @@ public class DeleteUdfRequest extends RpcAcsRequest<DeleteUdfResponse> {
 
 	private Long projectId;
 	public DeleteUdfRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteUdf", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteUdf", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

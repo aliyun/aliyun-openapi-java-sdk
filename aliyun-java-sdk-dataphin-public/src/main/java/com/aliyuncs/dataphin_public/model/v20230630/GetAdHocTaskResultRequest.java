@@ -35,7 +35,7 @@ public class GetAdHocTaskResultRequest extends RpcAcsRequest<GetAdHocTaskResultR
 
 	private String taskId;
 	public GetAdHocTaskResultRequest() {
-		super("dataphin-public", "2023-06-30", "GetAdHocTaskResult", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAdHocTaskResult", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

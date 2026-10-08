@@ -34,7 +34,7 @@ public class ListAssetDirectoriesRequest extends RpcAcsRequest<ListAssetDirector
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAssetDirectoriesRequest() {
-		super("dataphin-public", "2023-06-30", "ListAssetDirectories", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListAssetDirectories", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class UpdateDevProdProjectRequest extends RpcAcsRequest<UpdateDevProdProj
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDevProdProjectRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDevProdProject", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDevProdProject", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

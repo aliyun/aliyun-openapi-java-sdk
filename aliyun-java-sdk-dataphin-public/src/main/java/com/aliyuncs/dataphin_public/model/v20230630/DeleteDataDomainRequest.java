@@ -33,7 +33,7 @@ public class DeleteDataDomainRequest extends RpcAcsRequest<DeleteDataDomainRespo
 
 	private Long bizUnitId;
 	public DeleteDataDomainRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataDomain", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteDataDomain", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

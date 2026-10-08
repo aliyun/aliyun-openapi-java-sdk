@@ -33,7 +33,7 @@ public class GetDirectoryTreeRequest extends RpcAcsRequest<GetDirectoryTreeRespo
 
 	private Long projectId;
 	public GetDirectoryTreeRequest() {
-		super("dataphin-public", "2023-06-30", "GetDirectoryTree", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDirectoryTree", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

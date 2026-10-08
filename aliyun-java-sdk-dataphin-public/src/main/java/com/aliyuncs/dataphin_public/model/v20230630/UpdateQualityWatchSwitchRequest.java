@@ -35,7 +35,7 @@ public class UpdateQualityWatchSwitchRequest extends RpcAcsRequest<UpdateQuality
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateQualityWatchSwitchRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateQualityWatchSwitch", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateQualityWatchSwitch", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

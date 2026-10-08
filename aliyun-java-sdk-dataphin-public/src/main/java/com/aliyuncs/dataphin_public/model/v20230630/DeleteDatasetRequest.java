@@ -33,7 +33,7 @@ public class DeleteDatasetRequest extends RpcAcsRequest<DeleteDatasetResponse> {
 
 	private Long projectId;
 	public DeleteDatasetRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataset", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteDataset", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class AddTenantMembersRequest extends RpcAcsRequest<AddTenantMembersRespo
 	@SerializedName("addCommand")
 	private AddCommand addCommand;
 	public AddTenantMembersRequest() {
-		super("dataphin-public", "2023-06-30", "AddTenantMembers", "Dataphin");
+		super("dataphin-public", "2023-06-30", "AddTenantMembers", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

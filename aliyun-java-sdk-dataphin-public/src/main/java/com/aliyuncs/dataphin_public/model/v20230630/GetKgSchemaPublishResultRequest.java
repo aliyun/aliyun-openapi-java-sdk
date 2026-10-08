@@ -33,7 +33,7 @@ public class GetKgSchemaPublishResultRequest extends RpcAcsRequest<GetKgSchemaPu
 
 	private String workspaceId;
 	public GetKgSchemaPublishResultRequest() {
-		super("dataphin-public", "2023-06-30", "GetKgSchemaPublishResult", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetKgSchemaPublishResult", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

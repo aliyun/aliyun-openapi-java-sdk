@@ -34,7 +34,7 @@ public class ListApiByAppRequest extends RpcAcsRequest<ListApiByAppResponse> {
 	@SerializedName("pageQuery")
 	private PageQuery pageQuery;
 	public ListApiByAppRequest() {
-		super("dataphin-public", "2023-06-30", "ListApiByApp", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListApiByApp", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

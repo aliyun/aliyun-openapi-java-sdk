@@ -37,7 +37,7 @@ public class GrantDataServiceApiRequest extends RpcAcsRequest<GrantDataServiceAp
 
 	private Integer projectId;
 	public GrantDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "GrantDataServiceApi", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GrantDataServiceApi", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

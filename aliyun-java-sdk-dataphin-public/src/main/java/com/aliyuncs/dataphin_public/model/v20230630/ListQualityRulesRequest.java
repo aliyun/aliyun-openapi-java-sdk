@@ -35,7 +35,7 @@ public class ListQualityRulesRequest extends RpcAcsRequest<ListQualityRulesRespo
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListQualityRulesRequest() {
-		super("dataphin-public", "2023-06-30", "ListQualityRules", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListQualityRules", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

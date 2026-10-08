@@ -34,7 +34,7 @@ public class DeleteBizMetricRequest extends RpcAcsRequest<DeleteBizMetricRespons
 	@SerializedName("deleteBizMetricCommand")
 	private DeleteBizMetricCommand deleteBizMetricCommand;
 	public DeleteBizMetricRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteBizMetric", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteBizMetric", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

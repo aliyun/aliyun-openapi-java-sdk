@@ -31,7 +31,7 @@ public class GetTransferInfoRequest extends RpcAcsRequest<GetTransferInfoRespons
 
 	private Long proposalId;
 	public GetTransferInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetTransferInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetTransferInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

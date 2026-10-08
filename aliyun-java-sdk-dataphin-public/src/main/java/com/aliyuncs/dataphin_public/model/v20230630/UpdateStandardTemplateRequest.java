@@ -35,7 +35,7 @@ public class UpdateStandardTemplateRequest extends RpcAcsRequest<UpdateStandardT
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateStandardTemplateRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateStandardTemplate", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateStandardTemplate", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class UpdateBatchTaskUdfLineagesRequest extends RpcAcsRequest<UpdateBatch
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBatchTaskUdfLineagesRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBatchTaskUdfLineages", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateBatchTaskUdfLineages", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class UpdateFileNameRequest extends RpcAcsRequest<UpdateFileNameResponse>
 
 	private Long fileId;
 	public UpdateFileNameRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateFileName", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateFileName", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

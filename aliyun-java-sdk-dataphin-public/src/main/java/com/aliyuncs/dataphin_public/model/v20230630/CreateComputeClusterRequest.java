@@ -35,7 +35,7 @@ public class CreateComputeClusterRequest extends RpcAcsRequest<CreateComputeClus
 	@SerializedName("clusterConfig")
 	private ClusterConfig clusterConfig;
 	public CreateComputeClusterRequest() {
-		super("dataphin-public", "2023-06-30", "CreateComputeCluster", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateComputeCluster", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

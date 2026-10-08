@@ -31,7 +31,7 @@ public class CheckDataSourceConnectivityByIdRequest extends RpcAcsRequest<CheckD
 
 	private Long id;
 	public CheckDataSourceConnectivityByIdRequest() {
-		super("dataphin-public", "2023-06-30", "CheckDataSourceConnectivityById", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CheckDataSourceConnectivityById", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -38,7 +38,7 @@ public class CreateDatasetRequest extends RpcAcsRequest<CreateDatasetResponse> {
 
 	private String projectId;
 	public CreateDatasetRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataset", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDataset", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -29,7 +29,7 @@ public class ListBizUnitsRequest extends RpcAcsRequest<ListBizUnitsResponse> {
 
 	private String opUserId;
 	public ListBizUnitsRequest() {
-		super("dataphin-public", "2023-06-30", "ListBizUnits", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListBizUnits", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

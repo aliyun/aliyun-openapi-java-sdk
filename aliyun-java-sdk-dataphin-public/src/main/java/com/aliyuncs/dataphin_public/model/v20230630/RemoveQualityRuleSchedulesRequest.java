@@ -35,7 +35,7 @@ public class RemoveQualityRuleSchedulesRequest extends RpcAcsRequest<RemoveQuali
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 	public RemoveQualityRuleSchedulesRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveQualityRuleSchedules", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RemoveQualityRuleSchedules", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

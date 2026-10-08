@@ -34,7 +34,7 @@ public class OnlineBizEntityRequest extends RpcAcsRequest<OnlineBizEntityRespons
 	@SerializedName("onlineCommand")
 	private OnlineCommand onlineCommand;
 	public OnlineBizEntityRequest() {
-		super("dataphin-public", "2023-06-30", "OnlineBizEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "OnlineBizEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

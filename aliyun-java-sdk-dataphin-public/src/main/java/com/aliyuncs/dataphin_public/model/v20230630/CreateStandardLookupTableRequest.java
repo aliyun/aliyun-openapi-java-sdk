@@ -35,7 +35,7 @@ public class CreateStandardLookupTableRequest extends RpcAcsRequest<CreateStanda
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardLookupTable", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateStandardLookupTable", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

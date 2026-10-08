@@ -36,7 +36,7 @@ public class AddRegisterLineageRequest extends RpcAcsRequest<AddRegisterLineageR
 	@SerializedName("addRegisterLineageCommand")
 	private AddRegisterLineageCommand addRegisterLineageCommand;
 	public AddRegisterLineageRequest() {
-		super("dataphin-public", "2023-06-30", "AddRegisterLineage", "Dataphin");
+		super("dataphin-public", "2023-06-30", "AddRegisterLineage", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -31,7 +31,7 @@ public class GetUserGroupRequest extends RpcAcsRequest<GetUserGroupResponse> {
 
 	private String userGroupId;
 	public GetUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "GetUserGroup", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetUserGroup", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class GetDataServiceApiErrorImpactRequest extends RpcAcsRequest<GetDataSe
 
 	private Integer projectId;
 	public GetDataServiceApiErrorImpactRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiErrorImpact", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiErrorImpact", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

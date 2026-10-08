@@ -35,7 +35,7 @@ public class GetUsersRequest extends RpcAcsRequest<GetUsersResponse> {
 	@SerializedName("userIdList")
 	private List<String> userIdList;
 	public GetUsersRequest() {
-		super("dataphin-public", "2023-06-30", "GetUsers", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetUsers", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

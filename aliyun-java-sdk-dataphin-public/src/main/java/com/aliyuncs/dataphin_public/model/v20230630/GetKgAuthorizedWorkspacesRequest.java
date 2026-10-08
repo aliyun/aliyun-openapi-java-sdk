@@ -29,7 +29,7 @@ public class GetKgAuthorizedWorkspacesRequest extends RpcAcsRequest<GetKgAuthori
 
 	private String opUserId;
 	public GetKgAuthorizedWorkspacesRequest() {
-		super("dataphin-public", "2023-06-30", "GetKgAuthorizedWorkspaces", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetKgAuthorizedWorkspaces", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

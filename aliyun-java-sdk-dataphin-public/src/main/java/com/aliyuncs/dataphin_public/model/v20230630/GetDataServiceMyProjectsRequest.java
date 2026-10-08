@@ -29,7 +29,7 @@ public class GetDataServiceMyProjectsRequest extends RpcAcsRequest<GetDataServic
 
 	private String opUserId;
 	public GetDataServiceMyProjectsRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceMyProjects", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceMyProjects", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

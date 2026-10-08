@@ -35,7 +35,7 @@ public class DeleteKgRelationRequest extends RpcAcsRequest<DeleteKgRelationRespo
 
 	private String workspaceId;
 	public DeleteKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteKgRelation", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteKgRelation", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -31,7 +31,7 @@ public class GetProjectByNameRequest extends RpcAcsRequest<GetProjectByNameRespo
 
 	private String name;
 	public GetProjectByNameRequest() {
-		super("dataphin-public", "2023-06-30", "GetProjectByName", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetProjectByName", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

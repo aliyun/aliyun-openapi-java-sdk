@@ -35,7 +35,7 @@ public class UpdateTenantComputeEngineRequest extends RpcAcsRequest<UpdateTenant
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateTenantComputeEngineRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateTenantComputeEngine", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateTenantComputeEngine", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

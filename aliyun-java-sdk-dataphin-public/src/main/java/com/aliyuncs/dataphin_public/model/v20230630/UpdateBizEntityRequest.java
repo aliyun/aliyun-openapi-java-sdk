@@ -35,7 +35,7 @@ public class UpdateBizEntityRequest extends RpcAcsRequest<UpdateBizEntityRespons
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBizEntityRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBizEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateBizEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

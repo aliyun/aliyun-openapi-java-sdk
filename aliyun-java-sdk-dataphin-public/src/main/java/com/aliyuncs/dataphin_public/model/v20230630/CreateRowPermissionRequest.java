@@ -35,7 +35,7 @@ public class CreateRowPermissionRequest extends RpcAcsRequest<CreateRowPermissio
 	@SerializedName("createRowPermissionCommand")
 	private CreateRowPermissionCommand createRowPermissionCommand;
 	public CreateRowPermissionRequest() {
-		super("dataphin-public", "2023-06-30", "CreateRowPermission", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateRowPermission", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

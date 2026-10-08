@@ -37,7 +37,7 @@ public class RemoveProjectMemberRequest extends RpcAcsRequest<RemoveProjectMembe
 
 	private Long id;
 	public RemoveProjectMemberRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveProjectMember", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RemoveProjectMember", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

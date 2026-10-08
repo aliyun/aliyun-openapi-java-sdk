@@ -34,7 +34,7 @@ public class ListRowPermissionByUserIdRequest extends RpcAcsRequest<ListRowPermi
 	@SerializedName("listRowPermissionByUserIdQuery")
 	private ListRowPermissionByUserIdQuery listRowPermissionByUserIdQuery;
 	public ListRowPermissionByUserIdRequest() {
-		super("dataphin-public", "2023-06-30", "ListRowPermissionByUserId", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListRowPermissionByUserId", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

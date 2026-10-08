@@ -31,7 +31,7 @@ public class GetQualityArchiveTableProgressRequest extends RpcAcsRequest<GetQual
 
 	private String progressId;
 	public GetQualityArchiveTableProgressRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityArchiveTableProgress", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetQualityArchiveTableProgress", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

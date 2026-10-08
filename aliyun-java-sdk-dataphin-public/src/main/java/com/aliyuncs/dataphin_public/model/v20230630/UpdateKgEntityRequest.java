@@ -37,7 +37,7 @@ public class UpdateKgEntityRequest extends RpcAcsRequest<UpdateKgEntityResponse>
 
 	private String workspaceId;
 	public UpdateKgEntityRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateKgEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateKgEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

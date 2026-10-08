@@ -31,7 +31,7 @@ public class DeleteStandardWordRootRequest extends RpcAcsRequest<DeleteStandardW
 
 	private String name;
 	public DeleteStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardWordRoot", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteStandardWordRoot", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

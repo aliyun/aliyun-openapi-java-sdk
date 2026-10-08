@@ -35,7 +35,7 @@ public class GetDataServiceApiCallTrendRequest extends RpcAcsRequest<GetDataServ
 
 	private Integer projectId;
 	public GetDataServiceApiCallTrendRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallTrend", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallTrend", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

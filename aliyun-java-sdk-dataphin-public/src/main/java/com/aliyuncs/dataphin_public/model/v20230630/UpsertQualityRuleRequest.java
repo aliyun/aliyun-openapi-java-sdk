@@ -35,7 +35,7 @@ public class UpsertQualityRuleRequest extends RpcAcsRequest<UpsertQualityRuleRes
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityRuleRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualityRule", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpsertQualityRule", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

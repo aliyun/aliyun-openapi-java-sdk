@@ -31,7 +31,7 @@ public class GetDataDomainInfoRequest extends RpcAcsRequest<GetDataDomainInfoRes
 
 	private Long id;
 	public GetDataDomainInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataDomainInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataDomainInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

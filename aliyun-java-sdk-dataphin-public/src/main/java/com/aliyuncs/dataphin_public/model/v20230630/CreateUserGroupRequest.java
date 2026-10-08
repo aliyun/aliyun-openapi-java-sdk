@@ -35,7 +35,7 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "CreateUserGroup", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateUserGroup", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo;
+import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParam;
+import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.ContextParam;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.NodeRelation;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.NodeRelation.DependPeriod;
@@ -39,43 +41,50 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 
 		TaskInfo taskInfo = new TaskInfo();
 		taskInfo.setScheduleType(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.ScheduleType"));
-		taskInfo.setOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OwnerName"));
-		taskInfo.setNodeName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeName"));
+		taskInfo.setConditionScheduleEnable(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleEnable"));
+		taskInfo.setResourceGroupId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ResourceGroupId"));
 		taskInfo.setDataSourceSchema(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceSchema"));
-		taskInfo.setDagId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DagId"));
+		taskInfo.setNodeName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeName"));
+		taskInfo.setBaseScheduleTemplateName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.BaseScheduleTemplateName"));
+		taskInfo.setDevelopOwnerId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerId"));
 		taskInfo.setName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.Name"));
 		taskInfo.setRemark(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.Remark"));
-		taskInfo.setDevelopOwnerId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerId"));
+		taskInfo.setValidEndDate(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ValidEndDate"));
 		taskInfo.setNodeDescription(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeDescription"));
-		taskInfo.setDevelopOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerName"));
-		taskInfo.setSchedulePeriod(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.SchedulePeriod"));
 		taskInfo.setTaskType(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.TaskType"));
 		taskInfo.setRerunable(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.Rerunable"));
+		taskInfo.setBaseScheduleTemplateId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.BaseScheduleTemplateId"));
 		taskInfo.setCronExpression(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.CronExpression"));
-		taskInfo.setPaused(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.Paused"));
-		taskInfo.setStatus(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.Status"));
 		taskInfo.setOpsOwnerId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerId"));
+		taskInfo.setStatus(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.Status"));
+		taskInfo.setValidStartDate(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ValidStartDate"));
 		taskInfo.setPriority(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.Priority"));
 		taskInfo.setNodeFrom(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeFrom"));
-		taskInfo.setProjectId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.ProjectId"));
-		taskInfo.setOperatorUserId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OperatorUserId"));
 		taskInfo.setCode(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.Code"));
-		taskInfo.setDataSourceCatalog(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceCatalog"));
 		taskInfo.setOwnerUserId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OwnerUserId"));
 		taskInfo.setOpsOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerName"));
 		taskInfo.setNeedPublish(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.NeedPublish"));
 		taskInfo.setNodeId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.NodeId"));
-		taskInfo.setPublished(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.Published"));
 		taskInfo.setFileId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.FileId"));
+		taskInfo.setProdHttpPath(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ProdHttpPath"));
+		taskInfo.setDevResourceGroupId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevResourceGroupId"));
 		taskInfo.setNodeStatus(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.NodeStatus"));
-		taskInfo.setDataSourceId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceId"));
 		taskInfo.setHasDevNode(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.HasDevNode"));
-
-		List<String> opsOwnerNameList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList.Length"); i++) {
-			opsOwnerNameList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList["+ i +"]"));
-		}
-		taskInfo.setOpsOwnerNameList(opsOwnerNameList);
+		taskInfo.setResourceGroupName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ResourceGroupName"));
+		taskInfo.setOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OwnerName"));
+		taskInfo.setDevHttpPath(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevHttpPath"));
+		taskInfo.setDagId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DagId"));
+		taskInfo.setDevResourceGroupName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevResourceGroupName"));
+		taskInfo.setDevelopOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevelopOwnerName"));
+		taskInfo.setSchedulePeriod(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.SchedulePeriod"));
+		taskInfo.setPaused(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.Paused"));
+		taskInfo.setProjectId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.ProjectId"));
+		taskInfo.setConditionScheduleTemplateName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleTemplateName"));
+		taskInfo.setOperatorUserId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OperatorUserId"));
+		taskInfo.setConditionScheduleTemplateId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleTemplateId"));
+		taskInfo.setDataSourceCatalog(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceCatalog"));
+		taskInfo.setPublished(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.Published"));
+		taskInfo.setDataSourceId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DataSourceId"));
 
 		List<String> nodeOutputNameList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.NodeOutputNameList.Length"); i++) {
@@ -101,6 +110,22 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		}
 		taskInfo.setOpsOwnerIdList(opsOwnerIdList);
 
+		List<String> opsOwnerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList.Length"); i++) {
+			opsOwnerNameList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OpsOwnerNameList["+ i +"]"));
+		}
+		taskInfo.setOpsOwnerNameList(opsOwnerNameList);
+
+		List<String> taskTagList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.TaskTagList.Length"); i++) {
+			taskTagList.add(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.TaskTagList["+ i +"]"));
+		}
+		taskInfo.setTaskTagList(taskTagList);
+
+		SparkClientInfo sparkClientInfo = new SparkClientInfo();
+		sparkClientInfo.setSparkClientVersion(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.SparkClientInfo.SparkClientVersion"));
+		taskInfo.setSparkClientInfo(sparkClientInfo);
+
 		CustomScheduleConfig customScheduleConfig = new CustomScheduleConfig();
 		customScheduleConfig.setIntervalUnit(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.IntervalUnit"));
 		customScheduleConfig.setEndTime(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.EndTime"));
@@ -109,9 +134,16 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		customScheduleConfig.setInterval(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.Interval"));
 		taskInfo.setCustomScheduleConfig(customScheduleConfig);
 
-		SparkClientInfo sparkClientInfo = new SparkClientInfo();
-		sparkClientInfo.setSparkClientVersion(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.SparkClientInfo.SparkClientVersion"));
-		taskInfo.setSparkClientInfo(sparkClientInfo);
+		List<ContextParam> contextParamList = new ArrayList<ContextParam>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.ContextParamList.Length"); i++) {
+			ContextParam contextParam = new ContextParam();
+			contextParam.setDefaultValue(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ContextParamList["+ i +"].DefaultValue"));
+			contextParam.setDesc(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ContextParamList["+ i +"].Desc"));
+			contextParam.setParamKey(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ContextParamList["+ i +"].ParamKey"));
+
+			contextParamList.add(contextParam);
+		}
+		taskInfo.setContextParamList(contextParamList);
 
 		List<Param> paramList = new ArrayList<Param>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.ParamList.Length"); i++) {
@@ -123,6 +155,21 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		}
 		taskInfo.setParamList(paramList);
 
+		List<ConditionScheduleParam> conditionScheduleParamList = new ArrayList<ConditionScheduleParam>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList.Length"); i++) {
+			ConditionScheduleParam conditionScheduleParam = new ConditionScheduleParam();
+			conditionScheduleParam.setScheduleTime(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].ScheduleTime"));
+			conditionScheduleParam.setEnable(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].Enable"));
+			conditionScheduleParam.setCronExpression(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].CronExpression"));
+			conditionScheduleParam.setConditionName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].ConditionName"));
+			conditionScheduleParam.setFollowScheduleParam(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].FollowScheduleParam"));
+			conditionScheduleParam.setNodeStatus(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].NodeStatus"));
+			conditionScheduleParam.setScheduleConditionJson(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ConditionScheduleParamList["+ i +"].ScheduleConditionJson"));
+
+			conditionScheduleParamList.add(conditionScheduleParam);
+		}
+		taskInfo.setConditionScheduleParamList(conditionScheduleParamList);
+
 		List<NodeRelation> upStreamList = new ArrayList<NodeRelation>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList.Length"); i++) {
 			NodeRelation nodeRelation = new NodeRelation();
@@ -133,8 +180,8 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 			nodeRelation.setSourceNodeName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeName"));
 			nodeRelation.setSourceNodeUserName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeUserName"));
 			nodeRelation.setSourceNodeEnabled(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeEnabled"));
-			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
 			nodeRelation.setDependStrategy(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].DependStrategy"));
+			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
 
 			List<String> fieldList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.UpStreamList["+ i +"].FieldList.Length"); j++) {

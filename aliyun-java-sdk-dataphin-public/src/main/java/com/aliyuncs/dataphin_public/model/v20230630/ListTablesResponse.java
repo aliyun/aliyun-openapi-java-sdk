@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTablesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -37,20 +37,20 @@ public class ListTablesResponse extends AcsResponse {
 
 	private PageResult pageResult;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -119,9 +119,9 @@ public class ListTablesResponse extends AcsResponse {
 
 			private String projectName;
 
-			private String guid;
-
 			private String creator;
+
+			private String guid;
 
 			private String env;
 
@@ -135,9 +135,9 @@ public class ListTablesResponse extends AcsResponse {
 
 			private String displayName;
 
-			private String lastDmlTime;
-
 			private String bizUnitName;
+
+			private String lastDmlTime;
 
 			private Boolean isBasicMode;
 
@@ -211,20 +211,20 @@ public class ListTablesResponse extends AcsResponse {
 				this.projectName = projectName;
 			}
 
-			public String getGuid() {
-				return this.guid;
-			}
-
-			public void setGuid(String guid) {
-				this.guid = guid;
-			}
-
 			public String getCreator() {
 				return this.creator;
 			}
 
 			public void setCreator(String creator) {
 				this.creator = creator;
+			}
+
+			public String getGuid() {
+				return this.guid;
+			}
+
+			public void setGuid(String guid) {
+				this.guid = guid;
 			}
 
 			public String getEnv() {
@@ -275,20 +275,20 @@ public class ListTablesResponse extends AcsResponse {
 				this.displayName = displayName;
 			}
 
-			public String getLastDmlTime() {
-				return this.lastDmlTime;
-			}
-
-			public void setLastDmlTime(String lastDmlTime) {
-				this.lastDmlTime = lastDmlTime;
-			}
-
 			public String getBizUnitName() {
 				return this.bizUnitName;
 			}
 
 			public void setBizUnitName(String bizUnitName) {
 				this.bizUnitName = bizUnitName;
+			}
+
+			public String getLastDmlTime() {
+				return this.lastDmlTime;
+			}
+
+			public void setLastDmlTime(String lastDmlTime) {
+				this.lastDmlTime = lastDmlTime;
 			}
 
 			public Boolean getIsBasicMode() {

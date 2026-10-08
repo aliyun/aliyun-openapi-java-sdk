@@ -34,7 +34,7 @@ public class DeleteSecurityClassifyCatalogRequest extends RpcAcsRequest<DeleteSe
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteSecurityClassifyCatalogRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteSecurityClassifyCatalog", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteSecurityClassifyCatalog", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

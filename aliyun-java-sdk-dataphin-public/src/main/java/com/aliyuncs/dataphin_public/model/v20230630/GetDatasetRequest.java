@@ -33,7 +33,7 @@ public class GetDatasetRequest extends RpcAcsRequest<GetDatasetResponse> {
 
 	private Long projectId;
 	public GetDatasetRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataset", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataset", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

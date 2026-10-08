@@ -31,7 +31,7 @@ public class DeleteStandardSetRequest extends RpcAcsRequest<DeleteStandardSetRes
 
 	private Long id;
 	public DeleteStandardSetRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardSet", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteStandardSet", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -36,7 +36,7 @@ public class GetPipelineAsyncResultRequest extends RpcAcsRequest<GetPipelineAsyn
 	@SerializedName("context")
 	private Context context;
 	public GetPipelineAsyncResultRequest() {
-		super("dataphin-public", "2023-06-30", "GetPipelineAsyncResult", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetPipelineAsyncResult", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

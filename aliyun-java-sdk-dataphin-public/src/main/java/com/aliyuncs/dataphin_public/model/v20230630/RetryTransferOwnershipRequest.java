@@ -34,7 +34,7 @@ public class RetryTransferOwnershipRequest extends RpcAcsRequest<RetryTransferOw
 	@SerializedName("privilegeTransferRecord")
 	private PrivilegeTransferRecord privilegeTransferRecord;
 	public RetryTransferOwnershipRequest() {
-		super("dataphin-public", "2023-06-30", "RetryTransferOwnership", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RetryTransferOwnership", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

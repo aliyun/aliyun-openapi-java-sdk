@@ -34,7 +34,7 @@ public class ListApprovalTasksByUserRequest extends RpcAcsRequest<ListApprovalTa
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListApprovalTasksByUserRequest() {
-		super("dataphin-public", "2023-06-30", "ListApprovalTasksByUser", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListApprovalTasksByUser", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

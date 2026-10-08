@@ -35,7 +35,7 @@ public class UpsertQualityScheduleRequest extends RpcAcsRequest<UpsertQualitySch
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityScheduleRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualitySchedule", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpsertQualitySchedule", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

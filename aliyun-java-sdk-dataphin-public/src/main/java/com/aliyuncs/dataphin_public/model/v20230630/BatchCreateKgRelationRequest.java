@@ -37,7 +37,7 @@ public class BatchCreateKgRelationRequest extends RpcAcsRequest<BatchCreateKgRel
 
 	private String workspaceId;
 	public BatchCreateKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "BatchCreateKgRelation", "Dataphin");
+		super("dataphin-public", "2023-06-30", "BatchCreateKgRelation", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

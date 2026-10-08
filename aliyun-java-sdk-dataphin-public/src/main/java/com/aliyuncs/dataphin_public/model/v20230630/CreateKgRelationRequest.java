@@ -37,7 +37,7 @@ public class CreateKgRelationRequest extends RpcAcsRequest<CreateKgRelationRespo
 
 	private String workspaceId;
 	public CreateKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "CreateKgRelation", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateKgRelation", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

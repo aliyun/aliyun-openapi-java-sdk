@@ -33,7 +33,7 @@ public class GetUdfRequest extends RpcAcsRequest<GetUdfResponse> {
 
 	private Long projectId;
 	public GetUdfRequest() {
-		super("dataphin-public", "2023-06-30", "GetUdf", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetUdf", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -37,7 +37,7 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private String env;
 	public ListNodesRequest() {
-		super("dataphin-public", "2023-06-30", "ListNodes", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListNodes", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

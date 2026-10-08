@@ -34,7 +34,7 @@ public class DeleteSecurityLevelRequest extends RpcAcsRequest<DeleteSecurityLeve
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteSecurityLevelRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteSecurityLevel", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteSecurityLevel", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

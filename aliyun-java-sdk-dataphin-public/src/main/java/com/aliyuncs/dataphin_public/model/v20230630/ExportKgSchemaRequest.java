@@ -35,7 +35,7 @@ public class ExportKgSchemaRequest extends RpcAcsRequest<ExportKgSchemaResponse>
 
 	private String workspaceId;
 	public ExportKgSchemaRequest() {
-		super("dataphin-public", "2023-06-30", "ExportKgSchema", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ExportKgSchema", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

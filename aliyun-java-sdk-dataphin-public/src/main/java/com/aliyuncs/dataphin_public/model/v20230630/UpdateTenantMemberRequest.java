@@ -35,7 +35,7 @@ public class UpdateTenantMemberRequest extends RpcAcsRequest<UpdateTenantMemberR
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateTenantMemberRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateTenantMember", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateTenantMember", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

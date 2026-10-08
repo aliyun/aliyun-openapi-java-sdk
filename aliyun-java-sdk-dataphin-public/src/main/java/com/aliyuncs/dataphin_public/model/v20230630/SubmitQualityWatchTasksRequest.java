@@ -35,7 +35,7 @@ public class SubmitQualityWatchTasksRequest extends RpcAcsRequest<SubmitQualityW
 	@SerializedName("submitCommand")
 	private SubmitCommand submitCommand;
 	public SubmitQualityWatchTasksRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitQualityWatchTasks", "Dataphin");
+		super("dataphin-public", "2023-06-30", "SubmitQualityWatchTasks", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

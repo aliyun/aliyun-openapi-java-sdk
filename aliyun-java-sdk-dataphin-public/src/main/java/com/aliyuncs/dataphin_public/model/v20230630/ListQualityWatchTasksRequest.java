@@ -35,7 +35,7 @@ public class ListQualityWatchTasksRequest extends RpcAcsRequest<ListQualityWatch
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListQualityWatchTasksRequest() {
-		super("dataphin-public", "2023-06-30", "ListQualityWatchTasks", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListQualityWatchTasks", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

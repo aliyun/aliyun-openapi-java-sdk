@@ -35,7 +35,7 @@ public class DeleteStandardValidMappingRequest extends RpcAcsRequest<DeleteStand
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteStandardValidMappingRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardValidMapping", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteStandardValidMapping", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

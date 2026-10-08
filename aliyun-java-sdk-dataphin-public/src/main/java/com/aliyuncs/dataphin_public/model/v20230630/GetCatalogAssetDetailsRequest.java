@@ -34,7 +34,7 @@ public class GetCatalogAssetDetailsRequest extends RpcAcsRequest<GetCatalogAsset
 	@SerializedName("getCatalogAssetDetailsQuery")
 	private GetCatalogAssetDetailsQuery getCatalogAssetDetailsQuery;
 	public GetCatalogAssetDetailsRequest() {
-		super("dataphin-public", "2023-06-30", "GetCatalogAssetDetails", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetCatalogAssetDetails", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

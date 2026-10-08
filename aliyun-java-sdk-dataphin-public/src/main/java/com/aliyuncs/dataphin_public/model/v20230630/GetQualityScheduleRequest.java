@@ -31,7 +31,7 @@ public class GetQualityScheduleRequest extends RpcAcsRequest<GetQualityScheduleR
 
 	private Long id;
 	public GetQualityScheduleRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualitySchedule", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetQualitySchedule", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

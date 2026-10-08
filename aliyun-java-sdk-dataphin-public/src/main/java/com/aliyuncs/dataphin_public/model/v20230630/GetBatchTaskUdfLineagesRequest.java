@@ -33,7 +33,7 @@ public class GetBatchTaskUdfLineagesRequest extends RpcAcsRequest<GetBatchTaskUd
 
 	private Long fileId;
 	public GetBatchTaskUdfLineagesRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskUdfLineages", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskUdfLineages", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

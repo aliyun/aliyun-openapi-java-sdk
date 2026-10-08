@@ -33,7 +33,7 @@ public class GetBizEntityInfoRequest extends RpcAcsRequest<GetBizEntityInfoRespo
 
 	private Long id;
 	public GetBizEntityInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetBizEntityInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBizEntityInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

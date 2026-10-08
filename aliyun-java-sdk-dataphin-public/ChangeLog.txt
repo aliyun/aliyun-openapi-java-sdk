@@ -1,3 +1,6 @@
+2026-10-08 Version: 1.0.23
+- Fixed quality rectification flow response field mapping.
+
 2026-08-31 Version: 1.0.22
 - Generated 2023-06-30 for `dataphin-public`.
 

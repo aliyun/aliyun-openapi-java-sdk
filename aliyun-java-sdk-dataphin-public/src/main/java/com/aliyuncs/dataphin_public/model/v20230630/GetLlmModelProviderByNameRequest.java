@@ -31,7 +31,7 @@ public class GetLlmModelProviderByNameRequest extends RpcAcsRequest<GetLlmModelP
 
 	private String name;
 	public GetLlmModelProviderByNameRequest() {
-		super("dataphin-public", "2023-06-30", "GetLlmModelProviderByName", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetLlmModelProviderByName", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

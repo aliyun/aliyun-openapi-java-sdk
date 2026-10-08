@@ -35,7 +35,7 @@ public class GetPhysicalInstanceLogRequest extends RpcAcsRequest<GetPhysicalInst
 
 	private Long projectId;
 	public GetPhysicalInstanceLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetPhysicalInstanceLog", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetPhysicalInstanceLog", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

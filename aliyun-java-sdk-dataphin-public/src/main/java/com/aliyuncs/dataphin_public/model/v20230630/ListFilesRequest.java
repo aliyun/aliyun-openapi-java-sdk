@@ -34,7 +34,7 @@ public class ListFilesRequest extends RpcAcsRequest<ListFilesResponse> {
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListFilesRequest() {
-		super("dataphin-public", "2023-06-30", "ListFiles", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListFiles", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

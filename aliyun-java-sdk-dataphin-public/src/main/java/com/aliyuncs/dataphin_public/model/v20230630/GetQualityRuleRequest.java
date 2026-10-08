@@ -31,7 +31,7 @@ public class GetQualityRuleRequest extends RpcAcsRequest<GetQualityRuleResponse>
 
 	private Long id;
 	public GetQualityRuleRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityRule", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetQualityRule", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

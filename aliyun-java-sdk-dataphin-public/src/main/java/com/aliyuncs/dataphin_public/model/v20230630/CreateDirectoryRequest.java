@@ -34,7 +34,7 @@ public class CreateDirectoryRequest extends RpcAcsRequest<CreateDirectoryRespons
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateDirectoryRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDirectory", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDirectory", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class GetStandardStatisticsRequest extends RpcAcsRequest<GetStandardStati
 	@SerializedName("statisticsQuery")
 	private StatisticsQuery statisticsQuery;
 	public GetStandardStatisticsRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardStatistics", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetStandardStatistics", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

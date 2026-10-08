@@ -34,7 +34,7 @@ public class CreateSecurityIdentifyResultRequest extends RpcAcsRequest<CreateSec
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateSecurityIdentifyResultRequest() {
-		super("dataphin-public", "2023-06-30", "CreateSecurityIdentifyResult", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateSecurityIdentifyResult", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

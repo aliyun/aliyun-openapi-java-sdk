@@ -35,7 +35,7 @@ public class GetResourceByVersionRequest extends RpcAcsRequest<GetResourceByVers
 
 	private Long projectId;
 	public GetResourceByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetResourceByVersion", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetResourceByVersion", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class ListUserGroupMembersRequest extends RpcAcsRequest<ListUserGroupMemb
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListUserGroupMembersRequest() {
-		super("dataphin-public", "2023-06-30", "ListUserGroupMembers", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListUserGroupMembers", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

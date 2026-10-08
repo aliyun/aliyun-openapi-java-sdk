@@ -37,7 +37,7 @@ public class ReplaceProjectWhiteListsRequest extends RpcAcsRequest<ReplaceProjec
 
 	private Long id;
 	public ReplaceProjectWhiteListsRequest() {
-		super("dataphin-public", "2023-06-30", "ReplaceProjectWhiteLists", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ReplaceProjectWhiteLists", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

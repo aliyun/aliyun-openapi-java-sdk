@@ -31,7 +31,7 @@ public class GetQualityWatchRequest extends RpcAcsRequest<GetQualityWatchRespons
 
 	private Long id;
 	public GetQualityWatchRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityWatch", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetQualityWatch", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

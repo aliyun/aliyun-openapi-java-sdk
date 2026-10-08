@@ -37,7 +37,7 @@ public class CreateWorkFlowByJsonRequest extends RpcAcsRequest<CreateWorkFlowByJ
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateWorkFlowByJsonRequest() {
-		super("dataphin-public", "2023-06-30", "CreateWorkFlowByJson", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateWorkFlowByJson", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

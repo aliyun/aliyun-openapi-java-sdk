@@ -34,7 +34,7 @@ public class GetAssetMappingRelationsRequest extends RpcAcsRequest<GetAssetMappi
 	@SerializedName("assetMappingQuery")
 	private AssetMappingQuery assetMappingQuery;
 	public GetAssetMappingRelationsRequest() {
-		super("dataphin-public", "2023-06-30", "GetAssetMappingRelations", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAssetMappingRelations", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

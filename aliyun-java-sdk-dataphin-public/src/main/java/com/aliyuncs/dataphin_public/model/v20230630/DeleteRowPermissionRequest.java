@@ -34,7 +34,7 @@ public class DeleteRowPermissionRequest extends RpcAcsRequest<DeleteRowPermissio
 	@SerializedName("deleteRowPermissionCommand")
 	private DeleteRowPermissionCommand deleteRowPermissionCommand;
 	public DeleteRowPermissionRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteRowPermission", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteRowPermission", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

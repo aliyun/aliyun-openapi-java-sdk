@@ -31,7 +31,7 @@ public class DeleteComputeSourceRequest extends RpcAcsRequest<DeleteComputeSourc
 
 	private Long id;
 	public DeleteComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteComputeSource", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteComputeSource", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

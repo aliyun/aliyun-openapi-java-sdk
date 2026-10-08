@@ -34,7 +34,7 @@ public class ResetDataServiceAppSecretRequest extends RpcAcsRequest<ResetDataSer
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public ResetDataServiceAppSecretRequest() {
-		super("dataphin-public", "2023-06-30", "ResetDataServiceAppSecret", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ResetDataServiceAppSecret", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

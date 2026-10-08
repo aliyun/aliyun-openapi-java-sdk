@@ -39,7 +39,7 @@ public class ExecuteTriggerNodeRequest extends RpcAcsRequest<ExecuteTriggerNodeR
 
 	private Long projectId;
 	public ExecuteTriggerNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteTriggerNode", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ExecuteTriggerNode", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

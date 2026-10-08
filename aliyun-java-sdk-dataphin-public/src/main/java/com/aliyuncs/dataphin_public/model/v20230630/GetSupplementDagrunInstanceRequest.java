@@ -33,7 +33,7 @@ public class GetSupplementDagrunInstanceRequest extends RpcAcsRequest<GetSupplem
 
 	private String dagrunId;
 	public GetSupplementDagrunInstanceRequest() {
-		super("dataphin-public", "2023-06-30", "GetSupplementDagrunInstance", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetSupplementDagrunInstance", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

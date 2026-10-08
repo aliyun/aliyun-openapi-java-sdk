@@ -35,7 +35,7 @@ public class SubmitAssetsOnShelveRequest extends RpcAcsRequest<SubmitAssetsOnShe
 	@SerializedName("submitCommand")
 	private SubmitCommand submitCommand;
 	public SubmitAssetsOnShelveRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitAssetsOnShelve", "Dataphin");
+		super("dataphin-public", "2023-06-30", "SubmitAssetsOnShelve", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class GetStandardWordRootRequest extends RpcAcsRequest<GetStandardWordRoo
 
 	private String name;
 	public GetStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardWordRoot", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetStandardWordRoot", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

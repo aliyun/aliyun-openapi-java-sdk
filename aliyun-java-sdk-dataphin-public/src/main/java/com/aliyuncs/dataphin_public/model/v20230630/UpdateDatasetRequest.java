@@ -38,7 +38,7 @@ public class UpdateDatasetRequest extends RpcAcsRequest<UpdateDatasetResponse> {
 
 	private String projectId;
 	public UpdateDatasetRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataset", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDataset", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

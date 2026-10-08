@@ -34,7 +34,7 @@ public class UpdateDataDomainRequest extends RpcAcsRequest<UpdateDataDomainRespo
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDataDomainRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataDomain", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDataDomain", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

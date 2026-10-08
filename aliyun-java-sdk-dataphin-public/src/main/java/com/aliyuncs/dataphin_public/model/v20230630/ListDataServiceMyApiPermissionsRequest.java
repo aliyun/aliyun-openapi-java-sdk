@@ -36,7 +36,7 @@ public class ListDataServiceMyApiPermissionsRequest extends RpcAcsRequest<ListDa
 
 	private Integer projectId;
 	public ListDataServiceMyApiPermissionsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServiceMyApiPermissions", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListDataServiceMyApiPermissions", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

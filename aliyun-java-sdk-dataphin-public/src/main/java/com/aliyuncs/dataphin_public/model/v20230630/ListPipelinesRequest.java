@@ -38,7 +38,7 @@ public class ListPipelinesRequest extends RpcAcsRequest<ListPipelinesResponse> {
 	@SerializedName("context")
 	private Context context;
 	public ListPipelinesRequest() {
-		super("dataphin-public", "2023-06-30", "ListPipelines", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListPipelines", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

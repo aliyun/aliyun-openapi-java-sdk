@@ -33,7 +33,7 @@ public class GetDataServiceApiDocumentRequest extends RpcAcsRequest<GetDataServi
 
 	private Long id;
 	public GetDataServiceApiDocumentRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiDocument", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiDocument", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

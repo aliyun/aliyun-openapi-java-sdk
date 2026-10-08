@@ -31,7 +31,7 @@ public class GetAlertEventRequest extends RpcAcsRequest<GetAlertEventResponse> {
 
 	private Long id;
 	public GetAlertEventRequest() {
-		super("dataphin-public", "2023-06-30", "GetAlertEvent", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAlertEvent", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

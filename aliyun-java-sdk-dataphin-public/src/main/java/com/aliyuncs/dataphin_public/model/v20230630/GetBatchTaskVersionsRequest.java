@@ -33,7 +33,7 @@ public class GetBatchTaskVersionsRequest extends RpcAcsRequest<GetBatchTaskVersi
 
 	private Long fileId;
 	public GetBatchTaskVersionsRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTaskVersions", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetBatchTaskVersions", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

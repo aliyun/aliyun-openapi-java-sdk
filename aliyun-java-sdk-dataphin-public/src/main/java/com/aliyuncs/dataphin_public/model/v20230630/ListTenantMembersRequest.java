@@ -35,7 +35,7 @@ public class ListTenantMembersRequest extends RpcAcsRequest<ListTenantMembersRes
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListTenantMembersRequest() {
-		super("dataphin-public", "2023-06-30", "ListTenantMembers", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListTenantMembers", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

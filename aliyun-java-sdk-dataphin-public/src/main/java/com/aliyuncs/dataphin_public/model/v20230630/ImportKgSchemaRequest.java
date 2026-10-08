@@ -36,7 +36,7 @@ public class ImportKgSchemaRequest extends RpcAcsRequest<ImportKgSchemaResponse>
 
 	private String workspaceId;
 	public ImportKgSchemaRequest() {
-		super("dataphin-public", "2023-06-30", "ImportKgSchema", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ImportKgSchema", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

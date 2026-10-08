@@ -35,7 +35,7 @@ public class UpdateSecurityClassifyCatalogRequest extends RpcAcsRequest<UpdateSe
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateSecurityClassifyCatalogRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateSecurityClassifyCatalog", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateSecurityClassifyCatalog", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

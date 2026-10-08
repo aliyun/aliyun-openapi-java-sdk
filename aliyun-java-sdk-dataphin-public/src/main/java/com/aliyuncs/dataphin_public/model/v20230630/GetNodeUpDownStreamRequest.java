@@ -42,7 +42,7 @@ public class GetNodeUpDownStreamRequest extends RpcAcsRequest<GetNodeUpDownStrea
 
 	private Integer downStreamDepth;
 	public GetNodeUpDownStreamRequest() {
-		super("dataphin-public", "2023-06-30", "GetNodeUpDownStream", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetNodeUpDownStream", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class GetResourceRequest extends RpcAcsRequest<GetResourceResponse> {
 
 	private Long projectId;
 	public GetResourceRequest() {
-		super("dataphin-public", "2023-06-30", "GetResource", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetResource", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

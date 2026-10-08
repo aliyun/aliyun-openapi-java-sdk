@@ -31,7 +31,7 @@ public class DeleteDataServiceAppRequest extends RpcAcsRequest<DeleteDataService
 
 	private Integer appId;
 	public DeleteDataServiceAppRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataServiceApp", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteDataServiceApp", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

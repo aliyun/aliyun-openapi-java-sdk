@@ -35,7 +35,7 @@ public class UpsertQualityTemplateRequest extends RpcAcsRequest<UpsertQualityTem
 	@SerializedName("upsertCommand")
 	private UpsertCommand upsertCommand;
 	public UpsertQualityTemplateRequest() {
-		super("dataphin-public", "2023-06-30", "UpsertQualityTemplate", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpsertQualityTemplate", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class DeleteBizEntityRequest extends RpcAcsRequest<DeleteBizEntityRespons
 
 	private Long bizUnitId;
 	public DeleteBizEntityRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteBizEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteBizEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

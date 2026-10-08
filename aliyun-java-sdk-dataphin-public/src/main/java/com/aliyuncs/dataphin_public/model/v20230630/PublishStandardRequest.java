@@ -35,7 +35,7 @@ public class PublishStandardRequest extends RpcAcsRequest<PublishStandardRespons
 	@SerializedName("publishCommand")
 	private PublishCommand publishCommand;
 	public PublishStandardRequest() {
-		super("dataphin-public", "2023-06-30", "PublishStandard", "Dataphin");
+		super("dataphin-public", "2023-06-30", "PublishStandard", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

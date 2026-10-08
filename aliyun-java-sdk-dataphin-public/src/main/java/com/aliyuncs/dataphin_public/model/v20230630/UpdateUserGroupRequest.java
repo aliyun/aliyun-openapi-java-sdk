@@ -35,7 +35,7 @@ public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupRespons
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateUserGroup", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateUserGroup", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

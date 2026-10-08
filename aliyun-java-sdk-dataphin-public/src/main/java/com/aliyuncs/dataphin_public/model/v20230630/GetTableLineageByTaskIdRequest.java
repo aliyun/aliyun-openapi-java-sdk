@@ -34,7 +34,7 @@ public class GetTableLineageByTaskIdRequest extends RpcAcsRequest<GetTableLineag
 	@SerializedName("tableLineageByTaskIdQuery")
 	private TableLineageByTaskIdQuery tableLineageByTaskIdQuery;
 	public GetTableLineageByTaskIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableLineageByTaskId", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetTableLineageByTaskId", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

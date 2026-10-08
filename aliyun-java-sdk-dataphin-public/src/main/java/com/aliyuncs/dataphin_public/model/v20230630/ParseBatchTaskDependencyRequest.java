@@ -34,7 +34,7 @@ public class ParseBatchTaskDependencyRequest extends RpcAcsRequest<ParseBatchTas
 	@SerializedName("parseCommand")
 	private ParseCommand parseCommand;
 	public ParseBatchTaskDependencyRequest() {
-		super("dataphin-public", "2023-06-30", "ParseBatchTaskDependency", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ParseBatchTaskDependency", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

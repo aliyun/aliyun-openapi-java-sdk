@@ -31,7 +31,7 @@ public class GetCheckConnectivityJobsRequest extends RpcAcsRequest<GetCheckConne
 
 	private Long dataSourceId;
 	public GetCheckConnectivityJobsRequest() {
-		super("dataphin-public", "2023-06-30", "GetCheckConnectivityJobs", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetCheckConnectivityJobs", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

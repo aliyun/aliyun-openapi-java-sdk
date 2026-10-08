@@ -34,7 +34,7 @@ public class GetLatestSubmitDetailRequest extends RpcAcsRequest<GetLatestSubmitD
 	@SerializedName("submitDetailQuery")
 	private SubmitDetailQuery submitDetailQuery;
 	public GetLatestSubmitDetailRequest() {
-		super("dataphin-public", "2023-06-30", "GetLatestSubmitDetail", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetLatestSubmitDetail", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

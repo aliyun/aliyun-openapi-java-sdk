@@ -35,7 +35,7 @@ public class GetAccountByRowPermissionIdRequest extends RpcAcsRequest<GetAccount
 	@SerializedName("getAccountByRowPermissionIdQuery")
 	private GetAccountByRowPermissionIdQuery getAccountByRowPermissionIdQuery;
 	public GetAccountByRowPermissionIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetAccountByRowPermissionId", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAccountByRowPermissionId", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

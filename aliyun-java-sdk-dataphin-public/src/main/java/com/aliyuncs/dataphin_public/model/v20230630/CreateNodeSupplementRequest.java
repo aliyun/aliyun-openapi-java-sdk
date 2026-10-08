@@ -37,7 +37,7 @@ public class CreateNodeSupplementRequest extends RpcAcsRequest<CreateNodeSupplem
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateNodeSupplementRequest() {
-		super("dataphin-public", "2023-06-30", "CreateNodeSupplement", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateNodeSupplement", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

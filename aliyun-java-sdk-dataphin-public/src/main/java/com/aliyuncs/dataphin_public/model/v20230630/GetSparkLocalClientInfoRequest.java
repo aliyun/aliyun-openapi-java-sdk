@@ -33,7 +33,7 @@ public class GetSparkLocalClientInfoRequest extends RpcAcsRequest<GetSparkLocalC
 
 	private String projectId;
 	public GetSparkLocalClientInfoRequest() {
-		super("dataphin-public", "2023-06-30", "GetSparkLocalClientInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetSparkLocalClientInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

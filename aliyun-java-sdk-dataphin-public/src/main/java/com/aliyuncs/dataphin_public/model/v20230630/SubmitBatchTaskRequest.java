@@ -35,7 +35,7 @@ public class SubmitBatchTaskRequest extends RpcAcsRequest<SubmitBatchTaskRespons
 	@SerializedName("submitCommand")
 	private SubmitCommand submitCommand;
 	public SubmitBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitBatchTask", "Dataphin");
+		super("dataphin-public", "2023-06-30", "SubmitBatchTask", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

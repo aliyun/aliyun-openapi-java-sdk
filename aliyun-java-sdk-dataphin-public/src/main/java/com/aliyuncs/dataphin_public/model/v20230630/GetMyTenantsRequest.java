@@ -35,7 +35,7 @@ public class GetMyTenantsRequest extends RpcAcsRequest<GetMyTenantsResponse> {
 	@SerializedName("featureCodeList")
 	private List<String> featureCodeList;
 	public GetMyTenantsRequest() {
-		super("dataphin-public", "2023-06-30", "GetMyTenants", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetMyTenants", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

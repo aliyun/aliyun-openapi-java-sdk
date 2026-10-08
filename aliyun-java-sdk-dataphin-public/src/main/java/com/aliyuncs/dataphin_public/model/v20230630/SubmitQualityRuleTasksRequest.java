@@ -35,7 +35,7 @@ public class SubmitQualityRuleTasksRequest extends RpcAcsRequest<SubmitQualityRu
 	@SerializedName("submitCommand")
 	private SubmitCommand submitCommand;
 	public SubmitQualityRuleTasksRequest() {
-		super("dataphin-public", "2023-06-30", "SubmitQualityRuleTasks", "Dataphin");
+		super("dataphin-public", "2023-06-30", "SubmitQualityRuleTasks", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

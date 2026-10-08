@@ -35,7 +35,7 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "CreateDataServiceApi", "Dataphin");
+		super("dataphin-public", "2023-06-30", "CreateDataServiceApi", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

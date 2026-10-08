@@ -34,7 +34,7 @@ public class UpdateDataServiceAppGroupRequest extends RpcAcsRequest<UpdateDataSe
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDataServiceAppGroupRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataServiceAppGroup", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDataServiceAppGroup", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

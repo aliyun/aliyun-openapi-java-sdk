@@ -35,7 +35,7 @@ public class ExecuteAdHocTaskRequest extends RpcAcsRequest<ExecuteAdHocTaskRespo
 	@SerializedName("executeCommand")
 	private ExecuteCommand executeCommand;
 	public ExecuteAdHocTaskRequest() {
-		super("dataphin-public", "2023-06-30", "ExecuteAdHocTask", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ExecuteAdHocTask", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

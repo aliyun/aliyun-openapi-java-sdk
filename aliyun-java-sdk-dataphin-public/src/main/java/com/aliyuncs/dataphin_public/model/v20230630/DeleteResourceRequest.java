@@ -35,7 +35,7 @@ public class DeleteResourceRequest extends RpcAcsRequest<DeleteResourceResponse>
 
 	private Long projectId;
 	public DeleteResourceRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteResource", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteResource", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

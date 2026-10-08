@@ -34,7 +34,7 @@ public class OfflineStandardRequest extends RpcAcsRequest<OfflineStandardRespons
 	@SerializedName("offlineCommand")
 	private OfflineCommand offlineCommand;
 	public OfflineStandardRequest() {
-		super("dataphin-public", "2023-06-30", "OfflineStandard", "Dataphin");
+		super("dataphin-public", "2023-06-30", "OfflineStandard", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

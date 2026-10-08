@@ -35,7 +35,7 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBatchTask", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateBatchTask", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -75,14 +75,53 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 
 	public static class UpdateCommand {
 
-		@SerializedName("NodeOutputNameList")
-		private List<String> nodeOutputNameList;
-
 		@SerializedName("CronExpression")
 		private String cronExpression;
 
 		@SerializedName("Code")
 		private String code;
+
+		@SerializedName("ProdHttpPath")
+		private String prodHttpPath;
+
+		@SerializedName("OpsOwnerIdList")
+		private List<String> opsOwnerIdList;
+
+		@SerializedName("ValidEndDate")
+		private String validEndDate;
+
+		@SerializedName("DevResourceGroupId")
+		private String devResourceGroupId;
+
+		@SerializedName("ResourceGroupId")
+		private String resourceGroupId;
+
+		@SerializedName("CustomScheduleConfig")
+		private CustomScheduleConfig customScheduleConfig;
+
+		@SerializedName("TaskTagList")
+		private List<String> taskTagList;
+
+		@SerializedName("Engine")
+		private String engine;
+
+		@SerializedName("ContextParamList")
+		private List<ContextParamListItem> contextParamList;
+
+		@SerializedName("NodeDescription")
+		private String nodeDescription;
+
+		@SerializedName("ProjectId")
+		private Long projectId;
+
+		@SerializedName("PythonModuleList")
+		private List<String> pythonModuleList;
+
+		@SerializedName("FileId")
+		private Long fileId;
+
+		@SerializedName("NodeOutputNameList")
+		private List<String> nodeOutputNameList;
 
 		@SerializedName("TaskType")
 		private Integer taskType;
@@ -102,20 +141,23 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 		@SerializedName("UpStreamList")
 		private List<UpStreamListItem> upStreamList;
 
+		@SerializedName("ConditionScheduleEnable")
+		private Boolean conditionScheduleEnable;
+
 		@SerializedName("DataSourceCatalog")
 		private String dataSourceCatalog;
+
+		@SerializedName("ConditionScheduleParamList")
+		private List<ConditionScheduleParamListItem> conditionScheduleParamList;
 
 		@SerializedName("Priority")
 		private Integer priority;
 
-		@SerializedName("CustomScheduleConfig")
-		private CustomScheduleConfig customScheduleConfig;
+		@SerializedName("ConditionScheduleTemplateId")
+		private Long conditionScheduleTemplateId;
 
-		@SerializedName("Engine")
-		private String engine;
-
-		@SerializedName("NodeDescription")
-		private String nodeDescription;
+		@SerializedName("BaseScheduleTemplateId")
+		private Long baseScheduleTemplateId;
 
 		@SerializedName("DevelopOwnerIdList")
 		private List<String> developOwnerIdList;
@@ -123,28 +165,17 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 		@SerializedName("Name")
 		private String name;
 
+		@SerializedName("ValidStartDate")
+		private String validStartDate;
+
 		@SerializedName("DataSourceId")
 		private String dataSourceId;
 
 		@SerializedName("SchedulePeriod")
 		private String schedulePeriod;
 
-		@SerializedName("ProjectId")
-		private Long projectId;
-
-		@SerializedName("PythonModuleList")
-		private List<String> pythonModuleList;
-
-		@SerializedName("FileId")
-		private Long fileId;
-
-		public List<String> getNodeOutputNameList() {
-			return this.nodeOutputNameList;
-		}
-
-		public void setNodeOutputNameList(List<String> nodeOutputNameList) {
-			this.nodeOutputNameList = nodeOutputNameList;
-		}
+		@SerializedName("DevHttpPath")
+		private String devHttpPath;
 
 		public String getCronExpression() {
 			return this.cronExpression;
@@ -160,6 +191,118 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 
 		public void setCode(String code) {
 			this.code = code;
+		}
+
+		public String getProdHttpPath() {
+			return this.prodHttpPath;
+		}
+
+		public void setProdHttpPath(String prodHttpPath) {
+			this.prodHttpPath = prodHttpPath;
+		}
+
+		public List<String> getOpsOwnerIdList() {
+			return this.opsOwnerIdList;
+		}
+
+		public void setOpsOwnerIdList(List<String> opsOwnerIdList) {
+			this.opsOwnerIdList = opsOwnerIdList;
+		}
+
+		public String getValidEndDate() {
+			return this.validEndDate;
+		}
+
+		public void setValidEndDate(String validEndDate) {
+			this.validEndDate = validEndDate;
+		}
+
+		public String getDevResourceGroupId() {
+			return this.devResourceGroupId;
+		}
+
+		public void setDevResourceGroupId(String devResourceGroupId) {
+			this.devResourceGroupId = devResourceGroupId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
+		public CustomScheduleConfig getCustomScheduleConfig() {
+			return this.customScheduleConfig;
+		}
+
+		public void setCustomScheduleConfig(CustomScheduleConfig customScheduleConfig) {
+			this.customScheduleConfig = customScheduleConfig;
+		}
+
+		public List<String> getTaskTagList() {
+			return this.taskTagList;
+		}
+
+		public void setTaskTagList(List<String> taskTagList) {
+			this.taskTagList = taskTagList;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public List<ContextParamListItem> getContextParamList() {
+			return this.contextParamList;
+		}
+
+		public void setContextParamList(List<ContextParamListItem> contextParamList) {
+			this.contextParamList = contextParamList;
+		}
+
+		public String getNodeDescription() {
+			return this.nodeDescription;
+		}
+
+		public void setNodeDescription(String nodeDescription) {
+			this.nodeDescription = nodeDescription;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
+		}
+
+		public List<String> getPythonModuleList() {
+			return this.pythonModuleList;
+		}
+
+		public void setPythonModuleList(List<String> pythonModuleList) {
+			this.pythonModuleList = pythonModuleList;
+		}
+
+		public Long getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(Long fileId) {
+			this.fileId = fileId;
+		}
+
+		public List<String> getNodeOutputNameList() {
+			return this.nodeOutputNameList;
+		}
+
+		public void setNodeOutputNameList(List<String> nodeOutputNameList) {
+			this.nodeOutputNameList = nodeOutputNameList;
 		}
 
 		public Integer getTaskType() {
@@ -210,12 +353,28 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			this.upStreamList = upStreamList;
 		}
 
+		public Boolean getConditionScheduleEnable() {
+			return this.conditionScheduleEnable;
+		}
+
+		public void setConditionScheduleEnable(Boolean conditionScheduleEnable) {
+			this.conditionScheduleEnable = conditionScheduleEnable;
+		}
+
 		public String getDataSourceCatalog() {
 			return this.dataSourceCatalog;
 		}
 
 		public void setDataSourceCatalog(String dataSourceCatalog) {
 			this.dataSourceCatalog = dataSourceCatalog;
+		}
+
+		public List<ConditionScheduleParamListItem> getConditionScheduleParamList() {
+			return this.conditionScheduleParamList;
+		}
+
+		public void setConditionScheduleParamList(List<ConditionScheduleParamListItem> conditionScheduleParamList) {
+			this.conditionScheduleParamList = conditionScheduleParamList;
 		}
 
 		public Integer getPriority() {
@@ -226,28 +385,20 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			this.priority = priority;
 		}
 
-		public CustomScheduleConfig getCustomScheduleConfig() {
-			return this.customScheduleConfig;
+		public Long getConditionScheduleTemplateId() {
+			return this.conditionScheduleTemplateId;
 		}
 
-		public void setCustomScheduleConfig(CustomScheduleConfig customScheduleConfig) {
-			this.customScheduleConfig = customScheduleConfig;
+		public void setConditionScheduleTemplateId(Long conditionScheduleTemplateId) {
+			this.conditionScheduleTemplateId = conditionScheduleTemplateId;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public Long getBaseScheduleTemplateId() {
+			return this.baseScheduleTemplateId;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getNodeDescription() {
-			return this.nodeDescription;
-		}
-
-		public void setNodeDescription(String nodeDescription) {
-			this.nodeDescription = nodeDescription;
+		public void setBaseScheduleTemplateId(Long baseScheduleTemplateId) {
+			this.baseScheduleTemplateId = baseScheduleTemplateId;
 		}
 
 		public List<String> getDevelopOwnerIdList() {
@@ -266,6 +417,14 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			this.name = name;
 		}
 
+		public String getValidStartDate() {
+			return this.validStartDate;
+		}
+
+		public void setValidStartDate(String validStartDate) {
+			this.validStartDate = validStartDate;
+		}
+
 		public String getDataSourceId() {
 			return this.dataSourceId;
 		}
@@ -282,28 +441,106 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			this.schedulePeriod = schedulePeriod;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
+		public String getDevHttpPath() {
+			return this.devHttpPath;
 		}
 
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
+		public void setDevHttpPath(String devHttpPath) {
+			this.devHttpPath = devHttpPath;
 		}
 
-		public List<String> getPythonModuleList() {
-			return this.pythonModuleList;
+		public static class CustomScheduleConfig {
+
+			@SerializedName("IntervalUnit")
+			private String intervalUnit;
+
+			@SerializedName("EndTime")
+			private String endTime;
+
+			@SerializedName("SchedulePeriod")
+			private String schedulePeriod;
+
+			@SerializedName("Interval")
+			private Integer interval;
+
+			@SerializedName("StartTime")
+			private String startTime;
+
+			public String getIntervalUnit() {
+				return this.intervalUnit;
+			}
+
+			public void setIntervalUnit(String intervalUnit) {
+				this.intervalUnit = intervalUnit;
+			}
+
+			public String getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getSchedulePeriod() {
+				return this.schedulePeriod;
+			}
+
+			public void setSchedulePeriod(String schedulePeriod) {
+				this.schedulePeriod = schedulePeriod;
+			}
+
+			public Integer getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(Integer interval) {
+				this.interval = interval;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
 		}
 
-		public void setPythonModuleList(List<String> pythonModuleList) {
-			this.pythonModuleList = pythonModuleList;
-		}
+		public static class ContextParamListItem {
 
-		public Long getFileId() {
-			return this.fileId;
-		}
+			@SerializedName("ParamKey")
+			private String paramKey;
 
-		public void setFileId(Long fileId) {
-			this.fileId = fileId;
+			@SerializedName("DefaultValue")
+			private String defaultValue;
+
+			@SerializedName("Desc")
+			private String desc;
+
+			public String getParamKey() {
+				return this.paramKey;
+			}
+
+			public void setParamKey(String paramKey) {
+				this.paramKey = paramKey;
+			}
+
+			public String getDefaultValue() {
+				return this.defaultValue;
+			}
+
+			public void setDefaultValue(String defaultValue) {
+				this.defaultValue = defaultValue;
+			}
+
+			public String getDesc() {
+				return this.desc;
+			}
+
+			public void setDesc(String desc) {
+				this.desc = desc;
+			}
 		}
 
 		public static class SparkClientInfo {
@@ -472,61 +709,83 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 			}
 		}
 
-		public static class CustomScheduleConfig {
+		public static class ConditionScheduleParamListItem {
 
-			@SerializedName("IntervalUnit")
-			private String intervalUnit;
+			@SerializedName("CronExpression")
+			private String cronExpression;
 
-			@SerializedName("EndTime")
-			private String endTime;
+			@SerializedName("Enable")
+			private Boolean enable;
 
-			@SerializedName("SchedulePeriod")
-			private String schedulePeriod;
+			@SerializedName("ScheduleTime")
+			private String scheduleTime;
 
-			@SerializedName("Interval")
-			private Integer interval;
+			@SerializedName("NodeStatus")
+			private Integer nodeStatus;
 
-			@SerializedName("StartTime")
-			private String startTime;
+			@SerializedName("ConditionName")
+			private String conditionName;
 
-			public String getIntervalUnit() {
-				return this.intervalUnit;
+			@SerializedName("ScheduleConditionJson")
+			private String scheduleConditionJson;
+
+			@SerializedName("FollowScheduleParam")
+			private Boolean followScheduleParam;
+
+			public String getCronExpression() {
+				return this.cronExpression;
 			}
 
-			public void setIntervalUnit(String intervalUnit) {
-				this.intervalUnit = intervalUnit;
+			public void setCronExpression(String cronExpression) {
+				this.cronExpression = cronExpression;
 			}
 
-			public String getEndTime() {
-				return this.endTime;
+			public Boolean getEnable() {
+				return this.enable;
 			}
 
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setEnable(Boolean enable) {
+				this.enable = enable;
 			}
 
-			public String getSchedulePeriod() {
-				return this.schedulePeriod;
+			public String getScheduleTime() {
+				return this.scheduleTime;
 			}
 
-			public void setSchedulePeriod(String schedulePeriod) {
-				this.schedulePeriod = schedulePeriod;
+			public void setScheduleTime(String scheduleTime) {
+				this.scheduleTime = scheduleTime;
 			}
 
-			public Integer getInterval() {
-				return this.interval;
+			public Integer getNodeStatus() {
+				return this.nodeStatus;
 			}
 
-			public void setInterval(Integer interval) {
-				this.interval = interval;
+			public void setNodeStatus(Integer nodeStatus) {
+				this.nodeStatus = nodeStatus;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public String getConditionName() {
+				return this.conditionName;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setConditionName(String conditionName) {
+				this.conditionName = conditionName;
+			}
+
+			public String getScheduleConditionJson() {
+				return this.scheduleConditionJson;
+			}
+
+			public void setScheduleConditionJson(String scheduleConditionJson) {
+				this.scheduleConditionJson = scheduleConditionJson;
+			}
+
+			public Boolean getFollowScheduleParam() {
+				return this.followScheduleParam;
+			}
+
+			public void setFollowScheduleParam(Boolean followScheduleParam) {
+				this.followScheduleParam = followScheduleParam;
 			}
 		}
 	}

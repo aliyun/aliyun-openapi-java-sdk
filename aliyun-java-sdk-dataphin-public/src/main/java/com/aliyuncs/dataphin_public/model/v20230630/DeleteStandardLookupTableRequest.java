@@ -31,7 +31,7 @@ public class DeleteStandardLookupTableRequest extends RpcAcsRequest<DeleteStanda
 
 	private Long id;
 	public DeleteStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteStandardLookupTable", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteStandardLookupTable", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

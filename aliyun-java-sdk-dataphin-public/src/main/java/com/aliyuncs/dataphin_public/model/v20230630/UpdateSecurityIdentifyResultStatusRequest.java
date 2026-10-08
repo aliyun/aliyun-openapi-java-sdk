@@ -35,7 +35,7 @@ public class UpdateSecurityIdentifyResultStatusRequest extends RpcAcsRequest<Upd
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateSecurityIdentifyResultStatusRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateSecurityIdentifyResultStatus", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateSecurityIdentifyResultStatus", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

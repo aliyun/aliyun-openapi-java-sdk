@@ -34,7 +34,7 @@ public class UpdateAdHocFileRequest extends RpcAcsRequest<UpdateAdHocFileRespons
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateAdHocFileRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateAdHocFile", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateAdHocFile", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -34,7 +34,7 @@ public class UpdateDataSourceBasicInfoRequest extends RpcAcsRequest<UpdateDataSo
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateDataSourceBasicInfoRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateDataSourceBasicInfo", "Dataphin");
+		super("dataphin-public", "2023-06-30", "UpdateDataSourceBasicInfo", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

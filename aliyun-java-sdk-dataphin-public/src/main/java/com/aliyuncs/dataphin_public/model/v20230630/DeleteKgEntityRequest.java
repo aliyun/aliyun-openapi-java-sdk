@@ -35,7 +35,7 @@ public class DeleteKgEntityRequest extends RpcAcsRequest<DeleteKgEntityResponse>
 
 	private String workspaceId;
 	public DeleteKgEntityRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteKgEntity", "Dataphin");
+		super("dataphin-public", "2023-06-30", "DeleteKgEntity", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

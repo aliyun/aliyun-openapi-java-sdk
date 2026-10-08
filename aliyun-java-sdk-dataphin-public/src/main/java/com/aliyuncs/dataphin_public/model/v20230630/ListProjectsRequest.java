@@ -35,7 +35,7 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListProjectsRequest() {
-		super("dataphin-public", "2023-06-30", "ListProjects", "Dataphin");
+		super("dataphin-public", "2023-06-30", "ListProjects", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class RemoveUserGroupMemberRequest extends RpcAcsRequest<RemoveUserGroupM
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 	public RemoveUserGroupMemberRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveUserGroupMember", "Dataphin");
+		super("dataphin-public", "2023-06-30", "RemoveUserGroupMember", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

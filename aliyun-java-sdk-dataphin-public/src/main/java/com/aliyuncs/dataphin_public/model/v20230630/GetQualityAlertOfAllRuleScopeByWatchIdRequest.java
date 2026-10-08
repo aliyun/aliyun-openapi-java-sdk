@@ -31,7 +31,7 @@ public class GetQualityAlertOfAllRuleScopeByWatchIdRequest extends RpcAcsRequest
 
 	private Long watchId;
 	public GetQualityAlertOfAllRuleScopeByWatchIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityAlertOfAllRuleScopeByWatchId", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetQualityAlertOfAllRuleScopeByWatchId", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

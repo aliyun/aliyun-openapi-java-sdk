@@ -33,7 +33,7 @@ public class GetStreamJobsRequest extends RpcAcsRequest<GetStreamJobsResponse> {
 
 	private Long projectId;
 	public GetStreamJobsRequest() {
-		super("dataphin-public", "2023-06-30", "GetStreamJobs", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetStreamJobs", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

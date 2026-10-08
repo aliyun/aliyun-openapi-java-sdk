@@ -35,7 +35,7 @@ public class GetAssetAttributesRequest extends RpcAcsRequest<GetAssetAttributesR
 	@SerializedName("queryCommand")
 	private QueryCommand queryCommand;
 	public GetAssetAttributesRequest() {
-		super("dataphin-public", "2023-06-30", "GetAssetAttributes", "Dataphin");
+		super("dataphin-public", "2023-06-30", "GetAssetAttributes", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

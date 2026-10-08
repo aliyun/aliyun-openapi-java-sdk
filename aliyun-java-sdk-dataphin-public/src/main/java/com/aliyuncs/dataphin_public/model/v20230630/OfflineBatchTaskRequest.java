@@ -35,7 +35,7 @@ public class OfflineBatchTaskRequest extends RpcAcsRequest<OfflineBatchTaskRespo
 
 	private Long fileId;
 	public OfflineBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "OfflineBatchTask", "Dataphin");
+		super("dataphin-public", "2023-06-30", "OfflineBatchTask", "1111");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
