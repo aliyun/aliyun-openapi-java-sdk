@@ -37,7 +37,7 @@ public class ListPromptsRequest extends RpcAcsRequest<ListPromptsResponse> {
 
 	private Integer pageSize;
 	public ListPromptsRequest() {
-		super("AIRegistry", "2026-03-17", "ListPrompts");
+		super("AIRegistry", "2026-03-17", "ListPrompts", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

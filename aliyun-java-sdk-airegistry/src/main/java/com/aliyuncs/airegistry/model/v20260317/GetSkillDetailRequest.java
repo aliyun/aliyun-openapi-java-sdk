@@ -29,7 +29,7 @@ public class GetSkillDetailRequest extends RpcAcsRequest<GetSkillDetailResponse>
 
 	private String skillName;
 	public GetSkillDetailRequest() {
-		super("AIRegistry", "2026-03-17", "GetSkillDetail");
+		super("AIRegistry", "2026-03-17", "GetSkillDetail", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

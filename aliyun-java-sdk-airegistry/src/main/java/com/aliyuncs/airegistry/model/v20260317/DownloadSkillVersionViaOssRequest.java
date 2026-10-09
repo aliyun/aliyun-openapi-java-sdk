@@ -31,7 +31,7 @@ public class DownloadSkillVersionViaOssRequest extends RpcAcsRequest<DownloadSki
 
 	private String skillName;
 	public DownloadSkillVersionViaOssRequest() {
-		super("AIRegistry", "2026-03-17", "DownloadSkillVersionViaOss");
+		super("AIRegistry", "2026-03-17", "DownloadSkillVersionViaOss", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

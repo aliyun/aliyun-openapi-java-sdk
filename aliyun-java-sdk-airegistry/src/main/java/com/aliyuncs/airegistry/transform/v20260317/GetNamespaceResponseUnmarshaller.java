@@ -26,16 +26,19 @@ public class GetNamespaceResponseUnmarshaller {
 		getNamespaceResponse.setRequestId(_ctx.stringValue("GetNamespaceResponse.RequestId"));
 
 		Data data = new Data();
-		data.setNamespaceId(_ctx.stringValue("GetNamespaceResponse.Data.NamespaceId"));
-		data.setName(_ctx.stringValue("GetNamespaceResponse.Data.Name"));
 		data.setDescription(_ctx.stringValue("GetNamespaceResponse.Data.Description"));
-		data.setTags(_ctx.stringValue("GetNamespaceResponse.Data.Tags"));
-		data.setSource(_ctx.stringValue("GetNamespaceResponse.Data.Source"));
-		data.setSourceIndex(_ctx.integerValue("GetNamespaceResponse.Data.SourceIndex"));
 		data.setPromptCount(_ctx.integerValue("GetNamespaceResponse.Data.PromptCount"));
 		data.setCreatedTime(_ctx.stringValue("GetNamespaceResponse.Data.CreatedTime"));
 		data.setSkillCount(_ctx.integerValue("GetNamespaceResponse.Data.SkillCount"));
+		data.setSource(_ctx.stringValue("GetNamespaceResponse.Data.Source"));
+		data.setName(_ctx.stringValue("GetNamespaceResponse.Data.Name"));
+		data.setPublicDomain(_ctx.stringValue("GetNamespaceResponse.Data.PublicDomain"));
+		data.setSourceIndex(_ctx.integerValue("GetNamespaceResponse.Data.SourceIndex"));
+		data.setIpWhitelist(_ctx.stringValue("GetNamespaceResponse.Data.IpWhitelist"));
 		data.setScanPolicy(_ctx.stringValue("GetNamespaceResponse.Data.ScanPolicy"));
+		data.setPublicAccessEnabled(_ctx.booleanValue("GetNamespaceResponse.Data.PublicAccessEnabled"));
+		data.setNamespaceId(_ctx.stringValue("GetNamespaceResponse.Data.NamespaceId"));
+		data.setTags(_ctx.stringValue("GetNamespaceResponse.Data.Tags"));
 		getNamespaceResponse.setData(data);
 	 
 	 	return getNamespaceResponse;

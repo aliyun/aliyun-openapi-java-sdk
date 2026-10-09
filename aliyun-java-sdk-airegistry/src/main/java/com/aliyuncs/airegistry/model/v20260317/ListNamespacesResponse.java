@@ -49,9 +49,9 @@ public class ListNamespacesResponse extends AcsResponse {
 
 		private Integer totalCount;
 
-		private Integer pageNumber;
-
 		private Integer pageSize;
+
+		private Integer pageNumber;
 
 		private List<Item> items;
 
@@ -63,20 +63,20 @@ public class ListNamespacesResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
-		}
-
 		public Integer getPageSize() {
 			return this.pageSize;
 		}
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<Item> getItems() {
@@ -89,38 +89,36 @@ public class ListNamespacesResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String namespaceId;
-
-			private String name;
+			private Integer sourceIndex;
 
 			private String description;
-
-			private String tags;
-
-			private String source;
-
-			private Integer sourceIndex;
 
 			private Integer promptCount;
 
 			private String createdTime;
 
+			private String ipWhitelist;
+
 			private Integer skillCount;
 
-			public String getNamespaceId() {
-				return this.namespaceId;
+			private Boolean publicAccessEnabled;
+
+			private String namespaceId;
+
+			private String tags;
+
+			private String source;
+
+			private String name;
+
+			private String publicDomain;
+
+			public Integer getSourceIndex() {
+				return this.sourceIndex;
 			}
 
-			public void setNamespaceId(String namespaceId) {
-				this.namespaceId = namespaceId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setSourceIndex(Integer sourceIndex) {
+				this.sourceIndex = sourceIndex;
 			}
 
 			public String getDescription() {
@@ -129,30 +127,6 @@ public class ListNamespacesResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
-			}
-
-			public String getTags() {
-				return this.tags;
-			}
-
-			public void setTags(String tags) {
-				this.tags = tags;
-			}
-
-			public String getSource() {
-				return this.source;
-			}
-
-			public void setSource(String source) {
-				this.source = source;
-			}
-
-			public Integer getSourceIndex() {
-				return this.sourceIndex;
-			}
-
-			public void setSourceIndex(Integer sourceIndex) {
-				this.sourceIndex = sourceIndex;
 			}
 
 			public Integer getPromptCount() {
@@ -171,12 +145,68 @@ public class ListNamespacesResponse extends AcsResponse {
 				this.createdTime = createdTime;
 			}
 
+			public String getIpWhitelist() {
+				return this.ipWhitelist;
+			}
+
+			public void setIpWhitelist(String ipWhitelist) {
+				this.ipWhitelist = ipWhitelist;
+			}
+
 			public Integer getSkillCount() {
 				return this.skillCount;
 			}
 
 			public void setSkillCount(Integer skillCount) {
 				this.skillCount = skillCount;
+			}
+
+			public Boolean getPublicAccessEnabled() {
+				return this.publicAccessEnabled;
+			}
+
+			public void setPublicAccessEnabled(Boolean publicAccessEnabled) {
+				this.publicAccessEnabled = publicAccessEnabled;
+			}
+
+			public String getNamespaceId() {
+				return this.namespaceId;
+			}
+
+			public void setNamespaceId(String namespaceId) {
+				this.namespaceId = namespaceId;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getSource() {
+				return this.source;
+			}
+
+			public void setSource(String source) {
+				this.source = source;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getPublicDomain() {
+				return this.publicDomain;
+			}
+
+			public void setPublicDomain(String publicDomain) {
+				this.publicDomain = publicDomain;
 			}
 		}
 	}

@@ -37,12 +37,12 @@ public class ListPromptVersionsResponseUnmarshaller {
 		List<Item> pageItems = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("ListPromptVersionsResponse.Data.PageItems.Length"); i++) {
 			Item item = new Item();
-			item.setPromptKey(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].PromptKey"));
-			item.setVersion(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].Version"));
 			item.setStatus(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].Status"));
-			item.setCommitMsg(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].CommitMsg"));
+			item.setVersion(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].Version"));
 			item.setSrcUser(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].SrcUser"));
+			item.setPromptKey(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].PromptKey"));
 			item.setGmtModified(_ctx.longValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].GmtModified"));
+			item.setCommitMsg(_ctx.stringValue("ListPromptVersionsResponse.Data.PageItems["+ i +"].CommitMsg"));
 
 			pageItems.add(item);
 		}

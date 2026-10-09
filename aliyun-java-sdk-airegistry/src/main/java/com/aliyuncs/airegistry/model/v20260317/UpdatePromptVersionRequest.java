@@ -35,7 +35,7 @@ public class UpdatePromptVersionRequest extends RpcAcsRequest<UpdatePromptVersio
 
 	private String commitMsg;
 	public UpdatePromptVersionRequest() {
-		super("AIRegistry", "2026-03-17", "UpdatePromptVersion");
+		super("AIRegistry", "2026-03-17", "UpdatePromptVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -38,21 +38,22 @@ public class ListSkillsResponseUnmarshaller {
 		List<PageItem> pageItems = new ArrayList<PageItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSkillsResponse.Data.PageItems.Length"); i++) {
 			PageItem pageItem = new PageItem();
+			pageItem.setDraftMode(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].DraftMode"));
+			pageItem.setEditingVersion(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].EditingVersion"));
+			pageItem.setOwner(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Owner"));
+			pageItem.setDescription(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Description"));
+			pageItem.setBizTags(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].BizTags"));
+			pageItem.setLabels(_ctx.mapValue("ListSkillsResponse.Data.PageItems["+ i +"].Labels"));
+			pageItem.setFrom(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].From"));
+			pageItem.setName(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Name"));
+			pageItem.setScope(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Scope"));
 			pageItem.setUpdateTime(_ctx.longValue("ListSkillsResponse.Data.PageItems["+ i +"].UpdateTime"));
 			pageItem.setEnable(_ctx.booleanValue("ListSkillsResponse.Data.PageItems["+ i +"].Enable"));
-			pageItem.setBizTags(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].BizTags"));
-			pageItem.setFrom(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].From"));
-			pageItem.setScope(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Scope"));
-			pageItem.setLabels(_ctx.mapValue("ListSkillsResponse.Data.PageItems["+ i +"].Labels"));
-			pageItem.setEditingVersion(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].EditingVersion"));
+			pageItem.setNamespaceId(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].NamespaceId"));
 			pageItem.setReviewingVersion(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].ReviewingVersion"));
 			pageItem.setOnlineCnt(_ctx.integerValue("ListSkillsResponse.Data.PageItems["+ i +"].OnlineCnt"));
-			pageItem.setDownloadCount(_ctx.longValue("ListSkillsResponse.Data.PageItems["+ i +"].DownloadCount"));
-			pageItem.setNamespaceId(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].NamespaceId"));
-			pageItem.setName(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Name"));
-			pageItem.setDescription(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Description"));
-			pageItem.setOwner(_ctx.stringValue("ListSkillsResponse.Data.PageItems["+ i +"].Owner"));
 			pageItem.setWriteable(_ctx.booleanValue("ListSkillsResponse.Data.PageItems["+ i +"].Writeable"));
+			pageItem.setDownloadCount(_ctx.longValue("ListSkillsResponse.Data.PageItems["+ i +"].DownloadCount"));
 
 			pageItems.add(pageItem);
 		}

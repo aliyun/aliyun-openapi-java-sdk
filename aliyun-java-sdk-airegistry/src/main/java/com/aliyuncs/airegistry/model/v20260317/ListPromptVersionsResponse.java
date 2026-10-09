@@ -89,24 +89,24 @@ public class ListPromptVersionsResponse extends AcsResponse {
 
 		public static class Item {
 
-			private String promptKey;
+			private String status;
 
 			private String version;
 
-			private String status;
-
-			private String commitMsg;
-
 			private String srcUser;
+
+			private String promptKey;
 
 			private Long gmtModified;
 
-			public String getPromptKey() {
-				return this.promptKey;
+			private String commitMsg;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setPromptKey(String promptKey) {
-				this.promptKey = promptKey;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getVersion() {
@@ -117,22 +117,6 @@ public class ListPromptVersionsResponse extends AcsResponse {
 				this.version = version;
 			}
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getCommitMsg() {
-				return this.commitMsg;
-			}
-
-			public void setCommitMsg(String commitMsg) {
-				this.commitMsg = commitMsg;
-			}
-
 			public String getSrcUser() {
 				return this.srcUser;
 			}
@@ -141,12 +125,28 @@ public class ListPromptVersionsResponse extends AcsResponse {
 				this.srcUser = srcUser;
 			}
 
+			public String getPromptKey() {
+				return this.promptKey;
+			}
+
+			public void setPromptKey(String promptKey) {
+				this.promptKey = promptKey;
+			}
+
 			public Long getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(Long gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getCommitMsg() {
+				return this.commitMsg;
+			}
+
+			public void setCommitMsg(String commitMsg) {
+				this.commitMsg = commitMsg;
 			}
 		}
 	}

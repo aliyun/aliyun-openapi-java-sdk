@@ -31,7 +31,7 @@ public class UpdateSkillLabelsRequest extends RpcAcsRequest<UpdateSkillLabelsRes
 
 	private String skillName;
 	public UpdateSkillLabelsRequest() {
-		super("AIRegistry", "2026-03-17", "UpdateSkillLabels");
+		super("AIRegistry", "2026-03-17", "UpdateSkillLabels", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class OfflineSkillRequest extends RpcAcsRequest<OfflineSkillResponse> {
 
 	private String skillName;
 	public OfflineSkillRequest() {
-		super("AIRegistry", "2026-03-17", "OfflineSkill");
+		super("AIRegistry", "2026-03-17", "OfflineSkill", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

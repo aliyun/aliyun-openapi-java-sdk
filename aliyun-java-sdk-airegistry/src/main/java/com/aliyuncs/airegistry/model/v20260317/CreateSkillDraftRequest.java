@@ -37,7 +37,7 @@ public class CreateSkillDraftRequest extends RpcAcsRequest<CreateSkillDraftRespo
 
 	private String commitMsg;
 	public CreateSkillDraftRequest() {
-		super("AIRegistry", "2026-03-17", "CreateSkillDraft");
+		super("AIRegistry", "2026-03-17", "CreateSkillDraft", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

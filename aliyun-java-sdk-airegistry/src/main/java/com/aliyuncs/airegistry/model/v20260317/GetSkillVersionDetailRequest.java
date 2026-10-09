@@ -31,7 +31,7 @@ public class GetSkillVersionDetailRequest extends RpcAcsRequest<GetSkillVersionD
 
 	private String skillName;
 	public GetSkillVersionDetailRequest() {
-		super("AIRegistry", "2026-03-17", "GetSkillVersionDetail");
+		super("AIRegistry", "2026-03-17", "GetSkillVersionDetail", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

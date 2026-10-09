@@ -48,44 +48,110 @@ public class GetSkillDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean writeable;
+		private String draftMode;
+
+		private String editingVersion;
+
+		private String owner;
+
+		private String description;
+
+		private String bizTags;
+
+		private Map<Object,Object> labels;
+
+		private String from;
+
+		private String name;
+
+		private String scope;
 
 		private Long updateTime;
 
 		private Boolean enable;
 
-		private String bizTags;
-
-		private String from;
-
-		private String scope;
-
-		private Map<Object,Object> labels;
-
-		private String editingVersion;
+		private String namespaceId;
 
 		private String reviewingVersion;
 
 		private Integer onlineCnt;
 
+		private Boolean writeable;
+
 		private Long downloadCount;
-
-		private String namespaceId;
-
-		private String name;
-
-		private String description;
-
-		private String owner;
 
 		private List<Version> versions;
 
-		public Boolean getWriteable() {
-			return this.writeable;
+		public String getDraftMode() {
+			return this.draftMode;
 		}
 
-		public void setWriteable(Boolean writeable) {
-			this.writeable = writeable;
+		public void setDraftMode(String draftMode) {
+			this.draftMode = draftMode;
+		}
+
+		public String getEditingVersion() {
+			return this.editingVersion;
+		}
+
+		public void setEditingVersion(String editingVersion) {
+			this.editingVersion = editingVersion;
+		}
+
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getBizTags() {
+			return this.bizTags;
+		}
+
+		public void setBizTags(String bizTags) {
+			this.bizTags = bizTags;
+		}
+
+		public Map<Object,Object> getLabels() {
+			return this.labels;
+		}
+
+		public void setLabels(Map<Object,Object> labels) {
+			this.labels = labels;
+		}
+
+		public String getFrom() {
+			return this.from;
+		}
+
+		public void setFrom(String from) {
+			this.from = from;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getScope() {
+			return this.scope;
+		}
+
+		public void setScope(String scope) {
+			this.scope = scope;
 		}
 
 		public Long getUpdateTime() {
@@ -104,44 +170,12 @@ public class GetSkillDetailResponse extends AcsResponse {
 			this.enable = enable;
 		}
 
-		public String getBizTags() {
-			return this.bizTags;
+		public String getNamespaceId() {
+			return this.namespaceId;
 		}
 
-		public void setBizTags(String bizTags) {
-			this.bizTags = bizTags;
-		}
-
-		public String getFrom() {
-			return this.from;
-		}
-
-		public void setFrom(String from) {
-			this.from = from;
-		}
-
-		public String getScope() {
-			return this.scope;
-		}
-
-		public void setScope(String scope) {
-			this.scope = scope;
-		}
-
-		public Map<Object,Object> getLabels() {
-			return this.labels;
-		}
-
-		public void setLabels(Map<Object,Object> labels) {
-			this.labels = labels;
-		}
-
-		public String getEditingVersion() {
-			return this.editingVersion;
-		}
-
-		public void setEditingVersion(String editingVersion) {
-			this.editingVersion = editingVersion;
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
 		}
 
 		public String getReviewingVersion() {
@@ -160,44 +194,20 @@ public class GetSkillDetailResponse extends AcsResponse {
 			this.onlineCnt = onlineCnt;
 		}
 
+		public Boolean getWriteable() {
+			return this.writeable;
+		}
+
+		public void setWriteable(Boolean writeable) {
+			this.writeable = writeable;
+		}
+
 		public Long getDownloadCount() {
 			return this.downloadCount;
 		}
 
 		public void setDownloadCount(Long downloadCount) {
 			this.downloadCount = downloadCount;
-		}
-
-		public String getNamespaceId() {
-			return this.namespaceId;
-		}
-
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getOwner() {
-			return this.owner;
-		}
-
-		public void setOwner(String owner) {
-			this.owner = owner;
 		}
 
 		public List<Version> getVersions() {
@@ -210,31 +220,23 @@ public class GetSkillDetailResponse extends AcsResponse {
 
 		public static class Version {
 
-			private String version;
-
 			private String status;
 
-			private String author;
-
 			private String description;
+
+			private String publishPipelineInfo;
+
+			private String version;
 
 			private Long createTime;
 
 			private Long updateTime;
 
-			private String publishPipelineInfo;
-
-			private Long downloadCount;
+			private String author;
 
 			private String commitMsg;
 
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
+			private Long downloadCount;
 
 			public String getStatus() {
 				return this.status;
@@ -244,20 +246,28 @@ public class GetSkillDetailResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getAuthor() {
-				return this.author;
-			}
-
-			public void setAuthor(String author) {
-				this.author = author;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getPublishPipelineInfo() {
+				return this.publishPipelineInfo;
+			}
+
+			public void setPublishPipelineInfo(String publishPipelineInfo) {
+				this.publishPipelineInfo = publishPipelineInfo;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
 			}
 
 			public Long getCreateTime() {
@@ -276,20 +286,12 @@ public class GetSkillDetailResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
-			public String getPublishPipelineInfo() {
-				return this.publishPipelineInfo;
+			public String getAuthor() {
+				return this.author;
 			}
 
-			public void setPublishPipelineInfo(String publishPipelineInfo) {
-				this.publishPipelineInfo = publishPipelineInfo;
-			}
-
-			public Long getDownloadCount() {
-				return this.downloadCount;
-			}
-
-			public void setDownloadCount(Long downloadCount) {
-				this.downloadCount = downloadCount;
+			public void setAuthor(String author) {
+				this.author = author;
 			}
 
 			public String getCommitMsg() {
@@ -298,6 +300,14 @@ public class GetSkillDetailResponse extends AcsResponse {
 
 			public void setCommitMsg(String commitMsg) {
 				this.commitMsg = commitMsg;
+			}
+
+			public Long getDownloadCount() {
+				return this.downloadCount;
+			}
+
+			public void setDownloadCount(Long downloadCount) {
+				this.downloadCount = downloadCount;
 			}
 		}
 	}

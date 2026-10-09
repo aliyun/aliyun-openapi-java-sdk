@@ -31,21 +31,24 @@ public class ListNamespacesResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTotalCount(_ctx.integerValue("ListNamespacesResponse.Data.TotalCount"));
-		data.setPageNumber(_ctx.integerValue("ListNamespacesResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.integerValue("ListNamespacesResponse.Data.PageSize"));
+		data.setPageNumber(_ctx.integerValue("ListNamespacesResponse.Data.PageNumber"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("ListNamespacesResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setNamespaceId(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].NamespaceId"));
-			item.setName(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Name"));
-			item.setDescription(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Description"));
-			item.setTags(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Tags"));
-			item.setSource(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Source"));
 			item.setSourceIndex(_ctx.integerValue("ListNamespacesResponse.Data.Items["+ i +"].SourceIndex"));
+			item.setDescription(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Description"));
 			item.setPromptCount(_ctx.integerValue("ListNamespacesResponse.Data.Items["+ i +"].PromptCount"));
 			item.setCreatedTime(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].CreatedTime"));
+			item.setIpWhitelist(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].IpWhitelist"));
 			item.setSkillCount(_ctx.integerValue("ListNamespacesResponse.Data.Items["+ i +"].SkillCount"));
+			item.setPublicAccessEnabled(_ctx.booleanValue("ListNamespacesResponse.Data.Items["+ i +"].PublicAccessEnabled"));
+			item.setNamespaceId(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].NamespaceId"));
+			item.setTags(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Tags"));
+			item.setSource(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Source"));
+			item.setName(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].Name"));
+			item.setPublicDomain(_ctx.stringValue("ListNamespacesResponse.Data.Items["+ i +"].PublicDomain"));
 
 			items.add(item);
 		}

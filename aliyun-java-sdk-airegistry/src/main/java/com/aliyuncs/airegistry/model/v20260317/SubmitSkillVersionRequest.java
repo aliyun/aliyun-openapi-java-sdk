@@ -31,7 +31,7 @@ public class SubmitSkillVersionRequest extends RpcAcsRequest<SubmitSkillVersionR
 
 	private String skillName;
 	public SubmitSkillVersionRequest() {
-		super("AIRegistry", "2026-03-17", "SubmitSkillVersion");
+		super("AIRegistry", "2026-03-17", "SubmitSkillVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

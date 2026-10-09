@@ -29,7 +29,7 @@ public class DeletePromptRequest extends RpcAcsRequest<DeletePromptResponse> {
 
 	private String namespaceId;
 	public DeletePromptRequest() {
-		super("AIRegistry", "2026-03-17", "DeletePrompt");
+		super("AIRegistry", "2026-03-17", "DeletePrompt", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

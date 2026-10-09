@@ -41,7 +41,7 @@ public class UpdatePromptRequest extends RpcAcsRequest<UpdatePromptResponse> {
 
 	private String description;
 	public UpdatePromptRequest() {
-		super("AIRegistry", "2026-03-17", "UpdatePrompt");
+		super("AIRegistry", "2026-03-17", "UpdatePrompt", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

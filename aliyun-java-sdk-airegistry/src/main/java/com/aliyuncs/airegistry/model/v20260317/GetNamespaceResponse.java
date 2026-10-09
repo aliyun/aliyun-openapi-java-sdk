@@ -46,17 +46,7 @@ public class GetNamespaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String namespaceId;
-
-		private String name;
-
 		private String description;
-
-		private String tags;
-
-		private String source;
-
-		private Integer sourceIndex;
 
 		private Integer promptCount;
 
@@ -64,23 +54,23 @@ public class GetNamespaceResponse extends AcsResponse {
 
 		private Integer skillCount;
 
+		private String source;
+
+		private String name;
+
+		private String publicDomain;
+
+		private Integer sourceIndex;
+
+		private String ipWhitelist;
+
 		private String scanPolicy;
 
-		public String getNamespaceId() {
-			return this.namespaceId;
-		}
+		private Boolean publicAccessEnabled;
 
-		public void setNamespaceId(String namespaceId) {
-			this.namespaceId = namespaceId;
-		}
+		private String namespaceId;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String tags;
 
 		public String getDescription() {
 			return this.description;
@@ -88,30 +78,6 @@ public class GetNamespaceResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getTags() {
-			return this.tags;
-		}
-
-		public void setTags(String tags) {
-			this.tags = tags;
-		}
-
-		public String getSource() {
-			return this.source;
-		}
-
-		public void setSource(String source) {
-			this.source = source;
-		}
-
-		public Integer getSourceIndex() {
-			return this.sourceIndex;
-		}
-
-		public void setSourceIndex(Integer sourceIndex) {
-			this.sourceIndex = sourceIndex;
 		}
 
 		public Integer getPromptCount() {
@@ -138,12 +104,76 @@ public class GetNamespaceResponse extends AcsResponse {
 			this.skillCount = skillCount;
 		}
 
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPublicDomain() {
+			return this.publicDomain;
+		}
+
+		public void setPublicDomain(String publicDomain) {
+			this.publicDomain = publicDomain;
+		}
+
+		public Integer getSourceIndex() {
+			return this.sourceIndex;
+		}
+
+		public void setSourceIndex(Integer sourceIndex) {
+			this.sourceIndex = sourceIndex;
+		}
+
+		public String getIpWhitelist() {
+			return this.ipWhitelist;
+		}
+
+		public void setIpWhitelist(String ipWhitelist) {
+			this.ipWhitelist = ipWhitelist;
+		}
+
 		public String getScanPolicy() {
 			return this.scanPolicy;
 		}
 
 		public void setScanPolicy(String scanPolicy) {
 			this.scanPolicy = scanPolicy;
+		}
+
+		public Boolean getPublicAccessEnabled() {
+			return this.publicAccessEnabled;
+		}
+
+		public void setPublicAccessEnabled(Boolean publicAccessEnabled) {
+			this.publicAccessEnabled = publicAccessEnabled;
+		}
+
+		public String getNamespaceId() {
+			return this.namespaceId;
+		}
+
+		public void setNamespaceId(String namespaceId) {
+			this.namespaceId = namespaceId;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 	}
 

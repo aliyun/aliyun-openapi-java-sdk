@@ -38,15 +38,15 @@ public class ListPromptsResponseUnmarshaller {
 		List<Item> pageItems = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("ListPromptsResponse.Data.PageItems.Length"); i++) {
 			Item item = new Item();
-			item.setSchemaVersion(_ctx.integerValue("ListPromptsResponse.Data.PageItems["+ i +"].SchemaVersion"));
-			item.setPromptKey(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].PromptKey"));
-			item.setDescription(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].Description"));
-			item.setLatestVersion(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].LatestVersion"));
-			item.setGmtModified(_ctx.longValue("ListPromptsResponse.Data.PageItems["+ i +"].GmtModified"));
 			item.setEditingVersion(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].EditingVersion"));
+			item.setDescription(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].Description"));
+			item.setSchemaVersion(_ctx.integerValue("ListPromptsResponse.Data.PageItems["+ i +"].SchemaVersion"));
+			item.setLatestVersion(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].LatestVersion"));
+			item.setPromptKey(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].PromptKey"));
+			item.setGmtModified(_ctx.longValue("ListPromptsResponse.Data.PageItems["+ i +"].GmtModified"));
+			item.setLabels(_ctx.mapValue("ListPromptsResponse.Data.PageItems["+ i +"].Labels"));
 			item.setReviewingVersion(_ctx.stringValue("ListPromptsResponse.Data.PageItems["+ i +"].ReviewingVersion"));
 			item.setOnlineCnt(_ctx.integerValue("ListPromptsResponse.Data.PageItems["+ i +"].OnlineCnt"));
-			item.setLabels(_ctx.mapValue("ListPromptsResponse.Data.PageItems["+ i +"].Labels"));
 
 			List<String> bizTags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPromptsResponse.Data.PageItems["+ i +"].BizTags.Length"); j++) {

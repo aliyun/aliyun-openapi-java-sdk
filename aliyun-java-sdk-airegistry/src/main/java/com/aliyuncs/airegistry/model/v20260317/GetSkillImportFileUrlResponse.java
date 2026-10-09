@@ -48,9 +48,9 @@ public class GetSkillImportFileUrlResponse extends AcsResponse {
 
 		private String uploadUrl;
 
-		private String ossObjectName;
-
 		private String contentType;
+
+		private String ossObjectName;
 
 		private String maxSize;
 
@@ -62,20 +62,20 @@ public class GetSkillImportFileUrlResponse extends AcsResponse {
 			this.uploadUrl = uploadUrl;
 		}
 
-		public String getOssObjectName() {
-			return this.ossObjectName;
-		}
-
-		public void setOssObjectName(String ossObjectName) {
-			this.ossObjectName = ossObjectName;
-		}
-
 		public String getContentType() {
 			return this.contentType;
 		}
 
 		public void setContentType(String contentType) {
 			this.contentType = contentType;
+		}
+
+		public String getOssObjectName() {
+			return this.ossObjectName;
+		}
+
+		public void setOssObjectName(String ossObjectName) {
+			this.ossObjectName = ossObjectName;
 		}
 
 		public String getMaxSize() {

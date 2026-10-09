@@ -30,21 +30,21 @@ public class GetPromptVersionResponseUnmarshaller {
 		getPromptVersionResponse.setRequestId(_ctx.stringValue("GetPromptVersionResponse.RequestId"));
 
 		Data data = new Data();
-		data.setPromptKey(_ctx.stringValue("GetPromptVersionResponse.Data.PromptKey"));
-		data.setVersion(_ctx.stringValue("GetPromptVersionResponse.Data.Version"));
 		data.setStatus(_ctx.stringValue("GetPromptVersionResponse.Data.Status"));
-		data.setTemplate(_ctx.stringValue("GetPromptVersionResponse.Data.Template"));
-		data.setCommitMsg(_ctx.stringValue("GetPromptVersionResponse.Data.CommitMsg"));
+		data.setVersion(_ctx.stringValue("GetPromptVersionResponse.Data.Version"));
 		data.setSrcUser(_ctx.stringValue("GetPromptVersionResponse.Data.SrcUser"));
+		data.setPromptKey(_ctx.stringValue("GetPromptVersionResponse.Data.PromptKey"));
 		data.setGmtModified(_ctx.longValue("GetPromptVersionResponse.Data.GmtModified"));
+		data.setCommitMsg(_ctx.stringValue("GetPromptVersionResponse.Data.CommitMsg"));
+		data.setTemplate(_ctx.stringValue("GetPromptVersionResponse.Data.Template"));
 		data.setMd5(_ctx.stringValue("GetPromptVersionResponse.Data.Md5"));
 
 		List<Variable> variables = new ArrayList<Variable>();
 		for (int i = 0; i < _ctx.lengthValue("GetPromptVersionResponse.Data.Variables.Length"); i++) {
 			Variable variable = new Variable();
-			variable.setName(_ctx.stringValue("GetPromptVersionResponse.Data.Variables["+ i +"].Name"));
 			variable.setDefaultValue(_ctx.stringValue("GetPromptVersionResponse.Data.Variables["+ i +"].DefaultValue"));
 			variable.setDescription(_ctx.stringValue("GetPromptVersionResponse.Data.Variables["+ i +"].Description"));
+			variable.setName(_ctx.stringValue("GetPromptVersionResponse.Data.Variables["+ i +"].Name"));
 
 			variables.add(variable);
 		}

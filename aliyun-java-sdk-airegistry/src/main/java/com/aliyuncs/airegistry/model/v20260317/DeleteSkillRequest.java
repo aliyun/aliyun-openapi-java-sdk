@@ -29,7 +29,7 @@ public class DeleteSkillRequest extends RpcAcsRequest<DeleteSkillResponse> {
 
 	private String skillName;
 	public DeleteSkillRequest() {
-		super("AIRegistry", "2026-03-17", "DeleteSkill");
+		super("AIRegistry", "2026-03-17", "DeleteSkill", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

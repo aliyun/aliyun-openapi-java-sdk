@@ -41,7 +41,7 @@ public class CreatePromptRequest extends RpcAcsRequest<CreatePromptResponse> {
 
 	private String commitMsg;
 	public CreatePromptRequest() {
-		super("AIRegistry", "2026-03-17", "CreatePrompt");
+		super("AIRegistry", "2026-03-17", "CreatePrompt", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

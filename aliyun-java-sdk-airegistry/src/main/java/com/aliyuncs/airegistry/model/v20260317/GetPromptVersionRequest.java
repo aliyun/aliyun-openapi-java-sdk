@@ -31,7 +31,7 @@ public class GetPromptVersionRequest extends RpcAcsRequest<GetPromptVersionRespo
 
 	private String promptVersion;
 	public GetPromptVersionRequest() {
-		super("AIRegistry", "2026-03-17", "GetPromptVersion");
+		super("AIRegistry", "2026-03-17", "GetPromptVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

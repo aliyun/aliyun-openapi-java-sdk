@@ -33,7 +33,7 @@ public class ListNamespacesRequest extends RpcAcsRequest<ListNamespacesResponse>
 
 	private Integer pageSize;
 	public ListNamespacesRequest() {
-		super("AIRegistry", "2026-03-17", "ListNamespaces");
+		super("AIRegistry", "2026-03-17", "ListNamespaces", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

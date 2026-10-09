@@ -31,21 +31,15 @@ public class GetPromptResponseUnmarshaller {
 		getPromptResponse.setRequestId(_ctx.stringValue("GetPromptResponse.RequestId"));
 
 		Data data = new Data();
-		data.setSchemaVersion(_ctx.integerValue("GetPromptResponse.Data.SchemaVersion"));
-		data.setPromptKey(_ctx.stringValue("GetPromptResponse.Data.PromptKey"));
-		data.setDescription(_ctx.stringValue("GetPromptResponse.Data.Description"));
-		data.setLatestVersion(_ctx.stringValue("GetPromptResponse.Data.LatestVersion"));
-		data.setGmtModified(_ctx.longValue("GetPromptResponse.Data.GmtModified"));
 		data.setEditingVersion(_ctx.stringValue("GetPromptResponse.Data.EditingVersion"));
+		data.setDescription(_ctx.stringValue("GetPromptResponse.Data.Description"));
+		data.setSchemaVersion(_ctx.integerValue("GetPromptResponse.Data.SchemaVersion"));
+		data.setLatestVersion(_ctx.stringValue("GetPromptResponse.Data.LatestVersion"));
+		data.setPromptKey(_ctx.stringValue("GetPromptResponse.Data.PromptKey"));
+		data.setGmtModified(_ctx.longValue("GetPromptResponse.Data.GmtModified"));
+		data.setLabels(_ctx.mapValue("GetPromptResponse.Data.Labels"));
 		data.setReviewingVersion(_ctx.stringValue("GetPromptResponse.Data.ReviewingVersion"));
 		data.setOnlineCnt(_ctx.integerValue("GetPromptResponse.Data.OnlineCnt"));
-		data.setLabels(_ctx.mapValue("GetPromptResponse.Data.Labels"));
-
-		List<String> bizTags = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPromptResponse.Data.BizTags.Length"); i++) {
-			bizTags.add(_ctx.stringValue("GetPromptResponse.Data.BizTags["+ i +"]"));
-		}
-		data.setBizTags(bizTags);
 
 		List<String> versions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPromptResponse.Data.Versions.Length"); i++) {
@@ -53,15 +47,21 @@ public class GetPromptResponseUnmarshaller {
 		}
 		data.setVersions(versions);
 
+		List<String> bizTags = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPromptResponse.Data.BizTags.Length"); i++) {
+			bizTags.add(_ctx.stringValue("GetPromptResponse.Data.BizTags["+ i +"]"));
+		}
+		data.setBizTags(bizTags);
+
 		List<VersionDetail> versionDetails = new ArrayList<VersionDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetPromptResponse.Data.VersionDetails.Length"); i++) {
 			VersionDetail versionDetail = new VersionDetail();
-			versionDetail.setPromptKey(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].PromptKey"));
-			versionDetail.setVersion(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].Version"));
 			versionDetail.setStatus(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].Status"));
-			versionDetail.setCommitMsg(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].CommitMsg"));
+			versionDetail.setVersion(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].Version"));
 			versionDetail.setSrcUser(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].SrcUser"));
+			versionDetail.setPromptKey(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].PromptKey"));
 			versionDetail.setGmtModified(_ctx.longValue("GetPromptResponse.Data.VersionDetails["+ i +"].GmtModified"));
+			versionDetail.setCommitMsg(_ctx.stringValue("GetPromptResponse.Data.VersionDetails["+ i +"].CommitMsg"));
 
 			versionDetails.add(versionDetail);
 		}

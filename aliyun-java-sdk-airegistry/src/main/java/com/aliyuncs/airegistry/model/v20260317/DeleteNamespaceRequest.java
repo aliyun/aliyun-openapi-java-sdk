@@ -27,7 +27,7 @@ public class DeleteNamespaceRequest extends RpcAcsRequest<DeleteNamespaceRespons
 
 	private String namespaceId;
 	public DeleteNamespaceRequest() {
-		super("AIRegistry", "2026-03-17", "DeleteNamespace");
+		super("AIRegistry", "2026-03-17", "DeleteNamespace", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

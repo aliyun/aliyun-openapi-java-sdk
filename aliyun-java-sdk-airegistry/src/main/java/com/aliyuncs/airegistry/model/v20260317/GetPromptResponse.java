@@ -48,44 +48,36 @@ public class GetPromptResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer schemaVersion;
-
-		private String promptKey;
+		private String editingVersion;
 
 		private String description;
 
+		private Integer schemaVersion;
+
 		private String latestVersion;
+
+		private String promptKey;
 
 		private Long gmtModified;
 
-		private String editingVersion;
+		private Map<Object,Object> labels;
 
 		private String reviewingVersion;
 
 		private Integer onlineCnt;
 
-		private Map<Object,Object> labels;
-
 		private List<VersionDetail> versionDetails;
-
-		private List<String> bizTags;
 
 		private List<String> versions;
 
-		public Integer getSchemaVersion() {
-			return this.schemaVersion;
+		private List<String> bizTags;
+
+		public String getEditingVersion() {
+			return this.editingVersion;
 		}
 
-		public void setSchemaVersion(Integer schemaVersion) {
-			this.schemaVersion = schemaVersion;
-		}
-
-		public String getPromptKey() {
-			return this.promptKey;
-		}
-
-		public void setPromptKey(String promptKey) {
-			this.promptKey = promptKey;
+		public void setEditingVersion(String editingVersion) {
+			this.editingVersion = editingVersion;
 		}
 
 		public String getDescription() {
@@ -96,12 +88,28 @@ public class GetPromptResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public Integer getSchemaVersion() {
+			return this.schemaVersion;
+		}
+
+		public void setSchemaVersion(Integer schemaVersion) {
+			this.schemaVersion = schemaVersion;
+		}
+
 		public String getLatestVersion() {
 			return this.latestVersion;
 		}
 
 		public void setLatestVersion(String latestVersion) {
 			this.latestVersion = latestVersion;
+		}
+
+		public String getPromptKey() {
+			return this.promptKey;
+		}
+
+		public void setPromptKey(String promptKey) {
+			this.promptKey = promptKey;
 		}
 
 		public Long getGmtModified() {
@@ -112,12 +120,12 @@ public class GetPromptResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
-		public String getEditingVersion() {
-			return this.editingVersion;
+		public Map<Object,Object> getLabels() {
+			return this.labels;
 		}
 
-		public void setEditingVersion(String editingVersion) {
-			this.editingVersion = editingVersion;
+		public void setLabels(Map<Object,Object> labels) {
+			this.labels = labels;
 		}
 
 		public String getReviewingVersion() {
@@ -136,28 +144,12 @@ public class GetPromptResponse extends AcsResponse {
 			this.onlineCnt = onlineCnt;
 		}
 
-		public Map<Object,Object> getLabels() {
-			return this.labels;
-		}
-
-		public void setLabels(Map<Object,Object> labels) {
-			this.labels = labels;
-		}
-
 		public List<VersionDetail> getVersionDetails() {
 			return this.versionDetails;
 		}
 
 		public void setVersionDetails(List<VersionDetail> versionDetails) {
 			this.versionDetails = versionDetails;
-		}
-
-		public List<String> getBizTags() {
-			return this.bizTags;
-		}
-
-		public void setBizTags(List<String> bizTags) {
-			this.bizTags = bizTags;
 		}
 
 		public List<String> getVersions() {
@@ -168,26 +160,34 @@ public class GetPromptResponse extends AcsResponse {
 			this.versions = versions;
 		}
 
+		public List<String> getBizTags() {
+			return this.bizTags;
+		}
+
+		public void setBizTags(List<String> bizTags) {
+			this.bizTags = bizTags;
+		}
+
 		public static class VersionDetail {
-
-			private String promptKey;
-
-			private String version;
 
 			private String status;
 
-			private String commitMsg;
+			private String version;
 
 			private String srcUser;
 
+			private String promptKey;
+
 			private Long gmtModified;
 
-			public String getPromptKey() {
-				return this.promptKey;
+			private String commitMsg;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setPromptKey(String promptKey) {
-				this.promptKey = promptKey;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public String getVersion() {
@@ -198,22 +198,6 @@ public class GetPromptResponse extends AcsResponse {
 				this.version = version;
 			}
 
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getCommitMsg() {
-				return this.commitMsg;
-			}
-
-			public void setCommitMsg(String commitMsg) {
-				this.commitMsg = commitMsg;
-			}
-
 			public String getSrcUser() {
 				return this.srcUser;
 			}
@@ -222,12 +206,28 @@ public class GetPromptResponse extends AcsResponse {
 				this.srcUser = srcUser;
 			}
 
+			public String getPromptKey() {
+				return this.promptKey;
+			}
+
+			public void setPromptKey(String promptKey) {
+				this.promptKey = promptKey;
+			}
+
 			public Long getGmtModified() {
 				return this.gmtModified;
 			}
 
 			public void setGmtModified(Long gmtModified) {
 				this.gmtModified = gmtModified;
+			}
+
+			public String getCommitMsg() {
+				return this.commitMsg;
+			}
+
+			public void setCommitMsg(String commitMsg) {
+				this.commitMsg = commitMsg;
 			}
 		}
 	}

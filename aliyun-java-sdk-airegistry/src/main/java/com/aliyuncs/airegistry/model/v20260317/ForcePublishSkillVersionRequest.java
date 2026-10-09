@@ -33,7 +33,7 @@ public class ForcePublishSkillVersionRequest extends RpcAcsRequest<ForcePublishS
 
 	private String skillName;
 	public ForcePublishSkillVersionRequest() {
-		super("AIRegistry", "2026-03-17", "ForcePublishSkillVersion");
+		super("AIRegistry", "2026-03-17", "ForcePublishSkillVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

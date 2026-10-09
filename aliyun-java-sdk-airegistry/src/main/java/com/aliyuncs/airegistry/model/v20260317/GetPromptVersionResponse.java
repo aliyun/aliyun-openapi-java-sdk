@@ -47,30 +47,30 @@ public class GetPromptVersionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String promptKey;
+		private String status;
 
 		private String version;
 
-		private String status;
+		private String srcUser;
 
-		private String template;
+		private String promptKey;
+
+		private Long gmtModified;
 
 		private String commitMsg;
 
-		private String srcUser;
-
-		private Long gmtModified;
+		private String template;
 
 		private String md5;
 
 		private List<Variable> variables;
 
-		public String getPromptKey() {
-			return this.promptKey;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setPromptKey(String promptKey) {
-			this.promptKey = promptKey;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getVersion() {
@@ -81,20 +81,28 @@ public class GetPromptVersionResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getSrcUser() {
+			return this.srcUser;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setSrcUser(String srcUser) {
+			this.srcUser = srcUser;
 		}
 
-		public String getTemplate() {
-			return this.template;
+		public String getPromptKey() {
+			return this.promptKey;
 		}
 
-		public void setTemplate(String template) {
-			this.template = template;
+		public void setPromptKey(String promptKey) {
+			this.promptKey = promptKey;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public String getCommitMsg() {
@@ -105,20 +113,12 @@ public class GetPromptVersionResponse extends AcsResponse {
 			this.commitMsg = commitMsg;
 		}
 
-		public String getSrcUser() {
-			return this.srcUser;
+		public String getTemplate() {
+			return this.template;
 		}
 
-		public void setSrcUser(String srcUser) {
-			this.srcUser = srcUser;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setTemplate(String template) {
+			this.template = template;
 		}
 
 		public String getMd5() {
@@ -139,19 +139,11 @@ public class GetPromptVersionResponse extends AcsResponse {
 
 		public static class Variable {
 
-			private String name;
-
 			private String defaultValue;
 
 			private String description;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getDefaultValue() {
 				return this.defaultValue;
@@ -167,6 +159,14 @@ public class GetPromptVersionResponse extends AcsResponse {
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

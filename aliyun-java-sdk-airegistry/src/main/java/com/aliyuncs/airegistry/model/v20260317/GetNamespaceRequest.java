@@ -27,7 +27,7 @@ public class GetNamespaceRequest extends RpcAcsRequest<GetNamespaceResponse> {
 
 	private String namespaceId;
 	public GetNamespaceRequest() {
-		super("AIRegistry", "2026-03-17", "GetNamespace");
+		super("AIRegistry", "2026-03-17", "GetNamespace", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

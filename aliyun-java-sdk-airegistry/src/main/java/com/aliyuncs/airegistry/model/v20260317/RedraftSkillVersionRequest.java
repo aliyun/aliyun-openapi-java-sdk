@@ -22,18 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class UpdateSkillDraftRequest extends RpcAcsRequest<UpdateSkillDraftResponse> {
+public class RedraftSkillVersionRequest extends RpcAcsRequest<RedraftSkillVersionResponse> {
 	   
 
 	private String namespaceId;
 
-	private String skillCard;
+	private String skillVersion;
 
 	private String skillName;
-
-	private String commitMsg;
-	public UpdateSkillDraftRequest() {
-		super("AIRegistry", "2026-03-17", "UpdateSkillDraft", "AIRegistry");
+	public RedraftSkillVersionRequest() {
+		super("AIRegistry", "2026-03-17", "RedraftSkillVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -49,14 +47,14 @@ public class UpdateSkillDraftRequest extends RpcAcsRequest<UpdateSkillDraftRespo
 		}
 	}
 
-	public String getSkillCard() {
-		return this.skillCard;
+	public String getSkillVersion() {
+		return this.skillVersion;
 	}
 
-	public void setSkillCard(String skillCard) {
-		this.skillCard = skillCard;
-		if(skillCard != null){
-			putQueryParameter("SkillCard", skillCard);
+	public void setSkillVersion(String skillVersion) {
+		this.skillVersion = skillVersion;
+		if(skillVersion != null){
+			putQueryParameter("SkillVersion", skillVersion);
 		}
 	}
 
@@ -71,20 +69,9 @@ public class UpdateSkillDraftRequest extends RpcAcsRequest<UpdateSkillDraftRespo
 		}
 	}
 
-	public String getCommitMsg() {
-		return this.commitMsg;
-	}
-
-	public void setCommitMsg(String commitMsg) {
-		this.commitMsg = commitMsg;
-		if(commitMsg != null){
-			putQueryParameter("CommitMsg", commitMsg);
-		}
-	}
-
 	@Override
-	public Class<UpdateSkillDraftResponse> getResponseClass() {
-		return UpdateSkillDraftResponse.class;
+	public Class<RedraftSkillVersionResponse> getResponseClass() {
+		return RedraftSkillVersionResponse.class;
 	}
 
 }

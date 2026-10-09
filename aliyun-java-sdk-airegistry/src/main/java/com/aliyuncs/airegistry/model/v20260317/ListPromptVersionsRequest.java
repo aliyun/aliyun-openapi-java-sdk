@@ -33,7 +33,7 @@ public class ListPromptVersionsRequest extends RpcAcsRequest<ListPromptVersionsR
 
 	private Integer pageSize;
 	public ListPromptVersionsRequest() {
-		super("AIRegistry", "2026-03-17", "ListPromptVersions");
+		super("AIRegistry", "2026-03-17", "ListPromptVersions", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -29,7 +29,7 @@ public class GetSkillImportFileUrlRequest extends RpcAcsRequest<GetSkillImportFi
 
 	private String contentType;
 	public GetSkillImportFileUrlRequest() {
-		super("AIRegistry", "2026-03-17", "GetSkillImportFileUrl");
+		super("AIRegistry", "2026-03-17", "GetSkillImportFileUrl", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

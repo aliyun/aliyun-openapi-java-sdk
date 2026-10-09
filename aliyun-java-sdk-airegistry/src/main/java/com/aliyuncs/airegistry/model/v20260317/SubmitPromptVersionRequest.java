@@ -31,7 +31,7 @@ public class SubmitPromptVersionRequest extends RpcAcsRequest<SubmitPromptVersio
 
 	private String promptVersion;
 	public SubmitPromptVersionRequest() {
-		super("AIRegistry", "2026-03-17", "SubmitPromptVersion");
+		super("AIRegistry", "2026-03-17", "SubmitPromptVersion", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class OnlineSkillRequest extends RpcAcsRequest<OnlineSkillResponse> {
 
 	private String skillName;
 	public OnlineSkillRequest() {
-		super("AIRegistry", "2026-03-17", "OnlineSkill");
+		super("AIRegistry", "2026-03-17", "OnlineSkill", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

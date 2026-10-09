@@ -41,7 +41,7 @@ public class ListSkillsRequest extends RpcAcsRequest<ListSkillsResponse> {
 
 	private String skillName;
 	public ListSkillsRequest() {
-		super("AIRegistry", "2026-03-17", "ListSkills");
+		super("AIRegistry", "2026-03-17", "ListSkills", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

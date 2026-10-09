@@ -35,7 +35,7 @@ public class UpdateNamespaceRequest extends RpcAcsRequest<UpdateNamespaceRespons
 
 	private String scanPolicy;
 	public UpdateNamespaceRequest() {
-		super("AIRegistry", "2026-03-17", "UpdateNamespace");
+		super("AIRegistry", "2026-03-17", "UpdateNamespace", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

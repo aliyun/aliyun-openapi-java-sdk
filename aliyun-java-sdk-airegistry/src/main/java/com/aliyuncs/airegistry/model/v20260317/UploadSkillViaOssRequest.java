@@ -29,11 +29,13 @@ public class UploadSkillViaOssRequest extends RpcAcsRequest<UploadSkillViaOssRes
 
 	private Boolean overwrite;
 
+	private String targetVersion;
+
 	private String ossObjectName;
 
 	private String commitMsg;
 	public UploadSkillViaOssRequest() {
-		super("AIRegistry", "2026-03-17", "UploadSkillViaOss");
+		super("AIRegistry", "2026-03-17", "UploadSkillViaOss", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -57,6 +59,17 @@ public class UploadSkillViaOssRequest extends RpcAcsRequest<UploadSkillViaOssRes
 		this.overwrite = overwrite;
 		if(overwrite != null){
 			putQueryParameter("Overwrite", overwrite.toString());
+		}
+	}
+
+	public String getTargetVersion() {
+		return this.targetVersion;
+	}
+
+	public void setTargetVersion(String targetVersion) {
+		this.targetVersion = targetVersion;
+		if(targetVersion != null){
+			putQueryParameter("TargetVersion", targetVersion);
 		}
 	}
 

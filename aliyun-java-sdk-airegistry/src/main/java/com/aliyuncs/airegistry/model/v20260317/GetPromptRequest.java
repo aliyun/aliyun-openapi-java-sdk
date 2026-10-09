@@ -29,7 +29,7 @@ public class GetPromptRequest extends RpcAcsRequest<GetPromptResponse> {
 
 	private String namespaceId;
 	public GetPromptRequest() {
-		super("AIRegistry", "2026-03-17", "GetPrompt");
+		super("AIRegistry", "2026-03-17", "GetPrompt", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

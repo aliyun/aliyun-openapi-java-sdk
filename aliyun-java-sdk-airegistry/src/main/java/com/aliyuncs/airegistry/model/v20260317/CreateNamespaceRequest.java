@@ -33,7 +33,7 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 
 	private String scanPolicy;
 	public CreateNamespaceRequest() {
-		super("AIRegistry", "2026-03-17", "CreateNamespace");
+		super("AIRegistry", "2026-03-17", "CreateNamespace", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

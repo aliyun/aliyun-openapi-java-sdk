@@ -90,40 +90,32 @@ public class ListPromptsResponse extends AcsResponse {
 
 		public static class Item {
 
-			private Integer schemaVersion;
-
-			private String promptKey;
+			private String editingVersion;
 
 			private String description;
 
+			private Integer schemaVersion;
+
 			private String latestVersion;
+
+			private String promptKey;
 
 			private Long gmtModified;
 
-			private String editingVersion;
+			private Map<Object,Object> labels;
 
 			private String reviewingVersion;
 
 			private Integer onlineCnt;
 
-			private Map<Object,Object> labels;
-
 			private List<String> bizTags;
 
-			public Integer getSchemaVersion() {
-				return this.schemaVersion;
+			public String getEditingVersion() {
+				return this.editingVersion;
 			}
 
-			public void setSchemaVersion(Integer schemaVersion) {
-				this.schemaVersion = schemaVersion;
-			}
-
-			public String getPromptKey() {
-				return this.promptKey;
-			}
-
-			public void setPromptKey(String promptKey) {
-				this.promptKey = promptKey;
+			public void setEditingVersion(String editingVersion) {
+				this.editingVersion = editingVersion;
 			}
 
 			public String getDescription() {
@@ -134,12 +126,28 @@ public class ListPromptsResponse extends AcsResponse {
 				this.description = description;
 			}
 
+			public Integer getSchemaVersion() {
+				return this.schemaVersion;
+			}
+
+			public void setSchemaVersion(Integer schemaVersion) {
+				this.schemaVersion = schemaVersion;
+			}
+
 			public String getLatestVersion() {
 				return this.latestVersion;
 			}
 
 			public void setLatestVersion(String latestVersion) {
 				this.latestVersion = latestVersion;
+			}
+
+			public String getPromptKey() {
+				return this.promptKey;
+			}
+
+			public void setPromptKey(String promptKey) {
+				this.promptKey = promptKey;
 			}
 
 			public Long getGmtModified() {
@@ -150,12 +158,12 @@ public class ListPromptsResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getEditingVersion() {
-				return this.editingVersion;
+			public Map<Object,Object> getLabels() {
+				return this.labels;
 			}
 
-			public void setEditingVersion(String editingVersion) {
-				this.editingVersion = editingVersion;
+			public void setLabels(Map<Object,Object> labels) {
+				this.labels = labels;
 			}
 
 			public String getReviewingVersion() {
@@ -172,14 +180,6 @@ public class ListPromptsResponse extends AcsResponse {
 
 			public void setOnlineCnt(Integer onlineCnt) {
 				this.onlineCnt = onlineCnt;
-			}
-
-			public Map<Object,Object> getLabels() {
-				return this.labels;
-			}
-
-			public void setLabels(Map<Object,Object> labels) {
-				this.labels = labels;
 			}
 
 			public List<String> getBizTags() {

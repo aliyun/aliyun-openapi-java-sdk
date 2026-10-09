@@ -27,8 +27,8 @@ public class GetSkillImportFileUrlResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setUploadUrl(_ctx.stringValue("GetSkillImportFileUrlResponse.Data.UploadUrl"));
-		data.setOssObjectName(_ctx.stringValue("GetSkillImportFileUrlResponse.Data.OssObjectName"));
 		data.setContentType(_ctx.stringValue("GetSkillImportFileUrlResponse.Data.ContentType"));
+		data.setOssObjectName(_ctx.stringValue("GetSkillImportFileUrlResponse.Data.OssObjectName"));
 		data.setMaxSize(_ctx.stringValue("GetSkillImportFileUrlResponse.Data.MaxSize"));
 		getSkillImportFileUrlResponse.setData(data);
 	 

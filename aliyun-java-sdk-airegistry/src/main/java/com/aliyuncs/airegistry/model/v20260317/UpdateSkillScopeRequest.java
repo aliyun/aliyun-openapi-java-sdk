@@ -31,7 +31,7 @@ public class UpdateSkillScopeRequest extends RpcAcsRequest<UpdateSkillScopeRespo
 
 	private String skillName;
 	public UpdateSkillScopeRequest() {
-		super("AIRegistry", "2026-03-17", "UpdateSkillScope");
+		super("AIRegistry", "2026-03-17", "UpdateSkillScope", "AIRegistry");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
