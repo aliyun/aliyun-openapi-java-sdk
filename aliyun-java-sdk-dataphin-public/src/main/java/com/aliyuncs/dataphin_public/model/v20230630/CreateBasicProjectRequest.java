@@ -35,7 +35,7 @@ public class CreateBasicProjectRequest extends RpcAcsRequest<CreateBasicProjectR
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateBasicProjectRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBasicProject", "1111");
+		super("dataphin-public", "2023-06-30", "CreateBasicProject", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

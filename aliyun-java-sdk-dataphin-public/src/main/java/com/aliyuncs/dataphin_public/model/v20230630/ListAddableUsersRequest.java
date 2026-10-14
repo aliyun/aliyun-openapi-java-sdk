@@ -34,7 +34,7 @@ public class ListAddableUsersRequest extends RpcAcsRequest<ListAddableUsersRespo
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAddableUsersRequest() {
-		super("dataphin-public", "2023-06-30", "ListAddableUsers", "1111");
+		super("dataphin-public", "2023-06-30", "ListAddableUsers", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

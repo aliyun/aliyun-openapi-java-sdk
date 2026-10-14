@@ -33,7 +33,7 @@ public class GetStandardSetRequest extends RpcAcsRequest<GetStandardSetResponse>
 
 	private Long id;
 	public GetStandardSetRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardSet", "1111");
+		super("dataphin-public", "2023-06-30", "GetStandardSet", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

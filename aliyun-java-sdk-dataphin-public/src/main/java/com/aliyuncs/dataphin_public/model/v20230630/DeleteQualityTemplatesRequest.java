@@ -35,7 +35,7 @@ public class DeleteQualityTemplatesRequest extends RpcAcsRequest<DeleteQualityTe
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteQualityTemplatesRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteQualityTemplates", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteQualityTemplates", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

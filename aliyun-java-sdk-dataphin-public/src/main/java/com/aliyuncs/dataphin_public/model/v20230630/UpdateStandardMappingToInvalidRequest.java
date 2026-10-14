@@ -35,7 +35,7 @@ public class UpdateStandardMappingToInvalidRequest extends RpcAcsRequest<UpdateS
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateStandardMappingToInvalidRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateStandardMappingToInvalid", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateStandardMappingToInvalid", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

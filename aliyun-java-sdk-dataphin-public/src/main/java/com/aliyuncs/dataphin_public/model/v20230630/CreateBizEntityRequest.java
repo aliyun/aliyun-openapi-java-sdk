@@ -35,7 +35,7 @@ public class CreateBizEntityRequest extends RpcAcsRequest<CreateBizEntityRespons
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateBizEntityRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBizEntity", "1111");
+		super("dataphin-public", "2023-06-30", "CreateBizEntity", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

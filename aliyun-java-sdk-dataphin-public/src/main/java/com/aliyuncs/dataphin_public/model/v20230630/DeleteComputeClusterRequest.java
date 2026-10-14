@@ -31,7 +31,7 @@ public class DeleteComputeClusterRequest extends RpcAcsRequest<DeleteComputeClus
 
 	private Long id;
 	public DeleteComputeClusterRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteComputeCluster", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteComputeCluster", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

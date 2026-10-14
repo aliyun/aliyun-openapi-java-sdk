@@ -34,7 +34,7 @@ public class GetBizMetricByNameRequest extends RpcAcsRequest<GetBizMetricByNameR
 	@SerializedName("bizMetricByNameQuery")
 	private BizMetricByNameQuery bizMetricByNameQuery;
 	public GetBizMetricByNameRequest() {
-		super("dataphin-public", "2023-06-30", "GetBizMetricByName", "1111");
+		super("dataphin-public", "2023-06-30", "GetBizMetricByName", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

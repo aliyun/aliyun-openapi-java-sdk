@@ -29,7 +29,7 @@ public class GetLlmModelProvidersRequest extends RpcAcsRequest<GetLlmModelProvid
 
 	private String opUserId;
 	public GetLlmModelProvidersRequest() {
-		super("dataphin-public", "2023-06-30", "GetLlmModelProviders", "1111");
+		super("dataphin-public", "2023-06-30", "GetLlmModelProviders", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

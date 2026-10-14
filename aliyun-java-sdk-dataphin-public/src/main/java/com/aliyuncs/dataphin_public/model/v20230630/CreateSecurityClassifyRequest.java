@@ -35,7 +35,7 @@ public class CreateSecurityClassifyRequest extends RpcAcsRequest<CreateSecurityC
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateSecurityClassifyRequest() {
-		super("dataphin-public", "2023-06-30", "CreateSecurityClassify", "1111");
+		super("dataphin-public", "2023-06-30", "CreateSecurityClassify", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

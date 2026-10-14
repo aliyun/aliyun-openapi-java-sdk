@@ -35,7 +35,7 @@ public class ListBizEntitiesRequest extends RpcAcsRequest<ListBizEntitiesRespons
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListBizEntitiesRequest() {
-		super("dataphin-public", "2023-06-30", "ListBizEntities", "1111");
+		super("dataphin-public", "2023-06-30", "ListBizEntities", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

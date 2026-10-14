@@ -31,7 +31,7 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 
 	private String userGroupId;
 	public DeleteUserGroupRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteUserGroup", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteUserGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

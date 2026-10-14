@@ -34,7 +34,7 @@ public class ListAuthorizedDataServiceApiDetailsRequest extends RpcAcsRequest<Li
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAuthorizedDataServiceApiDetailsRequest() {
-		super("dataphin-public", "2023-06-30", "ListAuthorizedDataServiceApiDetails", "1111");
+		super("dataphin-public", "2023-06-30", "ListAuthorizedDataServiceApiDetails", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class GetStandardLookupTableRequest extends RpcAcsRequest<GetStandardLook
 
 	private Long id;
 	public GetStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "GetStandardLookupTable", "1111");
+		super("dataphin-public", "2023-06-30", "GetStandardLookupTable", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

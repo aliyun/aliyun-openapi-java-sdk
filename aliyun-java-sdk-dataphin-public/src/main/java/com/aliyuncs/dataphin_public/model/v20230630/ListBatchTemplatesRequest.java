@@ -38,7 +38,7 @@ public class ListBatchTemplatesRequest extends RpcAcsRequest<ListBatchTemplatesR
 
 	private Long projectId;
 	public ListBatchTemplatesRequest() {
-		super("dataphin-public", "2023-06-30", "ListBatchTemplates", "1111");
+		super("dataphin-public", "2023-06-30", "ListBatchTemplates", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

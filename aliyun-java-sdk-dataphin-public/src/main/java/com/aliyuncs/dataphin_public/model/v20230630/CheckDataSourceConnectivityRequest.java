@@ -35,7 +35,7 @@ public class CheckDataSourceConnectivityRequest extends RpcAcsRequest<CheckDataS
 	@SerializedName("checkCommand")
 	private CheckCommand checkCommand;
 	public CheckDataSourceConnectivityRequest() {
-		super("dataphin-public", "2023-06-30", "CheckDataSourceConnectivity", "1111");
+		super("dataphin-public", "2023-06-30", "CheckDataSourceConnectivity", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

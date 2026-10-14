@@ -34,7 +34,7 @@ public class ListSecurityIdentifyRecordsRequest extends RpcAcsRequest<ListSecuri
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListSecurityIdentifyRecordsRequest() {
-		super("dataphin-public", "2023-06-30", "ListSecurityIdentifyRecords", "1111");
+		super("dataphin-public", "2023-06-30", "ListSecurityIdentifyRecords", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

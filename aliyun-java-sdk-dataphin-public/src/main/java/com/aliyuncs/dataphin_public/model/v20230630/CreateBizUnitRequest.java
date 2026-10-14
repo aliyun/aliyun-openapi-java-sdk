@@ -35,7 +35,7 @@ public class CreateBizUnitRequest extends RpcAcsRequest<CreateBizUnitResponse> {
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateBizUnitRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBizUnit", "1111");
+		super("dataphin-public", "2023-06-30", "CreateBizUnit", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

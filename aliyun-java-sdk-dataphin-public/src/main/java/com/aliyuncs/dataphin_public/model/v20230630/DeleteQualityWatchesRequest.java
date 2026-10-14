@@ -35,7 +35,7 @@ public class DeleteQualityWatchesRequest extends RpcAcsRequest<DeleteQualityWatc
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteQualityWatchesRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteQualityWatches", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteQualityWatches", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

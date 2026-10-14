@@ -31,7 +31,7 @@ public class GetSecurityLevelRequest extends RpcAcsRequest<GetSecurityLevelRespo
 
 	private Long index;
 	public GetSecurityLevelRequest() {
-		super("dataphin-public", "2023-06-30", "GetSecurityLevel", "1111");
+		super("dataphin-public", "2023-06-30", "GetSecurityLevel", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

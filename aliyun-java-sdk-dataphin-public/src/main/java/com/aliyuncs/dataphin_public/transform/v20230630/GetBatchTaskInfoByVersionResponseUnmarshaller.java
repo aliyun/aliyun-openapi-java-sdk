@@ -23,6 +23,7 @@ import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionRes
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionResponse.TaskInfo.NodeRelation;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionResponse.TaskInfo.NodeRelation.DependPeriod;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionResponse.TaskInfo.Param;
+import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModule;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoByVersionResponse.TaskInfo.SparkClientInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -40,8 +41,9 @@ public class GetBatchTaskInfoByVersionResponseUnmarshaller {
 		TaskInfo taskInfo = new TaskInfo();
 		taskInfo.setScheduleType(_ctx.integerValue("GetBatchTaskInfoByVersionResponse.TaskInfo.ScheduleType"));
 		taskInfo.setOwnerName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.OwnerName"));
-		taskInfo.setNodeName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.NodeName"));
 		taskInfo.setDataSourceSchema(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.DataSourceSchema"));
+		taskInfo.setNodeName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.NodeName"));
+		taskInfo.setPythonVersion(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonVersion"));
 		taskInfo.setDagId(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.DagId"));
 		taskInfo.setName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.Name"));
 		taskInfo.setRemark(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.Remark"));
@@ -63,8 +65,8 @@ public class GetBatchTaskInfoByVersionResponseUnmarshaller {
 		taskInfo.setNodeId(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.NodeId"));
 		taskInfo.setPublished(_ctx.booleanValue("GetBatchTaskInfoByVersionResponse.TaskInfo.Published"));
 		taskInfo.setFileId(_ctx.longValue("GetBatchTaskInfoByVersionResponse.TaskInfo.FileId"));
-		taskInfo.setNodeStatus(_ctx.integerValue("GetBatchTaskInfoByVersionResponse.TaskInfo.NodeStatus"));
 		taskInfo.setDataSourceId(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.DataSourceId"));
+		taskInfo.setNodeStatus(_ctx.integerValue("GetBatchTaskInfoByVersionResponse.TaskInfo.NodeStatus"));
 		taskInfo.setHasDevNode(_ctx.booleanValue("GetBatchTaskInfoByVersionResponse.TaskInfo.HasDevNode"));
 
 		List<String> opsOwnerNameList = new ArrayList<String>();
@@ -109,6 +111,18 @@ public class GetBatchTaskInfoByVersionResponseUnmarshaller {
 		sparkClientInfo.setSparkClientVersion(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.SparkClientInfo.SparkClientVersion"));
 		taskInfo.setSparkClientInfo(sparkClientInfo);
 
+		List<PythonModule> pythonModuleList = new ArrayList<PythonModule>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModuleList.Length"); i++) {
+			PythonModule pythonModule = new PythonModule();
+			pythonModule.setModuleId(_ctx.longValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModuleList["+ i +"].ModuleId"));
+			pythonModule.setVersion(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModuleList["+ i +"].Version"));
+			pythonModule.setPythonVersion(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModuleList["+ i +"].PythonVersion"));
+			pythonModule.setName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.PythonModuleList["+ i +"].Name"));
+
+			pythonModuleList.add(pythonModule);
+		}
+		taskInfo.setPythonModuleList(pythonModuleList);
+
 		List<Param> paramList = new ArrayList<Param>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoByVersionResponse.TaskInfo.ParamList.Length"); i++) {
 			Param param = new Param();
@@ -129,8 +143,8 @@ public class GetBatchTaskInfoByVersionResponseUnmarshaller {
 			nodeRelation.setSourceNodeName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeName"));
 			nodeRelation.setSourceNodeUserName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeUserName"));
 			nodeRelation.setSourceNodeEnabled(_ctx.booleanValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeEnabled"));
-			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
 			nodeRelation.setDependStrategy(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].DependStrategy"));
+			nodeRelation.setSourceNodeOutputName(_ctx.stringValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].SourceNodeOutputName"));
 
 			List<String> fieldList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetBatchTaskInfoByVersionResponse.TaskInfo.UpStreamList["+ i +"].FieldList.Length"); j++) {

@@ -40,7 +40,7 @@ public class GetInstanceDownStreamRequest extends RpcAcsRequest<GetInstanceDownS
 
 	private Integer downStreamDepth;
 	public GetInstanceDownStreamRequest() {
-		super("dataphin-public", "2023-06-30", "GetInstanceDownStream", "1111");
+		super("dataphin-public", "2023-06-30", "GetInstanceDownStream", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

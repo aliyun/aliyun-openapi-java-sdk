@@ -31,7 +31,7 @@ public class GetServerVersionRequest extends RpcAcsRequest<GetServerVersionRespo
 
 	private String env;
 	public GetServerVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetServerVersion", "1111");
+		super("dataphin-public", "2023-06-30", "GetServerVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

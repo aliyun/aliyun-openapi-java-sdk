@@ -1,3 +1,6 @@
+2026-10-14 Version: 1.0.24
+- Regenerated Java SDK for GetRectifyFlow validation.
+
 2026-10-08 Version: 1.0.23
 - Fixed quality rectification flow response field mapping.
 

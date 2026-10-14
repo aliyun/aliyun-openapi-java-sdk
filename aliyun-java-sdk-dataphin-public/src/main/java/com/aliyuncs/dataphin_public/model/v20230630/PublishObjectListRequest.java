@@ -35,7 +35,7 @@ public class PublishObjectListRequest extends RpcAcsRequest<PublishObjectListRes
 	@SerializedName("publishCommand")
 	private PublishCommand publishCommand;
 	public PublishObjectListRequest() {
-		super("dataphin-public", "2023-06-30", "PublishObjectList", "1111");
+		super("dataphin-public", "2023-06-30", "PublishObjectList", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

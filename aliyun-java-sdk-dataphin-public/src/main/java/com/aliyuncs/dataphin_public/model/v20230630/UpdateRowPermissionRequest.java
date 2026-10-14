@@ -35,7 +35,7 @@ public class UpdateRowPermissionRequest extends RpcAcsRequest<UpdateRowPermissio
 	@SerializedName("updateRowPermissionCommand")
 	private UpdateRowPermissionCommand updateRowPermissionCommand;
 	public UpdateRowPermissionRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateRowPermission", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateRowPermission", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

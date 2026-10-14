@@ -31,7 +31,7 @@ public class GetQualityRuleTaskLogRequest extends RpcAcsRequest<GetQualityRuleTa
 
 	private Long ruleTaskId;
 	public GetQualityRuleTaskLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityRuleTaskLog", "1111");
+		super("dataphin-public", "2023-06-30", "GetQualityRuleTaskLog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

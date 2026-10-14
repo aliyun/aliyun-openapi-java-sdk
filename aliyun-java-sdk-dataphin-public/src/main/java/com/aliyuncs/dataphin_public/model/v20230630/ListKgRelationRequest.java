@@ -38,7 +38,7 @@ public class ListKgRelationRequest extends RpcAcsRequest<ListKgRelationResponse>
 
 	private String workspaceId;
 	public ListKgRelationRequest() {
-		super("dataphin-public", "2023-06-30", "ListKgRelation", "1111");
+		super("dataphin-public", "2023-06-30", "ListKgRelation", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

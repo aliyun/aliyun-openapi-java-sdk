@@ -35,7 +35,7 @@ public class UpdateStandardLookupTableRequest extends RpcAcsRequest<UpdateStanda
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateStandardLookupTableRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateStandardLookupTable", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateStandardLookupTable", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

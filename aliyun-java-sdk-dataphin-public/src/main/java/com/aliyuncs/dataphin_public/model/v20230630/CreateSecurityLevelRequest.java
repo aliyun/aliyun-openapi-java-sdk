@@ -34,7 +34,7 @@ public class CreateSecurityLevelRequest extends RpcAcsRequest<CreateSecurityLeve
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateSecurityLevelRequest() {
-		super("dataphin-public", "2023-06-30", "CreateSecurityLevel", "1111");
+		super("dataphin-public", "2023-06-30", "CreateSecurityLevel", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

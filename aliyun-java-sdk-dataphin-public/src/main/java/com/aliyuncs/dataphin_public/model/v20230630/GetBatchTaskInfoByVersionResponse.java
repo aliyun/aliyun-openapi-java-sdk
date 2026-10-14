@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private Integer httpStatusCode;
 
@@ -37,20 +37,20 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 	private TaskInfo taskInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -91,9 +91,11 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		private String ownerName;
 
+		private String dataSourceSchema;
+
 		private String nodeName;
 
-		private String dataSourceSchema;
+		private String pythonVersion;
 
 		private String dagId;
 
@@ -137,11 +139,13 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 		private Long fileId;
 
-		private Integer nodeStatus;
-
 		private String dataSourceId;
 
+		private Integer nodeStatus;
+
 		private Boolean hasDevNode;
+
+		private List<PythonModule> pythonModuleList;
 
 		private List<Param> paramList;
 
@@ -177,6 +181,14 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
+		public String getDataSourceSchema() {
+			return this.dataSourceSchema;
+		}
+
+		public void setDataSourceSchema(String dataSourceSchema) {
+			this.dataSourceSchema = dataSourceSchema;
+		}
+
 		public String getNodeName() {
 			return this.nodeName;
 		}
@@ -185,12 +197,12 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public String getDataSourceSchema() {
-			return this.dataSourceSchema;
+		public String getPythonVersion() {
+			return this.pythonVersion;
 		}
 
-		public void setDataSourceSchema(String dataSourceSchema) {
-			this.dataSourceSchema = dataSourceSchema;
+		public void setPythonVersion(String pythonVersion) {
+			this.pythonVersion = pythonVersion;
 		}
 
 		public String getDagId() {
@@ -361,14 +373,6 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.fileId = fileId;
 		}
 
-		public Integer getNodeStatus() {
-			return this.nodeStatus;
-		}
-
-		public void setNodeStatus(Integer nodeStatus) {
-			this.nodeStatus = nodeStatus;
-		}
-
 		public String getDataSourceId() {
 			return this.dataSourceId;
 		}
@@ -377,12 +381,28 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.dataSourceId = dataSourceId;
 		}
 
+		public Integer getNodeStatus() {
+			return this.nodeStatus;
+		}
+
+		public void setNodeStatus(Integer nodeStatus) {
+			this.nodeStatus = nodeStatus;
+		}
+
 		public Boolean getHasDevNode() {
 			return this.hasDevNode;
 		}
 
 		public void setHasDevNode(Boolean hasDevNode) {
 			this.hasDevNode = hasDevNode;
+		}
+
+		public List<PythonModule> getPythonModuleList() {
+			return this.pythonModuleList;
+		}
+
+		public void setPythonModuleList(List<PythonModule> pythonModuleList) {
+			this.pythonModuleList = pythonModuleList;
 		}
 
 		public List<Param> getParamList() {
@@ -457,6 +477,49 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 			this.sparkClientInfo = sparkClientInfo;
 		}
 
+		public static class PythonModule {
+
+			private Long moduleId;
+
+			private String version;
+
+			private String pythonVersion;
+
+			private String name;
+
+			public Long getModuleId() {
+				return this.moduleId;
+			}
+
+			public void setModuleId(Long moduleId) {
+				this.moduleId = moduleId;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getPythonVersion() {
+				return this.pythonVersion;
+			}
+
+			public void setPythonVersion(String pythonVersion) {
+				this.pythonVersion = pythonVersion;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+
 		public static class Param {
 
 			private String value;
@@ -496,9 +559,9 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 
 			private Boolean sourceNodeEnabled;
 
-			private String sourceNodeOutputName;
-
 			private String dependStrategy;
+
+			private String sourceNodeOutputName;
 
 			private List<String> fieldList;
 
@@ -560,20 +623,20 @@ public class GetBatchTaskInfoByVersionResponse extends AcsResponse {
 				this.sourceNodeEnabled = sourceNodeEnabled;
 			}
 
-			public String getSourceNodeOutputName() {
-				return this.sourceNodeOutputName;
-			}
-
-			public void setSourceNodeOutputName(String sourceNodeOutputName) {
-				this.sourceNodeOutputName = sourceNodeOutputName;
-			}
-
 			public String getDependStrategy() {
 				return this.dependStrategy;
 			}
 
 			public void setDependStrategy(String dependStrategy) {
 				this.dependStrategy = dependStrategy;
+			}
+
+			public String getSourceNodeOutputName() {
+				return this.sourceNodeOutputName;
+			}
+
+			public void setSourceNodeOutputName(String sourceNodeOutputName) {
+				this.sourceNodeOutputName = sourceNodeOutputName;
 			}
 
 			public List<String> getFieldList() {

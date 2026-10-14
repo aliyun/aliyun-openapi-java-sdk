@@ -31,7 +31,7 @@ public class GetSecurityClassifyRequest extends RpcAcsRequest<GetSecurityClassif
 
 	private Long id;
 	public GetSecurityClassifyRequest() {
-		super("dataphin-public", "2023-06-30", "GetSecurityClassify", "1111");
+		super("dataphin-public", "2023-06-30", "GetSecurityClassify", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

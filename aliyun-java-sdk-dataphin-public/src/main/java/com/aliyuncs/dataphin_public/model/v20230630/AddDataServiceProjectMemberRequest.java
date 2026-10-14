@@ -37,7 +37,7 @@ public class AddDataServiceProjectMemberRequest extends RpcAcsRequest<AddDataSer
 
 	private Integer projectId;
 	public AddDataServiceProjectMemberRequest() {
-		super("dataphin-public", "2023-06-30", "AddDataServiceProjectMember", "1111");
+		super("dataphin-public", "2023-06-30", "AddDataServiceProjectMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

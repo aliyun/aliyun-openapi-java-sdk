@@ -36,7 +36,7 @@ public class ListDataServiceAuthorizedAppsRequest extends RpcAcsRequest<ListData
 
 	private Integer projectId;
 	public ListDataServiceAuthorizedAppsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServiceAuthorizedApps", "1111");
+		super("dataphin-public", "2023-06-30", "ListDataServiceAuthorizedApps", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

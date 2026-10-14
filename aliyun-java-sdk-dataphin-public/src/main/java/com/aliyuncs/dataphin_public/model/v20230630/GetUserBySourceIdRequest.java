@@ -33,7 +33,7 @@ public class GetUserBySourceIdRequest extends RpcAcsRequest<GetUserBySourceIdRes
 
 	private String sourceType;
 	public GetUserBySourceIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetUserBySourceId", "1111");
+		super("dataphin-public", "2023-06-30", "GetUserBySourceId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

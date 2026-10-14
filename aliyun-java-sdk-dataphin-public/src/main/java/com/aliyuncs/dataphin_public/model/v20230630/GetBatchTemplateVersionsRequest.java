@@ -35,7 +35,7 @@ public class GetBatchTemplateVersionsRequest extends RpcAcsRequest<GetBatchTempl
 
 	private Long projectId;
 	public GetBatchTemplateVersionsRequest() {
-		super("dataphin-public", "2023-06-30", "GetBatchTemplateVersions", "1111");
+		super("dataphin-public", "2023-06-30", "GetBatchTemplateVersions", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

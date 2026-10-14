@@ -35,7 +35,7 @@ public class ListAlertNotificationsRequest extends RpcAcsRequest<ListAlertNotifi
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAlertNotificationsRequest() {
-		super("dataphin-public", "2023-06-30", "ListAlertNotifications", "1111");
+		super("dataphin-public", "2023-06-30", "ListAlertNotifications", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

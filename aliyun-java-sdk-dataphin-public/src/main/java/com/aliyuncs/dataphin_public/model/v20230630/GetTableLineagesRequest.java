@@ -37,7 +37,7 @@ public class GetTableLineagesRequest extends RpcAcsRequest<GetTableLineagesRespo
 
 	private String tableGuid;
 	public GetTableLineagesRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableLineages", "1111");
+		super("dataphin-public", "2023-06-30", "GetTableLineages", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

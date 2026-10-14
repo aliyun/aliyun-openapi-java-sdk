@@ -36,7 +36,7 @@ public class ListDataServiceApiImpactsRequest extends RpcAcsRequest<ListDataServ
 
 	private Integer projectId;
 	public ListDataServiceApiImpactsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServiceApiImpacts", "1111");
+		super("dataphin-public", "2023-06-30", "ListDataServiceApiImpacts", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

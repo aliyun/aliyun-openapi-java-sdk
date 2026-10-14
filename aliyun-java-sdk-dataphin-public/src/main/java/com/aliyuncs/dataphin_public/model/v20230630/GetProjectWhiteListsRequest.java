@@ -31,7 +31,7 @@ public class GetProjectWhiteListsRequest extends RpcAcsRequest<GetProjectWhiteLi
 
 	private Long id;
 	public GetProjectWhiteListsRequest() {
-		super("dataphin-public", "2023-06-30", "GetProjectWhiteLists", "1111");
+		super("dataphin-public", "2023-06-30", "GetProjectWhiteLists", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

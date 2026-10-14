@@ -34,7 +34,7 @@ public class GetOperationRecordRunCodeRequest extends RpcAcsRequest<GetOperation
 	@SerializedName("codeCommand")
 	private CodeCommand codeCommand;
 	public GetOperationRecordRunCodeRequest() {
-		super("dataphin-public", "2023-06-30", "GetOperationRecordRunCode", "1111");
+		super("dataphin-public", "2023-06-30", "GetOperationRecordRunCode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

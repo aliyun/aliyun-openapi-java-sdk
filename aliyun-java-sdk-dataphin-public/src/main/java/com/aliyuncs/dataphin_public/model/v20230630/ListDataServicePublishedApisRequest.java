@@ -36,7 +36,7 @@ public class ListDataServicePublishedApisRequest extends RpcAcsRequest<ListDataS
 
 	private Integer projectId;
 	public ListDataServicePublishedApisRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServicePublishedApis", "1111");
+		super("dataphin-public", "2023-06-30", "ListDataServicePublishedApis", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

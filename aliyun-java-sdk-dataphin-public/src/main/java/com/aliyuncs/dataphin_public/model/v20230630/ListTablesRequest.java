@@ -35,7 +35,7 @@ public class ListTablesRequest extends RpcAcsRequest<ListTablesResponse> {
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListTablesRequest() {
-		super("dataphin-public", "2023-06-30", "ListTables", "1111");
+		super("dataphin-public", "2023-06-30", "ListTables", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

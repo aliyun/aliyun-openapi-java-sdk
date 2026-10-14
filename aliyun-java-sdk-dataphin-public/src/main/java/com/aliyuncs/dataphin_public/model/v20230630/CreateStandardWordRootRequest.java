@@ -34,7 +34,7 @@ public class CreateStandardWordRootRequest extends RpcAcsRequest<CreateStandardW
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardWordRootRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardWordRoot", "1111");
+		super("dataphin-public", "2023-06-30", "CreateStandardWordRoot", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

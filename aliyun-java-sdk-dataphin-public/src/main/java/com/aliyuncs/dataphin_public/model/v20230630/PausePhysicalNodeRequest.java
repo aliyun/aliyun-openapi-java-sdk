@@ -37,7 +37,7 @@ public class PausePhysicalNodeRequest extends RpcAcsRequest<PausePhysicalNodeRes
 	@SerializedName("pauseCommand")
 	private PauseCommand pauseCommand;
 	public PausePhysicalNodeRequest() {
-		super("dataphin-public", "2023-06-30", "PausePhysicalNode", "1111");
+		super("dataphin-public", "2023-06-30", "PausePhysicalNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

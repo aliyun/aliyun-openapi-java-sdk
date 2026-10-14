@@ -31,7 +31,7 @@ public class GetAssetTypeAttributeCodesRequest extends RpcAcsRequest<GetAssetTyp
 
 	private String assetType;
 	public GetAssetTypeAttributeCodesRequest() {
-		super("dataphin-public", "2023-06-30", "GetAssetTypeAttributeCodes", "1111");
+		super("dataphin-public", "2023-06-30", "GetAssetTypeAttributeCodes", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

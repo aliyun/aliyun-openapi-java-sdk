@@ -31,7 +31,7 @@ public class GetQualitySchedulesByWatchIdRequest extends RpcAcsRequest<GetQualit
 
 	private Long watchId;
 	public GetQualitySchedulesByWatchIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualitySchedulesByWatchId", "1111");
+		super("dataphin-public", "2023-06-30", "GetQualitySchedulesByWatchId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

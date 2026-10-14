@@ -34,7 +34,7 @@ public class GetDataAssetsGovernObjectRequest extends RpcAcsRequest<GetDataAsset
 	@SerializedName("command")
 	private Command command;
 	public GetDataAssetsGovernObjectRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataAssetsGovernObject", "1111");
+		super("dataphin-public", "2023-06-30", "GetDataAssetsGovernObject", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

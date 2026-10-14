@@ -35,7 +35,7 @@ public class ListPublishRecordsRequest extends RpcAcsRequest<ListPublishRecordsR
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListPublishRecordsRequest() {
-		super("dataphin-public", "2023-06-30", "ListPublishRecords", "1111");
+		super("dataphin-public", "2023-06-30", "ListPublishRecords", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

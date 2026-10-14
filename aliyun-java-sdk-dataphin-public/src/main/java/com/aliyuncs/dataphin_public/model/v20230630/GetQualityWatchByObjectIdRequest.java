@@ -33,7 +33,7 @@ public class GetQualityWatchByObjectIdRequest extends RpcAcsRequest<GetQualityWa
 
 	private String watchType;
 	public GetQualityWatchByObjectIdRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityWatchByObjectId", "1111");
+		super("dataphin-public", "2023-06-30", "GetQualityWatchByObjectId", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

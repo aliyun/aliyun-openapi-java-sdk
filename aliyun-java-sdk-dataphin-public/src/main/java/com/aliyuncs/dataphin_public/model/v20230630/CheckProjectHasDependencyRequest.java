@@ -31,7 +31,7 @@ public class CheckProjectHasDependencyRequest extends RpcAcsRequest<CheckProject
 
 	private Long id;
 	public CheckProjectHasDependencyRequest() {
-		super("dataphin-public", "2023-06-30", "CheckProjectHasDependency", "1111");
+		super("dataphin-public", "2023-06-30", "CheckProjectHasDependency", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

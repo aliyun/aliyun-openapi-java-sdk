@@ -37,7 +37,7 @@ public class UpdateComputeClusterRequest extends RpcAcsRequest<UpdateComputeClus
 
 	private Long id;
 	public UpdateComputeClusterRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateComputeCluster", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateComputeCluster", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -37,7 +37,7 @@ public class BatchCreateKgEntityRequest extends RpcAcsRequest<BatchCreateKgEntit
 
 	private String workspaceId;
 	public BatchCreateKgEntityRequest() {
-		super("dataphin-public", "2023-06-30", "BatchCreateKgEntity", "1111");
+		super("dataphin-public", "2023-06-30", "BatchCreateKgEntity", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

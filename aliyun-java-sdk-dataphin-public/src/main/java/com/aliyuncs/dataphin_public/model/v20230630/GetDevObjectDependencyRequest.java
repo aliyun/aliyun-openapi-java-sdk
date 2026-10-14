@@ -37,7 +37,7 @@ public class GetDevObjectDependencyRequest extends RpcAcsRequest<GetDevObjectDep
 
 	private String objectId;
 	public GetDevObjectDependencyRequest() {
-		super("dataphin-public", "2023-06-30", "GetDevObjectDependency", "1111");
+		super("dataphin-public", "2023-06-30", "GetDevObjectDependency", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

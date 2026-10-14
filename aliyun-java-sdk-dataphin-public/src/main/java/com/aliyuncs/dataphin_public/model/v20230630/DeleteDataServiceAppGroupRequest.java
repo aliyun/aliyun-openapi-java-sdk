@@ -31,7 +31,7 @@ public class DeleteDataServiceAppGroupRequest extends RpcAcsRequest<DeleteDataSe
 
 	private Integer groupId;
 	public DeleteDataServiceAppGroupRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataServiceAppGroup", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteDataServiceAppGroup", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

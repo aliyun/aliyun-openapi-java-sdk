@@ -41,7 +41,7 @@ public class GetKgNeighborRequest extends RpcAcsRequest<GetKgNeighborResponse> {
 
 	private String workspaceId;
 	public GetKgNeighborRequest() {
-		super("dataphin-public", "2023-06-30", "GetKgNeighbor", "1111");
+		super("dataphin-public", "2023-06-30", "GetKgNeighbor", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

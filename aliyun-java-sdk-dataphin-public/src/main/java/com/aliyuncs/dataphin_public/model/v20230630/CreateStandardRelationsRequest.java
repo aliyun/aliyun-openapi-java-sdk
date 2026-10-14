@@ -35,7 +35,7 @@ public class CreateStandardRelationsRequest extends RpcAcsRequest<CreateStandard
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateStandardRelationsRequest() {
-		super("dataphin-public", "2023-06-30", "CreateStandardRelations", "1111");
+		super("dataphin-public", "2023-06-30", "CreateStandardRelations", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

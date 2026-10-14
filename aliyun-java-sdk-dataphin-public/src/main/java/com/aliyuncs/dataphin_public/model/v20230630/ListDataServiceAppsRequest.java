@@ -34,7 +34,7 @@ public class ListDataServiceAppsRequest extends RpcAcsRequest<ListDataServiceApp
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListDataServiceAppsRequest() {
-		super("dataphin-public", "2023-06-30", "ListDataServiceApps", "1111");
+		super("dataphin-public", "2023-06-30", "ListDataServiceApps", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

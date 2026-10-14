@@ -35,7 +35,7 @@ public class BatchHandoverAssetRequest extends RpcAcsRequest<BatchHandoverAssetR
 	@SerializedName("handoverCommand")
 	private HandoverCommand handoverCommand;
 	public BatchHandoverAssetRequest() {
-		super("dataphin-public", "2023-06-30", "BatchHandoverAsset", "1111");
+		super("dataphin-public", "2023-06-30", "BatchHandoverAsset", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

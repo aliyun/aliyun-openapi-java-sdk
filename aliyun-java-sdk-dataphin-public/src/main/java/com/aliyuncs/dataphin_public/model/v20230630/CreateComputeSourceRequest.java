@@ -35,7 +35,7 @@ public class CreateComputeSourceRequest extends RpcAcsRequest<CreateComputeSourc
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "CreateComputeSource", "1111");
+		super("dataphin-public", "2023-06-30", "CreateComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

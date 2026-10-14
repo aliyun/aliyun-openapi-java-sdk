@@ -37,7 +37,7 @@ public class ExecKgCypherRequest extends RpcAcsRequest<ExecKgCypherResponse> {
 
 	private String workspaceId;
 	public ExecKgCypherRequest() {
-		super("dataphin-public", "2023-06-30", "ExecKgCypher", "1111");
+		super("dataphin-public", "2023-06-30", "ExecKgCypher", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

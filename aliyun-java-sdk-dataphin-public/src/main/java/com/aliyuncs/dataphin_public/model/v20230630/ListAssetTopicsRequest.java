@@ -34,7 +34,7 @@ public class ListAssetTopicsRequest extends RpcAcsRequest<ListAssetTopicsRespons
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListAssetTopicsRequest() {
-		super("dataphin-public", "2023-06-30", "ListAssetTopics", "1111");
+		super("dataphin-public", "2023-06-30", "ListAssetTopics", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

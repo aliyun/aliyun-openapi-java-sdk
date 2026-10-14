@@ -35,7 +35,7 @@ public class SyncDepartmentUserRequest extends RpcAcsRequest<SyncDepartmentUserR
 	@SerializedName("syncDepartmentUserCommand")
 	private SyncDepartmentUserCommand syncDepartmentUserCommand;
 	public SyncDepartmentUserRequest() {
-		super("dataphin-public", "2023-06-30", "SyncDepartmentUser", "1111");
+		super("dataphin-public", "2023-06-30", "SyncDepartmentUser", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

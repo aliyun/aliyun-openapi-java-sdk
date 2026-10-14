@@ -35,7 +35,7 @@ public class CreateUdfRequest extends RpcAcsRequest<CreateUdfResponse> {
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateUdfRequest() {
-		super("dataphin-public", "2023-06-30", "CreateUdf", "1111");
+		super("dataphin-public", "2023-06-30", "CreateUdf", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -31,7 +31,7 @@ public class GetComputeSourceRequest extends RpcAcsRequest<GetComputeSourceRespo
 
 	private Long id;
 	public GetComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "GetComputeSource", "1111");
+		super("dataphin-public", "2023-06-30", "GetComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

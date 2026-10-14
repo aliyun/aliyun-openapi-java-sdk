@@ -39,7 +39,7 @@ public class GetQueueEngineVersionByEnvRequest extends RpcAcsRequest<GetQueueEng
 
 	private String streamBatchMode;
 	public GetQueueEngineVersionByEnvRequest() {
-		super("dataphin-public", "2023-06-30", "GetQueueEngineVersionByEnv", "1111");
+		super("dataphin-public", "2023-06-30", "GetQueueEngineVersionByEnv", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

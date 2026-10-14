@@ -34,7 +34,7 @@ public class ListQualityArchiveTablesRequest extends RpcAcsRequest<ListQualityAr
 	@SerializedName("listQuery")
 	private ListQuery listQuery;
 	public ListQualityArchiveTablesRequest() {
-		super("dataphin-public", "2023-06-30", "ListQualityArchiveTables", "1111");
+		super("dataphin-public", "2023-06-30", "ListQualityArchiveTables", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

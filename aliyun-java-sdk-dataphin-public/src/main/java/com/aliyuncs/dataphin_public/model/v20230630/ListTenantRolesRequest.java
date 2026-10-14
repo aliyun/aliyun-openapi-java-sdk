@@ -29,7 +29,7 @@ public class ListTenantRolesRequest extends RpcAcsRequest<ListTenantRolesRespons
 
 	private String opUserId;
 	public ListTenantRolesRequest() {
-		super("dataphin-public", "2023-06-30", "ListTenantRoles", "1111");
+		super("dataphin-public", "2023-06-30", "ListTenantRoles", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

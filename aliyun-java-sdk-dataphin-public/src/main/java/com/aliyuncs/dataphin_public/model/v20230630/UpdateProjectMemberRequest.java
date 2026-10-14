@@ -37,7 +37,7 @@ public class UpdateProjectMemberRequest extends RpcAcsRequest<UpdateProjectMembe
 
 	private Long id;
 	public UpdateProjectMemberRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateProjectMember", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateProjectMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

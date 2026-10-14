@@ -37,7 +37,7 @@ public class GetAdHocTaskLogRequest extends RpcAcsRequest<GetAdHocTaskLogRespons
 
 	private String taskId;
 	public GetAdHocTaskLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetAdHocTaskLog", "1111");
+		super("dataphin-public", "2023-06-30", "GetAdHocTaskLog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -33,7 +33,7 @@ public class GetDataServiceAppAuthorizedUsersRequest extends RpcAcsRequest<GetDa
 
 	private Integer projectId;
 	public GetDataServiceAppAuthorizedUsersRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceAppAuthorizedUsers", "1111");
+		super("dataphin-public", "2023-06-30", "GetDataServiceAppAuthorizedUsers", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

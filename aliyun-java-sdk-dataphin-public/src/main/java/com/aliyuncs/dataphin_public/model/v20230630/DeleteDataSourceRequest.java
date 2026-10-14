@@ -34,7 +34,7 @@ public class DeleteDataSourceRequest extends RpcAcsRequest<DeleteDataSourceRespo
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteDataSourceRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteDataSource", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteDataSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

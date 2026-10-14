@@ -33,7 +33,7 @@ public class StopAdHocTaskRequest extends RpcAcsRequest<StopAdHocTaskResponse> {
 
 	private String taskId;
 	public StopAdHocTaskRequest() {
-		super("dataphin-public", "2023-06-30", "StopAdHocTask", "1111");
+		super("dataphin-public", "2023-06-30", "StopAdHocTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

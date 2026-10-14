@@ -25,6 +25,7 @@ import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.Tas
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.NodeRelation;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.NodeRelation.DependPeriod;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.Param;
+import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.PythonModule;
 import com.aliyuncs.dataphin_public.model.v20230630.GetBatchTaskInfoResponse.TaskInfo.SparkClientInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -72,6 +73,7 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		taskInfo.setHasDevNode(_ctx.booleanValue("GetBatchTaskInfoResponse.TaskInfo.HasDevNode"));
 		taskInfo.setResourceGroupName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.ResourceGroupName"));
 		taskInfo.setOwnerName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.OwnerName"));
+		taskInfo.setPythonVersion(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.PythonVersion"));
 		taskInfo.setDevHttpPath(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevHttpPath"));
 		taskInfo.setDagId(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DagId"));
 		taskInfo.setDevResourceGroupName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.DevResourceGroupName"));
@@ -133,6 +135,18 @@ public class GetBatchTaskInfoResponseUnmarshaller {
 		customScheduleConfig.setStartTime(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.StartTime"));
 		customScheduleConfig.setInterval(_ctx.integerValue("GetBatchTaskInfoResponse.TaskInfo.CustomScheduleConfig.Interval"));
 		taskInfo.setCustomScheduleConfig(customScheduleConfig);
+
+		List<PythonModule> pythonModuleList = new ArrayList<PythonModule>();
+		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.PythonModuleList.Length"); i++) {
+			PythonModule pythonModule = new PythonModule();
+			pythonModule.setModuleId(_ctx.longValue("GetBatchTaskInfoResponse.TaskInfo.PythonModuleList["+ i +"].ModuleId"));
+			pythonModule.setVersion(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.PythonModuleList["+ i +"].Version"));
+			pythonModule.setPythonVersion(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.PythonModuleList["+ i +"].PythonVersion"));
+			pythonModule.setName(_ctx.stringValue("GetBatchTaskInfoResponse.TaskInfo.PythonModuleList["+ i +"].Name"));
+
+			pythonModuleList.add(pythonModule);
+		}
+		taskInfo.setPythonModuleList(pythonModuleList);
 
 		List<ContextParam> contextParamList = new ArrayList<ContextParam>();
 		for (int i = 0; i < _ctx.lengthValue("GetBatchTaskInfoResponse.TaskInfo.ContextParamList.Length"); i++) {

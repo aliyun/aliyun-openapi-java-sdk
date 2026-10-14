@@ -33,7 +33,7 @@ public class GetPhysicalNodeOperationLogRequest extends RpcAcsRequest<GetPhysica
 
 	private String nodeId;
 	public GetPhysicalNodeOperationLogRequest() {
-		super("dataphin-public", "2023-06-30", "GetPhysicalNodeOperationLog", "1111");
+		super("dataphin-public", "2023-06-30", "GetPhysicalNodeOperationLog", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

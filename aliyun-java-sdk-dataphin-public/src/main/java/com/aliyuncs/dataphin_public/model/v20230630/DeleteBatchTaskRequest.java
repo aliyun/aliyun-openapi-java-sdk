@@ -34,7 +34,7 @@ public class DeleteBatchTaskRequest extends RpcAcsRequest<DeleteBatchTaskRespons
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteBatchTask", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

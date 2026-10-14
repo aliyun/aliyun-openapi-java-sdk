@@ -35,7 +35,7 @@ public class GetDataServiceApiCallSummaryRequest extends RpcAcsRequest<GetDataSe
 
 	private Integer projectId;
 	public GetDataServiceApiCallSummaryRequest() {
-		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallSummary", "1111");
+		super("dataphin-public", "2023-06-30", "GetDataServiceApiCallSummary", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

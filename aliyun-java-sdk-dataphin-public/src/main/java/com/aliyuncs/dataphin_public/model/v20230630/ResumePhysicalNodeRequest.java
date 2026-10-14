@@ -37,7 +37,7 @@ public class ResumePhysicalNodeRequest extends RpcAcsRequest<ResumePhysicalNodeR
 
 	private String env;
 	public ResumePhysicalNodeRequest() {
-		super("dataphin-public", "2023-06-30", "ResumePhysicalNode", "1111");
+		super("dataphin-public", "2023-06-30", "ResumePhysicalNode", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

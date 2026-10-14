@@ -39,7 +39,7 @@ public class ListComputeClustersRequest extends RpcAcsRequest<ListComputeCluster
 
 	private Integer maxResults;
 	public ListComputeClustersRequest() {
-		super("dataphin-public", "2023-06-30", "ListComputeClusters", "1111");
+		super("dataphin-public", "2023-06-30", "ListComputeClusters", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

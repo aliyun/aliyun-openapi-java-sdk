@@ -38,7 +38,7 @@ public class CreatePipelineByAsyncRequest extends RpcAcsRequest<CreatePipelineBy
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreatePipelineByAsyncRequest() {
-		super("dataphin-public", "2023-06-30", "CreatePipelineByAsync", "1111");
+		super("dataphin-public", "2023-06-30", "CreatePipelineByAsync", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

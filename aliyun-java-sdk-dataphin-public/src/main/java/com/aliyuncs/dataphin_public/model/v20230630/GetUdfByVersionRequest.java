@@ -35,7 +35,7 @@ public class GetUdfByVersionRequest extends RpcAcsRequest<GetUdfByVersionRespons
 
 	private Long projectId;
 	public GetUdfByVersionRequest() {
-		super("dataphin-public", "2023-06-30", "GetUdfByVersion", "1111");
+		super("dataphin-public", "2023-06-30", "GetUdfByVersion", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

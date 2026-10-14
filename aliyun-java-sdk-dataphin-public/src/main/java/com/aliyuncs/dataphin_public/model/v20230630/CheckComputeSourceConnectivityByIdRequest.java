@@ -31,7 +31,7 @@ public class CheckComputeSourceConnectivityByIdRequest extends RpcAcsRequest<Che
 
 	private Long id;
 	public CheckComputeSourceConnectivityByIdRequest() {
-		super("dataphin-public", "2023-06-30", "CheckComputeSourceConnectivityById", "1111");
+		super("dataphin-public", "2023-06-30", "CheckComputeSourceConnectivityById", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

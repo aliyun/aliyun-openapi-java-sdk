@@ -35,7 +35,7 @@ public class UpdateFileDirectoryRequest extends RpcAcsRequest<UpdateFileDirector
 
 	private Long fileId;
 	public UpdateFileDirectoryRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateFileDirectory", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateFileDirectory", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

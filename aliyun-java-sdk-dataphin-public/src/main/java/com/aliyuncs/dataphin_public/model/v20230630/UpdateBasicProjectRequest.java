@@ -35,7 +35,7 @@ public class UpdateBasicProjectRequest extends RpcAcsRequest<UpdateBasicProjectR
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBasicProjectRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBasicProject", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateBasicProject", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

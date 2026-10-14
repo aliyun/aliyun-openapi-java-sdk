@@ -37,7 +37,7 @@ public class OperateInstanceRequest extends RpcAcsRequest<OperateInstanceRespons
 	@SerializedName("operateCommand")
 	private OperateCommand operateCommand;
 	public OperateInstanceRequest() {
-		super("dataphin-public", "2023-06-30", "OperateInstance", "1111");
+		super("dataphin-public", "2023-06-30", "OperateInstance", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

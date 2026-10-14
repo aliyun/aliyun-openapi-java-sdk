@@ -35,7 +35,7 @@ public class RemoveDataServiceAppMemberRequest extends RpcAcsRequest<RemoveDataS
 	@SerializedName("removeCommand")
 	private RemoveCommand removeCommand;
 	public RemoveDataServiceAppMemberRequest() {
-		super("dataphin-public", "2023-06-30", "RemoveDataServiceAppMember", "1111");
+		super("dataphin-public", "2023-06-30", "RemoveDataServiceAppMember", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

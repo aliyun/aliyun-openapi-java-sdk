@@ -35,7 +35,7 @@ public class DeleteQualityRulesRequest extends RpcAcsRequest<DeleteQualityRulesR
 	@SerializedName("deleteCommand")
 	private DeleteCommand deleteCommand;
 	public DeleteQualityRulesRequest() {
-		super("dataphin-public", "2023-06-30", "DeleteQualityRules", "1111");
+		super("dataphin-public", "2023-06-30", "DeleteQualityRules", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

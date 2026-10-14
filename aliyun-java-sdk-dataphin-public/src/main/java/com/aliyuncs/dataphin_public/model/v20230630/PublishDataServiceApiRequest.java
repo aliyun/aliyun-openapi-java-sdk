@@ -35,7 +35,7 @@ public class PublishDataServiceApiRequest extends RpcAcsRequest<PublishDataServi
 
 	private Long apiId;
 	public PublishDataServiceApiRequest() {
-		super("dataphin-public", "2023-06-30", "PublishDataServiceApi", "1111");
+		super("dataphin-public", "2023-06-30", "PublishDataServiceApi", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

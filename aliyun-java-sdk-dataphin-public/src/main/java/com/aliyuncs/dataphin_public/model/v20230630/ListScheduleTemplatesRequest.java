@@ -34,7 +34,7 @@ public class ListScheduleTemplatesRequest extends RpcAcsRequest<ListScheduleTemp
 	@SerializedName("listScheduleTemplatesCommand")
 	private ListScheduleTemplatesCommand listScheduleTemplatesCommand;
 	public ListScheduleTemplatesRequest() {
-		super("dataphin-public", "2023-06-30", "ListScheduleTemplates", "1111");
+		super("dataphin-public", "2023-06-30", "ListScheduleTemplates", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

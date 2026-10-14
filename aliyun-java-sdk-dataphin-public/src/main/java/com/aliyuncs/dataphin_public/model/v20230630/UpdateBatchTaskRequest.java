@@ -35,7 +35,7 @@ public class UpdateBatchTaskRequest extends RpcAcsRequest<UpdateBatchTaskRespons
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBatchTask", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

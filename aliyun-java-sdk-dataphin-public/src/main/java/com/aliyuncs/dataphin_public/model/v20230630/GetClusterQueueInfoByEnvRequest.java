@@ -35,7 +35,7 @@ public class GetClusterQueueInfoByEnvRequest extends RpcAcsRequest<GetClusterQue
 
 	private String streamBatchMode;
 	public GetClusterQueueInfoByEnvRequest() {
-		super("dataphin-public", "2023-06-30", "GetClusterQueueInfoByEnv", "1111");
+		super("dataphin-public", "2023-06-30", "GetClusterQueueInfoByEnv", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

@@ -35,7 +35,7 @@ public class UpdateComputeSourceRequest extends RpcAcsRequest<UpdateComputeSourc
 	@SerializedName("updateCommand")
 	private UpdateCommand updateCommand;
 	public UpdateComputeSourceRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateComputeSource", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateComputeSource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

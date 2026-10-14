@@ -35,7 +35,7 @@ public class UpdateNodeOpsOwnerRequest extends RpcAcsRequest<UpdateNodeOpsOwnerR
 	@SerializedName("command")
 	private Command command;
 	public UpdateNodeOpsOwnerRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateNodeOpsOwner", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateNodeOpsOwner", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

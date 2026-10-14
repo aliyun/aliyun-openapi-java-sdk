@@ -35,7 +35,7 @@ public class UpdateBizMetricRequest extends RpcAcsRequest<UpdateBizMetricRespons
 	@SerializedName("updateBizMetricCommand")
 	private UpdateBizMetricCommand updateBizMetricCommand;
 	public UpdateBizMetricRequest() {
-		super("dataphin-public", "2023-06-30", "UpdateBizMetric", "1111");
+		super("dataphin-public", "2023-06-30", "UpdateBizMetric", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

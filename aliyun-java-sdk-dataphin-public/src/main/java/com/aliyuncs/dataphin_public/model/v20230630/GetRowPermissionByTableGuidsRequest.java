@@ -35,7 +35,7 @@ public class GetRowPermissionByTableGuidsRequest extends RpcAcsRequest<GetRowPer
 	@SerializedName("getRowPermissionByTableGuidsQuery")
 	private GetRowPermissionByTableGuidsQuery getRowPermissionByTableGuidsQuery;
 	public GetRowPermissionByTableGuidsRequest() {
-		super("dataphin-public", "2023-06-30", "GetRowPermissionByTableGuids", "1111");
+		super("dataphin-public", "2023-06-30", "GetRowPermissionByTableGuids", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

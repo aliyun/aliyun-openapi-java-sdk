@@ -38,7 +38,7 @@ public class CreatePipelineRequest extends RpcAcsRequest<CreatePipelineResponse>
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreatePipelineRequest() {
-		super("dataphin-public", "2023-06-30", "CreatePipeline", "1111");
+		super("dataphin-public", "2023-06-30", "CreatePipeline", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

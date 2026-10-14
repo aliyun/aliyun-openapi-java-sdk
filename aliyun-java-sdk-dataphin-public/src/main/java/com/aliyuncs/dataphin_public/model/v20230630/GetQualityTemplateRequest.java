@@ -31,7 +31,7 @@ public class GetQualityTemplateRequest extends RpcAcsRequest<GetQualityTemplateR
 
 	private Long id;
 	public GetQualityTemplateRequest() {
-		super("dataphin-public", "2023-06-30", "GetQualityTemplate", "1111");
+		super("dataphin-public", "2023-06-30", "GetQualityTemplate", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

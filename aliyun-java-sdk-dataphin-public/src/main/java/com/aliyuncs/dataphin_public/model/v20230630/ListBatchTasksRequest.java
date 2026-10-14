@@ -35,7 +35,7 @@ public class ListBatchTasksRequest extends RpcAcsRequest<ListBatchTasksResponse>
 	@SerializedName("batchTaskQuery")
 	private BatchTaskQuery batchTaskQuery;
 	public ListBatchTasksRequest() {
-		super("dataphin-public", "2023-06-30", "ListBatchTasks", "1111");
+		super("dataphin-public", "2023-06-30", "ListBatchTasks", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

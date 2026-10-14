@@ -33,7 +33,7 @@ public class GetTableColumnsRequest extends RpcAcsRequest<GetTableColumnsRespons
 
 	private String tableName;
 	public GetTableColumnsRequest() {
-		super("dataphin-public", "2023-06-30", "GetTableColumns", "1111");
+		super("dataphin-public", "2023-06-30", "GetTableColumns", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

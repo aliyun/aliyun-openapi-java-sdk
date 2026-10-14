@@ -34,7 +34,7 @@ public class CreateAdHocFileRequest extends RpcAcsRequest<CreateAdHocFileRespons
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateAdHocFileRequest() {
-		super("dataphin-public", "2023-06-30", "CreateAdHocFile", "1111");
+		super("dataphin-public", "2023-06-30", "CreateAdHocFile", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

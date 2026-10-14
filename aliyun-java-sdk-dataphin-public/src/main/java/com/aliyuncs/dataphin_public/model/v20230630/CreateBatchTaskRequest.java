@@ -35,7 +35,7 @@ public class CreateBatchTaskRequest extends RpcAcsRequest<CreateBatchTaskRespons
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateBatchTaskRequest() {
-		super("dataphin-public", "2023-06-30", "CreateBatchTask", "1111");
+		super("dataphin-public", "2023-06-30", "CreateBatchTask", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

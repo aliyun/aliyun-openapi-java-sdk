@@ -31,7 +31,7 @@ public class GetTableRequest extends RpcAcsRequest<GetTableResponse> {
 
 	private String tableGuid;
 	public GetTableRequest() {
-		super("dataphin-public", "2023-06-30", "GetTable", "1111");
+		super("dataphin-public", "2023-06-30", "GetTable", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

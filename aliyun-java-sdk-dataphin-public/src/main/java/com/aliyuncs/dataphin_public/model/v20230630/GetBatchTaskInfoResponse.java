@@ -151,6 +151,8 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		private String ownerName;
 
+		private String pythonVersion;
+
 		private String devHttpPath;
 
 		private String dagId;
@@ -176,6 +178,8 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 		private Boolean published;
 
 		private String dataSourceId;
+
+		private List<PythonModule> pythonModuleList;
 
 		private List<ContextParam> contextParamList;
 
@@ -457,6 +461,14 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.ownerName = ownerName;
 		}
 
+		public String getPythonVersion() {
+			return this.pythonVersion;
+		}
+
+		public void setPythonVersion(String pythonVersion) {
+			this.pythonVersion = pythonVersion;
+		}
+
 		public String getDevHttpPath() {
 			return this.devHttpPath;
 		}
@@ -561,6 +573,14 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 			this.dataSourceId = dataSourceId;
 		}
 
+		public List<PythonModule> getPythonModuleList() {
+			return this.pythonModuleList;
+		}
+
+		public void setPythonModuleList(List<PythonModule> pythonModuleList) {
+			this.pythonModuleList = pythonModuleList;
+		}
+
 		public List<ContextParam> getContextParamList() {
 			return this.contextParamList;
 		}
@@ -655,6 +675,49 @@ public class GetBatchTaskInfoResponse extends AcsResponse {
 
 		public void setCustomScheduleConfig(CustomScheduleConfig customScheduleConfig) {
 			this.customScheduleConfig = customScheduleConfig;
+		}
+
+		public static class PythonModule {
+
+			private Long moduleId;
+
+			private String version;
+
+			private String pythonVersion;
+
+			private String name;
+
+			public Long getModuleId() {
+				return this.moduleId;
+			}
+
+			public void setModuleId(Long moduleId) {
+				this.moduleId = moduleId;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getPythonVersion() {
+				return this.pythonVersion;
+			}
+
+			public void setPythonVersion(String pythonVersion) {
+				this.pythonVersion = pythonVersion;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 
 		public static class ContextParam {

@@ -37,7 +37,7 @@ public class OfflinePipelineByAsyncRequest extends RpcAcsRequest<OfflinePipeline
 	@SerializedName("context")
 	private Context context;
 	public OfflinePipelineByAsyncRequest() {
-		super("dataphin-public", "2023-06-30", "OfflinePipelineByAsync", "1111");
+		super("dataphin-public", "2023-06-30", "OfflinePipelineByAsync", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

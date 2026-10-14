@@ -34,7 +34,7 @@ public class CreateResourceRequest extends RpcAcsRequest<CreateResourceResponse>
 	@SerializedName("createCommand")
 	private CreateCommand createCommand;
 	public CreateResourceRequest() {
-		super("dataphin-public", "2023-06-30", "CreateResource", "1111");
+		super("dataphin-public", "2023-06-30", "CreateResource", "Dataphin");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
