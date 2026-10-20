@@ -55,7 +55,13 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private Long ownerId;
 
+	private String searchDBInstanceClass;
+
 	private String accountPassword;
+
+	private Integer searchNodeCount;
+
+	private Integer searchStorage;
 	public CreateNodeRequest() {
 		super("Dds", "2015-12-01", "CreateNode", "dds");
 		setMethod(MethodType.POST);
@@ -230,6 +236,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		}
 	}
 
+	public String getSearchDBInstanceClass() {
+		return this.searchDBInstanceClass;
+	}
+
+	public void setSearchDBInstanceClass(String searchDBInstanceClass) {
+		this.searchDBInstanceClass = searchDBInstanceClass;
+		if(searchDBInstanceClass != null){
+			putQueryParameter("SearchDBInstanceClass", searchDBInstanceClass);
+		}
+	}
+
 	public String getAccountPassword() {
 		return this.accountPassword;
 	}
@@ -238,6 +255,28 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public Integer getSearchNodeCount() {
+		return this.searchNodeCount;
+	}
+
+	public void setSearchNodeCount(Integer searchNodeCount) {
+		this.searchNodeCount = searchNodeCount;
+		if(searchNodeCount != null){
+			putQueryParameter("SearchNodeCount", searchNodeCount.toString());
+		}
+	}
+
+	public Integer getSearchStorage() {
+		return this.searchStorage;
+	}
+
+	public void setSearchStorage(Integer searchStorage) {
+		this.searchStorage = searchStorage;
+		if(searchStorage != null){
+			putQueryParameter("SearchStorage", searchStorage.toString());
 		}
 	}
 

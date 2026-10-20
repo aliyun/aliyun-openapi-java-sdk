@@ -145,19 +145,11 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public static class SupportedNodeType {
 
-						private String nodeType;
-
 						private String networkTypes;
 
+						private String nodeType;
+
 						private List<AvailableResource> availableResources;
-
-						public String getNodeType() {
-							return this.nodeType;
-						}
-
-						public void setNodeType(String nodeType) {
-							this.nodeType = nodeType;
-						}
 
 						public String getNetworkTypes() {
 							return this.networkTypes;
@@ -165,6 +157,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 						public void setNetworkTypes(String networkTypes) {
 							this.networkTypes = networkTypes;
+						}
+
+						public String getNodeType() {
+							return this.nodeType;
+						}
+
+						public void setNodeType(String nodeType) {
+							this.nodeType = nodeType;
 						}
 
 						public List<AvailableResource> getAvailableResources() {

@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSwitchLogResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBInstanceId;
-
 	private Long totalCount;
 
+	private String requestId;
+
 	private Long pageSize;
+
+	private String dBInstanceId;
 
 	private Long pageNumber;
 
 	private List<LogItemsItem> logItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -61,12 +45,28 @@ public class DescribeDBInstanceSwitchLogResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public Long getPageNumber() {
@@ -87,29 +87,13 @@ public class DescribeDBInstanceSwitchLogResponse extends AcsResponse {
 
 	public static class LogItemsItem {
 
-		private String switchStatus;
-
-		private String switchTime;
-
 		private String switchCode;
 
 		private String nodeId;
 
-		public String getSwitchStatus() {
-			return this.switchStatus;
-		}
+		private String switchStatus;
 
-		public void setSwitchStatus(String switchStatus) {
-			this.switchStatus = switchStatus;
-		}
-
-		public String getSwitchTime() {
-			return this.switchTime;
-		}
-
-		public void setSwitchTime(String switchTime) {
-			this.switchTime = switchTime;
-		}
+		private String switchTime;
 
 		public String getSwitchCode() {
 			return this.switchCode;
@@ -125,6 +109,22 @@ public class DescribeDBInstanceSwitchLogResponse extends AcsResponse {
 
 		public void setNodeId(String nodeId) {
 			this.nodeId = nodeId;
+		}
+
+		public String getSwitchStatus() {
+			return this.switchStatus;
+		}
+
+		public void setSwitchStatus(String switchStatus) {
+			this.switchStatus = switchStatus;
+		}
+
+		public String getSwitchTime() {
+			return this.switchTime;
+		}
+
+		public void setSwitchTime(String switchTime) {
+			this.switchTime = switchTime;
 		}
 	}
 

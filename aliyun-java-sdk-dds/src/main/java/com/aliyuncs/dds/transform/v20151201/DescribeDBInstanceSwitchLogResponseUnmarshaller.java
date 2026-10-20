@@ -27,18 +27,18 @@ public class DescribeDBInstanceSwitchLogResponseUnmarshaller {
 	public static DescribeDBInstanceSwitchLogResponse unmarshall(DescribeDBInstanceSwitchLogResponse describeDBInstanceSwitchLogResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceSwitchLogResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.RequestId"));
-		describeDBInstanceSwitchLogResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.DBInstanceId"));
 		describeDBInstanceSwitchLogResponse.setTotalCount(_ctx.longValue("DescribeDBInstanceSwitchLogResponse.TotalCount"));
 		describeDBInstanceSwitchLogResponse.setPageSize(_ctx.longValue("DescribeDBInstanceSwitchLogResponse.PageSize"));
+		describeDBInstanceSwitchLogResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.DBInstanceId"));
 		describeDBInstanceSwitchLogResponse.setPageNumber(_ctx.longValue("DescribeDBInstanceSwitchLogResponse.PageNumber"));
 
 		List<LogItemsItem> logItems = new ArrayList<LogItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceSwitchLogResponse.LogItems.Length"); i++) {
 			LogItemsItem logItemsItem = new LogItemsItem();
-			logItemsItem.setSwitchStatus(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].SwitchStatus"));
-			logItemsItem.setSwitchTime(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].SwitchTime"));
 			logItemsItem.setSwitchCode(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].SwitchCode"));
 			logItemsItem.setNodeId(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].NodeId"));
+			logItemsItem.setSwitchStatus(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].SwitchStatus"));
+			logItemsItem.setSwitchTime(_ctx.stringValue("DescribeDBInstanceSwitchLogResponse.LogItems["+ i +"].SwitchTime"));
 
 			logItems.add(logItemsItem);
 		}

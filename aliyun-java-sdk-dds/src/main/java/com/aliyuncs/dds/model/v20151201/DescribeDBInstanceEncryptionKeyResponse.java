@@ -28,9 +28,9 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 
 	private String description;
 
-	private String requestId;
-
 	private String encryptionKeyStatus;
+
+	private String requestId;
 
 	private String materialExpireTime;
 
@@ -58,20 +58,20 @@ public class DescribeDBInstanceEncryptionKeyResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getEncryptionKeyStatus() {
 		return this.encryptionKeyStatus;
 	}
 
 	public void setEncryptionKeyStatus(String encryptionKeyStatus) {
 		this.encryptionKeyStatus = encryptionKeyStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMaterialExpireTime() {

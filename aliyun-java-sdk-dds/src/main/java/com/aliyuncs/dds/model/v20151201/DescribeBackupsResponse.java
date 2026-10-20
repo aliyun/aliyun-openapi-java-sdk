@@ -77,62 +77,54 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private String backupStatus;
+		private String backupMethod;
 
-		private String backupType;
-
-		private String backupStartTime;
+		private String engineVersion;
 
 		private String backupIntranetDownloadURL;
 
 		private Long backupSize;
 
-		private String backupDownloadURL;
-
 		private String backupMode;
-
-		private String backupEndTime;
 
 		private String backupId;
 
-		private String backupDBNames;
-
-		private String backupMethod;
+		private Boolean isAvail;
 
 		private String backupJobId;
 
+		private String backupDBNames;
+
 		private String backupName;
 
-		private String backupScale;
+		private String backupDownloadURL;
 
-		private Boolean isAvail;
+		private String backupEndTime;
 
-		private String engineVersion;
+		private String backupStartTime;
 
 		private String backupExpireTime;
 
-		public String getBackupStatus() {
-			return this.backupStatus;
+		private String backupType;
+
+		private String backupScale;
+
+		private String backupStatus;
+
+		public String getBackupMethod() {
+			return this.backupMethod;
 		}
 
-		public void setBackupStatus(String backupStatus) {
-			this.backupStatus = backupStatus;
+		public void setBackupMethod(String backupMethod) {
+			this.backupMethod = backupMethod;
 		}
 
-		public String getBackupType() {
-			return this.backupType;
+		public String getEngineVersion() {
+			return this.engineVersion;
 		}
 
-		public void setBackupType(String backupType) {
-			this.backupType = backupType;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 
 		public String getBackupIntranetDownloadURL() {
@@ -151,28 +143,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupSize = backupSize;
 		}
 
-		public String getBackupDownloadURL() {
-			return this.backupDownloadURL;
-		}
-
-		public void setBackupDownloadURL(String backupDownloadURL) {
-			this.backupDownloadURL = backupDownloadURL;
-		}
-
 		public String getBackupMode() {
 			return this.backupMode;
 		}
 
 		public void setBackupMode(String backupMode) {
 			this.backupMode = backupMode;
-		}
-
-		public String getBackupEndTime() {
-			return this.backupEndTime;
-		}
-
-		public void setBackupEndTime(String backupEndTime) {
-			this.backupEndTime = backupEndTime;
 		}
 
 		public String getBackupId() {
@@ -183,20 +159,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupId = backupId;
 		}
 
-		public String getBackupDBNames() {
-			return this.backupDBNames;
+		public Boolean getIsAvail() {
+			return this.isAvail;
 		}
 
-		public void setBackupDBNames(String backupDBNames) {
-			this.backupDBNames = backupDBNames;
-		}
-
-		public String getBackupMethod() {
-			return this.backupMethod;
-		}
-
-		public void setBackupMethod(String backupMethod) {
-			this.backupMethod = backupMethod;
+		public void setIsAvail(Boolean isAvail) {
+			this.isAvail = isAvail;
 		}
 
 		public String getBackupJobId() {
@@ -207,12 +175,60 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupJobId = backupJobId;
 		}
 
+		public String getBackupDBNames() {
+			return this.backupDBNames;
+		}
+
+		public void setBackupDBNames(String backupDBNames) {
+			this.backupDBNames = backupDBNames;
+		}
+
 		public String getBackupName() {
 			return this.backupName;
 		}
 
 		public void setBackupName(String backupName) {
 			this.backupName = backupName;
+		}
+
+		public String getBackupDownloadURL() {
+			return this.backupDownloadURL;
+		}
+
+		public void setBackupDownloadURL(String backupDownloadURL) {
+			this.backupDownloadURL = backupDownloadURL;
+		}
+
+		public String getBackupEndTime() {
+			return this.backupEndTime;
+		}
+
+		public void setBackupEndTime(String backupEndTime) {
+			this.backupEndTime = backupEndTime;
+		}
+
+		public String getBackupStartTime() {
+			return this.backupStartTime;
+		}
+
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
+		}
+
+		public String getBackupExpireTime() {
+			return this.backupExpireTime;
+		}
+
+		public void setBackupExpireTime(String backupExpireTime) {
+			this.backupExpireTime = backupExpireTime;
+		}
+
+		public String getBackupType() {
+			return this.backupType;
+		}
+
+		public void setBackupType(String backupType) {
+			this.backupType = backupType;
 		}
 
 		public String getBackupScale() {
@@ -223,28 +239,12 @@ public class DescribeBackupsResponse extends AcsResponse {
 			this.backupScale = backupScale;
 		}
 
-		public Boolean getIsAvail() {
-			return this.isAvail;
+		public String getBackupStatus() {
+			return this.backupStatus;
 		}
 
-		public void setIsAvail(Boolean isAvail) {
-			this.isAvail = isAvail;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getBackupExpireTime() {
-			return this.backupExpireTime;
-		}
-
-		public void setBackupExpireTime(String backupExpireTime) {
-			this.backupExpireTime = backupExpireTime;
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
 		}
 	}
 

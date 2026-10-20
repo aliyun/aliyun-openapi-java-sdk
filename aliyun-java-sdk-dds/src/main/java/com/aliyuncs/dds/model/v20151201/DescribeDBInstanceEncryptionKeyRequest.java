@@ -27,6 +27,8 @@ public class DescribeDBInstanceEncryptionKeyRequest extends RpcAcsRequest<Descri
 
 	private Long resourceOwnerId;
 
+	private String encryptionType;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class DescribeDBInstanceEncryptionKeyRequest extends RpcAcsRequest<Descri
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putQueryParameter("EncryptionType", encryptionType);
 		}
 	}
 

@@ -47,26 +47,26 @@ public class DescribeGlobalSecurityIPGroupResponse extends AcsResponse {
 
 	public static class GlobalSecurityIPGroupItem {
 
-		private String globalSecurityGroupId;
+		private String securityIPType;
 
 		private String globalIgName;
 
-		private String securityIPType;
-
 		private String gIpList;
 
-		private String whitelistNetType;
+		private String globalSecurityGroupId;
 
 		private String regionId;
 
+		private String whitelistNetType;
+
 		private List<String> dBInstances;
 
-		public String getGlobalSecurityGroupId() {
-			return this.globalSecurityGroupId;
+		public String getSecurityIPType() {
+			return this.securityIPType;
 		}
 
-		public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
-			this.globalSecurityGroupId = globalSecurityGroupId;
+		public void setSecurityIPType(String securityIPType) {
+			this.securityIPType = securityIPType;
 		}
 
 		public String getGlobalIgName() {
@@ -77,14 +77,6 @@ public class DescribeGlobalSecurityIPGroupResponse extends AcsResponse {
 			this.globalIgName = globalIgName;
 		}
 
-		public String getSecurityIPType() {
-			return this.securityIPType;
-		}
-
-		public void setSecurityIPType(String securityIPType) {
-			this.securityIPType = securityIPType;
-		}
-
 		public String getGIpList() {
 			return this.gIpList;
 		}
@@ -93,12 +85,12 @@ public class DescribeGlobalSecurityIPGroupResponse extends AcsResponse {
 			this.gIpList = gIpList;
 		}
 
-		public String getWhitelistNetType() {
-			return this.whitelistNetType;
+		public String getGlobalSecurityGroupId() {
+			return this.globalSecurityGroupId;
 		}
 
-		public void setWhitelistNetType(String whitelistNetType) {
-			this.whitelistNetType = whitelistNetType;
+		public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
+			this.globalSecurityGroupId = globalSecurityGroupId;
 		}
 
 		public String getRegionId() {
@@ -107,6 +99,14 @@ public class DescribeGlobalSecurityIPGroupResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getWhitelistNetType() {
+			return this.whitelistNetType;
+		}
+
+		public void setWhitelistNetType(String whitelistNetType) {
+			this.whitelistNetType = whitelistNetType;
 		}
 
 		public List<String> getDBInstances() {

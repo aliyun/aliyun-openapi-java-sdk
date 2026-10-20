@@ -55,6 +55,8 @@ public class ModifyNodeSpecBatchRequest extends RpcAcsRequest<ModifyNodeSpecBatc
 
 	private String targetHiddenZoneId;
 
+	private Boolean alignPrimaryZone;
+
 	private String orderType;
 	public ModifyNodeSpecBatchRequest() {
 		super("Dds", "2015-12-01", "ModifyNodeSpecBatch", "dds");
@@ -227,6 +229,17 @@ public class ModifyNodeSpecBatchRequest extends RpcAcsRequest<ModifyNodeSpecBatc
 		this.targetHiddenZoneId = targetHiddenZoneId;
 		if(targetHiddenZoneId != null){
 			putQueryParameter("TargetHiddenZoneId", targetHiddenZoneId);
+		}
+	}
+
+	public Boolean getAlignPrimaryZone() {
+		return this.alignPrimaryZone;
+	}
+
+	public void setAlignPrimaryZone(Boolean alignPrimaryZone) {
+		this.alignPrimaryZone = alignPrimaryZone;
+		if(alignPrimaryZone != null){
+			putQueryParameter("AlignPrimaryZone", alignPrimaryZone.toString());
 		}
 	}
 

@@ -33,6 +33,20 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String crossRetentionType;
 
+	private Integer backupRetentionPolicyOnClusterDeletion;
+
+	private Long ownerId;
+
+	private Long backupRetentionPeriod;
+
+	private Integer enableCrossLogBackup;
+
+	private String crossBackupPeriod;
+
+	private Integer crossRetentionValue;
+
+	private String crossLogRetentionType;
+
 	private String backupInterval;
 
 	private String instanceType;
@@ -43,8 +57,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String preferredBackupPeriod;
 
-	private Integer backupRetentionPolicyOnClusterDeletion;
-
 	private String destRegion;
 
 	private String resourceOwnerAccount;
@@ -53,23 +65,11 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String snapshotBackupType;
 
 	private String preferredBackupTime;
 
-	private Long backupRetentionPeriod;
-
 	private Long highFrequencyBackupRetention;
-
-	private Integer enableCrossLogBackup;
-
-	private String crossBackupPeriod;
-
-	private Integer crossRetentionValue;
-
-	private String crossLogRetentionType;
 
 	private Long logBackupRetentionPeriod;
 
@@ -124,6 +124,83 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.crossRetentionType = crossRetentionType;
 		if(crossRetentionType != null){
 			putQueryParameter("CrossRetentionType", crossRetentionType);
+		}
+	}
+
+	public Integer getBackupRetentionPolicyOnClusterDeletion() {
+		return this.backupRetentionPolicyOnClusterDeletion;
+	}
+
+	public void setBackupRetentionPolicyOnClusterDeletion(Integer backupRetentionPolicyOnClusterDeletion) {
+		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+		if(backupRetentionPolicyOnClusterDeletion != null){
+			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
+		}
+	}
+
+	public Integer getEnableCrossLogBackup() {
+		return this.enableCrossLogBackup;
+	}
+
+	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
+		this.enableCrossLogBackup = enableCrossLogBackup;
+		if(enableCrossLogBackup != null){
+			putQueryParameter("EnableCrossLogBackup", enableCrossLogBackup.toString());
+		}
+	}
+
+	public String getCrossBackupPeriod() {
+		return this.crossBackupPeriod;
+	}
+
+	public void setCrossBackupPeriod(String crossBackupPeriod) {
+		this.crossBackupPeriod = crossBackupPeriod;
+		if(crossBackupPeriod != null){
+			putQueryParameter("CrossBackupPeriod", crossBackupPeriod);
+		}
+	}
+
+	public Integer getCrossRetentionValue() {
+		return this.crossRetentionValue;
+	}
+
+	public void setCrossRetentionValue(Integer crossRetentionValue) {
+		this.crossRetentionValue = crossRetentionValue;
+		if(crossRetentionValue != null){
+			putQueryParameter("CrossRetentionValue", crossRetentionValue.toString());
+		}
+	}
+
+	public String getCrossLogRetentionType() {
+		return this.crossLogRetentionType;
+	}
+
+	public void setCrossLogRetentionType(String crossLogRetentionType) {
+		this.crossLogRetentionType = crossLogRetentionType;
+		if(crossLogRetentionType != null){
+			putQueryParameter("CrossLogRetentionType", crossLogRetentionType);
 		}
 	}
 
@@ -182,17 +259,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public Integer getBackupRetentionPolicyOnClusterDeletion() {
-		return this.backupRetentionPolicyOnClusterDeletion;
-	}
-
-	public void setBackupRetentionPolicyOnClusterDeletion(Integer backupRetentionPolicyOnClusterDeletion) {
-		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-		if(backupRetentionPolicyOnClusterDeletion != null){
-			putQueryParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion.toString());
-		}
-	}
-
 	public String getDestRegion() {
 		return this.destRegion;
 	}
@@ -237,17 +303,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSnapshotBackupType() {
 		return this.snapshotBackupType;
 	}
@@ -270,17 +325,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public Long getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(Long backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
-		}
-	}
-
 	public Long getHighFrequencyBackupRetention() {
 		return this.highFrequencyBackupRetention;
 	}
@@ -289,50 +333,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
 		if(highFrequencyBackupRetention != null){
 			putQueryParameter("HighFrequencyBackupRetention", highFrequencyBackupRetention.toString());
-		}
-	}
-
-	public Integer getEnableCrossLogBackup() {
-		return this.enableCrossLogBackup;
-	}
-
-	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
-		this.enableCrossLogBackup = enableCrossLogBackup;
-		if(enableCrossLogBackup != null){
-			putQueryParameter("EnableCrossLogBackup", enableCrossLogBackup.toString());
-		}
-	}
-
-	public String getCrossBackupPeriod() {
-		return this.crossBackupPeriod;
-	}
-
-	public void setCrossBackupPeriod(String crossBackupPeriod) {
-		this.crossBackupPeriod = crossBackupPeriod;
-		if(crossBackupPeriod != null){
-			putQueryParameter("CrossBackupPeriod", crossBackupPeriod);
-		}
-	}
-
-	public Integer getCrossRetentionValue() {
-		return this.crossRetentionValue;
-	}
-
-	public void setCrossRetentionValue(Integer crossRetentionValue) {
-		this.crossRetentionValue = crossRetentionValue;
-		if(crossRetentionValue != null){
-			putQueryParameter("CrossRetentionValue", crossRetentionValue.toString());
-		}
-	}
-
-	public String getCrossLogRetentionType() {
-		return this.crossLogRetentionType;
-	}
-
-	public void setCrossLogRetentionType(String crossLogRetentionType) {
-		this.crossLogRetentionType = crossLogRetentionType;
-		if(crossLogRetentionType != null){
-			putQueryParameter("CrossLogRetentionType", crossLogRetentionType);
 		}
 	}
 

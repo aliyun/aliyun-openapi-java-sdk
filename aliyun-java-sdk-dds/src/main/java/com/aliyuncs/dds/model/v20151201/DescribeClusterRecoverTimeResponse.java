@@ -47,19 +47,11 @@ public class DescribeClusterRecoverTimeResponse extends AcsResponse {
 
 	public static class AvailableRestoreTime {
 
-		private String restoreBeginTime;
-
 		private String restoreEndTime;
 
+		private String restoreBeginTime;
+
 		private String restoreType;
-
-		public String getRestoreBeginTime() {
-			return this.restoreBeginTime;
-		}
-
-		public void setRestoreBeginTime(String restoreBeginTime) {
-			this.restoreBeginTime = restoreBeginTime;
-		}
 
 		public String getRestoreEndTime() {
 			return this.restoreEndTime;
@@ -67,6 +59,14 @@ public class DescribeClusterRecoverTimeResponse extends AcsResponse {
 
 		public void setRestoreEndTime(String restoreEndTime) {
 			this.restoreEndTime = restoreEndTime;
+		}
+
+		public String getRestoreBeginTime() {
+			return this.restoreBeginTime;
+		}
+
+		public void setRestoreBeginTime(String restoreBeginTime) {
+			this.restoreBeginTime = restoreBeginTime;
 		}
 
 		public String getRestoreType() {

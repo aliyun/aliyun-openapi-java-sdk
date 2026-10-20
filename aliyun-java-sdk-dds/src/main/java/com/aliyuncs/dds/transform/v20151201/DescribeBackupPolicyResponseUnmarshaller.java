@@ -23,25 +23,26 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
-		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
-		describeBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeBackupPolicyResponse.EnableBackupLog"));
-		describeBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
-		describeBackupPolicyResponse.setSnapshotBackupType(_ctx.stringValue("DescribeBackupPolicyResponse.SnapshotBackupType"));
-		describeBackupPolicyResponse.setBackupInterval(_ctx.integerValue("DescribeBackupPolicyResponse.BackupInterval"));
 		describeBackupPolicyResponse.setHighFrequencyBackupRetention(_ctx.stringValue("DescribeBackupPolicyResponse.HighFrequencyBackupRetention"));
 		describeBackupPolicyResponse.setBackupRetentionPolicyOnClusterDeletion(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion"));
-		describeBackupPolicyResponse.setSrcRegion(_ctx.stringValue("DescribeBackupPolicyResponse.SrcRegion"));
-		describeBackupPolicyResponse.setDestRegion(_ctx.stringValue("DescribeBackupPolicyResponse.DestRegion"));
-		describeBackupPolicyResponse.setCrossRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossRetentionType"));
-		describeBackupPolicyResponse.setCrossRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossRetentionValue"));
+		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setCrossBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.CrossBackupPeriod"));
-		describeBackupPolicyResponse.setEnableCrossLogBackup(_ctx.integerValue("DescribeBackupPolicyResponse.EnableCrossLogBackup"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
 		describeBackupPolicyResponse.setCrossLogRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossLogRetentionType"));
+		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setCrossRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossRetentionValue"));
+		describeBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
 		describeBackupPolicyResponse.setCrossLogRetentionValue(_ctx.integerValue("DescribeBackupPolicyResponse.CrossLogRetentionValue"));
+		describeBackupPolicyResponse.setCrossRetentionType(_ctx.stringValue("DescribeBackupPolicyResponse.CrossRetentionType"));
+		describeBackupPolicyResponse.setSrcRegion(_ctx.stringValue("DescribeBackupPolicyResponse.SrcRegion"));
+		describeBackupPolicyResponse.setEnableCrossLogBackup(_ctx.integerValue("DescribeBackupPolicyResponse.EnableCrossLogBackup"));
 		describeBackupPolicyResponse.setPreserveOneEachHour(_ctx.booleanValue("DescribeBackupPolicyResponse.PreserveOneEachHour"));
+		describeBackupPolicyResponse.setSnapshotBackupType(_ctx.stringValue("DescribeBackupPolicyResponse.SnapshotBackupType"));
+		describeBackupPolicyResponse.setEnableBackupLog(_ctx.integerValue("DescribeBackupPolicyResponse.EnableBackupLog"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setBackupTamperProofEnabled(_ctx.booleanValue("DescribeBackupPolicyResponse.BackupTamperProofEnabled"));
+		describeBackupPolicyResponse.setDestRegion(_ctx.stringValue("DescribeBackupPolicyResponse.DestRegion"));
+		describeBackupPolicyResponse.setBackupInterval(_ctx.integerValue("DescribeBackupPolicyResponse.BackupInterval"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

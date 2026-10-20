@@ -77,17 +77,25 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	public static class TemplateRecord {
 
-		private String checkingCode;
+		private Boolean forceModify;
 
-		private String parameterName;
+		private String checkingCode;
 
 		private String parameterValue;
 
-		private Boolean forceModify;
-
 		private Boolean forceRestart;
 
+		private String parameterName;
+
 		private String parameterDescription;
+
+		public Boolean getForceModify() {
+			return this.forceModify;
+		}
+
+		public void setForceModify(Boolean forceModify) {
+			this.forceModify = forceModify;
+		}
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -95,14 +103,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setCheckingCode(String checkingCode) {
 			this.checkingCode = checkingCode;
-		}
-
-		public String getParameterName() {
-			return this.parameterName;
-		}
-
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
 		}
 
 		public String getParameterValue() {
@@ -113,20 +113,20 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public Boolean getForceModify() {
-			return this.forceModify;
-		}
-
-		public void setForceModify(Boolean forceModify) {
-			this.forceModify = forceModify;
-		}
-
 		public Boolean getForceRestart() {
 			return this.forceRestart;
 		}
 
 		public void setForceRestart(Boolean forceRestart) {
 			this.forceRestart = forceRestart;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
 		}
 
 		public String getParameterDescription() {

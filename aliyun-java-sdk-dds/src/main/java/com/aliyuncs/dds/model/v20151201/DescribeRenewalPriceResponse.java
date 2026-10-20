@@ -68,15 +68,31 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 	public static class SubOrder {
 
+		private String instanceId;
+
+		private Float tradeAmount;
+
 		private Float originalAmount;
 
 		private Float discountAmount;
 
-		private Float tradeAmount;
-
-		private String instanceId;
-
 		private List<String> ruleIds;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Float getTradeAmount() {
+			return this.tradeAmount;
+		}
+
+		public void setTradeAmount(Float tradeAmount) {
+			this.tradeAmount = tradeAmount;
+		}
 
 		public Float getOriginalAmount() {
 			return this.originalAmount;
@@ -92,22 +108,6 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public void setDiscountAmount(Float discountAmount) {
 			this.discountAmount = discountAmount;
-		}
-
-		public Float getTradeAmount() {
-			return this.tradeAmount;
-		}
-
-		public void setTradeAmount(Float tradeAmount) {
-			this.tradeAmount = tradeAmount;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 
 		public List<String> getRuleIds() {
@@ -154,17 +154,33 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 	public static class Order {
 
+		private String currency;
+
+		private Float tradeAmount;
+
 		private Float originalAmount;
 
 		private Float discountAmount;
 
-		private Float tradeAmount;
-
-		private String currency;
-
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds1;
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
+
+		public Float getTradeAmount() {
+			return this.tradeAmount;
+		}
+
+		public void setTradeAmount(Float tradeAmount) {
+			this.tradeAmount = tradeAmount;
+		}
 
 		public Float getOriginalAmount() {
 			return this.originalAmount;
@@ -180,22 +196,6 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public void setDiscountAmount(Float discountAmount) {
 			this.discountAmount = discountAmount;
-		}
-
-		public Float getTradeAmount() {
-			return this.tradeAmount;
-		}
-
-		public void setTradeAmount(Float tradeAmount) {
-			this.tradeAmount = tradeAmount;
-		}
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
 		}
 
 		public List<Coupon> getCoupons() {
@@ -216,17 +216,25 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 		public static class Coupon {
 
+			private String couponNo;
+
 			private String description;
 
 			private String isSelected;
 
-			private String couponNo;
+			private Map<Object,Object> activityExtInfo;
 
 			private String name;
 
 			private Boolean effective;
 
-			private Map<Object,Object> activityExtInfo;
+			public String getCouponNo() {
+				return this.couponNo;
+			}
+
+			public void setCouponNo(String couponNo) {
+				this.couponNo = couponNo;
+			}
 
 			public String getDescription() {
 				return this.description;
@@ -244,12 +252,12 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 				this.isSelected = isSelected;
 			}
 
-			public String getCouponNo() {
-				return this.couponNo;
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
 			}
 
-			public void setCouponNo(String couponNo) {
-				this.couponNo = couponNo;
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
 			}
 
 			public String getName() {
@@ -266,14 +274,6 @@ public class DescribeRenewalPriceResponse extends AcsResponse {
 
 			public void setEffective(Boolean effective) {
 				this.effective = effective;
-			}
-
-			public Map<Object,Object> getActivityExtInfo() {
-				return this.activityExtInfo;
-			}
-
-			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
-				this.activityExtInfo = activityExtInfo;
 			}
 		}
 	}

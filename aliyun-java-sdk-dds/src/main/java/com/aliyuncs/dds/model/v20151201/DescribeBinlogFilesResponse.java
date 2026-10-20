@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBinlogFilesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer maxRecordsPerPage;
 
 	private Integer totalRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<LogFile> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getMaxRecordsPerPage() {
 		return this.maxRecordsPerPage;
@@ -67,6 +51,22 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<LogFile> getItems() {
 		return this.items;
 	}
@@ -77,46 +77,38 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 
 	public static class LogFile {
 
-		private String logFileName;
-
-		private String dumpDownloadURL;
+		private String downloadLink;
 
 		private String logBeginTime;
 
-		private String dumpBucket;
+		private String binLogId;
 
-		private String linkExpiredTime;
-
-		private String downloadLink;
+		private String logFileName;
 
 		private String oSSEndpoint;
 
-		private String logEndTime;
+		private String logStatus;
+
+		private String dumpDownloadURL;
+
+		private String linkExpiredTime;
 
 		private Integer dumpState;
 
-		private String fileSize;
+		private String logEndTime;
 
 		private String fileId;
 
-		private String binLogId;
+		private String dumpBucket;
 
-		private String logStatus;
+		private String fileSize;
 
-		public String getLogFileName() {
-			return this.logFileName;
+		public String getDownloadLink() {
+			return this.downloadLink;
 		}
 
-		public void setLogFileName(String logFileName) {
-			this.logFileName = logFileName;
-		}
-
-		public String getDumpDownloadURL() {
-			return this.dumpDownloadURL;
-		}
-
-		public void setDumpDownloadURL(String dumpDownloadURL) {
-			this.dumpDownloadURL = dumpDownloadURL;
+		public void setDownloadLink(String downloadLink) {
+			this.downloadLink = downloadLink;
 		}
 
 		public String getLogBeginTime() {
@@ -127,28 +119,20 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.logBeginTime = logBeginTime;
 		}
 
-		public String getDumpBucket() {
-			return this.dumpBucket;
+		public String getBinLogId() {
+			return this.binLogId;
 		}
 
-		public void setDumpBucket(String dumpBucket) {
-			this.dumpBucket = dumpBucket;
+		public void setBinLogId(String binLogId) {
+			this.binLogId = binLogId;
 		}
 
-		public String getLinkExpiredTime() {
-			return this.linkExpiredTime;
+		public String getLogFileName() {
+			return this.logFileName;
 		}
 
-		public void setLinkExpiredTime(String linkExpiredTime) {
-			this.linkExpiredTime = linkExpiredTime;
-		}
-
-		public String getDownloadLink() {
-			return this.downloadLink;
-		}
-
-		public void setDownloadLink(String downloadLink) {
-			this.downloadLink = downloadLink;
+		public void setLogFileName(String logFileName) {
+			this.logFileName = logFileName;
 		}
 
 		public String getOSSEndpoint() {
@@ -159,12 +143,28 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.oSSEndpoint = oSSEndpoint;
 		}
 
-		public String getLogEndTime() {
-			return this.logEndTime;
+		public String getLogStatus() {
+			return this.logStatus;
 		}
 
-		public void setLogEndTime(String logEndTime) {
-			this.logEndTime = logEndTime;
+		public void setLogStatus(String logStatus) {
+			this.logStatus = logStatus;
+		}
+
+		public String getDumpDownloadURL() {
+			return this.dumpDownloadURL;
+		}
+
+		public void setDumpDownloadURL(String dumpDownloadURL) {
+			this.dumpDownloadURL = dumpDownloadURL;
+		}
+
+		public String getLinkExpiredTime() {
+			return this.linkExpiredTime;
+		}
+
+		public void setLinkExpiredTime(String linkExpiredTime) {
+			this.linkExpiredTime = linkExpiredTime;
 		}
 
 		public Integer getDumpState() {
@@ -175,12 +175,12 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.dumpState = dumpState;
 		}
 
-		public String getFileSize() {
-			return this.fileSize;
+		public String getLogEndTime() {
+			return this.logEndTime;
 		}
 
-		public void setFileSize(String fileSize) {
-			this.fileSize = fileSize;
+		public void setLogEndTime(String logEndTime) {
+			this.logEndTime = logEndTime;
 		}
 
 		public String getFileId() {
@@ -191,20 +191,20 @@ public class DescribeBinlogFilesResponse extends AcsResponse {
 			this.fileId = fileId;
 		}
 
-		public String getBinLogId() {
-			return this.binLogId;
+		public String getDumpBucket() {
+			return this.dumpBucket;
 		}
 
-		public void setBinLogId(String binLogId) {
-			this.binLogId = binLogId;
+		public void setDumpBucket(String dumpBucket) {
+			this.dumpBucket = dumpBucket;
 		}
 
-		public String getLogStatus() {
-			return this.logStatus;
+		public String getFileSize() {
+			return this.fileSize;
 		}
 
-		public void setLogStatus(String logStatus) {
-			this.logStatus = logStatus;
+		public void setFileSize(String fileSize) {
+			this.fileSize = fileSize;
 		}
 	}
 

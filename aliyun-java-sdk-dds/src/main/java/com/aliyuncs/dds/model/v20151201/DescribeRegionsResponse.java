@@ -47,15 +47,23 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	public static class DdsRegion {
 
+		private String regionName;
+
 		private String zoneIds;
 
 		private String regionId;
 
-		private String regionName;
-
 		private String endPoint;
 
 		private List<Zone> zones;
+
+		public String getRegionName() {
+			return this.regionName;
+		}
+
+		public void setRegionName(String regionName) {
+			this.regionName = regionName;
+		}
 
 		public String getZoneIds() {
 			return this.zoneIds;
@@ -71,14 +79,6 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getRegionName() {
-			return this.regionName;
-		}
-
-		public void setRegionName(String regionName) {
-			this.regionName = regionName;
 		}
 
 		public String getEndPoint() {
@@ -99,19 +99,11 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public static class Zone {
 
-			private String zoneId;
-
 			private Boolean vpcEnabled;
 
 			private String zoneName;
 
-			public String getZoneId() {
-				return this.zoneId;
-			}
-
-			public void setZoneId(String zoneId) {
-				this.zoneId = zoneId;
-			}
+			private String zoneId;
 
 			public Boolean getVpcEnabled() {
 				return this.vpcEnabled;
@@ -127,6 +119,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			public void setZoneName(String zoneName) {
 				this.zoneName = zoneName;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 	}

@@ -36,9 +36,9 @@ public class DescribeDBInstancePerformanceResponseUnmarshaller {
 		List<PerformanceKey> performanceKeys = new ArrayList<PerformanceKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys.Length"); i++) {
 			PerformanceKey performanceKey = new PerformanceKey();
-			performanceKey.setKey(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Key"));
-			performanceKey.setUnit(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Unit"));
 			performanceKey.setValueFormat(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].ValueFormat"));
+			performanceKey.setUnit(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Unit"));
+			performanceKey.setKey(_ctx.stringValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].Key"));
 
 			List<PerformanceValue> performanceValues = new ArrayList<PerformanceValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancePerformanceResponse.PerformanceKeys["+ i +"].PerformanceValues.Length"); j++) {

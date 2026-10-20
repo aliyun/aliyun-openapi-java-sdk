@@ -47,17 +47,9 @@ public class DescribeKmsKeysResponse extends AcsResponse {
 
 	public static class KmsKey {
 
-		private String keyAlias;
-
 		private String keyId;
 
-		public String getKeyAlias() {
-			return this.keyAlias;
-		}
-
-		public void setKeyAlias(String keyAlias) {
-			this.keyAlias = keyAlias;
-		}
+		private String keyAlias;
 
 		public String getKeyId() {
 			return this.keyId;
@@ -65,6 +57,14 @@ public class DescribeKmsKeysResponse extends AcsResponse {
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public String getKeyAlias() {
+			return this.keyAlias;
+		}
+
+		public void setKeyAlias(String keyAlias) {
+			this.keyAlias = keyAlias;
 		}
 	}
 

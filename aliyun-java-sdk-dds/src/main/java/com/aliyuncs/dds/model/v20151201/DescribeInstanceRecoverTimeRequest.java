@@ -39,6 +39,8 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 
 	private String resourceOwnerAccount;
 
+	private Boolean onlyDbTableRecovery;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -125,6 +127,17 @@ public class DescribeInstanceRecoverTimeRequest extends RpcAcsRequest<DescribeIn
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getOnlyDbTableRecovery() {
+		return this.onlyDbTableRecovery;
+	}
+
+	public void setOnlyDbTableRecovery(Boolean onlyDbTableRecovery) {
+		this.onlyDbTableRecovery = onlyDbTableRecovery;
+		if(onlyDbTableRecovery != null){
+			putQueryParameter("OnlyDbTableRecovery", onlyDbTableRecovery.toString());
 		}
 	}
 

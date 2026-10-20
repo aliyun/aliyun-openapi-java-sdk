@@ -63,23 +63,23 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 
 			private Boolean isDefault;
 
-			private String vSwitchId;
-
-			private String cidrBlock;
-
 			private String regionNo;
-
-			private String gmtCreate;
-
-			private String aliUid;
-
-			private String gmtModified;
-
-			private String bid;
 
 			private String izNo;
 
+			private String gmtCreate;
+
+			private String vSwitchId;
+
+			private String gmtModified;
+
+			private String cidrBlock;
+
 			private String vSwitchName;
+
+			private String bid;
+
+			private String aliUid;
 
 			public String getStatus() {
 				return this.status;
@@ -97,60 +97,12 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 				this.isDefault = isDefault;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getCidrBlock() {
-				return this.cidrBlock;
-			}
-
-			public void setCidrBlock(String cidrBlock) {
-				this.cidrBlock = cidrBlock;
-			}
-
 			public String getRegionNo() {
 				return this.regionNo;
 			}
 
 			public void setRegionNo(String regionNo) {
 				this.regionNo = regionNo;
-			}
-
-			public String getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(String gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getAliUid() {
-				return this.aliUid;
-			}
-
-			public void setAliUid(String aliUid) {
-				this.aliUid = aliUid;
-			}
-
-			public String getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(String gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getBid() {
-				return this.bid;
-			}
-
-			public void setBid(String bid) {
-				this.bid = bid;
 			}
 
 			public String getIzNo() {
@@ -161,12 +113,60 @@ public class DescribeRdsVSwitchsResponse extends AcsResponse {
 				this.izNo = izNo;
 			}
 
+			public String getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(String gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(String gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getCidrBlock() {
+				return this.cidrBlock;
+			}
+
+			public void setCidrBlock(String cidrBlock) {
+				this.cidrBlock = cidrBlock;
+			}
+
 			public String getVSwitchName() {
 				return this.vSwitchName;
 			}
 
 			public void setVSwitchName(String vSwitchName) {
 				this.vSwitchName = vSwitchName;
+			}
+
+			public String getBid() {
+				return this.bid;
+			}
+
+			public void setBid(String bid) {
+				this.bid = bid;
+			}
+
+			public String getAliUid() {
+				return this.aliUid;
+			}
+
+			public void setAliUid(String aliUid) {
+				this.aliUid = aliUid;
 			}
 		}
 	}

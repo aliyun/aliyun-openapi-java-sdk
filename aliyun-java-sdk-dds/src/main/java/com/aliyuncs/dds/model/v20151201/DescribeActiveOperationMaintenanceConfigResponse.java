@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeActiveOperationMaintenanceConfigResponse extends AcsResponse {
 
-	private Integer hasConfig;
-
 	private String requestId;
 
+	private Integer hasConfig;
+
 	private Config config;
-
-	public Integer getHasConfig() {
-		return this.hasConfig;
-	}
-
-	public void setHasConfig(Integer hasConfig) {
-		this.hasConfig = hasConfig;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +36,14 @@ public class DescribeActiveOperationMaintenanceConfigResponse extends AcsRespons
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getHasConfig() {
+		return this.hasConfig;
+	}
+
+	public void setHasConfig(Integer hasConfig) {
+		this.hasConfig = hasConfig;
 	}
 
 	public Config getConfig() {
@@ -56,19 +56,35 @@ public class DescribeActiveOperationMaintenanceConfigResponse extends AcsRespons
 
 	public static class Config {
 
+		private Integer status;
+
+		private String cycleTime;
+
 		private String cycleType;
 
-		private Integer status;
+		private String maintainEndTime;
+
+		private String createdTime;
 
 		private String modifiedTime;
 
 		private String maintainStartTime;
 
-		private String maintainEndTime;
+		public Integer getStatus() {
+			return this.status;
+		}
 
-		private String cycleTime;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
-		private String createdTime;
+		public String getCycleTime() {
+			return this.cycleTime;
+		}
+
+		public void setCycleTime(String cycleTime) {
+			this.cycleTime = cycleTime;
+		}
 
 		public String getCycleType() {
 			return this.cycleType;
@@ -78,12 +94,20 @@ public class DescribeActiveOperationMaintenanceConfigResponse extends AcsRespons
 			this.cycleType = cycleType;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public String getModifiedTime() {
@@ -100,30 +124,6 @@ public class DescribeActiveOperationMaintenanceConfigResponse extends AcsRespons
 
 		public void setMaintainStartTime(String maintainStartTime) {
 			this.maintainStartTime = maintainStartTime;
-		}
-
-		public String getMaintainEndTime() {
-			return this.maintainEndTime;
-		}
-
-		public void setMaintainEndTime(String maintainEndTime) {
-			this.maintainEndTime = maintainEndTime;
-		}
-
-		public String getCycleTime() {
-			return this.cycleTime;
-		}
-
-		public void setCycleTime(String cycleTime) {
-			this.cycleTime = cycleTime;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
 		}
 	}
 

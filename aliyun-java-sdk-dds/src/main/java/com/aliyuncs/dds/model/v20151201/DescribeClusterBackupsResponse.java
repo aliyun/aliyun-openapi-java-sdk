@@ -27,11 +27,11 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer maxResults;
+	private Integer pageSize;
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
+	private Integer maxResults;
 
 	private List<ClusterBackup> clusterBackups;
 
@@ -43,12 +43,12 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getMaxResults() {
-		return this.maxResults;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setMaxResults(Integer maxResults) {
-		this.maxResults = maxResults;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -59,12 +59,12 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<ClusterBackup> getClusterBackups() {
@@ -77,19 +77,9 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 	public static class ClusterBackup {
 
-		private Integer isAvail;
-
 		private String clusterBackupId;
 
-		private String clusterBackupStatus;
-
 		private String clusterBackupStartTime;
-
-		private String clusterBackupSize;
-
-		private String clusterBackupEndTime;
-
-		private String clusterBackupMode;
 
 		private String progress;
 
@@ -97,19 +87,21 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		private String engineVersion;
 
+		private String clusterBackupSize;
+
+		private String clusterBackupMode;
+
+		private Integer isAvail;
+
+		private String clusterBackupStatus;
+
 		private String backupExpireTime;
+
+		private String clusterBackupEndTime;
 
 		private List<Backup> backups;
 
 		private ExtraInfo extraInfo;
-
-		public Integer getIsAvail() {
-			return this.isAvail;
-		}
-
-		public void setIsAvail(Integer isAvail) {
-			this.isAvail = isAvail;
-		}
 
 		public String getClusterBackupId() {
 			return this.clusterBackupId;
@@ -119,44 +111,12 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 			this.clusterBackupId = clusterBackupId;
 		}
 
-		public String getClusterBackupStatus() {
-			return this.clusterBackupStatus;
-		}
-
-		public void setClusterBackupStatus(String clusterBackupStatus) {
-			this.clusterBackupStatus = clusterBackupStatus;
-		}
-
 		public String getClusterBackupStartTime() {
 			return this.clusterBackupStartTime;
 		}
 
 		public void setClusterBackupStartTime(String clusterBackupStartTime) {
 			this.clusterBackupStartTime = clusterBackupStartTime;
-		}
-
-		public String getClusterBackupSize() {
-			return this.clusterBackupSize;
-		}
-
-		public void setClusterBackupSize(String clusterBackupSize) {
-			this.clusterBackupSize = clusterBackupSize;
-		}
-
-		public String getClusterBackupEndTime() {
-			return this.clusterBackupEndTime;
-		}
-
-		public void setClusterBackupEndTime(String clusterBackupEndTime) {
-			this.clusterBackupEndTime = clusterBackupEndTime;
-		}
-
-		public String getClusterBackupMode() {
-			return this.clusterBackupMode;
-		}
-
-		public void setClusterBackupMode(String clusterBackupMode) {
-			this.clusterBackupMode = clusterBackupMode;
 		}
 
 		public String getProgress() {
@@ -183,12 +143,52 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 			this.engineVersion = engineVersion;
 		}
 
+		public String getClusterBackupSize() {
+			return this.clusterBackupSize;
+		}
+
+		public void setClusterBackupSize(String clusterBackupSize) {
+			this.clusterBackupSize = clusterBackupSize;
+		}
+
+		public String getClusterBackupMode() {
+			return this.clusterBackupMode;
+		}
+
+		public void setClusterBackupMode(String clusterBackupMode) {
+			this.clusterBackupMode = clusterBackupMode;
+		}
+
+		public Integer getIsAvail() {
+			return this.isAvail;
+		}
+
+		public void setIsAvail(Integer isAvail) {
+			this.isAvail = isAvail;
+		}
+
+		public String getClusterBackupStatus() {
+			return this.clusterBackupStatus;
+		}
+
+		public void setClusterBackupStatus(String clusterBackupStatus) {
+			this.clusterBackupStatus = clusterBackupStatus;
+		}
+
 		public String getBackupExpireTime() {
 			return this.backupExpireTime;
 		}
 
 		public void setBackupExpireTime(String backupExpireTime) {
 			this.backupExpireTime = backupExpireTime;
+		}
+
+		public String getClusterBackupEndTime() {
+			return this.clusterBackupEndTime;
+		}
+
+		public void setClusterBackupEndTime(String clusterBackupEndTime) {
+			this.clusterBackupEndTime = clusterBackupEndTime;
 		}
 
 		public List<Backup> getBackups() {
@@ -209,19 +209,19 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 		public static class Backup {
 
-			private String backupId;
-
 			private String instanceName;
 
 			private String backupDownloadURL;
 
 			private String backupIntranetDownloadURL;
 
-			private String backupStartTime;
-
 			private String backupEndTime;
 
 			private String backupSize;
+
+			private String backupStartTime;
+
+			private String backupId;
 
 			private String isAvail;
 
@@ -230,14 +230,6 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 			private String backupName;
 
 			private ExtraInfo1 extraInfo1;
-
-			public String getBackupId() {
-				return this.backupId;
-			}
-
-			public void setBackupId(String backupId) {
-				this.backupId = backupId;
-			}
 
 			public String getInstanceName() {
 				return this.instanceName;
@@ -263,14 +255,6 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 				this.backupIntranetDownloadURL = backupIntranetDownloadURL;
 			}
 
-			public String getBackupStartTime() {
-				return this.backupStartTime;
-			}
-
-			public void setBackupStartTime(String backupStartTime) {
-				this.backupStartTime = backupStartTime;
-			}
-
 			public String getBackupEndTime() {
 				return this.backupEndTime;
 			}
@@ -285,6 +269,22 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 			public void setBackupSize(String backupSize) {
 				this.backupSize = backupSize;
+			}
+
+			public String getBackupStartTime() {
+				return this.backupStartTime;
+			}
+
+			public void setBackupStartTime(String backupStartTime) {
+				this.backupStartTime = backupStartTime;
+			}
+
+			public String getBackupId() {
+				return this.backupId;
+			}
+
+			public void setBackupId(String backupId) {
+				this.backupId = backupId;
 			}
 
 			public String getIsAvail() {
@@ -321,13 +321,21 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 			public static class ExtraInfo1 {
 
+				private String nodeType;
+
 				private String nodeId;
 
 				private String storageSize;
 
 				private String instanceClass;
 
-				private String nodeType;
+				public String getNodeType() {
+					return this.nodeType;
+				}
+
+				public void setNodeType(String nodeType) {
+					this.nodeType = nodeType;
+				}
 
 				public String getNodeId() {
 					return this.nodeId;
@@ -351,14 +359,6 @@ public class DescribeClusterBackupsResponse extends AcsResponse {
 
 				public void setInstanceClass(String instanceClass) {
 					this.instanceClass = instanceClass;
-				}
-
-				public String getNodeType() {
-					return this.nodeType;
-				}
-
-				public void setNodeType(String nodeType) {
-					this.nodeType = nodeType;
 				}
 			}
 		}

@@ -49,9 +49,9 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 
 		private String securityGroupId;
 
-		private String netType;
-
 		private String regionId;
+
+		private String netType;
 
 		public String getSecurityGroupId() {
 			return this.securityGroupId;
@@ -61,20 +61,20 @@ public class DescribeSecurityGroupConfigurationResponse extends AcsResponse {
 			this.securityGroupId = securityGroupId;
 		}
 
-		public String getNetType() {
-			return this.netType;
-		}
-
-		public void setNetType(String netType) {
-			this.netType = netType;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getNetType() {
+			return this.netType;
+		}
+
+		public void setNetType(String netType) {
+			this.netType = netType;
 		}
 	}
 

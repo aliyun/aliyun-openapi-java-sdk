@@ -88,33 +88,65 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class SubOrder {
 
+		private Double standPrice;
+
+		private String instanceId;
+
+		private Double standDiscountPrice;
+
+		private String tradeAmount;
+
 		private String originalAmount;
 
 		private String discountAmount;
 
-		private String tradeAmount;
-
-		private String instanceId;
+		private Boolean contractActivity;
 
 		private String isNewOfficialActivity;
 
-		private Boolean contractActivity;
-
-		private Double standDiscountPrice;
-
-		private Double standPrice;
-
 		private Boolean isContractActivity;
-
-		private List<ModuleInstanceItem> moduleInstance;
 
 		private List<OptionalPromotion> optionalPromotions;
 
-		private List<PromDetail3> promDetailList;
+		private List<PromDetail> promDetailList;
+
+		private List<ModuleInstanceItem> moduleInstance;
 
 		private List<String> ruleIds;
 
 		private DepreciateInfo depreciateInfo;
+
+		public Double getStandPrice() {
+			return this.standPrice;
+		}
+
+		public void setStandPrice(Double standPrice) {
+			this.standPrice = standPrice;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Double getStandDiscountPrice() {
+			return this.standDiscountPrice;
+		}
+
+		public void setStandDiscountPrice(Double standDiscountPrice) {
+			this.standDiscountPrice = standDiscountPrice;
+		}
+
+		public String getTradeAmount() {
+			return this.tradeAmount;
+		}
+
+		public void setTradeAmount(String tradeAmount) {
+			this.tradeAmount = tradeAmount;
+		}
 
 		public String getOriginalAmount() {
 			return this.originalAmount;
@@ -132,20 +164,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.discountAmount = discountAmount;
 		}
 
-		public String getTradeAmount() {
-			return this.tradeAmount;
+		public Boolean getContractActivity() {
+			return this.contractActivity;
 		}
 
-		public void setTradeAmount(String tradeAmount) {
-			this.tradeAmount = tradeAmount;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setContractActivity(Boolean contractActivity) {
+			this.contractActivity = contractActivity;
 		}
 
 		public String getIsNewOfficialActivity() {
@@ -156,44 +180,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.isNewOfficialActivity = isNewOfficialActivity;
 		}
 
-		public Boolean getContractActivity() {
-			return this.contractActivity;
-		}
-
-		public void setContractActivity(Boolean contractActivity) {
-			this.contractActivity = contractActivity;
-		}
-
-		public Double getStandDiscountPrice() {
-			return this.standDiscountPrice;
-		}
-
-		public void setStandDiscountPrice(Double standDiscountPrice) {
-			this.standDiscountPrice = standDiscountPrice;
-		}
-
-		public Double getStandPrice() {
-			return this.standPrice;
-		}
-
-		public void setStandPrice(Double standPrice) {
-			this.standPrice = standPrice;
-		}
-
 		public Boolean getIsContractActivity() {
 			return this.isContractActivity;
 		}
 
 		public void setIsContractActivity(Boolean isContractActivity) {
 			this.isContractActivity = isContractActivity;
-		}
-
-		public List<ModuleInstanceItem> getModuleInstance() {
-			return this.moduleInstance;
-		}
-
-		public void setModuleInstance(List<ModuleInstanceItem> moduleInstance) {
-			this.moduleInstance = moduleInstance;
 		}
 
 		public List<OptionalPromotion> getOptionalPromotions() {
@@ -204,12 +196,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.optionalPromotions = optionalPromotions;
 		}
 
-		public List<PromDetail3> getPromDetailList() {
+		public List<PromDetail> getPromDetailList() {
 			return this.promDetailList;
 		}
 
-		public void setPromDetailList(List<PromDetail3> promDetailList) {
+		public void setPromDetailList(List<PromDetail> promDetailList) {
 			this.promDetailList = promDetailList;
+		}
+
+		public List<ModuleInstanceItem> getModuleInstance() {
+			return this.moduleInstance;
+		}
+
+		public void setModuleInstance(List<ModuleInstanceItem> moduleInstance) {
+			this.moduleInstance = moduleInstance;
 		}
 
 		public List<String> getRuleIds() {
@@ -228,74 +228,244 @@ public class DescribePriceResponse extends AcsResponse {
 			this.depreciateInfo = depreciateInfo;
 		}
 
+		public static class OptionalPromotion {
+
+			private String activityCategory;
+
+			private String promotionName;
+
+			private String promotionOptionNo;
+
+			private Double canPromFee;
+
+			private Map<Object,Object> activityExtInfo;
+
+			private Boolean show;
+
+			private String optionCode;
+
+			private Boolean selected;
+
+			private List<String> promotionRuleIdList;
+
+			private List<String> targetArticleItemCodes;
+
+			public String getActivityCategory() {
+				return this.activityCategory;
+			}
+
+			public void setActivityCategory(String activityCategory) {
+				this.activityCategory = activityCategory;
+			}
+
+			public String getPromotionName() {
+				return this.promotionName;
+			}
+
+			public void setPromotionName(String promotionName) {
+				this.promotionName = promotionName;
+			}
+
+			public String getPromotionOptionNo() {
+				return this.promotionOptionNo;
+			}
+
+			public void setPromotionOptionNo(String promotionOptionNo) {
+				this.promotionOptionNo = promotionOptionNo;
+			}
+
+			public Double getCanPromFee() {
+				return this.canPromFee;
+			}
+
+			public void setCanPromFee(Double canPromFee) {
+				this.canPromFee = canPromFee;
+			}
+
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
+			}
+
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
+			}
+
+			public Boolean getShow() {
+				return this.show;
+			}
+
+			public void setShow(Boolean show) {
+				this.show = show;
+			}
+
+			public String getOptionCode() {
+				return this.optionCode;
+			}
+
+			public void setOptionCode(String optionCode) {
+				this.optionCode = optionCode;
+			}
+
+			public Boolean getSelected() {
+				return this.selected;
+			}
+
+			public void setSelected(Boolean selected) {
+				this.selected = selected;
+			}
+
+			public List<String> getPromotionRuleIdList() {
+				return this.promotionRuleIdList;
+			}
+
+			public void setPromotionRuleIdList(List<String> promotionRuleIdList) {
+				this.promotionRuleIdList = promotionRuleIdList;
+			}
+
+			public List<String> getTargetArticleItemCodes() {
+				return this.targetArticleItemCodes;
+			}
+
+			public void setTargetArticleItemCodes(List<String> targetArticleItemCodes) {
+				this.targetArticleItemCodes = targetArticleItemCodes;
+			}
+		}
+
+		public static class PromDetail {
+
+			private String promotionName;
+
+			private String derivedPromType;
+
+			private Long promotionId;
+
+			private Double finalPromFee;
+
+			private String promotionCode;
+
+			private Map<Object,Object> activityExtInfo;
+
+			private String optionCode;
+
+			private String promType;
+
+			public String getPromotionName() {
+				return this.promotionName;
+			}
+
+			public void setPromotionName(String promotionName) {
+				this.promotionName = promotionName;
+			}
+
+			public String getDerivedPromType() {
+				return this.derivedPromType;
+			}
+
+			public void setDerivedPromType(String derivedPromType) {
+				this.derivedPromType = derivedPromType;
+			}
+
+			public Long getPromotionId() {
+				return this.promotionId;
+			}
+
+			public void setPromotionId(Long promotionId) {
+				this.promotionId = promotionId;
+			}
+
+			public Double getFinalPromFee() {
+				return this.finalPromFee;
+			}
+
+			public void setFinalPromFee(Double finalPromFee) {
+				this.finalPromFee = finalPromFee;
+			}
+
+			public String getPromotionCode() {
+				return this.promotionCode;
+			}
+
+			public void setPromotionCode(String promotionCode) {
+				this.promotionCode = promotionCode;
+			}
+
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
+			}
+
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
+			}
+
+			public String getOptionCode() {
+				return this.optionCode;
+			}
+
+			public void setOptionCode(String optionCode) {
+				this.optionCode = optionCode;
+			}
+
+			public String getPromType() {
+				return this.promType;
+			}
+
+			public void setPromType(String promType) {
+				this.promType = promType;
+			}
+		}
+
 		public static class ModuleInstanceItem {
 
-			private String cycleFee;
+			private Double standPrice;
 
-			private String discountFee;
-
-			private String moduleCode;
-
-			private Long moduleId;
+			private String priceUnit;
 
 			private String moduleName;
+
+			private Double standDiscountPrice;
+
+			private String priceType;
+
+			private String discountFee;
 
 			private Boolean needOrderPay;
 
 			private Double payFee;
 
-			private Boolean pricingModule;
-
-			private Double standPrice;
-
-			private Double totalProductFee;
-
 			private Boolean contractActivity;
 
-			private Double standDiscountPrice;
+			private String cycleFee;
 
-			private String priceUnit;
+			private Long moduleId;
 
-			private String priceType;
+			private Boolean pricingModule;
+
+			private String moduleCode;
 
 			private String unitPriceUnit4Buy;
 
-			private List<PromDetail> promDetailList2;
+			private Double totalProductFee;
+
+			private List<PromDetail3> promDetailList2;
 
 			private List<ModuleAttr> moduleAttrs;
 
 			private DepreciateInfo1 depreciateInfo1;
 
-			public String getCycleFee() {
-				return this.cycleFee;
+			public Double getStandPrice() {
+				return this.standPrice;
 			}
 
-			public void setCycleFee(String cycleFee) {
-				this.cycleFee = cycleFee;
+			public void setStandPrice(Double standPrice) {
+				this.standPrice = standPrice;
 			}
 
-			public String getDiscountFee() {
-				return this.discountFee;
+			public String getPriceUnit() {
+				return this.priceUnit;
 			}
 
-			public void setDiscountFee(String discountFee) {
-				this.discountFee = discountFee;
-			}
-
-			public String getModuleCode() {
-				return this.moduleCode;
-			}
-
-			public void setModuleCode(String moduleCode) {
-				this.moduleCode = moduleCode;
-			}
-
-			public Long getModuleId() {
-				return this.moduleId;
-			}
-
-			public void setModuleId(Long moduleId) {
-				this.moduleId = moduleId;
+			public void setPriceUnit(String priceUnit) {
+				this.priceUnit = priceUnit;
 			}
 
 			public String getModuleName() {
@@ -304,6 +474,30 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setModuleName(String moduleName) {
 				this.moduleName = moduleName;
+			}
+
+			public Double getStandDiscountPrice() {
+				return this.standDiscountPrice;
+			}
+
+			public void setStandDiscountPrice(Double standDiscountPrice) {
+				this.standDiscountPrice = standDiscountPrice;
+			}
+
+			public String getPriceType() {
+				return this.priceType;
+			}
+
+			public void setPriceType(String priceType) {
+				this.priceType = priceType;
+			}
+
+			public String getDiscountFee() {
+				return this.discountFee;
+			}
+
+			public void setDiscountFee(String discountFee) {
+				this.discountFee = discountFee;
 			}
 
 			public Boolean getNeedOrderPay() {
@@ -322,30 +516,6 @@ public class DescribePriceResponse extends AcsResponse {
 				this.payFee = payFee;
 			}
 
-			public Boolean getPricingModule() {
-				return this.pricingModule;
-			}
-
-			public void setPricingModule(Boolean pricingModule) {
-				this.pricingModule = pricingModule;
-			}
-
-			public Double getStandPrice() {
-				return this.standPrice;
-			}
-
-			public void setStandPrice(Double standPrice) {
-				this.standPrice = standPrice;
-			}
-
-			public Double getTotalProductFee() {
-				return this.totalProductFee;
-			}
-
-			public void setTotalProductFee(Double totalProductFee) {
-				this.totalProductFee = totalProductFee;
-			}
-
 			public Boolean getContractActivity() {
 				return this.contractActivity;
 			}
@@ -354,28 +524,36 @@ public class DescribePriceResponse extends AcsResponse {
 				this.contractActivity = contractActivity;
 			}
 
-			public Double getStandDiscountPrice() {
-				return this.standDiscountPrice;
+			public String getCycleFee() {
+				return this.cycleFee;
 			}
 
-			public void setStandDiscountPrice(Double standDiscountPrice) {
-				this.standDiscountPrice = standDiscountPrice;
+			public void setCycleFee(String cycleFee) {
+				this.cycleFee = cycleFee;
 			}
 
-			public String getPriceUnit() {
-				return this.priceUnit;
+			public Long getModuleId() {
+				return this.moduleId;
 			}
 
-			public void setPriceUnit(String priceUnit) {
-				this.priceUnit = priceUnit;
+			public void setModuleId(Long moduleId) {
+				this.moduleId = moduleId;
 			}
 
-			public String getPriceType() {
-				return this.priceType;
+			public Boolean getPricingModule() {
+				return this.pricingModule;
 			}
 
-			public void setPriceType(String priceType) {
-				this.priceType = priceType;
+			public void setPricingModule(Boolean pricingModule) {
+				this.pricingModule = pricingModule;
+			}
+
+			public String getModuleCode() {
+				return this.moduleCode;
+			}
+
+			public void setModuleCode(String moduleCode) {
+				this.moduleCode = moduleCode;
 			}
 
 			public String getUnitPriceUnit4Buy() {
@@ -386,11 +564,19 @@ public class DescribePriceResponse extends AcsResponse {
 				this.unitPriceUnit4Buy = unitPriceUnit4Buy;
 			}
 
-			public List<PromDetail> getPromDetailList2() {
+			public Double getTotalProductFee() {
+				return this.totalProductFee;
+			}
+
+			public void setTotalProductFee(Double totalProductFee) {
+				this.totalProductFee = totalProductFee;
+			}
+
+			public List<PromDetail3> getPromDetailList2() {
 				return this.promDetailList2;
 			}
 
-			public void setPromDetailList2(List<PromDetail> promDetailList2) {
+			public void setPromDetailList2(List<PromDetail3> promDetailList2) {
 				this.promDetailList2 = promDetailList2;
 			}
 
@@ -410,9 +596,17 @@ public class DescribePriceResponse extends AcsResponse {
 				this.depreciateInfo1 = depreciateInfo1;
 			}
 
-			public static class PromDetail {
+			public static class PromDetail3 {
+
+				private String promotionName;
+
+				private String derivedPromType;
+
+				private Long promotionId;
 
 				private Double finalPromFee;
+
+				private String promotionCode;
 
 				private Map<Object,Object> activityExtInfo;
 
@@ -420,13 +614,29 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private String promType;
 
-				private Long promotionId;
+				public String getPromotionName() {
+					return this.promotionName;
+				}
 
-				private String promotionName;
+				public void setPromotionName(String promotionName) {
+					this.promotionName = promotionName;
+				}
 
-				private String promotionCode;
+				public String getDerivedPromType() {
+					return this.derivedPromType;
+				}
 
-				private String derivedPromType;
+				public void setDerivedPromType(String derivedPromType) {
+					this.derivedPromType = derivedPromType;
+				}
+
+				public Long getPromotionId() {
+					return this.promotionId;
+				}
+
+				public void setPromotionId(Long promotionId) {
+					this.promotionId = promotionId;
+				}
 
 				public Double getFinalPromFee() {
 					return this.finalPromFee;
@@ -434,6 +644,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setFinalPromFee(Double finalPromFee) {
 					this.finalPromFee = finalPromFee;
+				}
+
+				public String getPromotionCode() {
+					return this.promotionCode;
+				}
+
+				public void setPromotionCode(String promotionCode) {
+					this.promotionCode = promotionCode;
 				}
 
 				public Map<Object,Object> getActivityExtInfo() {
@@ -459,65 +677,17 @@ public class DescribePriceResponse extends AcsResponse {
 				public void setPromType(String promType) {
 					this.promType = promType;
 				}
-
-				public Long getPromotionId() {
-					return this.promotionId;
-				}
-
-				public void setPromotionId(Long promotionId) {
-					this.promotionId = promotionId;
-				}
-
-				public String getPromotionName() {
-					return this.promotionName;
-				}
-
-				public void setPromotionName(String promotionName) {
-					this.promotionName = promotionName;
-				}
-
-				public String getPromotionCode() {
-					return this.promotionCode;
-				}
-
-				public void setPromotionCode(String promotionCode) {
-					this.promotionCode = promotionCode;
-				}
-
-				public String getDerivedPromType() {
-					return this.derivedPromType;
-				}
-
-				public void setDerivedPromType(String derivedPromType) {
-					this.derivedPromType = derivedPromType;
-				}
 			}
 
 			public static class ModuleAttr {
-
-				private String code;
-
-				private String name;
 
 				private String type;
 
 				private String value;
 
-				public String getCode() {
-					return this.code;
-				}
+				private String code;
 
-				public void setCode(String code) {
-					this.code = code;
-				}
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public String getType() {
 					return this.type;
@@ -534,15 +704,25 @@ public class DescribePriceResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
 			}
 
 			public static class DepreciateInfo1 {
-
-				private Double listPrice;
-
-				private Double originalStandAmount;
-
-				private Double cheapStandAmount;
 
 				private Double cheapRate;
 
@@ -552,33 +732,15 @@ public class DescribePriceResponse extends AcsResponse {
 
 				private Double monthPrice;
 
-				private Boolean isContractActivity;
+				private Double cheapStandAmount;
+
+				private Double originalStandAmount;
 
 				private String isShow;
 
-				public Double getListPrice() {
-					return this.listPrice;
-				}
+				private Double listPrice;
 
-				public void setListPrice(Double listPrice) {
-					this.listPrice = listPrice;
-				}
-
-				public Double getOriginalStandAmount() {
-					return this.originalStandAmount;
-				}
-
-				public void setOriginalStandAmount(Double originalStandAmount) {
-					this.originalStandAmount = originalStandAmount;
-				}
-
-				public Double getCheapStandAmount() {
-					return this.cheapStandAmount;
-				}
-
-				public void setCheapStandAmount(Double cheapStandAmount) {
-					this.cheapStandAmount = cheapStandAmount;
-				}
+				private Boolean isContractActivity;
 
 				public Double getCheapRate() {
 					return this.cheapRate;
@@ -612,12 +774,20 @@ public class DescribePriceResponse extends AcsResponse {
 					this.monthPrice = monthPrice;
 				}
 
-				public Boolean getIsContractActivity() {
-					return this.isContractActivity;
+				public Double getCheapStandAmount() {
+					return this.cheapStandAmount;
 				}
 
-				public void setIsContractActivity(Boolean isContractActivity) {
-					this.isContractActivity = isContractActivity;
+				public void setCheapStandAmount(Double cheapStandAmount) {
+					this.cheapStandAmount = cheapStandAmount;
+				}
+
+				public Double getOriginalStandAmount() {
+					return this.originalStandAmount;
+				}
+
+				public void setOriginalStandAmount(Double originalStandAmount) {
+					this.originalStandAmount = originalStandAmount;
 				}
 
 				public String getIsShow() {
@@ -627,202 +797,26 @@ public class DescribePriceResponse extends AcsResponse {
 				public void setIsShow(String isShow) {
 					this.isShow = isShow;
 				}
-			}
-		}
 
-		public static class OptionalPromotion {
+				public Double getListPrice() {
+					return this.listPrice;
+				}
 
-			private String activityCategory;
+				public void setListPrice(Double listPrice) {
+					this.listPrice = listPrice;
+				}
 
-			private Map<Object,Object> activityExtInfo;
+				public Boolean getIsContractActivity() {
+					return this.isContractActivity;
+				}
 
-			private Double canPromFee;
-
-			private String optionCode;
-
-			private String promotionName;
-
-			private String promotionOptionNo;
-
-			private Boolean selected;
-
-			private Boolean show;
-
-			private List<String> targetArticleItemCodes;
-
-			private List<String> promotionRuleIdList;
-
-			public String getActivityCategory() {
-				return this.activityCategory;
-			}
-
-			public void setActivityCategory(String activityCategory) {
-				this.activityCategory = activityCategory;
-			}
-
-			public Map<Object,Object> getActivityExtInfo() {
-				return this.activityExtInfo;
-			}
-
-			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
-				this.activityExtInfo = activityExtInfo;
-			}
-
-			public Double getCanPromFee() {
-				return this.canPromFee;
-			}
-
-			public void setCanPromFee(Double canPromFee) {
-				this.canPromFee = canPromFee;
-			}
-
-			public String getOptionCode() {
-				return this.optionCode;
-			}
-
-			public void setOptionCode(String optionCode) {
-				this.optionCode = optionCode;
-			}
-
-			public String getPromotionName() {
-				return this.promotionName;
-			}
-
-			public void setPromotionName(String promotionName) {
-				this.promotionName = promotionName;
-			}
-
-			public String getPromotionOptionNo() {
-				return this.promotionOptionNo;
-			}
-
-			public void setPromotionOptionNo(String promotionOptionNo) {
-				this.promotionOptionNo = promotionOptionNo;
-			}
-
-			public Boolean getSelected() {
-				return this.selected;
-			}
-
-			public void setSelected(Boolean selected) {
-				this.selected = selected;
-			}
-
-			public Boolean getShow() {
-				return this.show;
-			}
-
-			public void setShow(Boolean show) {
-				this.show = show;
-			}
-
-			public List<String> getTargetArticleItemCodes() {
-				return this.targetArticleItemCodes;
-			}
-
-			public void setTargetArticleItemCodes(List<String> targetArticleItemCodes) {
-				this.targetArticleItemCodes = targetArticleItemCodes;
-			}
-
-			public List<String> getPromotionRuleIdList() {
-				return this.promotionRuleIdList;
-			}
-
-			public void setPromotionRuleIdList(List<String> promotionRuleIdList) {
-				this.promotionRuleIdList = promotionRuleIdList;
-			}
-		}
-
-		public static class PromDetail3 {
-
-			private Double finalPromFee;
-
-			private Map<Object,Object> activityExtInfo;
-
-			private String optionCode;
-
-			private String promType;
-
-			private Long promotionId;
-
-			private String promotionName;
-
-			private String promotionCode;
-
-			private String derivedPromType;
-
-			public Double getFinalPromFee() {
-				return this.finalPromFee;
-			}
-
-			public void setFinalPromFee(Double finalPromFee) {
-				this.finalPromFee = finalPromFee;
-			}
-
-			public Map<Object,Object> getActivityExtInfo() {
-				return this.activityExtInfo;
-			}
-
-			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
-				this.activityExtInfo = activityExtInfo;
-			}
-
-			public String getOptionCode() {
-				return this.optionCode;
-			}
-
-			public void setOptionCode(String optionCode) {
-				this.optionCode = optionCode;
-			}
-
-			public String getPromType() {
-				return this.promType;
-			}
-
-			public void setPromType(String promType) {
-				this.promType = promType;
-			}
-
-			public Long getPromotionId() {
-				return this.promotionId;
-			}
-
-			public void setPromotionId(Long promotionId) {
-				this.promotionId = promotionId;
-			}
-
-			public String getPromotionName() {
-				return this.promotionName;
-			}
-
-			public void setPromotionName(String promotionName) {
-				this.promotionName = promotionName;
-			}
-
-			public String getPromotionCode() {
-				return this.promotionCode;
-			}
-
-			public void setPromotionCode(String promotionCode) {
-				this.promotionCode = promotionCode;
-			}
-
-			public String getDerivedPromType() {
-				return this.derivedPromType;
-			}
-
-			public void setDerivedPromType(String derivedPromType) {
-				this.derivedPromType = derivedPromType;
+				public void setIsContractActivity(Boolean isContractActivity) {
+					this.isContractActivity = isContractActivity;
+				}
 			}
 		}
 
 		public static class DepreciateInfo {
-
-			private Double listPrice;
-
-			private Double originalStandAmount;
-
-			private Double cheapStandAmount;
 
 			private Double cheapRate;
 
@@ -832,37 +826,19 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Double monthPrice;
 
-			private Boolean isContractActivity;
-
-			private String isShow;
+			private Double cheapStandAmount;
 
 			private String startTime;
 
+			private Double originalStandAmount;
+
+			private String isShow;
+
+			private Double listPrice;
+
+			private Boolean isContractActivity;
+
 			private ContractActivity contractActivity;
-
-			public Double getListPrice() {
-				return this.listPrice;
-			}
-
-			public void setListPrice(Double listPrice) {
-				this.listPrice = listPrice;
-			}
-
-			public Double getOriginalStandAmount() {
-				return this.originalStandAmount;
-			}
-
-			public void setOriginalStandAmount(Double originalStandAmount) {
-				this.originalStandAmount = originalStandAmount;
-			}
-
-			public Double getCheapStandAmount() {
-				return this.cheapStandAmount;
-			}
-
-			public void setCheapStandAmount(Double cheapStandAmount) {
-				this.cheapStandAmount = cheapStandAmount;
-			}
 
 			public Double getCheapRate() {
 				return this.cheapRate;
@@ -896,12 +872,28 @@ public class DescribePriceResponse extends AcsResponse {
 				this.monthPrice = monthPrice;
 			}
 
-			public Boolean getIsContractActivity() {
-				return this.isContractActivity;
+			public Double getCheapStandAmount() {
+				return this.cheapStandAmount;
 			}
 
-			public void setIsContractActivity(Boolean isContractActivity) {
-				this.isContractActivity = isContractActivity;
+			public void setCheapStandAmount(Double cheapStandAmount) {
+				this.cheapStandAmount = cheapStandAmount;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public Double getOriginalStandAmount() {
+				return this.originalStandAmount;
+			}
+
+			public void setOriginalStandAmount(Double originalStandAmount) {
+				this.originalStandAmount = originalStandAmount;
 			}
 
 			public String getIsShow() {
@@ -912,12 +904,20 @@ public class DescribePriceResponse extends AcsResponse {
 				this.isShow = isShow;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public Double getListPrice() {
+				return this.listPrice;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
+			public void setListPrice(Double listPrice) {
+				this.listPrice = listPrice;
+			}
+
+			public Boolean getIsContractActivity() {
+				return this.isContractActivity;
+			}
+
+			public void setIsContractActivity(Boolean isContractActivity) {
+				this.isContractActivity = isContractActivity;
 			}
 
 			public ContractActivity getContractActivity() {
@@ -930,19 +930,27 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public static class ContractActivity {
 
+				private String activityName;
+
 				private Double finalPromFee;
-
-				private Double finalFee;
-
-				private Double prodFee;
 
 				private Long activityId;
 
+				private Double prodFee;
+
 				private String optionCode;
 
-				private String activityName;
+				private Double finalFee;
 
 				private List<Long> optionIds;
+
+				public String getActivityName() {
+					return this.activityName;
+				}
+
+				public void setActivityName(String activityName) {
+					this.activityName = activityName;
+				}
 
 				public Double getFinalPromFee() {
 					return this.finalPromFee;
@@ -950,22 +958,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setFinalPromFee(Double finalPromFee) {
 					this.finalPromFee = finalPromFee;
-				}
-
-				public Double getFinalFee() {
-					return this.finalFee;
-				}
-
-				public void setFinalFee(Double finalFee) {
-					this.finalFee = finalFee;
-				}
-
-				public Double getProdFee() {
-					return this.prodFee;
-				}
-
-				public void setProdFee(Double prodFee) {
-					this.prodFee = prodFee;
 				}
 
 				public Long getActivityId() {
@@ -976,6 +968,14 @@ public class DescribePriceResponse extends AcsResponse {
 					this.activityId = activityId;
 				}
 
+				public Double getProdFee() {
+					return this.prodFee;
+				}
+
+				public void setProdFee(Double prodFee) {
+					this.prodFee = prodFee;
+				}
+
 				public String getOptionCode() {
 					return this.optionCode;
 				}
@@ -984,12 +984,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.optionCode = optionCode;
 				}
 
-				public String getActivityName() {
-					return this.activityName;
+				public Double getFinalFee() {
+					return this.finalFee;
 				}
 
-				public void setActivityName(String activityName) {
-					this.activityName = activityName;
+				public void setFinalFee(Double finalFee) {
+					this.finalFee = finalFee;
 				}
 
 				public List<Long> getOptionIds() {
@@ -1038,33 +1038,33 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public static class Order {
 
-		private String originalAmount;
-
-		private String discountAmount;
-
-		private String tradeAmount;
-
-		private String currency;
+		private Double standPrice;
 
 		private Boolean showDiscountInfo;
 
-		private String optionalPromotions;
-
-		private String promDetailList;
+		private String message;
 
 		private Double standDiscountPrice;
 
-		private Double standPrice;
+		private String tradeAmount;
 
-		private Boolean contractActivity;
+		private String originalAmount;
 
 		private String code;
 
-		private String message;
+		private String discountAmount;
 
-		private Boolean isContractActivity;
+		private Boolean contractActivity;
+
+		private String optionalPromotions;
+
+		private String currency;
+
+		private String promDetailList;
 
 		private Double totalCostAmount;
+
+		private Boolean isContractActivity;
 
 		private List<Coupon> coupons;
 
@@ -1072,36 +1072,12 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private DepreciateInfo5 depreciateInfo5;
 
-		public String getOriginalAmount() {
-			return this.originalAmount;
+		public Double getStandPrice() {
+			return this.standPrice;
 		}
 
-		public void setOriginalAmount(String originalAmount) {
-			this.originalAmount = originalAmount;
-		}
-
-		public String getDiscountAmount() {
-			return this.discountAmount;
-		}
-
-		public void setDiscountAmount(String discountAmount) {
-			this.discountAmount = discountAmount;
-		}
-
-		public String getTradeAmount() {
-			return this.tradeAmount;
-		}
-
-		public void setTradeAmount(String tradeAmount) {
-			this.tradeAmount = tradeAmount;
-		}
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
+		public void setStandPrice(Double standPrice) {
+			this.standPrice = standPrice;
 		}
 
 		public Boolean getShowDiscountInfo() {
@@ -1112,20 +1088,12 @@ public class DescribePriceResponse extends AcsResponse {
 			this.showDiscountInfo = showDiscountInfo;
 		}
 
-		public String getOptionalPromotions() {
-			return this.optionalPromotions;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setOptionalPromotions(String optionalPromotions) {
-			this.optionalPromotions = optionalPromotions;
-		}
-
-		public String getPromDetailList() {
-			return this.promDetailList;
-		}
-
-		public void setPromDetailList(String promDetailList) {
-			this.promDetailList = promDetailList;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public Double getStandDiscountPrice() {
@@ -1136,20 +1104,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.standDiscountPrice = standDiscountPrice;
 		}
 
-		public Double getStandPrice() {
-			return this.standPrice;
+		public String getTradeAmount() {
+			return this.tradeAmount;
 		}
 
-		public void setStandPrice(Double standPrice) {
-			this.standPrice = standPrice;
+		public void setTradeAmount(String tradeAmount) {
+			this.tradeAmount = tradeAmount;
 		}
 
-		public Boolean getContractActivity() {
-			return this.contractActivity;
+		public String getOriginalAmount() {
+			return this.originalAmount;
 		}
 
-		public void setContractActivity(Boolean contractActivity) {
-			this.contractActivity = contractActivity;
+		public void setOriginalAmount(String originalAmount) {
+			this.originalAmount = originalAmount;
 		}
 
 		public String getCode() {
@@ -1160,20 +1128,44 @@ public class DescribePriceResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getDiscountAmount() {
+			return this.discountAmount;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setDiscountAmount(String discountAmount) {
+			this.discountAmount = discountAmount;
 		}
 
-		public Boolean getIsContractActivity() {
-			return this.isContractActivity;
+		public Boolean getContractActivity() {
+			return this.contractActivity;
 		}
 
-		public void setIsContractActivity(Boolean isContractActivity) {
-			this.isContractActivity = isContractActivity;
+		public void setContractActivity(Boolean contractActivity) {
+			this.contractActivity = contractActivity;
+		}
+
+		public String getOptionalPromotions() {
+			return this.optionalPromotions;
+		}
+
+		public void setOptionalPromotions(String optionalPromotions) {
+			this.optionalPromotions = optionalPromotions;
+		}
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
+
+		public String getPromDetailList() {
+			return this.promDetailList;
+		}
+
+		public void setPromDetailList(String promDetailList) {
+			this.promDetailList = promDetailList;
 		}
 
 		public Double getTotalCostAmount() {
@@ -1182,6 +1174,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setTotalCostAmount(Double totalCostAmount) {
 			this.totalCostAmount = totalCostAmount;
+		}
+
+		public Boolean getIsContractActivity() {
+			return this.isContractActivity;
+		}
+
+		public void setIsContractActivity(Boolean isContractActivity) {
+			this.isContractActivity = isContractActivity;
 		}
 
 		public List<Coupon> getCoupons() {
@@ -1210,51 +1210,35 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public static class Coupon {
 
-			private String description;
-
-			private String isSelected;
-
 			private String couponNo;
 
-			private String name;
+			private String activityCategory;
+
+			private String description;
+
+			private Double priceBreakReduceValue;
 
 			private Double canPromFee;
 
 			private String promotionOptionCode;
 
-			private Double lackForPriceBreak;
+			private String isSelected;
 
-			private Double priceBreakThreshold;
-
-			private Double priceBreakReduceValue;
+			private Map<Object,Object> activityExtInfo;
 
 			private String optionCode;
 
-			private String activityCategory;
+			private String name;
 
 			private Boolean effective;
 
-			private Map<Object,Object> activityExtInfo;
+			private Double priceBreakThreshold;
+
+			private Double lackForPriceBreak;
 
 			private List<Long> promotionRuleIdList6;
 
 			private List<String> targetArticleItemCodes7;
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getIsSelected() {
-				return this.isSelected;
-			}
-
-			public void setIsSelected(String isSelected) {
-				this.isSelected = isSelected;
-			}
 
 			public String getCouponNo() {
 				return this.couponNo;
@@ -1264,12 +1248,28 @@ public class DescribePriceResponse extends AcsResponse {
 				this.couponNo = couponNo;
 			}
 
-			public String getName() {
-				return this.name;
+			public String getActivityCategory() {
+				return this.activityCategory;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setActivityCategory(String activityCategory) {
+				this.activityCategory = activityCategory;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Double getPriceBreakReduceValue() {
+				return this.priceBreakReduceValue;
+			}
+
+			public void setPriceBreakReduceValue(Double priceBreakReduceValue) {
+				this.priceBreakReduceValue = priceBreakReduceValue;
 			}
 
 			public Double getCanPromFee() {
@@ -1288,28 +1288,20 @@ public class DescribePriceResponse extends AcsResponse {
 				this.promotionOptionCode = promotionOptionCode;
 			}
 
-			public Double getLackForPriceBreak() {
-				return this.lackForPriceBreak;
+			public String getIsSelected() {
+				return this.isSelected;
 			}
 
-			public void setLackForPriceBreak(Double lackForPriceBreak) {
-				this.lackForPriceBreak = lackForPriceBreak;
+			public void setIsSelected(String isSelected) {
+				this.isSelected = isSelected;
 			}
 
-			public Double getPriceBreakThreshold() {
-				return this.priceBreakThreshold;
+			public Map<Object,Object> getActivityExtInfo() {
+				return this.activityExtInfo;
 			}
 
-			public void setPriceBreakThreshold(Double priceBreakThreshold) {
-				this.priceBreakThreshold = priceBreakThreshold;
-			}
-
-			public Double getPriceBreakReduceValue() {
-				return this.priceBreakReduceValue;
-			}
-
-			public void setPriceBreakReduceValue(Double priceBreakReduceValue) {
-				this.priceBreakReduceValue = priceBreakReduceValue;
+			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
+				this.activityExtInfo = activityExtInfo;
 			}
 
 			public String getOptionCode() {
@@ -1320,12 +1312,12 @@ public class DescribePriceResponse extends AcsResponse {
 				this.optionCode = optionCode;
 			}
 
-			public String getActivityCategory() {
-				return this.activityCategory;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setActivityCategory(String activityCategory) {
-				this.activityCategory = activityCategory;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Boolean getEffective() {
@@ -1336,12 +1328,20 @@ public class DescribePriceResponse extends AcsResponse {
 				this.effective = effective;
 			}
 
-			public Map<Object,Object> getActivityExtInfo() {
-				return this.activityExtInfo;
+			public Double getPriceBreakThreshold() {
+				return this.priceBreakThreshold;
 			}
 
-			public void setActivityExtInfo(Map<Object,Object> activityExtInfo) {
-				this.activityExtInfo = activityExtInfo;
+			public void setPriceBreakThreshold(Double priceBreakThreshold) {
+				this.priceBreakThreshold = priceBreakThreshold;
+			}
+
+			public Double getLackForPriceBreak() {
+				return this.lackForPriceBreak;
+			}
+
+			public void setLackForPriceBreak(Double lackForPriceBreak) {
+				this.lackForPriceBreak = lackForPriceBreak;
 			}
 
 			public List<Long> getPromotionRuleIdList6() {
@@ -1363,12 +1363,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public static class DepreciateInfo5 {
 
-			private Double listPrice;
-
-			private Double originalStandAmount;
-
-			private Double cheapStandAmount;
-
 			private Double cheapRate;
 
 			private Double differential;
@@ -1377,35 +1371,17 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Double monthPrice;
 
-			private Boolean isContractActivity;
+			private Double cheapStandAmount;
+
+			private Double originalStandAmount;
 
 			private String isShow;
 
+			private Double listPrice;
+
+			private Boolean isContractActivity;
+
 			private ContractActivity8 contractActivity8;
-
-			public Double getListPrice() {
-				return this.listPrice;
-			}
-
-			public void setListPrice(Double listPrice) {
-				this.listPrice = listPrice;
-			}
-
-			public Double getOriginalStandAmount() {
-				return this.originalStandAmount;
-			}
-
-			public void setOriginalStandAmount(Double originalStandAmount) {
-				this.originalStandAmount = originalStandAmount;
-			}
-
-			public Double getCheapStandAmount() {
-				return this.cheapStandAmount;
-			}
-
-			public void setCheapStandAmount(Double cheapStandAmount) {
-				this.cheapStandAmount = cheapStandAmount;
-			}
 
 			public Double getCheapRate() {
 				return this.cheapRate;
@@ -1439,12 +1415,20 @@ public class DescribePriceResponse extends AcsResponse {
 				this.monthPrice = monthPrice;
 			}
 
-			public Boolean getIsContractActivity() {
-				return this.isContractActivity;
+			public Double getCheapStandAmount() {
+				return this.cheapStandAmount;
 			}
 
-			public void setIsContractActivity(Boolean isContractActivity) {
-				this.isContractActivity = isContractActivity;
+			public void setCheapStandAmount(Double cheapStandAmount) {
+				this.cheapStandAmount = cheapStandAmount;
+			}
+
+			public Double getOriginalStandAmount() {
+				return this.originalStandAmount;
+			}
+
+			public void setOriginalStandAmount(Double originalStandAmount) {
+				this.originalStandAmount = originalStandAmount;
 			}
 
 			public String getIsShow() {
@@ -1453,6 +1437,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setIsShow(String isShow) {
 				this.isShow = isShow;
+			}
+
+			public Double getListPrice() {
+				return this.listPrice;
+			}
+
+			public void setListPrice(Double listPrice) {
+				this.listPrice = listPrice;
+			}
+
+			public Boolean getIsContractActivity() {
+				return this.isContractActivity;
+			}
+
+			public void setIsContractActivity(Boolean isContractActivity) {
+				this.isContractActivity = isContractActivity;
 			}
 
 			public ContractActivity8 getContractActivity8() {
@@ -1465,19 +1465,27 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public static class ContractActivity8 {
 
+				private String activityName;
+
 				private Double finalPromFee;
-
-				private Double finalFee;
-
-				private Double prodFee;
 
 				private Long activityId;
 
+				private Double prodFee;
+
 				private String optionCode;
 
-				private String activityName;
+				private Double finalFee;
 
 				private List<Long> optionIds9;
+
+				public String getActivityName() {
+					return this.activityName;
+				}
+
+				public void setActivityName(String activityName) {
+					this.activityName = activityName;
+				}
 
 				public Double getFinalPromFee() {
 					return this.finalPromFee;
@@ -1485,22 +1493,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 				public void setFinalPromFee(Double finalPromFee) {
 					this.finalPromFee = finalPromFee;
-				}
-
-				public Double getFinalFee() {
-					return this.finalFee;
-				}
-
-				public void setFinalFee(Double finalFee) {
-					this.finalFee = finalFee;
-				}
-
-				public Double getProdFee() {
-					return this.prodFee;
-				}
-
-				public void setProdFee(Double prodFee) {
-					this.prodFee = prodFee;
 				}
 
 				public Long getActivityId() {
@@ -1511,6 +1503,14 @@ public class DescribePriceResponse extends AcsResponse {
 					this.activityId = activityId;
 				}
 
+				public Double getProdFee() {
+					return this.prodFee;
+				}
+
+				public void setProdFee(Double prodFee) {
+					this.prodFee = prodFee;
+				}
+
 				public String getOptionCode() {
 					return this.optionCode;
 				}
@@ -1519,12 +1519,12 @@ public class DescribePriceResponse extends AcsResponse {
 					this.optionCode = optionCode;
 				}
 
-				public String getActivityName() {
-					return this.activityName;
+				public Double getFinalFee() {
+					return this.finalFee;
 				}
 
-				public void setActivityName(String activityName) {
-					this.activityName = activityName;
+				public void setFinalFee(Double finalFee) {
+					this.finalFee = finalFee;
 				}
 
 				public List<Long> getOptionIds9() {

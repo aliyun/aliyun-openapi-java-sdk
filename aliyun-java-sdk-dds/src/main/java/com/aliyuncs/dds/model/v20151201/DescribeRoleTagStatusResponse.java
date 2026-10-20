@@ -25,11 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRoleTagStatusResponse extends AcsResponse {
 
+	private Map<Object,Object> shardRoleTagStatus;
+
 	private String requestId;
 
 	private String roleTagStatus;
 
-	private Map<Object,Object> shardRoleTagStatus;
+	public Map<Object,Object> getShardRoleTagStatus() {
+		return this.shardRoleTagStatus;
+	}
+
+	public void setShardRoleTagStatus(Map<Object,Object> shardRoleTagStatus) {
+		this.shardRoleTagStatus = shardRoleTagStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,14 +53,6 @@ public class DescribeRoleTagStatusResponse extends AcsResponse {
 
 	public void setRoleTagStatus(String roleTagStatus) {
 		this.roleTagStatus = roleTagStatus;
-	}
-
-	public Map<Object,Object> getShardRoleTagStatus() {
-		return this.shardRoleTagStatus;
-	}
-
-	public void setShardRoleTagStatus(Map<Object,Object> shardRoleTagStatus) {
-		this.shardRoleTagStatus = shardRoleTagStatus;
 	}
 
 	@Override

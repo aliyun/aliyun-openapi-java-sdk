@@ -31,10 +31,10 @@ public class DescribeActiveOperationTaskTypeResponseUnmarshaller {
 		List<Items> typeList = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeActiveOperationTaskTypeResponse.TypeList.Length"); i++) {
 			Items items = new Items();
-			items.setTaskType(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskType"));
-			items.setTaskTypeInfoEn(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskTypeInfoEn"));
 			items.setTaskTypeInfoZh(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskTypeInfoZh"));
+			items.setTaskType(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskType"));
 			items.setCount(_ctx.integerValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].Count"));
+			items.setTaskTypeInfoEn(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskTypeInfoEn"));
 
 			typeList.add(items);
 		}

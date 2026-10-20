@@ -31,10 +31,10 @@ public class DescribeParameterModificationHistoryResponseUnmarshaller {
 		List<HistoricalParameter> historicalParameters = new ArrayList<HistoricalParameter>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterModificationHistoryResponse.HistoricalParameters.Length"); i++) {
 			HistoricalParameter historicalParameter = new HistoricalParameter();
-			historicalParameter.setParameterName(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].ParameterName"));
-			historicalParameter.setOldParameterValue(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].OldParameterValue"));
 			historicalParameter.setNewParameterValue(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].NewParameterValue"));
 			historicalParameter.setModifyTime(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].ModifyTime"));
+			historicalParameter.setOldParameterValue(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].OldParameterValue"));
+			historicalParameter.setParameterName(_ctx.stringValue("DescribeParameterModificationHistoryResponse.HistoricalParameters["+ i +"].ParameterName"));
 
 			historicalParameters.add(historicalParameter);
 		}

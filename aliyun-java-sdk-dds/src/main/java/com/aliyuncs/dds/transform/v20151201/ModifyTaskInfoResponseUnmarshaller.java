@@ -24,8 +24,8 @@ public class ModifyTaskInfoResponseUnmarshaller {
 		
 		modifyTaskInfoResponse.setRequestId(_ctx.stringValue("ModifyTaskInfoResponse.RequestId"));
 		modifyTaskInfoResponse.setErrorTaskId(_ctx.stringValue("ModifyTaskInfoResponse.ErrorTaskId"));
-		modifyTaskInfoResponse.setSuccessCount(_ctx.stringValue("ModifyTaskInfoResponse.SuccessCount"));
 		modifyTaskInfoResponse.setErrorCode(_ctx.stringValue("ModifyTaskInfoResponse.ErrorCode"));
+		modifyTaskInfoResponse.setSuccessCount(_ctx.stringValue("ModifyTaskInfoResponse.SuccessCount"));
 	 
 	 	return modifyTaskInfoResponse;
 	}

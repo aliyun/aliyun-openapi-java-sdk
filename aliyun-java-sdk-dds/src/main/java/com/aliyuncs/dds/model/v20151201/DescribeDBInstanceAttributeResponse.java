@@ -47,244 +47,178 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String creationTime;
+		private String resourceGroupId;
 
-		private String replacateId;
+		private String capacityUnit;
 
-		private String vpcAuthMode;
+		private String hiddenZoneId;
 
-		private String networkType;
+		private Boolean encrypted;
 
-		private String lockMode;
-
-		private String engineVersion;
-
-		private Integer maxIOPS;
-
-		private Integer maxMBPS;
-
-		private String vPCCloudInstanceIds;
-
-		private String protocolType;
-
-		private String dBInstanceDescription;
-
-		private String currentKernelVersion;
-
-		private Boolean dBInstanceReleaseProtection;
-
-		private String expireTime;
-
-		private String maintainStartTime;
+		private String destroyTime;
 
 		private String dBInstanceType;
 
-		private String lastDowngradeTime;
-
-		private String maintainEndTime;
-
-		private String dBInstanceStatus;
-
-		private String vPCId;
-
-		private String regionId;
-
-		private Integer dBInstanceStorage;
-
 		private String replicaSetName;
 
-		private String vSwitchId;
+		private Integer searchNodeCount;
 
-		private String storageEngine;
-
-		private String resourceGroupId;
-
-		private String zoneId;
-
-		private Integer maxConnections;
+		private String syncPercent;
 
 		private String dBInstanceId;
 
-		private String dBInstanceClass;
+		private String lastDowngradeTime;
+
+		private Integer dBInstanceStorage;
+
+		private Integer maxMBPS;
+
+		private String dBInstanceDescription;
 
 		private String engine;
+
+		private String replacateId;
+
+		private Boolean dBInstanceReleaseProtection;
+
+		private String engineVersion;
+
+		private String storageType;
+
+		private String dBInstanceStatus;
+
+		private Integer maxConnections;
+
+		private String vPCId;
+
+		private String dBInstanceClass;
+
+		private String vSwitchId;
+
+		private String lockMode;
+
+		private Integer ecsBandwidth;
+
+		private Long provisionedIops;
+
+		private String currentKernelVersion;
+
+		private String creationTime;
+
+		private String expireTime;
+
+		private String disasterRecoveryInfo;
+
+		private Integer ebsIOPS;
+
+		private String vPCCloudInstanceIds;
+
+		private Integer ebsBandwidth;
+
+		private String encryptionKey;
+
+		private String storageEngine;
+
+		private String maintainEndTime;
+
+		private String networkType;
+
+		private String paymentType;
+
+		private String maintainStartTime;
+
+		private Boolean burstingEnabled;
+
+		private Boolean coldDataEnabled;
+
+		private Boolean aIGatewayEnabled;
+
+		private String zoneId;
 
 		private String readonlyReplicas;
 
 		private String replicationFactor;
 
-		private String kindCode;
-
-		private String capacityUnit;
-
 		private String cloudType;
-
-		private String chargeType;
-
-		private String storageType;
-
-		private String secondaryZoneId;
-
-		private String hiddenZoneId;
-
-		private String destroyTime;
-
-		private String paymentType;
 
 		private String dBInstanceOrderStatus;
 
-		private Boolean encrypted;
+		private Integer ecsIOPS;
 
-		private String encryptionKey;
+		private Integer maxIOPS;
 
-		private String syncPercent;
-
-		private Boolean useClusterBackup;
-
-		private Boolean burstingEnabled;
-
-		private Long provisionedIops;
-
-		private String disasterRecoveryInfo;
-
-		private String searchNodeClass;
+		private String secondaryZoneId;
 
 		private Integer searchNodeStorage;
 
-		private Integer searchNodeCount;
+		private Boolean useClusterBackup;
 
-		private Boolean coldDataEnabled;
+		private String vpcAuthMode;
+
+		private String protocolType;
+
+		private String chargeType;
+
+		private String regionId;
+
+		private String originalStorageType;
+
+		private String kindCode;
+
+		private String searchNodeClass;
 
 		private List<ReplicaSet> replicaSets;
 
 		private List<Tag> tags;
 
+		private List<NetworkAddress> networkAddresses;
+
+		private List<ConfigserverAttribute> configserverList;
+
+		private List<ShardSearchNodesItem> shardSearchNodes;
+
 		private List<MongosAttribute> mongosList;
 
 		private List<ShardAttribute> shardList;
 
-		private List<ConfigserverAttribute> configserverList;
-
-		private List<NetworkAddress> networkAddresses;
-
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getReplacateId() {
-			return this.replacateId;
+		public String getCapacityUnit() {
+			return this.capacityUnit;
 		}
 
-		public void setReplacateId(String replacateId) {
-			this.replacateId = replacateId;
+		public void setCapacityUnit(String capacityUnit) {
+			this.capacityUnit = capacityUnit;
 		}
 
-		public String getVpcAuthMode() {
-			return this.vpcAuthMode;
+		public String getHiddenZoneId() {
+			return this.hiddenZoneId;
 		}
 
-		public void setVpcAuthMode(String vpcAuthMode) {
-			this.vpcAuthMode = vpcAuthMode;
+		public void setHiddenZoneId(String hiddenZoneId) {
+			this.hiddenZoneId = hiddenZoneId;
 		}
 
-		public String getNetworkType() {
-			return this.networkType;
+		public Boolean getEncrypted() {
+			return this.encrypted;
 		}
 
-		public void setNetworkType(String networkType) {
-			this.networkType = networkType;
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
 		}
 
-		public String getLockMode() {
-			return this.lockMode;
+		public String getDestroyTime() {
+			return this.destroyTime;
 		}
 
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public Integer getMaxIOPS() {
-			return this.maxIOPS;
-		}
-
-		public void setMaxIOPS(Integer maxIOPS) {
-			this.maxIOPS = maxIOPS;
-		}
-
-		public Integer getMaxMBPS() {
-			return this.maxMBPS;
-		}
-
-		public void setMaxMBPS(Integer maxMBPS) {
-			this.maxMBPS = maxMBPS;
-		}
-
-		public String getVPCCloudInstanceIds() {
-			return this.vPCCloudInstanceIds;
-		}
-
-		public void setVPCCloudInstanceIds(String vPCCloudInstanceIds) {
-			this.vPCCloudInstanceIds = vPCCloudInstanceIds;
-		}
-
-		public String getProtocolType() {
-			return this.protocolType;
-		}
-
-		public void setProtocolType(String protocolType) {
-			this.protocolType = protocolType;
-		}
-
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
-
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-
-		public String getCurrentKernelVersion() {
-			return this.currentKernelVersion;
-		}
-
-		public void setCurrentKernelVersion(String currentKernelVersion) {
-			this.currentKernelVersion = currentKernelVersion;
-		}
-
-		public Boolean getDBInstanceReleaseProtection() {
-			return this.dBInstanceReleaseProtection;
-		}
-
-		public void setDBInstanceReleaseProtection(Boolean dBInstanceReleaseProtection) {
-			this.dBInstanceReleaseProtection = dBInstanceReleaseProtection;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getMaintainStartTime() {
-			return this.maintainStartTime;
-		}
-
-		public void setMaintainStartTime(String maintainStartTime) {
-			this.maintainStartTime = maintainStartTime;
+		public void setDestroyTime(String destroyTime) {
+			this.destroyTime = destroyTime;
 		}
 
 		public String getDBInstanceType() {
@@ -295,54 +229,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceType = dBInstanceType;
 		}
 
-		public String getLastDowngradeTime() {
-			return this.lastDowngradeTime;
-		}
-
-		public void setLastDowngradeTime(String lastDowngradeTime) {
-			this.lastDowngradeTime = lastDowngradeTime;
-		}
-
-		public String getMaintainEndTime() {
-			return this.maintainEndTime;
-		}
-
-		public void setMaintainEndTime(String maintainEndTime) {
-			this.maintainEndTime = maintainEndTime;
-		}
-
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public String getVPCId() {
-			return this.vPCId;
-		}
-
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Integer getDBInstanceStorage() {
-			return this.dBInstanceStorage;
-		}
-
-		public void setDBInstanceStorage(Integer dBInstanceStorage) {
-			this.dBInstanceStorage = dBInstanceStorage;
-		}
-
 		public String getReplicaSetName() {
 			return this.replicaSetName;
 		}
@@ -351,44 +237,20 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.replicaSetName = replicaSetName;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public Integer getSearchNodeCount() {
+			return this.searchNodeCount;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setSearchNodeCount(Integer searchNodeCount) {
+			this.searchNodeCount = searchNodeCount;
 		}
 
-		public String getStorageEngine() {
-			return this.storageEngine;
+		public String getSyncPercent() {
+			return this.syncPercent;
 		}
 
-		public void setStorageEngine(String storageEngine) {
-			this.storageEngine = storageEngine;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getMaxConnections() {
-			return this.maxConnections;
-		}
-
-		public void setMaxConnections(Integer maxConnections) {
-			this.maxConnections = maxConnections;
+		public void setSyncPercent(String syncPercent) {
+			this.syncPercent = syncPercent;
 		}
 
 		public String getDBInstanceId() {
@@ -399,12 +261,36 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceId = dBInstanceId;
 		}
 
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
+		public String getLastDowngradeTime() {
+			return this.lastDowngradeTime;
 		}
 
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
+		public void setLastDowngradeTime(String lastDowngradeTime) {
+			this.lastDowngradeTime = lastDowngradeTime;
+		}
+
+		public Integer getDBInstanceStorage() {
+			return this.dBInstanceStorage;
+		}
+
+		public void setDBInstanceStorage(Integer dBInstanceStorage) {
+			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public Integer getMaxMBPS() {
+			return this.maxMBPS;
+		}
+
+		public void setMaxMBPS(Integer maxMBPS) {
+			this.maxMBPS = maxMBPS;
+		}
+
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
+
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
 		public String getEngine() {
@@ -413,6 +299,238 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
+		}
+
+		public String getReplacateId() {
+			return this.replacateId;
+		}
+
+		public void setReplacateId(String replacateId) {
+			this.replacateId = replacateId;
+		}
+
+		public Boolean getDBInstanceReleaseProtection() {
+			return this.dBInstanceReleaseProtection;
+		}
+
+		public void setDBInstanceReleaseProtection(Boolean dBInstanceReleaseProtection) {
+			this.dBInstanceReleaseProtection = dBInstanceReleaseProtection;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public Integer getMaxConnections() {
+			return this.maxConnections;
+		}
+
+		public void setMaxConnections(Integer maxConnections) {
+			this.maxConnections = maxConnections;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
+		}
+
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public Integer getEcsBandwidth() {
+			return this.ecsBandwidth;
+		}
+
+		public void setEcsBandwidth(Integer ecsBandwidth) {
+			this.ecsBandwidth = ecsBandwidth;
+		}
+
+		public Long getProvisionedIops() {
+			return this.provisionedIops;
+		}
+
+		public void setProvisionedIops(Long provisionedIops) {
+			this.provisionedIops = provisionedIops;
+		}
+
+		public String getCurrentKernelVersion() {
+			return this.currentKernelVersion;
+		}
+
+		public void setCurrentKernelVersion(String currentKernelVersion) {
+			this.currentKernelVersion = currentKernelVersion;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getDisasterRecoveryInfo() {
+			return this.disasterRecoveryInfo;
+		}
+
+		public void setDisasterRecoveryInfo(String disasterRecoveryInfo) {
+			this.disasterRecoveryInfo = disasterRecoveryInfo;
+		}
+
+		public Integer getEbsIOPS() {
+			return this.ebsIOPS;
+		}
+
+		public void setEbsIOPS(Integer ebsIOPS) {
+			this.ebsIOPS = ebsIOPS;
+		}
+
+		public String getVPCCloudInstanceIds() {
+			return this.vPCCloudInstanceIds;
+		}
+
+		public void setVPCCloudInstanceIds(String vPCCloudInstanceIds) {
+			this.vPCCloudInstanceIds = vPCCloudInstanceIds;
+		}
+
+		public Integer getEbsBandwidth() {
+			return this.ebsBandwidth;
+		}
+
+		public void setEbsBandwidth(Integer ebsBandwidth) {
+			this.ebsBandwidth = ebsBandwidth;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
+		public String getStorageEngine() {
+			return this.storageEngine;
+		}
+
+		public void setStorageEngine(String storageEngine) {
+			this.storageEngine = storageEngine;
+		}
+
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
+		}
+
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
+		}
+
+		public String getMaintainStartTime() {
+			return this.maintainStartTime;
+		}
+
+		public void setMaintainStartTime(String maintainStartTime) {
+			this.maintainStartTime = maintainStartTime;
+		}
+
+		public Boolean getBurstingEnabled() {
+			return this.burstingEnabled;
+		}
+
+		public void setBurstingEnabled(Boolean burstingEnabled) {
+			this.burstingEnabled = burstingEnabled;
+		}
+
+		public Boolean getColdDataEnabled() {
+			return this.coldDataEnabled;
+		}
+
+		public void setColdDataEnabled(Boolean coldDataEnabled) {
+			this.coldDataEnabled = coldDataEnabled;
+		}
+
+		public Boolean getAIGatewayEnabled() {
+			return this.aIGatewayEnabled;
+		}
+
+		public void setAIGatewayEnabled(Boolean aIGatewayEnabled) {
+			this.aIGatewayEnabled = aIGatewayEnabled;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getReadonlyReplicas() {
@@ -431,76 +549,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.replicationFactor = replicationFactor;
 		}
 
-		public String getKindCode() {
-			return this.kindCode;
-		}
-
-		public void setKindCode(String kindCode) {
-			this.kindCode = kindCode;
-		}
-
-		public String getCapacityUnit() {
-			return this.capacityUnit;
-		}
-
-		public void setCapacityUnit(String capacityUnit) {
-			this.capacityUnit = capacityUnit;
-		}
-
 		public String getCloudType() {
 			return this.cloudType;
 		}
 
 		public void setCloudType(String cloudType) {
 			this.cloudType = cloudType;
-		}
-
-		public String getChargeType() {
-			return this.chargeType;
-		}
-
-		public void setChargeType(String chargeType) {
-			this.chargeType = chargeType;
-		}
-
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
-		public String getSecondaryZoneId() {
-			return this.secondaryZoneId;
-		}
-
-		public void setSecondaryZoneId(String secondaryZoneId) {
-			this.secondaryZoneId = secondaryZoneId;
-		}
-
-		public String getHiddenZoneId() {
-			return this.hiddenZoneId;
-		}
-
-		public void setHiddenZoneId(String hiddenZoneId) {
-			this.hiddenZoneId = hiddenZoneId;
-		}
-
-		public String getDestroyTime() {
-			return this.destroyTime;
-		}
-
-		public void setDestroyTime(String destroyTime) {
-			this.destroyTime = destroyTime;
-		}
-
-		public String getPaymentType() {
-			return this.paymentType;
-		}
-
-		public void setPaymentType(String paymentType) {
-			this.paymentType = paymentType;
 		}
 
 		public String getDBInstanceOrderStatus() {
@@ -511,68 +565,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceOrderStatus = dBInstanceOrderStatus;
 		}
 
-		public Boolean getEncrypted() {
-			return this.encrypted;
+		public Integer getEcsIOPS() {
+			return this.ecsIOPS;
 		}
 
-		public void setEncrypted(Boolean encrypted) {
-			this.encrypted = encrypted;
+		public void setEcsIOPS(Integer ecsIOPS) {
+			this.ecsIOPS = ecsIOPS;
 		}
 
-		public String getEncryptionKey() {
-			return this.encryptionKey;
+		public Integer getMaxIOPS() {
+			return this.maxIOPS;
 		}
 
-		public void setEncryptionKey(String encryptionKey) {
-			this.encryptionKey = encryptionKey;
+		public void setMaxIOPS(Integer maxIOPS) {
+			this.maxIOPS = maxIOPS;
 		}
 
-		public String getSyncPercent() {
-			return this.syncPercent;
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
 		}
 
-		public void setSyncPercent(String syncPercent) {
-			this.syncPercent = syncPercent;
-		}
-
-		public Boolean getUseClusterBackup() {
-			return this.useClusterBackup;
-		}
-
-		public void setUseClusterBackup(Boolean useClusterBackup) {
-			this.useClusterBackup = useClusterBackup;
-		}
-
-		public Boolean getBurstingEnabled() {
-			return this.burstingEnabled;
-		}
-
-		public void setBurstingEnabled(Boolean burstingEnabled) {
-			this.burstingEnabled = burstingEnabled;
-		}
-
-		public Long getProvisionedIops() {
-			return this.provisionedIops;
-		}
-
-		public void setProvisionedIops(Long provisionedIops) {
-			this.provisionedIops = provisionedIops;
-		}
-
-		public String getDisasterRecoveryInfo() {
-			return this.disasterRecoveryInfo;
-		}
-
-		public void setDisasterRecoveryInfo(String disasterRecoveryInfo) {
-			this.disasterRecoveryInfo = disasterRecoveryInfo;
-		}
-
-		public String getSearchNodeClass() {
-			return this.searchNodeClass;
-		}
-
-		public void setSearchNodeClass(String searchNodeClass) {
-			this.searchNodeClass = searchNodeClass;
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
 		}
 
 		public Integer getSearchNodeStorage() {
@@ -583,20 +597,68 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.searchNodeStorage = searchNodeStorage;
 		}
 
-		public Integer getSearchNodeCount() {
-			return this.searchNodeCount;
+		public Boolean getUseClusterBackup() {
+			return this.useClusterBackup;
 		}
 
-		public void setSearchNodeCount(Integer searchNodeCount) {
-			this.searchNodeCount = searchNodeCount;
+		public void setUseClusterBackup(Boolean useClusterBackup) {
+			this.useClusterBackup = useClusterBackup;
 		}
 
-		public Boolean getColdDataEnabled() {
-			return this.coldDataEnabled;
+		public String getVpcAuthMode() {
+			return this.vpcAuthMode;
 		}
 
-		public void setColdDataEnabled(Boolean coldDataEnabled) {
-			this.coldDataEnabled = coldDataEnabled;
+		public void setVpcAuthMode(String vpcAuthMode) {
+			this.vpcAuthMode = vpcAuthMode;
+		}
+
+		public String getProtocolType() {
+			return this.protocolType;
+		}
+
+		public void setProtocolType(String protocolType) {
+			this.protocolType = protocolType;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getOriginalStorageType() {
+			return this.originalStorageType;
+		}
+
+		public void setOriginalStorageType(String originalStorageType) {
+			this.originalStorageType = originalStorageType;
+		}
+
+		public String getKindCode() {
+			return this.kindCode;
+		}
+
+		public void setKindCode(String kindCode) {
+			this.kindCode = kindCode;
+		}
+
+		public String getSearchNodeClass() {
+			return this.searchNodeClass;
+		}
+
+		public void setSearchNodeClass(String searchNodeClass) {
+			this.searchNodeClass = searchNodeClass;
 		}
 
 		public List<ReplicaSet> getReplicaSets() {
@@ -615,6 +677,30 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<NetworkAddress> getNetworkAddresses() {
+			return this.networkAddresses;
+		}
+
+		public void setNetworkAddresses(List<NetworkAddress> networkAddresses) {
+			this.networkAddresses = networkAddresses;
+		}
+
+		public List<ConfigserverAttribute> getConfigserverList() {
+			return this.configserverList;
+		}
+
+		public void setConfigserverList(List<ConfigserverAttribute> configserverList) {
+			this.configserverList = configserverList;
+		}
+
+		public List<ShardSearchNodesItem> getShardSearchNodes() {
+			return this.shardSearchNodes;
+		}
+
+		public void setShardSearchNodes(List<ShardSearchNodesItem> shardSearchNodes) {
+			this.shardSearchNodes = shardSearchNodes;
+		}
+
 		public List<MongosAttribute> getMongosList() {
 			return this.mongosList;
 		}
@@ -631,27 +717,7 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.shardList = shardList;
 		}
 
-		public List<ConfigserverAttribute> getConfigserverList() {
-			return this.configserverList;
-		}
-
-		public void setConfigserverList(List<ConfigserverAttribute> configserverList) {
-			this.configserverList = configserverList;
-		}
-
-		public List<NetworkAddress> getNetworkAddresses() {
-			return this.networkAddresses;
-		}
-
-		public void setNetworkAddresses(List<NetworkAddress> networkAddresses) {
-			this.networkAddresses = networkAddresses;
-		}
-
 		public static class ReplicaSet {
-
-			private String vSwitchId;
-
-			private String connectionPort;
 
 			private String replicaSetRole;
 
@@ -659,25 +725,13 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			private String vPCCloudInstanceId;
 
-			private String networkType;
+			private String connectionPort;
 
 			private String vPCId;
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
+			private String networkType;
 
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getConnectionPort() {
-				return this.connectionPort;
-			}
-
-			public void setConnectionPort(String connectionPort) {
-				this.connectionPort = connectionPort;
-			}
+			private String vSwitchId;
 
 			public String getReplicaSetRole() {
 				return this.replicaSetRole;
@@ -703,12 +757,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 				this.vPCCloudInstanceId = vPCCloudInstanceId;
 			}
 
-			public String getNetworkType() {
-				return this.networkType;
+			public String getConnectionPort() {
+				return this.connectionPort;
 			}
 
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
+			public void setConnectionPort(String connectionPort) {
+				this.connectionPort = connectionPort;
 			}
 
 			public String getVPCId() {
@@ -718,83 +772,13 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			public void setVPCId(String vPCId) {
 				this.vPCId = vPCId;
 			}
-		}
 
-		public static class Tag {
-
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
+			public String getNetworkType() {
+				return this.networkType;
 			}
 
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-		}
-
-		public static class MongosAttribute {
-
-			private String vpcCloudInstanceId;
-
-			private String lockMode;
-
-			private Integer maxIOPS;
-
-			private String vSwitchId;
-
-			private String nodeClass;
-
-			private Integer maxConnections;
-
-			private Integer port;
-
-			private String vPCId;
-
-			private String connectSting;
-
-			private String nodeDescription;
-
-			private String nodeId;
-
-			private String status;
-
-			private String currentKernelVersion;
-
-			private String connectString;
-
-			public String getVpcCloudInstanceId() {
-				return this.vpcCloudInstanceId;
-			}
-
-			public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
-				this.vpcCloudInstanceId = vpcCloudInstanceId;
-			}
-
-			public String getLockMode() {
-				return this.lockMode;
-			}
-
-			public void setLockMode(String lockMode) {
-				this.lockMode = lockMode;
-			}
-
-			public Integer getMaxIOPS() {
-				return this.maxIOPS;
-			}
-
-			public void setMaxIOPS(Integer maxIOPS) {
-				this.maxIOPS = maxIOPS;
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
 			}
 
 			public String getVSwitchId() {
@@ -804,29 +788,67 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			public void setVSwitchId(String vSwitchId) {
 				this.vSwitchId = vSwitchId;
 			}
+		}
 
-			public String getNodeClass() {
-				return this.nodeClass;
+		public static class Tag {
+
+			private String value;
+
+			private String key;
+
+			public String getValue() {
+				return this.value;
 			}
 
-			public void setNodeClass(String nodeClass) {
-				this.nodeClass = nodeClass;
+			public void setValue(String value) {
+				this.value = value;
 			}
 
-			public Integer getMaxConnections() {
-				return this.maxConnections;
+			public String getKey() {
+				return this.key;
 			}
 
-			public void setMaxConnections(Integer maxConnections) {
-				this.maxConnections = maxConnections;
+			public void setKey(String key) {
+				this.key = key;
+			}
+		}
+
+		public static class NetworkAddress {
+
+			private String role;
+
+			private String networkAddress;
+
+			private String vPCId;
+
+			private String networkType;
+
+			private String nodeType;
+
+			private String vSwitchId;
+
+			private String expiredTime;
+
+			private String port;
+
+			private String nodeId;
+
+			private String iPAddress;
+
+			public String getRole() {
+				return this.role;
 			}
 
-			public Integer getPort() {
-				return this.port;
+			public void setRole(String role) {
+				this.role = role;
 			}
 
-			public void setPort(Integer port) {
-				this.port = port;
+			public String getNetworkAddress() {
+				return this.networkAddress;
+			}
+
+			public void setNetworkAddress(String networkAddress) {
+				this.networkAddress = networkAddress;
 			}
 
 			public String getVPCId() {
@@ -837,332 +859,13 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 				this.vPCId = vPCId;
 			}
 
-			public String getConnectSting() {
-				return this.connectSting;
+			public String getNetworkType() {
+				return this.networkType;
 			}
 
-			public void setConnectSting(String connectSting) {
-				this.connectSting = connectSting;
+			public void setNetworkType(String networkType) {
+				this.networkType = networkType;
 			}
-
-			public String getNodeDescription() {
-				return this.nodeDescription;
-			}
-
-			public void setNodeDescription(String nodeDescription) {
-				this.nodeDescription = nodeDescription;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getCurrentKernelVersion() {
-				return this.currentKernelVersion;
-			}
-
-			public void setCurrentKernelVersion(String currentKernelVersion) {
-				this.currentKernelVersion = currentKernelVersion;
-			}
-
-			public String getConnectString() {
-				return this.connectString;
-			}
-
-			public void setConnectString(String connectString) {
-				this.connectString = connectString;
-			}
-		}
-
-		public static class ShardAttribute {
-
-			private String lockMode;
-
-			private Integer maxIOPS;
-
-			private String connectString;
-
-			private String nodeClass;
-
-			private Integer maxConnections;
-
-			private Integer port;
-
-			private String nodeDescription;
-
-			private String nodeId;
-
-			private Integer nodeStorage;
-
-			private Integer readonlyReplicas;
-
-			private String status;
-
-			private String maxDiskMbps;
-
-			private String currentKernelVersion;
-
-			private String replicaSetName;
-
-			public String getLockMode() {
-				return this.lockMode;
-			}
-
-			public void setLockMode(String lockMode) {
-				this.lockMode = lockMode;
-			}
-
-			public Integer getMaxIOPS() {
-				return this.maxIOPS;
-			}
-
-			public void setMaxIOPS(Integer maxIOPS) {
-				this.maxIOPS = maxIOPS;
-			}
-
-			public String getConnectString() {
-				return this.connectString;
-			}
-
-			public void setConnectString(String connectString) {
-				this.connectString = connectString;
-			}
-
-			public String getNodeClass() {
-				return this.nodeClass;
-			}
-
-			public void setNodeClass(String nodeClass) {
-				this.nodeClass = nodeClass;
-			}
-
-			public Integer getMaxConnections() {
-				return this.maxConnections;
-			}
-
-			public void setMaxConnections(Integer maxConnections) {
-				this.maxConnections = maxConnections;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getNodeDescription() {
-				return this.nodeDescription;
-			}
-
-			public void setNodeDescription(String nodeDescription) {
-				this.nodeDescription = nodeDescription;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public Integer getNodeStorage() {
-				return this.nodeStorage;
-			}
-
-			public void setNodeStorage(Integer nodeStorage) {
-				this.nodeStorage = nodeStorage;
-			}
-
-			public Integer getReadonlyReplicas() {
-				return this.readonlyReplicas;
-			}
-
-			public void setReadonlyReplicas(Integer readonlyReplicas) {
-				this.readonlyReplicas = readonlyReplicas;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getMaxDiskMbps() {
-				return this.maxDiskMbps;
-			}
-
-			public void setMaxDiskMbps(String maxDiskMbps) {
-				this.maxDiskMbps = maxDiskMbps;
-			}
-
-			public String getCurrentKernelVersion() {
-				return this.currentKernelVersion;
-			}
-
-			public void setCurrentKernelVersion(String currentKernelVersion) {
-				this.currentKernelVersion = currentKernelVersion;
-			}
-
-			public String getReplicaSetName() {
-				return this.replicaSetName;
-			}
-
-			public void setReplicaSetName(String replicaSetName) {
-				this.replicaSetName = replicaSetName;
-			}
-		}
-
-		public static class ConfigserverAttribute {
-
-			private Integer maxIOPS;
-
-			private String lockMode;
-
-			private String connectString;
-
-			private String nodeClass;
-
-			private Integer maxConnections;
-
-			private Integer port;
-
-			private String nodeDescription;
-
-			private String nodeId;
-
-			private Integer nodeStorage;
-
-			private String status;
-
-			private String currentKernelVersion;
-
-			public Integer getMaxIOPS() {
-				return this.maxIOPS;
-			}
-
-			public void setMaxIOPS(Integer maxIOPS) {
-				this.maxIOPS = maxIOPS;
-			}
-
-			public String getLockMode() {
-				return this.lockMode;
-			}
-
-			public void setLockMode(String lockMode) {
-				this.lockMode = lockMode;
-			}
-
-			public String getConnectString() {
-				return this.connectString;
-			}
-
-			public void setConnectString(String connectString) {
-				this.connectString = connectString;
-			}
-
-			public String getNodeClass() {
-				return this.nodeClass;
-			}
-
-			public void setNodeClass(String nodeClass) {
-				this.nodeClass = nodeClass;
-			}
-
-			public Integer getMaxConnections() {
-				return this.maxConnections;
-			}
-
-			public void setMaxConnections(Integer maxConnections) {
-				this.maxConnections = maxConnections;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getNodeDescription() {
-				return this.nodeDescription;
-			}
-
-			public void setNodeDescription(String nodeDescription) {
-				this.nodeDescription = nodeDescription;
-			}
-
-			public String getNodeId() {
-				return this.nodeId;
-			}
-
-			public void setNodeId(String nodeId) {
-				this.nodeId = nodeId;
-			}
-
-			public Integer getNodeStorage() {
-				return this.nodeStorage;
-			}
-
-			public void setNodeStorage(Integer nodeStorage) {
-				this.nodeStorage = nodeStorage;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getCurrentKernelVersion() {
-				return this.currentKernelVersion;
-			}
-
-			public void setCurrentKernelVersion(String currentKernelVersion) {
-				this.currentKernelVersion = currentKernelVersion;
-			}
-		}
-
-		public static class NetworkAddress {
-
-			private String nodeType;
-
-			private String vSwitchId;
-
-			private String expiredTime;
-
-			private String networkType;
-
-			private String role;
-
-			private String port;
-
-			private String vPCId;
-
-			private String networkAddress;
-
-			private String nodeId;
-
-			private String iPAddress;
 
 			public String getNodeType() {
 				return this.nodeType;
@@ -1188,44 +891,12 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 				this.expiredTime = expiredTime;
 			}
 
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
-
 			public String getPort() {
 				return this.port;
 			}
 
 			public void setPort(String port) {
 				this.port = port;
-			}
-
-			public String getVPCId() {
-				return this.vPCId;
-			}
-
-			public void setVPCId(String vPCId) {
-				this.vPCId = vPCId;
-			}
-
-			public String getNetworkAddress() {
-				return this.networkAddress;
-			}
-
-			public void setNetworkAddress(String networkAddress) {
-				this.networkAddress = networkAddress;
 			}
 
 			public String getNodeId() {
@@ -1242,6 +913,498 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setIPAddress(String iPAddress) {
 				this.iPAddress = iPAddress;
+			}
+		}
+
+		public static class ConfigserverAttribute {
+
+			private String status;
+
+			private String nodeClass;
+
+			private String nodeDescription;
+
+			private Integer maxConnections;
+
+			private String currentKernelVersion;
+
+			private Integer port;
+
+			private String nodeId;
+
+			private Integer nodeStorage;
+
+			private String lockMode;
+
+			private String connectString;
+
+			private Integer maxIOPS;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getNodeClass() {
+				return this.nodeClass;
+			}
+
+			public void setNodeClass(String nodeClass) {
+				this.nodeClass = nodeClass;
+			}
+
+			public String getNodeDescription() {
+				return this.nodeDescription;
+			}
+
+			public void setNodeDescription(String nodeDescription) {
+				this.nodeDescription = nodeDescription;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
+			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Integer getNodeStorage() {
+				return this.nodeStorage;
+			}
+
+			public void setNodeStorage(Integer nodeStorage) {
+				this.nodeStorage = nodeStorage;
+			}
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
+			}
+
+			public String getConnectString() {
+				return this.connectString;
+			}
+
+			public void setConnectString(String connectString) {
+				this.connectString = connectString;
+			}
+
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+		}
+
+		public static class ShardSearchNodesItem {
+
+			private String searchNodeCount;
+
+			private String searchNodeId;
+
+			private String nodeId;
+
+			private String searchNodeClass;
+
+			private String searchNodeStorage;
+
+			public String getSearchNodeCount() {
+				return this.searchNodeCount;
+			}
+
+			public void setSearchNodeCount(String searchNodeCount) {
+				this.searchNodeCount = searchNodeCount;
+			}
+
+			public String getSearchNodeId() {
+				return this.searchNodeId;
+			}
+
+			public void setSearchNodeId(String searchNodeId) {
+				this.searchNodeId = searchNodeId;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public String getSearchNodeClass() {
+				return this.searchNodeClass;
+			}
+
+			public void setSearchNodeClass(String searchNodeClass) {
+				this.searchNodeClass = searchNodeClass;
+			}
+
+			public String getSearchNodeStorage() {
+				return this.searchNodeStorage;
+			}
+
+			public void setSearchNodeStorage(String searchNodeStorage) {
+				this.searchNodeStorage = searchNodeStorage;
+			}
+		}
+
+		public static class MongosAttribute {
+
+			private String connectSting;
+
+			private String status;
+
+			private Integer maxConnections;
+
+			private String vPCId;
+
+			private String vSwitchId;
+
+			private Integer port;
+
+			private String lockMode;
+
+			private Integer maxIOPS;
+
+			private String nodeClass;
+
+			private String nodeDescription;
+
+			private String currentKernelVersion;
+
+			private String nodeId;
+
+			private String vpcCloudInstanceId;
+
+			private String connectString;
+
+			public String getConnectSting() {
+				return this.connectSting;
+			}
+
+			public void setConnectSting(String connectSting) {
+				this.connectSting = connectSting;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
+			}
+
+			public String getVPCId() {
+				return this.vPCId;
+			}
+
+			public void setVPCId(String vPCId) {
+				this.vPCId = vPCId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
+			}
+
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+
+			public String getNodeClass() {
+				return this.nodeClass;
+			}
+
+			public void setNodeClass(String nodeClass) {
+				this.nodeClass = nodeClass;
+			}
+
+			public String getNodeDescription() {
+				return this.nodeDescription;
+			}
+
+			public void setNodeDescription(String nodeDescription) {
+				this.nodeDescription = nodeDescription;
+			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public String getVpcCloudInstanceId() {
+				return this.vpcCloudInstanceId;
+			}
+
+			public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+				this.vpcCloudInstanceId = vpcCloudInstanceId;
+			}
+
+			public String getConnectString() {
+				return this.connectString;
+			}
+
+			public void setConnectString(String connectString) {
+				this.connectString = connectString;
+			}
+		}
+
+		public static class ShardAttribute {
+
+			private String status;
+
+			private Integer ebsIOPS;
+
+			private Integer maxConnections;
+
+			private Integer readonlyReplicas;
+
+			private Integer port;
+
+			private Integer ebsBandwidth;
+
+			private Integer ecsIOPS;
+
+			private String lockMode;
+
+			private String replicaSetName;
+
+			private Integer ecsBandwidth;
+
+			private String maxDiskMbps;
+
+			private Integer maxIOPS;
+
+			private String nodeClass;
+
+			private String nodeDescription;
+
+			private String currentKernelVersion;
+
+			private String nodeId;
+
+			private Integer nodeStorage;
+
+			private String connectString;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getEbsIOPS() {
+				return this.ebsIOPS;
+			}
+
+			public void setEbsIOPS(Integer ebsIOPS) {
+				this.ebsIOPS = ebsIOPS;
+			}
+
+			public Integer getMaxConnections() {
+				return this.maxConnections;
+			}
+
+			public void setMaxConnections(Integer maxConnections) {
+				this.maxConnections = maxConnections;
+			}
+
+			public Integer getReadonlyReplicas() {
+				return this.readonlyReplicas;
+			}
+
+			public void setReadonlyReplicas(Integer readonlyReplicas) {
+				this.readonlyReplicas = readonlyReplicas;
+			}
+
+			public Integer getPort() {
+				return this.port;
+			}
+
+			public void setPort(Integer port) {
+				this.port = port;
+			}
+
+			public Integer getEbsBandwidth() {
+				return this.ebsBandwidth;
+			}
+
+			public void setEbsBandwidth(Integer ebsBandwidth) {
+				this.ebsBandwidth = ebsBandwidth;
+			}
+
+			public Integer getEcsIOPS() {
+				return this.ecsIOPS;
+			}
+
+			public void setEcsIOPS(Integer ecsIOPS) {
+				this.ecsIOPS = ecsIOPS;
+			}
+
+			public String getLockMode() {
+				return this.lockMode;
+			}
+
+			public void setLockMode(String lockMode) {
+				this.lockMode = lockMode;
+			}
+
+			public String getReplicaSetName() {
+				return this.replicaSetName;
+			}
+
+			public void setReplicaSetName(String replicaSetName) {
+				this.replicaSetName = replicaSetName;
+			}
+
+			public Integer getEcsBandwidth() {
+				return this.ecsBandwidth;
+			}
+
+			public void setEcsBandwidth(Integer ecsBandwidth) {
+				this.ecsBandwidth = ecsBandwidth;
+			}
+
+			public String getMaxDiskMbps() {
+				return this.maxDiskMbps;
+			}
+
+			public void setMaxDiskMbps(String maxDiskMbps) {
+				this.maxDiskMbps = maxDiskMbps;
+			}
+
+			public Integer getMaxIOPS() {
+				return this.maxIOPS;
+			}
+
+			public void setMaxIOPS(Integer maxIOPS) {
+				this.maxIOPS = maxIOPS;
+			}
+
+			public String getNodeClass() {
+				return this.nodeClass;
+			}
+
+			public void setNodeClass(String nodeClass) {
+				this.nodeClass = nodeClass;
+			}
+
+			public String getNodeDescription() {
+				return this.nodeDescription;
+			}
+
+			public void setNodeDescription(String nodeDescription) {
+				this.nodeDescription = nodeDescription;
+			}
+
+			public String getCurrentKernelVersion() {
+				return this.currentKernelVersion;
+			}
+
+			public void setCurrentKernelVersion(String currentKernelVersion) {
+				this.currentKernelVersion = currentKernelVersion;
+			}
+
+			public String getNodeId() {
+				return this.nodeId;
+			}
+
+			public void setNodeId(String nodeId) {
+				this.nodeId = nodeId;
+			}
+
+			public Integer getNodeStorage() {
+				return this.nodeStorage;
+			}
+
+			public void setNodeStorage(Integer nodeStorage) {
+				this.nodeStorage = nodeStorage;
+			}
+
+			public String getConnectString() {
+				return this.connectString;
+			}
+
+			public void setConnectString(String connectString) {
+				this.connectString = connectString;
 			}
 		}
 	}

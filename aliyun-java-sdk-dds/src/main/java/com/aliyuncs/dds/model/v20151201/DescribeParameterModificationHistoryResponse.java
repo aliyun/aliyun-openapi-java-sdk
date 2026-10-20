@@ -47,29 +47,13 @@ public class DescribeParameterModificationHistoryResponse extends AcsResponse {
 
 	public static class HistoricalParameter {
 
-		private String parameterName;
-
-		private String oldParameterValue;
-
 		private String newParameterValue;
 
 		private String modifyTime;
 
-		public String getParameterName() {
-			return this.parameterName;
-		}
+		private String oldParameterValue;
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
-		}
-
-		public String getOldParameterValue() {
-			return this.oldParameterValue;
-		}
-
-		public void setOldParameterValue(String oldParameterValue) {
-			this.oldParameterValue = oldParameterValue;
-		}
+		private String parameterName;
 
 		public String getNewParameterValue() {
 			return this.newParameterValue;
@@ -85,6 +69,22 @@ public class DescribeParameterModificationHistoryResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getOldParameterValue() {
+			return this.oldParameterValue;
+		}
+
+		public void setOldParameterValue(String oldParameterValue) {
+			this.oldParameterValue = oldParameterValue;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
 		}
 	}
 

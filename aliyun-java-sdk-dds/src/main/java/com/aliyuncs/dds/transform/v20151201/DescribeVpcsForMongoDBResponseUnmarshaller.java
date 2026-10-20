@@ -36,26 +36,26 @@ public class DescribeVpcsForMongoDBResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeVpcsForMongoDBResponse.Vpcs.Length"); i++) {
 			Vpc vpc = new Vpc();
 			vpc.setStatus(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].Status"));
-			vpc.setVpcName(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VpcName"));
-			vpc.setVpcId(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VpcId"));
 			vpc.setIsDefault(_ctx.booleanValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].IsDefault"));
-			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].CidrBlock"));
 			vpc.setRegionNo(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].RegionNo"));
 			vpc.setGmtCreate(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].GmtCreate"));
-			vpc.setAliUid(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].AliUid"));
+			vpc.setVpcId(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VpcId"));
 			vpc.setGmtModified(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].GmtModified"));
+			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setVpcName(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VpcName"));
 			vpc.setBid(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].Bid"));
+			vpc.setAliUid(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].AliUid"));
 
 			List<VSwitch> vSwitchs = new ArrayList<VSwitch>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs.Length"); j++) {
 				VSwitch vSwitch = new VSwitch();
 				vSwitch.setStatus(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].Status"));
-				vSwitch.setVSwitchId(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].VSwitchId"));
 				vSwitch.setIsDefault(_ctx.booleanValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].IsDefault"));
-				vSwitch.setCidrBlock(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].CidrBlock"));
-				vSwitch.setGmtCreate(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].GmtCreate"));
-				vSwitch.setGmtModified(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].GmtModified"));
 				vSwitch.setIzNo(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].IzNo"));
+				vSwitch.setGmtCreate(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].GmtCreate"));
+				vSwitch.setVSwitchId(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].VSwitchId"));
+				vSwitch.setGmtModified(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].GmtModified"));
+				vSwitch.setCidrBlock(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].CidrBlock"));
 				vSwitch.setVSwitchName(_ctx.stringValue("DescribeVpcsForMongoDBResponse.Vpcs["+ i +"].VSwitchs["+ j +"].VSwitchName"));
 
 				vSwitchs.add(vSwitch);

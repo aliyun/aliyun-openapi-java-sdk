@@ -23,9 +23,9 @@ public class DescribeDBInstanceSpecInfoResponseUnmarshaller {
 	public static DescribeDBInstanceSpecInfoResponse unmarshall(DescribeDBInstanceSpecInfoResponse describeDBInstanceSpecInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDBInstanceSpecInfoResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.RequestId"));
-		describeDBInstanceSpecInfoResponse.setCPU(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.CPU"));
-		describeDBInstanceSpecInfoResponse.setMemory(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.Memory"));
 		describeDBInstanceSpecInfoResponse.setDescription(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.Description"));
+		describeDBInstanceSpecInfoResponse.setMemory(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.Memory"));
+		describeDBInstanceSpecInfoResponse.setCPU(_ctx.stringValue("DescribeDBInstanceSpecInfoResponse.CPU"));
 	 
 	 	return describeDBInstanceSpecInfoResponse;
 	}

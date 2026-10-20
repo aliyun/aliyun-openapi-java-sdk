@@ -77,31 +77,23 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 	public static class SQLRecord {
 
-		private String hostAddress;
-
 		private String tableName;
-
-		private Long returnRowCounts;
-
-		private String dBName;
 
 		private String executeTime;
 
 		private String threadID;
 
+		private Long returnRowCounts;
+
+		private String dBName;
+
 		private Long totalExecutionTimes;
+
+		private String hostAddress;
 
 		private String syntax;
 
 		private String accountName;
-
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
-
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
 
 		public String getTableName() {
 			return this.tableName;
@@ -109,22 +101,6 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
 		}
 
 		public String getExecuteTime() {
@@ -143,12 +119,36 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 			this.threadID = threadID;
 		}
 
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
 		public Long getTotalExecutionTimes() {
 			return this.totalExecutionTimes;
 		}
 
 		public void setTotalExecutionTimes(Long totalExecutionTimes) {
 			this.totalExecutionTimes = totalExecutionTimes;
+		}
+
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
 		}
 
 		public String getSyntax() {

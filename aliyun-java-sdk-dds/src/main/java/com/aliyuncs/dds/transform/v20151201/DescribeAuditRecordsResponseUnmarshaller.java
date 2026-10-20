@@ -34,13 +34,13 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 		List<SQLRecord> items = new ArrayList<SQLRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAuditRecordsResponse.Items.Length"); i++) {
 			SQLRecord sQLRecord = new SQLRecord();
-			sQLRecord.setHostAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
 			sQLRecord.setTableName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TableName"));
-			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			sQLRecord.setDBName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setExecuteTime(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ExecuteTime"));
 			sQLRecord.setThreadID(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ThreadID"));
+			sQLRecord.setReturnRowCounts(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			sQLRecord.setDBName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].DBName"));
 			sQLRecord.setTotalExecutionTimes(_ctx.longValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
+			sQLRecord.setHostAddress(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].HostAddress"));
 			sQLRecord.setSyntax(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].Syntax"));
 			sQLRecord.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
 

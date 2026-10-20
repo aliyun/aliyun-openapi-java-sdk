@@ -79,17 +79,17 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		private String checkingCode;
 
-		private String parameterName;
+		private String modifiableStatus;
 
 		private String parameterValue;
 
 		private String forceRestart;
 
-		private String parameterDescription;
-
-		private String modifiableStatus;
+		private String parameterName;
 
 		private String characterType;
+
+		private String parameterDescription;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -99,12 +99,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.checkingCode = checkingCode;
 		}
 
-		public String getParameterName() {
-			return this.parameterName;
+		public String getModifiableStatus() {
+			return this.modifiableStatus;
 		}
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
+		public void setModifiableStatus(String modifiableStatus) {
+			this.modifiableStatus = modifiableStatus;
 		}
 
 		public String getParameterValue() {
@@ -123,20 +123,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.forceRestart = forceRestart;
 		}
 
-		public String getParameterDescription() {
-			return this.parameterDescription;
+		public String getParameterName() {
+			return this.parameterName;
 		}
 
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
-		}
-
-		public String getModifiableStatus() {
-			return this.modifiableStatus;
-		}
-
-		public void setModifiableStatus(String modifiableStatus) {
-			this.modifiableStatus = modifiableStatus;
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
 		}
 
 		public String getCharacterType() {
@@ -146,21 +138,29 @@ public class DescribeParametersResponse extends AcsResponse {
 		public void setCharacterType(String characterType) {
 			this.characterType = characterType;
 		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
+		}
 	}
 
 	public static class Parameter1 {
 
 		private String checkingCode;
 
-		private String parameterName;
+		private Boolean modifiableStatus;
 
 		private String parameterValue;
 
 		private Boolean forceRestart;
 
-		private String parameterDescription;
+		private String parameterName;
 
-		private Boolean modifiableStatus;
+		private String parameterDescription;
 
 		public String getCheckingCode() {
 			return this.checkingCode;
@@ -170,12 +170,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.checkingCode = checkingCode;
 		}
 
-		public String getParameterName() {
-			return this.parameterName;
+		public Boolean getModifiableStatus() {
+			return this.modifiableStatus;
 		}
 
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
+		public void setModifiableStatus(Boolean modifiableStatus) {
+			this.modifiableStatus = modifiableStatus;
 		}
 
 		public String getParameterValue() {
@@ -194,20 +194,20 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.forceRestart = forceRestart;
 		}
 
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
 		public String getParameterDescription() {
 			return this.parameterDescription;
 		}
 
 		public void setParameterDescription(String parameterDescription) {
 			this.parameterDescription = parameterDescription;
-		}
-
-		public Boolean getModifiableStatus() {
-			return this.modifiableStatus;
-		}
-
-		public void setModifiableStatus(Boolean modifiableStatus) {
-			this.modifiableStatus = modifiableStatus;
 		}
 	}
 

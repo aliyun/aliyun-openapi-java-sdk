@@ -31,8 +31,8 @@ public class DescribeClusterRecoverTimeResponseUnmarshaller {
 		List<AvailableRestoreTime> restoreRanges = new ArrayList<AvailableRestoreTime>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeClusterRecoverTimeResponse.RestoreRanges.Length"); i++) {
 			AvailableRestoreTime availableRestoreTime = new AvailableRestoreTime();
-			availableRestoreTime.setRestoreBeginTime(_ctx.stringValue("DescribeClusterRecoverTimeResponse.RestoreRanges["+ i +"].RestoreBeginTime"));
 			availableRestoreTime.setRestoreEndTime(_ctx.stringValue("DescribeClusterRecoverTimeResponse.RestoreRanges["+ i +"].RestoreEndTime"));
+			availableRestoreTime.setRestoreBeginTime(_ctx.stringValue("DescribeClusterRecoverTimeResponse.RestoreRanges["+ i +"].RestoreBeginTime"));
 			availableRestoreTime.setRestoreType(_ctx.stringValue("DescribeClusterRecoverTimeResponse.RestoreRanges["+ i +"].RestoreType"));
 
 			restoreRanges.add(availableRestoreTime);

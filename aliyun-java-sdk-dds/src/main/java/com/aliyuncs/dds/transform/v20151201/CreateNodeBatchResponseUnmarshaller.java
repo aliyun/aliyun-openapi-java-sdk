@@ -23,8 +23,8 @@ public class CreateNodeBatchResponseUnmarshaller {
 	public static CreateNodeBatchResponse unmarshall(CreateNodeBatchResponse createNodeBatchResponse, UnmarshallerContext _ctx) {
 		
 		createNodeBatchResponse.setRequestId(_ctx.stringValue("CreateNodeBatchResponse.RequestId"));
-		createNodeBatchResponse.setOrderId(_ctx.stringValue("CreateNodeBatchResponse.OrderId"));
 		createNodeBatchResponse.setNodeId(_ctx.stringValue("CreateNodeBatchResponse.NodeId"));
+		createNodeBatchResponse.setOrderId(_ctx.stringValue("CreateNodeBatchResponse.OrderId"));
 	 
 	 	return createNodeBatchResponse;
 	}

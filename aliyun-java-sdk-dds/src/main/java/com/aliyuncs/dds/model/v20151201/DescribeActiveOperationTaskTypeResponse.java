@@ -47,29 +47,13 @@ public class DescribeActiveOperationTaskTypeResponse extends AcsResponse {
 
 	public static class Items {
 
-		private String taskType;
-
-		private String taskTypeInfoEn;
-
 		private String taskTypeInfoZh;
+
+		private String taskType;
 
 		private Integer count;
 
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
-
-		public String getTaskTypeInfoEn() {
-			return this.taskTypeInfoEn;
-		}
-
-		public void setTaskTypeInfoEn(String taskTypeInfoEn) {
-			this.taskTypeInfoEn = taskTypeInfoEn;
-		}
+		private String taskTypeInfoEn;
 
 		public String getTaskTypeInfoZh() {
 			return this.taskTypeInfoZh;
@@ -79,12 +63,28 @@ public class DescribeActiveOperationTaskTypeResponse extends AcsResponse {
 			this.taskTypeInfoZh = taskTypeInfoZh;
 		}
 
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
 		public Integer getCount() {
 			return this.count;
 		}
 
 		public void setCount(Integer count) {
 			this.count = count;
+		}
+
+		public String getTaskTypeInfoEn() {
+			return this.taskTypeInfoEn;
+		}
+
+		public void setTaskTypeInfoEn(String taskTypeInfoEn) {
+			this.taskTypeInfoEn = taskTypeInfoEn;
 		}
 	}
 

@@ -28,11 +28,11 @@ public class DescribeDBInstanceTDEInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String roleARN;
-
 	private String encryptionKey;
 
 	private String encryptorName;
+
+	private String roleARN;
 
 	public String getTDEStatus() {
 		return this.tDEStatus;
@@ -50,14 +50,6 @@ public class DescribeDBInstanceTDEInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRoleARN() {
-		return this.roleARN;
-	}
-
-	public void setRoleARN(String roleARN) {
-		this.roleARN = roleARN;
-	}
-
 	public String getEncryptionKey() {
 		return this.encryptionKey;
 	}
@@ -72,6 +64,14 @@ public class DescribeDBInstanceTDEInfoResponse extends AcsResponse {
 
 	public void setEncryptorName(String encryptorName) {
 		this.encryptorName = encryptorName;
+	}
+
+	public String getRoleARN() {
+		return this.roleARN;
+	}
+
+	public void setRoleARN(String roleARN) {
+		this.roleARN = roleARN;
 	}
 
 	@Override

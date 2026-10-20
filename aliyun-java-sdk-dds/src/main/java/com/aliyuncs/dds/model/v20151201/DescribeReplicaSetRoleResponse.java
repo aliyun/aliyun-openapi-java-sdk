@@ -67,27 +67,19 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 	public static class ReplicaSet {
 
-		private String connectionPort;
-
 		private String replicaSetRole;
-
-		private String expiredTime;
 
 		private String connectionDomain;
 
-		private String networkType;
-
-		private String roleId;
-
 		private String connectionType;
 
-		public String getConnectionPort() {
-			return this.connectionPort;
-		}
+		private String connectionPort;
 
-		public void setConnectionPort(String connectionPort) {
-			this.connectionPort = connectionPort;
-		}
+		private String networkType;
+
+		private String expiredTime;
+
+		private String roleId;
 
 		public String getReplicaSetRole() {
 			return this.replicaSetRole;
@@ -95,14 +87,6 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		public void setReplicaSetRole(String replicaSetRole) {
 			this.replicaSetRole = replicaSetRole;
-		}
-
-		public String getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(String expiredTime) {
-			this.expiredTime = expiredTime;
 		}
 
 		public String getConnectionDomain() {
@@ -113,6 +97,22 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 			this.connectionDomain = connectionDomain;
 		}
 
+		public String getConnectionType() {
+			return this.connectionType;
+		}
+
+		public void setConnectionType(String connectionType) {
+			this.connectionType = connectionType;
+		}
+
+		public String getConnectionPort() {
+			return this.connectionPort;
+		}
+
+		public void setConnectionPort(String connectionPort) {
+			this.connectionPort = connectionPort;
+		}
+
 		public String getNetworkType() {
 			return this.networkType;
 		}
@@ -121,20 +121,20 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
 		public String getRoleId() {
 			return this.roleId;
 		}
 
 		public void setRoleId(String roleId) {
 			this.roleId = roleId;
-		}
-
-		public String getConnectionType() {
-			return this.connectionType;
-		}
-
-		public void setConnectionType(String connectionType) {
-			this.connectionType = connectionType;
 		}
 	}
 

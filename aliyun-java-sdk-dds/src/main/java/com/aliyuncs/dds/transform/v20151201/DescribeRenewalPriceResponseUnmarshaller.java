@@ -33,10 +33,10 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		describeRenewalPriceResponse.setRequestId(_ctx.stringValue("DescribeRenewalPriceResponse.RequestId"));
 
 		Order order = new Order();
+		order.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Currency"));
+		order.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.TradeAmount"));
 		order.setOriginalAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.OriginalAmount"));
 		order.setDiscountAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.DiscountAmount"));
-		order.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.Order.TradeAmount"));
-		order.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Currency"));
 
 		List<String> ruleIds1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Order.RuleIds.Length"); i++) {
@@ -47,12 +47,12 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Order.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
+			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].CouponNo"));
 			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Description"));
 			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].IsSelected"));
-			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].CouponNo"));
+			coupon.setActivityExtInfo(_ctx.mapValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].ActivityExtInfo"));
 			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Name"));
 			coupon.setEffective(_ctx.booleanValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].Effective"));
-			coupon.setActivityExtInfo(_ctx.mapValue("DescribeRenewalPriceResponse.Order.Coupons["+ i +"].ActivityExtInfo"));
 
 			coupons.add(coupon);
 		}
@@ -62,10 +62,10 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		List<SubOrder> subOrders = new ArrayList<SubOrder>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.SubOrders.Length"); i++) {
 			SubOrder subOrder = new SubOrder();
+			subOrder.setInstanceId(_ctx.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].InstanceId"));
+			subOrder.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].TradeAmount"));
 			subOrder.setOriginalAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].OriginalAmount"));
 			subOrder.setDiscountAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].DiscountAmount"));
-			subOrder.setTradeAmount(_ctx.floatValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].TradeAmount"));
-			subOrder.setInstanceId(_ctx.stringValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].InstanceId"));
 
 			List<String> ruleIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRenewalPriceResponse.SubOrders["+ i +"].RuleIds.Length"); j++) {

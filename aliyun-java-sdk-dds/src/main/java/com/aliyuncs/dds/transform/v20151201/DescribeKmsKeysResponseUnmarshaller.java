@@ -31,8 +31,8 @@ public class DescribeKmsKeysResponseUnmarshaller {
 		List<KmsKey> kmsKeys = new ArrayList<KmsKey>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeKmsKeysResponse.KmsKeys.Length"); i++) {
 			KmsKey kmsKey = new KmsKey();
-			kmsKey.setKeyAlias(_ctx.stringValue("DescribeKmsKeysResponse.KmsKeys["+ i +"].KeyAlias"));
 			kmsKey.setKeyId(_ctx.stringValue("DescribeKmsKeysResponse.KmsKeys["+ i +"].KeyId"));
+			kmsKey.setKeyAlias(_ctx.stringValue("DescribeKmsKeysResponse.KmsKeys["+ i +"].KeyAlias"));
 
 			kmsKeys.add(kmsKey);
 		}

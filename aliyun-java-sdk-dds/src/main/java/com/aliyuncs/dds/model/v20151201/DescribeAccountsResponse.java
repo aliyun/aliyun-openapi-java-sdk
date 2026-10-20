@@ -47,22 +47,26 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
-		private String characterType;
+		private String accountDescription;
 
 		private String accountStatus;
 
-		private String accountDescription;
-
 		private String dBInstanceId;
+
+		private String dBName;
+
+		private String characterType;
 
 		private String accountName;
 
-		public String getCharacterType() {
-			return this.characterType;
+		private List<Role> roles;
+
+		public String getAccountDescription() {
+			return this.accountDescription;
 		}
 
-		public void setCharacterType(String characterType) {
-			this.characterType = characterType;
+		public void setAccountDescription(String accountDescription) {
+			this.accountDescription = accountDescription;
 		}
 
 		public String getAccountStatus() {
@@ -73,14 +77,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.accountStatus = accountStatus;
 		}
 
-		public String getAccountDescription() {
-			return this.accountDescription;
-		}
-
-		public void setAccountDescription(String accountDescription) {
-			this.accountDescription = accountDescription;
-		}
-
 		public String getDBInstanceId() {
 			return this.dBInstanceId;
 		}
@@ -89,12 +85,59 @@ public class DescribeAccountsResponse extends AcsResponse {
 			this.dBInstanceId = dBInstanceId;
 		}
 
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getCharacterType() {
+			return this.characterType;
+		}
+
+		public void setCharacterType(String characterType) {
+			this.characterType = characterType;
+		}
+
 		public String getAccountName() {
 			return this.accountName;
 		}
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public List<Role> getRoles() {
+			return this.roles;
+		}
+
+		public void setRoles(List<Role> roles) {
+			this.roles = roles;
+		}
+
+		public static class Role {
+
+			private String role;
+
+			private String dBName;
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getDBName() {
+				return this.dBName;
+			}
+
+			public void setDBName(String dBName) {
+				this.dBName = dBName;
+			}
 		}
 	}
 

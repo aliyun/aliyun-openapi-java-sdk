@@ -79,23 +79,23 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 
 		private String status;
 
-		private String vpcName;
-
-		private String vpcId;
-
 		private Boolean isDefault;
-
-		private String cidrBlock;
 
 		private String regionNo;
 
 		private String gmtCreate;
 
-		private String aliUid;
+		private String vpcId;
 
 		private String gmtModified;
 
+		private String cidrBlock;
+
+		private String vpcName;
+
 		private String bid;
+
+		private String aliUid;
 
 		private List<VSwitch> vSwitchs;
 
@@ -107,36 +107,12 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getVpcName() {
-			return this.vpcName;
-		}
-
-		public void setVpcName(String vpcName) {
-			this.vpcName = vpcName;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
 		public Boolean getIsDefault() {
 			return this.isDefault;
 		}
 
 		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
-		}
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
 		}
 
 		public String getRegionNo() {
@@ -155,12 +131,12 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 			this.gmtCreate = gmtCreate;
 		}
 
-		public String getAliUid() {
-			return this.aliUid;
+		public String getVpcId() {
+			return this.vpcId;
 		}
 
-		public void setAliUid(String aliUid) {
-			this.aliUid = aliUid;
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getGmtModified() {
@@ -171,12 +147,36 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 			this.gmtModified = gmtModified;
 		}
 
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
+		}
+
 		public String getBid() {
 			return this.bid;
 		}
 
 		public void setBid(String bid) {
 			this.bid = bid;
+		}
+
+		public String getAliUid() {
+			return this.aliUid;
+		}
+
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
 		}
 
 		public List<VSwitch> getVSwitchs() {
@@ -191,17 +191,17 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 
 			private String status;
 
-			private String vSwitchId;
-
 			private Boolean isDefault;
 
-			private String cidrBlock;
+			private String izNo;
 
 			private String gmtCreate;
 
+			private String vSwitchId;
+
 			private String gmtModified;
 
-			private String izNo;
+			private String cidrBlock;
 
 			private String vSwitchName;
 
@@ -213,14 +213,6 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
 			public Boolean getIsDefault() {
 				return this.isDefault;
 			}
@@ -229,12 +221,12 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 				this.isDefault = isDefault;
 			}
 
-			public String getCidrBlock() {
-				return this.cidrBlock;
+			public String getIzNo() {
+				return this.izNo;
 			}
 
-			public void setCidrBlock(String cidrBlock) {
-				this.cidrBlock = cidrBlock;
+			public void setIzNo(String izNo) {
+				this.izNo = izNo;
 			}
 
 			public String getGmtCreate() {
@@ -245,6 +237,14 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 				this.gmtCreate = gmtCreate;
 			}
 
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
 			public String getGmtModified() {
 				return this.gmtModified;
 			}
@@ -253,12 +253,12 @@ public class DescribeVpcsForMongoDBResponse extends AcsResponse {
 				this.gmtModified = gmtModified;
 			}
 
-			public String getIzNo() {
-				return this.izNo;
+			public String getCidrBlock() {
+				return this.cidrBlock;
 			}
 
-			public void setIzNo(String izNo) {
-				this.izNo = izNo;
+			public void setCidrBlock(String cidrBlock) {
+				this.cidrBlock = cidrBlock;
 			}
 
 			public String getVSwitchName() {

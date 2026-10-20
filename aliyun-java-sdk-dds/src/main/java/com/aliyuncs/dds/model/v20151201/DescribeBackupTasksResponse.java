@@ -47,38 +47,22 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 	public static class BackupTask {
 
-		private String backupjobId;
-
-		private String backupSetStatus;
-
-		private String backupStartTime;
+		private String jobMode;
 
 		private String progress;
 
-		private String jobMode;
+		private String backupjobId;
 
-		public String getBackupjobId() {
-			return this.backupjobId;
+		private String backupStartTime;
+
+		private String backupSetStatus;
+
+		public String getJobMode() {
+			return this.jobMode;
 		}
 
-		public void setBackupjobId(String backupjobId) {
-			this.backupjobId = backupjobId;
-		}
-
-		public String getBackupSetStatus() {
-			return this.backupSetStatus;
-		}
-
-		public void setBackupSetStatus(String backupSetStatus) {
-			this.backupSetStatus = backupSetStatus;
-		}
-
-		public String getBackupStartTime() {
-			return this.backupStartTime;
-		}
-
-		public void setBackupStartTime(String backupStartTime) {
-			this.backupStartTime = backupStartTime;
+		public void setJobMode(String jobMode) {
+			this.jobMode = jobMode;
 		}
 
 		public String getProgress() {
@@ -89,12 +73,28 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getJobMode() {
-			return this.jobMode;
+		public String getBackupjobId() {
+			return this.backupjobId;
 		}
 
-		public void setJobMode(String jobMode) {
-			this.jobMode = jobMode;
+		public void setBackupjobId(String backupjobId) {
+			this.backupjobId = backupjobId;
+		}
+
+		public String getBackupStartTime() {
+			return this.backupStartTime;
+		}
+
+		public void setBackupStartTime(String backupStartTime) {
+			this.backupStartTime = backupStartTime;
+		}
+
+		public String getBackupSetStatus() {
+			return this.backupSetStatus;
+		}
+
+		public void setBackupSetStatus(String backupSetStatus) {
+			this.backupSetStatus = backupSetStatus;
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dds.Endpoint;
 
@@ -27,6 +28,10 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private Long resourceOwnerId;
 
+	private List<Roles> roless;
+
+	private String accountDescription;
+
 	private String accountName;
 
 	private String dBInstanceId;
@@ -38,6 +43,8 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	private Long ownerId;
 
 	private String accountPassword;
+
+	private String dBName;
 
 	private String characterType;
 	public CreateAccountRequest() {
@@ -57,6 +64,31 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<Roles> getRoless() {
+		return this.roless;
+	}
+
+	public void setRoless(List<Roles> roless) {
+		this.roless = roless;	
+		if (roless != null) {
+			for (int depth1 = 0; depth1 < roless.size(); depth1++) {
+				putQueryParameter("Roles." + (depth1 + 1) + ".Role" , roless.get(depth1).getRole());
+				putQueryParameter("Roles." + (depth1 + 1) + ".DBName" , roless.get(depth1).getDBName());
+			}
+		}	
+	}
+
+	public String getAccountDescription() {
+		return this.accountDescription;
+	}
+
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -126,6 +158,17 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		}
 	}
 
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
 	public String getCharacterType() {
 		return this.characterType;
 	}
@@ -134,6 +177,29 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 		this.characterType = characterType;
 		if(characterType != null){
 			putQueryParameter("CharacterType", characterType);
+		}
+	}
+
+	public static class Roles {
+
+		private String role;
+
+		private String dBName;
+
+		public String getRole() {
+			return this.role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
 		}
 	}
 

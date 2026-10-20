@@ -24,8 +24,8 @@ public class DescribeRoleTagStatusResponseUnmarshaller {
 	public static DescribeRoleTagStatusResponse unmarshall(DescribeRoleTagStatusResponse describeRoleTagStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeRoleTagStatusResponse.setRequestId(_ctx.stringValue("DescribeRoleTagStatusResponse.RequestId"));
-		describeRoleTagStatusResponse.setRoleTagStatus(_ctx.stringValue("DescribeRoleTagStatusResponse.RoleTagStatus"));
 		describeRoleTagStatusResponse.setShardRoleTagStatus(_ctx.mapValue("DescribeRoleTagStatusResponse.ShardRoleTagStatus"));
+		describeRoleTagStatusResponse.setRoleTagStatus(_ctx.stringValue("DescribeRoleTagStatusResponse.RoleTagStatus"));
 	 
 	 	return describeRoleTagStatusResponse;
 	}

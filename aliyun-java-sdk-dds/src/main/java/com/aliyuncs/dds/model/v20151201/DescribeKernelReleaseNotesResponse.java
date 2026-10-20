@@ -47,17 +47,9 @@ public class DescribeKernelReleaseNotesResponse extends AcsResponse {
 
 	public static class ReleaseNote {
 
-		private String releaseNote;
-
 		private String kernelVersion;
 
-		public String getReleaseNote() {
-			return this.releaseNote;
-		}
-
-		public void setReleaseNote(String releaseNote) {
-			this.releaseNote = releaseNote;
-		}
+		private String releaseNote;
 
 		public String getKernelVersion() {
 			return this.kernelVersion;
@@ -65,6 +57,14 @@ public class DescribeKernelReleaseNotesResponse extends AcsResponse {
 
 		public void setKernelVersion(String kernelVersion) {
 			this.kernelVersion = kernelVersion;
+		}
+
+		public String getReleaseNote() {
+			return this.releaseNote;
+		}
+
+		public void setReleaseNote(String releaseNote) {
+			this.releaseNote = releaseNote;
 		}
 	}
 

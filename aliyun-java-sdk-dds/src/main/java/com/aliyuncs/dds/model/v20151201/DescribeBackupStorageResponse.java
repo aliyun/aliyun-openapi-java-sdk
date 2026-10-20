@@ -26,11 +26,11 @@ public class DescribeBackupStorageResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long freeSize;
+
 	private Long fullStorageSize;
 
 	private Long logStorageSize;
-
-	private Long freeSize;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,6 +38,14 @@ public class DescribeBackupStorageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getFreeSize() {
+		return this.freeSize;
+	}
+
+	public void setFreeSize(Long freeSize) {
+		this.freeSize = freeSize;
 	}
 
 	public Long getFullStorageSize() {
@@ -54,14 +62,6 @@ public class DescribeBackupStorageResponse extends AcsResponse {
 
 	public void setLogStorageSize(Long logStorageSize) {
 		this.logStorageSize = logStorageSize;
-	}
-
-	public Long getFreeSize() {
-		return this.freeSize;
-	}
-
-	public void setFreeSize(Long freeSize) {
-		this.freeSize = freeSize;
 	}
 
 	@Override

@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceSpecInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String description;
 
-	private String cPU;
+	private String requestId;
 
 	private String memory;
 
-	private String description;
+	private String cPU;
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +46,6 @@ public class DescribeDBInstanceSpecInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCPU() {
-		return this.cPU;
-	}
-
-	public void setCPU(String cPU) {
-		this.cPU = cPU;
 	}
 
 	public String getMemory() {
@@ -56,12 +56,12 @@ public class DescribeDBInstanceSpecInfoResponse extends AcsResponse {
 		this.memory = memory;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getCPU() {
+		return this.cPU;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCPU(String cPU) {
+		this.cPU = cPU;
 	}
 
 	@Override

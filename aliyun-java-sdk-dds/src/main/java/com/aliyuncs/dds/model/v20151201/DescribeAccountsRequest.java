@@ -36,6 +36,10 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBName;
+
+	private String characterType;
 	public DescribeAccountsRequest() {
 		super("Dds", "2015-12-01", "DescribeAccounts", "dds");
 		setMethod(MethodType.POST);
@@ -108,6 +112,28 @@ public class DescribeAccountsRequest extends RpcAcsRequest<DescribeAccountsRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
 		}
 	}
 

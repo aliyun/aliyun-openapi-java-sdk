@@ -27,13 +27,13 @@ public class DescribeActiveOperationMaintenanceConfigResponseUnmarshaller {
 		describeActiveOperationMaintenanceConfigResponse.setHasConfig(_ctx.integerValue("DescribeActiveOperationMaintenanceConfigResponse.HasConfig"));
 
 		Config config = new Config();
-		config.setCycleType(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CycleType"));
 		config.setStatus(_ctx.integerValue("DescribeActiveOperationMaintenanceConfigResponse.Config.Status"));
+		config.setCycleTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CycleTime"));
+		config.setCycleType(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CycleType"));
+		config.setMaintainEndTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.MaintainEndTime"));
+		config.setCreatedTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CreatedTime"));
 		config.setModifiedTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.ModifiedTime"));
 		config.setMaintainStartTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.MaintainStartTime"));
-		config.setMaintainEndTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.MaintainEndTime"));
-		config.setCycleTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CycleTime"));
-		config.setCreatedTime(_ctx.stringValue("DescribeActiveOperationMaintenanceConfigResponse.Config.CreatedTime"));
 		describeActiveOperationMaintenanceConfigResponse.setConfig(config);
 	 
 	 	return describeActiveOperationMaintenanceConfigResponse;

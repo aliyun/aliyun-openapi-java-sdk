@@ -30,9 +30,9 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String certCommonName;
-
 	private String forceEncryption;
+
+	private String certCommonName;
 
 	public String getSSLExpiredTime() {
 		return this.sSLExpiredTime;
@@ -58,20 +58,20 @@ public class DescribeDBInstanceSSLResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCertCommonName() {
-		return this.certCommonName;
-	}
-
-	public void setCertCommonName(String certCommonName) {
-		this.certCommonName = certCommonName;
-	}
-
 	public String getForceEncryption() {
 		return this.forceEncryption;
 	}
 
 	public void setForceEncryption(String forceEncryption) {
 		this.forceEncryption = forceEncryption;
+	}
+
+	public String getCertCommonName() {
+		return this.certCommonName;
+	}
+
+	public void setCertCommonName(String certCommonName) {
+		this.certCommonName = certCommonName;
 	}
 
 	@Override

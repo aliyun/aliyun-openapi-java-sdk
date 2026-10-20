@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGlobalSecurityIPGroupRelationResponse extends AcsResponse {
 
-	private String dBClusterId;
-
 	private String requestId;
 
+	private String dBClusterId;
+
 	private List<GlobalSecurityIPGroupRelItem> globalSecurityIPGroupRel;
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +37,14 @@ public class DescribeGlobalSecurityIPGroupRelationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<GlobalSecurityIPGroupRelItem> getGlobalSecurityIPGroupRel() {
@@ -57,22 +57,22 @@ public class DescribeGlobalSecurityIPGroupRelationResponse extends AcsResponse {
 
 	public static class GlobalSecurityIPGroupRelItem {
 
-		private String globalSecurityGroupId;
+		private String globalIgName;
 
 		private String gIpList;
+
+		private String globalSecurityGroupId;
 
 		private String regionId;
 
 		private String whitelistNetType;
 
-		private String globalIgName;
-
-		public String getGlobalSecurityGroupId() {
-			return this.globalSecurityGroupId;
+		public String getGlobalIgName() {
+			return this.globalIgName;
 		}
 
-		public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
-			this.globalSecurityGroupId = globalSecurityGroupId;
+		public void setGlobalIgName(String globalIgName) {
+			this.globalIgName = globalIgName;
 		}
 
 		public String getGIpList() {
@@ -81,6 +81,14 @@ public class DescribeGlobalSecurityIPGroupRelationResponse extends AcsResponse {
 
 		public void setGIpList(String gIpList) {
 			this.gIpList = gIpList;
+		}
+
+		public String getGlobalSecurityGroupId() {
+			return this.globalSecurityGroupId;
+		}
+
+		public void setGlobalSecurityGroupId(String globalSecurityGroupId) {
+			this.globalSecurityGroupId = globalSecurityGroupId;
 		}
 
 		public String getRegionId() {
@@ -97,14 +105,6 @@ public class DescribeGlobalSecurityIPGroupRelationResponse extends AcsResponse {
 
 		public void setWhitelistNetType(String whitelistNetType) {
 			this.whitelistNetType = whitelistNetType;
-		}
-
-		public String getGlobalIgName() {
-			return this.globalIgName;
-		}
-
-		public void setGlobalIgName(String globalIgName) {
-			this.globalIgName = globalIgName;
 		}
 	}
 

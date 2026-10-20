@@ -47,19 +47,11 @@ public class DescribeAvailabilityZonesResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String zoneId;
-
 		private String zoneName;
 
+		private String zoneId;
+
 		private String regionId;
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
 
 		public String getZoneName() {
 			return this.zoneName;
@@ -67,6 +59,14 @@ public class DescribeAvailabilityZonesResponse extends AcsResponse {
 
 		public void setZoneName(String zoneName) {
 			this.zoneName = zoneName;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getRegionId() {

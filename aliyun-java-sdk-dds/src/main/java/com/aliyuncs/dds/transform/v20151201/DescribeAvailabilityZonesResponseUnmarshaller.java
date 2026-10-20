@@ -31,8 +31,8 @@ public class DescribeAvailabilityZonesResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailabilityZonesResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
-			availableZone.setZoneId(_ctx.stringValue("DescribeAvailabilityZonesResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setZoneName(_ctx.stringValue("DescribeAvailabilityZonesResponse.AvailableZones["+ i +"].ZoneName"));
+			availableZone.setZoneId(_ctx.stringValue("DescribeAvailabilityZonesResponse.AvailableZones["+ i +"].ZoneId"));
 			availableZone.setRegionId(_ctx.stringValue("DescribeAvailabilityZonesResponse.AvailableZones["+ i +"].RegionId"));
 
 			availableZones.add(availableZone);

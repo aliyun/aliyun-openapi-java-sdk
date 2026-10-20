@@ -24,52 +24,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private String preferredBackupPeriod;
+	private String highFrequencyBackupRetention;
 
 	private String requestId;
 
-	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
-
-	private String preferredNextBackupTime;
-
-	private Integer enableBackupLog;
-
-	private Integer logBackupRetentionPeriod;
-
-	private String snapshotBackupType;
-
-	private Integer backupInterval;
-
-	private String highFrequencyBackupRetention;
-
 	private Integer backupRetentionPolicyOnClusterDeletion;
 
-	private String srcRegion;
-
-	private String destRegion;
-
-	private String crossRetentionType;
-
-	private Integer crossRetentionValue;
+	private String preferredBackupTime;
 
 	private String crossBackupPeriod;
 
-	private Integer enableCrossLogBackup;
+	private String preferredNextBackupTime;
 
 	private String crossLogRetentionType;
 
+	private String preferredBackupPeriod;
+
+	private Integer crossRetentionValue;
+
+	private Integer logBackupRetentionPeriod;
+
 	private Integer crossLogRetentionValue;
+
+	private String crossRetentionType;
+
+	private String srcRegion;
+
+	private Integer enableCrossLogBackup;
 
 	private Boolean preserveOneEachHour;
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	private String snapshotBackupType;
+
+	private Integer enableBackupLog;
+
+	private String backupRetentionPeriod;
+
+	private Boolean backupTamperProofEnabled;
+
+	private String destRegion;
+
+	private Integer backupInterval;
+
+	public String getHighFrequencyBackupRetention() {
+		return this.highFrequencyBackupRetention;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
+	public void setHighFrequencyBackupRetention(String highFrequencyBackupRetention) {
+		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
 	}
 
 	public String getRequestId() {
@@ -80,70 +82,6 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
-	}
-
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-	}
-
-	public String getPreferredNextBackupTime() {
-		return this.preferredNextBackupTime;
-	}
-
-	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
-		this.preferredNextBackupTime = preferredNextBackupTime;
-	}
-
-	public Integer getEnableBackupLog() {
-		return this.enableBackupLog;
-	}
-
-	public void setEnableBackupLog(Integer enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-	}
-
-	public String getSnapshotBackupType() {
-		return this.snapshotBackupType;
-	}
-
-	public void setSnapshotBackupType(String snapshotBackupType) {
-		this.snapshotBackupType = snapshotBackupType;
-	}
-
-	public Integer getBackupInterval() {
-		return this.backupInterval;
-	}
-
-	public void setBackupInterval(Integer backupInterval) {
-		this.backupInterval = backupInterval;
-	}
-
-	public String getHighFrequencyBackupRetention() {
-		return this.highFrequencyBackupRetention;
-	}
-
-	public void setHighFrequencyBackupRetention(String highFrequencyBackupRetention) {
-		this.highFrequencyBackupRetention = highFrequencyBackupRetention;
-	}
-
 	public Integer getBackupRetentionPolicyOnClusterDeletion() {
 		return this.backupRetentionPolicyOnClusterDeletion;
 	}
@@ -152,36 +90,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
 	}
 
-	public String getSrcRegion() {
-		return this.srcRegion;
+	public String getPreferredBackupTime() {
+		return this.preferredBackupTime;
 	}
 
-	public void setSrcRegion(String srcRegion) {
-		this.srcRegion = srcRegion;
-	}
-
-	public String getDestRegion() {
-		return this.destRegion;
-	}
-
-	public void setDestRegion(String destRegion) {
-		this.destRegion = destRegion;
-	}
-
-	public String getCrossRetentionType() {
-		return this.crossRetentionType;
-	}
-
-	public void setCrossRetentionType(String crossRetentionType) {
-		this.crossRetentionType = crossRetentionType;
-	}
-
-	public Integer getCrossRetentionValue() {
-		return this.crossRetentionValue;
-	}
-
-	public void setCrossRetentionValue(Integer crossRetentionValue) {
-		this.crossRetentionValue = crossRetentionValue;
+	public void setPreferredBackupTime(String preferredBackupTime) {
+		this.preferredBackupTime = preferredBackupTime;
 	}
 
 	public String getCrossBackupPeriod() {
@@ -192,12 +106,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.crossBackupPeriod = crossBackupPeriod;
 	}
 
-	public Integer getEnableCrossLogBackup() {
-		return this.enableCrossLogBackup;
+	public String getPreferredNextBackupTime() {
+		return this.preferredNextBackupTime;
 	}
 
-	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
-		this.enableCrossLogBackup = enableCrossLogBackup;
+	public void setPreferredNextBackupTime(String preferredNextBackupTime) {
+		this.preferredNextBackupTime = preferredNextBackupTime;
 	}
 
 	public String getCrossLogRetentionType() {
@@ -208,6 +122,30 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.crossLogRetentionType = crossLogRetentionType;
 	}
 
+	public String getPreferredBackupPeriod() {
+		return this.preferredBackupPeriod;
+	}
+
+	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+		this.preferredBackupPeriod = preferredBackupPeriod;
+	}
+
+	public Integer getCrossRetentionValue() {
+		return this.crossRetentionValue;
+	}
+
+	public void setCrossRetentionValue(Integer crossRetentionValue) {
+		this.crossRetentionValue = crossRetentionValue;
+	}
+
+	public Integer getLogBackupRetentionPeriod() {
+		return this.logBackupRetentionPeriod;
+	}
+
+	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
+		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+	}
+
 	public Integer getCrossLogRetentionValue() {
 		return this.crossLogRetentionValue;
 	}
@@ -216,12 +154,84 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.crossLogRetentionValue = crossLogRetentionValue;
 	}
 
+	public String getCrossRetentionType() {
+		return this.crossRetentionType;
+	}
+
+	public void setCrossRetentionType(String crossRetentionType) {
+		this.crossRetentionType = crossRetentionType;
+	}
+
+	public String getSrcRegion() {
+		return this.srcRegion;
+	}
+
+	public void setSrcRegion(String srcRegion) {
+		this.srcRegion = srcRegion;
+	}
+
+	public Integer getEnableCrossLogBackup() {
+		return this.enableCrossLogBackup;
+	}
+
+	public void setEnableCrossLogBackup(Integer enableCrossLogBackup) {
+		this.enableCrossLogBackup = enableCrossLogBackup;
+	}
+
 	public Boolean getPreserveOneEachHour() {
 		return this.preserveOneEachHour;
 	}
 
 	public void setPreserveOneEachHour(Boolean preserveOneEachHour) {
 		this.preserveOneEachHour = preserveOneEachHour;
+	}
+
+	public String getSnapshotBackupType() {
+		return this.snapshotBackupType;
+	}
+
+	public void setSnapshotBackupType(String snapshotBackupType) {
+		this.snapshotBackupType = snapshotBackupType;
+	}
+
+	public Integer getEnableBackupLog() {
+		return this.enableBackupLog;
+	}
+
+	public void setEnableBackupLog(Integer enableBackupLog) {
+		this.enableBackupLog = enableBackupLog;
+	}
+
+	public String getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
+	}
+
+	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+	}
+
+	public Boolean getBackupTamperProofEnabled() {
+		return this.backupTamperProofEnabled;
+	}
+
+	public void setBackupTamperProofEnabled(Boolean backupTamperProofEnabled) {
+		this.backupTamperProofEnabled = backupTamperProofEnabled;
+	}
+
+	public String getDestRegion() {
+		return this.destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+	}
+
+	public Integer getBackupInterval() {
+		return this.backupInterval;
+	}
+
+	public void setBackupInterval(Integer backupInterval) {
+		this.backupInterval = backupInterval;
 	}
 
 	@Override

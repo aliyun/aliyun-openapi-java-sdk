@@ -34,11 +34,11 @@ public class DescribeParameterTemplatesResponseUnmarshaller {
 		List<TemplateRecord> parameters = new ArrayList<TemplateRecord>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeParameterTemplatesResponse.Parameters.Length"); i++) {
 			TemplateRecord templateRecord = new TemplateRecord();
-			templateRecord.setCheckingCode(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
-			templateRecord.setParameterName(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
-			templateRecord.setParameterValue(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
 			templateRecord.setForceModify(_ctx.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceModify"));
+			templateRecord.setCheckingCode(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].CheckingCode"));
+			templateRecord.setParameterValue(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterValue"));
 			templateRecord.setForceRestart(_ctx.booleanValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ForceRestart"));
+			templateRecord.setParameterName(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterName"));
 			templateRecord.setParameterDescription(_ctx.stringValue("DescribeParameterTemplatesResponse.Parameters["+ i +"].ParameterDescription"));
 
 			parameters.add(templateRecord);

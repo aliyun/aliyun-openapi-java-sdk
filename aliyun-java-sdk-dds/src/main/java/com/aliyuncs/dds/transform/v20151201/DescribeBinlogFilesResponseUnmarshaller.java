@@ -27,26 +27,26 @@ public class DescribeBinlogFilesResponseUnmarshaller {
 	public static DescribeBinlogFilesResponse unmarshall(DescribeBinlogFilesResponse describeBinlogFilesResponse, UnmarshallerContext _ctx) {
 		
 		describeBinlogFilesResponse.setRequestId(_ctx.stringValue("DescribeBinlogFilesResponse.RequestId"));
-		describeBinlogFilesResponse.setPageNumber(_ctx.integerValue("DescribeBinlogFilesResponse.PageNumber"));
 		describeBinlogFilesResponse.setMaxRecordsPerPage(_ctx.integerValue("DescribeBinlogFilesResponse.MaxRecordsPerPage"));
 		describeBinlogFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeBinlogFilesResponse.TotalRecordCount"));
+		describeBinlogFilesResponse.setPageNumber(_ctx.integerValue("DescribeBinlogFilesResponse.PageNumber"));
 
 		List<LogFile> items = new ArrayList<LogFile>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBinlogFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
-			logFile.setLogFileName(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
-			logFile.setDumpDownloadURL(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpDownloadURL"));
-			logFile.setLogBeginTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
-			logFile.setDumpBucket(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpBucket"));
-			logFile.setLinkExpiredTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
 			logFile.setDownloadLink(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DownloadLink"));
-			logFile.setOSSEndpoint(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].OSSEndpoint"));
-			logFile.setLogEndTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));
-			logFile.setDumpState(_ctx.integerValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpState"));
-			logFile.setFileSize(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].FileSize"));
-			logFile.setFileId(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].FileId"));
+			logFile.setLogBeginTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogBeginTime"));
 			logFile.setBinLogId(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].BinLogId"));
+			logFile.setLogFileName(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogFileName"));
+			logFile.setOSSEndpoint(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].OSSEndpoint"));
 			logFile.setLogStatus(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogStatus"));
+			logFile.setDumpDownloadURL(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpDownloadURL"));
+			logFile.setLinkExpiredTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			logFile.setDumpState(_ctx.integerValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpState"));
+			logFile.setLogEndTime(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].LogEndTime"));
+			logFile.setFileId(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].FileId"));
+			logFile.setDumpBucket(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].DumpBucket"));
+			logFile.setFileSize(_ctx.stringValue("DescribeBinlogFilesResponse.Items["+ i +"].FileSize"));
 
 			items.add(logFile);
 		}

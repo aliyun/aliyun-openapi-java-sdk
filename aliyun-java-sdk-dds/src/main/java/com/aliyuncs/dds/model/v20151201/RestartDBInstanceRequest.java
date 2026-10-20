@@ -27,6 +27,8 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 
 	private Long resourceOwnerId;
 
+	private String nodeType;
+
 	private String switchMode;
 
 	private String dBInstanceId;
@@ -34,6 +36,8 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 	private String nodeId;
 
 	private String resourceOwnerAccount;
+
+	private Boolean parallelRestartMongos;
 
 	private String ownerAccount;
 
@@ -55,6 +59,17 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
 		}
 	}
 
@@ -99,6 +114,17 @@ public class RestartDBInstanceRequest extends RpcAcsRequest<RestartDBInstanceRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getParallelRestartMongos() {
+		return this.parallelRestartMongos;
+	}
+
+	public void setParallelRestartMongos(Boolean parallelRestartMongos) {
+		this.parallelRestartMongos = parallelRestartMongos;
+		if(parallelRestartMongos != null){
+			putQueryParameter("ParallelRestartMongos", parallelRestartMongos.toString());
 		}
 	}
 

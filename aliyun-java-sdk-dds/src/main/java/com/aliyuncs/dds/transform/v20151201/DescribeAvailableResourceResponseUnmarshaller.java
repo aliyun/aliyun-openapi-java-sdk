@@ -58,8 +58,8 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 						List<SupportedNodeType> supportedNodeTypes = new ArrayList<SupportedNodeType>();
 						for (int m = 0; m < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes.Length"); m++) {
 							SupportedNodeType supportedNodeType = new SupportedNodeType();
-							supportedNodeType.setNodeType(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].NodeType"));
 							supportedNodeType.setNetworkTypes(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].NetworkTypes"));
+							supportedNodeType.setNodeType(_ctx.stringValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].NodeType"));
 
 							List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
 							for (int n = 0; n < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportedDBTypes["+ i +"].AvailableZones["+ j +"].SupportedEngineVersions["+ k +"].SupportedEngines["+ l +"].SupportedNodeTypes["+ m +"].AvailableResources.Length"); n++) {

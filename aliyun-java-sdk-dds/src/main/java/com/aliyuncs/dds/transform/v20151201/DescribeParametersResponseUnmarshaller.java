@@ -35,12 +35,12 @@ public class DescribeParametersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.RunningParameters.Length"); i++) {
 			Parameter parameter = new Parameter();
 			parameter.setCheckingCode(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].CheckingCode"));
-			parameter.setParameterName(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
+			parameter.setModifiableStatus(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ModifiableStatus"));
 			parameter.setParameterValue(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterValue"));
 			parameter.setForceRestart(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ForceRestart"));
-			parameter.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
-			parameter.setModifiableStatus(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ModifiableStatus"));
+			parameter.setParameterName(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterName"));
 			parameter.setCharacterType(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].CharacterType"));
+			parameter.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.RunningParameters["+ i +"].ParameterDescription"));
 
 			runningParameters.add(parameter);
 		}
@@ -50,11 +50,11 @@ public class DescribeParametersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeParametersResponse.ConfigParameters.Length"); i++) {
 			Parameter1 parameter1 = new Parameter1();
 			parameter1.setCheckingCode(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].CheckingCode"));
-			parameter1.setParameterName(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterName"));
+			parameter1.setModifiableStatus(_ctx.booleanValue("DescribeParametersResponse.ConfigParameters["+ i +"].ModifiableStatus"));
 			parameter1.setParameterValue(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterValue"));
 			parameter1.setForceRestart(_ctx.booleanValue("DescribeParametersResponse.ConfigParameters["+ i +"].ForceRestart"));
+			parameter1.setParameterName(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterName"));
 			parameter1.setParameterDescription(_ctx.stringValue("DescribeParametersResponse.ConfigParameters["+ i +"].ParameterDescription"));
-			parameter1.setModifiableStatus(_ctx.booleanValue("DescribeParametersResponse.ConfigParameters["+ i +"].ModifiableStatus"));
 
 			configParameters.add(parameter1);
 		}

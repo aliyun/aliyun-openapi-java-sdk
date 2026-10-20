@@ -79,29 +79,29 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 
 		private Integer status;
 
-		private String taskParams;
-
-		private String prepareInterval;
+		private String createdTime;
 
 		private String deadline;
 
 		private String startTime;
 
-		private String taskType;
-
-		private String modifiedTime;
-
 		private String insName;
 
 		private String dbType;
 
+		private String taskParams;
+
+		private String modifiedTime;
+
+		private String taskType;
+
+		private String prepareInterval;
+
 		private String region;
 
-		private String resultInfo;
-
-		private String createdTime;
-
 		private Integer id;
+
+		private String resultInfo;
 
 		private String switchTime;
 
@@ -113,20 +113,12 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTaskParams() {
-			return this.taskParams;
+		public String getCreatedTime() {
+			return this.createdTime;
 		}
 
-		public void setTaskParams(String taskParams) {
-			this.taskParams = taskParams;
-		}
-
-		public String getPrepareInterval() {
-			return this.prepareInterval;
-		}
-
-		public void setPrepareInterval(String prepareInterval) {
-			this.prepareInterval = prepareInterval;
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public String getDeadline() {
@@ -145,22 +137,6 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public String getTaskType() {
-			return this.taskType;
-		}
-
-		public void setTaskType(String taskType) {
-			this.taskType = taskType;
-		}
-
-		public String getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(String modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
 		public String getInsName() {
 			return this.insName;
 		}
@@ -177,6 +153,38 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
+		public String getTaskParams() {
+			return this.taskParams;
+		}
+
+		public void setTaskParams(String taskParams) {
+			this.taskParams = taskParams;
+		}
+
+		public String getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(String modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
+		}
+
+		public String getPrepareInterval() {
+			return this.prepareInterval;
+		}
+
+		public void setPrepareInterval(String prepareInterval) {
+			this.prepareInterval = prepareInterval;
+		}
+
 		public String getRegion() {
 			return this.region;
 		}
@@ -185,28 +193,20 @@ public class DescribeActiveOperationTaskResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public String getResultInfo() {
-			return this.resultInfo;
-		}
-
-		public void setResultInfo(String resultInfo) {
-			this.resultInfo = resultInfo;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
-		}
-
 		public Integer getId() {
 			return this.id;
 		}
 
 		public void setId(Integer id) {
 			this.id = id;
+		}
+
+		public String getResultInfo() {
+			return this.resultInfo;
+		}
+
+		public void setResultInfo(String resultInfo) {
+			this.resultInfo = resultInfo;
 		}
 
 		public String getSwitchTime() {

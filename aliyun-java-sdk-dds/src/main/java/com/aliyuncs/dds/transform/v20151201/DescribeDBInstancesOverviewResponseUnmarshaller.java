@@ -35,51 +35,28 @@ public class DescribeDBInstancesOverviewResponseUnmarshaller {
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setCreationTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].CreationTime"));
-			dBInstance.setExpireTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ExpireTime"));
-			dBInstance.setLastDowngradeTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].LastDowngradeTime"));
-			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceType"));
-			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DestroyTime"));
-			dBInstance.setChargeType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ChargeType"));
-			dBInstance.setCapacityUnit(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].CapacityUnit"));
-			dBInstance.setVpcAuthMode(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].VpcAuthMode"));
-			dBInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceStatus"));
-			dBInstance.setNetworkType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].NetworkType"));
-			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].LockMode"));
-			dBInstance.setEngineVersion(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].EngineVersion"));
-			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].RegionId"));
-			dBInstance.setDBInstanceStorage(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceStorage"));
 			dBInstance.setResourceGroupId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ResourceGroupId"));
-			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ZoneId"));
+			dBInstance.setCapacityUnit(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].CapacityUnit"));
+			dBInstance.setDestroyTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DestroyTime"));
+			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceType"));
 			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceId"));
-			dBInstance.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceClass"));
+			dBInstance.setNetworkType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].NetworkType"));
+			dBInstance.setLastDowngradeTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].LastDowngradeTime"));
+			dBInstance.setDBInstanceStorage(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceStorage"));
 			dBInstance.setEngine(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Engine"));
-			dBInstance.setReplicationFactor(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ReplicationFactor"));
 			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceDescription"));
+			dBInstance.setEngineVersion(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].EngineVersion"));
+			dBInstance.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceStatus"));
+			dBInstance.setZoneId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ZoneId"));
+			dBInstance.setReplicationFactor(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ReplicationFactor"));
+			dBInstance.setDBInstanceClass(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].DBInstanceClass"));
+			dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].LockMode"));
+			dBInstance.setChargeType(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ChargeType"));
+			dBInstance.setVpcAuthMode(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].VpcAuthMode"));
+			dBInstance.setCreationTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].CreationTime"));
+			dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].RegionId"));
+			dBInstance.setExpireTime(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ExpireTime"));
 			dBInstance.setKindCode(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].KindCode"));
-
-			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags.Length"); j++) {
-				Tag tag = new Tag();
-				tag.setKey(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags["+ j +"].Value"));
-
-				tags.add(tag);
-			}
-			dBInstance.setTags(tags);
-
-			List<ShardAttribute> shardList = new ArrayList<ShardAttribute>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList.Length"); j++) {
-				ShardAttribute shardAttribute = new ShardAttribute();
-				shardAttribute.setNodeClass(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeClass"));
-				shardAttribute.setNodeDescription(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeDescription"));
-				shardAttribute.setNodeStorage(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage"));
-				shardAttribute.setNodeId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeId"));
-				shardAttribute.setReadonlyReplicas(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].ReadonlyReplicas"));
-
-				shardList.add(shardAttribute);
-			}
-			dBInstance.setShardList(shardList);
 
 			List<MongosAttribute> mongosList = new ArrayList<MongosAttribute>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].MongosList.Length"); j++) {
@@ -91,6 +68,29 @@ public class DescribeDBInstancesOverviewResponseUnmarshaller {
 				mongosList.add(mongosAttribute);
 			}
 			dBInstance.setMongosList(mongosList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setValue(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].Tags["+ j +"].Key"));
+
+				tags.add(tag);
+			}
+			dBInstance.setTags(tags);
+
+			List<ShardAttribute> shardList = new ArrayList<ShardAttribute>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList.Length"); j++) {
+				ShardAttribute shardAttribute = new ShardAttribute();
+				shardAttribute.setNodeClass(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeClass"));
+				shardAttribute.setNodeDescription(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeDescription"));
+				shardAttribute.setReadonlyReplicas(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].ReadonlyReplicas"));
+				shardAttribute.setNodeStorage(_ctx.integerValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage"));
+				shardAttribute.setNodeId(_ctx.stringValue("DescribeDBInstancesOverviewResponse.DBInstances["+ i +"].ShardList["+ j +"].NodeId"));
+
+				shardList.add(shardAttribute);
+			}
+			dBInstance.setShardList(shardList);
 
 			dBInstances.add(dBInstance);
 		}

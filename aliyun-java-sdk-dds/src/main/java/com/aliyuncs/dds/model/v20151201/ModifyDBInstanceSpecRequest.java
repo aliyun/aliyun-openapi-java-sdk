@@ -67,6 +67,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String targetHiddenZoneId;
 
+	private Boolean alignPrimaryZone;
+
 	private String orderType;
 	public ModifyDBInstanceSpecRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds");
@@ -305,6 +307,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.targetHiddenZoneId = targetHiddenZoneId;
 		if(targetHiddenZoneId != null){
 			putQueryParameter("TargetHiddenZoneId", targetHiddenZoneId);
+		}
+	}
+
+	public Boolean getAlignPrimaryZone() {
+		return this.alignPrimaryZone;
+	}
+
+	public void setAlignPrimaryZone(Boolean alignPrimaryZone) {
+		this.alignPrimaryZone = alignPrimaryZone;
+		if(alignPrimaryZone != null){
+			putQueryParameter("AlignPrimaryZone", alignPrimaryZone.toString());
 		}
 	}
 

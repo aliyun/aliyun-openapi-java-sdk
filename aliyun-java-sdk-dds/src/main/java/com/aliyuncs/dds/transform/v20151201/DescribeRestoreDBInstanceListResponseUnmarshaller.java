@@ -34,18 +34,18 @@ public class DescribeRestoreDBInstanceListResponseUnmarshaller {
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRestoreDBInstanceListResponse.DBInstances.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setCreationTime(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].CreationTime"));
-			dBInstance.setLockMode(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].LockMode"));
+			dBInstance.setIsDeleted(_ctx.integerValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].IsDeleted"));
 			dBInstance.setEngineVersion(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].EngineVersion"));
-			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceDescription"));
-			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceType"));
 			dBInstance.setDBInstanceStatus(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceStatus"));
-			dBInstance.setRegionId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].RegionId"));
 			dBInstance.setZoneId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].ZoneId"));
 			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceId"));
-			dBInstance.setSecondaryZoneId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].SecondaryZoneId"));
 			dBInstance.setHiddenZoneId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].HiddenZoneId"));
-			dBInstance.setIsDeleted(_ctx.integerValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].IsDeleted"));
+			dBInstance.setCreationTime(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].CreationTime"));
+			dBInstance.setDBInstanceType(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceType"));
+			dBInstance.setLockMode(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].LockMode"));
+			dBInstance.setRegionId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].RegionId"));
+			dBInstance.setDBInstanceDescription(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].DBInstanceDescription"));
+			dBInstance.setSecondaryZoneId(_ctx.stringValue("DescribeRestoreDBInstanceListResponse.DBInstances["+ i +"].SecondaryZoneId"));
 
 			dBInstances.add(dBInstance);
 		}

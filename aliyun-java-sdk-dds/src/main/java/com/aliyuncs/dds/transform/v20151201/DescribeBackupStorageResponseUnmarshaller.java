@@ -23,9 +23,9 @@ public class DescribeBackupStorageResponseUnmarshaller {
 	public static DescribeBackupStorageResponse unmarshall(DescribeBackupStorageResponse describeBackupStorageResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupStorageResponse.setRequestId(_ctx.stringValue("DescribeBackupStorageResponse.RequestId"));
+		describeBackupStorageResponse.setFreeSize(_ctx.longValue("DescribeBackupStorageResponse.FreeSize"));
 		describeBackupStorageResponse.setFullStorageSize(_ctx.longValue("DescribeBackupStorageResponse.FullStorageSize"));
 		describeBackupStorageResponse.setLogStorageSize(_ctx.longValue("DescribeBackupStorageResponse.LogStorageSize"));
-		describeBackupStorageResponse.setFreeSize(_ctx.longValue("DescribeBackupStorageResponse.FreeSize"));
 	 
 	 	return describeBackupStorageResponse;
 	}

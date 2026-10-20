@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dds.model.v20151201.DescribeAccountsResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeAccountsResponse.Account;
+import com.aliyuncs.dds.model.v20151201.DescribeAccountsResponse.Account.Role;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,11 +32,22 @@ public class DescribeAccountsResponseUnmarshaller {
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setCharacterType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].CharacterType"));
-			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
+			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			account.setDBInstanceId(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBInstanceId"));
+			account.setDBName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].DBName"));
+			account.setCharacterType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].CharacterType"));
 			account.setAccountName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
+
+			List<Role> roles = new ArrayList<Role>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].Roles.Length"); j++) {
+				Role role = new Role();
+				role.setRole(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].Roles["+ j +"].Role"));
+				role.setDBName(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].Roles["+ j +"].DBName"));
+
+				roles.add(role);
+			}
+			account.setRoles(roles);
 
 			accounts.add(account);
 		}

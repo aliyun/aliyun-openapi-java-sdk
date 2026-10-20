@@ -23,6 +23,7 @@ public class CreateAccountResponseUnmarshaller {
 	public static CreateAccountResponse unmarshall(CreateAccountResponse createAccountResponse, UnmarshallerContext _ctx) {
 		
 		createAccountResponse.setRequestId(_ctx.stringValue("CreateAccountResponse.RequestId"));
+		createAccountResponse.setTaskId(_ctx.integerValue("CreateAccountResponse.TaskId"));
 	 
 	 	return createAccountResponse;
 	}

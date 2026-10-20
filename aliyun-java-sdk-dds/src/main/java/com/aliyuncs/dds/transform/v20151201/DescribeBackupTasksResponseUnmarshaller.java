@@ -31,11 +31,11 @@ public class DescribeBackupTasksResponseUnmarshaller {
 		List<BackupTask> backupJobs = new ArrayList<BackupTask>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTasksResponse.BackupJobs.Length"); i++) {
 			BackupTask backupTask = new BackupTask();
-			backupTask.setBackupjobId(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupjobId"));
-			backupTask.setBackupSetStatus(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupSetStatus"));
-			backupTask.setBackupStartTime(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupStartTime"));
-			backupTask.setProgress(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].Progress"));
 			backupTask.setJobMode(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].JobMode"));
+			backupTask.setProgress(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].Progress"));
+			backupTask.setBackupjobId(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupjobId"));
+			backupTask.setBackupStartTime(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupStartTime"));
+			backupTask.setBackupSetStatus(_ctx.stringValue("DescribeBackupTasksResponse.BackupJobs["+ i +"].BackupSetStatus"));
 
 			backupJobs.add(backupTask);
 		}

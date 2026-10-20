@@ -24,40 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 
-	private String userProjectName;
+	private Boolean enableAudit;
 
 	private String requestId;
 
 	private Integer isUserProjectLogstoreExist;
 
-	private Integer isEtlMetaExist;
-
-	private String serviceType;
-
-	private Boolean enableAudit;
-
-	private Long ttlForTrail;
-
-	private Long usedStorageForTrail;
-
 	private Long preserveStorageForTrail;
-
-	private Long ttlForStandard;
 
 	private Long usedStorageForStandard;
 
+	private Long hotTtlForV2Standard;
+
+	private Long ttlForStandard;
+
 	private Long preserveStorageForStandard;
 
-	private Long hotTtlForV2Standard;
+	private String userProjectName;
+
+	private String serviceType;
+
+	private Long usedStorageForTrail;
 
 	private Long ttlForV2Standard;
 
-	public String getUserProjectName() {
-		return this.userProjectName;
+	private Integer isEtlMetaExist;
+
+	private Long ttlForTrail;
+
+	public Boolean getEnableAudit() {
+		return this.enableAudit;
 	}
 
-	public void setUserProjectName(String userProjectName) {
-		this.userProjectName = userProjectName;
+	public void setEnableAudit(Boolean enableAudit) {
+		this.enableAudit = enableAudit;
 	}
 
 	public String getRequestId() {
@@ -76,60 +76,12 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 		this.isUserProjectLogstoreExist = isUserProjectLogstoreExist;
 	}
 
-	public Integer getIsEtlMetaExist() {
-		return this.isEtlMetaExist;
-	}
-
-	public void setIsEtlMetaExist(Integer isEtlMetaExist) {
-		this.isEtlMetaExist = isEtlMetaExist;
-	}
-
-	public String getServiceType() {
-		return this.serviceType;
-	}
-
-	public void setServiceType(String serviceType) {
-		this.serviceType = serviceType;
-	}
-
-	public Boolean getEnableAudit() {
-		return this.enableAudit;
-	}
-
-	public void setEnableAudit(Boolean enableAudit) {
-		this.enableAudit = enableAudit;
-	}
-
-	public Long getTtlForTrail() {
-		return this.ttlForTrail;
-	}
-
-	public void setTtlForTrail(Long ttlForTrail) {
-		this.ttlForTrail = ttlForTrail;
-	}
-
-	public Long getUsedStorageForTrail() {
-		return this.usedStorageForTrail;
-	}
-
-	public void setUsedStorageForTrail(Long usedStorageForTrail) {
-		this.usedStorageForTrail = usedStorageForTrail;
-	}
-
 	public Long getPreserveStorageForTrail() {
 		return this.preserveStorageForTrail;
 	}
 
 	public void setPreserveStorageForTrail(Long preserveStorageForTrail) {
 		this.preserveStorageForTrail = preserveStorageForTrail;
-	}
-
-	public Long getTtlForStandard() {
-		return this.ttlForStandard;
-	}
-
-	public void setTtlForStandard(Long ttlForStandard) {
-		this.ttlForStandard = ttlForStandard;
 	}
 
 	public Long getUsedStorageForStandard() {
@@ -140,14 +92,6 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 		this.usedStorageForStandard = usedStorageForStandard;
 	}
 
-	public Long getPreserveStorageForStandard() {
-		return this.preserveStorageForStandard;
-	}
-
-	public void setPreserveStorageForStandard(Long preserveStorageForStandard) {
-		this.preserveStorageForStandard = preserveStorageForStandard;
-	}
-
 	public Long getHotTtlForV2Standard() {
 		return this.hotTtlForV2Standard;
 	}
@@ -156,12 +100,68 @@ public class DescribeMongoDBLogConfigResponse extends AcsResponse {
 		this.hotTtlForV2Standard = hotTtlForV2Standard;
 	}
 
+	public Long getTtlForStandard() {
+		return this.ttlForStandard;
+	}
+
+	public void setTtlForStandard(Long ttlForStandard) {
+		this.ttlForStandard = ttlForStandard;
+	}
+
+	public Long getPreserveStorageForStandard() {
+		return this.preserveStorageForStandard;
+	}
+
+	public void setPreserveStorageForStandard(Long preserveStorageForStandard) {
+		this.preserveStorageForStandard = preserveStorageForStandard;
+	}
+
+	public String getUserProjectName() {
+		return this.userProjectName;
+	}
+
+	public void setUserProjectName(String userProjectName) {
+		this.userProjectName = userProjectName;
+	}
+
+	public String getServiceType() {
+		return this.serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+	}
+
+	public Long getUsedStorageForTrail() {
+		return this.usedStorageForTrail;
+	}
+
+	public void setUsedStorageForTrail(Long usedStorageForTrail) {
+		this.usedStorageForTrail = usedStorageForTrail;
+	}
+
 	public Long getTtlForV2Standard() {
 		return this.ttlForV2Standard;
 	}
 
 	public void setTtlForV2Standard(Long ttlForV2Standard) {
 		this.ttlForV2Standard = ttlForV2Standard;
+	}
+
+	public Integer getIsEtlMetaExist() {
+		return this.isEtlMetaExist;
+	}
+
+	public void setIsEtlMetaExist(Integer isEtlMetaExist) {
+		this.isEtlMetaExist = isEtlMetaExist;
+	}
+
+	public Long getTtlForTrail() {
+		return this.ttlForTrail;
+	}
+
+	public void setTtlForTrail(Long ttlForTrail) {
+		this.ttlForTrail = ttlForTrail;
 	}
 
 	@Override

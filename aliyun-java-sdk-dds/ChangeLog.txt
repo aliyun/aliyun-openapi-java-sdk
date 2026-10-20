@@ -1,3 +1,6 @@
+2026-10-20 Version: 3.7.28
+- Remove the default value for the `ReplicationFactor` parameter in the `ModifyDBInstanceSpec` API.
+
 2026-04-13 Version: 3.7.27
 - Remove the default value for the `ReplicationFactor` parameter in the `ModifyDBInstanceSpec` API.
 

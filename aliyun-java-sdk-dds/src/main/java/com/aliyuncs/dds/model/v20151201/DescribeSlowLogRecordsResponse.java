@@ -87,15 +87,11 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class LogRecords {
 
-		private String executionStartTime;
-
-		private String hostAddress;
+		private String tableName;
 
 		private String queryTimes;
 
-		private String tableName;
-
-		private String sQLText;
+		private String executionStartTime;
 
 		private Long returnRowCounts;
 
@@ -103,24 +99,20 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		private String dBName;
 
+		private String hostAddress;
+
 		private Long docsExamined;
+
+		private String sQLText;
 
 		private String accountName;
 
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
-		}
-
-		public String getHostAddress() {
-			return this.hostAddress;
-		}
-
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public String getQueryTimes() {
@@ -131,20 +123,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.queryTimes = queryTimes;
 		}
 
-		public String getTableName() {
-			return this.tableName;
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
 		}
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
 		}
 
 		public Long getReturnRowCounts() {
@@ -171,12 +155,28 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
+		}
+
 		public Long getDocsExamined() {
 			return this.docsExamined;
 		}
 
 		public void setDocsExamined(Long docsExamined) {
 			this.docsExamined = docsExamined;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 
 		public String getAccountName() {

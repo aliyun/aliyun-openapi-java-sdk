@@ -31,12 +31,12 @@ public class ModifyGlobalSecurityIPGroupNameResponseUnmarshaller {
 		List<GlobalSecurityIPGroupItem> globalSecurityIPGroup = new ArrayList<GlobalSecurityIPGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup.Length"); i++) {
 			GlobalSecurityIPGroupItem globalSecurityIPGroupItem = new GlobalSecurityIPGroupItem();
-			globalSecurityIPGroupItem.setGlobalSecurityGroupId(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].GlobalSecurityGroupId"));
-			globalSecurityIPGroupItem.setGlobalIgName(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].GlobalIgName"));
 			globalSecurityIPGroupItem.setSecurityIPType(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].SecurityIPType"));
+			globalSecurityIPGroupItem.setGlobalIgName(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].GlobalIgName"));
 			globalSecurityIPGroupItem.setGIpList(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].GIpList"));
-			globalSecurityIPGroupItem.setWhitelistNetType(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].WhitelistNetType"));
+			globalSecurityIPGroupItem.setGlobalSecurityGroupId(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].GlobalSecurityGroupId"));
 			globalSecurityIPGroupItem.setRegionId(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].RegionId"));
+			globalSecurityIPGroupItem.setWhitelistNetType(_ctx.stringValue("ModifyGlobalSecurityIPGroupNameResponse.GlobalSecurityIPGroup["+ i +"].WhitelistNetType"));
 
 			globalSecurityIPGroup.add(globalSecurityIPGroupItem);
 		}

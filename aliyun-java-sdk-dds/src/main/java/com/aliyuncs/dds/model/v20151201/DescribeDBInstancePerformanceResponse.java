@@ -87,20 +87,20 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 
 	public static class PerformanceKey {
 
-		private String key;
+		private String valueFormat;
 
 		private String unit;
 
-		private String valueFormat;
+		private String key;
 
 		private List<PerformanceValue> performanceValues;
 
-		public String getKey() {
-			return this.key;
+		public String getValueFormat() {
+			return this.valueFormat;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setValueFormat(String valueFormat) {
+			this.valueFormat = valueFormat;
 		}
 
 		public String getUnit() {
@@ -111,12 +111,12 @@ public class DescribeDBInstancePerformanceResponse extends AcsResponse {
 			this.unit = unit;
 		}
 
-		public String getValueFormat() {
-			return this.valueFormat;
+		public String getKey() {
+			return this.key;
 		}
 
-		public void setValueFormat(String valueFormat) {
-			this.valueFormat = valueFormat;
+		public void setKey(String key) {
+			this.key = key;
 		}
 
 		public List<PerformanceValue> getPerformanceValues() {

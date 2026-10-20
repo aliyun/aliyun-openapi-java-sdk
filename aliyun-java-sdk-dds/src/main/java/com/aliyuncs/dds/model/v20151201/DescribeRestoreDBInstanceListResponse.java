@@ -77,44 +77,36 @@ public class DescribeRestoreDBInstanceListResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String creationTime;
-
-		private String lockMode;
+		private Integer isDeleted;
 
 		private String engineVersion;
 
-		private String dBInstanceDescription;
-
-		private String dBInstanceType;
-
 		private String dBInstanceStatus;
-
-		private String regionId;
 
 		private String zoneId;
 
 		private String dBInstanceId;
 
-		private String secondaryZoneId;
-
 		private String hiddenZoneId;
 
-		private Integer isDeleted;
+		private String creationTime;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		private String dBInstanceType;
+
+		private String lockMode;
+
+		private String regionId;
+
+		private String dBInstanceDescription;
+
+		private String secondaryZoneId;
+
+		public Integer getIsDeleted() {
+			return this.isDeleted;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setIsDeleted(Integer isDeleted) {
+			this.isDeleted = isDeleted;
 		}
 
 		public String getEngineVersion() {
@@ -125,36 +117,12 @@ public class DescribeRestoreDBInstanceListResponse extends AcsResponse {
 			this.engineVersion = engineVersion;
 		}
 
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
-
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-
-		public String getDBInstanceType() {
-			return this.dBInstanceType;
-		}
-
-		public void setDBInstanceType(String dBInstanceType) {
-			this.dBInstanceType = dBInstanceType;
-		}
-
 		public String getDBInstanceStatus() {
 			return this.dBInstanceStatus;
 		}
 
 		public void setDBInstanceStatus(String dBInstanceStatus) {
 			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public String getZoneId() {
@@ -173,14 +141,6 @@ public class DescribeRestoreDBInstanceListResponse extends AcsResponse {
 			this.dBInstanceId = dBInstanceId;
 		}
 
-		public String getSecondaryZoneId() {
-			return this.secondaryZoneId;
-		}
-
-		public void setSecondaryZoneId(String secondaryZoneId) {
-			this.secondaryZoneId = secondaryZoneId;
-		}
-
 		public String getHiddenZoneId() {
 			return this.hiddenZoneId;
 		}
@@ -189,12 +149,52 @@ public class DescribeRestoreDBInstanceListResponse extends AcsResponse {
 			this.hiddenZoneId = hiddenZoneId;
 		}
 
-		public Integer getIsDeleted() {
-			return this.isDeleted;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setIsDeleted(Integer isDeleted) {
-			this.isDeleted = isDeleted;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getDBInstanceType() {
+			return this.dBInstanceType;
+		}
+
+		public void setDBInstanceType(String dBInstanceType) {
+			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
+		}
+
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
 		}
 	}
 
