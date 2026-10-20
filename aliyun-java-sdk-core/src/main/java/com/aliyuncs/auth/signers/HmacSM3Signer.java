@@ -39,6 +39,7 @@ public class HmacSM3Signer extends Signer {
     public static final String ENCODING = "UTF-8";
     private static final String ALGORITHM_NAME = "HMAC-SM3";
     private static String HASH_SM3 = "SM3";
+    private static final BouncyCastleProvider PROVIDER = new BouncyCastleProvider();
 
     @Override
     public String signString(String stringToSign, String accessKeySecret) {
@@ -81,8 +82,7 @@ public class HmacSM3Signer extends Signer {
         if(null == raw){
             return null;
         }
-        BouncyCastleProvider provider = new BouncyCastleProvider();
-        MessageDigest digest = MessageDigest.getInstance(HASH_SM3, provider);
+        MessageDigest digest = MessageDigest.getInstance(HASH_SM3, PROVIDER);
         return digest.digest(raw);
     }
 
