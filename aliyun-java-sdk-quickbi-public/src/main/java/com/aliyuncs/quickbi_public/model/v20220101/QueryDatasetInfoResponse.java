@@ -461,6 +461,8 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			private String sql;
 
+			private List<ChildTablesItem> childTables;
+
 			public String getTableName() {
 				return this.tableName;
 			}
@@ -523,6 +525,97 @@ public class QueryDatasetInfoResponse extends AcsResponse {
 
 			public void setSql(String sql) {
 				this.sql = sql;
+			}
+
+			public List<ChildTablesItem> getChildTables() {
+				return this.childTables;
+			}
+
+			public void setChildTables(List<ChildTablesItem> childTables) {
+				this.childTables = childTables;
+			}
+
+			public static class ChildTablesItem {
+
+				private String tableName;
+
+				private String uniqueId;
+
+				private Boolean factTable;
+
+				private String datasourceId;
+
+				private Boolean customsql;
+
+				private String caption;
+
+				private String dsType;
+
+				private String sql;
+
+				public String getTableName() {
+					return this.tableName;
+				}
+
+				public void setTableName(String tableName) {
+					this.tableName = tableName;
+				}
+
+				public String getUniqueId() {
+					return this.uniqueId;
+				}
+
+				public void setUniqueId(String uniqueId) {
+					this.uniqueId = uniqueId;
+				}
+
+				public Boolean getFactTable() {
+					return this.factTable;
+				}
+
+				public void setFactTable(Boolean factTable) {
+					this.factTable = factTable;
+				}
+
+				public String getDatasourceId() {
+					return this.datasourceId;
+				}
+
+				public void setDatasourceId(String datasourceId) {
+					this.datasourceId = datasourceId;
+				}
+
+				public Boolean getCustomsql() {
+					return this.customsql;
+				}
+
+				public void setCustomsql(Boolean customsql) {
+					this.customsql = customsql;
+				}
+
+				public String getCaption() {
+					return this.caption;
+				}
+
+				public void setCaption(String caption) {
+					this.caption = caption;
+				}
+
+				public String getDsType() {
+					return this.dsType;
+				}
+
+				public void setDsType(String dsType) {
+					this.dsType = dsType;
+				}
+
+				public String getSql() {
+					return this.sql;
+				}
+
+				public void setSql(String sql) {
+					this.sql = sql;
+				}
 			}
 		}
 

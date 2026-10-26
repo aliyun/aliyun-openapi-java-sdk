@@ -1,3 +1,6 @@
+2026-10-26 Version: 2.1.28
+- Generated 2022-01-01 for `quickbi-public`.
+
 2026-10-15 Version: 2.1.27
 - Generated 2022-01-01 for `quickbi-public`.
 

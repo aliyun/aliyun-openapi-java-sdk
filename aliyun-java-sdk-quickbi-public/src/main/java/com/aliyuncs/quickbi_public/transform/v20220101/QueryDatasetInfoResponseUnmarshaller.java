@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result.CubeTableListItem;
+import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result.CubeTableListItem.ChildTablesItem;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result.DimensionListItem;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result.Directory;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDatasetInfoResponse.Result.MeasureListItem;
@@ -103,6 +104,22 @@ public class QueryDatasetInfoResponseUnmarshaller {
 			cubeTableListItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].Caption"));
 			cubeTableListItem.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].DsType"));
 			cubeTableListItem.setSql(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].Sql"));
+
+			List<ChildTablesItem> childTables = new ArrayList<ChildTablesItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables.Length"); j++) {
+				ChildTablesItem childTablesItem = new ChildTablesItem();
+				childTablesItem.setTableName(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].TableName"));
+				childTablesItem.setUniqueId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].UniqueId"));
+				childTablesItem.setFactTable(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].FactTable"));
+				childTablesItem.setDatasourceId(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].DatasourceId"));
+				childTablesItem.setCustomsql(_ctx.booleanValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Customsql"));
+				childTablesItem.setCaption(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Caption"));
+				childTablesItem.setDsType(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].DsType"));
+				childTablesItem.setSql(_ctx.stringValue("QueryDatasetInfoResponse.Result.CubeTableList["+ i +"].ChildTables["+ j +"].Sql"));
+
+				childTables.add(childTablesItem);
+			}
+			cubeTableListItem.setChildTables(childTables);
 
 			cubeTableList.add(cubeTableListItem);
 		}
