@@ -25,7 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RemindQuotaApplicationApprovalResponse extends AcsResponse {
 
+	private Boolean allowRetry;
+
 	private String requestId;
+
+	private String errorMsg;
 
 	private Integer httpStatusCode;
 
@@ -33,17 +37,21 @@ public class RemindQuotaApplicationApprovalResponse extends AcsResponse {
 
 	private String dynamicMessage;
 
-	private String errorMsg;
-
 	private String errorCode;
-
-	private Boolean success;
 
 	private String module;
 
-	private Boolean allowRetry;
+	private Boolean success;
 
 	private List<String> errorArgs;
+
+	public Boolean getAllowRetry() {
+		return this.allowRetry;
+	}
+
+	public void setAllowRetry(Boolean allowRetry) {
+		this.allowRetry = allowRetry;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,6 +59,14 @@ public class RemindQuotaApplicationApprovalResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -77,28 +93,12 @@ public class RemindQuotaApplicationApprovalResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getModule() {
@@ -109,12 +109,12 @@ public class RemindQuotaApplicationApprovalResponse extends AcsResponse {
 		this.module = module;
 	}
 
-	public Boolean getAllowRetry() {
-		return this.allowRetry;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setAllowRetry(Boolean allowRetry) {
-		this.allowRetry = allowRetry;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<String> getErrorArgs() {

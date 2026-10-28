@@ -27,7 +27,7 @@ public class DeleteTemplateQuotaItemRequest extends RpcAcsRequest<DeleteTemplate
 
 	private String id;
 	public DeleteTemplateQuotaItemRequest() {
-		super("quotas", "2020-05-10", "DeleteTemplateQuotaItem", "quotas");
+		super("quotas", "2020-05-10", "DeleteTemplateQuotaItem", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

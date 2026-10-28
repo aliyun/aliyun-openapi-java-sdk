@@ -25,22 +25,22 @@ public class CreateQuotaApplicationResponseUnmarshaller {
 		
 		createQuotaApplicationResponse.setRequestId(_ctx.stringValue("CreateQuotaApplicationResponse.RequestId"));
 		createQuotaApplicationResponse.setStatus(_ctx.stringValue("CreateQuotaApplicationResponse.Status"));
-		createQuotaApplicationResponse.setDesireValue(_ctx.integerValue("CreateQuotaApplicationResponse.DesireValue"));
+		createQuotaApplicationResponse.setApplyTime(_ctx.stringValue("CreateQuotaApplicationResponse.ApplyTime"));
+		createQuotaApplicationResponse.setQuotaDescription(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaDescription"));
+		createQuotaApplicationResponse.setEffectiveTime(_ctx.stringValue("CreateQuotaApplicationResponse.EffectiveTime"));
+		createQuotaApplicationResponse.setProductCode(_ctx.stringValue("CreateQuotaApplicationResponse.ProductCode"));
+		createQuotaApplicationResponse.setAuditReason(_ctx.stringValue("CreateQuotaApplicationResponse.AuditReason"));
+		createQuotaApplicationResponse.setQuotaUnit(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaUnit"));
+		createQuotaApplicationResponse.setDimension(_ctx.mapValue("CreateQuotaApplicationResponse.Dimension"));
+		createQuotaApplicationResponse.setApproveValue(_ctx.floatValue("CreateQuotaApplicationResponse.ApproveValue"));
+		createQuotaApplicationResponse.setReason(_ctx.stringValue("CreateQuotaApplicationResponse.Reason"));
 		createQuotaApplicationResponse.setQuotaActionCode(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaActionCode"));
 		createQuotaApplicationResponse.setQuotaName(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaName"));
-		createQuotaApplicationResponse.setApplicationId(_ctx.stringValue("CreateQuotaApplicationResponse.ApplicationId"));
-		createQuotaApplicationResponse.setReason(_ctx.stringValue("CreateQuotaApplicationResponse.Reason"));
-		createQuotaApplicationResponse.setAuditReason(_ctx.stringValue("CreateQuotaApplicationResponse.AuditReason"));
-		createQuotaApplicationResponse.setQuotaDescription(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaDescription"));
-		createQuotaApplicationResponse.setProductCode(_ctx.stringValue("CreateQuotaApplicationResponse.ProductCode"));
 		createQuotaApplicationResponse.setQuotaArn(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaArn"));
-		createQuotaApplicationResponse.setApplyTime(_ctx.stringValue("CreateQuotaApplicationResponse.ApplyTime"));
-		createQuotaApplicationResponse.setApproveValue(_ctx.floatValue("CreateQuotaApplicationResponse.ApproveValue"));
-		createQuotaApplicationResponse.setDimension(_ctx.mapValue("CreateQuotaApplicationResponse.Dimension"));
 		createQuotaApplicationResponse.setNoticeType(_ctx.longValue("CreateQuotaApplicationResponse.NoticeType"));
-		createQuotaApplicationResponse.setEffectiveTime(_ctx.stringValue("CreateQuotaApplicationResponse.EffectiveTime"));
+		createQuotaApplicationResponse.setApplicationId(_ctx.stringValue("CreateQuotaApplicationResponse.ApplicationId"));
+		createQuotaApplicationResponse.setDesireValue(_ctx.integerValue("CreateQuotaApplicationResponse.DesireValue"));
 		createQuotaApplicationResponse.setExpireTime(_ctx.stringValue("CreateQuotaApplicationResponse.ExpireTime"));
-		createQuotaApplicationResponse.setQuotaUnit(_ctx.stringValue("CreateQuotaApplicationResponse.QuotaUnit"));
 	 
 	 	return createQuotaApplicationResponse;
 	}

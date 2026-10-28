@@ -77,13 +77,21 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 
 	public static class DimensionGroupsItem {
 
+		private String groupName;
+
 		private String productCode;
 
 		private String groupCode;
 
-		private String groupName;
-
 		private List<String> dimensionKeys;
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
 
 		public String getProductCode() {
 			return this.productCode;
@@ -99,14 +107,6 @@ public class ListProductDimensionGroupsResponse extends AcsResponse {
 
 		public void setGroupCode(String groupCode) {
 			this.groupCode = groupCode;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
 		}
 
 		public List<String> getDimensionKeys() {

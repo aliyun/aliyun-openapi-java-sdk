@@ -77,30 +77,30 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 	public static class AlarmHistory {
 
-		private Float quotaUsage;
+		private String quotaActionCode;
 
 		private Float thresholdPercent;
-
-		private String createTime;
-
-		private String quotaActionCode;
 
 		private String alarmName;
 
 		private String notifyTarget;
 
-		private Float threshold;
-
 		private String productCode;
+
+		private String createTime;
+
+		private Float quotaUsage;
+
+		private Float threshold;
 
 		private List<String> notifyChannels;
 
-		public Float getQuotaUsage() {
-			return this.quotaUsage;
+		public String getQuotaActionCode() {
+			return this.quotaActionCode;
 		}
 
-		public void setQuotaUsage(Float quotaUsage) {
-			this.quotaUsage = quotaUsage;
+		public void setQuotaActionCode(String quotaActionCode) {
+			this.quotaActionCode = quotaActionCode;
 		}
 
 		public Float getThresholdPercent() {
@@ -109,22 +109,6 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 
 		public void setThresholdPercent(Float thresholdPercent) {
 			this.thresholdPercent = thresholdPercent;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getQuotaActionCode() {
-			return this.quotaActionCode;
-		}
-
-		public void setQuotaActionCode(String quotaActionCode) {
-			this.quotaActionCode = quotaActionCode;
 		}
 
 		public String getAlarmName() {
@@ -143,20 +127,36 @@ public class ListAlarmHistoriesResponse extends AcsResponse {
 			this.notifyTarget = notifyTarget;
 		}
 
-		public Float getThreshold() {
-			return this.threshold;
-		}
-
-		public void setThreshold(Float threshold) {
-			this.threshold = threshold;
-		}
-
 		public String getProductCode() {
 			return this.productCode;
 		}
 
 		public void setProductCode(String productCode) {
 			this.productCode = productCode;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Float getQuotaUsage() {
+			return this.quotaUsage;
+		}
+
+		public void setQuotaUsage(Float quotaUsage) {
+			this.quotaUsage = quotaUsage;
+		}
+
+		public Float getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(Float threshold) {
+			this.threshold = threshold;
 		}
 
 		public List<String> getNotifyChannels() {

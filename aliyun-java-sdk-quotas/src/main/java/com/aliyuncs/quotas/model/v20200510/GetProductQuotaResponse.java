@@ -48,68 +48,92 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 	public static class Quota {
 
-		private String quotaUnit;
+		private String quotaDescription;
 
-		private String quotaActionCode;
+		private Boolean consumable;
+
+		private String unadjustableDetail;
+
+		private String effectiveTime;
+
+		private String productCode;
 
 		private Float totalUsage;
 
 		private String quotaType;
 
-		private String quotaDescription;
-
-		private String quotaArn;
-
-		private String applicableType;
-
 		private Map<Object,Object> dimensions;
-
-		private Boolean adjustable;
-
-		private String quotaName;
-
-		private String unadjustableDetail;
-
-		private Boolean consumable;
-
-		private Float totalQuota;
-
-		private String productCode;
-
-		private String effectiveTime;
-
-		private String expireTime;
-
-		private String quotaCategory;
-
-		private String applyReasonTips;
 
 		private Boolean globalQuota;
 
-		private List<QuotaItemsItem> quotaItems;
+		private String quotaUnit;
 
-		private List<Float> applicableRange;
+		private Boolean adjustable;
+
+		private String quotaActionCode;
+
+		private String quotaName;
+
+		private String quotaArn;
+
+		private String applyReasonTips;
+
+		private Float totalQuota;
+
+		private String quotaCategory;
+
+		private String expireTime;
+
+		private String applicableType;
+
+		private List<QuotaItemsItem> quotaItems;
 
 		private List<Float> supportedRange;
 
-		private Period period;
+		private List<Float> applicableRange;
 
 		private UsageMetric usageMetric;
 
-		public String getQuotaUnit() {
-			return this.quotaUnit;
+		private Period period;
+
+		public String getQuotaDescription() {
+			return this.quotaDescription;
 		}
 
-		public void setQuotaUnit(String quotaUnit) {
-			this.quotaUnit = quotaUnit;
+		public void setQuotaDescription(String quotaDescription) {
+			this.quotaDescription = quotaDescription;
 		}
 
-		public String getQuotaActionCode() {
-			return this.quotaActionCode;
+		public Boolean getConsumable() {
+			return this.consumable;
 		}
 
-		public void setQuotaActionCode(String quotaActionCode) {
-			this.quotaActionCode = quotaActionCode;
+		public void setConsumable(Boolean consumable) {
+			this.consumable = consumable;
+		}
+
+		public String getUnadjustableDetail() {
+			return this.unadjustableDetail;
+		}
+
+		public void setUnadjustableDetail(String unadjustableDetail) {
+			this.unadjustableDetail = unadjustableDetail;
+		}
+
+		public String getEffectiveTime() {
+			return this.effectiveTime;
+		}
+
+		public void setEffectiveTime(String effectiveTime) {
+			this.effectiveTime = effectiveTime;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public Float getTotalUsage() {
@@ -128,116 +152,12 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.quotaType = quotaType;
 		}
 
-		public String getQuotaDescription() {
-			return this.quotaDescription;
-		}
-
-		public void setQuotaDescription(String quotaDescription) {
-			this.quotaDescription = quotaDescription;
-		}
-
-		public String getQuotaArn() {
-			return this.quotaArn;
-		}
-
-		public void setQuotaArn(String quotaArn) {
-			this.quotaArn = quotaArn;
-		}
-
-		public String getApplicableType() {
-			return this.applicableType;
-		}
-
-		public void setApplicableType(String applicableType) {
-			this.applicableType = applicableType;
-		}
-
 		public Map<Object,Object> getDimensions() {
 			return this.dimensions;
 		}
 
 		public void setDimensions(Map<Object,Object> dimensions) {
 			this.dimensions = dimensions;
-		}
-
-		public Boolean getAdjustable() {
-			return this.adjustable;
-		}
-
-		public void setAdjustable(Boolean adjustable) {
-			this.adjustable = adjustable;
-		}
-
-		public String getQuotaName() {
-			return this.quotaName;
-		}
-
-		public void setQuotaName(String quotaName) {
-			this.quotaName = quotaName;
-		}
-
-		public String getUnadjustableDetail() {
-			return this.unadjustableDetail;
-		}
-
-		public void setUnadjustableDetail(String unadjustableDetail) {
-			this.unadjustableDetail = unadjustableDetail;
-		}
-
-		public Boolean getConsumable() {
-			return this.consumable;
-		}
-
-		public void setConsumable(Boolean consumable) {
-			this.consumable = consumable;
-		}
-
-		public Float getTotalQuota() {
-			return this.totalQuota;
-		}
-
-		public void setTotalQuota(Float totalQuota) {
-			this.totalQuota = totalQuota;
-		}
-
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getEffectiveTime() {
-			return this.effectiveTime;
-		}
-
-		public void setEffectiveTime(String effectiveTime) {
-			this.effectiveTime = effectiveTime;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getQuotaCategory() {
-			return this.quotaCategory;
-		}
-
-		public void setQuotaCategory(String quotaCategory) {
-			this.quotaCategory = quotaCategory;
-		}
-
-		public String getApplyReasonTips() {
-			return this.applyReasonTips;
-		}
-
-		public void setApplyReasonTips(String applyReasonTips) {
-			this.applyReasonTips = applyReasonTips;
 		}
 
 		public Boolean getGlobalQuota() {
@@ -248,20 +168,92 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.globalQuota = globalQuota;
 		}
 
+		public String getQuotaUnit() {
+			return this.quotaUnit;
+		}
+
+		public void setQuotaUnit(String quotaUnit) {
+			this.quotaUnit = quotaUnit;
+		}
+
+		public Boolean getAdjustable() {
+			return this.adjustable;
+		}
+
+		public void setAdjustable(Boolean adjustable) {
+			this.adjustable = adjustable;
+		}
+
+		public String getQuotaActionCode() {
+			return this.quotaActionCode;
+		}
+
+		public void setQuotaActionCode(String quotaActionCode) {
+			this.quotaActionCode = quotaActionCode;
+		}
+
+		public String getQuotaName() {
+			return this.quotaName;
+		}
+
+		public void setQuotaName(String quotaName) {
+			this.quotaName = quotaName;
+		}
+
+		public String getQuotaArn() {
+			return this.quotaArn;
+		}
+
+		public void setQuotaArn(String quotaArn) {
+			this.quotaArn = quotaArn;
+		}
+
+		public String getApplyReasonTips() {
+			return this.applyReasonTips;
+		}
+
+		public void setApplyReasonTips(String applyReasonTips) {
+			this.applyReasonTips = applyReasonTips;
+		}
+
+		public Float getTotalQuota() {
+			return this.totalQuota;
+		}
+
+		public void setTotalQuota(Float totalQuota) {
+			this.totalQuota = totalQuota;
+		}
+
+		public String getQuotaCategory() {
+			return this.quotaCategory;
+		}
+
+		public void setQuotaCategory(String quotaCategory) {
+			this.quotaCategory = quotaCategory;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getApplicableType() {
+			return this.applicableType;
+		}
+
+		public void setApplicableType(String applicableType) {
+			this.applicableType = applicableType;
+		}
+
 		public List<QuotaItemsItem> getQuotaItems() {
 			return this.quotaItems;
 		}
 
 		public void setQuotaItems(List<QuotaItemsItem> quotaItems) {
 			this.quotaItems = quotaItems;
-		}
-
-		public List<Float> getApplicableRange() {
-			return this.applicableRange;
-		}
-
-		public void setApplicableRange(List<Float> applicableRange) {
-			this.applicableRange = applicableRange;
 		}
 
 		public List<Float> getSupportedRange() {
@@ -272,12 +264,12 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.supportedRange = supportedRange;
 		}
 
-		public Period getPeriod() {
-			return this.period;
+		public List<Float> getApplicableRange() {
+			return this.applicableRange;
 		}
 
-		public void setPeriod(Period period) {
-			this.period = period;
+		public void setApplicableRange(List<Float> applicableRange) {
+			this.applicableRange = applicableRange;
 		}
 
 		public UsageMetric getUsageMetric() {
@@ -288,15 +280,23 @@ public class GetProductQuotaResponse extends AcsResponse {
 			this.usageMetric = usageMetric;
 		}
 
+		public Period getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Period period) {
+			this.period = period;
+		}
+
 		public static class QuotaItemsItem {
 
 			private String type;
 
+			private String usage;
+
 			private String quota;
 
 			private String quotaUnit;
-
-			private String usage;
 
 			public String getType() {
 				return this.type;
@@ -304,6 +304,14 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getUsage() {
+				return this.usage;
+			}
+
+			public void setUsage(String usage) {
+				this.usage = usage;
 			}
 
 			public String getQuota() {
@@ -321,13 +329,38 @@ public class GetProductQuotaResponse extends AcsResponse {
 			public void setQuotaUnit(String quotaUnit) {
 				this.quotaUnit = quotaUnit;
 			}
+		}
 
-			public String getUsage() {
-				return this.usage;
+		public static class UsageMetric {
+
+			private String metricName;
+
+			private Map<Object,Object> metricDimensions;
+
+			private String metricNamespace;
+
+			public String getMetricName() {
+				return this.metricName;
 			}
 
-			public void setUsage(String usage) {
-				this.usage = usage;
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public Map<Object,Object> getMetricDimensions() {
+				return this.metricDimensions;
+			}
+
+			public void setMetricDimensions(Map<Object,Object> metricDimensions) {
+				this.metricDimensions = metricDimensions;
+			}
+
+			public String getMetricNamespace() {
+				return this.metricNamespace;
+			}
+
+			public void setMetricNamespace(String metricNamespace) {
+				this.metricNamespace = metricNamespace;
 			}
 		}
 
@@ -351,39 +384,6 @@ public class GetProductQuotaResponse extends AcsResponse {
 
 			public void setPeriodUnit(String periodUnit) {
 				this.periodUnit = periodUnit;
-			}
-		}
-
-		public static class UsageMetric {
-
-			private String metricNamespace;
-
-			private String metricName;
-
-			private Map<Object,Object> metricDimensions;
-
-			public String getMetricNamespace() {
-				return this.metricNamespace;
-			}
-
-			public void setMetricNamespace(String metricNamespace) {
-				this.metricNamespace = metricNamespace;
-			}
-
-			public String getMetricName() {
-				return this.metricName;
-			}
-
-			public void setMetricName(String metricName) {
-				this.metricName = metricName;
-			}
-
-			public Map<Object,Object> getMetricDimensions() {
-				return this.metricDimensions;
-			}
-
-			public void setMetricDimensions(Map<Object,Object> metricDimensions) {
-				this.metricDimensions = metricDimensions;
 			}
 		}
 	}

@@ -29,7 +29,7 @@ public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 
 	private Integer maxResults;
 	public ListProductsRequest() {
-		super("quotas", "2020-05-10", "ListProducts", "quotas");
+		super("quotas", "2020-05-10", "ListProducts", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetQuotaApplicationRequest extends RpcAcsRequest<GetQuotaApplicatio
 
 	private String applicationId;
 	public GetQuotaApplicationRequest() {
-		super("quotas", "2020-05-10", "GetQuotaApplication", "quotas");
+		super("quotas", "2020-05-10", "GetQuotaApplication", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

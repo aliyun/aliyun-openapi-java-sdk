@@ -27,13 +27,13 @@ public class GetQuotaApplicationApprovalResponseUnmarshaller {
 	public static GetQuotaApplicationApprovalResponse unmarshall(GetQuotaApplicationApprovalResponse getQuotaApplicationApprovalResponse, UnmarshallerContext _ctx) {
 		
 		getQuotaApplicationApprovalResponse.setRequestId(_ctx.stringValue("GetQuotaApplicationApprovalResponse.RequestId"));
+		getQuotaApplicationApprovalResponse.setAllowRetry(_ctx.booleanValue("GetQuotaApplicationApprovalResponse.AllowRetry"));
+		getQuotaApplicationApprovalResponse.setErrorMsg(_ctx.stringValue("GetQuotaApplicationApprovalResponse.ErrorMsg"));
 		getQuotaApplicationApprovalResponse.setHttpStatusCode(_ctx.integerValue("GetQuotaApplicationApprovalResponse.HttpStatusCode"));
 		getQuotaApplicationApprovalResponse.setDynamicCode(_ctx.stringValue("GetQuotaApplicationApprovalResponse.DynamicCode"));
 		getQuotaApplicationApprovalResponse.setDynamicMessage(_ctx.stringValue("GetQuotaApplicationApprovalResponse.DynamicMessage"));
-		getQuotaApplicationApprovalResponse.setErrorMsg(_ctx.stringValue("GetQuotaApplicationApprovalResponse.ErrorMsg"));
 		getQuotaApplicationApprovalResponse.setErrorCode(_ctx.stringValue("GetQuotaApplicationApprovalResponse.ErrorCode"));
 		getQuotaApplicationApprovalResponse.setSuccess(_ctx.booleanValue("GetQuotaApplicationApprovalResponse.Success"));
-		getQuotaApplicationApprovalResponse.setAllowRetry(_ctx.booleanValue("GetQuotaApplicationApprovalResponse.AllowRetry"));
 
 		List<String> errorArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQuotaApplicationApprovalResponse.ErrorArgs.Length"); i++) {
@@ -42,10 +42,10 @@ public class GetQuotaApplicationApprovalResponseUnmarshaller {
 		getQuotaApplicationApprovalResponse.setErrorArgs(errorArgs);
 
 		Module module = new Module();
+		module.setReminderIntervalHours(_ctx.integerValue("GetQuotaApplicationApprovalResponse.Module.ReminderIntervalHours"));
+		module.setUnsupportReminderReason(_ctx.stringValue("GetQuotaApplicationApprovalResponse.Module.UnsupportReminderReason"));
 		module.setApprovalHours(_ctx.integerValue("GetQuotaApplicationApprovalResponse.Module.ApprovalHours"));
 		module.setSupportReminder(_ctx.booleanValue("GetQuotaApplicationApprovalResponse.Module.SupportReminder"));
-		module.setUnsupportReminderReason(_ctx.stringValue("GetQuotaApplicationApprovalResponse.Module.UnsupportReminderReason"));
-		module.setReminderIntervalHours(_ctx.integerValue("GetQuotaApplicationApprovalResponse.Module.ReminderIntervalHours"));
 		getQuotaApplicationApprovalResponse.setModule(module);
 	 
 	 	return getQuotaApplicationApprovalResponse;

@@ -39,7 +39,7 @@ public class ListAlarmHistoriesRequest extends RpcAcsRequest<ListAlarmHistoriesR
 
 	private Integer maxResults;
 	public ListAlarmHistoriesRequest() {
-		super("quotas", "2020-05-10", "ListAlarmHistories", "quotas");
+		super("quotas", "2020-05-10", "ListAlarmHistories", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,15 +26,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 
+	private Integer totalCount;
+
+	private String nextToken;
+
 	private String requestId;
 
 	private Integer maxResults;
 
-	private String nextToken;
-
-	private Integer totalCount;
-
 	private List<QuotaApplicationTemplatesItem> quotaApplicationTemplates;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,22 +68,6 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 		this.maxResults = maxResults;
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public List<QuotaApplicationTemplatesItem> getQuotaApplicationTemplates() {
 		return this.quotaApplicationTemplates;
 	}
@@ -78,42 +78,50 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 
 	public static class QuotaApplicationTemplatesItem {
 
-		private String id;
+		private String quotaDescription;
+
+		private String effectiveTime;
 
 		private String productCode;
 
 		private Map<Object,Object> dimensions;
 
-		private Float desireValue;
-
-		private Integer noticeType;
+		private String envLanguage;
 
 		private String quotaActionCode;
 
-		private String applicableType;
-
-		private String envLanguage;
-
 		private String quotaName;
 
-		private String quotaDescription;
+		private String quotaCategory;
 
-		private String effectiveTime;
+		private Integer noticeType;
+
+		private String id;
+
+		private Float desireValue;
 
 		private String expireTime;
 
-		private String quotaCategory;
+		private String applicableType;
 
 		private List<Float> applicableRange;
 
 		private Period period;
 
-		public String getId() {
-			return this.id;
+		public String getQuotaDescription() {
+			return this.quotaDescription;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setQuotaDescription(String quotaDescription) {
+			this.quotaDescription = quotaDescription;
+		}
+
+		public String getEffectiveTime() {
+			return this.effectiveTime;
+		}
+
+		public void setEffectiveTime(String effectiveTime) {
+			this.effectiveTime = effectiveTime;
 		}
 
 		public String getProductCode() {
@@ -132,20 +140,12 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 			this.dimensions = dimensions;
 		}
 
-		public Float getDesireValue() {
-			return this.desireValue;
+		public String getEnvLanguage() {
+			return this.envLanguage;
 		}
 
-		public void setDesireValue(Float desireValue) {
-			this.desireValue = desireValue;
-		}
-
-		public Integer getNoticeType() {
-			return this.noticeType;
-		}
-
-		public void setNoticeType(Integer noticeType) {
-			this.noticeType = noticeType;
+		public void setEnvLanguage(String envLanguage) {
+			this.envLanguage = envLanguage;
 		}
 
 		public String getQuotaActionCode() {
@@ -156,22 +156,6 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 			this.quotaActionCode = quotaActionCode;
 		}
 
-		public String getApplicableType() {
-			return this.applicableType;
-		}
-
-		public void setApplicableType(String applicableType) {
-			this.applicableType = applicableType;
-		}
-
-		public String getEnvLanguage() {
-			return this.envLanguage;
-		}
-
-		public void setEnvLanguage(String envLanguage) {
-			this.envLanguage = envLanguage;
-		}
-
 		public String getQuotaName() {
 			return this.quotaName;
 		}
@@ -180,20 +164,36 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 			this.quotaName = quotaName;
 		}
 
-		public String getQuotaDescription() {
-			return this.quotaDescription;
+		public String getQuotaCategory() {
+			return this.quotaCategory;
 		}
 
-		public void setQuotaDescription(String quotaDescription) {
-			this.quotaDescription = quotaDescription;
+		public void setQuotaCategory(String quotaCategory) {
+			this.quotaCategory = quotaCategory;
 		}
 
-		public String getEffectiveTime() {
-			return this.effectiveTime;
+		public Integer getNoticeType() {
+			return this.noticeType;
 		}
 
-		public void setEffectiveTime(String effectiveTime) {
-			this.effectiveTime = effectiveTime;
+		public void setNoticeType(Integer noticeType) {
+			this.noticeType = noticeType;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Float getDesireValue() {
+			return this.desireValue;
+		}
+
+		public void setDesireValue(Float desireValue) {
+			this.desireValue = desireValue;
 		}
 
 		public String getExpireTime() {
@@ -204,12 +204,12 @@ public class ListQuotaApplicationTemplatesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public String getQuotaCategory() {
-			return this.quotaCategory;
+		public String getApplicableType() {
+			return this.applicableType;
 		}
 
-		public void setQuotaCategory(String quotaCategory) {
-			this.quotaCategory = quotaCategory;
+		public void setApplicableType(String applicableType) {
+			this.applicableType = applicableType;
 		}
 
 		public List<Float> getApplicableRange() {

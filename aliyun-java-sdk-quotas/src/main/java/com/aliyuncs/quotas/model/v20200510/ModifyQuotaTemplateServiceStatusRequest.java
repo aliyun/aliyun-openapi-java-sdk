@@ -27,7 +27,7 @@ public class ModifyQuotaTemplateServiceStatusRequest extends RpcAcsRequest<Modif
 
 	private Integer serviceStatus;
 	public ModifyQuotaTemplateServiceStatusRequest() {
-		super("quotas", "2020-05-10", "ModifyQuotaTemplateServiceStatus", "quotas");
+		super("quotas", "2020-05-10", "ModifyQuotaTemplateServiceStatus", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

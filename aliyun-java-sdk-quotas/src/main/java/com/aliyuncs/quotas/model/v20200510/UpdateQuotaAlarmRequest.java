@@ -37,7 +37,7 @@ public class UpdateQuotaAlarmRequest extends RpcAcsRequest<UpdateQuotaAlarmRespo
 
 	private String alarmName;
 	public UpdateQuotaAlarmRequest() {
-		super("quotas", "2020-05-10", "UpdateQuotaAlarm", "quotas");
+		super("quotas", "2020-05-10", "UpdateQuotaAlarm", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

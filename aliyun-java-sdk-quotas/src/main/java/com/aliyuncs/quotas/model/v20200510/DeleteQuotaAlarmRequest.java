@@ -27,7 +27,7 @@ public class DeleteQuotaAlarmRequest extends RpcAcsRequest<DeleteQuotaAlarmRespo
 
 	private String alarmId;
 	public DeleteQuotaAlarmRequest() {
-		super("quotas", "2020-05-10", "DeleteQuotaAlarm", "quotas");
+		super("quotas", "2020-05-10", "DeleteQuotaAlarm", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

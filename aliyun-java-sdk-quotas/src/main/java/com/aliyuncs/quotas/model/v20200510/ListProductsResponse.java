@@ -77,49 +77,25 @@ public class ListProductsResponse extends AcsResponse {
 
 	public static class ProductInfos {
 
-		private String productName;
-
-		private Long secondCategoryId;
-
-		private String productNameEn;
-
 		private Boolean dynamic;
 
 		private String secondCategoryNameEn;
 
-		private String secondCategoryName;
+		private String commonQuotaSupport;
+
+		private String productName;
 
 		private String productCode;
 
-		private String flowControlSupport;
+		private String secondCategoryName;
 
-		private String commonQuotaSupport;
+		private String flowControlSupport;
 
 		private String whiteListLabelQuotaSupport;
 
-		public String getProductName() {
-			return this.productName;
-		}
+		private Long secondCategoryId;
 
-		public void setProductName(String productName) {
-			this.productName = productName;
-		}
-
-		public Long getSecondCategoryId() {
-			return this.secondCategoryId;
-		}
-
-		public void setSecondCategoryId(Long secondCategoryId) {
-			this.secondCategoryId = secondCategoryId;
-		}
-
-		public String getProductNameEn() {
-			return this.productNameEn;
-		}
-
-		public void setProductNameEn(String productNameEn) {
-			this.productNameEn = productNameEn;
-		}
+		private String productNameEn;
 
 		public Boolean getDynamic() {
 			return this.dynamic;
@@ -137,12 +113,20 @@ public class ListProductsResponse extends AcsResponse {
 			this.secondCategoryNameEn = secondCategoryNameEn;
 		}
 
-		public String getSecondCategoryName() {
-			return this.secondCategoryName;
+		public String getCommonQuotaSupport() {
+			return this.commonQuotaSupport;
 		}
 
-		public void setSecondCategoryName(String secondCategoryName) {
-			this.secondCategoryName = secondCategoryName;
+		public void setCommonQuotaSupport(String commonQuotaSupport) {
+			this.commonQuotaSupport = commonQuotaSupport;
+		}
+
+		public String getProductName() {
+			return this.productName;
+		}
+
+		public void setProductName(String productName) {
+			this.productName = productName;
 		}
 
 		public String getProductCode() {
@@ -153,6 +137,14 @@ public class ListProductsResponse extends AcsResponse {
 			this.productCode = productCode;
 		}
 
+		public String getSecondCategoryName() {
+			return this.secondCategoryName;
+		}
+
+		public void setSecondCategoryName(String secondCategoryName) {
+			this.secondCategoryName = secondCategoryName;
+		}
+
 		public String getFlowControlSupport() {
 			return this.flowControlSupport;
 		}
@@ -161,20 +153,28 @@ public class ListProductsResponse extends AcsResponse {
 			this.flowControlSupport = flowControlSupport;
 		}
 
-		public String getCommonQuotaSupport() {
-			return this.commonQuotaSupport;
-		}
-
-		public void setCommonQuotaSupport(String commonQuotaSupport) {
-			this.commonQuotaSupport = commonQuotaSupport;
-		}
-
 		public String getWhiteListLabelQuotaSupport() {
 			return this.whiteListLabelQuotaSupport;
 		}
 
 		public void setWhiteListLabelQuotaSupport(String whiteListLabelQuotaSupport) {
 			this.whiteListLabelQuotaSupport = whiteListLabelQuotaSupport;
+		}
+
+		public Long getSecondCategoryId() {
+			return this.secondCategoryId;
+		}
+
+		public void setSecondCategoryId(Long secondCategoryId) {
+			this.secondCategoryId = secondCategoryId;
+		}
+
+		public String getProductNameEn() {
+			return this.productNameEn;
+		}
+
+		public void setProductNameEn(String productNameEn) {
+			this.productNameEn = productNameEn;
 		}
 	}
 

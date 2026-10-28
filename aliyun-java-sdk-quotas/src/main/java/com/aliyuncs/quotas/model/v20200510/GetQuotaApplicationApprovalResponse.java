@@ -25,7 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
+	private Boolean allowRetry;
+
 	private String requestId;
+
+	private String errorMsg;
 
 	private Integer httpStatusCode;
 
@@ -33,17 +37,21 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
 	private String dynamicMessage;
 
-	private String errorMsg;
-
 	private String errorCode;
 
 	private Boolean success;
 
-	private Boolean allowRetry;
-
 	private List<String> errorArgs;
 
 	private Module module;
+
+	public Boolean getAllowRetry() {
+		return this.allowRetry;
+	}
+
+	public void setAllowRetry(Boolean allowRetry) {
+		this.allowRetry = allowRetry;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,6 +59,14 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public Integer getHttpStatusCode() {
@@ -77,14 +93,6 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 		this.dynamicMessage = dynamicMessage;
 	}
 
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
 	public String getErrorCode() {
 		return this.errorCode;
 	}
@@ -99,14 +107,6 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public Boolean getAllowRetry() {
-		return this.allowRetry;
-	}
-
-	public void setAllowRetry(Boolean allowRetry) {
-		this.allowRetry = allowRetry;
 	}
 
 	public List<String> getErrorArgs() {
@@ -127,13 +127,29 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
 	public static class Module {
 
+		private Integer reminderIntervalHours;
+
+		private String unsupportReminderReason;
+
 		private Integer approvalHours;
 
 		private Boolean supportReminder;
 
-		private String unsupportReminderReason;
+		public Integer getReminderIntervalHours() {
+			return this.reminderIntervalHours;
+		}
 
-		private Integer reminderIntervalHours;
+		public void setReminderIntervalHours(Integer reminderIntervalHours) {
+			this.reminderIntervalHours = reminderIntervalHours;
+		}
+
+		public String getUnsupportReminderReason() {
+			return this.unsupportReminderReason;
+		}
+
+		public void setUnsupportReminderReason(String unsupportReminderReason) {
+			this.unsupportReminderReason = unsupportReminderReason;
+		}
 
 		public Integer getApprovalHours() {
 			return this.approvalHours;
@@ -149,22 +165,6 @@ public class GetQuotaApplicationApprovalResponse extends AcsResponse {
 
 		public void setSupportReminder(Boolean supportReminder) {
 			this.supportReminder = supportReminder;
-		}
-
-		public String getUnsupportReminderReason() {
-			return this.unsupportReminderReason;
-		}
-
-		public void setUnsupportReminderReason(String unsupportReminderReason) {
-			this.unsupportReminderReason = unsupportReminderReason;
-		}
-
-		public Integer getReminderIntervalHours() {
-			return this.reminderIntervalHours;
-		}
-
-		public void setReminderIntervalHours(Integer reminderIntervalHours) {
-			this.reminderIntervalHours = reminderIntervalHours;
 		}
 	}
 

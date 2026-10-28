@@ -27,7 +27,7 @@ public class GetQuotaTemplateServiceStatusRequest extends RpcAcsRequest<GetQuota
 
 	private String resourceDirectoryId;
 	public GetQuotaTemplateServiceStatusRequest() {
-		super("quotas", "2020-05-10", "GetQuotaTemplateServiceStatus", "quotas");
+		super("quotas", "2020-05-10", "GetQuotaTemplateServiceStatus", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

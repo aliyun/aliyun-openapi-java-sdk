@@ -28,11 +28,11 @@ public class GetProductQuotaDimensionRequest extends RpcAcsRequest<GetProductQuo
 
 	private String productCode;
 
-	private List<DependentDimensions> dependentDimensionss;
-
 	private String dimensionKey;
+
+	private List<DependentDimensions> dependentDimensionss;
 	public GetProductQuotaDimensionRequest() {
-		super("quotas", "2020-05-10", "GetProductQuotaDimension", "quotas");
+		super("quotas", "2020-05-10", "GetProductQuotaDimension", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,20 +51,6 @@ public class GetProductQuotaDimensionRequest extends RpcAcsRequest<GetProductQuo
 		}
 	}
 
-	public List<DependentDimensions> getDependentDimensionss() {
-		return this.dependentDimensionss;
-	}
-
-	public void setDependentDimensionss(List<DependentDimensions> dependentDimensionss) {
-		this.dependentDimensionss = dependentDimensionss;	
-		if (dependentDimensionss != null) {
-			for (int depth1 = 0; depth1 < dependentDimensionss.size(); depth1++) {
-				putBodyParameter("DependentDimensions." + (depth1 + 1) + ".Key" , dependentDimensionss.get(depth1).getKey());
-				putBodyParameter("DependentDimensions." + (depth1 + 1) + ".Value" , dependentDimensionss.get(depth1).getValue());
-			}
-		}	
-	}
-
 	public String getDimensionKey() {
 		return this.dimensionKey;
 	}
@@ -76,19 +62,25 @@ public class GetProductQuotaDimensionRequest extends RpcAcsRequest<GetProductQuo
 		}
 	}
 
-	public static class DependentDimensions {
+	public List<DependentDimensions> getDependentDimensionss() {
+		return this.dependentDimensionss;
+	}
 
-		private String key;
+	public void setDependentDimensionss(List<DependentDimensions> dependentDimensionss) {
+		this.dependentDimensionss = dependentDimensionss;	
+		if (dependentDimensionss != null) {
+			for (int depth1 = 0; depth1 < dependentDimensionss.size(); depth1++) {
+				putBodyParameter("DependentDimensions." + (depth1 + 1) + ".Value" , dependentDimensionss.get(depth1).getValue());
+				putBodyParameter("DependentDimensions." + (depth1 + 1) + ".Key" , dependentDimensionss.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class DependentDimensions {
 
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -96,6 +88,14 @@ public class GetProductQuotaDimensionRequest extends RpcAcsRequest<GetProductQuo
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

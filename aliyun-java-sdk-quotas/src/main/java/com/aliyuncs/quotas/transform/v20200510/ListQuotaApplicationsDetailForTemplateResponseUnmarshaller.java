@@ -29,38 +29,38 @@ public class ListQuotaApplicationsDetailForTemplateResponseUnmarshaller {
 	public static ListQuotaApplicationsDetailForTemplateResponse unmarshall(ListQuotaApplicationsDetailForTemplateResponse listQuotaApplicationsDetailForTemplateResponse, UnmarshallerContext _ctx) {
 		
 		listQuotaApplicationsDetailForTemplateResponse.setRequestId(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.RequestId"));
-		listQuotaApplicationsDetailForTemplateResponse.setNextToken(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.NextToken"));
 		listQuotaApplicationsDetailForTemplateResponse.setTotalCount(_ctx.integerValue("ListQuotaApplicationsDetailForTemplateResponse.TotalCount"));
+		listQuotaApplicationsDetailForTemplateResponse.setNextToken(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.NextToken"));
 		listQuotaApplicationsDetailForTemplateResponse.setMaxResults(_ctx.integerValue("ListQuotaApplicationsDetailForTemplateResponse.MaxResults"));
 
 		List<QuotaBatchApplicationDetailVos> quotaApplications = new ArrayList<QuotaBatchApplicationDetailVos>();
 		for (int i = 0; i < _ctx.lengthValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications.Length"); i++) {
 			QuotaBatchApplicationDetailVos quotaBatchApplicationDetailVos = new QuotaBatchApplicationDetailVos();
+			quotaBatchApplicationDetailVos.setStatus(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Status"));
+			quotaBatchApplicationDetailVos.setApplyTime(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ApplyTime"));
+			quotaBatchApplicationDetailVos.setQuotaDescription(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaDescription"));
 			quotaBatchApplicationDetailVos.setBatchQuotaApplicationId(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].BatchQuotaApplicationId"));
+			quotaBatchApplicationDetailVos.setEffectiveTime(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].EffectiveTime"));
 			quotaBatchApplicationDetailVos.setProductCode(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ProductCode"));
+			quotaBatchApplicationDetailVos.setAuditReason(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].AuditReason"));
+			quotaBatchApplicationDetailVos.setQuotaUnit(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaUnit"));
+			quotaBatchApplicationDetailVos.setApproveValue(_ctx.doubleValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ApproveValue"));
+			quotaBatchApplicationDetailVos.setReason(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Reason"));
+			quotaBatchApplicationDetailVos.setEnvLanguage(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].EnvLanguage"));
 			quotaBatchApplicationDetailVos.setQuotaActionCode(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaActionCode"));
 			quotaBatchApplicationDetailVos.setQuotaName(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaName"));
-			quotaBatchApplicationDetailVos.setQuotaDescription(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaDescription"));
-			quotaBatchApplicationDetailVos.setQuotaUnit(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaUnit"));
 			quotaBatchApplicationDetailVos.setQuotaArn(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaArn"));
+			quotaBatchApplicationDetailVos.setAliyunUid(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].AliyunUid"));
+			quotaBatchApplicationDetailVos.setQuotaCategory(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaCategory"));
+			quotaBatchApplicationDetailVos.setNoticeType(_ctx.integerValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].NoticeType"));
 			quotaBatchApplicationDetailVos.setQuotaDimension(_ctx.mapValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaDimension"));
 			quotaBatchApplicationDetailVos.setApplicationId(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ApplicationId"));
 			quotaBatchApplicationDetailVos.setDesireValue(_ctx.doubleValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].DesireValue"));
-			quotaBatchApplicationDetailVos.setReason(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Reason"));
-			quotaBatchApplicationDetailVos.setStatus(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Status"));
-			quotaBatchApplicationDetailVos.setApproveValue(_ctx.doubleValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ApproveValue"));
-			quotaBatchApplicationDetailVos.setEffectiveTime(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].EffectiveTime"));
 			quotaBatchApplicationDetailVos.setExpireTime(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ExpireTime"));
-			quotaBatchApplicationDetailVos.setApplyTime(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].ApplyTime"));
-			quotaBatchApplicationDetailVos.setAuditReason(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].AuditReason"));
-			quotaBatchApplicationDetailVos.setNoticeType(_ctx.integerValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].NoticeType"));
-			quotaBatchApplicationDetailVos.setAliyunUid(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].AliyunUid"));
-			quotaBatchApplicationDetailVos.setQuotaCategory(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].QuotaCategory"));
-			quotaBatchApplicationDetailVos.setEnvLanguage(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].EnvLanguage"));
 
 			Period period = new Period();
-			period.setPeriodUnit(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Period.PeriodUnit"));
 			period.setPeriodValue(_ctx.integerValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Period.PeriodValue"));
+			period.setPeriodUnit(_ctx.stringValue("ListQuotaApplicationsDetailForTemplateResponse.QuotaApplications["+ i +"].Period.PeriodUnit"));
 			quotaBatchApplicationDetailVos.setPeriod(period);
 
 			quotaApplications.add(quotaBatchApplicationDetailVos);

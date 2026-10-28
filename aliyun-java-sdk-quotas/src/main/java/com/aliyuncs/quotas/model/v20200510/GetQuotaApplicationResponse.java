@@ -47,48 +47,48 @@ public class GetQuotaApplicationResponse extends AcsResponse {
 
 	public static class QuotaApplication {
 
-		private String applicationId;
+		private String status;
 
 		private String applyTime;
 
-		private Float approveValue;
-
-		private String auditReason;
-
-		private Integer desireValue;
-
-		private Map<Object,Object> dimension;
+		private String quotaDescription;
 
 		private String effectiveTime;
 
-		private String expireTime;
-
-		private Long noticeType;
-
 		private String productCode;
 
+		private String auditReason;
+
+		private String quotaUnit;
+
+		private Map<Object,Object> dimension;
+
+		private Float approveValue;
+
+		private String reason;
+
 		private String quotaActionCode;
+
+		private String quotaName;
 
 		private String quotaArn;
 
 		private String quotaCategory;
 
-		private String quotaDescription;
+		private Long noticeType;
 
-		private String quotaName;
+		private String applicationId;
 
-		private String quotaUnit;
+		private Integer desireValue;
 
-		private String reason;
+		private String expireTime;
 
-		private String status;
-
-		public String getApplicationId() {
-			return this.applicationId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setApplicationId(String applicationId) {
-			this.applicationId = applicationId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getApplyTime() {
@@ -99,36 +99,12 @@ public class GetQuotaApplicationResponse extends AcsResponse {
 			this.applyTime = applyTime;
 		}
 
-		public Float getApproveValue() {
-			return this.approveValue;
+		public String getQuotaDescription() {
+			return this.quotaDescription;
 		}
 
-		public void setApproveValue(Float approveValue) {
-			this.approveValue = approveValue;
-		}
-
-		public String getAuditReason() {
-			return this.auditReason;
-		}
-
-		public void setAuditReason(String auditReason) {
-			this.auditReason = auditReason;
-		}
-
-		public Integer getDesireValue() {
-			return this.desireValue;
-		}
-
-		public void setDesireValue(Integer desireValue) {
-			this.desireValue = desireValue;
-		}
-
-		public Map<Object,Object> getDimension() {
-			return this.dimension;
-		}
-
-		public void setDimension(Map<Object,Object> dimension) {
-			this.dimension = dimension;
+		public void setQuotaDescription(String quotaDescription) {
+			this.quotaDescription = quotaDescription;
 		}
 
 		public String getEffectiveTime() {
@@ -139,22 +115,6 @@ public class GetQuotaApplicationResponse extends AcsResponse {
 			this.effectiveTime = effectiveTime;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public Long getNoticeType() {
-			return this.noticeType;
-		}
-
-		public void setNoticeType(Long noticeType) {
-			this.noticeType = noticeType;
-		}
-
 		public String getProductCode() {
 			return this.productCode;
 		}
@@ -163,12 +123,60 @@ public class GetQuotaApplicationResponse extends AcsResponse {
 			this.productCode = productCode;
 		}
 
+		public String getAuditReason() {
+			return this.auditReason;
+		}
+
+		public void setAuditReason(String auditReason) {
+			this.auditReason = auditReason;
+		}
+
+		public String getQuotaUnit() {
+			return this.quotaUnit;
+		}
+
+		public void setQuotaUnit(String quotaUnit) {
+			this.quotaUnit = quotaUnit;
+		}
+
+		public Map<Object,Object> getDimension() {
+			return this.dimension;
+		}
+
+		public void setDimension(Map<Object,Object> dimension) {
+			this.dimension = dimension;
+		}
+
+		public Float getApproveValue() {
+			return this.approveValue;
+		}
+
+		public void setApproveValue(Float approveValue) {
+			this.approveValue = approveValue;
+		}
+
+		public String getReason() {
+			return this.reason;
+		}
+
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+
 		public String getQuotaActionCode() {
 			return this.quotaActionCode;
 		}
 
 		public void setQuotaActionCode(String quotaActionCode) {
 			this.quotaActionCode = quotaActionCode;
+		}
+
+		public String getQuotaName() {
+			return this.quotaName;
+		}
+
+		public void setQuotaName(String quotaName) {
+			this.quotaName = quotaName;
 		}
 
 		public String getQuotaArn() {
@@ -187,44 +195,36 @@ public class GetQuotaApplicationResponse extends AcsResponse {
 			this.quotaCategory = quotaCategory;
 		}
 
-		public String getQuotaDescription() {
-			return this.quotaDescription;
+		public Long getNoticeType() {
+			return this.noticeType;
 		}
 
-		public void setQuotaDescription(String quotaDescription) {
-			this.quotaDescription = quotaDescription;
+		public void setNoticeType(Long noticeType) {
+			this.noticeType = noticeType;
 		}
 
-		public String getQuotaName() {
-			return this.quotaName;
+		public String getApplicationId() {
+			return this.applicationId;
 		}
 
-		public void setQuotaName(String quotaName) {
-			this.quotaName = quotaName;
+		public void setApplicationId(String applicationId) {
+			this.applicationId = applicationId;
 		}
 
-		public String getQuotaUnit() {
-			return this.quotaUnit;
+		public Integer getDesireValue() {
+			return this.desireValue;
 		}
 
-		public void setQuotaUnit(String quotaUnit) {
-			this.quotaUnit = quotaUnit;
+		public void setDesireValue(Integer desireValue) {
+			this.desireValue = desireValue;
 		}
 
-		public String getReason() {
-			return this.reason;
+		public String getExpireTime() {
+			return this.expireTime;
 		}
 
-		public void setReason(String reason) {
-			this.reason = reason;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 	}
 

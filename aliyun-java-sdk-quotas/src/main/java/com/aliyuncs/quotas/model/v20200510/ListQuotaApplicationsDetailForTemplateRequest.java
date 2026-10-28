@@ -41,7 +41,7 @@ public class ListQuotaApplicationsDetailForTemplateRequest extends RpcAcsRequest
 
 	private String status;
 	public ListQuotaApplicationsDetailForTemplateRequest() {
-		super("quotas", "2020-05-10", "ListQuotaApplicationsDetailForTemplate", "quotas");
+		super("quotas", "2020-05-10", "ListQuotaApplicationsDetailForTemplate", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

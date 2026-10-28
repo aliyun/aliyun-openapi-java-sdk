@@ -33,31 +33,25 @@ public class GetProductQuotaResponseUnmarshaller {
 		getProductQuotaResponse.setRequestId(_ctx.stringValue("GetProductQuotaResponse.RequestId"));
 
 		Quota quota = new Quota();
-		quota.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaUnit"));
-		quota.setQuotaActionCode(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaActionCode"));
+		quota.setQuotaDescription(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaDescription"));
+		quota.setConsumable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Consumable"));
+		quota.setUnadjustableDetail(_ctx.stringValue("GetProductQuotaResponse.Quota.UnadjustableDetail"));
+		quota.setEffectiveTime(_ctx.stringValue("GetProductQuotaResponse.Quota.EffectiveTime"));
+		quota.setProductCode(_ctx.stringValue("GetProductQuotaResponse.Quota.ProductCode"));
 		quota.setTotalUsage(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalUsage"));
 		quota.setQuotaType(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaType"));
-		quota.setQuotaDescription(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaDescription"));
-		quota.setQuotaArn(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaArn"));
-		quota.setApplicableType(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplicableType"));
 		quota.setDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.Dimensions"));
-		quota.setAdjustable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Adjustable"));
-		quota.setQuotaName(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaName"));
-		quota.setUnadjustableDetail(_ctx.stringValue("GetProductQuotaResponse.Quota.UnadjustableDetail"));
-		quota.setConsumable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Consumable"));
-		quota.setTotalQuota(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalQuota"));
-		quota.setProductCode(_ctx.stringValue("GetProductQuotaResponse.Quota.ProductCode"));
-		quota.setEffectiveTime(_ctx.stringValue("GetProductQuotaResponse.Quota.EffectiveTime"));
-		quota.setExpireTime(_ctx.stringValue("GetProductQuotaResponse.Quota.ExpireTime"));
-		quota.setQuotaCategory(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaCategory"));
-		quota.setApplyReasonTips(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplyReasonTips"));
 		quota.setGlobalQuota(_ctx.booleanValue("GetProductQuotaResponse.Quota.GlobalQuota"));
-
-		List<Float> applicableRange = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.ApplicableRange.Length"); i++) {
-			applicableRange.add(_ctx.floatValue("GetProductQuotaResponse.Quota.ApplicableRange["+ i +"]"));
-		}
-		quota.setApplicableRange(applicableRange);
+		quota.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaUnit"));
+		quota.setAdjustable(_ctx.booleanValue("GetProductQuotaResponse.Quota.Adjustable"));
+		quota.setQuotaActionCode(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaActionCode"));
+		quota.setQuotaName(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaName"));
+		quota.setQuotaArn(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaArn"));
+		quota.setApplyReasonTips(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplyReasonTips"));
+		quota.setTotalQuota(_ctx.floatValue("GetProductQuotaResponse.Quota.TotalQuota"));
+		quota.setQuotaCategory(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaCategory"));
+		quota.setExpireTime(_ctx.stringValue("GetProductQuotaResponse.Quota.ExpireTime"));
+		quota.setApplicableType(_ctx.stringValue("GetProductQuotaResponse.Quota.ApplicableType"));
 
 		List<Float> supportedRange = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.SupportedRange.Length"); i++) {
@@ -65,24 +59,30 @@ public class GetProductQuotaResponseUnmarshaller {
 		}
 		quota.setSupportedRange(supportedRange);
 
+		List<Float> applicableRange = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.ApplicableRange.Length"); i++) {
+			applicableRange.add(_ctx.floatValue("GetProductQuotaResponse.Quota.ApplicableRange["+ i +"]"));
+		}
+		quota.setApplicableRange(applicableRange);
+
+		UsageMetric usageMetric = new UsageMetric();
+		usageMetric.setMetricName(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricName"));
+		usageMetric.setMetricDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.UsageMetric.MetricDimensions"));
+		usageMetric.setMetricNamespace(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricNamespace"));
+		quota.setUsageMetric(usageMetric);
+
 		Period period = new Period();
 		period.setPeriodValue(_ctx.integerValue("GetProductQuotaResponse.Quota.Period.PeriodValue"));
 		period.setPeriodUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.Period.PeriodUnit"));
 		quota.setPeriod(period);
 
-		UsageMetric usageMetric = new UsageMetric();
-		usageMetric.setMetricNamespace(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricNamespace"));
-		usageMetric.setMetricName(_ctx.stringValue("GetProductQuotaResponse.Quota.UsageMetric.MetricName"));
-		usageMetric.setMetricDimensions(_ctx.mapValue("GetProductQuotaResponse.Quota.UsageMetric.MetricDimensions"));
-		quota.setUsageMetric(usageMetric);
-
 		List<QuotaItemsItem> quotaItems = new ArrayList<QuotaItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProductQuotaResponse.Quota.QuotaItems.Length"); i++) {
 			QuotaItemsItem quotaItemsItem = new QuotaItemsItem();
 			quotaItemsItem.setType(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Type"));
+			quotaItemsItem.setUsage(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Usage"));
 			quotaItemsItem.setQuota(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Quota"));
 			quotaItemsItem.setQuotaUnit(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].QuotaUnit"));
-			quotaItemsItem.setUsage(_ctx.stringValue("GetProductQuotaResponse.Quota.QuotaItems["+ i +"].Usage"));
 
 			quotaItems.add(quotaItemsItem);
 		}

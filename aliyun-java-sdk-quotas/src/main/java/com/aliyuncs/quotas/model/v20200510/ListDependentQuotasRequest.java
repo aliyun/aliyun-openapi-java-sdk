@@ -29,7 +29,7 @@ public class ListDependentQuotasRequest extends RpcAcsRequest<ListDependentQuota
 
 	private String quotaActionCode;
 	public ListDependentQuotasRequest() {
-		super("quotas", "2020-05-10", "ListDependentQuotas", "quotas");
+		super("quotas", "2020-05-10", "ListDependentQuotas", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

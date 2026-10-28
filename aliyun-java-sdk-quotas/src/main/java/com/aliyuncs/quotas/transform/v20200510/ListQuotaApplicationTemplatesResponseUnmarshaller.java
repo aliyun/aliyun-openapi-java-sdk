@@ -29,26 +29,26 @@ public class ListQuotaApplicationTemplatesResponseUnmarshaller {
 	public static ListQuotaApplicationTemplatesResponse unmarshall(ListQuotaApplicationTemplatesResponse listQuotaApplicationTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listQuotaApplicationTemplatesResponse.setRequestId(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.RequestId"));
-		listQuotaApplicationTemplatesResponse.setMaxResults(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.MaxResults"));
-		listQuotaApplicationTemplatesResponse.setNextToken(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.NextToken"));
 		listQuotaApplicationTemplatesResponse.setTotalCount(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.TotalCount"));
+		listQuotaApplicationTemplatesResponse.setNextToken(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.NextToken"));
+		listQuotaApplicationTemplatesResponse.setMaxResults(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.MaxResults"));
 
 		List<QuotaApplicationTemplatesItem> quotaApplicationTemplates = new ArrayList<QuotaApplicationTemplatesItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates.Length"); i++) {
 			QuotaApplicationTemplatesItem quotaApplicationTemplatesItem = new QuotaApplicationTemplatesItem();
-			quotaApplicationTemplatesItem.setId(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Id"));
-			quotaApplicationTemplatesItem.setProductCode(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ProductCode"));
-			quotaApplicationTemplatesItem.setDimensions(_ctx.mapValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Dimensions"));
-			quotaApplicationTemplatesItem.setDesireValue(_ctx.floatValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].DesireValue"));
-			quotaApplicationTemplatesItem.setNoticeType(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].NoticeType"));
-			quotaApplicationTemplatesItem.setQuotaActionCode(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaActionCode"));
-			quotaApplicationTemplatesItem.setApplicableType(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ApplicableType"));
-			quotaApplicationTemplatesItem.setEnvLanguage(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].EnvLanguage"));
-			quotaApplicationTemplatesItem.setQuotaName(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaName"));
 			quotaApplicationTemplatesItem.setQuotaDescription(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaDescription"));
 			quotaApplicationTemplatesItem.setEffectiveTime(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].EffectiveTime"));
-			quotaApplicationTemplatesItem.setExpireTime(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ExpireTime"));
+			quotaApplicationTemplatesItem.setProductCode(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ProductCode"));
+			quotaApplicationTemplatesItem.setDimensions(_ctx.mapValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Dimensions"));
+			quotaApplicationTemplatesItem.setEnvLanguage(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].EnvLanguage"));
+			quotaApplicationTemplatesItem.setQuotaActionCode(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaActionCode"));
+			quotaApplicationTemplatesItem.setQuotaName(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaName"));
 			quotaApplicationTemplatesItem.setQuotaCategory(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].QuotaCategory"));
+			quotaApplicationTemplatesItem.setNoticeType(_ctx.integerValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].NoticeType"));
+			quotaApplicationTemplatesItem.setId(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].Id"));
+			quotaApplicationTemplatesItem.setDesireValue(_ctx.floatValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].DesireValue"));
+			quotaApplicationTemplatesItem.setExpireTime(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ExpireTime"));
+			quotaApplicationTemplatesItem.setApplicableType(_ctx.stringValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ApplicableType"));
 
 			List<Float> applicableRange = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("ListQuotaApplicationTemplatesResponse.QuotaApplicationTemplates["+ i +"].ApplicableRange.Length"); j++) {

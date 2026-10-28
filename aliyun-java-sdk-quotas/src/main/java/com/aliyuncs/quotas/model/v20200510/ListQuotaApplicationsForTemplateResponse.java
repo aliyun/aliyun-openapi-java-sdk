@@ -26,22 +26,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 
-	private String requestId;
+	private Integer totalCount;
 
 	private String nextToken;
 
-	private Integer totalCount;
+	private String requestId;
 
 	private Integer maxResults;
 
 	private List<QuotaBatchApplicationsItem> quotaBatchApplications;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getNextToken() {
@@ -52,12 +52,12 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getMaxResults() {
@@ -78,23 +78,23 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 
 	public static class QuotaBatchApplicationsItem {
 
-		private String productCode;
-
 		private String quotaActionCode;
+
+		private String applyTime;
 
 		private String batchQuotaApplicationId;
 
 		private String effectiveTime;
 
-		private String expireTime;
-
-		private String applyTime;
-
-		private Double desireValue;
+		private String productCode;
 
 		private String quotaCategory;
 
 		private Map<Object,Object> dimensions;
+
+		private Double desireValue;
+
+		private String expireTime;
 
 		private String reason;
 
@@ -102,20 +102,20 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 
 		private List<String> aliyunUids;
 
-		public String getProductCode() {
-			return this.productCode;
-		}
-
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
 		public String getQuotaActionCode() {
 			return this.quotaActionCode;
 		}
 
 		public void setQuotaActionCode(String quotaActionCode) {
 			this.quotaActionCode = quotaActionCode;
+		}
+
+		public String getApplyTime() {
+			return this.applyTime;
+		}
+
+		public void setApplyTime(String applyTime) {
+			this.applyTime = applyTime;
 		}
 
 		public String getBatchQuotaApplicationId() {
@@ -134,28 +134,12 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 			this.effectiveTime = effectiveTime;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getApplyTime() {
-			return this.applyTime;
-		}
-
-		public void setApplyTime(String applyTime) {
-			this.applyTime = applyTime;
-		}
-
-		public Double getDesireValue() {
-			return this.desireValue;
-		}
-
-		public void setDesireValue(Double desireValue) {
-			this.desireValue = desireValue;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public String getQuotaCategory() {
@@ -172,6 +156,22 @@ public class ListQuotaApplicationsForTemplateResponse extends AcsResponse {
 
 		public void setDimensions(Map<Object,Object> dimensions) {
 			this.dimensions = dimensions;
+		}
+
+		public Double getDesireValue() {
+			return this.desireValue;
+		}
+
+		public void setDesireValue(Double desireValue) {
+			this.desireValue = desireValue;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public String getReason() {

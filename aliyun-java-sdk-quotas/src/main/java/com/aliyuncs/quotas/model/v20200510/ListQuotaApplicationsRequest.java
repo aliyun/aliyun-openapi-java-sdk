@@ -42,7 +42,7 @@ public class ListQuotaApplicationsRequest extends RpcAcsRequest<ListQuotaApplica
 
 	private List<Dimensions> dimensionss;
 	public ListQuotaApplicationsRequest() {
-		super("quotas", "2020-05-10", "ListQuotaApplications", "quotas");
+		super("quotas", "2020-05-10", "ListQuotaApplications", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -135,25 +135,17 @@ public class ListQuotaApplicationsRequest extends RpcAcsRequest<ListQuotaApplica
 		this.dimensionss = dimensionss;	
 		if (dimensionss != null) {
 			for (int depth1 = 0; depth1 < dimensionss.size(); depth1++) {
-				putBodyParameter("Dimensions." + (depth1 + 1) + ".Key" , dimensionss.get(depth1).getKey());
 				putBodyParameter("Dimensions." + (depth1 + 1) + ".Value" , dimensionss.get(depth1).getValue());
+				putBodyParameter("Dimensions." + (depth1 + 1) + ".Key" , dimensionss.get(depth1).getKey());
 			}
 		}	
 	}
 
 	public static class Dimensions {
 
-		private String key;
-
 		private String value;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public String getValue() {
 			return this.value;
@@ -161,6 +153,14 @@ public class ListQuotaApplicationsRequest extends RpcAcsRequest<ListQuotaApplica
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

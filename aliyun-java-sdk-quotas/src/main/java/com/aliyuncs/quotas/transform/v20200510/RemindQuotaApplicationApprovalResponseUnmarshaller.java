@@ -26,14 +26,14 @@ public class RemindQuotaApplicationApprovalResponseUnmarshaller {
 	public static RemindQuotaApplicationApprovalResponse unmarshall(RemindQuotaApplicationApprovalResponse remindQuotaApplicationApprovalResponse, UnmarshallerContext _ctx) {
 		
 		remindQuotaApplicationApprovalResponse.setRequestId(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.RequestId"));
+		remindQuotaApplicationApprovalResponse.setAllowRetry(_ctx.booleanValue("RemindQuotaApplicationApprovalResponse.AllowRetry"));
+		remindQuotaApplicationApprovalResponse.setErrorMsg(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.ErrorMsg"));
 		remindQuotaApplicationApprovalResponse.setHttpStatusCode(_ctx.integerValue("RemindQuotaApplicationApprovalResponse.HttpStatusCode"));
 		remindQuotaApplicationApprovalResponse.setDynamicCode(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.DynamicCode"));
 		remindQuotaApplicationApprovalResponse.setDynamicMessage(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.DynamicMessage"));
-		remindQuotaApplicationApprovalResponse.setErrorMsg(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.ErrorMsg"));
 		remindQuotaApplicationApprovalResponse.setErrorCode(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.ErrorCode"));
-		remindQuotaApplicationApprovalResponse.setSuccess(_ctx.booleanValue("RemindQuotaApplicationApprovalResponse.Success"));
 		remindQuotaApplicationApprovalResponse.setModule(_ctx.stringValue("RemindQuotaApplicationApprovalResponse.Module"));
-		remindQuotaApplicationApprovalResponse.setAllowRetry(_ctx.booleanValue("RemindQuotaApplicationApprovalResponse.AllowRetry"));
+		remindQuotaApplicationApprovalResponse.setSuccess(_ctx.booleanValue("RemindQuotaApplicationApprovalResponse.Success"));
 
 		List<String> errorArgs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RemindQuotaApplicationApprovalResponse.ErrorArgs.Length"); i++) {

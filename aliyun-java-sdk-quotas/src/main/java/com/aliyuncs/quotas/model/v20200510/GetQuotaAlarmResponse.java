@@ -48,33 +48,41 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 
 	public static class QuotaAlarm {
 
+		private String alarmId;
+
 		private Float thresholdPercent;
 
-		private String thresholdType;
-
-		private Map<Object,Object> quotaDimension;
+		private String productCode;
 
 		private String createTime;
 
+		private Float quotaUsage;
+
 		private String quotaActionCode;
+
+		private Float quotaValue;
 
 		private String alarmName;
 
 		private String notifyTarget;
 
-		private Float quotaUsage;
-
-		private Float quotaValue;
-
-		private String alarmId;
-
-		private Float threshold;
-
-		private String productCode;
+		private Map<Object,Object> quotaDimension;
 
 		private String webhook;
 
+		private Float threshold;
+
+		private String thresholdType;
+
 		private List<String> notifyChannels;
+
+		public String getAlarmId() {
+			return this.alarmId;
+		}
+
+		public void setAlarmId(String alarmId) {
+			this.alarmId = alarmId;
+		}
 
 		public Float getThresholdPercent() {
 			return this.thresholdPercent;
@@ -84,20 +92,12 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.thresholdPercent = thresholdPercent;
 		}
 
-		public String getThresholdType() {
-			return this.thresholdType;
+		public String getProductCode() {
+			return this.productCode;
 		}
 
-		public void setThresholdType(String thresholdType) {
-			this.thresholdType = thresholdType;
-		}
-
-		public Map<Object,Object> getQuotaDimension() {
-			return this.quotaDimension;
-		}
-
-		public void setQuotaDimension(Map<Object,Object> quotaDimension) {
-			this.quotaDimension = quotaDimension;
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
 		}
 
 		public String getCreateTime() {
@@ -108,12 +108,28 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Float getQuotaUsage() {
+			return this.quotaUsage;
+		}
+
+		public void setQuotaUsage(Float quotaUsage) {
+			this.quotaUsage = quotaUsage;
+		}
+
 		public String getQuotaActionCode() {
 			return this.quotaActionCode;
 		}
 
 		public void setQuotaActionCode(String quotaActionCode) {
 			this.quotaActionCode = quotaActionCode;
+		}
+
+		public Float getQuotaValue() {
+			return this.quotaValue;
+		}
+
+		public void setQuotaValue(Float quotaValue) {
+			this.quotaValue = quotaValue;
 		}
 
 		public String getAlarmName() {
@@ -132,28 +148,20 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.notifyTarget = notifyTarget;
 		}
 
-		public Float getQuotaUsage() {
-			return this.quotaUsage;
+		public Map<Object,Object> getQuotaDimension() {
+			return this.quotaDimension;
 		}
 
-		public void setQuotaUsage(Float quotaUsage) {
-			this.quotaUsage = quotaUsage;
+		public void setQuotaDimension(Map<Object,Object> quotaDimension) {
+			this.quotaDimension = quotaDimension;
 		}
 
-		public Float getQuotaValue() {
-			return this.quotaValue;
+		public String getWebhook() {
+			return this.webhook;
 		}
 
-		public void setQuotaValue(Float quotaValue) {
-			this.quotaValue = quotaValue;
-		}
-
-		public String getAlarmId() {
-			return this.alarmId;
-		}
-
-		public void setAlarmId(String alarmId) {
-			this.alarmId = alarmId;
+		public void setWebhook(String webhook) {
+			this.webhook = webhook;
 		}
 
 		public Float getThreshold() {
@@ -164,20 +172,12 @@ public class GetQuotaAlarmResponse extends AcsResponse {
 			this.threshold = threshold;
 		}
 
-		public String getProductCode() {
-			return this.productCode;
+		public String getThresholdType() {
+			return this.thresholdType;
 		}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
-
-		public String getWebhook() {
-			return this.webhook;
-		}
-
-		public void setWebhook(String webhook) {
-			this.webhook = webhook;
+		public void setThresholdType(String thresholdType) {
+			this.thresholdType = thresholdType;
 		}
 
 		public List<String> getNotifyChannels() {

@@ -27,7 +27,7 @@ public class RemindQuotaApplicationApprovalRequest extends RpcAcsRequest<RemindQ
 
 	private String applicationId;
 	public RemindQuotaApplicationApprovalRequest() {
-		super("quotas", "2020-05-10", "RemindQuotaApplicationApproval", "quotas");
+		super("quotas", "2020-05-10", "RemindQuotaApplicationApproval", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

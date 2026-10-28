@@ -34,14 +34,14 @@ public class ListAlarmHistoriesResponseUnmarshaller {
 		List<AlarmHistory> alarmHistories = new ArrayList<AlarmHistory>();
 		for (int i = 0; i < _ctx.lengthValue("ListAlarmHistoriesResponse.AlarmHistories.Length"); i++) {
 			AlarmHistory alarmHistory = new AlarmHistory();
-			alarmHistory.setQuotaUsage(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaUsage"));
-			alarmHistory.setThresholdPercent(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ThresholdPercent"));
-			alarmHistory.setCreateTime(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].CreateTime"));
 			alarmHistory.setQuotaActionCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaActionCode"));
+			alarmHistory.setThresholdPercent(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ThresholdPercent"));
 			alarmHistory.setAlarmName(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].AlarmName"));
 			alarmHistory.setNotifyTarget(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].NotifyTarget"));
-			alarmHistory.setThreshold(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].Threshold"));
 			alarmHistory.setProductCode(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].ProductCode"));
+			alarmHistory.setCreateTime(_ctx.stringValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].CreateTime"));
+			alarmHistory.setQuotaUsage(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].QuotaUsage"));
+			alarmHistory.setThreshold(_ctx.floatValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].Threshold"));
 
 			List<String> notifyChannels = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListAlarmHistoriesResponse.AlarmHistories["+ i +"].NotifyChannels.Length"); j++) {

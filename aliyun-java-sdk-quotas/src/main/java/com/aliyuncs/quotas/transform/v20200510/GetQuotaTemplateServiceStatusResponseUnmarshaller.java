@@ -26,8 +26,8 @@ public class GetQuotaTemplateServiceStatusResponseUnmarshaller {
 		getQuotaTemplateServiceStatusResponse.setRequestId(_ctx.stringValue("GetQuotaTemplateServiceStatusResponse.RequestId"));
 
 		TemplateServiceStatus templateServiceStatus = new TemplateServiceStatus();
-		templateServiceStatus.setServiceStatus(_ctx.integerValue("GetQuotaTemplateServiceStatusResponse.TemplateServiceStatus.ServiceStatus"));
 		templateServiceStatus.setResourceDirectoryId(_ctx.stringValue("GetQuotaTemplateServiceStatusResponse.TemplateServiceStatus.ResourceDirectoryId"));
+		templateServiceStatus.setServiceStatus(_ctx.integerValue("GetQuotaTemplateServiceStatusResponse.TemplateServiceStatus.ServiceStatus"));
 		getQuotaTemplateServiceStatusResponse.setTemplateServiceStatus(templateServiceStatus);
 	 
 	 	return getQuotaTemplateServiceStatusResponse;

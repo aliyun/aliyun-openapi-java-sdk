@@ -33,7 +33,7 @@ public class ListProductQuotaDimensionsRequest extends RpcAcsRequest<ListProduct
 
 	private Integer maxResults;
 	public ListProductQuotaDimensionsRequest() {
-		super("quotas", "2020-05-10", "ListProductQuotaDimensions", "quotas");
+		super("quotas", "2020-05-10", "ListProductQuotaDimensions", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

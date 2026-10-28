@@ -46,17 +46,9 @@ public class ModifyQuotaTemplateServiceStatusResponse extends AcsResponse {
 
 	public static class TemplateServiceStatus {
 
-		private Integer serviceStatus;
-
 		private String resourceDirectoryId;
 
-		public Integer getServiceStatus() {
-			return this.serviceStatus;
-		}
-
-		public void setServiceStatus(Integer serviceStatus) {
-			this.serviceStatus = serviceStatus;
-		}
+		private Integer serviceStatus;
 
 		public String getResourceDirectoryId() {
 			return this.resourceDirectoryId;
@@ -64,6 +56,14 @@ public class ModifyQuotaTemplateServiceStatusResponse extends AcsResponse {
 
 		public void setResourceDirectoryId(String resourceDirectoryId) {
 			this.resourceDirectoryId = resourceDirectoryId;
+		}
+
+		public Integer getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(Integer serviceStatus) {
+			this.serviceStatus = serviceStatus;
 		}
 	}
 

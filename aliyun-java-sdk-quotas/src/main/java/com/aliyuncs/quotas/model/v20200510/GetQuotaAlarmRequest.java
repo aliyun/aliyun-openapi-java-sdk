@@ -27,7 +27,7 @@ public class GetQuotaAlarmRequest extends RpcAcsRequest<GetQuotaAlarmResponse> {
 
 	private String alarmId;
 	public GetQuotaAlarmRequest() {
-		super("quotas", "2020-05-10", "GetQuotaAlarm", "quotas");
+		super("quotas", "2020-05-10", "GetQuotaAlarm", "Quotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
