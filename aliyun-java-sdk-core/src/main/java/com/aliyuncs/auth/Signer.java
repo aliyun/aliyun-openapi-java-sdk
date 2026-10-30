@@ -26,6 +26,7 @@ import java.security.NoSuchAlgorithmException;
 public abstract class Signer {
 
     private final static Signer HMACSHA1_SIGNER = new com.aliyuncs.auth.signers.HmacSHA1Signer();
+    private final static Signer HMACSHA256_SIGNER = new HmacSHA256V2Signer();
     private final static Signer SHA256_WITH_RSA_SIGNER = new com.aliyuncs.auth.signers.SHA256withRSASigner();
     private final static Signer BEARER_TOKEN_SIGNER = new com.aliyuncs.auth.signers.BearerTokenSigner();
     // Signature V3
@@ -39,7 +40,7 @@ public abstract class Signer {
         } else if (credentials instanceof BearerTokenCredentials) {
             return BEARER_TOKEN_SIGNER;
         } else {
-            return HMACSHA1_SIGNER;
+            return HMACSHA256_SIGNER;
         }
     }
 
@@ -53,6 +54,8 @@ public abstract class Signer {
                         return HMAC_SM3;
                     case ACS3_HMAC_SHA256:
                         return HMAC_SHA256;
+                    case HMAC_SHA1:
+                        throw new IllegalArgumentException("HMAC_SHA1 is not supported for signature V3");
                 }
             case V1:
             default:
@@ -61,7 +64,7 @@ public abstract class Signer {
                 } else if (credentials instanceof BearerTokenCredentials) {
                     return BEARER_TOKEN_SIGNER;
                 } else {
-                    return HMACSHA1_SIGNER;
+                    return signatureAlgorithm == SignatureAlgorithm.HMAC_SHA1 ? HMACSHA1_SIGNER : HMACSHA256_SIGNER;
                 }
         }
     }
