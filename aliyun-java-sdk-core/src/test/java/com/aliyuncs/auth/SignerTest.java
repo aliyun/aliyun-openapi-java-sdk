@@ -22,10 +22,23 @@ public class SignerTest {
     }
 
     @Test
-    public void getSignerReturnHmacSHA1Signer() {
+    public void getSignerReturnHmacSHA256V2Signer() {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         Signer signer = Signer.getSigner(credentials, SignatureVersion.V1, null);
+        Assert.assertTrue(signer instanceof HmacSHA256V2Signer);
+        Assert.assertTrue(Signer.getSigner(credentials) instanceof HmacSHA256V2Signer);
+    }
+
+    @Test
+    public void getSignerReturnExplicitHmacSHA1Signer() {
+        AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
+        Signer signer = Signer.getSigner(credentials, SignatureVersion.V1, SignatureAlgorithm.HMAC_SHA1);
         Assert.assertEquals(true, com.aliyuncs.auth.signers.HmacSHA1Signer.class.isAssignableFrom(signer.getClass()));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void rejectSha1ForSignatureV3() {
+        Signer.getSigner(mock(AlibabaCloudCredentials.class), SignatureVersion.V3, SignatureAlgorithm.HMAC_SHA1);
     }
 
     @Test
