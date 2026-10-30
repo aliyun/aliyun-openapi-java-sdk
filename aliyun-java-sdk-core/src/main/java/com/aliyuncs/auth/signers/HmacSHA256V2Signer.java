@@ -3,7 +3,7 @@ package com.aliyuncs.auth.signers;
 import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Signer;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
@@ -13,7 +13,7 @@ import javax.xml.bind.DatatypeConverter;
 
 public class HmacSHA256V2Signer extends Signer {
 
-    private static final String ENCODING = "UTF-8";
+    private static final Charset ENCODING = Charset.forName("UTF-8");
     private static final String ALGORITHM_NAME = "HmacSHA256";
 
     @Override
@@ -23,8 +23,6 @@ public class HmacSHA256V2Signer extends Signer {
             mac.init(new SecretKeySpec(accessKeySecret.getBytes(ENCODING), ALGORITHM_NAME));
             return DatatypeConverter.printBase64Binary(mac.doFinal(stringToSign.getBytes(ENCODING)));
         } catch (NoSuchAlgorithmException e) {
-            throw new IllegalArgumentException(e.toString());
-        } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(e.toString());
         } catch (InvalidKeyException e) {
             throw new IllegalArgumentException(e.toString());

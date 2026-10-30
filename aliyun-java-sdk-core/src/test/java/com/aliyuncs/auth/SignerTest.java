@@ -12,6 +12,8 @@ public class SignerTest {
         AlibabaCloudCredentials credentials = mock(KeyPairCredentials.class);
         Signer signer = Signer.getSigner(credentials, SignatureVersion.V1, null);
         Assert.assertEquals(true, com.aliyuncs.auth.signers.SHA256withRSASigner.class.isAssignableFrom(signer.getClass()));
+        Assert.assertSame(signer, Signer.getSigner(credentials));
+        Assert.assertSame(signer, Signer.getSigner(credentials, SignatureVersion.V1, SignatureAlgorithm.HMAC_SHA1));
     }
 
     @Test
@@ -19,6 +21,8 @@ public class SignerTest {
         AlibabaCloudCredentials credentials = mock(BearerTokenCredentials.class);
         Signer signer = Signer.getSigner(credentials, SignatureVersion.V1, null);
         Assert.assertEquals(true, com.aliyuncs.auth.signers.BearerTokenSigner.class.isAssignableFrom(signer.getClass()));
+        Assert.assertSame(signer, Signer.getSigner(credentials));
+        Assert.assertSame(signer, Signer.getSigner(credentials, SignatureVersion.V1, SignatureAlgorithm.HMAC_SHA1));
     }
 
     @Test
