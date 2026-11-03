@@ -34,50 +34,28 @@ import static org.mockito.Mockito.when;
 public class SignatureV2Test {
 
     @Test
-    public void defaultAndExplicitSha1Requests() throws Exception {
+    public void defaultRequestsUseSha256() throws Exception {
         for (boolean rpc : new boolean[]{true, false}) {
             for (MethodType method : new MethodType[]{MethodType.GET, MethodType.POST}) {
                 for (boolean sts : new boolean[]{false, true}) {
-                    for (int configuration = 0; configuration < 3; configuration++) {
-                        AlibabaCloudCredentials credentials = sts
-                                ? new BasicSessionCredentials("test-key", "test-secret", "test-token")
-                                : new BasicCredentials("test-key", "test-secret");
-                        DefaultAcsClient client = client(credentials);
-                        AcsRequest<AcsResponse> request = request(rpc, method);
-                        if (configuration == 1) {
-                            client.setSignatureAlgorithm(SignatureAlgorithm.HMAC_SHA1);
-                        } else if (configuration == 2) {
-                            request.setSysSignatureAlgorithm(SignatureAlgorithm.HMAC_SHA1);
-                        }
-                        client.doAction(request);
-                        assertV2Request(client, request, rpc, sts, configuration != 0);
-                    }
+                    AlibabaCloudCredentials credentials = sts
+                            ? new BasicSessionCredentials("test-key", "test-secret", "test-token")
+                            : new BasicCredentials("test-key", "test-secret");
+                    DefaultAcsClient client = client(credentials);
+                    AcsRequest<AcsResponse> request = request(rpc, method);
+                    client.doAction(request);
+                    assertV2Request(client, request, rpc, sts);
                 }
             }
         }
     }
 
     @Test
-    public void requestAlgorithmOverridesClientAlgorithm() throws Exception {
+    public void legacyCredentialOverloadUsesSha256() throws Exception {
         DefaultAcsClient client = client(new BasicCredentials("test-key", "test-secret"));
-        client.setSignatureAlgorithm(SignatureAlgorithm.HMAC_SHA1);
         AcsRequest<AcsResponse> request = request(true, MethodType.GET);
-        request.setSysSignatureAlgorithm(SignatureAlgorithm.ACS3_HMAC_SHA256);
-        client.doAction(request);
-        assertV2Request(client, request, true, false, false);
-    }
-
-    @Test
-    public void legacyCredentialOverloadUsesSelectedAlgorithm() throws Exception {
-        for (boolean sha1 : new boolean[]{false, true}) {
-            DefaultAcsClient client = client(new BasicCredentials("test-key", "test-secret"));
-            if (sha1) {
-                client.setSignatureAlgorithm(SignatureAlgorithm.HMAC_SHA1);
-            }
-            AcsRequest<AcsResponse> request = request(true, MethodType.GET);
-            client.doAction(request, "cn-hangzhou", new Credential("test-key", "test-secret"));
-            assertV2Request(client, request, true, false, sha1);
-        }
+        client.doAction(request, "cn-hangzhou", new Credential("test-key", "test-secret"));
+        assertV2Request(client, request, true, false);
     }
 
     @Test
@@ -148,9 +126,9 @@ public class SignatureV2Test {
     }
 
     private void assertV2Request(DefaultAcsClient client, AcsRequest<AcsResponse> request,
-                                 boolean rpc, boolean sts, boolean sha1) throws Exception {
+                                 boolean rpc, boolean sts) throws Exception {
         HttpRequest sent = sentRequest(client);
-        String expected = DatatypeConverter.printBase64Binary(hmac(sha1 ? "HmacSHA1" : "HmacSHA256",
+        String expected = DatatypeConverter.printBase64Binary(hmac("HmacSHA256",
                 request.getSysStrToSign(), "test-secret" + (rpc ? "&" : "")));
         if (rpc) {
             Map<String, String> query = new HashMap<String, String>();
@@ -158,12 +136,12 @@ public class SignatureV2Test {
                 String[] parts = pair.split("=", 2);
                 query.put(URLDecoder.decode(parts[0], "UTF-8"), URLDecoder.decode(parts[1], "UTF-8"));
             }
-            Assert.assertEquals(sha1 ? "HMAC-SHA1" : "HMAC-SHA256", query.get("SignatureMethod"));
+            Assert.assertEquals("HMAC-SHA256", query.get("SignatureMethod"));
             Assert.assertEquals("1.0", query.get("SignatureVersion"));
             Assert.assertEquals(expected, query.get("Signature"));
             Assert.assertEquals(sts ? "test-token" : null, query.get("SecurityToken"));
         } else {
-            Assert.assertEquals(sha1 ? "HMAC-SHA1" : "HMAC-SHA256", sent.getSysHeaders().get("x-acs-signature-method"));
+            Assert.assertEquals("HMAC-SHA256", sent.getSysHeaders().get("x-acs-signature-method"));
             Assert.assertEquals("1.0", sent.getSysHeaders().get("x-acs-signature-version"));
             Assert.assertEquals("acs test-key:" + expected, sent.getSysHeaders().get("Authorization"));
             Assert.assertEquals(sts ? "test-token" : null, sent.getSysHeaders().get("x-acs-security-token"));
