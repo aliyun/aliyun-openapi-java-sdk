@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
 
 public abstract class Signer {
 
-    private final static Signer HMACSHA256_SIGNER = new HmacSHA256V2Signer();
+    private final static Signer HMACSHA256_SIGNER = new SignatureV2HmacSHA256Signer();
     private final static Signer SHA256_WITH_RSA_SIGNER = new com.aliyuncs.auth.signers.SHA256withRSASigner();
     private final static Signer BEARER_TOKEN_SIGNER = new com.aliyuncs.auth.signers.BearerTokenSigner();
     // Signature V3

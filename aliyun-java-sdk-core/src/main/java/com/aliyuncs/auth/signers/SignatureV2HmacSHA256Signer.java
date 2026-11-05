@@ -11,7 +11,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
-public class HmacSHA256V2Signer extends Signer {
+public class SignatureV2HmacSHA256Signer extends Signer {
 
     private static final Charset ENCODING = Charset.forName("UTF-8");
     private static final String ALGORITHM_NAME = "HmacSHA256";

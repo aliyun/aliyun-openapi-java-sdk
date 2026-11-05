@@ -17,9 +17,9 @@ import java.security.NoSuchAlgorithmException;
 import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({HmacSHA256V2Signer.class, Mac.class})
+@PrepareForTest({SignatureV2HmacSHA256Signer.class, Mac.class})
 @PowerMockIgnore({"javax.xml.*", "org.xml.*", "org.w3c.*"})
-public class HmacSHA256V2SignerTest {
+public class SignatureV2HmacSHA256SignerTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -30,7 +30,7 @@ public class HmacSHA256V2SignerTest {
                 .thenThrow(new NoSuchAlgorithmException("HmacSHA256 is unavailable"));
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("HmacSHA256 is unavailable");
-        new HmacSHA256V2Signer().signString("message", "test-secret");
+        new SignatureV2HmacSHA256Signer().signString("message", "test-secret");
     }
 
     @Test
@@ -41,6 +41,6 @@ public class HmacSHA256V2SignerTest {
         PowerMockito.doThrow(new InvalidKeyException("Provider rejected key")).when(mac).init(any(Key.class));
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Provider rejected key");
-        new HmacSHA256V2Signer().signString("message", "test-secret");
+        new SignatureV2HmacSHA256Signer().signString("message", "test-secret");
     }
 }

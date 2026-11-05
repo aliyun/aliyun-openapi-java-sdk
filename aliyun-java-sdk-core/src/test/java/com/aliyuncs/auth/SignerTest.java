@@ -24,11 +24,11 @@ public class SignerTest {
     }
 
     @Test
-    public void getSignerReturnHmacSHA256V2Signer() {
+    public void getSignerReturnSignatureV2HmacSHA256Signer() {
         AlibabaCloudCredentials credentials = mock(AlibabaCloudCredentials.class);
         Signer signer = Signer.getSigner(credentials, SignatureVersion.V1, null);
-        Assert.assertTrue(signer instanceof HmacSHA256V2Signer);
-        Assert.assertTrue(Signer.getSigner(credentials) instanceof HmacSHA256V2Signer);
+        Assert.assertTrue(signer instanceof SignatureV2HmacSHA256Signer);
+        Assert.assertTrue(Signer.getSigner(credentials) instanceof SignatureV2HmacSHA256Signer);
     }
 
     @Test
