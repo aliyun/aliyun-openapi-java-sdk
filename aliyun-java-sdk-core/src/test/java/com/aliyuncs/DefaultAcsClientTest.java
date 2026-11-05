@@ -47,7 +47,7 @@ import java.security.NoSuchAlgorithmException;
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.*;
 
-@PowerMockIgnore("javax.net.ssl.*")
+@PowerMockIgnore({"javax.net.ssl.*", "javax.xml.*", "org.xml.*", "org.w3c.*", "com.sun.org.apache.*"})
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({HttpUtil.class, LogUtils.class})
 public class DefaultAcsClientTest {
