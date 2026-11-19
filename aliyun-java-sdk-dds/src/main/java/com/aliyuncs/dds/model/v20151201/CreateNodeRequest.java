@@ -45,6 +45,8 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private String businessInfo;
 
+	private Boolean dryRun;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -178,6 +180,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

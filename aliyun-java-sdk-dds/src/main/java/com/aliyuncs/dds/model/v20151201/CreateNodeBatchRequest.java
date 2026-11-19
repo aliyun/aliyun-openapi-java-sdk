@@ -41,6 +41,8 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 
 	private String businessInfo;
 
+	private Boolean dryRun;
+
 	private Boolean autoPay;
 
 	private String fromApp;
@@ -146,6 +148,17 @@ public class CreateNodeBatchRequest extends RpcAcsRequest<CreateNodeBatchRespons
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

@@ -27,6 +27,8 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String couponNo;
 
 	private String businessInfo;
@@ -34,6 +36,8 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 	private Long period;
 
 	private Boolean autoPay;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -61,6 +65,17 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -105,6 +120,17 @@ public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidR
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

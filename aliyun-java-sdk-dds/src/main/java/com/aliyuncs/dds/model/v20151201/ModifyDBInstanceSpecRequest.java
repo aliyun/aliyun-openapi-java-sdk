@@ -29,35 +29,19 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String dBInstanceStorage;
 
-	private String readonlyReplicas;
-
 	private String extraParam;
 
 	private String targetSecondaryZoneId;
 
 	private String couponNo;
 
-	private String replicationFactor;
-
 	private String targetZoneId;
-
-	private String effectiveTime;
-
-	private String dBInstanceId;
 
 	private String businessInfo;
 
 	private String searchNodeClass;
 
-	private Boolean autoPay;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private Long searchNodeStorage;
-
-	private String targetVswitchId;
+	private Boolean dryRun;
 
 	private Long ownerId;
 
@@ -70,6 +54,26 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private Boolean alignPrimaryZone;
 
 	private String orderType;
+
+	private String clientToken;
+
+	private String readonlyReplicas;
+
+	private String replicationFactor;
+
+	private String effectiveTime;
+
+	private String dBInstanceId;
+
+	private Boolean autoPay;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long searchNodeStorage;
+
+	private String targetVswitchId;
 	public ModifyDBInstanceSpecRequest() {
 		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds");
 		setMethod(MethodType.POST);
@@ -98,17 +102,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceStorage = dBInstanceStorage;
 		if(dBInstanceStorage != null){
 			putQueryParameter("DBInstanceStorage", dBInstanceStorage);
-		}
-	}
-
-	public String getReadonlyReplicas() {
-		return this.readonlyReplicas;
-	}
-
-	public void setReadonlyReplicas(String readonlyReplicas) {
-		this.readonlyReplicas = readonlyReplicas;
-		if(readonlyReplicas != null){
-			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
 		}
 	}
 
@@ -145,17 +138,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public String getReplicationFactor() {
-		return this.replicationFactor;
-	}
-
-	public void setReplicationFactor(String replicationFactor) {
-		this.replicationFactor = replicationFactor;
-		if(replicationFactor != null){
-			putQueryParameter("ReplicationFactor", replicationFactor);
-		}
-	}
-
 	public String getTargetZoneId() {
 		return this.targetZoneId;
 	}
@@ -164,28 +146,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.targetZoneId = targetZoneId;
 		if(targetZoneId != null){
 			putQueryParameter("TargetZoneId", targetZoneId);
-		}
-	}
-
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -211,58 +171,14 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getSearchNodeStorage() {
-		return this.searchNodeStorage;
-	}
-
-	public void setSearchNodeStorage(Long searchNodeStorage) {
-		this.searchNodeStorage = searchNodeStorage;
-		if(searchNodeStorage != null){
-			putQueryParameter("SearchNodeStorage", searchNodeStorage.toString());
-		}
-	}
-
-	public String getTargetVswitchId() {
-		return this.targetVswitchId;
-	}
-
-	public void setTargetVswitchId(String targetVswitchId) {
-		this.targetVswitchId = targetVswitchId;
-		if(targetVswitchId != null){
-			putQueryParameter("TargetVswitchId", targetVswitchId);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -329,6 +245,116 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getReadonlyReplicas() {
+		return this.readonlyReplicas;
+	}
+
+	public void setReadonlyReplicas(String readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas);
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getSearchNodeStorage() {
+		return this.searchNodeStorage;
+	}
+
+	public void setSearchNodeStorage(Long searchNodeStorage) {
+		this.searchNodeStorage = searchNodeStorage;
+		if(searchNodeStorage != null){
+			putQueryParameter("SearchNodeStorage", searchNodeStorage.toString());
+		}
+	}
+
+	public String getTargetVswitchId() {
+		return this.targetVswitchId;
+	}
+
+	public void setTargetVswitchId(String targetVswitchId) {
+		this.targetVswitchId = targetVswitchId;
+		if(targetVswitchId != null){
+			putQueryParameter("TargetVswitchId", targetVswitchId);
 		}
 	}
 

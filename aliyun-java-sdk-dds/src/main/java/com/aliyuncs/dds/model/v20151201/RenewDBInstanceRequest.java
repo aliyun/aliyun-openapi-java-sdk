@@ -37,6 +37,8 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 
 	private Integer period;
 
+	private Boolean dryRun;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -118,6 +120,17 @@ public class RenewDBInstanceRequest extends RpcAcsRequest<RenewDBInstanceRespons
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 

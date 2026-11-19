@@ -39,6 +39,7 @@ public class DescribeReplicaSetRoleResponseUnmarshaller {
 			replicaSet.setConnectionPort(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ConnectionPort"));
 			replicaSet.setNetworkType(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].NetworkType"));
 			replicaSet.setExpiredTime(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].ExpiredTime"));
+			replicaSet.setIPAddress(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].IPAddress"));
 			replicaSet.setRoleId(_ctx.stringValue("DescribeReplicaSetRoleResponse.ReplicaSets["+ i +"].RoleId"));
 
 			replicaSets.add(replicaSet);

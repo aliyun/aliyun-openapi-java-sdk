@@ -40,9 +40,13 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String srcRegion;
 
+	private Boolean tTLEnabled;
+
 	private String storageType;
 
 	private String resourceGroupId;
+
+	private String maintainStartTime;
 
 	private String dBInstanceDescription;
 
@@ -54,11 +58,15 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private Integer period;
 
+	private Boolean dryRun;
+
 	private String backupId;
 
 	private String encryptionKey;
 
 	private Long ownerId;
+
+	private String maintainEndTime;
 
 	private String dBInstanceClass;
 
@@ -191,6 +199,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getTTLEnabled() {
+		return this.tTLEnabled;
+	}
+
+	public void setTTLEnabled(Boolean tTLEnabled) {
+		this.tTLEnabled = tTLEnabled;
+		if(tTLEnabled != null){
+			putQueryParameter("TTLEnabled", tTLEnabled.toString());
+		}
+	}
+
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -210,6 +229,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getMaintainStartTime() {
+		return this.maintainStartTime;
+	}
+
+	public void setMaintainStartTime(String maintainStartTime) {
+		this.maintainStartTime = maintainStartTime;
+		if(maintainStartTime != null){
+			putQueryParameter("MaintainStartTime", maintainStartTime);
 		}
 	}
 
@@ -271,6 +301,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -301,6 +342,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMaintainEndTime() {
+		return this.maintainEndTime;
+	}
+
+	public void setMaintainEndTime(String maintainEndTime) {
+		this.maintainEndTime = maintainEndTime;
+		if(maintainEndTime != null){
+			putQueryParameter("MaintainEndTime", maintainEndTime);
 		}
 	}
 

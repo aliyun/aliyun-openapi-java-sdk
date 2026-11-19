@@ -79,6 +79,8 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String iPAddress;
+
 		private String roleId;
 
 		public String getReplicaSetRole() {
@@ -127,6 +129,14 @@ public class DescribeReplicaSetRoleResponse extends AcsResponse {
 
 		public void setExpiredTime(String expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
 		}
 
 		public String getRoleId() {
