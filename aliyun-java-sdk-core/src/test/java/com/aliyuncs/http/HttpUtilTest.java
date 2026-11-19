@@ -43,30 +43,32 @@ public class HttpUtilTest {
     }
 
     @Test
-    public void testDebugHttpRequest() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
-        Mockito.when(request.getSysMethod()).thenReturn(MethodType.GET);
-        Mockito.when(request.getSysUrl()).thenReturn("http://test.domain");
+    public void testDebugHttpRequest() {
         Map<String, String> requestHeaders = new HashMap<String, String>();
-        Mockito.when(request.getHttpContentString()).thenReturn("request body");
         requestHeaders.put("test1", "test1");
         requestHeaders.put("test2", "test2");
-        Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
-        String exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
+        HttpRequest request = new HttpRequest("http://test.domain", requestHeaders);
+        request.setSysMethod(MethodType.POST);
+        request.setSysReadTimeout(0);
+        request.setSysConnectTimeout(0);
+        request.setHttpContent("request body".getBytes(), "utf-8", null);
+        String exceptString = "> POST HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> Content-Length : 12\n"
+                + "> test1 : test1\n> Content-MD5 : YhZ08xUv78xtnjbDzSonAQ==\n> "
                 + "Request URL : http://test.domain\n> " + "Request string to sign: [null]\n> "
                 + "Request isIgnoreSSLCerts : false\n> " + "Request connect timeout : 0\n> "
-                + "Request read timeout : 0\n> " + "Encoding : null\n> " + "\n" + "request body";
+                + "Request read timeout : 0\n> " + "Encoding : utf-8\n> " + "\n" + "request body";
 
         HttpUtil.setIsHttpDebug(true);
         HttpUtil.setIsHttpContentDebug(true);
-        Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
+        Assert.assertEquals(exceptString, HttpUtil.debugHttpRequest(request));
 
         HttpUtil.setIsHttpContentDebug(false);
-        exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
+        exceptString = "> POST HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> Content-Length : 12\n"
+                + "> test1 : test1\n> Content-MD5 : YhZ08xUv78xtnjbDzSonAQ==\n> "
                 + "Request URL : http://test.domain\n> " + "Request string to sign: [null]\n> "
                 + "Request isIgnoreSSLCerts : false\n> " + "Request connect timeout : 0\n> "
-                + "Request read timeout : 0\n> " + "Encoding : null\n> ";
-        Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
+                + "Request read timeout : 0\n> " + "Encoding : utf-8\n> ";
+        Assert.assertEquals(exceptString, HttpUtil.debugHttpRequest(request));
 
         HttpUtil.setIsHttpDebug(false);
         Assert.assertNull(HttpUtil.debugHttpRequest(request));
@@ -110,7 +112,7 @@ public class HttpUtilTest {
 
     @Test
     public void testDebugHttpRquestException() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         Mockito.when(request.getSysMethod()).thenReturn(MethodType.GET);
         Mockito.when(request.getSysUrl()).thenReturn("httpss://test.domain/jdj");
         Map<String, String> requestHeaders = new HashMap<String, String>();
@@ -163,7 +165,7 @@ public class HttpUtilTest {
 
     @Test
     public void testGetJDKProxyException() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         thrown.expect(ClientException.class);
         Proxy proxy = HttpUtil.getJDKProxy("http0://www.aliyun.com", null, request);
         Assert.assertNotNull(proxy);
@@ -171,21 +173,21 @@ public class HttpUtilTest {
 
     @Test
     public void testGetJDKProxyEnvProxyHasUserInfo() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         Proxy proxy = HttpUtil.getJDKProxy(null, "http://user:passwd@www.aliyun.com", request);
         Assert.assertNotNull(proxy);
     }
 
     @Test
     public void testGetJDKProxyEnvProxyNoUserInfo() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         Proxy proxy = HttpUtil.getJDKProxy(null, "http://www.aliyun.com:80", request);
         Assert.assertNotNull(proxy);
     }
 
     @Test
     public void testGetApacheProxyException() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         thrown.expect(ClientException.class);
         HttpHost proxy = HttpUtil.getApacheProxy("http0://www.aliyun.com", null, request);
         Assert.assertNotNull(proxy);
@@ -193,14 +195,14 @@ public class HttpUtilTest {
 
     @Test
     public void testGetApacheProxyEnvProxyHasUserInfo() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         HttpHost proxy = HttpUtil.getApacheProxy(null, "http://user:passwd@www.aliyun.com", request);
         Assert.assertNotNull(proxy);
     }
 
     @Test
     public void testGetApacheProxyEnvProxyNoUserInfo() throws ClientException {
-        HttpRequest request = mock(HttpRequest.class);
+        HttpRequest request = new HttpRequest("mock url");
         HttpHost proxy = HttpUtil.getApacheProxy(null, "http://www.aliyun.com:80", request);
         Assert.assertNotNull(proxy);
     }
