@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDataResponse;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDataResponse.Result;
 import com.aliyuncs.quickbi_public.model.v20220101.QueryDataResponse.Result.HeadersItem;
+import com.aliyuncs.quickbi_public.model.v20220101.QueryDataResponse.Result.ValuesV2Item;
+import com.aliyuncs.quickbi_public.model.v20220101.QueryDataResponse.Result.ValuesV2Item.RowValueItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -36,6 +38,25 @@ public class QueryDataResponseUnmarshaller {
 
 		List<Map<Object, Object>> values = _ctx.listMapValue("QueryDataResponse.Result.Values");
 		result.setValues(values);
+
+		List<ValuesV2Item> valuesV2 = new ArrayList<ValuesV2Item>();
+		for (int i = 0; i < _ctx.lengthValue("QueryDataResponse.Result.ValuesV2.Length"); i++) {
+			ValuesV2Item valuesV2Item = new ValuesV2Item();
+
+			List<RowValueItem> rowValue = new ArrayList<RowValueItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryDataResponse.Result.ValuesV2["+ i +"].RowValue.Length"); j++) {
+				RowValueItem rowValueItem = new RowValueItem();
+				rowValueItem.setR(_ctx.stringValue("QueryDataResponse.Result.ValuesV2["+ i +"].RowValue["+ j +"].R"));
+				rowValueItem.setV(_ctx.stringValue("QueryDataResponse.Result.ValuesV2["+ i +"].RowValue["+ j +"].V"));
+				rowValueItem.setL(_ctx.stringValue("QueryDataResponse.Result.ValuesV2["+ i +"].RowValue["+ j +"].L"));
+
+				rowValue.add(rowValueItem);
+			}
+			valuesV2Item.setRowValue(rowValue);
+
+			valuesV2.add(valuesV2Item);
+		}
+		result.setValuesV2(valuesV2);
 
 		List<HeadersItem> headers = new ArrayList<HeadersItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDataResponse.Result.Headers.Length"); i++) {

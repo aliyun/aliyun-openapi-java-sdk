@@ -60,6 +60,8 @@ public class QueryDataResponse extends AcsResponse {
 
 		private String sql;
 
+		private List<ValuesV2Item> valuesV2;
+
 		private List<HeadersItem> headers;
 
 		private List<Map<Object,Object>> values;
@@ -70,6 +72,14 @@ public class QueryDataResponse extends AcsResponse {
 
 		public void setSql(String sql) {
 			this.sql = sql;
+		}
+
+		public List<ValuesV2Item> getValuesV2() {
+			return this.valuesV2;
+		}
+
+		public void setValuesV2(List<ValuesV2Item> valuesV2) {
+			this.valuesV2 = valuesV2;
 		}
 
 		public List<HeadersItem> getHeaders() {
@@ -86,6 +96,52 @@ public class QueryDataResponse extends AcsResponse {
 
 		public void setValues(List<Map<Object,Object>> values) {
 			this.values = values;
+		}
+
+		public static class ValuesV2Item {
+
+			private List<RowValueItem> rowValue;
+
+			public List<RowValueItem> getRowValue() {
+				return this.rowValue;
+			}
+
+			public void setRowValue(List<RowValueItem> rowValue) {
+				this.rowValue = rowValue;
+			}
+
+			public static class RowValueItem {
+
+				private String r;
+
+				private String v;
+
+				private String l;
+
+				public String getR() {
+					return this.r;
+				}
+
+				public void setR(String r) {
+					this.r = r;
+				}
+
+				public String getV() {
+					return this.v;
+				}
+
+				public void setV(String v) {
+					this.v = v;
+				}
+
+				public String getL() {
+					return this.l;
+				}
+
+				public void setL(String l) {
+					this.l = l;
+				}
+			}
 		}
 
 		public static class HeadersItem {
