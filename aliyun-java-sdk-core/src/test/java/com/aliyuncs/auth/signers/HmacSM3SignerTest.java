@@ -1,12 +1,19 @@
 package com.aliyuncs.auth.signers;
 
 import com.aliyuncs.auth.AlibabaCloudCredentials;
+import org.bouncycastle.util.encoders.Base64;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -89,12 +96,45 @@ public class HmacSM3SignerTest {
     }
 
     @Test
-    public void hash() {
+    public void hash() throws Exception {
         HmacSM3Signer signer = new HmacSM3Signer();
+        HmacSM3Signer otherSigner = new HmacSM3Signer();
+        Assert.assertNull(signer.hash(null));
+        for (int i = 0; i < 10; i++) {
+            Assert.assertEquals("VeEukWUNL+xW7HTh0+Tdv84u86ZYkMKhns+IowfnaiM=",
+                    Base64.toBase64String(signer.hash("test".getBytes("UTF-8"))));
+            Assert.assertEquals("GrIdg1XPoX+OYRlIMegajyK+yMco/vt0ftA161CCqis=",
+                    Base64.toBase64String(signer.hash(new byte[0])));
+            Assert.assertEquals("Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA=",
+                    Base64.toBase64String(otherSigner.hash("abc".getBytes("UTF-8"))));
+        }
+    }
+
+    @Test
+    public void hashConcurrently() throws Exception {
+        final HmacSM3Signer signer = new HmacSM3Signer();
+        ExecutorService executor = Executors.newFixedThreadPool(2);
         try {
-            Assert.assertNull(signer.hash(null));
-        } catch (NoSuchAlgorithmException e) {
-            Assert.fail();
+            List<Future<Void>> results = new ArrayList<Future<Void>>();
+            for (int i = 0; i < 20; i++) {
+                final boolean testInput = i % 2 == 0;
+                results.add(executor.submit(new Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        String input = testInput ? "test" : "abc";
+                        String expected = testInput ? "VeEukWUNL+xW7HTh0+Tdv84u86ZYkMKhns+IowfnaiM="
+                                : "Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA=";
+                        Assert.assertEquals(expected,
+                                Base64.toBase64String(signer.hash(input.getBytes("UTF-8"))));
+                        return null;
+                    }
+                }));
+            }
+            for (Future<Void> result : results) {
+                result.get(10, TimeUnit.SECONDS);
+            }
+        } finally {
+            executor.shutdownNow();
         }
     }
 
