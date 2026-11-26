@@ -27,8 +27,8 @@ public class ListDocumentsResponseUnmarshaller {
 	public static ListDocumentsResponse unmarshall(ListDocumentsResponse listDocumentsResponse, UnmarshallerContext _ctx) {
 		
 		listDocumentsResponse.setRequestId(_ctx.stringValue("ListDocumentsResponse.RequestId"));
-		listDocumentsResponse.setMessage(_ctx.stringValue("ListDocumentsResponse.Message"));
 		listDocumentsResponse.setStatus(_ctx.stringValue("ListDocumentsResponse.Status"));
+		listDocumentsResponse.setMessage(_ctx.stringValue("ListDocumentsResponse.Message"));
 		listDocumentsResponse.setNextToken(_ctx.stringValue("ListDocumentsResponse.NextToken"));
 		listDocumentsResponse.setCount(_ctx.integerValue("ListDocumentsResponse.Count"));
 

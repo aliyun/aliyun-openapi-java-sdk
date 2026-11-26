@@ -24,28 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpsertChunksResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String embeddingTokens;
 
 	private String status;
 
-	private String embeddingTokens;
+	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	private String jobId;
+
+	public String getEmbeddingTokens() {
+		return this.embeddingTokens;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setEmbeddingTokens(String embeddingTokens) {
+		this.embeddingTokens = embeddingTokens;
 	}
 
 	public String getStatus() {
@@ -56,12 +50,28 @@ public class UpsertChunksResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getEmbeddingTokens() {
-		return this.embeddingTokens;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setEmbeddingTokens(String embeddingTokens) {
-		this.embeddingTokens = embeddingTokens;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

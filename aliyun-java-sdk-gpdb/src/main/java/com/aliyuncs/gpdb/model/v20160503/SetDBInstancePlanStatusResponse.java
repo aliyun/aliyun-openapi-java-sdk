@@ -26,11 +26,11 @@ public class SetDBInstancePlanStatusResponse extends AcsResponse {
 
 	private String status;
 
-	private String errorMessage;
+	private String requestId;
 
 	private String planId;
 
-	private String requestId;
+	private String errorMessage;
 
 	public String getStatus() {
 		return this.status;
@@ -40,12 +40,12 @@ public class SetDBInstancePlanStatusResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPlanId() {
@@ -56,12 +56,12 @@ public class SetDBInstancePlanStatusResponse extends AcsResponse {
 		this.planId = planId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStreamingDataSourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<DataSourceItemsItem> dataSourceItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -47,6 +39,14 @@ public class ListStreamingDataSourcesResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,72 +67,32 @@ public class ListStreamingDataSourcesResponse extends AcsResponse {
 
 	public static class DataSourceItemsItem {
 
-		private Integer dataSourceId;
-
-		private String dataSourceName;
-
-		private String dataSourceType;
-
-		private String dataSourceConfig;
-
-		private String dataSourceDescription;
-
-		private String createTime;
+		private String status;
 
 		private String modifyTime;
 
-		private String status;
+		private String dataSourceName;
 
-		private Integer serviceId;
+		private String dataSourceConfig;
+
+		private String dataSourceType;
+
+		private String createTime;
+
+		private String dataSourceDescription;
 
 		private String errorMessage;
 
-		public Integer getDataSourceId() {
-			return this.dataSourceId;
+		private Integer dataSourceId;
+
+		private Integer serviceId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDataSourceId(Integer dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
-		public String getDataSourceName() {
-			return this.dataSourceName;
-		}
-
-		public void setDataSourceName(String dataSourceName) {
-			this.dataSourceName = dataSourceName;
-		}
-
-		public String getDataSourceType() {
-			return this.dataSourceType;
-		}
-
-		public void setDataSourceType(String dataSourceType) {
-			this.dataSourceType = dataSourceType;
-		}
-
-		public String getDataSourceConfig() {
-			return this.dataSourceConfig;
-		}
-
-		public void setDataSourceConfig(String dataSourceConfig) {
-			this.dataSourceConfig = dataSourceConfig;
-		}
-
-		public String getDataSourceDescription() {
-			return this.dataSourceDescription;
-		}
-
-		public void setDataSourceDescription(String dataSourceDescription) {
-			this.dataSourceDescription = dataSourceDescription;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getModifyTime() {
@@ -143,20 +103,44 @@ public class ListStreamingDataSourcesResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getDataSourceName() {
+			return this.dataSourceName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setDataSourceName(String dataSourceName) {
+			this.dataSourceName = dataSourceName;
 		}
 
-		public Integer getServiceId() {
-			return this.serviceId;
+		public String getDataSourceConfig() {
+			return this.dataSourceConfig;
 		}
 
-		public void setServiceId(Integer serviceId) {
-			this.serviceId = serviceId;
+		public void setDataSourceConfig(String dataSourceConfig) {
+			this.dataSourceConfig = dataSourceConfig;
+		}
+
+		public String getDataSourceType() {
+			return this.dataSourceType;
+		}
+
+		public void setDataSourceType(String dataSourceType) {
+			this.dataSourceType = dataSourceType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getDataSourceDescription() {
+			return this.dataSourceDescription;
+		}
+
+		public void setDataSourceDescription(String dataSourceDescription) {
+			this.dataSourceDescription = dataSourceDescription;
 		}
 
 		public String getErrorMessage() {
@@ -165,6 +149,22 @@ public class ListStreamingDataSourcesResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
+		}
+
+		public Integer getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Integer dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public Integer getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Integer serviceId) {
+			this.serviceId = serviceId;
 		}
 	}
 

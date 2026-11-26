@@ -25,27 +25,16 @@ import com.aliyuncs.gpdb.Endpoint;
 public class DescribeJDBCDataSourceRequest extends RpcAcsRequest<DescribeJDBCDataSourceResponse> {
 	   
 
-	private String dataSourceId;
-
 	private String dBInstanceId;
+
+	private String dataSourceId;
 	public DescribeJDBCDataSourceRequest() {
-		super("gpdb", "2016-05-03", "DescribeJDBCDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeJDBCDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-		if(dataSourceId != null){
-			putQueryParameter("DataSourceId", dataSourceId);
-		}
 	}
 
 	public String getDBInstanceId() {
@@ -56,6 +45,17 @@ public class DescribeJDBCDataSourceRequest extends RpcAcsRequest<DescribeJDBCDat
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+		if(dataSourceId != null){
+			putQueryParameter("DataSourceId", dataSourceId);
 		}
 	}
 

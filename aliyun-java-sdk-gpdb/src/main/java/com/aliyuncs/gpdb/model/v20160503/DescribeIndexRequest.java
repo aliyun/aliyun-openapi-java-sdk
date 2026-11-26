@@ -40,7 +40,7 @@ public class DescribeIndexRequest extends RpcAcsRequest<DescribeIndexResponse> {
 
 	private String workspaceId;
 	public DescribeIndexRequest() {
-		super("gpdb", "2016-05-03", "DescribeIndex", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeIndex", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

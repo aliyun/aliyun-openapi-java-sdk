@@ -67,49 +67,33 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String operationClass;
-
-		private String executeState;
-
 		private Float executeCost;
 
-		private String sQLText;
-
-		private Integer sourcePort;
+		private String sQLPlan;
 
 		private String dBRole;
 
-		private String operationType;
+		private Integer sourcePort;
+
+		private String sQLText;
 
 		private String sourceIP;
-
-		private String sQLPlan;
 
 		private Long returnRowCounts;
 
 		private String dBName;
 
-		private String operationExecuteTime;
+		private String operationType;
 
 		private Long scanRowCounts;
 
+		private String operationClass;
+
+		private String executeState;
+
+		private String operationExecuteTime;
+
 		private String accountName;
-
-		public String getOperationClass() {
-			return this.operationClass;
-		}
-
-		public void setOperationClass(String operationClass) {
-			this.operationClass = operationClass;
-		}
-
-		public String getExecuteState() {
-			return this.executeState;
-		}
-
-		public void setExecuteState(String executeState) {
-			this.executeState = executeState;
-		}
 
 		public Float getExecuteCost() {
 			return this.executeCost;
@@ -119,20 +103,12 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 			this.executeCost = executeCost;
 		}
 
-		public String getSQLText() {
-			return this.sQLText;
+		public String getSQLPlan() {
+			return this.sQLPlan;
 		}
 
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Integer getSourcePort() {
-			return this.sourcePort;
-		}
-
-		public void setSourcePort(Integer sourcePort) {
-			this.sourcePort = sourcePort;
+		public void setSQLPlan(String sQLPlan) {
+			this.sQLPlan = sQLPlan;
 		}
 
 		public String getDBRole() {
@@ -143,12 +119,20 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 			this.dBRole = dBRole;
 		}
 
-		public String getOperationType() {
-			return this.operationType;
+		public Integer getSourcePort() {
+			return this.sourcePort;
 		}
 
-		public void setOperationType(String operationType) {
-			this.operationType = operationType;
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 
 		public String getSourceIP() {
@@ -157,14 +141,6 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 
 		public void setSourceIP(String sourceIP) {
 			this.sourceIP = sourceIP;
-		}
-
-		public String getSQLPlan() {
-			return this.sQLPlan;
-		}
-
-		public void setSQLPlan(String sQLPlan) {
-			this.sQLPlan = sQLPlan;
 		}
 
 		public Long getReturnRowCounts() {
@@ -183,12 +159,12 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 			this.dBName = dBName;
 		}
 
-		public String getOperationExecuteTime() {
-			return this.operationExecuteTime;
+		public String getOperationType() {
+			return this.operationType;
 		}
 
-		public void setOperationExecuteTime(String operationExecuteTime) {
-			this.operationExecuteTime = operationExecuteTime;
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
 		}
 
 		public Long getScanRowCounts() {
@@ -197,6 +173,30 @@ public class DescribeSQLLogsResponse extends AcsResponse {
 
 		public void setScanRowCounts(Long scanRowCounts) {
 			this.scanRowCounts = scanRowCounts;
+		}
+
+		public String getOperationClass() {
+			return this.operationClass;
+		}
+
+		public void setOperationClass(String operationClass) {
+			this.operationClass = operationClass;
+		}
+
+		public String getExecuteState() {
+			return this.executeState;
+		}
+
+		public void setExecuteState(String executeState) {
+			this.executeState = executeState;
+		}
+
+		public String getOperationExecuteTime() {
+			return this.operationExecuteTime;
+		}
+
+		public void setOperationExecuteTime(String operationExecuteTime) {
+			this.operationExecuteTime = operationExecuteTime;
 		}
 
 		public String getAccountName() {

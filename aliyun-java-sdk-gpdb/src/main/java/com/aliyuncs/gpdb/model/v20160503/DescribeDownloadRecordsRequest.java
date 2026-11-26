@@ -29,7 +29,7 @@ public class DescribeDownloadRecordsRequest extends RpcAcsRequest<DescribeDownlo
 
 	private String dBInstanceId;
 	public DescribeDownloadRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeDownloadRecords", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDownloadRecords", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

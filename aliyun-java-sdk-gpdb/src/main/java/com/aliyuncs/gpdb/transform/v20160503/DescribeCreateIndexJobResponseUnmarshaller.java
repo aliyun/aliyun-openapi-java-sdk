@@ -24,17 +24,17 @@ public class DescribeCreateIndexJobResponseUnmarshaller {
 	public static DescribeCreateIndexJobResponse unmarshall(DescribeCreateIndexJobResponse describeCreateIndexJobResponse, UnmarshallerContext _ctx) {
 		
 		describeCreateIndexJobResponse.setRequestId(_ctx.stringValue("DescribeCreateIndexJobResponse.RequestId"));
-		describeCreateIndexJobResponse.setMessage(_ctx.stringValue("DescribeCreateIndexJobResponse.Message"));
 		describeCreateIndexJobResponse.setStatus(_ctx.stringValue("DescribeCreateIndexJobResponse.Status"));
+		describeCreateIndexJobResponse.setMessage(_ctx.stringValue("DescribeCreateIndexJobResponse.Message"));
 
 		Job job = new Job();
-		job.setId(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.Id"));
-		job.setCompleted(_ctx.booleanValue("DescribeCreateIndexJobResponse.Job.Completed"));
-		job.setCreateTime(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.CreateTime"));
-		job.setUpdateTime(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.UpdateTime"));
 		job.setStatus(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.Status"));
-		job.setError(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.Error"));
 		job.setProgress(_ctx.integerValue("DescribeCreateIndexJobResponse.Job.Progress"));
+		job.setCreateTime(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.CreateTime"));
+		job.setCompleted(_ctx.booleanValue("DescribeCreateIndexJobResponse.Job.Completed"));
+		job.setUpdateTime(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.UpdateTime"));
+		job.setError(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.Error"));
+		job.setId(_ctx.stringValue("DescribeCreateIndexJobResponse.Job.Id"));
 		describeCreateIndexJobResponse.setJob(job);
 	 
 	 	return describeCreateIndexJobResponse;

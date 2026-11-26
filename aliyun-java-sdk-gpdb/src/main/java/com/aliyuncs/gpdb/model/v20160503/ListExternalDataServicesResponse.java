@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExternalDataServicesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<Items> serviceItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -47,6 +39,14 @@ public class ListExternalDataServicesResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,36 +67,36 @@ public class ListExternalDataServicesResponse extends AcsResponse {
 
 	public static class Items {
 
-		private String serviceId;
-
-		private String serviceType;
-
-		private String serviceName;
-
-		private String serviceDescription;
-
-		private String serviceSpec;
-
 		private String status;
-
-		private String createTime;
 
 		private String modifyTime;
 
-		public String getServiceId() {
-			return this.serviceId;
+		private String serviceName;
+
+		private String serviceType;
+
+		private String serviceDescription;
+
+		private String createTime;
+
+		private String serviceSpec;
+
+		private String serviceId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getServiceType() {
-			return this.serviceType;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getServiceName() {
@@ -107,28 +107,20 @@ public class ListExternalDataServicesResponse extends AcsResponse {
 			this.serviceName = serviceName;
 		}
 
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
 		public String getServiceDescription() {
 			return this.serviceDescription;
 		}
 
 		public void setServiceDescription(String serviceDescription) {
 			this.serviceDescription = serviceDescription;
-		}
-
-		public String getServiceSpec() {
-			return this.serviceSpec;
-		}
-
-		public void setServiceSpec(String serviceSpec) {
-			this.serviceSpec = serviceSpec;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getCreateTime() {
@@ -139,12 +131,20 @@ public class ListExternalDataServicesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getServiceSpec() {
+			return this.serviceSpec;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setServiceSpec(String serviceSpec) {
+			this.serviceSpec = serviceSpec;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
 		}
 	}
 

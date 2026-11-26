@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateJDBCDataSourceResponse extends AcsResponse {
 
-	private String dataSourceId;
-
 	private String requestId;
 
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-	}
+	private String dataSourceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateJDBCDataSourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
 	}
 
 	@Override

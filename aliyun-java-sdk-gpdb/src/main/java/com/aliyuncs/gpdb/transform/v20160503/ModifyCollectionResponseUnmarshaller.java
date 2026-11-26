@@ -23,9 +23,9 @@ public class ModifyCollectionResponseUnmarshaller {
 	public static ModifyCollectionResponse unmarshall(ModifyCollectionResponse modifyCollectionResponse, UnmarshallerContext _ctx) {
 		
 		modifyCollectionResponse.setRequestId(_ctx.stringValue("ModifyCollectionResponse.RequestId"));
+		modifyCollectionResponse.setStatus(_ctx.stringValue("ModifyCollectionResponse.Status"));
 		modifyCollectionResponse.setMessage(_ctx.stringValue("ModifyCollectionResponse.Message"));
 		modifyCollectionResponse.setMetadata(_ctx.stringValue("ModifyCollectionResponse.Metadata"));
-		modifyCollectionResponse.setStatus(_ctx.stringValue("ModifyCollectionResponse.Status"));
 	 
 	 	return modifyCollectionResponse;
 	}

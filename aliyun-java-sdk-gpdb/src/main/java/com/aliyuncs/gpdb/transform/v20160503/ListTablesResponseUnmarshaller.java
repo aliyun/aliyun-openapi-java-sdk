@@ -26,8 +26,8 @@ public class ListTablesResponseUnmarshaller {
 	public static ListTablesResponse unmarshall(ListTablesResponse listTablesResponse, UnmarshallerContext _ctx) {
 		
 		listTablesResponse.setRequestId(_ctx.stringValue("ListTablesResponse.RequestId"));
-		listTablesResponse.setMessage(_ctx.stringValue("ListTablesResponse.Message"));
 		listTablesResponse.setStatus(_ctx.stringValue("ListTablesResponse.Status"));
+		listTablesResponse.setMessage(_ctx.stringValue("ListTablesResponse.Message"));
 		listTablesResponse.setNextToken(_ctx.stringValue("ListTablesResponse.NextToken"));
 
 		List<String> tables = new ArrayList<String>();

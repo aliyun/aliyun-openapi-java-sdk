@@ -56,42 +56,42 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 	public static class Status {
 
-		private Adbpg_status adbpg_status;
+		private Node_master_connection_status node_master_connection_status;
 
 		private Adbpg_connection_status adbpg_connection_status;
 
-		private Adbpg_disk_status adbpg_disk_status;
-
-		private Adbpg_disk_usage_percent adbpg_disk_usage_percent;
-
-		private Adbpg_master_disk_usage_percent_max adbpg_master_disk_usage_percent_max;
-
-		private Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max;
-
 		private Node_master_status node_master_status;
-
-		private Node_segment_disk_status node_segment_disk_status;
-
-		private Node_master_connection_status node_master_connection_status;
-
-		private Node_segment_connection_status node_segment_connection_status;
-
-		private Adbpg_master_status adbpg_master_status;
-
-		private Adbpg_segment_status adbpg_segment_status;
-
-		private Adbpg_instance_total_data_gb adbpg_instance_total_data_gb;
-
-		private Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb;
 
 		private Adbpg_instance_cold_data_gb adbpg_instance_cold_data_gb;
 
-		public Adbpg_status getAdbpg_status() {
-			return this.adbpg_status;
+		private Adbpg_master_disk_usage_percent_max adbpg_master_disk_usage_percent_max;
+
+		private Node_segment_connection_status node_segment_connection_status;
+
+		private Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb;
+
+		private Adbpg_status adbpg_status;
+
+		private Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max;
+
+		private Adbpg_disk_usage_percent adbpg_disk_usage_percent;
+
+		private Adbpg_disk_status adbpg_disk_status;
+
+		private Adbpg_instance_total_data_gb adbpg_instance_total_data_gb;
+
+		private Adbpg_segment_status adbpg_segment_status;
+
+		private Node_segment_disk_status node_segment_disk_status;
+
+		private Adbpg_master_status adbpg_master_status;
+
+		public Node_master_connection_status getNode_master_connection_status() {
+			return this.node_master_connection_status;
 		}
 
-		public void setAdbpg_status(Adbpg_status adbpg_status) {
-			this.adbpg_status = adbpg_status;
+		public void setNode_master_connection_status(Node_master_connection_status node_master_connection_status) {
+			this.node_master_connection_status = node_master_connection_status;
 		}
 
 		public Adbpg_connection_status getAdbpg_connection_status() {
@@ -102,100 +102,12 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			this.adbpg_connection_status = adbpg_connection_status;
 		}
 
-		public Adbpg_disk_status getAdbpg_disk_status() {
-			return this.adbpg_disk_status;
-		}
-
-		public void setAdbpg_disk_status(Adbpg_disk_status adbpg_disk_status) {
-			this.adbpg_disk_status = adbpg_disk_status;
-		}
-
-		public Adbpg_disk_usage_percent getAdbpg_disk_usage_percent() {
-			return this.adbpg_disk_usage_percent;
-		}
-
-		public void setAdbpg_disk_usage_percent(Adbpg_disk_usage_percent adbpg_disk_usage_percent) {
-			this.adbpg_disk_usage_percent = adbpg_disk_usage_percent;
-		}
-
-		public Adbpg_master_disk_usage_percent_max getAdbpg_master_disk_usage_percent_max() {
-			return this.adbpg_master_disk_usage_percent_max;
-		}
-
-		public void setAdbpg_master_disk_usage_percent_max(Adbpg_master_disk_usage_percent_max adbpg_master_disk_usage_percent_max) {
-			this.adbpg_master_disk_usage_percent_max = adbpg_master_disk_usage_percent_max;
-		}
-
-		public Adbgp_segment_disk_usage_percent_max getAdbgp_segment_disk_usage_percent_max() {
-			return this.adbgp_segment_disk_usage_percent_max;
-		}
-
-		public void setAdbgp_segment_disk_usage_percent_max(Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max) {
-			this.adbgp_segment_disk_usage_percent_max = adbgp_segment_disk_usage_percent_max;
-		}
-
 		public Node_master_status getNode_master_status() {
 			return this.node_master_status;
 		}
 
 		public void setNode_master_status(Node_master_status node_master_status) {
 			this.node_master_status = node_master_status;
-		}
-
-		public Node_segment_disk_status getNode_segment_disk_status() {
-			return this.node_segment_disk_status;
-		}
-
-		public void setNode_segment_disk_status(Node_segment_disk_status node_segment_disk_status) {
-			this.node_segment_disk_status = node_segment_disk_status;
-		}
-
-		public Node_master_connection_status getNode_master_connection_status() {
-			return this.node_master_connection_status;
-		}
-
-		public void setNode_master_connection_status(Node_master_connection_status node_master_connection_status) {
-			this.node_master_connection_status = node_master_connection_status;
-		}
-
-		public Node_segment_connection_status getNode_segment_connection_status() {
-			return this.node_segment_connection_status;
-		}
-
-		public void setNode_segment_connection_status(Node_segment_connection_status node_segment_connection_status) {
-			this.node_segment_connection_status = node_segment_connection_status;
-		}
-
-		public Adbpg_master_status getAdbpg_master_status() {
-			return this.adbpg_master_status;
-		}
-
-		public void setAdbpg_master_status(Adbpg_master_status adbpg_master_status) {
-			this.adbpg_master_status = adbpg_master_status;
-		}
-
-		public Adbpg_segment_status getAdbpg_segment_status() {
-			return this.adbpg_segment_status;
-		}
-
-		public void setAdbpg_segment_status(Adbpg_segment_status adbpg_segment_status) {
-			this.adbpg_segment_status = adbpg_segment_status;
-		}
-
-		public Adbpg_instance_total_data_gb getAdbpg_instance_total_data_gb() {
-			return this.adbpg_instance_total_data_gb;
-		}
-
-		public void setAdbpg_instance_total_data_gb(Adbpg_instance_total_data_gb adbpg_instance_total_data_gb) {
-			this.adbpg_instance_total_data_gb = adbpg_instance_total_data_gb;
-		}
-
-		public Adbpg_instance_hot_data_gb getAdbpg_instance_hot_data_gb() {
-			return this.adbpg_instance_hot_data_gb;
-		}
-
-		public void setAdbpg_instance_hot_data_gb(Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb) {
-			this.adbpg_instance_hot_data_gb = adbpg_instance_hot_data_gb;
 		}
 
 		public Adbpg_instance_cold_data_gb getAdbpg_instance_cold_data_gb() {
@@ -206,7 +118,95 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			this.adbpg_instance_cold_data_gb = adbpg_instance_cold_data_gb;
 		}
 
-		public static class Adbpg_status {
+		public Adbpg_master_disk_usage_percent_max getAdbpg_master_disk_usage_percent_max() {
+			return this.adbpg_master_disk_usage_percent_max;
+		}
+
+		public void setAdbpg_master_disk_usage_percent_max(Adbpg_master_disk_usage_percent_max adbpg_master_disk_usage_percent_max) {
+			this.adbpg_master_disk_usage_percent_max = adbpg_master_disk_usage_percent_max;
+		}
+
+		public Node_segment_connection_status getNode_segment_connection_status() {
+			return this.node_segment_connection_status;
+		}
+
+		public void setNode_segment_connection_status(Node_segment_connection_status node_segment_connection_status) {
+			this.node_segment_connection_status = node_segment_connection_status;
+		}
+
+		public Adbpg_instance_hot_data_gb getAdbpg_instance_hot_data_gb() {
+			return this.adbpg_instance_hot_data_gb;
+		}
+
+		public void setAdbpg_instance_hot_data_gb(Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb) {
+			this.adbpg_instance_hot_data_gb = adbpg_instance_hot_data_gb;
+		}
+
+		public Adbpg_status getAdbpg_status() {
+			return this.adbpg_status;
+		}
+
+		public void setAdbpg_status(Adbpg_status adbpg_status) {
+			this.adbpg_status = adbpg_status;
+		}
+
+		public Adbgp_segment_disk_usage_percent_max getAdbgp_segment_disk_usage_percent_max() {
+			return this.adbgp_segment_disk_usage_percent_max;
+		}
+
+		public void setAdbgp_segment_disk_usage_percent_max(Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max) {
+			this.adbgp_segment_disk_usage_percent_max = adbgp_segment_disk_usage_percent_max;
+		}
+
+		public Adbpg_disk_usage_percent getAdbpg_disk_usage_percent() {
+			return this.adbpg_disk_usage_percent;
+		}
+
+		public void setAdbpg_disk_usage_percent(Adbpg_disk_usage_percent adbpg_disk_usage_percent) {
+			this.adbpg_disk_usage_percent = adbpg_disk_usage_percent;
+		}
+
+		public Adbpg_disk_status getAdbpg_disk_status() {
+			return this.adbpg_disk_status;
+		}
+
+		public void setAdbpg_disk_status(Adbpg_disk_status adbpg_disk_status) {
+			this.adbpg_disk_status = adbpg_disk_status;
+		}
+
+		public Adbpg_instance_total_data_gb getAdbpg_instance_total_data_gb() {
+			return this.adbpg_instance_total_data_gb;
+		}
+
+		public void setAdbpg_instance_total_data_gb(Adbpg_instance_total_data_gb adbpg_instance_total_data_gb) {
+			this.adbpg_instance_total_data_gb = adbpg_instance_total_data_gb;
+		}
+
+		public Adbpg_segment_status getAdbpg_segment_status() {
+			return this.adbpg_segment_status;
+		}
+
+		public void setAdbpg_segment_status(Adbpg_segment_status adbpg_segment_status) {
+			this.adbpg_segment_status = adbpg_segment_status;
+		}
+
+		public Node_segment_disk_status getNode_segment_disk_status() {
+			return this.node_segment_disk_status;
+		}
+
+		public void setNode_segment_disk_status(Node_segment_disk_status node_segment_disk_status) {
+			this.node_segment_disk_status = node_segment_disk_status;
+		}
+
+		public Adbpg_master_status getAdbpg_master_status() {
+			return this.adbpg_master_status;
+		}
+
+		public void setAdbpg_master_status(Adbpg_master_status adbpg_master_status) {
+			this.adbpg_master_status = adbpg_master_status;
+		}
+
+		public static class Node_master_connection_status {
 
 			private String status;
 
@@ -252,98 +252,6 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Adbpg_disk_status {
-
-			private String status;
-
-			private Float value;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Float getValue() {
-				return this.value;
-			}
-
-			public void setValue(Float value) {
-				this.value = value;
-			}
-		}
-
-		public static class Adbpg_disk_usage_percent {
-
-			private String status;
-
-			private Float value;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Float getValue() {
-				return this.value;
-			}
-
-			public void setValue(Float value) {
-				this.value = value;
-			}
-		}
-
-		public static class Adbpg_master_disk_usage_percent_max {
-
-			private String status;
-
-			private Float value;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Float getValue() {
-				return this.value;
-			}
-
-			public void setValue(Float value) {
-				this.value = value;
-			}
-		}
-
-		public static class Adbgp_segment_disk_usage_percent_max {
-
-			private String status;
-
-			private Float value;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public Float getValue() {
-				return this.value;
-			}
-
-			public void setValue(Float value) {
-				this.value = value;
-			}
-		}
-
 		public static class Node_master_status {
 
 			private String status;
@@ -367,19 +275,9 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Node_segment_disk_status {
-
-			private String status;
+		public static class Adbpg_instance_cold_data_gb {
 
 			private Float value;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
 
 			public Float getValue() {
 				return this.value;
@@ -390,7 +288,7 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Node_master_connection_status {
+		public static class Adbpg_master_disk_usage_percent_max {
 
 			private String status;
 
@@ -436,7 +334,20 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Adbpg_master_status {
+		public static class Adbpg_instance_hot_data_gb {
+
+			private Float value;
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_status {
 
 			private String status;
 
@@ -459,7 +370,53 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Adbpg_segment_status {
+		public static class Adbgp_segment_disk_usage_percent_max {
+
+			private String status;
+
+			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_disk_usage_percent {
+
+			private String status;
+
+			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_disk_status {
 
 			private String status;
 
@@ -495,9 +452,19 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Adbpg_instance_hot_data_gb {
+		public static class Adbpg_segment_status {
+
+			private String status;
 
 			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public Float getValue() {
 				return this.value;
@@ -508,9 +475,42 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 			}
 		}
 
-		public static class Adbpg_instance_cold_data_gb {
+		public static class Node_segment_disk_status {
+
+			private String status;
 
 			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Float getValue() {
+				return this.value;
+			}
+
+			public void setValue(Float value) {
+				this.value = value;
+			}
+		}
+
+		public static class Adbpg_master_status {
+
+			private String status;
+
+			private Float value;
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
 			public Float getValue() {
 				return this.value;

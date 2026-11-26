@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStreamingDataServicesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
 
+	private String requestId;
+
 	private List<Items> serviceItems;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -45,6 +37,14 @@ public class ListStreamingDataServicesResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Items> getServiceItems() {
@@ -57,69 +57,29 @@ public class ListStreamingDataServicesResponse extends AcsResponse {
 
 	public static class Items {
 
-		private String serviceId;
-
-		private String serviceType;
-
-		private String serviceName;
-
-		private String serviceDescription;
-
-		private String serviceSpec;
-
 		private String status;
-
-		private String serviceIp;
 
 		private String servicePort;
 
-		private String createTime;
-
 		private String modifyTime;
+
+		private String serviceIp;
 
 		private Boolean serviceManaged;
 
+		private String serviceName;
+
+		private String serviceType;
+
+		private String serviceDescription;
+
+		private String createTime;
+
+		private String serviceSpec;
+
 		private String serviceOwnerId;
 
-		public String getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public String getServiceType() {
-			return this.serviceType;
-		}
-
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
-		}
-
-		public String getServiceDescription() {
-			return this.serviceDescription;
-		}
-
-		public void setServiceDescription(String serviceDescription) {
-			this.serviceDescription = serviceDescription;
-		}
-
-		public String getServiceSpec() {
-			return this.serviceSpec;
-		}
-
-		public void setServiceSpec(String serviceSpec) {
-			this.serviceSpec = serviceSpec;
-		}
+		private String serviceId;
 
 		public String getStatus() {
 			return this.status;
@@ -127,14 +87,6 @@ public class ListStreamingDataServicesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getServiceIp() {
-			return this.serviceIp;
-		}
-
-		public void setServiceIp(String serviceIp) {
-			this.serviceIp = serviceIp;
 		}
 
 		public String getServicePort() {
@@ -145,20 +97,20 @@ public class ListStreamingDataServicesResponse extends AcsResponse {
 			this.servicePort = servicePort;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
 		public String getModifyTime() {
 			return this.modifyTime;
 		}
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getServiceIp() {
+			return this.serviceIp;
+		}
+
+		public void setServiceIp(String serviceIp) {
+			this.serviceIp = serviceIp;
 		}
 
 		public Boolean getServiceManaged() {
@@ -169,12 +121,60 @@ public class ListStreamingDataServicesResponse extends AcsResponse {
 			this.serviceManaged = serviceManaged;
 		}
 
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getServiceType() {
+			return this.serviceType;
+		}
+
+		public void setServiceType(String serviceType) {
+			this.serviceType = serviceType;
+		}
+
+		public String getServiceDescription() {
+			return this.serviceDescription;
+		}
+
+		public void setServiceDescription(String serviceDescription) {
+			this.serviceDescription = serviceDescription;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getServiceSpec() {
+			return this.serviceSpec;
+		}
+
+		public void setServiceSpec(String serviceSpec) {
+			this.serviceSpec = serviceSpec;
+		}
+
 		public String getServiceOwnerId() {
 			return this.serviceOwnerId;
 		}
 
 		public void setServiceOwnerId(String serviceOwnerId) {
 			this.serviceOwnerId = serviceOwnerId;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
 		}
 	}
 

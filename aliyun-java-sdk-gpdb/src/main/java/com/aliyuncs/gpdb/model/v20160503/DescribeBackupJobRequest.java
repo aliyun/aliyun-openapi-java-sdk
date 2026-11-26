@@ -30,7 +30,7 @@ public class DescribeBackupJobRequest extends RpcAcsRequest<DescribeBackupJobRes
 
 	private String dBInstanceId;
 	public DescribeBackupJobRequest() {
-		super("gpdb", "2016-05-03", "DescribeBackupJob", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeBackupJob", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

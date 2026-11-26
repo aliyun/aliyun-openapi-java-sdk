@@ -35,7 +35,7 @@ public class DescribeDBInstanceDataSkewRequest extends RpcAcsRequest<DescribeDBI
 
 	private String orderBy;
 	public DescribeDBInstanceDataSkewRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceDataSkew", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceDataSkew", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

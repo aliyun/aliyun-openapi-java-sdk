@@ -23,9 +23,9 @@ public class ModifyMasterSpecResponseUnmarshaller {
 	public static ModifyMasterSpecResponse unmarshall(ModifyMasterSpecResponse modifyMasterSpecResponse, UnmarshallerContext _ctx) {
 		
 		modifyMasterSpecResponse.setRequestId(_ctx.stringValue("ModifyMasterSpecResponse.RequestId"));
-		modifyMasterSpecResponse.setErrorMessage(_ctx.stringValue("ModifyMasterSpecResponse.ErrorMessage"));
-		modifyMasterSpecResponse.setDbInstanceId(_ctx.stringValue("ModifyMasterSpecResponse.DbInstanceId"));
 		modifyMasterSpecResponse.setStatus(_ctx.booleanValue("ModifyMasterSpecResponse.Status"));
+		modifyMasterSpecResponse.setDbInstanceId(_ctx.stringValue("ModifyMasterSpecResponse.DbInstanceId"));
+		modifyMasterSpecResponse.setErrorMessage(_ctx.stringValue("ModifyMasterSpecResponse.ErrorMessage"));
 	 
 	 	return modifyMasterSpecResponse;
 	}

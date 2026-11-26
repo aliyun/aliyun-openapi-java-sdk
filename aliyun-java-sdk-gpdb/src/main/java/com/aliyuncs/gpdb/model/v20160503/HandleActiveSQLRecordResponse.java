@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class HandleActiveSQLRecordResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
+
+	private String requestId;
 
 	private String dBInstanceId;
 
 	private List<Result> results;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -47,6 +39,14 @@ public class HandleActiveSQLRecordResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDBInstanceId() {

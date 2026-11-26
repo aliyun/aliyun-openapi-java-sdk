@@ -33,7 +33,7 @@ public class ListDocumentCollectionsRequest extends RpcAcsRequest<ListDocumentCo
 
 	private String namespace;
 	public ListDocumentCollectionsRequest() {
-		super("gpdb", "2016-05-03", "ListDocumentCollections", "gpdb");
+		super("gpdb", "2016-05-03", "ListDocumentCollections", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

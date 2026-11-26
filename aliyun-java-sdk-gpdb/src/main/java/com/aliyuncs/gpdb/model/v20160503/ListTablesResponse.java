@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTablesResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
-
 	private String nextToken;
+
+	private String requestId;
 
 	private List<String> tables;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -51,20 +51,20 @@ public class ListTablesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<String> getTables() {

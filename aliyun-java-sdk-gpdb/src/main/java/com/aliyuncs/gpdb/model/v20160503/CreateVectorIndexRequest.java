@@ -27,6 +27,8 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 
 	private String type;
 
+	private Integer nlist;
+
 	private Integer externalStorage;
 
 	private String managerAccount;
@@ -38,6 +40,10 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 	private String managerAccountPassword;
 
 	private Integer hnswEfConstruction;
+
+	private String algorithm;
+
+	private Integer rabitqBits;
 
 	private String collection;
 
@@ -51,7 +57,7 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 
 	private Integer pqEnable;
 	public CreateVectorIndexRequest() {
-		super("gpdb", "2016-05-03", "CreateVectorIndex", "gpdb");
+		super("gpdb", "2016-05-03", "CreateVectorIndex", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,6 +73,17 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getNlist() {
+		return this.nlist;
+	}
+
+	public void setNlist(Integer nlist) {
+		this.nlist = nlist;
+		if(nlist != null){
+			putQueryParameter("Nlist", nlist.toString());
 		}
 	}
 
@@ -133,6 +150,28 @@ public class CreateVectorIndexRequest extends RpcAcsRequest<CreateVectorIndexRes
 		this.hnswEfConstruction = hnswEfConstruction;
 		if(hnswEfConstruction != null){
 			putQueryParameter("HnswEfConstruction", hnswEfConstruction.toString());
+		}
+	}
+
+	public String getAlgorithm() {
+		return this.algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
+		}
+	}
+
+	public Integer getRabitqBits() {
+		return this.rabitqBits;
+	}
+
+	public void setRabitqBits(Integer rabitqBits) {
+		this.rabitqBits = rabitqBits;
+		if(rabitqBits != null){
+			putQueryParameter("RabitqBits", rabitqBits.toString());
 		}
 	}
 

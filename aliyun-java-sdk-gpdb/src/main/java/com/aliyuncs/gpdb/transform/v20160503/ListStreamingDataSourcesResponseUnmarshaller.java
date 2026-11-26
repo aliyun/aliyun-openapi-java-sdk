@@ -33,16 +33,16 @@ public class ListStreamingDataSourcesResponseUnmarshaller {
 		List<DataSourceItemsItem> dataSourceItems = new ArrayList<DataSourceItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListStreamingDataSourcesResponse.DataSourceItems.Length"); i++) {
 			DataSourceItemsItem dataSourceItemsItem = new DataSourceItemsItem();
-			dataSourceItemsItem.setDataSourceId(_ctx.integerValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceId"));
-			dataSourceItemsItem.setDataSourceName(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceName"));
-			dataSourceItemsItem.setDataSourceType(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceType"));
-			dataSourceItemsItem.setDataSourceConfig(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceConfig"));
-			dataSourceItemsItem.setDataSourceDescription(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceDescription"));
-			dataSourceItemsItem.setCreateTime(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].CreateTime"));
-			dataSourceItemsItem.setModifyTime(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].ModifyTime"));
 			dataSourceItemsItem.setStatus(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].Status"));
-			dataSourceItemsItem.setServiceId(_ctx.integerValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].ServiceId"));
+			dataSourceItemsItem.setModifyTime(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].ModifyTime"));
+			dataSourceItemsItem.setDataSourceName(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceName"));
+			dataSourceItemsItem.setDataSourceConfig(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceConfig"));
+			dataSourceItemsItem.setDataSourceType(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceType"));
+			dataSourceItemsItem.setCreateTime(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].CreateTime"));
+			dataSourceItemsItem.setDataSourceDescription(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceDescription"));
 			dataSourceItemsItem.setErrorMessage(_ctx.stringValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].ErrorMessage"));
+			dataSourceItemsItem.setDataSourceId(_ctx.integerValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].DataSourceId"));
+			dataSourceItemsItem.setServiceId(_ctx.integerValue("ListStreamingDataSourcesResponse.DataSourceItems["+ i +"].ServiceId"));
 
 			dataSourceItems.add(dataSourceItemsItem);
 		}

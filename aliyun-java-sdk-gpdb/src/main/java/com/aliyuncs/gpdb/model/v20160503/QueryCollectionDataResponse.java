@@ -26,23 +26,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryCollectionDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String message;
 
+	private String requestId;
+
 	private Integer total;
 
 	private List<Match> matches;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -58,6 +50,14 @@ public class QueryCollectionDataResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotal() {
@@ -78,20 +78,32 @@ public class QueryCollectionDataResponse extends AcsResponse {
 
 	public static class Match {
 
-		private String id;
+		private Double score;
+
+		private Map<Object,Object> metadataV2;
 
 		private Map<Object,Object> metadata;
 
-		private Double score;
+		private String id;
 
 		private List<Double> values;
 
-		public String getId() {
-			return this.id;
+		private SparseValues sparseValues;
+
+		public Double getScore() {
+			return this.score;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setScore(Double score) {
+			this.score = score;
+		}
+
+		public Map<Object,Object> getMetadataV2() {
+			return this.metadataV2;
+		}
+
+		public void setMetadataV2(Map<Object,Object> metadataV2) {
+			this.metadataV2 = metadataV2;
 		}
 
 		public Map<Object,Object> getMetadata() {
@@ -102,12 +114,12 @@ public class QueryCollectionDataResponse extends AcsResponse {
 			this.metadata = metadata;
 		}
 
-		public Double getScore() {
-			return this.score;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setScore(Double score) {
-			this.score = score;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public List<Double> getValues() {
@@ -116,6 +128,37 @@ public class QueryCollectionDataResponse extends AcsResponse {
 
 		public void setValues(List<Double> values) {
 			this.values = values;
+		}
+
+		public SparseValues getSparseValues() {
+			return this.sparseValues;
+		}
+
+		public void setSparseValues(SparseValues sparseValues) {
+			this.sparseValues = sparseValues;
+		}
+
+		public static class SparseValues {
+
+			private List<Float> values1;
+
+			private List<Integer> indices;
+
+			public List<Float> getValues1() {
+				return this.values1;
+			}
+
+			public void setValues1(List<Float> values1) {
+				this.values1 = values1;
+			}
+
+			public List<Integer> getIndices() {
+				return this.indices;
+			}
+
+			public void setIndices(List<Integer> indices) {
+				this.indices = indices;
+			}
 		}
 	}
 

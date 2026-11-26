@@ -23,8 +23,8 @@ public class CheckHadoopDataSourceResponseUnmarshaller {
 	public static CheckHadoopDataSourceResponse unmarshall(CheckHadoopDataSourceResponse checkHadoopDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		checkHadoopDataSourceResponse.setRequestId(_ctx.stringValue("CheckHadoopDataSourceResponse.RequestId"));
-		checkHadoopDataSourceResponse.setMessage(_ctx.stringValue("CheckHadoopDataSourceResponse.Message"));
 		checkHadoopDataSourceResponse.setStatus(_ctx.stringValue("CheckHadoopDataSourceResponse.Status"));
+		checkHadoopDataSourceResponse.setMessage(_ctx.stringValue("CheckHadoopDataSourceResponse.Message"));
 	 
 	 	return checkHadoopDataSourceResponse;
 	}

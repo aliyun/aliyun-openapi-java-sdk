@@ -24,110 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeJDBCDataSourceResponse extends AcsResponse {
 
-	private String dataSourceId;
-
-	private String requestId;
-
-	private String dataSourceName;
-
-	private String dataSourceDescription;
-
-	private String dataSourceStatus;
-
-	private String statusMessage;
-
-	private String createTime;
-
-	private String dataSourceType;
-
-	private String jDBCConnectionString;
-
-	private String jDBCUserName;
+	private String modifyTime;
 
 	private String jDBCPassword;
 
-	private String modifyTime;
+	private String requestId;
+
+	private String jDBCConnectionString;
+
+	private String createTime;
 
 	private String externalDataServiceId;
 
-	public String getDataSourceId() {
-		return this.dataSourceId;
+	private String statusMessage;
+
+	private String dataSourceName;
+
+	private String dataSourceType;
+
+	private String jDBCUserName;
+
+	private String dataSourceStatus;
+
+	private String dataSourceDescription;
+
+	private String dataSourceId;
+
+	public String getModifyTime() {
+		return this.modifyTime;
 	}
 
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDataSourceName() {
-		return this.dataSourceName;
-	}
-
-	public void setDataSourceName(String dataSourceName) {
-		this.dataSourceName = dataSourceName;
-	}
-
-	public String getDataSourceDescription() {
-		return this.dataSourceDescription;
-	}
-
-	public void setDataSourceDescription(String dataSourceDescription) {
-		this.dataSourceDescription = dataSourceDescription;
-	}
-
-	public String getDataSourceStatus() {
-		return this.dataSourceStatus;
-	}
-
-	public void setDataSourceStatus(String dataSourceStatus) {
-		this.dataSourceStatus = dataSourceStatus;
-	}
-
-	public String getStatusMessage() {
-		return this.statusMessage;
-	}
-
-	public void setStatusMessage(String statusMessage) {
-		this.statusMessage = statusMessage;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getDataSourceType() {
-		return this.dataSourceType;
-	}
-
-	public void setDataSourceType(String dataSourceType) {
-		this.dataSourceType = dataSourceType;
-	}
-
-	public String getJDBCConnectionString() {
-		return this.jDBCConnectionString;
-	}
-
-	public void setJDBCConnectionString(String jDBCConnectionString) {
-		this.jDBCConnectionString = jDBCConnectionString;
-	}
-
-	public String getJDBCUserName() {
-		return this.jDBCUserName;
-	}
-
-	public void setJDBCUserName(String jDBCUserName) {
-		this.jDBCUserName = jDBCUserName;
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
 	}
 
 	public String getJDBCPassword() {
@@ -138,12 +66,28 @@ public class DescribeJDBCDataSourceResponse extends AcsResponse {
 		this.jDBCPassword = jDBCPassword;
 	}
 
-	public String getModifyTime() {
-		return this.modifyTime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getJDBCConnectionString() {
+		return this.jDBCConnectionString;
+	}
+
+	public void setJDBCConnectionString(String jDBCConnectionString) {
+		this.jDBCConnectionString = jDBCConnectionString;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getExternalDataServiceId() {
@@ -152,6 +96,62 @@ public class DescribeJDBCDataSourceResponse extends AcsResponse {
 
 	public void setExternalDataServiceId(String externalDataServiceId) {
 		this.externalDataServiceId = externalDataServiceId;
+	}
+
+	public String getStatusMessage() {
+		return this.statusMessage;
+	}
+
+	public void setStatusMessage(String statusMessage) {
+		this.statusMessage = statusMessage;
+	}
+
+	public String getDataSourceName() {
+		return this.dataSourceName;
+	}
+
+	public void setDataSourceName(String dataSourceName) {
+		this.dataSourceName = dataSourceName;
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+	}
+
+	public String getJDBCUserName() {
+		return this.jDBCUserName;
+	}
+
+	public void setJDBCUserName(String jDBCUserName) {
+		this.jDBCUserName = jDBCUserName;
+	}
+
+	public String getDataSourceStatus() {
+		return this.dataSourceStatus;
+	}
+
+	public void setDataSourceStatus(String dataSourceStatus) {
+		this.dataSourceStatus = dataSourceStatus;
+	}
+
+	public String getDataSourceDescription() {
+		return this.dataSourceDescription;
+	}
+
+	public void setDataSourceDescription(String dataSourceDescription) {
+		this.dataSourceDescription = dataSourceDescription;
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
 	}
 
 	@Override

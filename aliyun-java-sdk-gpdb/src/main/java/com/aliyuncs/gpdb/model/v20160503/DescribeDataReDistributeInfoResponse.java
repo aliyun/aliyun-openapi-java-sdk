@@ -46,17 +46,25 @@ public class DescribeDataReDistributeInfoResponse extends AcsResponse {
 
 	public static class DataReDistributeInfo {
 
-		private String type;
+		private String status;
 
-		private String startTime;
+		private String type;
 
 		private Long progress;
 
-		private String remainTime;
-
 		private String message;
 
-		private String status;
+		private String startTime;
+
+		private String remainTime;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public String getType() {
 			return this.type;
@@ -64,14 +72,6 @@ public class DescribeDataReDistributeInfoResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
 		}
 
 		public Long getProgress() {
@@ -82,14 +82,6 @@ public class DescribeDataReDistributeInfoResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getRemainTime() {
-			return this.remainTime;
-		}
-
-		public void setRemainTime(String remainTime) {
-			this.remainTime = remainTime;
-		}
-
 		public String getMessage() {
 			return this.message;
 		}
@@ -98,12 +90,20 @@ public class DescribeDataReDistributeInfoResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getRemainTime() {
+			return this.remainTime;
+		}
+
+		public void setRemainTime(String remainTime) {
+			this.remainTime = remainTime;
 		}
 	}
 

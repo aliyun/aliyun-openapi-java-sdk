@@ -45,7 +45,7 @@ public class CreateRemoteADBDataSourceRequest extends RpcAcsRequest<CreateRemote
 
 	private String userName;
 	public CreateRemoteADBDataSourceRequest() {
-		super("gpdb", "2016-05-03", "CreateRemoteADBDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "CreateRemoteADBDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

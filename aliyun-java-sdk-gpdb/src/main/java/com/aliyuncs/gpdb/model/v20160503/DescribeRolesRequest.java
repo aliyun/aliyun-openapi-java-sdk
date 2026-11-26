@@ -29,7 +29,7 @@ public class DescribeRolesRequest extends RpcAcsRequest<DescribeRolesResponse> {
 
 	private Long ownerId;
 	public DescribeRolesRequest() {
-		super("gpdb", "2016-05-03", "DescribeRoles", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeRoles", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,22 +29,11 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 	private String metadata;
 
-	@SerializedName("sparseVectorIndexConfig")
-	private SparseVectorIndexConfig sparseVectorIndexConfig;
-
-	private Integer externalStorage;
-
 	private String fullTextRetrievalFields;
-
-	private String managerAccount;
-
-	private String dBInstanceId;
-
-	private Long dimension;
 
 	private String managerAccountPassword;
 
-	private String hnswEfConstruction;
+	private String algorithm;
 
 	private String collection;
 
@@ -54,19 +43,35 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 	private String parser;
 
-	private String metadataIndices;
-
-	private String namespace;
-
 	private Boolean supportSparse;
 
 	private String metrics;
 
-	private Integer pqEnable;
-
 	private String workspaceId;
+
+	@SerializedName("vectorIndexConfig")
+	private VectorIndexConfig vectorIndexConfig;
+
+	@SerializedName("sparseVectorIndexConfig")
+	private SparseVectorIndexConfig sparseVectorIndexConfig;
+
+	private Integer externalStorage;
+
+	private String managerAccount;
+
+	private String dBInstanceId;
+
+	private Long dimension;
+
+	private String hnswEfConstruction;
+
+	private String metadataIndices;
+
+	private String namespace;
+
+	private Integer pqEnable;
 	public CreateCollectionRequest() {
-		super("gpdb", "2016-05-03", "CreateCollection", "gpdb");
+		super("gpdb", "2016-05-03", "CreateCollection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -85,28 +90,6 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
-	public SparseVectorIndexConfig getSparseVectorIndexConfig() {
-		return this.sparseVectorIndexConfig;
-	}
-
-	public void setSparseVectorIndexConfig(SparseVectorIndexConfig sparseVectorIndexConfig) {
-		this.sparseVectorIndexConfig = sparseVectorIndexConfig;	
-		if (sparseVectorIndexConfig != null) {
-			putQueryParameter("SparseVectorIndexConfig" , new Gson().toJson(sparseVectorIndexConfig));
-		}	
-	}
-
-	public Integer getExternalStorage() {
-		return this.externalStorage;
-	}
-
-	public void setExternalStorage(Integer externalStorage) {
-		this.externalStorage = externalStorage;
-		if(externalStorage != null){
-			putQueryParameter("ExternalStorage", externalStorage.toString());
-		}
-	}
-
 	public String getFullTextRetrievalFields() {
 		return this.fullTextRetrievalFields;
 	}
@@ -115,39 +98,6 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		this.fullTextRetrievalFields = fullTextRetrievalFields;
 		if(fullTextRetrievalFields != null){
 			putQueryParameter("FullTextRetrievalFields", fullTextRetrievalFields);
-		}
-	}
-
-	public String getManagerAccount() {
-		return this.managerAccount;
-	}
-
-	public void setManagerAccount(String managerAccount) {
-		this.managerAccount = managerAccount;
-		if(managerAccount != null){
-			putQueryParameter("ManagerAccount", managerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public Long getDimension() {
-		return this.dimension;
-	}
-
-	public void setDimension(Long dimension) {
-		this.dimension = dimension;
-		if(dimension != null){
-			putQueryParameter("Dimension", dimension.toString());
 		}
 	}
 
@@ -162,14 +112,14 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
-	public String getHnswEfConstruction() {
-		return this.hnswEfConstruction;
+	public String getAlgorithm() {
+		return this.algorithm;
 	}
 
-	public void setHnswEfConstruction(String hnswEfConstruction) {
-		this.hnswEfConstruction = hnswEfConstruction;
-		if(hnswEfConstruction != null){
-			putQueryParameter("HnswEfConstruction", hnswEfConstruction);
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
 		}
 	}
 
@@ -217,28 +167,6 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
-	public String getMetadataIndices() {
-		return this.metadataIndices;
-	}
-
-	public void setMetadataIndices(String metadataIndices) {
-		this.metadataIndices = metadataIndices;
-		if(metadataIndices != null){
-			putQueryParameter("MetadataIndices", metadataIndices);
-		}
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public Boolean getSupportSparse() {
 		return this.supportSparse;
 	}
@@ -261,17 +189,6 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
-	public Integer getPqEnable() {
-		return this.pqEnable;
-	}
-
-	public void setPqEnable(Integer pqEnable) {
-		this.pqEnable = pqEnable;
-		if(pqEnable != null){
-			putQueryParameter("PqEnable", pqEnable.toString());
-		}
-	}
-
 	public String getWorkspaceId() {
 		return this.workspaceId;
 	}
@@ -283,6 +200,141 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 		}
 	}
 
+	public VectorIndexConfig getVectorIndexConfig() {
+		return this.vectorIndexConfig;
+	}
+
+	public void setVectorIndexConfig(VectorIndexConfig vectorIndexConfig) {
+		this.vectorIndexConfig = vectorIndexConfig;	
+		if (vectorIndexConfig != null) {
+			putQueryParameter("VectorIndexConfig" , new Gson().toJson(vectorIndexConfig));
+		}	
+	}
+
+	public SparseVectorIndexConfig getSparseVectorIndexConfig() {
+		return this.sparseVectorIndexConfig;
+	}
+
+	public void setSparseVectorIndexConfig(SparseVectorIndexConfig sparseVectorIndexConfig) {
+		this.sparseVectorIndexConfig = sparseVectorIndexConfig;	
+		if (sparseVectorIndexConfig != null) {
+			putQueryParameter("SparseVectorIndexConfig" , new Gson().toJson(sparseVectorIndexConfig));
+		}	
+	}
+
+	public Integer getExternalStorage() {
+		return this.externalStorage;
+	}
+
+	public void setExternalStorage(Integer externalStorage) {
+		this.externalStorage = externalStorage;
+		if(externalStorage != null){
+			putQueryParameter("ExternalStorage", externalStorage.toString());
+		}
+	}
+
+	public String getManagerAccount() {
+		return this.managerAccount;
+	}
+
+	public void setManagerAccount(String managerAccount) {
+		this.managerAccount = managerAccount;
+		if(managerAccount != null){
+			putQueryParameter("ManagerAccount", managerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Long getDimension() {
+		return this.dimension;
+	}
+
+	public void setDimension(Long dimension) {
+		this.dimension = dimension;
+		if(dimension != null){
+			putQueryParameter("Dimension", dimension.toString());
+		}
+	}
+
+	public String getHnswEfConstruction() {
+		return this.hnswEfConstruction;
+	}
+
+	public void setHnswEfConstruction(String hnswEfConstruction) {
+		this.hnswEfConstruction = hnswEfConstruction;
+		if(hnswEfConstruction != null){
+			putQueryParameter("HnswEfConstruction", hnswEfConstruction);
+		}
+	}
+
+	public String getMetadataIndices() {
+		return this.metadataIndices;
+	}
+
+	public void setMetadataIndices(String metadataIndices) {
+		this.metadataIndices = metadataIndices;
+		if(metadataIndices != null){
+			putQueryParameter("MetadataIndices", metadataIndices);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public Integer getPqEnable() {
+		return this.pqEnable;
+	}
+
+	public void setPqEnable(Integer pqEnable) {
+		this.pqEnable = pqEnable;
+		if(pqEnable != null){
+			putQueryParameter("PqEnable", pqEnable.toString());
+		}
+	}
+
+	public static class VectorIndexConfig {
+
+		@SerializedName("RabitqBits")
+		private Integer rabitqBits;
+
+		@SerializedName("Nlist")
+		private Integer nlist;
+
+		public Integer getRabitqBits() {
+			return this.rabitqBits;
+		}
+
+		public void setRabitqBits(Integer rabitqBits) {
+			this.rabitqBits = rabitqBits;
+		}
+
+		public Integer getNlist() {
+			return this.nlist;
+		}
+
+		public void setNlist(Integer nlist) {
+			this.nlist = nlist;
+		}
+	}
+
 	public static class SparseVectorIndexConfig {
 
 		@SerializedName("HnswM")
@@ -290,6 +342,9 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 		@SerializedName("HnswEfConstruction")
 		private Integer hnswEfConstruction;
+
+		@SerializedName("Algorithm")
+		private String algorithm;
 
 		public Integer getHnswM() {
 			return this.hnswM;
@@ -305,6 +360,14 @@ public class CreateCollectionRequest extends RpcAcsRequest<CreateCollectionRespo
 
 		public void setHnswEfConstruction(Integer hnswEfConstruction) {
 			this.hnswEfConstruction = hnswEfConstruction;
+		}
+
+		public String getAlgorithm() {
+			return this.algorithm;
+		}
+
+		public void setAlgorithm(String algorithm) {
+			this.algorithm = algorithm;
 		}
 	}
 

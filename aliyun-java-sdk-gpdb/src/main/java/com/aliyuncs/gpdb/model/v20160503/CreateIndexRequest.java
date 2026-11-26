@@ -44,7 +44,7 @@ public class CreateIndexRequest extends RpcAcsRequest<CreateIndexResponse> {
 
 	private String workspaceId;
 	public CreateIndexRequest() {
-		super("gpdb", "2016-05-03", "CreateIndex", "gpdb");
+		super("gpdb", "2016-05-03", "CreateIndex", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

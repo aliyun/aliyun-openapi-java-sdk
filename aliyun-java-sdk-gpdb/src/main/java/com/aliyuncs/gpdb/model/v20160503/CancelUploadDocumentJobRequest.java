@@ -37,7 +37,7 @@ public class CancelUploadDocumentJobRequest extends RpcAcsRequest<CancelUploadDo
 
 	private String namespace;
 	public CancelUploadDocumentJobRequest() {
-		super("gpdb", "2016-05-03", "CancelUploadDocumentJob", "gpdb");
+		super("gpdb", "2016-05-03", "CancelUploadDocumentJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

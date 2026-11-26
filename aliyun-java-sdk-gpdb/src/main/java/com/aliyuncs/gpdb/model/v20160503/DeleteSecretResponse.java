@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteSecretResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String secretArn;
 
 	private String status;
 
-	private String secretArn;
+	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String requestId;
+
+	public String getSecretArn() {
+		return this.secretArn;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSecretArn(String secretArn) {
+		this.secretArn = secretArn;
 	}
 
 	public String getStatus() {
@@ -56,12 +48,20 @@ public class DeleteSecretResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getSecretArn() {
-		return this.secretArn;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSecretArn(String secretArn) {
-		this.secretArn = secretArn;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

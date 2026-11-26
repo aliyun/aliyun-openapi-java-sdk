@@ -29,7 +29,7 @@ public class ResetIMVMonitorDataRequest extends RpcAcsRequest<ResetIMVMonitorDat
 
 	private String dBInstanceId;
 	public ResetIMVMonitorDataRequest() {
-		super("gpdb", "2016-05-03", "ResetIMVMonitorData", "gpdb");
+		super("gpdb", "2016-05-03", "ResetIMVMonitorData", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

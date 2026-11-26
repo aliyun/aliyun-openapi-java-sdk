@@ -27,17 +27,17 @@ public class ModifyRemoteADBDataSourceResponseUnmarshaller {
 		modifyRemoteADBDataSourceResponse.setTaskId(_ctx.integerValue("ModifyRemoteADBDataSourceResponse.TaskId"));
 
 		DataSourceItem dataSourceItem = new DataSourceItem();
-		dataSourceItem.setId(_ctx.longValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Id"));
+		dataSourceItem.setStatus(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Status"));
+		dataSourceItem.setRemoteDatabase(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.RemoteDatabase"));
+		dataSourceItem.setManagerUserName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.ManagerUserName"));
+		dataSourceItem.setUserName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.UserName"));
+		dataSourceItem.setDescription(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Description"));
 		dataSourceItem.setDataSourceName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.DataSourceName"));
-		dataSourceItem.setLocalInstanceName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.LocalInstanceName"));
 		dataSourceItem.setLocalDatabase(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.LocalDatabase"));
 		dataSourceItem.setRemoteInstanceName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.RemoteInstanceName"));
-		dataSourceItem.setRemoteDatabase(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.RemoteDatabase"));
-		dataSourceItem.setUserName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.UserName"));
-		dataSourceItem.setManagerUserName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.ManagerUserName"));
-		dataSourceItem.setStatus(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Status"));
-		dataSourceItem.setDescription(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Description"));
+		dataSourceItem.setId(_ctx.longValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.Id"));
 		dataSourceItem.setRegionId(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.RegionId"));
+		dataSourceItem.setLocalInstanceName(_ctx.stringValue("ModifyRemoteADBDataSourceResponse.DataSourceItem.LocalInstanceName"));
 		modifyRemoteADBDataSourceResponse.setDataSourceItem(dataSourceItem);
 	 
 	 	return modifyRemoteADBDataSourceResponse;

@@ -31,8 +31,8 @@ public class DescribeDBResourceGroupResponseUnmarshaller {
 		List<ResourceGroupItem> resourceGroupItems = new ArrayList<ResourceGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBResourceGroupResponse.ResourceGroupItems.Length"); i++) {
 			ResourceGroupItem resourceGroupItem = new ResourceGroupItem();
-			resourceGroupItem.setResourceGroupName(_ctx.stringValue("DescribeDBResourceGroupResponse.ResourceGroupItems["+ i +"].ResourceGroupName"));
 			resourceGroupItem.setResourceGroupConfig(_ctx.stringValue("DescribeDBResourceGroupResponse.ResourceGroupItems["+ i +"].ResourceGroupConfig"));
+			resourceGroupItem.setResourceGroupName(_ctx.stringValue("DescribeDBResourceGroupResponse.ResourceGroupItems["+ i +"].ResourceGroupName"));
 
 			List<String> roleList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBResourceGroupResponse.ResourceGroupItems["+ i +"].RoleList.Length"); j++) {

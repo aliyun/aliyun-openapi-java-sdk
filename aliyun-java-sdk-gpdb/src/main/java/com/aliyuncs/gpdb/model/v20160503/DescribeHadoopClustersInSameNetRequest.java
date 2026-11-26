@@ -27,7 +27,7 @@ public class DescribeHadoopClustersInSameNetRequest extends RpcAcsRequest<Descri
 
 	private String dBInstanceId;
 	public DescribeHadoopClustersInSameNetRequest() {
-		super("gpdb", "2016-05-03", "DescribeHadoopClustersInSameNet", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeHadoopClustersInSameNet", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

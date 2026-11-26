@@ -40,13 +40,15 @@ public class RerankRequest extends RpcAcsRequest<RerankResponse> {
 
 	private Boolean returnDocuments;
 
+	private String instruct;
+
 	private String query;
 
 	private Integer maxChunksPerDoc;
 
 	private Long ownerId;
 	public RerankRequest() {
-		super("gpdb", "2016-05-03", "Rerank", "gpdb");
+		super("gpdb", "2016-05-03", "Rerank", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -107,6 +109,17 @@ public class RerankRequest extends RpcAcsRequest<RerankResponse> {
 		this.returnDocuments = returnDocuments;
 		if(returnDocuments != null){
 			putBodyParameter("ReturnDocuments", returnDocuments.toString());
+		}
+	}
+
+	public String getInstruct() {
+		return this.instruct;
+	}
+
+	public void setInstruct(String instruct) {
+		this.instruct = instruct;
+		if(instruct != null){
+			putBodyParameter("Instruct", instruct);
 		}
 	}
 

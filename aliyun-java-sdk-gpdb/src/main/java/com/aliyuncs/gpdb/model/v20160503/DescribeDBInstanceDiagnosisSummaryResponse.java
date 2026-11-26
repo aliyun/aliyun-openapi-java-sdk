@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String totalCount;
+
+	private String requestId;
 
 	private String pageNumber;
 
 	private List<ItemsItem> items;
 
-	private MasterStatusInfo masterStatusInfo;
-
 	private SegmentStatusInfo segmentStatusInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private MasterStatusInfo masterStatusInfo;
 
 	public String getTotalCount() {
 		return this.totalCount;
@@ -51,6 +43,14 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 
 	public void setTotalCount(String totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getPageNumber() {
@@ -69,14 +69,6 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 		this.items = items;
 	}
 
-	public MasterStatusInfo getMasterStatusInfo() {
-		return this.masterStatusInfo;
-	}
-
-	public void setMasterStatusInfo(MasterStatusInfo masterStatusInfo) {
-		this.masterStatusInfo = masterStatusInfo;
-	}
-
 	public SegmentStatusInfo getSegmentStatusInfo() {
 		return this.segmentStatusInfo;
 	}
@@ -85,52 +77,44 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 		this.segmentStatusInfo = segmentStatusInfo;
 	}
 
+	public MasterStatusInfo getMasterStatusInfo() {
+		return this.masterStatusInfo;
+	}
+
+	public void setMasterStatusInfo(MasterStatusInfo masterStatusInfo) {
+		this.masterStatusInfo = masterStatusInfo;
+	}
+
 	public static class ItemsItem {
-
-		private String hostname;
-
-		private String nodeAddress;
-
-		private String nodeType;
-
-		private String nodeName;
-
-		private String nodePort;
-
-		private String nodeID;
-
-		private String nodeStatus;
 
 		private String nodeRole;
 
-		private String nodePreferredRole;
+		private String nodeName;
+
+		private String nodeType;
+
+		private String hostname;
+
+		private String nodeID;
 
 		private String nodeReplicationMode;
 
+		private String nodeAddress;
+
+		private String nodePort;
+
+		private String nodePreferredRole;
+
 		private String nodeCID;
 
-		public String getHostname() {
-			return this.hostname;
+		private String nodeStatus;
+
+		public String getNodeRole() {
+			return this.nodeRole;
 		}
 
-		public void setHostname(String hostname) {
-			this.hostname = hostname;
-		}
-
-		public String getNodeAddress() {
-			return this.nodeAddress;
-		}
-
-		public void setNodeAddress(String nodeAddress) {
-			this.nodeAddress = nodeAddress;
-		}
-
-		public String getNodeType() {
-			return this.nodeType;
-		}
-
-		public void setNodeType(String nodeType) {
-			this.nodeType = nodeType;
+		public void setNodeRole(String nodeRole) {
+			this.nodeRole = nodeRole;
 		}
 
 		public String getNodeName() {
@@ -141,12 +125,20 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.nodeName = nodeName;
 		}
 
-		public String getNodePort() {
-			return this.nodePort;
+		public String getNodeType() {
+			return this.nodeType;
 		}
 
-		public void setNodePort(String nodePort) {
-			this.nodePort = nodePort;
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
+		}
+
+		public String getHostname() {
+			return this.hostname;
+		}
+
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
 		}
 
 		public String getNodeID() {
@@ -157,20 +149,28 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.nodeID = nodeID;
 		}
 
-		public String getNodeStatus() {
-			return this.nodeStatus;
+		public String getNodeReplicationMode() {
+			return this.nodeReplicationMode;
 		}
 
-		public void setNodeStatus(String nodeStatus) {
-			this.nodeStatus = nodeStatus;
+		public void setNodeReplicationMode(String nodeReplicationMode) {
+			this.nodeReplicationMode = nodeReplicationMode;
 		}
 
-		public String getNodeRole() {
-			return this.nodeRole;
+		public String getNodeAddress() {
+			return this.nodeAddress;
 		}
 
-		public void setNodeRole(String nodeRole) {
-			this.nodeRole = nodeRole;
+		public void setNodeAddress(String nodeAddress) {
+			this.nodeAddress = nodeAddress;
+		}
+
+		public String getNodePort() {
+			return this.nodePort;
+		}
+
+		public void setNodePort(String nodePort) {
+			this.nodePort = nodePort;
 		}
 
 		public String getNodePreferredRole() {
@@ -181,14 +181,6 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.nodePreferredRole = nodePreferredRole;
 		}
 
-		public String getNodeReplicationMode() {
-			return this.nodeReplicationMode;
-		}
-
-		public void setNodeReplicationMode(String nodeReplicationMode) {
-			this.nodeReplicationMode = nodeReplicationMode;
-		}
-
 		public String getNodeCID() {
 			return this.nodeCID;
 		}
@@ -196,19 +188,27 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 		public void setNodeCID(String nodeCID) {
 			this.nodeCID = nodeCID;
 		}
+
+		public String getNodeStatus() {
+			return this.nodeStatus;
+		}
+
+		public void setNodeStatus(String nodeStatus) {
+			this.nodeStatus = nodeStatus;
+		}
 	}
 
-	public static class MasterStatusInfo {
+	public static class SegmentStatusInfo {
 
 		private Integer normalNodeNum;
 
 		private Integer exceptionNodeNum;
 
-		private Integer notSyncingNodeNum;
+		private Integer preferredNodeNum;
 
 		private Integer syncedNodeNum;
 
-		private Integer preferredNodeNum;
+		private Integer notSyncingNodeNum;
 
 		private Integer notPreferredNodeNum;
 
@@ -228,12 +228,12 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.exceptionNodeNum = exceptionNodeNum;
 		}
 
-		public Integer getNotSyncingNodeNum() {
-			return this.notSyncingNodeNum;
+		public Integer getPreferredNodeNum() {
+			return this.preferredNodeNum;
 		}
 
-		public void setNotSyncingNodeNum(Integer notSyncingNodeNum) {
-			this.notSyncingNodeNum = notSyncingNodeNum;
+		public void setPreferredNodeNum(Integer preferredNodeNum) {
+			this.preferredNodeNum = preferredNodeNum;
 		}
 
 		public Integer getSyncedNodeNum() {
@@ -244,12 +244,12 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.syncedNodeNum = syncedNodeNum;
 		}
 
-		public Integer getPreferredNodeNum() {
-			return this.preferredNodeNum;
+		public Integer getNotSyncingNodeNum() {
+			return this.notSyncingNodeNum;
 		}
 
-		public void setPreferredNodeNum(Integer preferredNodeNum) {
-			this.preferredNodeNum = preferredNodeNum;
+		public void setNotSyncingNodeNum(Integer notSyncingNodeNum) {
+			this.notSyncingNodeNum = notSyncingNodeNum;
 		}
 
 		public Integer getNotPreferredNodeNum() {
@@ -261,17 +261,17 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 		}
 	}
 
-	public static class SegmentStatusInfo {
+	public static class MasterStatusInfo {
 
 		private Integer normalNodeNum;
 
 		private Integer exceptionNodeNum;
 
-		private Integer notSyncingNodeNum;
+		private Integer preferredNodeNum;
 
 		private Integer syncedNodeNum;
 
-		private Integer preferredNodeNum;
+		private Integer notSyncingNodeNum;
 
 		private Integer notPreferredNodeNum;
 
@@ -291,12 +291,12 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.exceptionNodeNum = exceptionNodeNum;
 		}
 
-		public Integer getNotSyncingNodeNum() {
-			return this.notSyncingNodeNum;
+		public Integer getPreferredNodeNum() {
+			return this.preferredNodeNum;
 		}
 
-		public void setNotSyncingNodeNum(Integer notSyncingNodeNum) {
-			this.notSyncingNodeNum = notSyncingNodeNum;
+		public void setPreferredNodeNum(Integer preferredNodeNum) {
+			this.preferredNodeNum = preferredNodeNum;
 		}
 
 		public Integer getSyncedNodeNum() {
@@ -307,12 +307,12 @@ public class DescribeDBInstanceDiagnosisSummaryResponse extends AcsResponse {
 			this.syncedNodeNum = syncedNodeNum;
 		}
 
-		public Integer getPreferredNodeNum() {
-			return this.preferredNodeNum;
+		public Integer getNotSyncingNodeNum() {
+			return this.notSyncingNodeNum;
 		}
 
-		public void setPreferredNodeNum(Integer preferredNodeNum) {
-			this.preferredNodeNum = preferredNodeNum;
+		public void setNotSyncingNodeNum(Integer notSyncingNodeNum) {
+			this.notSyncingNodeNum = notSyncingNodeNum;
 		}
 
 		public Integer getNotPreferredNodeNum() {

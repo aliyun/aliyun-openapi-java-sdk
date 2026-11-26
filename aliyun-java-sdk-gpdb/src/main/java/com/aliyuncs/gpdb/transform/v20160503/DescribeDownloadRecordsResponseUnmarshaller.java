@@ -31,10 +31,10 @@ public class DescribeDownloadRecordsResponseUnmarshaller {
 		List<Item> records = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDownloadRecordsResponse.Records.Length"); i++) {
 			Item item = new Item();
-			item.setDownloadId(_ctx.longValue("DescribeDownloadRecordsResponse.Records["+ i +"].DownloadId"));
-			item.setExceptionMsg(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].ExceptionMsg"));
-			item.setFileName(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].FileName"));
 			item.setStatus(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].Status"));
+			item.setFileName(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].FileName"));
+			item.setExceptionMsg(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].ExceptionMsg"));
+			item.setDownloadId(_ctx.longValue("DescribeDownloadRecordsResponse.Records["+ i +"].DownloadId"));
 			item.setDownloadUrl(_ctx.stringValue("DescribeDownloadRecordsResponse.Records["+ i +"].DownloadUrl"));
 
 			records.add(item);

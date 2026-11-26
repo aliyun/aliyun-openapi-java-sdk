@@ -26,8 +26,8 @@ public class ListSchemasResponseUnmarshaller {
 	public static ListSchemasResponse unmarshall(ListSchemasResponse listSchemasResponse, UnmarshallerContext _ctx) {
 		
 		listSchemasResponse.setRequestId(_ctx.stringValue("ListSchemasResponse.RequestId"));
-		listSchemasResponse.setMessage(_ctx.stringValue("ListSchemasResponse.Message"));
 		listSchemasResponse.setStatus(_ctx.stringValue("ListSchemasResponse.Status"));
+		listSchemasResponse.setMessage(_ctx.stringValue("ListSchemasResponse.Message"));
 		listSchemasResponse.setNextToken(_ctx.stringValue("ListSchemasResponse.NextToken"));
 
 		List<String> schemas = new ArrayList<String>();

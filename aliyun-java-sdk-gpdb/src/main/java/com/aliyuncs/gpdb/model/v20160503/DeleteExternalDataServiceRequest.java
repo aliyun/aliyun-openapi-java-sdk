@@ -29,7 +29,7 @@ public class DeleteExternalDataServiceRequest extends RpcAcsRequest<DeleteExtern
 
 	private String serviceId;
 	public DeleteExternalDataServiceRequest() {
-		super("gpdb", "2016-05-03", "DeleteExternalDataService", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteExternalDataService", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

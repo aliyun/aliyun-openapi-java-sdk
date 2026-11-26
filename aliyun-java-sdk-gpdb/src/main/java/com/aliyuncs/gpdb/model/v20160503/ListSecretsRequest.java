@@ -31,7 +31,7 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 
 	private String workspaceId;
 	public ListSecretsRequest() {
-		super("gpdb", "2016-05-03", "ListSecrets", "gpdb");
+		super("gpdb", "2016-05-03", "ListSecrets", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,52 +24,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDocumentResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String fileMd5;
 
 	private String status;
 
-	private String fileName;
+	private String fileMtime;
 
 	private String fileExt;
 
-	private Integer fileVersion;
+	private String message;
 
-	private String fileMtime;
+	private String requestId;
 
-	private String source;
+	private String fileName;
 
 	private String documentLoader;
 
 	private String textSplitter;
 
-	private Long fileSize;
-
-	private String fileMd5;
-
 	private Integer docsCount;
+
+	private String source;
 
 	private String fileUrl;
 
 	private String plainChunkFileUrl;
 
+	private String documentLoaderResultFileUrl;
+
+	private Integer fileVersion;
+
 	private String chunkFileUrl;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Long fileSize;
+
+	public String getFileMd5() {
+		return this.fileMd5;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setFileMd5(String fileMd5) {
+		this.fileMd5 = fileMd5;
 	}
 
 	public String getStatus() {
@@ -80,12 +74,12 @@ public class DescribeDocumentResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public String getFileMtime() {
+		return this.fileMtime;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFileMtime(String fileMtime) {
+		this.fileMtime = fileMtime;
 	}
 
 	public String getFileExt() {
@@ -96,28 +90,28 @@ public class DescribeDocumentResponse extends AcsResponse {
 		this.fileExt = fileExt;
 	}
 
-	public Integer getFileVersion() {
-		return this.fileVersion;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setFileVersion(Integer fileVersion) {
-		this.fileVersion = fileVersion;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public String getFileMtime() {
-		return this.fileMtime;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setFileMtime(String fileMtime) {
-		this.fileMtime = fileMtime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getSource() {
-		return this.source;
+	public String getFileName() {
+		return this.fileName;
 	}
 
-	public void setSource(String source) {
-		this.source = source;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public String getDocumentLoader() {
@@ -136,28 +130,20 @@ public class DescribeDocumentResponse extends AcsResponse {
 		this.textSplitter = textSplitter;
 	}
 
-	public Long getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Long fileSize) {
-		this.fileSize = fileSize;
-	}
-
-	public String getFileMd5() {
-		return this.fileMd5;
-	}
-
-	public void setFileMd5(String fileMd5) {
-		this.fileMd5 = fileMd5;
-	}
-
 	public Integer getDocsCount() {
 		return this.docsCount;
 	}
 
 	public void setDocsCount(Integer docsCount) {
 		this.docsCount = docsCount;
+	}
+
+	public String getSource() {
+		return this.source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
 	}
 
 	public String getFileUrl() {
@@ -176,12 +162,36 @@ public class DescribeDocumentResponse extends AcsResponse {
 		this.plainChunkFileUrl = plainChunkFileUrl;
 	}
 
+	public String getDocumentLoaderResultFileUrl() {
+		return this.documentLoaderResultFileUrl;
+	}
+
+	public void setDocumentLoaderResultFileUrl(String documentLoaderResultFileUrl) {
+		this.documentLoaderResultFileUrl = documentLoaderResultFileUrl;
+	}
+
+	public Integer getFileVersion() {
+		return this.fileVersion;
+	}
+
+	public void setFileVersion(Integer fileVersion) {
+		this.fileVersion = fileVersion;
+	}
+
 	public String getChunkFileUrl() {
 		return this.chunkFileUrl;
 	}
 
 	public void setChunkFileUrl(String chunkFileUrl) {
 		this.chunkFileUrl = chunkFileUrl;
+	}
+
+	public Long getFileSize() {
+		return this.fileSize;
+	}
+
+	public void setFileSize(Long fileSize) {
+		this.fileSize = fileSize;
 	}
 
 	@Override

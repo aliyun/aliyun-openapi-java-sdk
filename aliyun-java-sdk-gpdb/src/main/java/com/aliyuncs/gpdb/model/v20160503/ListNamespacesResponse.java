@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListNamespacesResponse extends AcsResponse {
 
+	private String status;
+
+	private String message;
+
 	private String requestId;
+
+	private String dBInstanceId;
 
 	private Integer count;
 
 	private String regionId;
 
-	private String dBInstanceId;
-
-	private String message;
-
-	private String status;
-
 	private List<String> namespaces;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,6 +61,14 @@ public class ListNamespacesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
 	}
 
 	public Integer getCount() {
@@ -61,30 +85,6 @@ public class ListNamespacesResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public List<String> getNamespaces() {

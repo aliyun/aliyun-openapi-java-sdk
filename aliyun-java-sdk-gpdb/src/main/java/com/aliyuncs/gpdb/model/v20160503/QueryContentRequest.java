@@ -31,6 +31,33 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 
 	private Integer topK;
 
+	@SerializedName("hybridSearchArgs")
+	private Map<String,Map<String,Object>> hybridSearchArgs;
+
+	@SerializedName("recallWindow")
+	private List<Integer> recallWindow;
+
+	private Boolean graphEnhance;
+
+	private Integer offset;
+
+	private String orderBy;
+
+	private String collection;
+
+	private Long ownerId;
+
+	@SerializedName("graphSearchArgs")
+	private GraphSearchArgs graphSearchArgs;
+
+	private String namespacePassword;
+
+	private String fileName;
+
+	private String metrics;
+
+	private String hybridSearch;
+
 	private Boolean includeVector;
 
 	private String includeMetadataFields;
@@ -43,35 +70,20 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 
 	private Boolean includeFileUrl;
 
-	@SerializedName("hybridSearchArgs")
-	private Map<String,Map<String,Object>> hybridSearchArgs;
-
-	@SerializedName("recallWindow")
-	private List<Integer> recallWindow;
-
 	private String dBInstanceId;
 
 	private Double rerankFactor;
 
-	private String collection;
-
-	private Long ownerId;
-
-	private String namespacePassword;
-
 	private String filter;
-
-	private String fileName;
 
 	private String namespace;
 
 	private String fileUrl;
 
-	private String metrics;
-
-	private String hybridSearch;
+	@SerializedName("rerankModel")
+	private RerankModel rerankModel;
 	public QueryContentRequest() {
-		super("gpdb", "2016-05-03", "QueryContent", "gpdb");
+		super("gpdb", "2016-05-03", "QueryContent", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -87,6 +99,138 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 		this.topK = topK;
 		if(topK != null){
 			putQueryParameter("TopK", topK.toString());
+		}
+	}
+
+	public Map<String,Map<String,Object>> getHybridSearchArgs() {
+		return this.hybridSearchArgs;
+	}
+
+	public void setHybridSearchArgs(Map<String,Map<String,Object>> hybridSearchArgs) {
+		this.hybridSearchArgs = hybridSearchArgs;	
+		if (hybridSearchArgs != null) {
+			putQueryParameter("HybridSearchArgs" , new Gson().toJson(hybridSearchArgs));
+		}	
+	}
+
+	public List<Integer> getRecallWindow() {
+		return this.recallWindow;
+	}
+
+	public void setRecallWindow(List<Integer> recallWindow) {
+		this.recallWindow = recallWindow;	
+		if (recallWindow != null) {
+			putQueryParameter("RecallWindow" , new Gson().toJson(recallWindow));
+		}	
+	}
+
+	public Boolean getGraphEnhance() {
+		return this.graphEnhance;
+	}
+
+	public void setGraphEnhance(Boolean graphEnhance) {
+		this.graphEnhance = graphEnhance;
+		if(graphEnhance != null){
+			putQueryParameter("GraphEnhance", graphEnhance.toString());
+		}
+	}
+
+	public Integer getOffset() {
+		return this.offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+		if(offset != null){
+			putQueryParameter("Offset", offset.toString());
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public String getCollection() {
+		return this.collection;
+	}
+
+	public void setCollection(String collection) {
+		this.collection = collection;
+		if(collection != null){
+			putQueryParameter("Collection", collection);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public GraphSearchArgs getGraphSearchArgs() {
+		return this.graphSearchArgs;
+	}
+
+	public void setGraphSearchArgs(GraphSearchArgs graphSearchArgs) {
+		this.graphSearchArgs = graphSearchArgs;	
+		if (graphSearchArgs != null) {
+			putQueryParameter("GraphSearchArgs" , new Gson().toJson(graphSearchArgs));
+		}	
+	}
+
+	public String getNamespacePassword() {
+		return this.namespacePassword;
+	}
+
+	public void setNamespacePassword(String namespacePassword) {
+		this.namespacePassword = namespacePassword;
+		if(namespacePassword != null){
+			putQueryParameter("NamespacePassword", namespacePassword);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+		if(metrics != null){
+			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public String getHybridSearch() {
+		return this.hybridSearch;
+	}
+
+	public void setHybridSearch(String hybridSearch) {
+		this.hybridSearch = hybridSearch;
+		if(hybridSearch != null){
+			putQueryParameter("HybridSearch", hybridSearch);
 		}
 	}
 
@@ -156,28 +300,6 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 		}
 	}
 
-	public Map<String,Map<String,Object>> getHybridSearchArgs() {
-		return this.hybridSearchArgs;
-	}
-
-	public void setHybridSearchArgs(Map<String,Map<String,Object>> hybridSearchArgs) {
-		this.hybridSearchArgs = hybridSearchArgs;	
-		if (hybridSearchArgs != null) {
-			putQueryParameter("HybridSearchArgs" , new Gson().toJson(hybridSearchArgs));
-		}	
-	}
-
-	public List<Integer> getRecallWindow() {
-		return this.recallWindow;
-	}
-
-	public void setRecallWindow(List<Integer> recallWindow) {
-		this.recallWindow = recallWindow;	
-		if (recallWindow != null) {
-			putQueryParameter("RecallWindow" , new Gson().toJson(recallWindow));
-		}	
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -200,39 +322,6 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 		}
 	}
 
-	public String getCollection() {
-		return this.collection;
-	}
-
-	public void setCollection(String collection) {
-		this.collection = collection;
-		if(collection != null){
-			putQueryParameter("Collection", collection);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getNamespacePassword() {
-		return this.namespacePassword;
-	}
-
-	public void setNamespacePassword(String namespacePassword) {
-		this.namespacePassword = namespacePassword;
-		if(namespacePassword != null){
-			putQueryParameter("NamespacePassword", namespacePassword);
-		}
-	}
-
 	public String getFilter() {
 		return this.filter;
 	}
@@ -240,18 +329,7 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 	public void setFilter(String filter) {
 		this.filter = filter;
 		if(filter != null){
-			putQueryParameter("Filter", filter);
-		}
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
+			putBodyParameter("Filter", filter);
 		}
 	}
 
@@ -277,25 +355,64 @@ public class QueryContentRequest extends RpcAcsRequest<QueryContentResponse> {
 		}
 	}
 
-	public String getMetrics() {
-		return this.metrics;
+	public RerankModel getRerankModel() {
+		return this.rerankModel;
 	}
 
-	public void setMetrics(String metrics) {
-		this.metrics = metrics;
-		if(metrics != null){
-			putQueryParameter("Metrics", metrics);
+	public void setRerankModel(RerankModel rerankModel) {
+		this.rerankModel = rerankModel;	
+		if (rerankModel != null) {
+			putQueryParameter("RerankModel" , new Gson().toJson(rerankModel));
+		}	
+	}
+
+	public static class GraphSearchArgs {
+
+		@SerializedName("GraphTopK")
+		private Integer graphTopK;
+
+		public Integer getGraphTopK() {
+			return this.graphTopK;
+		}
+
+		public void setGraphTopK(Integer graphTopK) {
+			this.graphTopK = graphTopK;
 		}
 	}
 
-	public String getHybridSearch() {
-		return this.hybridSearch;
-	}
+	public static class RerankModel {
 
-	public void setHybridSearch(String hybridSearch) {
-		this.hybridSearch = hybridSearch;
-		if(hybridSearch != null){
-			putQueryParameter("HybridSearch", hybridSearch);
+		@SerializedName("Instruct")
+		private String instruct;
+
+		@SerializedName("RerankMetadataFields")
+		private String rerankMetadataFields;
+
+		@SerializedName("Name")
+		private String name;
+
+		public String getInstruct() {
+			return this.instruct;
+		}
+
+		public void setInstruct(String instruct) {
+			this.instruct = instruct;
+		}
+
+		public String getRerankMetadataFields() {
+			return this.rerankMetadataFields;
+		}
+
+		public void setRerankMetadataFields(String rerankMetadataFields) {
+			this.rerankMetadataFields = rerankMetadataFields;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

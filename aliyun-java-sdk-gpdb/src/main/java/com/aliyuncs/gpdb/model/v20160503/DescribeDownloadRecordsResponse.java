@@ -47,30 +47,22 @@ public class DescribeDownloadRecordsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private Long downloadId;
-
-		private String exceptionMsg;
+		private String status;
 
 		private String fileName;
 
-		private String status;
+		private String exceptionMsg;
+
+		private Long downloadId;
 
 		private String downloadUrl;
 
-		public Long getDownloadId() {
-			return this.downloadId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setDownloadId(Long downloadId) {
-			this.downloadId = downloadId;
-		}
-
-		public String getExceptionMsg() {
-			return this.exceptionMsg;
-		}
-
-		public void setExceptionMsg(String exceptionMsg) {
-			this.exceptionMsg = exceptionMsg;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getFileName() {
@@ -81,12 +73,20 @@ public class DescribeDownloadRecordsResponse extends AcsResponse {
 			this.fileName = fileName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getExceptionMsg() {
+			return this.exceptionMsg;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setExceptionMsg(String exceptionMsg) {
+			this.exceptionMsg = exceptionMsg;
+		}
+
+		public Long getDownloadId() {
+			return this.downloadId;
+		}
+
+		public void setDownloadId(Long downloadId) {
+			this.downloadId = downloadId;
 		}
 
 		public String getDownloadUrl() {

@@ -24,12 +24,12 @@ public class DescribeNamespaceResponseUnmarshaller {
 	public static DescribeNamespaceResponse unmarshall(DescribeNamespaceResponse describeNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		describeNamespaceResponse.setRequestId(_ctx.stringValue("DescribeNamespaceResponse.RequestId"));
-		describeNamespaceResponse.setNamespaceInfo(_ctx.mapValue("DescribeNamespaceResponse.NamespaceInfo"));
-		describeNamespaceResponse.setNamespace(_ctx.stringValue("DescribeNamespaceResponse.Namespace"));
-		describeNamespaceResponse.setDBInstanceId(_ctx.stringValue("DescribeNamespaceResponse.DBInstanceId"));
-		describeNamespaceResponse.setRegionId(_ctx.stringValue("DescribeNamespaceResponse.RegionId"));
 		describeNamespaceResponse.setStatus(_ctx.stringValue("DescribeNamespaceResponse.Status"));
 		describeNamespaceResponse.setMessage(_ctx.stringValue("DescribeNamespaceResponse.Message"));
+		describeNamespaceResponse.setDBInstanceId(_ctx.stringValue("DescribeNamespaceResponse.DBInstanceId"));
+		describeNamespaceResponse.setRegionId(_ctx.stringValue("DescribeNamespaceResponse.RegionId"));
+		describeNamespaceResponse.setNamespaceInfo(_ctx.mapValue("DescribeNamespaceResponse.NamespaceInfo"));
+		describeNamespaceResponse.setNamespace(_ctx.stringValue("DescribeNamespaceResponse.Namespace"));
 	 
 	 	return describeNamespaceResponse;
 	}

@@ -40,7 +40,7 @@ public class TextEmbeddingRequest extends RpcAcsRequest<TextEmbeddingResponse> {
 	@SerializedName("input")
 	private List<String> input;
 	public TextEmbeddingRequest() {
-		super("gpdb", "2016-05-03", "TextEmbedding", "gpdb");
+		super("gpdb", "2016-05-03", "TextEmbedding", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

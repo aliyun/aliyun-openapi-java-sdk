@@ -31,7 +31,7 @@ public class DescribeDBResourceGroupRequest extends RpcAcsRequest<DescribeDBReso
 
 	private Long ownerId;
 	public DescribeDBResourceGroupRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBResourceGroup", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBResourceGroup", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

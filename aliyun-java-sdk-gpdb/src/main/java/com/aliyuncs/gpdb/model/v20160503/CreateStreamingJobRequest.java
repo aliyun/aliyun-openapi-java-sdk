@@ -74,7 +74,7 @@ public class CreateStreamingJobRequest extends RpcAcsRequest<CreateStreamingJobR
 
 	private String account;
 	public CreateStreamingJobRequest() {
-		super("gpdb", "2016-05-03", "CreateStreamingJob", "gpdb");
+		super("gpdb", "2016-05-03", "CreateStreamingJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,8 +23,8 @@ public class DescribeHadoopConfigsResponseUnmarshaller {
 	public static DescribeHadoopConfigsResponse unmarshall(DescribeHadoopConfigsResponse describeHadoopConfigsResponse, UnmarshallerContext _ctx) {
 		
 		describeHadoopConfigsResponse.setRequestId(_ctx.stringValue("DescribeHadoopConfigsResponse.RequestId"));
-		describeHadoopConfigsResponse.setConfigName(_ctx.stringValue("DescribeHadoopConfigsResponse.ConfigName"));
 		describeHadoopConfigsResponse.setConfigValue(_ctx.stringValue("DescribeHadoopConfigsResponse.ConfigValue"));
+		describeHadoopConfigsResponse.setConfigName(_ctx.stringValue("DescribeHadoopConfigsResponse.ConfigName"));
 	 
 	 	return describeHadoopConfigsResponse;
 	}

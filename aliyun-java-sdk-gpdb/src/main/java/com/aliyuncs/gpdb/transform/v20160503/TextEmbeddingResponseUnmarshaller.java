@@ -27,8 +27,8 @@ public class TextEmbeddingResponseUnmarshaller {
 	public static TextEmbeddingResponse unmarshall(TextEmbeddingResponse textEmbeddingResponse, UnmarshallerContext _ctx) {
 		
 		textEmbeddingResponse.setRequestId(_ctx.stringValue("TextEmbeddingResponse.RequestId"));
-		textEmbeddingResponse.setMessage(_ctx.stringValue("TextEmbeddingResponse.Message"));
 		textEmbeddingResponse.setStatus(_ctx.stringValue("TextEmbeddingResponse.Status"));
+		textEmbeddingResponse.setMessage(_ctx.stringValue("TextEmbeddingResponse.Message"));
 		textEmbeddingResponse.setTextTokens(_ctx.integerValue("TextEmbeddingResponse.TextTokens"));
 
 		List<ResultsItem> results = new ArrayList<ResultsItem>();

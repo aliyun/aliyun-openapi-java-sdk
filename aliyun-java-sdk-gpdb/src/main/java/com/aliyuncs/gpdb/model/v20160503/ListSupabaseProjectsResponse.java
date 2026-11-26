@@ -25,34 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSupabaseProjectsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
+	private Integer totalRecordCount;
 
 	private Integer pageRecordCount;
 
-	private Integer totalRecordCount;
+	private String requestId;
 
 	private String nextToken;
+
+	private Integer pageNumber;
 
 	private Integer maxResults;
 
 	private List<ItemsItem> items;
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public Integer getPageRecordCount() {
@@ -63,12 +55,12 @@ public class ListSupabaseProjectsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getNextToken() {
@@ -77,6 +69,14 @@ public class ListSupabaseProjectsResponse extends AcsResponse {
 
 	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getMaxResults() {
@@ -132,6 +132,12 @@ public class ListSupabaseProjectsResponse extends AcsResponse {
 		private String dashboardPassword;
 
 		private String regionId;
+
+		private String expireTime;
+
+		private String autoScale;
+
+		private String projectDescription;
 
 		private String engine;
 
@@ -277,6 +283,30 @@ public class ListSupabaseProjectsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getAutoScale() {
+			return this.autoScale;
+		}
+
+		public void setAutoScale(String autoScale) {
+			this.autoScale = autoScale;
+		}
+
+		public String getProjectDescription() {
+			return this.projectDescription;
+		}
+
+		public void setProjectDescription(String projectDescription) {
+			this.projectDescription = projectDescription;
 		}
 
 		public String getEngine() {

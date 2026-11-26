@@ -57,32 +57,56 @@ public class DescribeWaitingSQLInfoResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String pID;
+		private String blockedBySQLStmt;
+
+		private String grantLocks;
+
+		private String blockedByPID;
+
+		private String sQLStmt;
 
 		private String user;
 
-		private String sQLStmt;
+		private String blockedByUser;
+
+		private String blockedByApplication;
+
+		private String pID;
 
 		private String application;
 
 		private String notGrantLocks;
 
-		private String blockedByPID;
-
-		private String blockedByUser;
-
-		private String blockedBySQLStmt;
-
-		private String blockedByApplication;
-
-		private String grantLocks;
-
-		public String getPID() {
-			return this.pID;
+		public String getBlockedBySQLStmt() {
+			return this.blockedBySQLStmt;
 		}
 
-		public void setPID(String pID) {
-			this.pID = pID;
+		public void setBlockedBySQLStmt(String blockedBySQLStmt) {
+			this.blockedBySQLStmt = blockedBySQLStmt;
+		}
+
+		public String getGrantLocks() {
+			return this.grantLocks;
+		}
+
+		public void setGrantLocks(String grantLocks) {
+			this.grantLocks = grantLocks;
+		}
+
+		public String getBlockedByPID() {
+			return this.blockedByPID;
+		}
+
+		public void setBlockedByPID(String blockedByPID) {
+			this.blockedByPID = blockedByPID;
+		}
+
+		public String getSQLStmt() {
+			return this.sQLStmt;
+		}
+
+		public void setSQLStmt(String sQLStmt) {
+			this.sQLStmt = sQLStmt;
 		}
 
 		public String getUser() {
@@ -93,12 +117,28 @@ public class DescribeWaitingSQLInfoResponse extends AcsResponse {
 			this.user = user;
 		}
 
-		public String getSQLStmt() {
-			return this.sQLStmt;
+		public String getBlockedByUser() {
+			return this.blockedByUser;
 		}
 
-		public void setSQLStmt(String sQLStmt) {
-			this.sQLStmt = sQLStmt;
+		public void setBlockedByUser(String blockedByUser) {
+			this.blockedByUser = blockedByUser;
+		}
+
+		public String getBlockedByApplication() {
+			return this.blockedByApplication;
+		}
+
+		public void setBlockedByApplication(String blockedByApplication) {
+			this.blockedByApplication = blockedByApplication;
+		}
+
+		public String getPID() {
+			return this.pID;
+		}
+
+		public void setPID(String pID) {
+			this.pID = pID;
 		}
 
 		public String getApplication() {
@@ -115,46 +155,6 @@ public class DescribeWaitingSQLInfoResponse extends AcsResponse {
 
 		public void setNotGrantLocks(String notGrantLocks) {
 			this.notGrantLocks = notGrantLocks;
-		}
-
-		public String getBlockedByPID() {
-			return this.blockedByPID;
-		}
-
-		public void setBlockedByPID(String blockedByPID) {
-			this.blockedByPID = blockedByPID;
-		}
-
-		public String getBlockedByUser() {
-			return this.blockedByUser;
-		}
-
-		public void setBlockedByUser(String blockedByUser) {
-			this.blockedByUser = blockedByUser;
-		}
-
-		public String getBlockedBySQLStmt() {
-			return this.blockedBySQLStmt;
-		}
-
-		public void setBlockedBySQLStmt(String blockedBySQLStmt) {
-			this.blockedBySQLStmt = blockedBySQLStmt;
-		}
-
-		public String getBlockedByApplication() {
-			return this.blockedByApplication;
-		}
-
-		public void setBlockedByApplication(String blockedByApplication) {
-			this.blockedByApplication = blockedByApplication;
-		}
-
-		public String getGrantLocks() {
-			return this.grantLocks;
-		}
-
-		public void setGrantLocks(String grantLocks) {
-			this.grantLocks = grantLocks;
 		}
 	}
 

@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteStreamingDataServiceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean status;
 
+	private String requestId;
+
 	private String errorMessage;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Boolean getStatus() {
 		return this.status;
@@ -44,6 +36,14 @@ public class DeleteStreamingDataServiceResponse extends AcsResponse {
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getErrorMessage() {

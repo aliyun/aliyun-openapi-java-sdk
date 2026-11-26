@@ -29,7 +29,7 @@ public class DescribeSampleDataRequest extends RpcAcsRequest<DescribeSampleDataR
 
 	private Long ownerId;
 	public DescribeSampleDataRequest() {
-		super("gpdb", "2016-05-03", "DescribeSampleData", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeSampleData", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

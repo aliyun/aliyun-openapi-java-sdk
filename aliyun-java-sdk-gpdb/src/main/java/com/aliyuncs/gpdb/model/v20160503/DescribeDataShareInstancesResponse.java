@@ -77,7 +77,7 @@ public class DescribeDataShareInstancesResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String regionId;
+		private String description;
 
 		private String zoneId;
 
@@ -85,16 +85,16 @@ public class DescribeDataShareInstancesResponse extends AcsResponse {
 
 		private String dBInstanceMode;
 
-		private String description;
+		private String regionId;
 
 		private String dataShareStatus;
 
-		public String getRegionId() {
-			return this.regionId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getZoneId() {
@@ -121,12 +121,12 @@ public class DescribeDataShareInstancesResponse extends AcsResponse {
 			this.dBInstanceMode = dBInstanceMode;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getDataShareStatus() {

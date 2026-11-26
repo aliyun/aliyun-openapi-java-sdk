@@ -57,20 +57,20 @@ public class DescribeDBInstanceSupportMaxPerformanceResponse extends AcsResponse
 
 	public static class Performance {
 
-		private String key;
+		private String bottleneck;
 
 		private String value;
 
-		private String bottleneck;
-
 		private String unit;
 
-		public String getKey() {
-			return this.key;
+		private String key;
+
+		public String getBottleneck() {
+			return this.bottleneck;
 		}
 
-		public void setKey(String key) {
-			this.key = key;
+		public void setBottleneck(String bottleneck) {
+			this.bottleneck = bottleneck;
 		}
 
 		public String getValue() {
@@ -81,20 +81,20 @@ public class DescribeDBInstanceSupportMaxPerformanceResponse extends AcsResponse
 			this.value = value;
 		}
 
-		public String getBottleneck() {
-			return this.bottleneck;
-		}
-
-		public void setBottleneck(String bottleneck) {
-			this.bottleneck = bottleneck;
-		}
-
 		public String getUnit() {
 			return this.unit;
 		}
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

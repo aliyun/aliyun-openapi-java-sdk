@@ -32,16 +32,16 @@ public class DescribeActiveSQLRecordsResponseUnmarshaller {
 		List<Query> queries = new ArrayList<Query>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeActiveSQLRecordsResponse.Queries.Length"); i++) {
 			Query query = new Query();
+			query.setSqlTruncated(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].SqlTruncated"));
+			query.setUser(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].User"));
+			query.setClientAddr(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].ClientAddr"));
+			query.setQuery(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].Query"));
+			query.setState(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].State"));
+			query.setQueryDuration(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].QueryDuration"));
+			query.setQueryStart(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].QueryStart"));
+			query.setDatabase(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].Database"));
 			query.setPID(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].PID"));
 			query.setSessionID(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].SessionID"));
-			query.setState(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].State"));
-			query.setQueryStart(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].QueryStart"));
-			query.setQueryDuration(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].QueryDuration"));
-			query.setQuery(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].Query"));
-			query.setUser(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].User"));
-			query.setDatabase(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].Database"));
-			query.setClientAddr(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].ClientAddr"));
-			query.setSqlTruncated(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].SqlTruncated"));
 			query.setSqlTruncatedThreshold(_ctx.stringValue("DescribeActiveSQLRecordsResponse.Queries["+ i +"].SqlTruncatedThreshold"));
 
 			queries.add(query);

@@ -28,24 +28,24 @@ public class DescribeDBInstancePlansResponseUnmarshaller {
 		
 		describeDBInstancePlansResponse.setRequestId(_ctx.stringValue("DescribeDBInstancePlansResponse.RequestId"));
 		describeDBInstancePlansResponse.setStatus(_ctx.stringValue("DescribeDBInstancePlansResponse.Status"));
-		describeDBInstancePlansResponse.setErrorMessage(_ctx.stringValue("DescribeDBInstancePlansResponse.ErrorMessage"));
 		describeDBInstancePlansResponse.setTotalRecordCount(_ctx.integerValue("DescribeDBInstancePlansResponse.TotalRecordCount"));
 		describeDBInstancePlansResponse.setPageRecordCount(_ctx.integerValue("DescribeDBInstancePlansResponse.PageRecordCount"));
 		describeDBInstancePlansResponse.setPageNumber(_ctx.integerValue("DescribeDBInstancePlansResponse.PageNumber"));
+		describeDBInstancePlansResponse.setErrorMessage(_ctx.stringValue("DescribeDBInstancePlansResponse.ErrorMessage"));
 
 		List<PlanList> items = new ArrayList<PlanList>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancePlansResponse.Items.Length"); i++) {
 			PlanList planList = new PlanList();
-			planList.setPlanName(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanName"));
-			planList.setPlanDesc(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanDesc"));
-			planList.setPlanId(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanId"));
-			planList.setPlanStatus(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanStatus"));
-			planList.setPlanType(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanType"));
-			planList.setPlanScheduleType(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanScheduleType"));
-			planList.setPlanStartDate(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanStartDate"));
-			planList.setPlanEndDate(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanEndDate"));
-			planList.setPlanConfig(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanConfig"));
 			planList.setDBInstanceId(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].DBInstanceId"));
+			planList.setPlanId(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanId"));
+			planList.setPlanScheduleType(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanScheduleType"));
+			planList.setPlanEndDate(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanEndDate"));
+			planList.setPlanType(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanType"));
+			planList.setPlanDesc(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanDesc"));
+			planList.setPlanName(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanName"));
+			planList.setPlanStartDate(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanStartDate"));
+			planList.setPlanConfig(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanConfig"));
+			planList.setPlanStatus(_ctx.stringValue("DescribeDBInstancePlansResponse.Items["+ i +"].PlanStatus"));
 
 			items.add(planList);
 		}

@@ -70,7 +70,7 @@ public class ModifyStreamingJobRequest extends RpcAcsRequest<ModifyStreamingJobR
 
 	private String account;
 	public ModifyStreamingJobRequest() {
-		super("gpdb", "2016-05-03", "ModifyStreamingJob", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyStreamingJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

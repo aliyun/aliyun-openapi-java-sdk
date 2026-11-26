@@ -25,19 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNamespaceResponse extends AcsResponse {
 
+	private String status;
+
+	private String message;
+
 	private String requestId;
-
-	private Map<Object,Object> namespaceInfo;
-
-	private String namespace;
 
 	private String dBInstanceId;
 
 	private String regionId;
 
-	private String status;
+	private Map<Object,Object> namespaceInfo;
 
-	private String message;
+	private String namespace;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,22 +61,6 @@ public class DescribeNamespaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Map<Object,Object> getNamespaceInfo() {
-		return this.namespaceInfo;
-	}
-
-	public void setNamespaceInfo(Map<Object,Object> namespaceInfo) {
-		this.namespaceInfo = namespaceInfo;
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
 	}
 
 	public String getDBInstanceId() {
@@ -79,20 +79,20 @@ public class DescribeNamespaceResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public Map<Object,Object> getNamespaceInfo() {
+		return this.namespaceInfo;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setNamespaceInfo(Map<Object,Object> namespaceInfo) {
+		this.namespaceInfo = namespaceInfo;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	@Override

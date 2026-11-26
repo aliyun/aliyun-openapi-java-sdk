@@ -33,15 +33,15 @@ public class DescribeDBInstanceDataSkewResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceDataSkewResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setSequence(_ctx.integerValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].Sequence"));
-			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].DatabaseName"));
-			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].SchemaName"));
+			itemsItem.setDistributeKey(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].DistributeKey"));
 			itemsItem.setTableName(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].TableName"));
 			itemsItem.setOwner(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].Owner"));
-			itemsItem.setTableSize(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].TableSize"));
 			itemsItem.setTableSkew(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].TableSkew"));
-			itemsItem.setDistributeKey(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].DistributeKey"));
+			itemsItem.setTableSize(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].TableSize"));
+			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].DatabaseName"));
+			itemsItem.setSequence(_ctx.integerValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].Sequence"));
 			itemsItem.setTimeLastUpdated(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].TimeLastUpdated"));
+			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceDataSkewResponse.Items["+ i +"].SchemaName"));
 
 			items.add(itemsItem);
 		}

@@ -39,7 +39,7 @@ public class DescribeTableRequest extends RpcAcsRequest<DescribeTableResponse> {
 
 	private String workspaceId;
 	public DescribeTableRequest() {
-		super("gpdb", "2016-05-03", "DescribeTable", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeTable", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

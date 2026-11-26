@@ -33,19 +33,19 @@ public class DescribeSQLLogsResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setOperationClass(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationClass"));
-			item.setExecuteState(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].ExecuteState"));
 			item.setExecuteCost(_ctx.floatValue("DescribeSQLLogsResponse.Items["+ i +"].ExecuteCost"));
-			item.setSQLText(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].SQLText"));
-			item.setSourcePort(_ctx.integerValue("DescribeSQLLogsResponse.Items["+ i +"].SourcePort"));
-			item.setDBRole(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].DBRole"));
-			item.setOperationType(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationType"));
-			item.setSourceIP(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].SourceIP"));
 			item.setSQLPlan(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].SQLPlan"));
+			item.setDBRole(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].DBRole"));
+			item.setSourcePort(_ctx.integerValue("DescribeSQLLogsResponse.Items["+ i +"].SourcePort"));
+			item.setSQLText(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].SQLText"));
+			item.setSourceIP(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].SourceIP"));
 			item.setReturnRowCounts(_ctx.longValue("DescribeSQLLogsResponse.Items["+ i +"].ReturnRowCounts"));
 			item.setDBName(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].DBName"));
-			item.setOperationExecuteTime(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationExecuteTime"));
+			item.setOperationType(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationType"));
 			item.setScanRowCounts(_ctx.longValue("DescribeSQLLogsResponse.Items["+ i +"].ScanRowCounts"));
+			item.setOperationClass(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationClass"));
+			item.setExecuteState(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].ExecuteState"));
+			item.setOperationExecuteTime(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].OperationExecuteTime"));
 			item.setAccountName(_ctx.stringValue("DescribeSQLLogsResponse.Items["+ i +"].AccountName"));
 
 			items.add(item);

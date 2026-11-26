@@ -28,7 +28,7 @@ public class GetSupabaseProjectRequest extends RpcAcsRequest<GetSupabaseProjectR
 
 	private String projectId;
 	public GetSupabaseProjectRequest() {
-		super("gpdb", "2016-05-03", "GetSupabaseProject", "gpdb");
+		super("gpdb", "2016-05-03", "GetSupabaseProject", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

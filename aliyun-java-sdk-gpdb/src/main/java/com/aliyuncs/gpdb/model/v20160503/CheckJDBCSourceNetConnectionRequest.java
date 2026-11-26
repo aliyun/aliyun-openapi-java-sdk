@@ -31,7 +31,7 @@ public class CheckJDBCSourceNetConnectionRequest extends RpcAcsRequest<CheckJDBC
 
 	private String dataSourceId;
 	public CheckJDBCSourceNetConnectionRequest() {
-		super("gpdb", "2016-05-03", "CheckJDBCSourceNetConnection", "gpdb");
+		super("gpdb", "2016-05-03", "CheckJDBCSourceNetConnection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

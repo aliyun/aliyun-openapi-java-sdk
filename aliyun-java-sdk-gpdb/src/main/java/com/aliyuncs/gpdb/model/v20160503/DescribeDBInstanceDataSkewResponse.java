@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,46 +67,30 @@ public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer sequence;
-
-		private String databaseName;
-
-		private String schemaName;
+		private String distributeKey;
 
 		private String tableName;
 
 		private String owner;
 
-		private String tableSize;
-
 		private String tableSkew;
 
-		private String distributeKey;
+		private String tableSize;
+
+		private String databaseName;
+
+		private Integer sequence;
 
 		private String timeLastUpdated;
 
-		public Integer getSequence() {
-			return this.sequence;
+		private String schemaName;
+
+		public String getDistributeKey() {
+			return this.distributeKey;
 		}
 
-		public void setSequence(Integer sequence) {
-			this.sequence = sequence;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
+		public void setDistributeKey(String distributeKey) {
+			this.distributeKey = distributeKey;
 		}
 
 		public String getTableName() {
@@ -125,14 +109,6 @@ public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 			this.owner = owner;
 		}
 
-		public String getTableSize() {
-			return this.tableSize;
-		}
-
-		public void setTableSize(String tableSize) {
-			this.tableSize = tableSize;
-		}
-
 		public String getTableSkew() {
 			return this.tableSkew;
 		}
@@ -141,12 +117,28 @@ public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 			this.tableSkew = tableSkew;
 		}
 
-		public String getDistributeKey() {
-			return this.distributeKey;
+		public String getTableSize() {
+			return this.tableSize;
 		}
 
-		public void setDistributeKey(String distributeKey) {
-			this.distributeKey = distributeKey;
+		public void setTableSize(String tableSize) {
+			this.tableSize = tableSize;
+		}
+
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public Integer getSequence() {
+			return this.sequence;
+		}
+
+		public void setSequence(Integer sequence) {
+			this.sequence = sequence;
 		}
 
 		public String getTimeLastUpdated() {
@@ -155,6 +147,14 @@ public class DescribeDBInstanceDataSkewResponse extends AcsResponse {
 
 		public void setTimeLastUpdated(String timeLastUpdated) {
 			this.timeLastUpdated = timeLastUpdated;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 	}
 

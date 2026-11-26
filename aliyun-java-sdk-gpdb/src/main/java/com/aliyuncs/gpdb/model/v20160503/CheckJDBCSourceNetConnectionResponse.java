@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckJDBCSourceNetConnectionResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String connectionMessage;
 
 	private String connectionStatus;
 
-	private String requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getConnectionMessage() {
 		return this.connectionMessage;
@@ -44,14 +52,6 @@ public class CheckJDBCSourceNetConnectionResponse extends AcsResponse {
 
 	public void setConnectionStatus(String connectionStatus) {
 		this.connectionStatus = connectionStatus;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

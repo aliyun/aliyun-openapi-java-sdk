@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,52 +67,36 @@ public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer sequence;
-
-		private String databaseName;
-
-		private String schemaName;
+		private String expectTableSize;
 
 		private String tableName;
 
 		private String storageType;
 
-		private String expectTableSize;
+		private String databaseName;
 
-		private String realTableSize;
-
-		private String bloatSize;
+		private Integer sequence;
 
 		private String bloatCeoff;
 
-		private String suggestedAction;
-
-		private String timeLastVacuumed;
+		private String realTableSize;
 
 		private String timeLastUpdated;
 
-		public Integer getSequence() {
-			return this.sequence;
+		private String schemaName;
+
+		private String bloatSize;
+
+		private String timeLastVacuumed;
+
+		private String suggestedAction;
+
+		public String getExpectTableSize() {
+			return this.expectTableSize;
 		}
 
-		public void setSequence(Integer sequence) {
-			this.sequence = sequence;
-		}
-
-		public String getDatabaseName() {
-			return this.databaseName;
-		}
-
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
+		public void setExpectTableSize(String expectTableSize) {
+			this.expectTableSize = expectTableSize;
 		}
 
 		public String getTableName() {
@@ -131,28 +115,20 @@ public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 			this.storageType = storageType;
 		}
 
-		public String getExpectTableSize() {
-			return this.expectTableSize;
+		public String getDatabaseName() {
+			return this.databaseName;
 		}
 
-		public void setExpectTableSize(String expectTableSize) {
-			this.expectTableSize = expectTableSize;
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
 		}
 
-		public String getRealTableSize() {
-			return this.realTableSize;
+		public Integer getSequence() {
+			return this.sequence;
 		}
 
-		public void setRealTableSize(String realTableSize) {
-			this.realTableSize = realTableSize;
-		}
-
-		public String getBloatSize() {
-			return this.bloatSize;
-		}
-
-		public void setBloatSize(String bloatSize) {
-			this.bloatSize = bloatSize;
+		public void setSequence(Integer sequence) {
+			this.sequence = sequence;
 		}
 
 		public String getBloatCeoff() {
@@ -163,12 +139,36 @@ public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 			this.bloatCeoff = bloatCeoff;
 		}
 
-		public String getSuggestedAction() {
-			return this.suggestedAction;
+		public String getRealTableSize() {
+			return this.realTableSize;
 		}
 
-		public void setSuggestedAction(String suggestedAction) {
-			this.suggestedAction = suggestedAction;
+		public void setRealTableSize(String realTableSize) {
+			this.realTableSize = realTableSize;
+		}
+
+		public String getTimeLastUpdated() {
+			return this.timeLastUpdated;
+		}
+
+		public void setTimeLastUpdated(String timeLastUpdated) {
+			this.timeLastUpdated = timeLastUpdated;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public String getBloatSize() {
+			return this.bloatSize;
+		}
+
+		public void setBloatSize(String bloatSize) {
+			this.bloatSize = bloatSize;
 		}
 
 		public String getTimeLastVacuumed() {
@@ -179,12 +179,12 @@ public class DescribeDBInstanceDataBloatResponse extends AcsResponse {
 			this.timeLastVacuumed = timeLastVacuumed;
 		}
 
-		public String getTimeLastUpdated() {
-			return this.timeLastUpdated;
+		public String getSuggestedAction() {
+			return this.suggestedAction;
 		}
 
-		public void setTimeLastUpdated(String timeLastUpdated) {
-			this.timeLastUpdated = timeLastUpdated;
+		public void setSuggestedAction(String suggestedAction) {
+			this.suggestedAction = suggestedAction;
 		}
 	}
 

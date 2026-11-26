@@ -40,7 +40,7 @@ public class DeleteIndexRequest extends RpcAcsRequest<DeleteIndexResponse> {
 
 	private String workspaceId;
 	public DeleteIndexRequest() {
-		super("gpdb", "2016-05-03", "DeleteIndex", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteIndex", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

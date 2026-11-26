@@ -47,18 +47,18 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 
 	public static class DBInstanceIPArray {
 
-		private String dBInstanceIPArrayName;
+		private String dBInstanceIPArrayAttribute;
 
 		private String securityIPList;
 
-		private String dBInstanceIPArrayAttribute;
+		private String dBInstanceIPArrayName;
 
-		public String getDBInstanceIPArrayName() {
-			return this.dBInstanceIPArrayName;
+		public String getDBInstanceIPArrayAttribute() {
+			return this.dBInstanceIPArrayAttribute;
 		}
 
-		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
-			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
+		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
 		}
 
 		public String getSecurityIPList() {
@@ -69,12 +69,12 @@ public class DescribeDBInstanceIPArrayListResponse extends AcsResponse {
 			this.securityIPList = securityIPList;
 		}
 
-		public String getDBInstanceIPArrayAttribute() {
-			return this.dBInstanceIPArrayAttribute;
+		public String getDBInstanceIPArrayName() {
+			return this.dBInstanceIPArrayName;
 		}
 
-		public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-			this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		public void setDBInstanceIPArrayName(String dBInstanceIPArrayName) {
+			this.dBInstanceIPArrayName = dBInstanceIPArrayName;
 		}
 	}
 

@@ -36,7 +36,7 @@ public class GetStatementResultRequest extends RpcAcsRequest<GetStatementResultR
 
 	private Long ownerId;
 	public GetStatementResultRequest() {
-		super("gpdb", "2016-05-03", "GetStatementResult", "gpdb");
+		super("gpdb", "2016-05-03", "GetStatementResult", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

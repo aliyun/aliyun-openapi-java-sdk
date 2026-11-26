@@ -23,10 +23,10 @@ public class GetSupabaseProjectDashboardAccountResponseUnmarshaller {
 	public static GetSupabaseProjectDashboardAccountResponse unmarshall(GetSupabaseProjectDashboardAccountResponse getSupabaseProjectDashboardAccountResponse, UnmarshallerContext _ctx) {
 		
 		getSupabaseProjectDashboardAccountResponse.setRequestId(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.RequestId"));
-		getSupabaseProjectDashboardAccountResponse.setProjectName(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.ProjectName"));
-		getSupabaseProjectDashboardAccountResponse.setProjectId(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.ProjectId"));
-		getSupabaseProjectDashboardAccountResponse.setDashboardPassword(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.DashboardPassword"));
 		getSupabaseProjectDashboardAccountResponse.setDashboardUsername(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.DashboardUsername"));
+		getSupabaseProjectDashboardAccountResponse.setProjectName(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.ProjectName"));
+		getSupabaseProjectDashboardAccountResponse.setDashboardPassword(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.DashboardPassword"));
+		getSupabaseProjectDashboardAccountResponse.setProjectId(_ctx.stringValue("GetSupabaseProjectDashboardAccountResponse.ProjectId"));
 	 
 	 	return getSupabaseProjectDashboardAccountResponse;
 	}

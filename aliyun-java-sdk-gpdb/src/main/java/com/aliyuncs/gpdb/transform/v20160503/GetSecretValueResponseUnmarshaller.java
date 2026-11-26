@@ -23,15 +23,15 @@ public class GetSecretValueResponseUnmarshaller {
 	public static GetSecretValueResponse unmarshall(GetSecretValueResponse getSecretValueResponse, UnmarshallerContext _ctx) {
 		
 		getSecretValueResponse.setRequestId(_ctx.stringValue("GetSecretValueResponse.RequestId"));
-		getSecretValueResponse.setMessage(_ctx.stringValue("GetSecretValueResponse.Message"));
-		getSecretValueResponse.setStatus(_ctx.stringValue("GetSecretValueResponse.Status"));
 		getSecretValueResponse.setSecretArn(_ctx.stringValue("GetSecretValueResponse.SecretArn"));
 		getSecretValueResponse.setSecretName(_ctx.stringValue("GetSecretValueResponse.SecretName"));
+		getSecretValueResponse.setStatus(_ctx.stringValue("GetSecretValueResponse.Status"));
+		getSecretValueResponse.setDescription(_ctx.stringValue("GetSecretValueResponse.Description"));
+		getSecretValueResponse.setMessage(_ctx.stringValue("GetSecretValueResponse.Message"));
 		getSecretValueResponse.setDBInstanceId(_ctx.stringValue("GetSecretValueResponse.DBInstanceId"));
 		getSecretValueResponse.setUsername(_ctx.stringValue("GetSecretValueResponse.Username"));
-		getSecretValueResponse.setPassword(_ctx.stringValue("GetSecretValueResponse.Password"));
-		getSecretValueResponse.setDescription(_ctx.stringValue("GetSecretValueResponse.Description"));
 		getSecretValueResponse.setCode(_ctx.stringValue("GetSecretValueResponse.Code"));
+		getSecretValueResponse.setPassword(_ctx.stringValue("GetSecretValueResponse.Password"));
 	 
 	 	return getSecretValueResponse;
 	}

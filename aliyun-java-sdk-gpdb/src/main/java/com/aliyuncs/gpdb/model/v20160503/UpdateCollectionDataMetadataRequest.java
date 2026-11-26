@@ -49,7 +49,7 @@ public class UpdateCollectionDataMetadataRequest extends RpcAcsRequest<UpdateCol
 
 	private String workspaceId;
 	public UpdateCollectionDataMetadataRequest() {
-		super("gpdb", "2016-05-03", "UpdateCollectionDataMetadata", "gpdb");
+		super("gpdb", "2016-05-03", "UpdateCollectionDataMetadata", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,28 +41,28 @@ public class DescribeAvailableResourcesResponseUnmarshaller {
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines.Length"); j++) {
 				SupportedEngine supportedEngine = new SupportedEngine();
-				supportedEngine.setSupportedEngineVersion(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersion"));
 				supportedEngine.setMode(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].Mode"));
+				supportedEngine.setSupportedEngineVersion(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersion"));
 
 				List<SupportedInstanceClass> supportedInstanceClasses = new ArrayList<SupportedInstanceClass>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses.Length"); k++) {
 					SupportedInstanceClass supportedInstanceClass = new SupportedInstanceClass();
-					supportedInstanceClass.setDescription(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].Description"));
 					supportedInstanceClass.setDisplayClass(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].DisplayClass"));
-					supportedInstanceClass.setInstanceClass(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].InstanceClass"));
+					supportedInstanceClass.setDescription(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].Description"));
 					supportedInstanceClass.setStorageType(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageType"));
 					supportedInstanceClass.setCategory(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].Category"));
+					supportedInstanceClass.setInstanceClass(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].InstanceClass"));
 
 					NodeCount nodeCount = new NodeCount();
 					nodeCount.setStep(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.Step"));
-					nodeCount.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.MinCount"));
 					nodeCount.setMaxCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.MaxCount"));
+					nodeCount.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.MinCount"));
 					supportedInstanceClass.setNodeCount(nodeCount);
 
 					StorageSize storageSize = new StorageSize();
 					storageSize.setStep(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.Step"));
-					storageSize.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.MinCount"));
 					storageSize.setMaxCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.MaxCount"));
+					storageSize.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.MinCount"));
 					supportedInstanceClass.setStorageSize(storageSize);
 
 					supportedInstanceClasses.add(supportedInstanceClass);

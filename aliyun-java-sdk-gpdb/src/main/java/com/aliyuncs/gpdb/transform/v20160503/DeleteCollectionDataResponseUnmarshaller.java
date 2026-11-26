@@ -23,9 +23,9 @@ public class DeleteCollectionDataResponseUnmarshaller {
 	public static DeleteCollectionDataResponse unmarshall(DeleteCollectionDataResponse deleteCollectionDataResponse, UnmarshallerContext _ctx) {
 		
 		deleteCollectionDataResponse.setRequestId(_ctx.stringValue("DeleteCollectionDataResponse.RequestId"));
-		deleteCollectionDataResponse.setMessage(_ctx.stringValue("DeleteCollectionDataResponse.Message"));
 		deleteCollectionDataResponse.setStatus(_ctx.stringValue("DeleteCollectionDataResponse.Status"));
 		deleteCollectionDataResponse.setAppliedRows(_ctx.longValue("DeleteCollectionDataResponse.AppliedRows"));
+		deleteCollectionDataResponse.setMessage(_ctx.stringValue("DeleteCollectionDataResponse.Message"));
 	 
 	 	return deleteCollectionDataResponse;
 	}

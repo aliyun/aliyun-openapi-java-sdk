@@ -35,7 +35,7 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 
 	private String workspaceId;
 	public DeleteSecretRequest() {
-		super("gpdb", "2016-05-03", "DeleteSecret", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteSecret", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

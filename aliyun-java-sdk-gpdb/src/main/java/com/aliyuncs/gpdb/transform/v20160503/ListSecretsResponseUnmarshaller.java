@@ -27,20 +27,20 @@ public class ListSecretsResponseUnmarshaller {
 	public static ListSecretsResponse unmarshall(ListSecretsResponse listSecretsResponse, UnmarshallerContext _ctx) {
 		
 		listSecretsResponse.setRequestId(_ctx.stringValue("ListSecretsResponse.RequestId"));
-		listSecretsResponse.setMessage(_ctx.stringValue("ListSecretsResponse.Message"));
 		listSecretsResponse.setStatus(_ctx.stringValue("ListSecretsResponse.Status"));
+		listSecretsResponse.setMessage(_ctx.stringValue("ListSecretsResponse.Message"));
 		listSecretsResponse.setCount(_ctx.longValue("ListSecretsResponse.Count"));
 
 		List<SecretsItem> secrets = new ArrayList<SecretsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecretsResponse.Secrets.Length"); i++) {
 			SecretsItem secretsItem = new SecretsItem();
-			secretsItem.setAccountId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].AccountId"));
-			secretsItem.setRegionId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].RegionId"));
-			secretsItem.setDBInstanceId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].DBInstanceId"));
-			secretsItem.setSecretName(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].SecretName"));
 			secretsItem.setSecretArn(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].SecretArn"));
+			secretsItem.setSecretName(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].SecretName"));
+			secretsItem.setAccountId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].AccountId"));
 			secretsItem.setDescription(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].Description"));
+			secretsItem.setDBInstanceId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].DBInstanceId"));
 			secretsItem.setUsername(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].Username"));
+			secretsItem.setRegionId(_ctx.stringValue("ListSecretsResponse.Secrets["+ i +"].RegionId"));
 
 			secrets.add(secretsItem);
 		}

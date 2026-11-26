@@ -24,83 +24,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHadoopDataSourceResponse extends AcsResponse {
 
-	private String dataSourceId;
-
-	private String requestId;
-
-	private String dataSourceName;
-
-	private String dataSourceDescription;
-
-	private String dataSourceStatus;
-
 	private String dataSourceDir;
-
-	private String statusMessage;
-
-	private String createTime;
-
-	private String dataSourceType;
-
-	private String hadoopCreateType;
-
-	private String hadoopHostsAddress;
-
-	private String hadoopCoreConf;
-
-	private String hDFSConf;
-
-	private String hiveConf;
-
-	private String yarnConf;
-
-	private String mapReduceConf;
-
-	private String emrInstanceId;
 
 	private String modifyTime;
 
+	private String requestId;
+
+	private String hadoopCreateType;
+
+	private String createTime;
+
 	private String externalDataServiceId;
 
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
+	private String hDFSConf;
 
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
-	}
+	private String statusMessage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String yarnConf;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String dataSourceName;
 
-	public String getDataSourceName() {
-		return this.dataSourceName;
-	}
+	private String dataSourceType;
 
-	public void setDataSourceName(String dataSourceName) {
-		this.dataSourceName = dataSourceName;
-	}
+	private String dataSourceStatus;
 
-	public String getDataSourceDescription() {
-		return this.dataSourceDescription;
-	}
+	private String hadoopHostsAddress;
 
-	public void setDataSourceDescription(String dataSourceDescription) {
-		this.dataSourceDescription = dataSourceDescription;
-	}
+	private String hiveConf;
 
-	public String getDataSourceStatus() {
-		return this.dataSourceStatus;
-	}
+	private String dataSourceDescription;
 
-	public void setDataSourceStatus(String dataSourceStatus) {
-		this.dataSourceStatus = dataSourceStatus;
-	}
+	private String emrInstanceId;
+
+	private String mapReduceConf;
+
+	private String dataSourceId;
+
+	private String hadoopCoreConf;
 
 	public String getDataSourceDir() {
 		return this.dataSourceDir;
@@ -108,94 +68,6 @@ public class DescribeHadoopDataSourceResponse extends AcsResponse {
 
 	public void setDataSourceDir(String dataSourceDir) {
 		this.dataSourceDir = dataSourceDir;
-	}
-
-	public String getStatusMessage() {
-		return this.statusMessage;
-	}
-
-	public void setStatusMessage(String statusMessage) {
-		this.statusMessage = statusMessage;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getDataSourceType() {
-		return this.dataSourceType;
-	}
-
-	public void setDataSourceType(String dataSourceType) {
-		this.dataSourceType = dataSourceType;
-	}
-
-	public String getHadoopCreateType() {
-		return this.hadoopCreateType;
-	}
-
-	public void setHadoopCreateType(String hadoopCreateType) {
-		this.hadoopCreateType = hadoopCreateType;
-	}
-
-	public String getHadoopHostsAddress() {
-		return this.hadoopHostsAddress;
-	}
-
-	public void setHadoopHostsAddress(String hadoopHostsAddress) {
-		this.hadoopHostsAddress = hadoopHostsAddress;
-	}
-
-	public String getHadoopCoreConf() {
-		return this.hadoopCoreConf;
-	}
-
-	public void setHadoopCoreConf(String hadoopCoreConf) {
-		this.hadoopCoreConf = hadoopCoreConf;
-	}
-
-	public String getHDFSConf() {
-		return this.hDFSConf;
-	}
-
-	public void setHDFSConf(String hDFSConf) {
-		this.hDFSConf = hDFSConf;
-	}
-
-	public String getHiveConf() {
-		return this.hiveConf;
-	}
-
-	public void setHiveConf(String hiveConf) {
-		this.hiveConf = hiveConf;
-	}
-
-	public String getYarnConf() {
-		return this.yarnConf;
-	}
-
-	public void setYarnConf(String yarnConf) {
-		this.yarnConf = yarnConf;
-	}
-
-	public String getMapReduceConf() {
-		return this.mapReduceConf;
-	}
-
-	public void setMapReduceConf(String mapReduceConf) {
-		this.mapReduceConf = mapReduceConf;
-	}
-
-	public String getEmrInstanceId() {
-		return this.emrInstanceId;
-	}
-
-	public void setEmrInstanceId(String emrInstanceId) {
-		this.emrInstanceId = emrInstanceId;
 	}
 
 	public String getModifyTime() {
@@ -206,12 +78,140 @@ public class DescribeHadoopDataSourceResponse extends AcsResponse {
 		this.modifyTime = modifyTime;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getHadoopCreateType() {
+		return this.hadoopCreateType;
+	}
+
+	public void setHadoopCreateType(String hadoopCreateType) {
+		this.hadoopCreateType = hadoopCreateType;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
 	public String getExternalDataServiceId() {
 		return this.externalDataServiceId;
 	}
 
 	public void setExternalDataServiceId(String externalDataServiceId) {
 		this.externalDataServiceId = externalDataServiceId;
+	}
+
+	public String getHDFSConf() {
+		return this.hDFSConf;
+	}
+
+	public void setHDFSConf(String hDFSConf) {
+		this.hDFSConf = hDFSConf;
+	}
+
+	public String getStatusMessage() {
+		return this.statusMessage;
+	}
+
+	public void setStatusMessage(String statusMessage) {
+		this.statusMessage = statusMessage;
+	}
+
+	public String getYarnConf() {
+		return this.yarnConf;
+	}
+
+	public void setYarnConf(String yarnConf) {
+		this.yarnConf = yarnConf;
+	}
+
+	public String getDataSourceName() {
+		return this.dataSourceName;
+	}
+
+	public void setDataSourceName(String dataSourceName) {
+		this.dataSourceName = dataSourceName;
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+	}
+
+	public String getDataSourceStatus() {
+		return this.dataSourceStatus;
+	}
+
+	public void setDataSourceStatus(String dataSourceStatus) {
+		this.dataSourceStatus = dataSourceStatus;
+	}
+
+	public String getHadoopHostsAddress() {
+		return this.hadoopHostsAddress;
+	}
+
+	public void setHadoopHostsAddress(String hadoopHostsAddress) {
+		this.hadoopHostsAddress = hadoopHostsAddress;
+	}
+
+	public String getHiveConf() {
+		return this.hiveConf;
+	}
+
+	public void setHiveConf(String hiveConf) {
+		this.hiveConf = hiveConf;
+	}
+
+	public String getDataSourceDescription() {
+		return this.dataSourceDescription;
+	}
+
+	public void setDataSourceDescription(String dataSourceDescription) {
+		this.dataSourceDescription = dataSourceDescription;
+	}
+
+	public String getEmrInstanceId() {
+		return this.emrInstanceId;
+	}
+
+	public void setEmrInstanceId(String emrInstanceId) {
+		this.emrInstanceId = emrInstanceId;
+	}
+
+	public String getMapReduceConf() {
+		return this.mapReduceConf;
+	}
+
+	public void setMapReduceConf(String mapReduceConf) {
+		this.mapReduceConf = mapReduceConf;
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+	}
+
+	public String getHadoopCoreConf() {
+		return this.hadoopCoreConf;
+	}
+
+	public void setHadoopCoreConf(String hadoopCoreConf) {
+		this.hadoopCoreConf = hadoopCoreConf;
 	}
 
 	@Override

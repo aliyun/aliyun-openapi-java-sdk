@@ -31,7 +31,7 @@ public class DeleteDBResourceGroupRequest extends RpcAcsRequest<DeleteDBResource
 
 	private Long ownerId;
 	public DeleteDBResourceGroupRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBResourceGroup", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteDBResourceGroup", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

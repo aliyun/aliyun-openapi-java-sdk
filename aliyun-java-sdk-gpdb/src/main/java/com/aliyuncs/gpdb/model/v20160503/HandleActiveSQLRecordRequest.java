@@ -31,7 +31,7 @@ public class HandleActiveSQLRecordRequest extends RpcAcsRequest<HandleActiveSQLR
 
 	private String pids;
 	public HandleActiveSQLRecordRequest() {
-		super("gpdb", "2016-05-03", "HandleActiveSQLRecord", "gpdb");
+		super("gpdb", "2016-05-03", "HandleActiveSQLRecord", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

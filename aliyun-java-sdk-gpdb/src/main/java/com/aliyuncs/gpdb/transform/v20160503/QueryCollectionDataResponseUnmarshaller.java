@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.gpdb.model.v20160503.QueryCollectionDataResponse;
 import com.aliyuncs.gpdb.model.v20160503.QueryCollectionDataResponse.Match;
+import com.aliyuncs.gpdb.model.v20160503.QueryCollectionDataResponse.Match.SparseValues;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,15 +36,31 @@ public class QueryCollectionDataResponseUnmarshaller {
 		List<Match> matches = new ArrayList<Match>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCollectionDataResponse.Matches.Length"); i++) {
 			Match match = new Match();
-			match.setId(_ctx.stringValue("QueryCollectionDataResponse.Matches["+ i +"].Id"));
-			match.setMetadata(_ctx.mapValue("QueryCollectionDataResponse.Matches["+ i +"].Metadata"));
 			match.setScore(_ctx.doubleValue("QueryCollectionDataResponse.Matches["+ i +"].Score"));
+			match.setMetadataV2(_ctx.mapValue("QueryCollectionDataResponse.Matches["+ i +"].MetadataV2"));
+			match.setMetadata(_ctx.mapValue("QueryCollectionDataResponse.Matches["+ i +"].Metadata"));
+			match.setId(_ctx.stringValue("QueryCollectionDataResponse.Matches["+ i +"].Id"));
 
 			List<Double> values = new ArrayList<Double>();
 			for (int j = 0; j < _ctx.lengthValue("QueryCollectionDataResponse.Matches["+ i +"].Values.Length"); j++) {
 				values.add(_ctx.doubleValue("QueryCollectionDataResponse.Matches["+ i +"].Values["+ j +"]"));
 			}
 			match.setValues(values);
+
+			SparseValues sparseValues = new SparseValues();
+
+			List<Float> values1 = new ArrayList<Float>();
+			for (int j = 0; j < _ctx.lengthValue("QueryCollectionDataResponse.Matches["+ i +"].SparseValues.Values.Length"); j++) {
+				values1.add(_ctx.floatValue("QueryCollectionDataResponse.Matches["+ i +"].SparseValues.Values["+ j +"]"));
+			}
+			sparseValues.setValues1(values1);
+
+			List<Integer> indices = new ArrayList<Integer>();
+			for (int j = 0; j < _ctx.lengthValue("QueryCollectionDataResponse.Matches["+ i +"].SparseValues.Indices.Length"); j++) {
+				indices.add(_ctx.integerValue("QueryCollectionDataResponse.Matches["+ i +"].SparseValues.Indices["+ j +"]"));
+			}
+			sparseValues.setIndices(indices);
+			match.setSparseValues(sparseValues);
 
 			matches.add(match);
 		}

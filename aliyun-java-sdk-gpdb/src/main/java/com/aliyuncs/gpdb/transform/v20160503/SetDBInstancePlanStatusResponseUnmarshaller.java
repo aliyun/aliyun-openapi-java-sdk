@@ -24,8 +24,8 @@ public class SetDBInstancePlanStatusResponseUnmarshaller {
 		
 		setDBInstancePlanStatusResponse.setRequestId(_ctx.stringValue("SetDBInstancePlanStatusResponse.RequestId"));
 		setDBInstancePlanStatusResponse.setStatus(_ctx.stringValue("SetDBInstancePlanStatusResponse.Status"));
-		setDBInstancePlanStatusResponse.setErrorMessage(_ctx.stringValue("SetDBInstancePlanStatusResponse.ErrorMessage"));
 		setDBInstancePlanStatusResponse.setPlanId(_ctx.stringValue("SetDBInstancePlanStatusResponse.PlanId"));
+		setDBInstancePlanStatusResponse.setErrorMessage(_ctx.stringValue("SetDBInstancePlanStatusResponse.ErrorMessage"));
 	 
 	 	return setDBInstancePlanStatusResponse;
 	}

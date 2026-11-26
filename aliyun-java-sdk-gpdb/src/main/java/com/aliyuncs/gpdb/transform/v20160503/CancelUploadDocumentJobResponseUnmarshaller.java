@@ -23,8 +23,8 @@ public class CancelUploadDocumentJobResponseUnmarshaller {
 	public static CancelUploadDocumentJobResponse unmarshall(CancelUploadDocumentJobResponse cancelUploadDocumentJobResponse, UnmarshallerContext _ctx) {
 		
 		cancelUploadDocumentJobResponse.setRequestId(_ctx.stringValue("CancelUploadDocumentJobResponse.RequestId"));
-		cancelUploadDocumentJobResponse.setMessage(_ctx.stringValue("CancelUploadDocumentJobResponse.Message"));
 		cancelUploadDocumentJobResponse.setStatus(_ctx.stringValue("CancelUploadDocumentJobResponse.Status"));
+		cancelUploadDocumentJobResponse.setMessage(_ctx.stringValue("CancelUploadDocumentJobResponse.Message"));
 	 
 	 	return cancelUploadDocumentJobResponse;
 	}

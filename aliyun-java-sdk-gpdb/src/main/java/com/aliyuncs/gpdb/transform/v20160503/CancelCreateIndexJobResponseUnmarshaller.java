@@ -23,8 +23,8 @@ public class CancelCreateIndexJobResponseUnmarshaller {
 	public static CancelCreateIndexJobResponse unmarshall(CancelCreateIndexJobResponse cancelCreateIndexJobResponse, UnmarshallerContext _ctx) {
 		
 		cancelCreateIndexJobResponse.setRequestId(_ctx.stringValue("CancelCreateIndexJobResponse.RequestId"));
-		cancelCreateIndexJobResponse.setMessage(_ctx.stringValue("CancelCreateIndexJobResponse.Message"));
 		cancelCreateIndexJobResponse.setStatus(_ctx.stringValue("CancelCreateIndexJobResponse.Status"));
+		cancelCreateIndexJobResponse.setMessage(_ctx.stringValue("CancelCreateIndexJobResponse.Message"));
 	 
 	 	return cancelCreateIndexJobResponse;
 	}

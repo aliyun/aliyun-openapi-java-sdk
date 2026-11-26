@@ -24,49 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSecretValueResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
-
-	private String status;
-
 	private String secretArn;
 
 	private String secretName;
+
+	private String status;
+
+	private String description;
+
+	private String message;
+
+	private String requestId;
 
 	private String dBInstanceId;
 
 	private String username;
 
-	private String password;
-
-	private String description;
-
 	private String code;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	private String password;
 
 	public String getSecretArn() {
 		return this.secretArn;
@@ -82,6 +58,38 @@ public class GetSecretValueResponse extends AcsResponse {
 
 	public void setSecretName(String secretName) {
 		this.secretName = secretName;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDBInstanceId() {
@@ -100,28 +108,20 @@ public class GetSecretValueResponse extends AcsResponse {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override

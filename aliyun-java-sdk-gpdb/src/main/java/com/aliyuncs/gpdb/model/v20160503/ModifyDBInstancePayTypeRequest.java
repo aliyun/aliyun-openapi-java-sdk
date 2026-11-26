@@ -34,7 +34,7 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 
 	private String payType;
 	public ModifyDBInstancePayTypeRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstancePayType", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyDBInstancePayType", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

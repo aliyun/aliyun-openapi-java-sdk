@@ -39,7 +39,7 @@ public class ListSchemasRequest extends RpcAcsRequest<ListSchemasResponse> {
 
 	private Integer maxResults;
 	public ListSchemasRequest() {
-		super("gpdb", "2016-05-03", "ListSchemas", "gpdb");
+		super("gpdb", "2016-05-03", "ListSchemas", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

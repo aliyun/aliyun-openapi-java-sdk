@@ -31,7 +31,7 @@ public class ListExternalDataSourcesRequest extends RpcAcsRequest<ListExternalDa
 
 	private String dBInstanceId;
 	public ListExternalDataSourcesRequest() {
-		super("gpdb", "2016-05-03", "ListExternalDataSources", "gpdb");
+		super("gpdb", "2016-05-03", "ListExternalDataSources", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

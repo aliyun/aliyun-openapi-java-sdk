@@ -26,13 +26,13 @@ public class DescribeSampleDataResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean hasSampleData;
-
-	private String errorMessage;
-
 	private String dBInstanceId;
 
 	private String sampleDataStatus;
+
+	private Boolean hasSampleData;
+
+	private String errorMessage;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +40,6 @@ public class DescribeSampleDataResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getHasSampleData() {
-		return this.hasSampleData;
-	}
-
-	public void setHasSampleData(Boolean hasSampleData) {
-		this.hasSampleData = hasSampleData;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getDBInstanceId() {
@@ -72,6 +56,22 @@ public class DescribeSampleDataResponse extends AcsResponse {
 
 	public void setSampleDataStatus(String sampleDataStatus) {
 		this.sampleDataStatus = sampleDataStatus;
+	}
+
+	public Boolean getHasSampleData() {
+		return this.hasSampleData;
+	}
+
+	public void setHasSampleData(Boolean hasSampleData) {
+		this.hasSampleData = hasSampleData;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

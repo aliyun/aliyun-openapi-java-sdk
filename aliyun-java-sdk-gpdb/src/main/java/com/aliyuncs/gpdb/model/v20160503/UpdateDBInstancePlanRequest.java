@@ -41,7 +41,7 @@ public class UpdateDBInstancePlanRequest extends RpcAcsRequest<UpdateDBInstanceP
 
 	private String planId;
 	public UpdateDBInstancePlanRequest() {
-		super("gpdb", "2016-05-03", "UpdateDBInstancePlan", "gpdb");
+		super("gpdb", "2016-05-03", "UpdateDBInstancePlan", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

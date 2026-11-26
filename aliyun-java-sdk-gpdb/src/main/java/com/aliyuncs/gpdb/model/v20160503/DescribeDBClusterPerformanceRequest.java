@@ -39,7 +39,7 @@ public class DescribeDBClusterPerformanceRequest extends RpcAcsRequest<DescribeD
 
 	private String nodes;
 	public DescribeDBClusterPerformanceRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBClusterPerformance", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

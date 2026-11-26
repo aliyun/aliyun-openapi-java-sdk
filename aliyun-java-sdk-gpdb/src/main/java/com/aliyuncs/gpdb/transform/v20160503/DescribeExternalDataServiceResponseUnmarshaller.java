@@ -23,13 +23,13 @@ public class DescribeExternalDataServiceResponseUnmarshaller {
 	public static DescribeExternalDataServiceResponse unmarshall(DescribeExternalDataServiceResponse describeExternalDataServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeExternalDataServiceResponse.setRequestId(_ctx.stringValue("DescribeExternalDataServiceResponse.RequestId"));
-		describeExternalDataServiceResponse.setServiceId(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceId"));
+		describeExternalDataServiceResponse.setStatus(_ctx.stringValue("DescribeExternalDataServiceResponse.Status"));
+		describeExternalDataServiceResponse.setModifyTime(_ctx.stringValue("DescribeExternalDataServiceResponse.ModifyTime"));
 		describeExternalDataServiceResponse.setServiceName(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceName"));
 		describeExternalDataServiceResponse.setServiceDescription(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceDescription"));
-		describeExternalDataServiceResponse.setServiceSpec(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceSpec"));
-		describeExternalDataServiceResponse.setStatus(_ctx.stringValue("DescribeExternalDataServiceResponse.Status"));
 		describeExternalDataServiceResponse.setCreateTime(_ctx.stringValue("DescribeExternalDataServiceResponse.CreateTime"));
-		describeExternalDataServiceResponse.setModifyTime(_ctx.stringValue("DescribeExternalDataServiceResponse.ModifyTime"));
+		describeExternalDataServiceResponse.setServiceSpec(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceSpec"));
+		describeExternalDataServiceResponse.setServiceId(_ctx.stringValue("DescribeExternalDataServiceResponse.ServiceId"));
 	 
 	 	return describeExternalDataServiceResponse;
 	}

@@ -27,18 +27,18 @@ public class DescribeDiagnosisMonitorPerformanceResponseUnmarshaller {
 	public static DescribeDiagnosisMonitorPerformanceResponse unmarshall(DescribeDiagnosisMonitorPerformanceResponse describeDiagnosisMonitorPerformanceResponse, UnmarshallerContext _ctx) {
 		
 		describeDiagnosisMonitorPerformanceResponse.setRequestId(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.RequestId"));
-		describeDiagnosisMonitorPerformanceResponse.setPerformancesThreshold(_ctx.integerValue("DescribeDiagnosisMonitorPerformanceResponse.PerformancesThreshold"));
 		describeDiagnosisMonitorPerformanceResponse.setPerformancesTruncated(_ctx.booleanValue("DescribeDiagnosisMonitorPerformanceResponse.PerformancesTruncated"));
+		describeDiagnosisMonitorPerformanceResponse.setPerformancesThreshold(_ctx.integerValue("DescribeDiagnosisMonitorPerformanceResponse.PerformancesThreshold"));
 
 		List<Item> performances = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosisMonitorPerformanceResponse.Performances.Length"); i++) {
 			Item item = new Item();
-			item.setQueryID(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].QueryID"));
-			item.setStartTime(_ctx.longValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].StartTime"));
-			item.setCost(_ctx.integerValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].Cost"));
 			item.setStatus(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].Status"));
 			item.setUser(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].User"));
+			item.setQueryID(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].QueryID"));
+			item.setStartTime(_ctx.longValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].StartTime"));
 			item.setDatabase(_ctx.stringValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].Database"));
+			item.setCost(_ctx.integerValue("DescribeDiagnosisMonitorPerformanceResponse.Performances["+ i +"].Cost"));
 
 			performances.add(item);
 		}

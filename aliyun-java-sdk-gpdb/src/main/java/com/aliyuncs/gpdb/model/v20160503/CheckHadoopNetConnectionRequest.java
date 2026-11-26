@@ -31,7 +31,7 @@ public class CheckHadoopNetConnectionRequest extends RpcAcsRequest<CheckHadoopNe
 
 	private String dataSourceId;
 	public CheckHadoopNetConnectionRequest() {
-		super("gpdb", "2016-05-03", "CheckHadoopNetConnection", "gpdb");
+		super("gpdb", "2016-05-03", "CheckHadoopNetConnection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,13 +26,13 @@ public class DeleteDBInstancePlanResponse extends AcsResponse {
 
 	private String status;
 
-	private String errorMessage;
-
-	private String planId;
-
 	private String requestId;
 
 	private String dBInstanceId;
+
+	private String planId;
+
+	private String errorMessage;
 
 	public String getStatus() {
 		return this.status;
@@ -40,22 +40,6 @@ public class DeleteDBInstancePlanResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getPlanId() {
-		return this.planId;
-	}
-
-	public void setPlanId(String planId) {
-		this.planId = planId;
 	}
 
 	public String getRequestId() {
@@ -72,6 +56,22 @@ public class DeleteDBInstancePlanResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

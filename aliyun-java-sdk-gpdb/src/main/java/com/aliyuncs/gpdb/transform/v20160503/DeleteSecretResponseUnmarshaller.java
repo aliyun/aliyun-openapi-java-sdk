@@ -23,9 +23,9 @@ public class DeleteSecretResponseUnmarshaller {
 	public static DeleteSecretResponse unmarshall(DeleteSecretResponse deleteSecretResponse, UnmarshallerContext _ctx) {
 		
 		deleteSecretResponse.setRequestId(_ctx.stringValue("DeleteSecretResponse.RequestId"));
-		deleteSecretResponse.setMessage(_ctx.stringValue("DeleteSecretResponse.Message"));
-		deleteSecretResponse.setStatus(_ctx.stringValue("DeleteSecretResponse.Status"));
 		deleteSecretResponse.setSecretArn(_ctx.stringValue("DeleteSecretResponse.SecretArn"));
+		deleteSecretResponse.setStatus(_ctx.stringValue("DeleteSecretResponse.Status"));
+		deleteSecretResponse.setMessage(_ctx.stringValue("DeleteSecretResponse.Message"));
 	 
 	 	return deleteSecretResponse;
 	}

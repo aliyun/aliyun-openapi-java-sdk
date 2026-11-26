@@ -23,18 +23,18 @@ public class DescribeDiagnosisSQLInfoResponseUnmarshaller {
 	public static DescribeDiagnosisSQLInfoResponse unmarshall(DescribeDiagnosisSQLInfoResponse describeDiagnosisSQLInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeDiagnosisSQLInfoResponse.setRequestId(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.RequestId"));
-		describeDiagnosisSQLInfoResponse.setQueryID(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.QueryID"));
-		describeDiagnosisSQLInfoResponse.setSessionID(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.SessionID"));
-		describeDiagnosisSQLInfoResponse.setStartTime(_ctx.longValue("DescribeDiagnosisSQLInfoResponse.StartTime"));
-		describeDiagnosisSQLInfoResponse.setDuration(_ctx.integerValue("DescribeDiagnosisSQLInfoResponse.Duration"));
+		describeDiagnosisSQLInfoResponse.setStatus(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.Status"));
+		describeDiagnosisSQLInfoResponse.setSortedMetrics(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.SortedMetrics"));
 		describeDiagnosisSQLInfoResponse.setSQLStmt(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.SQLStmt"));
 		describeDiagnosisSQLInfoResponse.setUser(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.User"));
-		describeDiagnosisSQLInfoResponse.setDatabase(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.Database"));
-		describeDiagnosisSQLInfoResponse.setStatus(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.Status"));
+		describeDiagnosisSQLInfoResponse.setQueryID(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.QueryID"));
+		describeDiagnosisSQLInfoResponse.setStartTime(_ctx.longValue("DescribeDiagnosisSQLInfoResponse.StartTime"));
+		describeDiagnosisSQLInfoResponse.setDuration(_ctx.integerValue("DescribeDiagnosisSQLInfoResponse.Duration"));
 		describeDiagnosisSQLInfoResponse.setQueryPlan(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.QueryPlan"));
 		describeDiagnosisSQLInfoResponse.setTextPlan(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.TextPlan"));
-		describeDiagnosisSQLInfoResponse.setSortedMetrics(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.SortedMetrics"));
 		describeDiagnosisSQLInfoResponse.setMaxOutputRows(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.MaxOutputRows"));
+		describeDiagnosisSQLInfoResponse.setDatabase(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.Database"));
+		describeDiagnosisSQLInfoResponse.setSessionID(_ctx.stringValue("DescribeDiagnosisSQLInfoResponse.SessionID"));
 	 
 	 	return describeDiagnosisSQLInfoResponse;
 	}

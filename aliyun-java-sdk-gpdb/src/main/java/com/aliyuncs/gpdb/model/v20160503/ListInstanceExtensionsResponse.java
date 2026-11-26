@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInstanceExtensionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
-
-	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -51,20 +43,28 @@ public class ListInstanceExtensionsResponse extends AcsResponse {
 		this.totalRecordCount = totalRecordCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Integer getPageRecordCount() {
 		return this.pageRecordCount;
 	}
 
 	public void setPageRecordCount(Integer pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<ItemsItem> getItems() {
@@ -77,61 +77,21 @@ public class ListInstanceExtensionsResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private String extensionId;
-
-		private String name;
-
-		private String installedDatabases;
-
-		private String currentVersion;
-
-		private String latestVersion;
-
 		private String status;
 
 		private String description;
 
 		private Boolean isInstallNeedRestart;
 
-		public String getExtensionId() {
-			return this.extensionId;
-		}
+		private String latestVersion;
 
-		public void setExtensionId(String extensionId) {
-			this.extensionId = extensionId;
-		}
+		private String currentVersion;
 
-		public String getName() {
-			return this.name;
-		}
+		private String extensionId;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+		private String name;
 
-		public String getInstalledDatabases() {
-			return this.installedDatabases;
-		}
-
-		public void setInstalledDatabases(String installedDatabases) {
-			this.installedDatabases = installedDatabases;
-		}
-
-		public String getCurrentVersion() {
-			return this.currentVersion;
-		}
-
-		public void setCurrentVersion(String currentVersion) {
-			this.currentVersion = currentVersion;
-		}
-
-		public String getLatestVersion() {
-			return this.latestVersion;
-		}
-
-		public void setLatestVersion(String latestVersion) {
-			this.latestVersion = latestVersion;
-		}
+		private String installedDatabases;
 
 		public String getStatus() {
 			return this.status;
@@ -155,6 +115,46 @@ public class ListInstanceExtensionsResponse extends AcsResponse {
 
 		public void setIsInstallNeedRestart(Boolean isInstallNeedRestart) {
 			this.isInstallNeedRestart = isInstallNeedRestart;
+		}
+
+		public String getLatestVersion() {
+			return this.latestVersion;
+		}
+
+		public void setLatestVersion(String latestVersion) {
+			this.latestVersion = latestVersion;
+		}
+
+		public String getCurrentVersion() {
+			return this.currentVersion;
+		}
+
+		public void setCurrentVersion(String currentVersion) {
+			this.currentVersion = currentVersion;
+		}
+
+		public String getExtensionId() {
+			return this.extensionId;
+		}
+
+		public void setExtensionId(String extensionId) {
+			this.extensionId = extensionId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getInstalledDatabases() {
+			return this.installedDatabases;
+		}
+
+		public void setInstalledDatabases(String installedDatabases) {
+			this.installedDatabases = installedDatabases;
 		}
 	}
 

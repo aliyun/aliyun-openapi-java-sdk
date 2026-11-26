@@ -23,9 +23,9 @@ public class ModifyDBInstanceConfigResponseUnmarshaller {
 	public static ModifyDBInstanceConfigResponse unmarshall(ModifyDBInstanceConfigResponse modifyDBInstanceConfigResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBInstanceConfigResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceConfigResponse.RequestId"));
+		modifyDBInstanceConfigResponse.setStatus(_ctx.booleanValue("ModifyDBInstanceConfigResponse.Status"));
 		modifyDBInstanceConfigResponse.setErrorMessage(_ctx.stringValue("ModifyDBInstanceConfigResponse.ErrorMessage"));
 		modifyDBInstanceConfigResponse.setDbInstanceId(_ctx.stringValue("ModifyDBInstanceConfigResponse.DbInstanceId"));
-		modifyDBInstanceConfigResponse.setStatus(_ctx.booleanValue("ModifyDBInstanceConfigResponse.Status"));
 	 
 	 	return modifyDBInstanceConfigResponse;
 	}

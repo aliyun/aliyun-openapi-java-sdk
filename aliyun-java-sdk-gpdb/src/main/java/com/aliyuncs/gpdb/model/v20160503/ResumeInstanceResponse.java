@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ResumeInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean status;
 
-	private String errorMessage;
+	private String requestId;
 
 	private String dBInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String errorMessage;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -48,12 +40,12 @@ public class ResumeInstanceResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDBInstanceId() {
@@ -62,6 +54,14 @@ public class ResumeInstanceResponse extends AcsResponse {
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

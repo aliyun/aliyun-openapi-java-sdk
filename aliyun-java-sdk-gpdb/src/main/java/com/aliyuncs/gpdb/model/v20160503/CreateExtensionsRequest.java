@@ -31,7 +31,7 @@ public class CreateExtensionsRequest extends RpcAcsRequest<CreateExtensionsRespo
 
 	private String extensions;
 	public CreateExtensionsRequest() {
-		super("gpdb", "2016-05-03", "CreateExtensions", "gpdb");
+		super("gpdb", "2016-05-03", "CreateExtensions", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

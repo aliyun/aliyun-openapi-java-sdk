@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckHadoopDataSourceResponse extends AcsResponse {
 
+	private String status;
+
 	private String message;
 
 	private String requestId;
 
-	private String status;
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getMessage() {
 		return this.message;
@@ -44,14 +52,6 @@ public class CheckHadoopDataSourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	@Override

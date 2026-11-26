@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetSupabaseProjectDashboardAccountResponse extends AcsResponse {
 
+	private String dashboardUsername;
+
 	private String requestId;
 
 	private String projectName;
 
-	private String projectId;
-
 	private String dashboardPassword;
 
-	private String dashboardUsername;
+	private String projectId;
+
+	public String getDashboardUsername() {
+		return this.dashboardUsername;
+	}
+
+	public void setDashboardUsername(String dashboardUsername) {
+		this.dashboardUsername = dashboardUsername;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,14 +58,6 @@ public class GetSupabaseProjectDashboardAccountResponse extends AcsResponse {
 		this.projectName = projectName;
 	}
 
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-	}
-
 	public String getDashboardPassword() {
 		return this.dashboardPassword;
 	}
@@ -66,12 +66,12 @@ public class GetSupabaseProjectDashboardAccountResponse extends AcsResponse {
 		this.dashboardPassword = dashboardPassword;
 	}
 
-	public String getDashboardUsername() {
-		return this.dashboardUsername;
+	public String getProjectId() {
+		return this.projectId;
 	}
 
-	public void setDashboardUsername(String dashboardUsername) {
-		this.dashboardUsername = dashboardUsername;
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
 	}
 
 	@Override

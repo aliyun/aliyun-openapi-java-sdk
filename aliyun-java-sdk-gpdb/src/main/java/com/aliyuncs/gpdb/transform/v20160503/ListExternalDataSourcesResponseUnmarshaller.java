@@ -33,16 +33,16 @@ public class ListExternalDataSourcesResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListExternalDataSourcesResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setDataSourceId(_ctx.integerValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceId"));
+			itemsItem.setDataSourceDir(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceDir"));
+			itemsItem.setModifyTime(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].ModifyTime"));
 			itemsItem.setDataSourceName(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceName"));
 			itemsItem.setDataSourceType(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceType"));
-			itemsItem.setDataSourceDescription(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceDescription"));
 			itemsItem.setCreateTime(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].CreateTime"));
-			itemsItem.setModifyTime(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].ModifyTime"));
 			itemsItem.setDataSourceStatus(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceStatus"));
-			itemsItem.setStatusMessage(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].StatusMessage"));
-			itemsItem.setDataSourceDir(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceDir"));
 			itemsItem.setExternalDataServiceId(_ctx.integerValue("ListExternalDataSourcesResponse.Items["+ i +"].ExternalDataServiceId"));
+			itemsItem.setDataSourceDescription(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceDescription"));
+			itemsItem.setDataSourceId(_ctx.integerValue("ListExternalDataSourcesResponse.Items["+ i +"].DataSourceId"));
+			itemsItem.setStatusMessage(_ctx.stringValue("ListExternalDataSourcesResponse.Items["+ i +"].StatusMessage"));
 
 			items.add(itemsItem);
 		}

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RerankResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
+	private String requestId;
 
 	private Integer tokens;
 
 	private List<ResultsItem> results;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class RerankResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTokens() {
@@ -77,19 +77,11 @@ public class RerankResponse extends AcsResponse {
 
 	public static class ResultsItem {
 
-		private String document;
-
 		private Integer index;
 
+		private String document;
+
 		private Float relevanceScore;
-
-		public String getDocument() {
-			return this.document;
-		}
-
-		public void setDocument(String document) {
-			this.document = document;
-		}
 
 		public Integer getIndex() {
 			return this.index;
@@ -97,6 +89,14 @@ public class RerankResponse extends AcsResponse {
 
 		public void setIndex(Integer index) {
 			this.index = index;
+		}
+
+		public String getDocument() {
+			return this.document;
+		}
+
+		public void setDocument(String document) {
+			this.document = document;
 		}
 
 		public Float getRelevanceScore() {

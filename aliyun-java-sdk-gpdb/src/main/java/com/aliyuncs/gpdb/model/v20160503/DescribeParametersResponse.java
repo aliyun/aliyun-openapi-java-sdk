@@ -47,35 +47,19 @@ public class DescribeParametersResponse extends AcsResponse {
 
 	public static class ParametersItem {
 
-		private String isChangeableConfig;
-
-		private String forceRestartInstance;
-
 		private String optionalRange;
-
-		private String parameterName;
 
 		private String parameterValue;
 
-		private String parameterDescription;
+		private String isChangeableConfig;
 
 		private String currentValue;
 
-		public String getIsChangeableConfig() {
-			return this.isChangeableConfig;
-		}
+		private String parameterName;
 
-		public void setIsChangeableConfig(String isChangeableConfig) {
-			this.isChangeableConfig = isChangeableConfig;
-		}
+		private String forceRestartInstance;
 
-		public String getForceRestartInstance() {
-			return this.forceRestartInstance;
-		}
-
-		public void setForceRestartInstance(String forceRestartInstance) {
-			this.forceRestartInstance = forceRestartInstance;
-		}
+		private String parameterDescription;
 
 		public String getOptionalRange() {
 			return this.optionalRange;
@@ -83,14 +67,6 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setOptionalRange(String optionalRange) {
 			this.optionalRange = optionalRange;
-		}
-
-		public String getParameterName() {
-			return this.parameterName;
-		}
-
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
 		}
 
 		public String getParameterValue() {
@@ -101,12 +77,12 @@ public class DescribeParametersResponse extends AcsResponse {
 			this.parameterValue = parameterValue;
 		}
 
-		public String getParameterDescription() {
-			return this.parameterDescription;
+		public String getIsChangeableConfig() {
+			return this.isChangeableConfig;
 		}
 
-		public void setParameterDescription(String parameterDescription) {
-			this.parameterDescription = parameterDescription;
+		public void setIsChangeableConfig(String isChangeableConfig) {
+			this.isChangeableConfig = isChangeableConfig;
 		}
 
 		public String getCurrentValue() {
@@ -115,6 +91,30 @@ public class DescribeParametersResponse extends AcsResponse {
 
 		public void setCurrentValue(String currentValue) {
 			this.currentValue = currentValue;
+		}
+
+		public String getParameterName() {
+			return this.parameterName;
+		}
+
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getForceRestartInstance() {
+			return this.forceRestartInstance;
+		}
+
+		public void setForceRestartInstance(String forceRestartInstance) {
+			this.forceRestartInstance = forceRestartInstance;
+		}
+
+		public String getParameterDescription() {
+			return this.parameterDescription;
+		}
+
+		public void setParameterDescription(String parameterDescription) {
+			this.parameterDescription = parameterDescription;
 		}
 	}
 

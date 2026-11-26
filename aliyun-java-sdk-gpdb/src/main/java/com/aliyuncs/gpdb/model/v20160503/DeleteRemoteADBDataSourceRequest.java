@@ -31,7 +31,7 @@ public class DeleteRemoteADBDataSourceRequest extends RpcAcsRequest<DeleteRemote
 
 	private String dataSourceId;
 	public DeleteRemoteADBDataSourceRequest() {
-		super("gpdb", "2016-05-03", "DeleteRemoteADBDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteRemoteADBDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

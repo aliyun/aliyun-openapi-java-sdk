@@ -43,7 +43,7 @@ public class DescribeActiveSQLRecordsRequest extends RpcAcsRequest<DescribeActiv
 
 	private String user;
 	public DescribeActiveSQLRecordsRequest() {
-		super("gpdb", "2016-05-03", "DescribeActiveSQLRecords", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeActiveSQLRecords", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

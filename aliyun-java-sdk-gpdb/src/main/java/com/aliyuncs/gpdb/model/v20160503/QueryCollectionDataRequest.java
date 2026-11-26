@@ -41,6 +41,8 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 	@SerializedName("hybridSearchArgs")
 	private Map<String,Map<String,Object>> hybridSearchArgs;
 
+	private Boolean includeSparseValues;
+
 	private String dBInstanceId;
 
 	@SerializedName("vector")
@@ -71,7 +73,7 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 
 	private String workspaceId;
 	public QueryCollectionDataRequest() {
-		super("gpdb", "2016-05-03", "QueryCollectionData", "gpdb");
+		super("gpdb", "2016-05-03", "QueryCollectionData", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -132,6 +134,17 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		if (hybridSearchArgs != null) {
 			putQueryParameter("HybridSearchArgs" , new Gson().toJson(hybridSearchArgs));
 		}	
+	}
+
+	public Boolean getIncludeSparseValues() {
+		return this.includeSparseValues;
+	}
+
+	public void setIncludeSparseValues(Boolean includeSparseValues) {
+		this.includeSparseValues = includeSparseValues;
+		if(includeSparseValues != null){
+			putQueryParameter("IncludeSparseValues", includeSparseValues.toString());
+		}
 	}
 
 	public String getDBInstanceId() {
@@ -293,11 +306,11 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 		@SerializedName("Condition")
 		private String condition;
 
-		@SerializedName("CollectionMetadataField")
-		private String collectionMetadataField;
-
 		@SerializedName("TableName")
 		private String tableName;
+
+		@SerializedName("CollectionMetadataField")
+		private String collectionMetadataField;
 
 		@SerializedName("TableField")
 		private String tableField;
@@ -310,20 +323,20 @@ public class QueryCollectionDataRequest extends RpcAcsRequest<QueryCollectionDat
 			this.condition = condition;
 		}
 
-		public String getCollectionMetadataField() {
-			return this.collectionMetadataField;
-		}
-
-		public void setCollectionMetadataField(String collectionMetadataField) {
-			this.collectionMetadataField = collectionMetadataField;
-		}
-
 		public String getTableName() {
 			return this.tableName;
 		}
 
 		public void setTableName(String tableName) {
 			this.tableName = tableName;
+		}
+
+		public String getCollectionMetadataField() {
+			return this.collectionMetadataField;
+		}
+
+		public void setCollectionMetadataField(String collectionMetadataField) {
+			this.collectionMetadataField = collectionMetadataField;
 		}
 
 		public String getTableField() {

@@ -29,7 +29,7 @@ public class DeleteStreamingDataServiceRequest extends RpcAcsRequest<DeleteStrea
 
 	private String serviceId;
 	public DeleteStreamingDataServiceRequest() {
-		super("gpdb", "2016-05-03", "DeleteStreamingDataService", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteStreamingDataService", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

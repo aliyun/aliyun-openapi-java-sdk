@@ -53,7 +53,7 @@ public class ExecuteStatementRequest extends RpcAcsRequest<ExecuteStatementRespo
 
 	private String workspaceId;
 	public ExecuteStatementRequest() {
-		super("gpdb", "2016-05-03", "ExecuteStatement", "gpdb");
+		super("gpdb", "2016-05-03", "ExecuteStatement", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

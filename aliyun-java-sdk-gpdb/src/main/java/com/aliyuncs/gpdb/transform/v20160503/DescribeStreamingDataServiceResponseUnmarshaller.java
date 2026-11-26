@@ -23,17 +23,17 @@ public class DescribeStreamingDataServiceResponseUnmarshaller {
 	public static DescribeStreamingDataServiceResponse unmarshall(DescribeStreamingDataServiceResponse describeStreamingDataServiceResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamingDataServiceResponse.setRequestId(_ctx.stringValue("DescribeStreamingDataServiceResponse.RequestId"));
-		describeStreamingDataServiceResponse.setServiceId(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceId"));
+		describeStreamingDataServiceResponse.setStatus(_ctx.stringValue("DescribeStreamingDataServiceResponse.Status"));
+		describeStreamingDataServiceResponse.setServicePort(_ctx.integerValue("DescribeStreamingDataServiceResponse.ServicePort"));
+		describeStreamingDataServiceResponse.setModifyTime(_ctx.stringValue("DescribeStreamingDataServiceResponse.ModifyTime"));
+		describeStreamingDataServiceResponse.setServiceIp(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceIp"));
+		describeStreamingDataServiceResponse.setServiceManaged(_ctx.booleanValue("DescribeStreamingDataServiceResponse.ServiceManaged"));
 		describeStreamingDataServiceResponse.setServiceName(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceName"));
 		describeStreamingDataServiceResponse.setServiceDescription(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceDescription"));
-		describeStreamingDataServiceResponse.setServiceSpec(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceSpec"));
-		describeStreamingDataServiceResponse.setStatus(_ctx.stringValue("DescribeStreamingDataServiceResponse.Status"));
-		describeStreamingDataServiceResponse.setServiceIp(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceIp"));
-		describeStreamingDataServiceResponse.setServicePort(_ctx.integerValue("DescribeStreamingDataServiceResponse.ServicePort"));
 		describeStreamingDataServiceResponse.setCreateTime(_ctx.stringValue("DescribeStreamingDataServiceResponse.CreateTime"));
-		describeStreamingDataServiceResponse.setModifyTime(_ctx.stringValue("DescribeStreamingDataServiceResponse.ModifyTime"));
-		describeStreamingDataServiceResponse.setServiceManaged(_ctx.booleanValue("DescribeStreamingDataServiceResponse.ServiceManaged"));
+		describeStreamingDataServiceResponse.setServiceSpec(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceSpec"));
 		describeStreamingDataServiceResponse.setServiceOwnerId(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceOwnerId"));
+		describeStreamingDataServiceResponse.setServiceId(_ctx.stringValue("DescribeStreamingDataServiceResponse.ServiceId"));
 	 
 	 	return describeStreamingDataServiceResponse;
 	}

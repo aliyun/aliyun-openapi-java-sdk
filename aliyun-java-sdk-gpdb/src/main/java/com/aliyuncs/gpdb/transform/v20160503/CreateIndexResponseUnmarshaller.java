@@ -23,8 +23,8 @@ public class CreateIndexResponseUnmarshaller {
 	public static CreateIndexResponse unmarshall(CreateIndexResponse createIndexResponse, UnmarshallerContext _ctx) {
 		
 		createIndexResponse.setRequestId(_ctx.stringValue("CreateIndexResponse.RequestId"));
-		createIndexResponse.setMessage(_ctx.stringValue("CreateIndexResponse.Message"));
 		createIndexResponse.setStatus(_ctx.stringValue("CreateIndexResponse.Status"));
+		createIndexResponse.setMessage(_ctx.stringValue("CreateIndexResponse.Message"));
 		createIndexResponse.setJobId(_ctx.stringValue("CreateIndexResponse.JobId"));
 	 
 	 	return createIndexResponse;

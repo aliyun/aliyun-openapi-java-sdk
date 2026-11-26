@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,40 +67,32 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private String databaseName;
-
-		private String schemaName;
+		private String indexName;
 
 		private String tableName;
 
-		private Boolean isPartitionTable;
-
 		private String parentTableName;
 
-		private String indexName;
+		private Boolean isPartitionTable;
 
-		private String indexSize;
+		private String databaseName;
 
 		private Long indexScanTimes;
+
+		private String indexSize;
 
 		private String indexDef;
 
 		private String timeLastUpdated;
 
-		public String getDatabaseName() {
-			return this.databaseName;
+		private String schemaName;
+
+		public String getIndexName() {
+			return this.indexName;
 		}
 
-		public void setDatabaseName(String databaseName) {
-			this.databaseName = databaseName;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
+		public void setIndexName(String indexName) {
+			this.indexName = indexName;
 		}
 
 		public String getTableName() {
@@ -111,14 +103,6 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public Boolean getIsPartitionTable() {
-			return this.isPartitionTable;
-		}
-
-		public void setIsPartitionTable(Boolean isPartitionTable) {
-			this.isPartitionTable = isPartitionTable;
-		}
-
 		public String getParentTableName() {
 			return this.parentTableName;
 		}
@@ -127,20 +111,20 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 			this.parentTableName = parentTableName;
 		}
 
-		public String getIndexName() {
-			return this.indexName;
+		public Boolean getIsPartitionTable() {
+			return this.isPartitionTable;
 		}
 
-		public void setIndexName(String indexName) {
-			this.indexName = indexName;
+		public void setIsPartitionTable(Boolean isPartitionTable) {
+			this.isPartitionTable = isPartitionTable;
 		}
 
-		public String getIndexSize() {
-			return this.indexSize;
+		public String getDatabaseName() {
+			return this.databaseName;
 		}
 
-		public void setIndexSize(String indexSize) {
-			this.indexSize = indexSize;
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
 		}
 
 		public Long getIndexScanTimes() {
@@ -149,6 +133,14 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
 		public void setIndexScanTimes(Long indexScanTimes) {
 			this.indexScanTimes = indexScanTimes;
+		}
+
+		public String getIndexSize() {
+			return this.indexSize;
+		}
+
+		public void setIndexSize(String indexSize) {
+			this.indexSize = indexSize;
 		}
 
 		public String getIndexDef() {
@@ -165,6 +157,14 @@ public class DescribeDBInstanceIndexUsageResponse extends AcsResponse {
 
 		public void setTimeLastUpdated(String timeLastUpdated) {
 			this.timeLastUpdated = timeLastUpdated;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 	}
 

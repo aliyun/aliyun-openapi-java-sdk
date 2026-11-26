@@ -23,21 +23,22 @@ public class DescribeDocumentResponseUnmarshaller {
 	public static DescribeDocumentResponse unmarshall(DescribeDocumentResponse describeDocumentResponse, UnmarshallerContext _ctx) {
 		
 		describeDocumentResponse.setRequestId(_ctx.stringValue("DescribeDocumentResponse.RequestId"));
-		describeDocumentResponse.setMessage(_ctx.stringValue("DescribeDocumentResponse.Message"));
+		describeDocumentResponse.setFileMd5(_ctx.stringValue("DescribeDocumentResponse.FileMd5"));
 		describeDocumentResponse.setStatus(_ctx.stringValue("DescribeDocumentResponse.Status"));
-		describeDocumentResponse.setFileName(_ctx.stringValue("DescribeDocumentResponse.FileName"));
-		describeDocumentResponse.setFileExt(_ctx.stringValue("DescribeDocumentResponse.FileExt"));
-		describeDocumentResponse.setFileVersion(_ctx.integerValue("DescribeDocumentResponse.FileVersion"));
 		describeDocumentResponse.setFileMtime(_ctx.stringValue("DescribeDocumentResponse.FileMtime"));
-		describeDocumentResponse.setSource(_ctx.stringValue("DescribeDocumentResponse.Source"));
+		describeDocumentResponse.setFileExt(_ctx.stringValue("DescribeDocumentResponse.FileExt"));
+		describeDocumentResponse.setMessage(_ctx.stringValue("DescribeDocumentResponse.Message"));
+		describeDocumentResponse.setFileName(_ctx.stringValue("DescribeDocumentResponse.FileName"));
 		describeDocumentResponse.setDocumentLoader(_ctx.stringValue("DescribeDocumentResponse.DocumentLoader"));
 		describeDocumentResponse.setTextSplitter(_ctx.stringValue("DescribeDocumentResponse.TextSplitter"));
-		describeDocumentResponse.setFileSize(_ctx.longValue("DescribeDocumentResponse.FileSize"));
-		describeDocumentResponse.setFileMd5(_ctx.stringValue("DescribeDocumentResponse.FileMd5"));
 		describeDocumentResponse.setDocsCount(_ctx.integerValue("DescribeDocumentResponse.DocsCount"));
+		describeDocumentResponse.setSource(_ctx.stringValue("DescribeDocumentResponse.Source"));
 		describeDocumentResponse.setFileUrl(_ctx.stringValue("DescribeDocumentResponse.FileUrl"));
 		describeDocumentResponse.setPlainChunkFileUrl(_ctx.stringValue("DescribeDocumentResponse.PlainChunkFileUrl"));
+		describeDocumentResponse.setDocumentLoaderResultFileUrl(_ctx.stringValue("DescribeDocumentResponse.DocumentLoaderResultFileUrl"));
+		describeDocumentResponse.setFileVersion(_ctx.integerValue("DescribeDocumentResponse.FileVersion"));
 		describeDocumentResponse.setChunkFileUrl(_ctx.stringValue("DescribeDocumentResponse.ChunkFileUrl"));
+		describeDocumentResponse.setFileSize(_ctx.longValue("DescribeDocumentResponse.FileSize"));
 	 
 	 	return describeDocumentResponse;
 	}

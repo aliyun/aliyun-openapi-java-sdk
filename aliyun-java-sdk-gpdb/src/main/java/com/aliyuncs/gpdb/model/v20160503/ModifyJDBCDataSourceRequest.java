@@ -39,7 +39,7 @@ public class ModifyJDBCDataSourceRequest extends RpcAcsRequest<ModifyJDBCDataSou
 
 	private String dataSourceId;
 	public ModifyJDBCDataSourceRequest() {
-		super("gpdb", "2016-05-03", "ModifyJDBCDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyJDBCDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

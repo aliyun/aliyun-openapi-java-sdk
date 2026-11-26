@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateDBInstancePlanResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
-	private String errorMessage;
+	private String requestId;
 
 	private String dBInstanceId;
 
 	private String planId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String errorMessage;
 
 	public String getStatus() {
 		return this.status;
@@ -50,12 +42,12 @@ public class UpdateDBInstancePlanResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDBInstanceId() {
@@ -72,6 +64,14 @@ public class UpdateDBInstancePlanResponse extends AcsResponse {
 
 	public void setPlanId(String planId) {
 		this.planId = planId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

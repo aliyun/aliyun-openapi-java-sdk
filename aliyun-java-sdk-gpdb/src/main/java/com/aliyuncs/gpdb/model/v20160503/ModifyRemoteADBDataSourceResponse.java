@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer taskId;
 
+	private String requestId;
+
 	private DataSourceItem dataSourceItem;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTaskId() {
 		return this.taskId;
@@ -44,6 +36,14 @@ public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 
 	public void setTaskId(Integer taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public DataSourceItem getDataSourceItem() {
@@ -56,34 +56,66 @@ public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 
 	public static class DataSourceItem {
 
-		private Long id;
+		private String status;
+
+		private String remoteDatabase;
+
+		private String managerUserName;
+
+		private String userName;
+
+		private String description;
 
 		private String dataSourceName;
-
-		private String localInstanceName;
 
 		private String localDatabase;
 
 		private String remoteInstanceName;
 
-		private String remoteDatabase;
-
-		private String userName;
-
-		private String managerUserName;
-
-		private String status;
-
-		private String description;
+		private Long id;
 
 		private String regionId;
 
-		public Long getId() {
-			return this.id;
+		private String localInstanceName;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getRemoteDatabase() {
+			return this.remoteDatabase;
+		}
+
+		public void setRemoteDatabase(String remoteDatabase) {
+			this.remoteDatabase = remoteDatabase;
+		}
+
+		public String getManagerUserName() {
+			return this.managerUserName;
+		}
+
+		public void setManagerUserName(String managerUserName) {
+			this.managerUserName = managerUserName;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getDataSourceName() {
@@ -92,14 +124,6 @@ public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 
 		public void setDataSourceName(String dataSourceName) {
 			this.dataSourceName = dataSourceName;
-		}
-
-		public String getLocalInstanceName() {
-			return this.localInstanceName;
-		}
-
-		public void setLocalInstanceName(String localInstanceName) {
-			this.localInstanceName = localInstanceName;
 		}
 
 		public String getLocalDatabase() {
@@ -118,44 +142,12 @@ public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 			this.remoteInstanceName = remoteInstanceName;
 		}
 
-		public String getRemoteDatabase() {
-			return this.remoteDatabase;
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setRemoteDatabase(String remoteDatabase) {
-			this.remoteDatabase = remoteDatabase;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getManagerUserName() {
-			return this.managerUserName;
-		}
-
-		public void setManagerUserName(String managerUserName) {
-			this.managerUserName = managerUserName;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getRegionId() {
@@ -164,6 +156,14 @@ public class ModifyRemoteADBDataSourceResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getLocalInstanceName() {
+			return this.localInstanceName;
+		}
+
+		public void setLocalInstanceName(String localInstanceName) {
+			this.localInstanceName = localInstanceName;
 		}
 	}
 

@@ -23,8 +23,8 @@ public class DeleteDocumentCollectionResponseUnmarshaller {
 	public static DeleteDocumentCollectionResponse unmarshall(DeleteDocumentCollectionResponse deleteDocumentCollectionResponse, UnmarshallerContext _ctx) {
 		
 		deleteDocumentCollectionResponse.setRequestId(_ctx.stringValue("DeleteDocumentCollectionResponse.RequestId"));
-		deleteDocumentCollectionResponse.setMessage(_ctx.stringValue("DeleteDocumentCollectionResponse.Message"));
 		deleteDocumentCollectionResponse.setStatus(_ctx.stringValue("DeleteDocumentCollectionResponse.Status"));
+		deleteDocumentCollectionResponse.setMessage(_ctx.stringValue("DeleteDocumentCollectionResponse.Message"));
 	 
 	 	return deleteDocumentCollectionResponse;
 	}

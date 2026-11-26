@@ -29,7 +29,7 @@ public class DescribeHadoopDataSourceRequest extends RpcAcsRequest<DescribeHadoo
 
 	private String dataSourceId;
 	public DescribeHadoopDataSourceRequest() {
-		super("gpdb", "2016-05-03", "DescribeHadoopDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeHadoopDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

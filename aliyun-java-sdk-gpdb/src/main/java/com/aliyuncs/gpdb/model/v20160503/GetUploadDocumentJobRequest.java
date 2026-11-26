@@ -37,7 +37,7 @@ public class GetUploadDocumentJobRequest extends RpcAcsRequest<GetUploadDocument
 
 	private String namespace;
 	public GetUploadDocumentJobRequest() {
-		super("gpdb", "2016-05-03", "GetUploadDocumentJob", "gpdb");
+		super("gpdb", "2016-05-03", "GetUploadDocumentJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

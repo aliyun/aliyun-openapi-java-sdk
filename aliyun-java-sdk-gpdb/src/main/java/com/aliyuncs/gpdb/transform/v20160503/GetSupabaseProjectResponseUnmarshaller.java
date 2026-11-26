@@ -23,24 +23,33 @@ public class GetSupabaseProjectResponseUnmarshaller {
 	public static GetSupabaseProjectResponse unmarshall(GetSupabaseProjectResponse getSupabaseProjectResponse, UnmarshallerContext _ctx) {
 		
 		getSupabaseProjectResponse.setRequestId(_ctx.stringValue("GetSupabaseProjectResponse.RequestId"));
-		getSupabaseProjectResponse.setProjectName(_ctx.stringValue("GetSupabaseProjectResponse.ProjectName"));
-		getSupabaseProjectResponse.setProjectSpec(_ctx.stringValue("GetSupabaseProjectResponse.ProjectSpec"));
-		getSupabaseProjectResponse.setStatus(_ctx.stringValue("GetSupabaseProjectResponse.Status"));
-		getSupabaseProjectResponse.setPublicConnectUrl(_ctx.stringValue("GetSupabaseProjectResponse.PublicConnectUrl"));
-		getSupabaseProjectResponse.setPrivateConnectUrl(_ctx.stringValue("GetSupabaseProjectResponse.PrivateConnectUrl"));
-		getSupabaseProjectResponse.setRegionId(_ctx.stringValue("GetSupabaseProjectResponse.RegionId"));
-		getSupabaseProjectResponse.setZoneId(_ctx.stringValue("GetSupabaseProjectResponse.ZoneId"));
-		getSupabaseProjectResponse.setVpcId(_ctx.stringValue("GetSupabaseProjectResponse.VpcId"));
-		getSupabaseProjectResponse.setVSwitchId(_ctx.stringValue("GetSupabaseProjectResponse.VSwitchId"));
-		getSupabaseProjectResponse.setSecurityIpList(_ctx.stringValue("GetSupabaseProjectResponse.SecurityIpList"));
-		getSupabaseProjectResponse.setDiskPerformanceLevel(_ctx.stringValue("GetSupabaseProjectResponse.DiskPerformanceLevel"));
-		getSupabaseProjectResponse.setEngine(_ctx.stringValue("GetSupabaseProjectResponse.Engine"));
-		getSupabaseProjectResponse.setEngineVersion(_ctx.stringValue("GetSupabaseProjectResponse.EngineVersion"));
-		getSupabaseProjectResponse.setStorageSize(_ctx.longValue("GetSupabaseProjectResponse.StorageSize"));
-		getSupabaseProjectResponse.setCreateTime(_ctx.stringValue("GetSupabaseProjectResponse.CreateTime"));
+		getSupabaseProjectResponse.setDBSecurityIpList(_ctx.stringValue("GetSupabaseProjectResponse.DBSecurityIpList"));
 		getSupabaseProjectResponse.setDashboardUserName(_ctx.stringValue("GetSupabaseProjectResponse.DashboardUserName"));
-		getSupabaseProjectResponse.setProjectId(_ctx.stringValue("GetSupabaseProjectResponse.ProjectId"));
+		getSupabaseProjectResponse.setEni(_ctx.stringValue("GetSupabaseProjectResponse.Eni"));
+		getSupabaseProjectResponse.setLightweight(_ctx.stringValue("GetSupabaseProjectResponse.Lightweight"));
+		getSupabaseProjectResponse.setProjectName(_ctx.stringValue("GetSupabaseProjectResponse.ProjectName"));
+		getSupabaseProjectResponse.setDiskPerformanceLevel(_ctx.stringValue("GetSupabaseProjectResponse.DiskPerformanceLevel"));
+		getSupabaseProjectResponse.setAppliedIdleTimeHours(_ctx.stringValue("GetSupabaseProjectResponse.AppliedIdleTimeHours"));
+		getSupabaseProjectResponse.setInstanceVersion(_ctx.stringValue("GetSupabaseProjectResponse.InstanceVersion"));
+		getSupabaseProjectResponse.setPrivateConnectUrl(_ctx.stringValue("GetSupabaseProjectResponse.PrivateConnectUrl"));
 		getSupabaseProjectResponse.setDashboardPassword(_ctx.stringValue("GetSupabaseProjectResponse.DashboardPassword"));
+		getSupabaseProjectResponse.setProjectDescription(_ctx.stringValue("GetSupabaseProjectResponse.ProjectDescription"));
+		getSupabaseProjectResponse.setEngine(_ctx.stringValue("GetSupabaseProjectResponse.Engine"));
+		getSupabaseProjectResponse.setPublicConnectUrl(_ctx.stringValue("GetSupabaseProjectResponse.PublicConnectUrl"));
+		getSupabaseProjectResponse.setStatus(_ctx.stringValue("GetSupabaseProjectResponse.Status"));
+		getSupabaseProjectResponse.setEngineVersion(_ctx.stringValue("GetSupabaseProjectResponse.EngineVersion"));
+		getSupabaseProjectResponse.setStorageType(_ctx.stringValue("GetSupabaseProjectResponse.StorageType"));
+		getSupabaseProjectResponse.setZoneId(_ctx.stringValue("GetSupabaseProjectResponse.ZoneId"));
+		getSupabaseProjectResponse.setCreateTime(_ctx.stringValue("GetSupabaseProjectResponse.CreateTime"));
+		getSupabaseProjectResponse.setVSwitchId(_ctx.stringValue("GetSupabaseProjectResponse.VSwitchId"));
+		getSupabaseProjectResponse.setProjectId(_ctx.stringValue("GetSupabaseProjectResponse.ProjectId"));
+		getSupabaseProjectResponse.setStorageSize(_ctx.longValue("GetSupabaseProjectResponse.StorageSize"));
+		getSupabaseProjectResponse.setPayType(_ctx.stringValue("GetSupabaseProjectResponse.PayType"));
+		getSupabaseProjectResponse.setProjectSpec(_ctx.stringValue("GetSupabaseProjectResponse.ProjectSpec"));
+		getSupabaseProjectResponse.setVpcId(_ctx.stringValue("GetSupabaseProjectResponse.VpcId"));
+		getSupabaseProjectResponse.setSecurityIpList(_ctx.stringValue("GetSupabaseProjectResponse.SecurityIpList"));
+		getSupabaseProjectResponse.setRegionId(_ctx.stringValue("GetSupabaseProjectResponse.RegionId"));
+		getSupabaseProjectResponse.setAutoScale(_ctx.stringValue("GetSupabaseProjectResponse.AutoScale"));
 	 
 	 	return getSupabaseProjectResponse;
 	}

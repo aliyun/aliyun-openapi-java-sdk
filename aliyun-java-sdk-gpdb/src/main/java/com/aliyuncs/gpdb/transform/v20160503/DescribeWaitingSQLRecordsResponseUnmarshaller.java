@@ -33,14 +33,14 @@ public class DescribeWaitingSQLRecordsResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWaitingSQLRecordsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setPID(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].PID"));
-			item.setSessionID(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].SessionID"));
-			item.setStartTime(_ctx.longValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].StartTime"));
-			item.setWaitingTime(_ctx.longValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].WaitingTime"));
 			item.setStatus(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].Status"));
 			item.setSQLStmt(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].SQLStmt"));
 			item.setUser(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].User"));
+			item.setWaitingTime(_ctx.longValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].WaitingTime"));
+			item.setStartTime(_ctx.longValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].StartTime"));
 			item.setDatabase(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].Database"));
+			item.setPID(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].PID"));
+			item.setSessionID(_ctx.stringValue("DescribeWaitingSQLRecordsResponse.Items["+ i +"].SessionID"));
 
 			items.add(item);
 		}

@@ -29,8 +29,10 @@ public class ResetSupabaseProjectPasswordRequest extends RpcAcsRequest<ResetSupa
 	private String projectId;
 
 	private String accountPassword;
+
+	private String dashboardPassword;
 	public ResetSupabaseProjectPasswordRequest() {
-		super("gpdb", "2016-05-03", "ResetSupabaseProjectPassword", "gpdb");
+		super("gpdb", "2016-05-03", "ResetSupabaseProjectPassword", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -58,6 +60,17 @@ public class ResetSupabaseProjectPasswordRequest extends RpcAcsRequest<ResetSupa
 		this.accountPassword = accountPassword;
 		if(accountPassword != null){
 			putQueryParameter("AccountPassword", accountPassword);
+		}
+	}
+
+	public String getDashboardPassword() {
+		return this.dashboardPassword;
+	}
+
+	public void setDashboardPassword(String dashboardPassword) {
+		this.dashboardPassword = dashboardPassword;
+		if(dashboardPassword != null){
+			putQueryParameter("DashboardPassword", dashboardPassword);
 		}
 	}
 

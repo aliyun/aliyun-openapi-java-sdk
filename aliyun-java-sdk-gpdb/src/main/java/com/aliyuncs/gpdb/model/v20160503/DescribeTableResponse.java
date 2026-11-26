@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTableResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
+	private String requestId;
 
 	private List<ColumnListItem> columnList;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class DescribeTableResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<ColumnListItem> getColumnList() {
@@ -67,50 +67,42 @@ public class DescribeTableResponse extends AcsResponse {
 
 	public static class ColumnListItem {
 
-		private String name;
-
-		private String dataType;
+		private String comment;
 
 		private String columnDefault;
 
+		private Integer scale;
+
 		private Integer maxLength;
 
-		private Boolean nullable;
-
-		private String schemaName;
-
-		private String tableName;
+		private String udtName;
 
 		private Boolean isCaseSensitive;
 
 		private Boolean isCurrency;
 
-		private Boolean isSigned;
+		private String name;
+
+		private String tableName;
 
 		private Integer precision;
 
-		private Integer scale;
+		private String dataType;
+
+		private Boolean isSigned;
+
+		private Boolean nullable;
+
+		private String schemaName;
 
 		private Boolean isPrimaryKey;
 
-		private String comment;
-
-		private String udtName;
-
-		public String getName() {
-			return this.name;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getDataType() {
-			return this.dataType;
-		}
-
-		public void setDataType(String dataType) {
-			this.dataType = dataType;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
 		public String getColumnDefault() {
@@ -121,6 +113,14 @@ public class DescribeTableResponse extends AcsResponse {
 			this.columnDefault = columnDefault;
 		}
 
+		public Integer getScale() {
+			return this.scale;
+		}
+
+		public void setScale(Integer scale) {
+			this.scale = scale;
+		}
+
 		public Integer getMaxLength() {
 			return this.maxLength;
 		}
@@ -129,28 +129,12 @@ public class DescribeTableResponse extends AcsResponse {
 			this.maxLength = maxLength;
 		}
 
-		public Boolean getNullable() {
-			return this.nullable;
+		public String getUdtName() {
+			return this.udtName;
 		}
 
-		public void setNullable(Boolean nullable) {
-			this.nullable = nullable;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setUdtName(String udtName) {
+			this.udtName = udtName;
 		}
 
 		public Boolean getIsCaseSensitive() {
@@ -169,12 +153,20 @@ public class DescribeTableResponse extends AcsResponse {
 			this.isCurrency = isCurrency;
 		}
 
-		public Boolean getIsSigned() {
-			return this.isSigned;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setIsSigned(Boolean isSigned) {
-			this.isSigned = isSigned;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public Integer getPrecision() {
@@ -185,12 +177,36 @@ public class DescribeTableResponse extends AcsResponse {
 			this.precision = precision;
 		}
 
-		public Integer getScale() {
-			return this.scale;
+		public String getDataType() {
+			return this.dataType;
 		}
 
-		public void setScale(Integer scale) {
-			this.scale = scale;
+		public void setDataType(String dataType) {
+			this.dataType = dataType;
+		}
+
+		public Boolean getIsSigned() {
+			return this.isSigned;
+		}
+
+		public void setIsSigned(Boolean isSigned) {
+			this.isSigned = isSigned;
+		}
+
+		public Boolean getNullable() {
+			return this.nullable;
+		}
+
+		public void setNullable(Boolean nullable) {
+			this.nullable = nullable;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
 		public Boolean getIsPrimaryKey() {
@@ -199,22 +215,6 @@ public class DescribeTableResponse extends AcsResponse {
 
 		public void setIsPrimaryKey(Boolean isPrimaryKey) {
 			this.isPrimaryKey = isPrimaryKey;
-		}
-
-		public String getComment() {
-			return this.comment;
-		}
-
-		public void setComment(String comment) {
-			this.comment = comment;
-		}
-
-		public String getUdtName() {
-			return this.udtName;
-		}
-
-		public void setUdtName(String udtName) {
-			this.udtName = udtName;
 		}
 	}
 

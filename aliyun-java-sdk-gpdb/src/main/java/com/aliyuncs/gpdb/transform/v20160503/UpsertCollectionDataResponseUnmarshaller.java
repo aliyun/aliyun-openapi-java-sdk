@@ -23,8 +23,8 @@ public class UpsertCollectionDataResponseUnmarshaller {
 	public static UpsertCollectionDataResponse unmarshall(UpsertCollectionDataResponse upsertCollectionDataResponse, UnmarshallerContext _ctx) {
 		
 		upsertCollectionDataResponse.setRequestId(_ctx.stringValue("UpsertCollectionDataResponse.RequestId"));
-		upsertCollectionDataResponse.setMessage(_ctx.stringValue("UpsertCollectionDataResponse.Message"));
 		upsertCollectionDataResponse.setStatus(_ctx.stringValue("UpsertCollectionDataResponse.Status"));
+		upsertCollectionDataResponse.setMessage(_ctx.stringValue("UpsertCollectionDataResponse.Message"));
 	 
 	 	return upsertCollectionDataResponse;
 	}

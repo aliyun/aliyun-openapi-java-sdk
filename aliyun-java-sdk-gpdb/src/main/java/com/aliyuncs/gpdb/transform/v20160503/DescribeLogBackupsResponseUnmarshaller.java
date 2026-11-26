@@ -27,20 +27,20 @@ public class DescribeLogBackupsResponseUnmarshaller {
 	public static DescribeLogBackupsResponse unmarshall(DescribeLogBackupsResponse describeLogBackupsResponse, UnmarshallerContext _ctx) {
 		
 		describeLogBackupsResponse.setRequestId(_ctx.stringValue("DescribeLogBackupsResponse.RequestId"));
-		describeLogBackupsResponse.setTotalLogSize(_ctx.longValue("DescribeLogBackupsResponse.TotalLogSize"));
+		describeLogBackupsResponse.setTotalCount(_ctx.integerValue("DescribeLogBackupsResponse.TotalCount"));
 		describeLogBackupsResponse.setPageSize(_ctx.integerValue("DescribeLogBackupsResponse.PageSize"));
 		describeLogBackupsResponse.setPageNumber(_ctx.integerValue("DescribeLogBackupsResponse.PageNumber"));
-		describeLogBackupsResponse.setTotalCount(_ctx.integerValue("DescribeLogBackupsResponse.TotalCount"));
+		describeLogBackupsResponse.setTotalLogSize(_ctx.longValue("DescribeLogBackupsResponse.TotalLogSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLogBackupsResponse.Items.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setLogFileSize(_ctx.longValue("DescribeLogBackupsResponse.Items["+ i +"].LogFileSize"));
-			backup.setLogTime(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].LogTime"));
 			backup.setSegmentName(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].SegmentName"));
-			backup.setLogFileName(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].LogFileName"));
 			backup.setDBInstanceId(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].DBInstanceId"));
+			backup.setLogTime(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].LogTime"));
+			backup.setLogFileSize(_ctx.longValue("DescribeLogBackupsResponse.Items["+ i +"].LogFileSize"));
 			backup.setBackupId(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].BackupId"));
+			backup.setLogFileName(_ctx.stringValue("DescribeLogBackupsResponse.Items["+ i +"].LogFileName"));
 
 			items.add(backup);
 		}

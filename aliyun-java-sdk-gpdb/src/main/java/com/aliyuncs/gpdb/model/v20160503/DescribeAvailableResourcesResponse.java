@@ -79,19 +79,11 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 		public static class SupportedEngine {
 
-			private String supportedEngineVersion;
-
 			private String mode;
 
+			private String supportedEngineVersion;
+
 			private List<SupportedInstanceClass> supportedInstanceClasses;
-
-			public String getSupportedEngineVersion() {
-				return this.supportedEngineVersion;
-			}
-
-			public void setSupportedEngineVersion(String supportedEngineVersion) {
-				this.supportedEngineVersion = supportedEngineVersion;
-			}
 
 			public String getMode() {
 				return this.mode;
@@ -99,6 +91,14 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 			public void setMode(String mode) {
 				this.mode = mode;
+			}
+
+			public String getSupportedEngineVersion() {
+				return this.supportedEngineVersion;
+			}
+
+			public void setSupportedEngineVersion(String supportedEngineVersion) {
+				this.supportedEngineVersion = supportedEngineVersion;
 			}
 
 			public List<SupportedInstanceClass> getSupportedInstanceClasses() {
@@ -111,27 +111,19 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 			public static class SupportedInstanceClass {
 
-				private String description;
-
 				private String displayClass;
 
-				private String instanceClass;
+				private String description;
 
 				private String storageType;
 
 				private String category;
 
+				private String instanceClass;
+
 				private NodeCount nodeCount;
 
 				private StorageSize storageSize;
-
-				public String getDescription() {
-					return this.description;
-				}
-
-				public void setDescription(String description) {
-					this.description = description;
-				}
 
 				public String getDisplayClass() {
 					return this.displayClass;
@@ -141,12 +133,12 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 					this.displayClass = displayClass;
 				}
 
-				public String getInstanceClass() {
-					return this.instanceClass;
+				public String getDescription() {
+					return this.description;
 				}
 
-				public void setInstanceClass(String instanceClass) {
-					this.instanceClass = instanceClass;
+				public void setDescription(String description) {
+					this.description = description;
 				}
 
 				public String getStorageType() {
@@ -163,6 +155,14 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				public void setCategory(String category) {
 					this.category = category;
+				}
+
+				public String getInstanceClass() {
+					return this.instanceClass;
+				}
+
+				public void setInstanceClass(String instanceClass) {
+					this.instanceClass = instanceClass;
 				}
 
 				public NodeCount getNodeCount() {
@@ -185,9 +185,9 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 					private String step;
 
-					private String minCount;
-
 					private String maxCount;
+
+					private String minCount;
 
 					public String getStep() {
 						return this.step;
@@ -197,20 +197,20 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 						this.step = step;
 					}
 
-					public String getMinCount() {
-						return this.minCount;
-					}
-
-					public void setMinCount(String minCount) {
-						this.minCount = minCount;
-					}
-
 					public String getMaxCount() {
 						return this.maxCount;
 					}
 
 					public void setMaxCount(String maxCount) {
 						this.maxCount = maxCount;
+					}
+
+					public String getMinCount() {
+						return this.minCount;
+					}
+
+					public void setMinCount(String minCount) {
+						this.minCount = minCount;
 					}
 				}
 
@@ -218,9 +218,9 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 					private String step;
 
-					private String minCount;
-
 					private String maxCount;
+
+					private String minCount;
 
 					public String getStep() {
 						return this.step;
@@ -230,20 +230,20 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 						this.step = step;
 					}
 
-					public String getMinCount() {
-						return this.minCount;
-					}
-
-					public void setMinCount(String minCount) {
-						this.minCount = minCount;
-					}
-
 					public String getMaxCount() {
 						return this.maxCount;
 					}
 
 					public void setMaxCount(String maxCount) {
 						this.maxCount = maxCount;
+					}
+
+					public String getMinCount() {
+						return this.minCount;
+					}
+
+					public void setMinCount(String minCount) {
+						this.minCount = minCount;
 					}
 				}
 			}

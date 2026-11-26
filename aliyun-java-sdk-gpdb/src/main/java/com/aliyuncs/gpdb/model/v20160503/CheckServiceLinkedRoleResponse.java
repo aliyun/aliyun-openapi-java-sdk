@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckServiceLinkedRoleResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String hasServiceLinkedRole;
 
 	private String regionId;
 
-	private String requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getHasServiceLinkedRole() {
 		return this.hasServiceLinkedRole;
@@ -44,14 +52,6 @@ public class CheckServiceLinkedRoleResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	@Override

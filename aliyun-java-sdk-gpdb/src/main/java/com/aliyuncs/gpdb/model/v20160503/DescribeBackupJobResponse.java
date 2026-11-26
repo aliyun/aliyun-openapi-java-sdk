@@ -26,17 +26,17 @@ public class DescribeBackupJobResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String backupJobId;
+	private String backupMode;
+
+	private String startTime;
 
 	private String backupId;
 
-	private String backupMode;
-
-	private String backupStatus;
-
 	private String process;
 
-	private String startTime;
+	private String backupJobId;
+
+	private String backupStatus;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,22 +44,6 @@ public class DescribeBackupJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getBackupJobId() {
-		return this.backupJobId;
-	}
-
-	public void setBackupJobId(String backupJobId) {
-		this.backupJobId = backupJobId;
-	}
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
 	}
 
 	public String getBackupMode() {
@@ -70,12 +54,20 @@ public class DescribeBackupJobResponse extends AcsResponse {
 		this.backupMode = backupMode;
 	}
 
-	public String getBackupStatus() {
-		return this.backupStatus;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setBackupStatus(String backupStatus) {
-		this.backupStatus = backupStatus;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
 	}
 
 	public String getProcess() {
@@ -86,12 +78,20 @@ public class DescribeBackupJobResponse extends AcsResponse {
 		this.process = process;
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getBackupJobId() {
+		return this.backupJobId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+	}
+
+	public String getBackupStatus() {
+		return this.backupStatus;
+	}
+
+	public void setBackupStatus(String backupStatus) {
+		this.backupStatus = backupStatus;
 	}
 
 	@Override

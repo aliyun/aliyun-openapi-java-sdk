@@ -47,19 +47,11 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 	public static class ResourceGroupItem {
 
-		private String resourceGroupName;
-
 		private String resourceGroupConfig;
 
+		private String resourceGroupName;
+
 		private List<String> roleList;
-
-		public String getResourceGroupName() {
-			return this.resourceGroupName;
-		}
-
-		public void setResourceGroupName(String resourceGroupName) {
-			this.resourceGroupName = resourceGroupName;
-		}
 
 		public String getResourceGroupConfig() {
 			return this.resourceGroupConfig;
@@ -67,6 +59,14 @@ public class DescribeDBResourceGroupResponse extends AcsResponse {
 
 		public void setResourceGroupConfig(String resourceGroupConfig) {
 			this.resourceGroupConfig = resourceGroupConfig;
+		}
+
+		public String getResourceGroupName() {
+			return this.resourceGroupName;
+		}
+
+		public void setResourceGroupName(String resourceGroupName) {
+			this.resourceGroupName = resourceGroupName;
 		}
 
 		public List<String> getRoleList() {

@@ -31,7 +31,7 @@ public class ListStreamingJobsRequest extends RpcAcsRequest<ListStreamingJobsRes
 
 	private String dBInstanceId;
 	public ListStreamingJobsRequest() {
-		super("gpdb", "2016-05-03", "ListStreamingJobs", "gpdb");
+		super("gpdb", "2016-05-03", "ListStreamingJobs", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

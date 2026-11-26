@@ -23,12 +23,12 @@ public class DescribeIndexResponseUnmarshaller {
 	public static DescribeIndexResponse unmarshall(DescribeIndexResponse describeIndexResponse, UnmarshallerContext _ctx) {
 		
 		describeIndexResponse.setRequestId(_ctx.stringValue("DescribeIndexResponse.RequestId"));
-		describeIndexResponse.setMessage(_ctx.stringValue("DescribeIndexResponse.Message"));
-		describeIndexResponse.setStatus(_ctx.stringValue("DescribeIndexResponse.Status"));
-		describeIndexResponse.setNamespace(_ctx.stringValue("DescribeIndexResponse.Namespace"));
-		describeIndexResponse.setCollection(_ctx.stringValue("DescribeIndexResponse.Collection"));
 		describeIndexResponse.setIndexName(_ctx.stringValue("DescribeIndexResponse.IndexName"));
+		describeIndexResponse.setStatus(_ctx.stringValue("DescribeIndexResponse.Status"));
+		describeIndexResponse.setMessage(_ctx.stringValue("DescribeIndexResponse.Message"));
+		describeIndexResponse.setCollection(_ctx.stringValue("DescribeIndexResponse.Collection"));
 		describeIndexResponse.setIndexDef(_ctx.stringValue("DescribeIndexResponse.IndexDef"));
+		describeIndexResponse.setNamespace(_ctx.stringValue("DescribeIndexResponse.Namespace"));
 	 
 	 	return describeIndexResponse;
 	}

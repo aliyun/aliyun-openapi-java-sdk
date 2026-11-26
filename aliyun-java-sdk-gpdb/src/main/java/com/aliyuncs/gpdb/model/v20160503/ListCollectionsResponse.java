@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCollectionsResponse extends AcsResponse {
 
+	private String status;
+
+	private String message;
+
 	private String requestId;
 
-	private Integer count;
-
 	private String dBInstanceId;
+
+	private Integer count;
 
 	private String regionId;
 
 	private String namespace;
 
-	private String message;
-
-	private String status;
-
 	private List<String> collections;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,20 +65,20 @@ public class ListCollectionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public String getRegionId() {
@@ -79,22 +95,6 @@ public class ListCollectionsResponse extends AcsResponse {
 
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public List<String> getCollections() {

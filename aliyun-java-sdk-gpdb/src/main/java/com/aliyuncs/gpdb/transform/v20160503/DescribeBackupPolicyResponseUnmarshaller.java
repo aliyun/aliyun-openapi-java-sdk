@@ -23,11 +23,11 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
 		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
 		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setRecoveryPointPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.RecoveryPointPeriod"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
 		describeBackupPolicyResponse.setEnableRecoveryPoint(_ctx.booleanValue("DescribeBackupPolicyResponse.EnableRecoveryPoint"));
+		describeBackupPolicyResponse.setRecoveryPointPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.RecoveryPointPeriod"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

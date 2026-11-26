@@ -39,7 +39,7 @@ public class UpsertCollectionDataAsyncRequest extends RpcAcsRequest<UpsertCollec
 
 	private String workspaceId;
 	public UpsertCollectionDataAsyncRequest() {
-		super("gpdb", "2016-05-03", "UpsertCollectionDataAsync", "gpdb");
+		super("gpdb", "2016-05-03", "UpsertCollectionDataAsync", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

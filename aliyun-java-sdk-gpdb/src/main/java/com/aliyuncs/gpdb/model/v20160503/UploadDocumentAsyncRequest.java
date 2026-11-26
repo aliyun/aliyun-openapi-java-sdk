@@ -32,6 +32,10 @@ public class UploadDocumentAsyncRequest extends RpcAcsRequest<UploadDocumentAsyn
 	@SerializedName("metadata")
 	private Map<String,Object> metadata;
 
+	private Boolean vlEnhance;
+
+	private String splitterModel;
+
 	private Integer chunkSize;
 
 	private String dBInstanceId;
@@ -61,7 +65,7 @@ public class UploadDocumentAsyncRequest extends RpcAcsRequest<UploadDocumentAsyn
 	@SerializedName("separators")
 	private List<String> separators;
 	public UploadDocumentAsyncRequest() {
-		super("gpdb", "2016-05-03", "UploadDocumentAsync", "gpdb");
+		super("gpdb", "2016-05-03", "UploadDocumentAsync", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,6 +82,28 @@ public class UploadDocumentAsyncRequest extends RpcAcsRequest<UploadDocumentAsyn
 		if (metadata != null) {
 			putBodyParameter("Metadata" , new Gson().toJson(metadata));
 		}	
+	}
+
+	public Boolean getVlEnhance() {
+		return this.vlEnhance;
+	}
+
+	public void setVlEnhance(Boolean vlEnhance) {
+		this.vlEnhance = vlEnhance;
+		if(vlEnhance != null){
+			putBodyParameter("VlEnhance", vlEnhance.toString());
+		}
+	}
+
+	public String getSplitterModel() {
+		return this.splitterModel;
+	}
+
+	public void setSplitterModel(String splitterModel) {
+		this.splitterModel = splitterModel;
+		if(splitterModel != null){
+			putBodyParameter("SplitterModel", splitterModel);
+		}
 	}
 
 	public Integer getChunkSize() {

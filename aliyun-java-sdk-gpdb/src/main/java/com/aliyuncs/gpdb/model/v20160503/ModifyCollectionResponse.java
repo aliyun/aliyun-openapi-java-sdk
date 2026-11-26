@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyCollectionResponse extends AcsResponse {
 
-	private String message;
+	private String status;
 
-	private String metadata;
+	private String message;
 
 	private String requestId;
 
-	private String status;
+	private String metadata;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getMessage() {
 		return this.message;
@@ -38,14 +46,6 @@ public class ModifyCollectionResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getMetadata() {
-		return this.metadata;
-	}
-
-	public void setMetadata(String metadata) {
-		this.metadata = metadata;
 	}
 
 	public String getRequestId() {
@@ -56,12 +56,12 @@ public class ModifyCollectionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getMetadata() {
+		return this.metadata;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setMetadata(String metadata) {
+		this.metadata = metadata;
 	}
 
 	@Override

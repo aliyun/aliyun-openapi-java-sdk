@@ -27,6 +27,8 @@ public class ModifyMasterSpecRequest extends RpcAcsRequest<ModifyMasterSpecRespo
 
 	private String resourceGroupId;
 
+	private String effectiveTime;
+
 	private String dBInstanceId;
 
 	private String dBInstanceDescription;
@@ -35,7 +37,7 @@ public class ModifyMasterSpecRequest extends RpcAcsRequest<ModifyMasterSpecRespo
 
 	private Integer masterCU;
 	public ModifyMasterSpecRequest() {
-		super("gpdb", "2016-05-03", "ModifyMasterSpec", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyMasterSpec", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class ModifyMasterSpecRequest extends RpcAcsRequest<ModifyMasterSpecRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

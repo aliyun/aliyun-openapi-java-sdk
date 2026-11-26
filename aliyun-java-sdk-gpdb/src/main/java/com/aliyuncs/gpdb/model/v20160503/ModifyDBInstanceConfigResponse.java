@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyDBInstanceConfigResponse extends AcsResponse {
 
+	private Boolean status;
+
 	private String requestId;
 
 	private String errorMessage;
 
 	private String dbInstanceId;
 
-	private Boolean status;
+	public Boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,14 +62,6 @@ public class ModifyDBInstanceConfigResponse extends AcsResponse {
 
 	public void setDbInstanceId(String dbInstanceId) {
 		this.dbInstanceId = dbInstanceId;
-	}
-
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
 	}
 
 	@Override

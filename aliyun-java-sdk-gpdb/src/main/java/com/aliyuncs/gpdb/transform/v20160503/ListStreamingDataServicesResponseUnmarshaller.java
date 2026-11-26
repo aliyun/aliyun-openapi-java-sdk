@@ -32,18 +32,18 @@ public class ListStreamingDataServicesResponseUnmarshaller {
 		List<Items> serviceItems = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListStreamingDataServicesResponse.ServiceItems.Length"); i++) {
 			Items items = new Items();
-			items.setServiceId(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceId"));
-			items.setServiceType(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceType"));
-			items.setServiceName(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceName"));
-			items.setServiceDescription(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceDescription"));
-			items.setServiceSpec(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceSpec"));
 			items.setStatus(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].Status"));
-			items.setServiceIp(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceIp"));
 			items.setServicePort(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServicePort"));
-			items.setCreateTime(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].CreateTime"));
 			items.setModifyTime(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ModifyTime"));
+			items.setServiceIp(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceIp"));
 			items.setServiceManaged(_ctx.booleanValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceManaged"));
+			items.setServiceName(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceName"));
+			items.setServiceType(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceType"));
+			items.setServiceDescription(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceDescription"));
+			items.setCreateTime(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].CreateTime"));
+			items.setServiceSpec(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceSpec"));
 			items.setServiceOwnerId(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceOwnerId"));
+			items.setServiceId(_ctx.stringValue("ListStreamingDataServicesResponse.ServiceItems["+ i +"].ServiceId"));
 
 			serviceItems.add(items);
 		}

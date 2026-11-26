@@ -32,9 +32,9 @@ public class DescribeIMVInfosResponseUnmarshaller {
 		List<ImvInfo> imvInfos = new ArrayList<ImvInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeIMVInfosResponse.ImvInfos.Length"); i++) {
 			ImvInfo imvInfo = new ImvInfo();
+			imvInfo.setDetailInfo(_ctx.stringValue("DescribeIMVInfosResponse.ImvInfos["+ i +"].DetailInfo"));
 			imvInfo.setMV(_ctx.stringValue("DescribeIMVInfosResponse.ImvInfos["+ i +"].MV"));
 			imvInfo.setBase(_ctx.stringValue("DescribeIMVInfosResponse.ImvInfos["+ i +"].Base"));
-			imvInfo.setDetailInfo(_ctx.stringValue("DescribeIMVInfosResponse.ImvInfos["+ i +"].DetailInfo"));
 
 			imvInfos.add(imvInfo);
 		}

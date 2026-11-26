@@ -34,13 +34,15 @@ public class ListDocumentCollectionsResponseUnmarshaller {
 		List<CollectionList> items = new ArrayList<CollectionList>();
 		for (int i = 0; i < _ctx.lengthValue("ListDocumentCollectionsResponse.Items.Length"); i++) {
 			CollectionList collectionList = new CollectionList();
+			collectionList.setMetrics(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].Metrics"));
+			collectionList.setSparseRetrievalFields(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].SparseRetrievalFields"));
 			collectionList.setCollectionName(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].CollectionName"));
+			collectionList.setSupportSparse(_ctx.booleanValue("ListDocumentCollectionsResponse.Items["+ i +"].SupportSparse"));
 			collectionList.setEmbeddingModel(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].EmbeddingModel"));
+			collectionList.setMetadata(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].Metadata"));
 			collectionList.setDimension(_ctx.integerValue("ListDocumentCollectionsResponse.Items["+ i +"].Dimension"));
 			collectionList.setFullTextRetrievalFields(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].FullTextRetrievalFields"));
-			collectionList.setMetadata(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].Metadata"));
 			collectionList.setParser(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].Parser"));
-			collectionList.setMetrics(_ctx.stringValue("ListDocumentCollectionsResponse.Items["+ i +"].Metrics"));
 
 			items.add(collectionList);
 		}

@@ -23,9 +23,10 @@ public class UpsertChunksResponseUnmarshaller {
 	public static UpsertChunksResponse unmarshall(UpsertChunksResponse upsertChunksResponse, UnmarshallerContext _ctx) {
 		
 		upsertChunksResponse.setRequestId(_ctx.stringValue("UpsertChunksResponse.RequestId"));
-		upsertChunksResponse.setMessage(_ctx.stringValue("UpsertChunksResponse.Message"));
-		upsertChunksResponse.setStatus(_ctx.stringValue("UpsertChunksResponse.Status"));
 		upsertChunksResponse.setEmbeddingTokens(_ctx.stringValue("UpsertChunksResponse.EmbeddingTokens"));
+		upsertChunksResponse.setStatus(_ctx.stringValue("UpsertChunksResponse.Status"));
+		upsertChunksResponse.setMessage(_ctx.stringValue("UpsertChunksResponse.Message"));
+		upsertChunksResponse.setJobId(_ctx.stringValue("UpsertChunksResponse.JobId"));
 	 
 	 	return upsertChunksResponse;
 	}

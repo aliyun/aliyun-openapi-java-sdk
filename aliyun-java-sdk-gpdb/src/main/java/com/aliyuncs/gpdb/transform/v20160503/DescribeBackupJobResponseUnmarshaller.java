@@ -23,12 +23,12 @@ public class DescribeBackupJobResponseUnmarshaller {
 	public static DescribeBackupJobResponse unmarshall(DescribeBackupJobResponse describeBackupJobResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupJobResponse.setRequestId(_ctx.stringValue("DescribeBackupJobResponse.RequestId"));
-		describeBackupJobResponse.setBackupJobId(_ctx.stringValue("DescribeBackupJobResponse.BackupJobId"));
-		describeBackupJobResponse.setBackupId(_ctx.stringValue("DescribeBackupJobResponse.BackupId"));
 		describeBackupJobResponse.setBackupMode(_ctx.stringValue("DescribeBackupJobResponse.BackupMode"));
-		describeBackupJobResponse.setBackupStatus(_ctx.stringValue("DescribeBackupJobResponse.BackupStatus"));
-		describeBackupJobResponse.setProcess(_ctx.stringValue("DescribeBackupJobResponse.Process"));
 		describeBackupJobResponse.setStartTime(_ctx.stringValue("DescribeBackupJobResponse.StartTime"));
+		describeBackupJobResponse.setBackupId(_ctx.stringValue("DescribeBackupJobResponse.BackupId"));
+		describeBackupJobResponse.setProcess(_ctx.stringValue("DescribeBackupJobResponse.Process"));
+		describeBackupJobResponse.setBackupJobId(_ctx.stringValue("DescribeBackupJobResponse.BackupJobId"));
+		describeBackupJobResponse.setBackupStatus(_ctx.stringValue("DescribeBackupJobResponse.BackupStatus"));
 	 
 	 	return describeBackupJobResponse;
 	}

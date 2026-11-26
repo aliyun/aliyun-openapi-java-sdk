@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListExternalDataSourcesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalRecordCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -47,6 +39,14 @@ public class ListExternalDataSourcesResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,32 +67,40 @@ public class ListExternalDataSourcesResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Integer dataSourceId;
+		private String dataSourceDir;
+
+		private String modifyTime;
 
 		private String dataSourceName;
 
 		private String dataSourceType;
 
-		private String dataSourceDescription;
-
 		private String createTime;
-
-		private String modifyTime;
 
 		private String dataSourceStatus;
 
-		private String statusMessage;
-
-		private String dataSourceDir;
-
 		private Integer externalDataServiceId;
 
-		public Integer getDataSourceId() {
-			return this.dataSourceId;
+		private String dataSourceDescription;
+
+		private Integer dataSourceId;
+
+		private String statusMessage;
+
+		public String getDataSourceDir() {
+			return this.dataSourceDir;
 		}
 
-		public void setDataSourceId(Integer dataSourceId) {
-			this.dataSourceId = dataSourceId;
+		public void setDataSourceDir(String dataSourceDir) {
+			this.dataSourceDir = dataSourceDir;
+		}
+
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
+
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getDataSourceName() {
@@ -111,28 +119,12 @@ public class ListExternalDataSourcesResponse extends AcsResponse {
 			this.dataSourceType = dataSourceType;
 		}
 
-		public String getDataSourceDescription() {
-			return this.dataSourceDescription;
-		}
-
-		public void setDataSourceDescription(String dataSourceDescription) {
-			this.dataSourceDescription = dataSourceDescription;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
 		}
 
 		public String getDataSourceStatus() {
@@ -143,28 +135,36 @@ public class ListExternalDataSourcesResponse extends AcsResponse {
 			this.dataSourceStatus = dataSourceStatus;
 		}
 
-		public String getStatusMessage() {
-			return this.statusMessage;
-		}
-
-		public void setStatusMessage(String statusMessage) {
-			this.statusMessage = statusMessage;
-		}
-
-		public String getDataSourceDir() {
-			return this.dataSourceDir;
-		}
-
-		public void setDataSourceDir(String dataSourceDir) {
-			this.dataSourceDir = dataSourceDir;
-		}
-
 		public Integer getExternalDataServiceId() {
 			return this.externalDataServiceId;
 		}
 
 		public void setExternalDataServiceId(Integer externalDataServiceId) {
 			this.externalDataServiceId = externalDataServiceId;
+		}
+
+		public String getDataSourceDescription() {
+			return this.dataSourceDescription;
+		}
+
+		public void setDataSourceDescription(String dataSourceDescription) {
+			this.dataSourceDescription = dataSourceDescription;
+		}
+
+		public Integer getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(Integer dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public String getStatusMessage() {
+			return this.statusMessage;
+		}
+
+		public void setStatusMessage(String statusMessage) {
+			this.statusMessage = statusMessage;
 		}
 	}
 

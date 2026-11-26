@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamingDataSourceResponse extends AcsResponse {
 
-	private String dataSourceId;
+	private String status;
 
 	private String requestId;
 
 	private String dataSourceName;
 
-	private String dataSourceDescription;
-
-	private String status;
-
-	private String errorMessage;
+	private String dataSourceConfig;
 
 	private String createTime;
 
-	private String dataSourceConfig;
+	private String dataSourceType;
+
+	private String dataSourceDescription;
+
+	private String errorMessage;
+
+	private String dataSourceId;
 
 	private Integer serviceId;
 
-	private String dataSourceType;
-
-	public String getDataSourceId() {
-		return this.dataSourceId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getRequestId() {
@@ -68,28 +68,12 @@ public class DescribeStreamingDataSourceResponse extends AcsResponse {
 		this.dataSourceName = dataSourceName;
 	}
 
-	public String getDataSourceDescription() {
-		return this.dataSourceDescription;
+	public String getDataSourceConfig() {
+		return this.dataSourceConfig;
 	}
 
-	public void setDataSourceDescription(String dataSourceDescription) {
-		this.dataSourceDescription = dataSourceDescription;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setDataSourceConfig(String dataSourceConfig) {
+		this.dataSourceConfig = dataSourceConfig;
 	}
 
 	public String getCreateTime() {
@@ -100,12 +84,36 @@ public class DescribeStreamingDataSourceResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getDataSourceConfig() {
-		return this.dataSourceConfig;
+	public String getDataSourceType() {
+		return this.dataSourceType;
 	}
 
-	public void setDataSourceConfig(String dataSourceConfig) {
-		this.dataSourceConfig = dataSourceConfig;
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+	}
+
+	public String getDataSourceDescription() {
+		return this.dataSourceDescription;
+	}
+
+	public void setDataSourceDescription(String dataSourceDescription) {
+		this.dataSourceDescription = dataSourceDescription;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
 	}
 
 	public Integer getServiceId() {
@@ -114,14 +122,6 @@ public class DescribeStreamingDataSourceResponse extends AcsResponse {
 
 	public void setServiceId(Integer serviceId) {
 		this.serviceId = serviceId;
-	}
-
-	public String getDataSourceType() {
-		return this.dataSourceType;
-	}
-
-	public void setDataSourceType(String dataSourceType) {
-		this.dataSourceType = dataSourceType;
 	}
 
 	@Override

@@ -24,29 +24,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamingDataServiceResponse extends AcsResponse {
 
+	private String status;
+
+	private Integer servicePort;
+
+	private String modifyTime;
+
+	private String serviceIp;
+
 	private String requestId;
 
-	private String serviceId;
+	private Boolean serviceManaged;
 
 	private String serviceName;
 
 	private String serviceDescription;
 
-	private String serviceSpec;
-
-	private String status;
-
-	private String serviceIp;
-
-	private Integer servicePort;
-
 	private String createTime;
 
-	private String modifyTime;
-
-	private Boolean serviceManaged;
+	private String serviceSpec;
 
 	private String serviceOwnerId;
+
+	private String serviceId;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Integer getServicePort() {
+		return this.servicePort;
+	}
+
+	public void setServicePort(Integer servicePort) {
+		this.servicePort = servicePort;
+	}
+
+	public String getModifyTime() {
+		return this.modifyTime;
+	}
+
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public String getServiceIp() {
+		return this.serviceIp;
+	}
+
+	public void setServiceIp(String serviceIp) {
+		this.serviceIp = serviceIp;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,12 +88,12 @@ public class DescribeStreamingDataServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getServiceId() {
-		return this.serviceId;
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
 	}
 
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
 	}
 
 	public String getServiceName() {
@@ -80,38 +112,6 @@ public class DescribeStreamingDataServiceResponse extends AcsResponse {
 		this.serviceDescription = serviceDescription;
 	}
 
-	public String getServiceSpec() {
-		return this.serviceSpec;
-	}
-
-	public void setServiceSpec(String serviceSpec) {
-		this.serviceSpec = serviceSpec;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getServiceIp() {
-		return this.serviceIp;
-	}
-
-	public void setServiceIp(String serviceIp) {
-		this.serviceIp = serviceIp;
-	}
-
-	public Integer getServicePort() {
-		return this.servicePort;
-	}
-
-	public void setServicePort(Integer servicePort) {
-		this.servicePort = servicePort;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -120,20 +120,12 @@ public class DescribeStreamingDataServiceResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getModifyTime() {
-		return this.modifyTime;
+	public String getServiceSpec() {
+		return this.serviceSpec;
 	}
 
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
-	}
-
-	public Boolean getServiceManaged() {
-		return this.serviceManaged;
-	}
-
-	public void setServiceManaged(Boolean serviceManaged) {
-		this.serviceManaged = serviceManaged;
+	public void setServiceSpec(String serviceSpec) {
+		this.serviceSpec = serviceSpec;
 	}
 
 	public String getServiceOwnerId() {
@@ -142,6 +134,14 @@ public class DescribeStreamingDataServiceResponse extends AcsResponse {
 
 	public void setServiceOwnerId(String serviceOwnerId) {
 		this.serviceOwnerId = serviceOwnerId;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	@Override

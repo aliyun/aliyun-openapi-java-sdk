@@ -23,15 +23,15 @@ public class DescribeStreamingDataSourceResponseUnmarshaller {
 	public static DescribeStreamingDataSourceResponse unmarshall(DescribeStreamingDataSourceResponse describeStreamingDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamingDataSourceResponse.setRequestId(_ctx.stringValue("DescribeStreamingDataSourceResponse.RequestId"));
-		describeStreamingDataSourceResponse.setDataSourceId(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceId"));
-		describeStreamingDataSourceResponse.setDataSourceName(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceName"));
-		describeStreamingDataSourceResponse.setDataSourceDescription(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceDescription"));
 		describeStreamingDataSourceResponse.setStatus(_ctx.stringValue("DescribeStreamingDataSourceResponse.Status"));
-		describeStreamingDataSourceResponse.setErrorMessage(_ctx.stringValue("DescribeStreamingDataSourceResponse.ErrorMessage"));
-		describeStreamingDataSourceResponse.setCreateTime(_ctx.stringValue("DescribeStreamingDataSourceResponse.CreateTime"));
+		describeStreamingDataSourceResponse.setDataSourceName(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceName"));
 		describeStreamingDataSourceResponse.setDataSourceConfig(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceConfig"));
-		describeStreamingDataSourceResponse.setServiceId(_ctx.integerValue("DescribeStreamingDataSourceResponse.ServiceId"));
+		describeStreamingDataSourceResponse.setCreateTime(_ctx.stringValue("DescribeStreamingDataSourceResponse.CreateTime"));
 		describeStreamingDataSourceResponse.setDataSourceType(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceType"));
+		describeStreamingDataSourceResponse.setDataSourceDescription(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceDescription"));
+		describeStreamingDataSourceResponse.setErrorMessage(_ctx.stringValue("DescribeStreamingDataSourceResponse.ErrorMessage"));
+		describeStreamingDataSourceResponse.setDataSourceId(_ctx.stringValue("DescribeStreamingDataSourceResponse.DataSourceId"));
+		describeStreamingDataSourceResponse.setServiceId(_ctx.integerValue("DescribeStreamingDataSourceResponse.ServiceId"));
 	 
 	 	return describeStreamingDataSourceResponse;
 	}

@@ -27,6 +27,8 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 
 	private String switchTimeMode;
 
+	private String effectiveTime;
+
 	private String dBInstanceId;
 
 	private String switchTime;
@@ -37,7 +39,7 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 
 	private Long ownerId;
 	public UpgradeDBVersionRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBVersion", "gpdb");
+		super("gpdb", "2016-05-03", "UpgradeDBVersion", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,17 @@ public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionRespo
 		this.switchTimeMode = switchTimeMode;
 		if(switchTimeMode != null){
 			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

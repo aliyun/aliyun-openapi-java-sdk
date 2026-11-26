@@ -23,8 +23,8 @@ public class CreateDocumentCollectionResponseUnmarshaller {
 	public static CreateDocumentCollectionResponse unmarshall(CreateDocumentCollectionResponse createDocumentCollectionResponse, UnmarshallerContext _ctx) {
 		
 		createDocumentCollectionResponse.setRequestId(_ctx.stringValue("CreateDocumentCollectionResponse.RequestId"));
-		createDocumentCollectionResponse.setMessage(_ctx.stringValue("CreateDocumentCollectionResponse.Message"));
 		createDocumentCollectionResponse.setStatus(_ctx.stringValue("CreateDocumentCollectionResponse.Status"));
+		createDocumentCollectionResponse.setMessage(_ctx.stringValue("CreateDocumentCollectionResponse.Message"));
 	 
 	 	return createDocumentCollectionResponse;
 	}

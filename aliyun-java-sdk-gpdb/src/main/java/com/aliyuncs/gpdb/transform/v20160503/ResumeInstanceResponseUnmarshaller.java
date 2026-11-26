@@ -24,8 +24,8 @@ public class ResumeInstanceResponseUnmarshaller {
 		
 		resumeInstanceResponse.setRequestId(_ctx.stringValue("ResumeInstanceResponse.RequestId"));
 		resumeInstanceResponse.setStatus(_ctx.booleanValue("ResumeInstanceResponse.Status"));
-		resumeInstanceResponse.setErrorMessage(_ctx.stringValue("ResumeInstanceResponse.ErrorMessage"));
 		resumeInstanceResponse.setDBInstanceId(_ctx.stringValue("ResumeInstanceResponse.DBInstanceId"));
+		resumeInstanceResponse.setErrorMessage(_ctx.stringValue("ResumeInstanceResponse.ErrorMessage"));
 	 
 	 	return resumeInstanceResponse;
 	}

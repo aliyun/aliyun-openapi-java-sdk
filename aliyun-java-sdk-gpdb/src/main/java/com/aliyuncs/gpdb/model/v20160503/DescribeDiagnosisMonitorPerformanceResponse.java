@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiagnosisMonitorPerformanceResponse extends AcsResponse {
 
+	private Boolean performancesTruncated;
+
 	private String requestId;
 
 	private Integer performancesThreshold;
 
-	private Boolean performancesTruncated;
-
 	private List<Item> performances;
+
+	public Boolean getPerformancesTruncated() {
+		return this.performancesTruncated;
+	}
+
+	public void setPerformancesTruncated(Boolean performancesTruncated) {
+		this.performancesTruncated = performancesTruncated;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeDiagnosisMonitorPerformanceResponse extends AcsResponse {
 		this.performancesThreshold = performancesThreshold;
 	}
 
-	public Boolean getPerformancesTruncated() {
-		return this.performancesTruncated;
-	}
-
-	public void setPerformancesTruncated(Boolean performancesTruncated) {
-		this.performancesTruncated = performancesTruncated;
-	}
-
 	public List<Item> getPerformances() {
 		return this.performances;
 	}
@@ -67,41 +67,17 @@ public class DescribeDiagnosisMonitorPerformanceResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String queryID;
-
-		private Long startTime;
-
-		private Integer cost;
-
 		private String status;
 
 		private String user;
 
+		private String queryID;
+
+		private Long startTime;
+
 		private String database;
 
-		public String getQueryID() {
-			return this.queryID;
-		}
-
-		public void setQueryID(String queryID) {
-			this.queryID = queryID;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getCost() {
-			return this.cost;
-		}
-
-		public void setCost(Integer cost) {
-			this.cost = cost;
-		}
+		private Integer cost;
 
 		public String getStatus() {
 			return this.status;
@@ -119,12 +95,36 @@ public class DescribeDiagnosisMonitorPerformanceResponse extends AcsResponse {
 			this.user = user;
 		}
 
+		public String getQueryID() {
+			return this.queryID;
+		}
+
+		public void setQueryID(String queryID) {
+			this.queryID = queryID;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getDatabase() {
 			return this.database;
 		}
 
 		public void setDatabase(String database) {
 			this.database = database;
+		}
+
+		public Integer getCost() {
+			return this.cost;
+		}
+
+		public void setCost(Integer cost) {
+			this.cost = cost;
 		}
 	}
 

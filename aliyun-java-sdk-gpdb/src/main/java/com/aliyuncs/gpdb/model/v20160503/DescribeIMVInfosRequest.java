@@ -31,7 +31,7 @@ public class DescribeIMVInfosRequest extends RpcAcsRequest<DescribeIMVInfosRespo
 
 	private String dBInstanceId;
 	public DescribeIMVInfosRequest() {
-		super("gpdb", "2016-05-03", "DescribeIMVInfos", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeIMVInfos", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

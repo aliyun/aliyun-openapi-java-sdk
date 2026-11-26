@@ -26,12 +26,12 @@ public class DescribeDataReDistributeInfoResponseUnmarshaller {
 		describeDataReDistributeInfoResponse.setRequestId(_ctx.stringValue("DescribeDataReDistributeInfoResponse.RequestId"));
 
 		DataReDistributeInfo dataReDistributeInfo = new DataReDistributeInfo();
-		dataReDistributeInfo.setType(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Type"));
-		dataReDistributeInfo.setStartTime(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.StartTime"));
-		dataReDistributeInfo.setProgress(_ctx.longValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Progress"));
-		dataReDistributeInfo.setRemainTime(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.RemainTime"));
-		dataReDistributeInfo.setMessage(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Message"));
 		dataReDistributeInfo.setStatus(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Status"));
+		dataReDistributeInfo.setType(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Type"));
+		dataReDistributeInfo.setProgress(_ctx.longValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Progress"));
+		dataReDistributeInfo.setMessage(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.Message"));
+		dataReDistributeInfo.setStartTime(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.StartTime"));
+		dataReDistributeInfo.setRemainTime(_ctx.stringValue("DescribeDataReDistributeInfoResponse.DataReDistributeInfo.RemainTime"));
 		describeDataReDistributeInfoResponse.setDataReDistributeInfo(dataReDistributeInfo);
 	 
 	 	return describeDataReDistributeInfoResponse;

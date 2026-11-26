@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
@@ -30,11 +31,29 @@ public class CreateSupabaseProjectRequest extends RpcAcsRequest<CreateSupabasePr
 
 	private Long storageSize;
 
+	private String engineVersion;
+
+	private Boolean lightweight;
+
+	private String createOptions;
+
 	private String projectSpec;
 
 	private String projectName;
 
 	private String diskPerformanceLevel;
+
+	private String period;
+
+	private String srcProjectId;
+
+	private String backupId;
+
+	private Boolean autoScale;
+
+	private String usedTime;
+
+	private List<Tags> tagss;
 
 	private String securityIPList;
 
@@ -45,8 +64,10 @@ public class CreateSupabaseProjectRequest extends RpcAcsRequest<CreateSupabasePr
 	private String vpcId;
 
 	private String zoneId;
+
+	private String payType;
 	public CreateSupabaseProjectRequest() {
-		super("gpdb", "2016-05-03", "CreateSupabaseProject", "gpdb");
+		super("gpdb", "2016-05-03", "CreateSupabaseProject", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -74,6 +95,39 @@ public class CreateSupabaseProjectRequest extends RpcAcsRequest<CreateSupabasePr
 		this.storageSize = storageSize;
 		if(storageSize != null){
 			putQueryParameter("StorageSize", storageSize.toString());
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public Boolean getLightweight() {
+		return this.lightweight;
+	}
+
+	public void setLightweight(Boolean lightweight) {
+		this.lightweight = lightweight;
+		if(lightweight != null){
+			putQueryParameter("Lightweight", lightweight.toString());
+		}
+	}
+
+	public String getCreateOptions() {
+		return this.createOptions;
+	}
+
+	public void setCreateOptions(String createOptions) {
+		this.createOptions = createOptions;
+		if(createOptions != null){
+			putQueryParameter("CreateOptions", createOptions);
 		}
 	}
 
@@ -108,6 +162,75 @@ public class CreateSupabaseProjectRequest extends RpcAcsRequest<CreateSupabasePr
 		if(diskPerformanceLevel != null){
 			putQueryParameter("DiskPerformanceLevel", diskPerformanceLevel);
 		}
+	}
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getSrcProjectId() {
+		return this.srcProjectId;
+	}
+
+	public void setSrcProjectId(String srcProjectId) {
+		this.srcProjectId = srcProjectId;
+		if(srcProjectId != null){
+			putQueryParameter("SrcProjectId", srcProjectId);
+		}
+	}
+
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public Boolean getAutoScale() {
+		return this.autoScale;
+	}
+
+	public void setAutoScale(Boolean autoScale) {
+		this.autoScale = autoScale;
+		if(autoScale != null){
+			putQueryParameter("AutoScale", autoScale.toString());
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getSecurityIPList() {
@@ -162,6 +285,40 @@ public class CreateSupabaseProjectRequest extends RpcAcsRequest<CreateSupabasePr
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

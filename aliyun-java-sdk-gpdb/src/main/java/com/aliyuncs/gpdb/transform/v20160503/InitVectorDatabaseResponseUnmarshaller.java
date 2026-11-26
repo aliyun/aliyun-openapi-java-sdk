@@ -23,8 +23,8 @@ public class InitVectorDatabaseResponseUnmarshaller {
 	public static InitVectorDatabaseResponse unmarshall(InitVectorDatabaseResponse initVectorDatabaseResponse, UnmarshallerContext _ctx) {
 		
 		initVectorDatabaseResponse.setRequestId(_ctx.stringValue("InitVectorDatabaseResponse.RequestId"));
-		initVectorDatabaseResponse.setMessage(_ctx.stringValue("InitVectorDatabaseResponse.Message"));
 		initVectorDatabaseResponse.setStatus(_ctx.stringValue("InitVectorDatabaseResponse.Status"));
+		initVectorDatabaseResponse.setMessage(_ctx.stringValue("InitVectorDatabaseResponse.Message"));
 	 
 	 	return initVectorDatabaseResponse;
 	}

@@ -39,7 +39,7 @@ public class CreateNamespaceRequest extends RpcAcsRequest<CreateNamespaceRespons
 
 	private String workspaceId;
 	public CreateNamespaceRequest() {
-		super("gpdb", "2016-05-03", "CreateNamespace", "gpdb");
+		super("gpdb", "2016-05-03", "CreateNamespace", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

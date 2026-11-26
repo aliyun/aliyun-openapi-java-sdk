@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeHadoopConfigsResponse extends AcsResponse {
 
-	private String requestId;
+	private String configValue;
 
 	private String configName;
 
-	private String configValue;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getConfigValue() {
+		return this.configValue;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setConfigValue(String configValue) {
+		this.configValue = configValue;
 	}
 
 	public String getConfigName() {
@@ -46,12 +46,12 @@ public class DescribeHadoopConfigsResponse extends AcsResponse {
 		this.configName = configName;
 	}
 
-	public String getConfigValue() {
-		return this.configValue;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setConfigValue(String configValue) {
-		this.configValue = configValue;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

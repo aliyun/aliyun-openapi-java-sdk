@@ -26,11 +26,11 @@ public class ListNamespacesResponseUnmarshaller {
 	public static ListNamespacesResponse unmarshall(ListNamespacesResponse listNamespacesResponse, UnmarshallerContext _ctx) {
 		
 		listNamespacesResponse.setRequestId(_ctx.stringValue("ListNamespacesResponse.RequestId"));
+		listNamespacesResponse.setStatus(_ctx.stringValue("ListNamespacesResponse.Status"));
+		listNamespacesResponse.setMessage(_ctx.stringValue("ListNamespacesResponse.Message"));
+		listNamespacesResponse.setDBInstanceId(_ctx.stringValue("ListNamespacesResponse.DBInstanceId"));
 		listNamespacesResponse.setCount(_ctx.integerValue("ListNamespacesResponse.Count"));
 		listNamespacesResponse.setRegionId(_ctx.stringValue("ListNamespacesResponse.RegionId"));
-		listNamespacesResponse.setDBInstanceId(_ctx.stringValue("ListNamespacesResponse.DBInstanceId"));
-		listNamespacesResponse.setMessage(_ctx.stringValue("ListNamespacesResponse.Message"));
-		listNamespacesResponse.setStatus(_ctx.stringValue("ListNamespacesResponse.Status"));
 
 		List<String> namespaces = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListNamespacesResponse.Namespaces.Length"); i++) {

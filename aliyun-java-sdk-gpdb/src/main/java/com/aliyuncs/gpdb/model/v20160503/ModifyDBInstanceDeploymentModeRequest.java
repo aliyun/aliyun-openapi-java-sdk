@@ -34,7 +34,7 @@ public class ModifyDBInstanceDeploymentModeRequest extends RpcAcsRequest<ModifyD
 
 	private String standbyZoneId;
 	public ModifyDBInstanceDeploymentModeRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceDeploymentMode", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceDeploymentMode", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

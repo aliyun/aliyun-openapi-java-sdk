@@ -31,10 +31,10 @@ public class DescribeDownloadSQLLogsResponseUnmarshaller {
 		List<Item> records = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDownloadSQLLogsResponse.Records.Length"); i++) {
 			Item item = new Item();
-			item.setDownloadId(_ctx.longValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].DownloadId"));
-			item.setExceptionMsg(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].ExceptionMsg"));
-			item.setFileName(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].FileName"));
 			item.setStatus(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].Status"));
+			item.setFileName(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].FileName"));
+			item.setExceptionMsg(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].ExceptionMsg"));
+			item.setDownloadId(_ctx.longValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].DownloadId"));
 			item.setDownloadUrl(_ctx.stringValue("DescribeDownloadSQLLogsResponse.Records["+ i +"].DownloadUrl"));
 
 			records.add(item);

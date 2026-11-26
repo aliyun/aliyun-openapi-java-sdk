@@ -34,7 +34,7 @@ public class BindDBResourceGroupWithRoleRequest extends RpcAcsRequest<BindDBReso
 
 	private List<String> roleList;
 	public BindDBResourceGroupWithRoleRequest() {
-		super("gpdb", "2016-05-03", "BindDBResourceGroupWithRole", "gpdb");
+		super("gpdb", "2016-05-03", "BindDBResourceGroupWithRole", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

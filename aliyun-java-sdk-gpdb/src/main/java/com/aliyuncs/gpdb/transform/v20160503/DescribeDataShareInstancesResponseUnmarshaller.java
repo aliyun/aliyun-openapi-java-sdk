@@ -34,11 +34,11 @@ public class DescribeDataShareInstancesResponseUnmarshaller {
 		List<DBInstance> items = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataShareInstancesResponse.Items.Length"); i++) {
 			DBInstance dBInstance = new DBInstance();
-			dBInstance.setRegionId(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].RegionId"));
+			dBInstance.setDescription(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].Description"));
 			dBInstance.setZoneId(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].ZoneId"));
 			dBInstance.setDBInstanceId(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].DBInstanceId"));
 			dBInstance.setDBInstanceMode(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].DBInstanceMode"));
-			dBInstance.setDescription(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].Description"));
+			dBInstance.setRegionId(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].RegionId"));
 			dBInstance.setDataShareStatus(_ctx.stringValue("DescribeDataShareInstancesResponse.Items["+ i +"].DataShareStatus"));
 
 			items.add(dBInstance);

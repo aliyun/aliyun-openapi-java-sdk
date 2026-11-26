@@ -33,7 +33,7 @@ public class ModifyExternalDataServiceRequest extends RpcAcsRequest<ModifyExtern
 
 	private String serviceId;
 	public ModifyExternalDataServiceRequest() {
-		super("gpdb", "2016-05-03", "ModifyExternalDataService", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyExternalDataService", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

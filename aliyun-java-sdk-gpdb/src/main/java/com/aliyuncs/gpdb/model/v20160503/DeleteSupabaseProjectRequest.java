@@ -28,7 +28,7 @@ public class DeleteSupabaseProjectRequest extends RpcAcsRequest<DeleteSupabasePr
 
 	private String projectId;
 	public DeleteSupabaseProjectRequest() {
-		super("gpdb", "2016-05-03", "DeleteSupabaseProject", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteSupabaseProject", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

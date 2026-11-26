@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ResetIMVMonitorDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Boolean status;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public Boolean getStatus() {
 		return this.status;
@@ -42,6 +34,14 @@ public class ResetIMVMonitorDataResponse extends AcsResponse {
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

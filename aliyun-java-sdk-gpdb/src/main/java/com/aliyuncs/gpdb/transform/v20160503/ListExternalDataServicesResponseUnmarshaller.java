@@ -33,14 +33,14 @@ public class ListExternalDataServicesResponseUnmarshaller {
 		List<Items> serviceItems = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListExternalDataServicesResponse.ServiceItems.Length"); i++) {
 			Items items = new Items();
-			items.setServiceId(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceId"));
-			items.setServiceType(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceType"));
-			items.setServiceName(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceName"));
-			items.setServiceDescription(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceDescription"));
-			items.setServiceSpec(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceSpec"));
 			items.setStatus(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].Status"));
-			items.setCreateTime(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].CreateTime"));
 			items.setModifyTime(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ModifyTime"));
+			items.setServiceName(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceName"));
+			items.setServiceType(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceType"));
+			items.setServiceDescription(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceDescription"));
+			items.setCreateTime(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].CreateTime"));
+			items.setServiceSpec(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceSpec"));
+			items.setServiceId(_ctx.stringValue("ListExternalDataServicesResponse.ServiceItems["+ i +"].ServiceId"));
 
 			serviceItems.add(items);
 		}

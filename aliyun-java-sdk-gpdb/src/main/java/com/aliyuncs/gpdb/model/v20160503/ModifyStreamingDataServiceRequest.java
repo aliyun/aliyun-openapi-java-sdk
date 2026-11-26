@@ -33,7 +33,7 @@ public class ModifyStreamingDataServiceRequest extends RpcAcsRequest<ModifyStrea
 
 	private String serviceId;
 	public ModifyStreamingDataServiceRequest() {
-		super("gpdb", "2016-05-03", "ModifyStreamingDataService", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyStreamingDataService", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

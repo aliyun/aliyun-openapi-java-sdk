@@ -39,7 +39,7 @@ public class DeleteVectorIndexRequest extends RpcAcsRequest<DeleteVectorIndexRes
 
 	private String namespace;
 	public DeleteVectorIndexRequest() {
-		super("gpdb", "2016-05-03", "DeleteVectorIndex", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteVectorIndex", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

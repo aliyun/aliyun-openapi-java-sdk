@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSupabaseProjectResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String projectId;
 
-	private String requestId;
+	private String orderId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getProjectId() {
 		return this.projectId;
@@ -36,12 +46,12 @@ public class CreateSupabaseProjectResponse extends AcsResponse {
 		this.projectId = projectId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

@@ -23,8 +23,8 @@ public class UpsertCollectionDataAsyncResponseUnmarshaller {
 	public static UpsertCollectionDataAsyncResponse unmarshall(UpsertCollectionDataAsyncResponse upsertCollectionDataAsyncResponse, UnmarshallerContext _ctx) {
 		
 		upsertCollectionDataAsyncResponse.setRequestId(_ctx.stringValue("UpsertCollectionDataAsyncResponse.RequestId"));
-		upsertCollectionDataAsyncResponse.setMessage(_ctx.stringValue("UpsertCollectionDataAsyncResponse.Message"));
 		upsertCollectionDataAsyncResponse.setStatus(_ctx.stringValue("UpsertCollectionDataAsyncResponse.Status"));
+		upsertCollectionDataAsyncResponse.setMessage(_ctx.stringValue("UpsertCollectionDataAsyncResponse.Message"));
 		upsertCollectionDataAsyncResponse.setJobId(_ctx.stringValue("UpsertCollectionDataAsyncResponse.JobId"));
 	 
 	 	return upsertCollectionDataAsyncResponse;

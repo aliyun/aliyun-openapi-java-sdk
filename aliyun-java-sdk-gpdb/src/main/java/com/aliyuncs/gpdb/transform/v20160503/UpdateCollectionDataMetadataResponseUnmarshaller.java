@@ -23,9 +23,9 @@ public class UpdateCollectionDataMetadataResponseUnmarshaller {
 	public static UpdateCollectionDataMetadataResponse unmarshall(UpdateCollectionDataMetadataResponse updateCollectionDataMetadataResponse, UnmarshallerContext _ctx) {
 		
 		updateCollectionDataMetadataResponse.setRequestId(_ctx.stringValue("UpdateCollectionDataMetadataResponse.RequestId"));
-		updateCollectionDataMetadataResponse.setMessage(_ctx.stringValue("UpdateCollectionDataMetadataResponse.Message"));
 		updateCollectionDataMetadataResponse.setStatus(_ctx.stringValue("UpdateCollectionDataMetadataResponse.Status"));
 		updateCollectionDataMetadataResponse.setAppliedRows(_ctx.longValue("UpdateCollectionDataMetadataResponse.AppliedRows"));
+		updateCollectionDataMetadataResponse.setMessage(_ctx.stringValue("UpdateCollectionDataMetadataResponse.Message"));
 	 
 	 	return updateCollectionDataMetadataResponse;
 	}

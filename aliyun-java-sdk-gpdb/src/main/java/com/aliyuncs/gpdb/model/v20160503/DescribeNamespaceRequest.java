@@ -37,7 +37,7 @@ public class DescribeNamespaceRequest extends RpcAcsRequest<DescribeNamespaceRes
 
 	private String workspaceId;
 	public DescribeNamespaceRequest() {
-		super("gpdb", "2016-05-03", "DescribeNamespace", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeNamespace", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

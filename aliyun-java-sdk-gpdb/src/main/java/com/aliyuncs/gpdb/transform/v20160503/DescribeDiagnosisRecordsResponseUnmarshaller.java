@@ -33,16 +33,16 @@ public class DescribeDiagnosisRecordsResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosisRecordsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setQueryID(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].QueryID"));
-			item.setSessionID(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SessionID"));
-			item.setStartTime(_ctx.longValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].StartTime"));
-			item.setDuration(_ctx.integerValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].Duration"));
 			item.setStatus(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].Status"));
 			item.setSQLStmt(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SQLStmt"));
 			item.setUser(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].User"));
-			item.setDatabase(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].Database"));
-			item.setSQLTruncated(_ctx.booleanValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SQLTruncated"));
 			item.setSQLTruncatedThreshold(_ctx.integerValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SQLTruncatedThreshold"));
+			item.setQueryID(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].QueryID"));
+			item.setStartTime(_ctx.longValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].StartTime"));
+			item.setDatabase(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].Database"));
+			item.setDuration(_ctx.integerValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].Duration"));
+			item.setSQLTruncated(_ctx.booleanValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SQLTruncated"));
+			item.setSessionID(_ctx.stringValue("DescribeDiagnosisRecordsResponse.Items["+ i +"].SessionID"));
 
 			items.add(item);
 		}

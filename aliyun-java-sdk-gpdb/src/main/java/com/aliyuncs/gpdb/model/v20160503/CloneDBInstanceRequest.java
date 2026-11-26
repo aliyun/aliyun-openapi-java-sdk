@@ -32,7 +32,7 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String srcDbInstanceName;
 	public CloneDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "CloneDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "CloneDBInstance", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

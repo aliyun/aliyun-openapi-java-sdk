@@ -38,7 +38,7 @@ public class ListIndicesRequest extends RpcAcsRequest<ListIndicesResponse> {
 
 	private String workspaceId;
 	public ListIndicesRequest() {
-		super("gpdb", "2016-05-03", "ListIndices", "gpdb");
+		super("gpdb", "2016-05-03", "ListIndices", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

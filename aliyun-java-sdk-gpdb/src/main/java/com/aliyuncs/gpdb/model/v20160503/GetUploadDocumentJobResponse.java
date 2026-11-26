@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUploadDocumentJobResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
-
-	private Job job;
-
-	private ChunkResult chunkResult;
+	private String requestId;
 
 	private Usage usage;
 
-	public String getRequestId() {
-		return this.requestId;
+	private ChunkResult chunkResult;
+
+	private Job job;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -52,28 +52,12 @@ public class GetUploadDocumentJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Job getJob() {
-		return this.job;
-	}
-
-	public void setJob(Job job) {
-		this.job = job;
-	}
-
-	public ChunkResult getChunkResult() {
-		return this.chunkResult;
-	}
-
-	public void setChunkResult(ChunkResult chunkResult) {
-		this.chunkResult = chunkResult;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Usage getUsage() {
@@ -84,110 +68,20 @@ public class GetUploadDocumentJobResponse extends AcsResponse {
 		this.usage = usage;
 	}
 
-	public static class Job {
-
-		private String id;
-
-		private Boolean completed;
-
-		private String createTime;
-
-		private String updateTime;
-
-		private String status;
-
-		private String error;
-
-		private Integer progress;
-
-		private String errorCode;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public Boolean getCompleted() {
-			return this.completed;
-		}
-
-		public void setCompleted(Boolean completed) {
-			this.completed = completed;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getError() {
-			return this.error;
-		}
-
-		public void setError(String error) {
-			this.error = error;
-		}
-
-		public Integer getProgress() {
-			return this.progress;
-		}
-
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
+	public ChunkResult getChunkResult() {
+		return this.chunkResult;
 	}
 
-	public static class ChunkResult {
+	public void setChunkResult(ChunkResult chunkResult) {
+		this.chunkResult = chunkResult;
+	}
 
-		private String chunkFileUrl;
+	public Job getJob() {
+		return this.job;
+	}
 
-		private String plainChunkFileUrl;
-
-		public String getChunkFileUrl() {
-			return this.chunkFileUrl;
-		}
-
-		public void setChunkFileUrl(String chunkFileUrl) {
-			this.chunkFileUrl = chunkFileUrl;
-		}
-
-		public String getPlainChunkFileUrl() {
-			return this.plainChunkFileUrl;
-		}
-
-		public void setPlainChunkFileUrl(String plainChunkFileUrl) {
-			this.plainChunkFileUrl = plainChunkFileUrl;
-		}
+	public void setJob(Job job) {
+		this.job = job;
 	}
 
 	public static class Usage {
@@ -210,6 +104,122 @@ public class GetUploadDocumentJobResponse extends AcsResponse {
 
 		public void setEmbeddingEntries(Integer embeddingEntries) {
 			this.embeddingEntries = embeddingEntries;
+		}
+	}
+
+	public static class ChunkResult {
+
+		private String plainChunkFileUrl;
+
+		private String documentLoaderResultFileUrl;
+
+		private String chunkFileUrl;
+
+		public String getPlainChunkFileUrl() {
+			return this.plainChunkFileUrl;
+		}
+
+		public void setPlainChunkFileUrl(String plainChunkFileUrl) {
+			this.plainChunkFileUrl = plainChunkFileUrl;
+		}
+
+		public String getDocumentLoaderResultFileUrl() {
+			return this.documentLoaderResultFileUrl;
+		}
+
+		public void setDocumentLoaderResultFileUrl(String documentLoaderResultFileUrl) {
+			this.documentLoaderResultFileUrl = documentLoaderResultFileUrl;
+		}
+
+		public String getChunkFileUrl() {
+			return this.chunkFileUrl;
+		}
+
+		public void setChunkFileUrl(String chunkFileUrl) {
+			this.chunkFileUrl = chunkFileUrl;
+		}
+	}
+
+	public static class Job {
+
+		private String status;
+
+		private Integer progress;
+
+		private String createTime;
+
+		private Boolean completed;
+
+		private String updateTime;
+
+		private String error;
+
+		private String errorCode;
+
+		private String id;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public Integer getProgress() {
+			return this.progress;
+		}
+
+		public void setProgress(Integer progress) {
+			this.progress = progress;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Boolean getCompleted() {
+			return this.completed;
+		}
+
+		public void setCompleted(Boolean completed) {
+			this.completed = completed;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getError() {
+			return this.error;
+		}
+
+		public void setError(String error) {
+			this.error = error;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

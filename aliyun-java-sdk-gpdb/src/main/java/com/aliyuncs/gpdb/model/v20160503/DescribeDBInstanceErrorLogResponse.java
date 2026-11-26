@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstanceErrorLogResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<ItemsItem> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeDBInstanceErrorLogResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,33 +67,17 @@ public class DescribeDBInstanceErrorLogResponse extends AcsResponse {
 
 	public static class ItemsItem {
 
-		private Long time;
-
-		private String logLevel;
-
 		private String user;
 
 		private String database;
 
-		private String host;
-
 		private String logContext;
 
-		public Long getTime() {
-			return this.time;
-		}
+		private Long time;
 
-		public void setTime(Long time) {
-			this.time = time;
-		}
+		private String host;
 
-		public String getLogLevel() {
-			return this.logLevel;
-		}
-
-		public void setLogLevel(String logLevel) {
-			this.logLevel = logLevel;
-		}
+		private String logLevel;
 
 		public String getUser() {
 			return this.user;
@@ -111,6 +95,22 @@ public class DescribeDBInstanceErrorLogResponse extends AcsResponse {
 			this.database = database;
 		}
 
+		public String getLogContext() {
+			return this.logContext;
+		}
+
+		public void setLogContext(String logContext) {
+			this.logContext = logContext;
+		}
+
+		public Long getTime() {
+			return this.time;
+		}
+
+		public void setTime(Long time) {
+			this.time = time;
+		}
+
 		public String getHost() {
 			return this.host;
 		}
@@ -119,12 +119,12 @@ public class DescribeDBInstanceErrorLogResponse extends AcsResponse {
 			this.host = host;
 		}
 
-		public String getLogContext() {
-			return this.logContext;
+		public String getLogLevel() {
+			return this.logLevel;
 		}
 
-		public void setLogContext(String logContext) {
-			this.logContext = logContext;
+		public void setLogLevel(String logLevel) {
+			this.logLevel = logLevel;
 		}
 	}
 

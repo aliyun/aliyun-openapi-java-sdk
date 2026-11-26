@@ -41,7 +41,7 @@ public class GrantCollectionRequest extends RpcAcsRequest<GrantCollectionRespons
 
 	private String namespace;
 	public GrantCollectionRequest() {
-		super("gpdb", "2016-05-03", "GrantCollection", "gpdb");
+		super("gpdb", "2016-05-03", "GrantCollection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

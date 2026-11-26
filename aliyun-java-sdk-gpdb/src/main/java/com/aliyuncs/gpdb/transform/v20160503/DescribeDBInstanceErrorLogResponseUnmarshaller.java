@@ -33,12 +33,12 @@ public class DescribeDBInstanceErrorLogResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceErrorLogResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setTime(_ctx.longValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].Time"));
-			itemsItem.setLogLevel(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].LogLevel"));
 			itemsItem.setUser(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].User"));
 			itemsItem.setDatabase(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].Database"));
-			itemsItem.setHost(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].Host"));
 			itemsItem.setLogContext(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].LogContext"));
+			itemsItem.setTime(_ctx.longValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].Time"));
+			itemsItem.setHost(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].Host"));
+			itemsItem.setLogLevel(_ctx.stringValue("DescribeDBInstanceErrorLogResponse.Items["+ i +"].LogLevel"));
 
 			items.add(itemsItem);
 		}

@@ -30,7 +30,7 @@ public class ListBackupJobsRequest extends RpcAcsRequest<ListBackupJobsResponse>
 
 	private String backupMode;
 	public ListBackupJobsRequest() {
-		super("gpdb", "2016-05-03", "ListBackupJobs", "gpdb");
+		super("gpdb", "2016-05-03", "ListBackupJobs", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

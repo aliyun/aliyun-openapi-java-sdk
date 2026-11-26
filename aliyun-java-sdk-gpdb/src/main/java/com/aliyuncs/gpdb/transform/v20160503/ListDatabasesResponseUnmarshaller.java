@@ -26,8 +26,8 @@ public class ListDatabasesResponseUnmarshaller {
 	public static ListDatabasesResponse unmarshall(ListDatabasesResponse listDatabasesResponse, UnmarshallerContext _ctx) {
 		
 		listDatabasesResponse.setRequestId(_ctx.stringValue("ListDatabasesResponse.RequestId"));
-		listDatabasesResponse.setMessage(_ctx.stringValue("ListDatabasesResponse.Message"));
 		listDatabasesResponse.setStatus(_ctx.stringValue("ListDatabasesResponse.Status"));
+		listDatabasesResponse.setMessage(_ctx.stringValue("ListDatabasesResponse.Message"));
 		listDatabasesResponse.setNextToken(_ctx.stringValue("ListDatabasesResponse.NextToken"));
 
 		List<String> databases = new ArrayList<String>();

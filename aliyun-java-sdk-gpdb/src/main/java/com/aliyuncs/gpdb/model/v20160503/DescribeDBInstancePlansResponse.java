@@ -27,15 +27,15 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 
 	private String status;
 
-	private String errorMessage;
-
-	private String requestId;
-
 	private Integer totalRecordCount;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
 	private Integer pageNumber;
+
+	private String errorMessage;
 
 	private List<PlanList> items;
 
@@ -45,22 +45,6 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public Integer getTotalRecordCount() {
@@ -79,12 +63,28 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public List<PlanList> getItems() {
@@ -97,40 +97,32 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 
 	public static class PlanList {
 
-		private String planName;
-
-		private String planDesc;
+		private String dBInstanceId;
 
 		private String planId;
 
-		private String planStatus;
-
-		private String planType;
-
 		private String planScheduleType;
-
-		private String planStartDate;
 
 		private String planEndDate;
 
+		private String planType;
+
+		private String planDesc;
+
+		private String planName;
+
+		private String planStartDate;
+
 		private String planConfig;
 
-		private String dBInstanceId;
+		private String planStatus;
 
-		public String getPlanName() {
-			return this.planName;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setPlanName(String planName) {
-			this.planName = planName;
-		}
-
-		public String getPlanDesc() {
-			return this.planDesc;
-		}
-
-		public void setPlanDesc(String planDesc) {
-			this.planDesc = planDesc;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
 		public String getPlanId() {
@@ -141,36 +133,12 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 			this.planId = planId;
 		}
 
-		public String getPlanStatus() {
-			return this.planStatus;
-		}
-
-		public void setPlanStatus(String planStatus) {
-			this.planStatus = planStatus;
-		}
-
-		public String getPlanType() {
-			return this.planType;
-		}
-
-		public void setPlanType(String planType) {
-			this.planType = planType;
-		}
-
 		public String getPlanScheduleType() {
 			return this.planScheduleType;
 		}
 
 		public void setPlanScheduleType(String planScheduleType) {
 			this.planScheduleType = planScheduleType;
-		}
-
-		public String getPlanStartDate() {
-			return this.planStartDate;
-		}
-
-		public void setPlanStartDate(String planStartDate) {
-			this.planStartDate = planStartDate;
 		}
 
 		public String getPlanEndDate() {
@@ -181,6 +149,38 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 			this.planEndDate = planEndDate;
 		}
 
+		public String getPlanType() {
+			return this.planType;
+		}
+
+		public void setPlanType(String planType) {
+			this.planType = planType;
+		}
+
+		public String getPlanDesc() {
+			return this.planDesc;
+		}
+
+		public void setPlanDesc(String planDesc) {
+			this.planDesc = planDesc;
+		}
+
+		public String getPlanName() {
+			return this.planName;
+		}
+
+		public void setPlanName(String planName) {
+			this.planName = planName;
+		}
+
+		public String getPlanStartDate() {
+			return this.planStartDate;
+		}
+
+		public void setPlanStartDate(String planStartDate) {
+			this.planStartDate = planStartDate;
+		}
+
 		public String getPlanConfig() {
 			return this.planConfig;
 		}
@@ -189,12 +189,12 @@ public class DescribeDBInstancePlansResponse extends AcsResponse {
 			this.planConfig = planConfig;
 		}
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getPlanStatus() {
+			return this.planStatus;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setPlanStatus(String planStatus) {
+			this.planStatus = planStatus;
 		}
 	}
 

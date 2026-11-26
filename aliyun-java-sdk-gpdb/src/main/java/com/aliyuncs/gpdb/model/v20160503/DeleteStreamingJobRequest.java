@@ -29,7 +29,7 @@ public class DeleteStreamingJobRequest extends RpcAcsRequest<DeleteStreamingJobR
 
 	private String dBInstanceId;
 	public DeleteStreamingJobRequest() {
-		super("gpdb", "2016-05-03", "DeleteStreamingJob", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteStreamingJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

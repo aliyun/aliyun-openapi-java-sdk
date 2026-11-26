@@ -23,8 +23,8 @@ public class DownloadDiagnosisRecordsResponseUnmarshaller {
 	public static DownloadDiagnosisRecordsResponse unmarshall(DownloadDiagnosisRecordsResponse downloadDiagnosisRecordsResponse, UnmarshallerContext _ctx) {
 		
 		downloadDiagnosisRecordsResponse.setRequestId(_ctx.stringValue("DownloadDiagnosisRecordsResponse.RequestId"));
-		downloadDiagnosisRecordsResponse.setDownloadId(_ctx.stringValue("DownloadDiagnosisRecordsResponse.DownloadId"));
 		downloadDiagnosisRecordsResponse.setDBInstanceId(_ctx.stringValue("DownloadDiagnosisRecordsResponse.DBInstanceId"));
+		downloadDiagnosisRecordsResponse.setDownloadId(_ctx.stringValue("DownloadDiagnosisRecordsResponse.DownloadId"));
 	 
 	 	return downloadDiagnosisRecordsResponse;
 	}

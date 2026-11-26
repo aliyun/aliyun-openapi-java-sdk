@@ -37,7 +37,7 @@ public class DeleteCollectionRequest extends RpcAcsRequest<DeleteCollectionRespo
 
 	private String workspaceId;
 	public DeleteCollectionRequest() {
-		super("gpdb", "2016-05-03", "DeleteCollection", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteCollection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,18 +24,18 @@ public class DescribeCollectionResponseUnmarshaller {
 	public static DescribeCollectionResponse unmarshall(DescribeCollectionResponse describeCollectionResponse, UnmarshallerContext _ctx) {
 		
 		describeCollectionResponse.setRequestId(_ctx.stringValue("DescribeCollectionResponse.RequestId"));
+		describeCollectionResponse.setStatus(_ctx.stringValue("DescribeCollectionResponse.Status"));
+		describeCollectionResponse.setMessage(_ctx.stringValue("DescribeCollectionResponse.Message"));
+		describeCollectionResponse.setMetadata(_ctx.mapValue("DescribeCollectionResponse.Metadata"));
+		describeCollectionResponse.setSparseVectorMetrics(_ctx.stringValue("DescribeCollectionResponse.SparseVectorMetrics"));
 		describeCollectionResponse.setDimension(_ctx.integerValue("DescribeCollectionResponse.Dimension"));
 		describeCollectionResponse.setFullTextRetrievalFields(_ctx.stringValue("DescribeCollectionResponse.FullTextRetrievalFields"));
-		describeCollectionResponse.setMetadata(_ctx.mapValue("DescribeCollectionResponse.Metadata"));
-		describeCollectionResponse.setMetrics(_ctx.stringValue("DescribeCollectionResponse.Metrics"));
-		describeCollectionResponse.setParser(_ctx.stringValue("DescribeCollectionResponse.Parser"));
-		describeCollectionResponse.setDBInstanceId(_ctx.stringValue("DescribeCollectionResponse.DBInstanceId"));
-		describeCollectionResponse.setRegionId(_ctx.stringValue("DescribeCollectionResponse.RegionId"));
 		describeCollectionResponse.setNamespace(_ctx.stringValue("DescribeCollectionResponse.Namespace"));
-		describeCollectionResponse.setMessage(_ctx.stringValue("DescribeCollectionResponse.Message"));
-		describeCollectionResponse.setStatus(_ctx.stringValue("DescribeCollectionResponse.Status"));
+		describeCollectionResponse.setParser(_ctx.stringValue("DescribeCollectionResponse.Parser"));
+		describeCollectionResponse.setMetrics(_ctx.stringValue("DescribeCollectionResponse.Metrics"));
+		describeCollectionResponse.setDBInstanceId(_ctx.stringValue("DescribeCollectionResponse.DBInstanceId"));
 		describeCollectionResponse.setSupportSparse(_ctx.booleanValue("DescribeCollectionResponse.SupportSparse"));
-		describeCollectionResponse.setSparseVectorMetrics(_ctx.stringValue("DescribeCollectionResponse.SparseVectorMetrics"));
+		describeCollectionResponse.setRegionId(_ctx.stringValue("DescribeCollectionResponse.RegionId"));
 	 
 	 	return describeCollectionResponse;
 	}

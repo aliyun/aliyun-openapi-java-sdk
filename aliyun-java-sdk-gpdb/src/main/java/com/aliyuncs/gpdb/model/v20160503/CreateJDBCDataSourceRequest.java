@@ -39,7 +39,7 @@ public class CreateJDBCDataSourceRequest extends RpcAcsRequest<CreateJDBCDataSou
 
 	private String jDBCUserName;
 	public CreateJDBCDataSourceRequest() {
-		super("gpdb", "2016-05-03", "CreateJDBCDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "CreateJDBCDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

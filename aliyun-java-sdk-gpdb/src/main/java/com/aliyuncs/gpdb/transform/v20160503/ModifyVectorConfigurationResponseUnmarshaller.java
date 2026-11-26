@@ -24,8 +24,8 @@ public class ModifyVectorConfigurationResponseUnmarshaller {
 		
 		modifyVectorConfigurationResponse.setRequestId(_ctx.stringValue("ModifyVectorConfigurationResponse.RequestId"));
 		modifyVectorConfigurationResponse.setStatus(_ctx.booleanValue("ModifyVectorConfigurationResponse.Status"));
-		modifyVectorConfigurationResponse.setErrorMessage(_ctx.stringValue("ModifyVectorConfigurationResponse.ErrorMessage"));
 		modifyVectorConfigurationResponse.setDBInstanceId(_ctx.stringValue("ModifyVectorConfigurationResponse.DBInstanceId"));
+		modifyVectorConfigurationResponse.setErrorMessage(_ctx.stringValue("ModifyVectorConfigurationResponse.ErrorMessage"));
 	 
 	 	return modifyVectorConfigurationResponse;
 	}

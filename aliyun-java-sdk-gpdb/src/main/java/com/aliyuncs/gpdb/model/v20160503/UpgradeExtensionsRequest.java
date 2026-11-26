@@ -31,7 +31,7 @@ public class UpgradeExtensionsRequest extends RpcAcsRequest<UpgradeExtensionsRes
 
 	private String databaseName;
 	public UpgradeExtensionsRequest() {
-		super("gpdb", "2016-05-03", "UpgradeExtensions", "gpdb");
+		super("gpdb", "2016-05-03", "UpgradeExtensions", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

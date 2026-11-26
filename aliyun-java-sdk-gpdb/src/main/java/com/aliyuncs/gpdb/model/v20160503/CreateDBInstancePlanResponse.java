@@ -24,38 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateDBInstancePlanResponse extends AcsResponse {
 
-	private String dBInstanceId;
-
-	private String errorMessage;
-
-	private String planId;
+	private String status;
 
 	private String requestId;
 
-	private String status;
+	private String dBInstanceId;
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	private String planId;
+
+	private String errorMessage;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getPlanId() {
-		return this.planId;
-	}
-
-	public void setPlanId(String planId) {
-		this.planId = planId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getRequestId() {
@@ -66,12 +50,28 @@ public class CreateDBInstancePlanResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	@Override

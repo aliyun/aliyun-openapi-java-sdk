@@ -34,7 +34,7 @@ public class UnbindDBResourceGroupWithRoleRequest extends RpcAcsRequest<UnbindDB
 
 	private List<String> roleList;
 	public UnbindDBResourceGroupWithRoleRequest() {
-		super("gpdb", "2016-05-03", "UnbindDBResourceGroupWithRole", "gpdb");
+		super("gpdb", "2016-05-03", "UnbindDBResourceGroupWithRole", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

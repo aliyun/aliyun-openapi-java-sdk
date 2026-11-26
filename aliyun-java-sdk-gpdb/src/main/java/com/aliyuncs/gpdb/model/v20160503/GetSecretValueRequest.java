@@ -35,7 +35,7 @@ public class GetSecretValueRequest extends RpcAcsRequest<GetSecretValueResponse>
 
 	private String workspaceId;
 	public GetSecretValueRequest() {
-		super("gpdb", "2016-05-03", "GetSecretValue", "gpdb");
+		super("gpdb", "2016-05-03", "GetSecretValue", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

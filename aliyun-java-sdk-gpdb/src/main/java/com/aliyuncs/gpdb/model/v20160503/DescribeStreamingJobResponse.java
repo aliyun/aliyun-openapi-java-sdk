@@ -25,96 +25,64 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamingJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String jobId;
-
-	private String jobName;
-
-	private String jobDescription;
-
-	private String dataSourceId;
+	private String groupName;
 
 	private String account;
 
-	private String password;
-
-	private String destDatabase;
+	private String modifyTime;
 
 	private String destSchema;
 
-	private String destTable;
+	private String consistency;
 
-	private String writeMode;
-
-	private String mode;
+	private String jobName;
 
 	private String jobConfig;
 
-	private String status;
-
-	private String errorMessage;
-
-	private String createTime;
-
-	private String modifyTime;
-
-	private String groupName;
-
-	private String consistency;
-
-	private Integer errorLimitCount;
+	private String jobDescription;
 
 	private String fallbackOffset;
 
+	private String destTable;
+
+	private String jobId;
+
+	private String writeMode;
+
+	private String password;
+
+	private String status;
+
+	private String requestId;
+
+	private String mode;
+
+	private String createTime;
+
+	private String destDatabase;
+
 	private String dataSourceName;
 
-	private List<String> srcColumns;
+	private String errorMessage;
 
-	private List<String> destColumns;
+	private String dataSourceId;
+
+	private Integer errorLimitCount;
+
+	private List<String> srcColumns;
 
 	private List<String> matchColumns;
 
 	private List<String> updateColumns;
 
-	public String getRequestId() {
-		return this.requestId;
+	private List<String> destColumns;
+
+	public String getGroupName() {
+		return this.groupName;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
-	public String getJobName() {
-		return this.jobName;
-	}
-
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-	}
-
-	public String getJobDescription() {
-		return this.jobDescription;
-	}
-
-	public void setJobDescription(String jobDescription) {
-		this.jobDescription = jobDescription;
-	}
-
-	public String getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(String dataSourceId) {
-		this.dataSourceId = dataSourceId;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
 	public String getAccount() {
@@ -125,20 +93,12 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 		this.account = account;
 	}
 
-	public String getPassword() {
-		return this.password;
+	public String getModifyTime() {
+		return this.modifyTime;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getDestDatabase() {
-		return this.destDatabase;
-	}
-
-	public void setDestDatabase(String destDatabase) {
-		this.destDatabase = destDatabase;
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
 	}
 
 	public String getDestSchema() {
@@ -149,28 +109,20 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 		this.destSchema = destSchema;
 	}
 
-	public String getDestTable() {
-		return this.destTable;
+	public String getConsistency() {
+		return this.consistency;
 	}
 
-	public void setDestTable(String destTable) {
-		this.destTable = destTable;
+	public void setConsistency(String consistency) {
+		this.consistency = consistency;
 	}
 
-	public String getWriteMode() {
-		return this.writeMode;
+	public String getJobName() {
+		return this.jobName;
 	}
 
-	public void setWriteMode(String writeMode) {
-		this.writeMode = writeMode;
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
 	}
 
 	public String getJobConfig() {
@@ -181,60 +133,12 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 		this.jobConfig = jobConfig;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getJobDescription() {
+		return this.jobDescription;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getModifyTime() {
-		return this.modifyTime;
-	}
-
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-
-	public String getConsistency() {
-		return this.consistency;
-	}
-
-	public void setConsistency(String consistency) {
-		this.consistency = consistency;
-	}
-
-	public Integer getErrorLimitCount() {
-		return this.errorLimitCount;
-	}
-
-	public void setErrorLimitCount(Integer errorLimitCount) {
-		this.errorLimitCount = errorLimitCount;
+	public void setJobDescription(String jobDescription) {
+		this.jobDescription = jobDescription;
 	}
 
 	public String getFallbackOffset() {
@@ -245,6 +149,78 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 		this.fallbackOffset = fallbackOffset;
 	}
 
+	public String getDestTable() {
+		return this.destTable;
+	}
+
+	public void setDestTable(String destTable) {
+		this.destTable = destTable;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
+	public String getWriteMode() {
+		return this.writeMode;
+	}
+
+	public void setWriteMode(String writeMode) {
+		this.writeMode = writeMode;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getDestDatabase() {
+		return this.destDatabase;
+	}
+
+	public void setDestDatabase(String destDatabase) {
+		this.destDatabase = destDatabase;
+	}
+
 	public String getDataSourceName() {
 		return this.dataSourceName;
 	}
@@ -253,20 +229,36 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 		this.dataSourceName = dataSourceName;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+	}
+
+	public Integer getErrorLimitCount() {
+		return this.errorLimitCount;
+	}
+
+	public void setErrorLimitCount(Integer errorLimitCount) {
+		this.errorLimitCount = errorLimitCount;
+	}
+
 	public List<String> getSrcColumns() {
 		return this.srcColumns;
 	}
 
 	public void setSrcColumns(List<String> srcColumns) {
 		this.srcColumns = srcColumns;
-	}
-
-	public List<String> getDestColumns() {
-		return this.destColumns;
-	}
-
-	public void setDestColumns(List<String> destColumns) {
-		this.destColumns = destColumns;
 	}
 
 	public List<String> getMatchColumns() {
@@ -283,6 +275,14 @@ public class DescribeStreamingJobResponse extends AcsResponse {
 
 	public void setUpdateColumns(List<String> updateColumns) {
 		this.updateColumns = updateColumns;
+	}
+
+	public List<String> getDestColumns() {
+		return this.destColumns;
+	}
+
+	public void setDestColumns(List<String> destColumns) {
+		this.destColumns = destColumns;
 	}
 
 	@Override

@@ -27,10 +27,10 @@ public class ListSupabaseProjectsResponseUnmarshaller {
 	public static ListSupabaseProjectsResponse unmarshall(ListSupabaseProjectsResponse listSupabaseProjectsResponse, UnmarshallerContext _ctx) {
 		
 		listSupabaseProjectsResponse.setRequestId(_ctx.stringValue("ListSupabaseProjectsResponse.RequestId"));
-		listSupabaseProjectsResponse.setPageNumber(_ctx.integerValue("ListSupabaseProjectsResponse.PageNumber"));
-		listSupabaseProjectsResponse.setPageRecordCount(_ctx.integerValue("ListSupabaseProjectsResponse.PageRecordCount"));
 		listSupabaseProjectsResponse.setTotalRecordCount(_ctx.integerValue("ListSupabaseProjectsResponse.TotalRecordCount"));
+		listSupabaseProjectsResponse.setPageRecordCount(_ctx.integerValue("ListSupabaseProjectsResponse.PageRecordCount"));
 		listSupabaseProjectsResponse.setNextToken(_ctx.stringValue("ListSupabaseProjectsResponse.NextToken"));
+		listSupabaseProjectsResponse.setPageNumber(_ctx.integerValue("ListSupabaseProjectsResponse.PageNumber"));
 		listSupabaseProjectsResponse.setMaxResults(_ctx.integerValue("ListSupabaseProjectsResponse.MaxResults"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
@@ -54,6 +54,9 @@ public class ListSupabaseProjectsResponseUnmarshaller {
 			itemsItem.setSecurityIPList(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].SecurityIPList"));
 			itemsItem.setDashboardPassword(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].DashboardPassword"));
 			itemsItem.setRegionId(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].RegionId"));
+			itemsItem.setExpireTime(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].ExpireTime"));
+			itemsItem.setAutoScale(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].AutoScale"));
+			itemsItem.setProjectDescription(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].ProjectDescription"));
 			itemsItem.setEngine(_ctx.stringValue("ListSupabaseProjectsResponse.Items["+ i +"].Engine"));
 
 			items.add(itemsItem);

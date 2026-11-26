@@ -24,8 +24,8 @@ public class PauseInstanceResponseUnmarshaller {
 		
 		pauseInstanceResponse.setRequestId(_ctx.stringValue("PauseInstanceResponse.RequestId"));
 		pauseInstanceResponse.setStatus(_ctx.booleanValue("PauseInstanceResponse.Status"));
-		pauseInstanceResponse.setErrorMessage(_ctx.stringValue("PauseInstanceResponse.ErrorMessage"));
 		pauseInstanceResponse.setDBInstanceId(_ctx.stringValue("PauseInstanceResponse.DBInstanceId"));
+		pauseInstanceResponse.setErrorMessage(_ctx.stringValue("PauseInstanceResponse.ErrorMessage"));
 	 
 	 	return pauseInstanceResponse;
 	}

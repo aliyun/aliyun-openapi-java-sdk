@@ -26,34 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryContentResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String embeddingTokens;
 
 	private String status;
 
-	private String embeddingTokens;
+	private String message;
+
+	private String requestId;
 
 	private List<MatchList> matches;
 
+	private List<RelationsItem> relations;
+
 	private List<WindowMatchesItem> windowMatches;
+
+	private List<EntitiesItem> entities;
 
 	private Usage usage;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEmbeddingTokens() {
+		return this.embeddingTokens;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setEmbeddingTokens(String embeddingTokens) {
+		this.embeddingTokens = embeddingTokens;
 	}
 
 	public String getStatus() {
@@ -64,12 +60,20 @@ public class QueryContentResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getEmbeddingTokens() {
-		return this.embeddingTokens;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setEmbeddingTokens(String embeddingTokens) {
-		this.embeddingTokens = embeddingTokens;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<MatchList> getMatches() {
@@ -80,12 +84,28 @@ public class QueryContentResponse extends AcsResponse {
 		this.matches = matches;
 	}
 
+	public List<RelationsItem> getRelations() {
+		return this.relations;
+	}
+
+	public void setRelations(List<RelationsItem> relations) {
+		this.relations = relations;
+	}
+
 	public List<WindowMatchesItem> getWindowMatches() {
 		return this.windowMatches;
 	}
 
 	public void setWindowMatches(List<WindowMatchesItem> windowMatches) {
 		this.windowMatches = windowMatches;
+	}
+
+	public List<EntitiesItem> getEntities() {
+		return this.entities;
+	}
+
+	public void setEntities(List<EntitiesItem> entities) {
+		this.entities = entities;
 	}
 
 	public Usage getUsage() {
@@ -98,64 +118,32 @@ public class QueryContentResponse extends AcsResponse {
 
 	public static class MatchList {
 
-		private String id;
-
-		private String content;
-
-		private Map<Object,Object> metadata;
-
-		private String fileName;
-
-		private Double score;
+		private String fileURL;
 
 		private Integer retrievalSource;
 
-		private String loaderMetadata;
+		private Double score;
 
-		private String fileURL;
+		private String content;
+
+		private String fileName;
+
+		private Map<Object,Object> metadata;
 
 		private Double rerankScore;
 
+		private String loaderMetadata;
+
+		private String id;
+
 		private List<Double> vector;
 
-		public String getId() {
-			return this.id;
+		public String getFileURL() {
+			return this.fileURL;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getContent() {
-			return this.content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
-
-		public Map<Object,Object> getMetadata() {
-			return this.metadata;
-		}
-
-		public void setMetadata(Map<Object,Object> metadata) {
-			this.metadata = metadata;
-		}
-
-		public String getFileName() {
-			return this.fileName;
-		}
-
-		public void setFileName(String fileName) {
-			this.fileName = fileName;
-		}
-
-		public Double getScore() {
-			return this.score;
-		}
-
-		public void setScore(Double score) {
-			this.score = score;
+		public void setFileURL(String fileURL) {
+			this.fileURL = fileURL;
 		}
 
 		public Integer getRetrievalSource() {
@@ -166,20 +154,36 @@ public class QueryContentResponse extends AcsResponse {
 			this.retrievalSource = retrievalSource;
 		}
 
-		public String getLoaderMetadata() {
-			return this.loaderMetadata;
+		public Double getScore() {
+			return this.score;
 		}
 
-		public void setLoaderMetadata(String loaderMetadata) {
-			this.loaderMetadata = loaderMetadata;
+		public void setScore(Double score) {
+			this.score = score;
 		}
 
-		public String getFileURL() {
-			return this.fileURL;
+		public String getContent() {
+			return this.content;
 		}
 
-		public void setFileURL(String fileURL) {
-			this.fileURL = fileURL;
+		public void setContent(String content) {
+			this.content = content;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public Map<Object,Object> getMetadata() {
+			return this.metadata;
+		}
+
+		public void setMetadata(Map<Object,Object> metadata) {
+			this.metadata = metadata;
 		}
 
 		public Double getRerankScore() {
@@ -190,12 +194,81 @@ public class QueryContentResponse extends AcsResponse {
 			this.rerankScore = rerankScore;
 		}
 
+		public String getLoaderMetadata() {
+			return this.loaderMetadata;
+		}
+
+		public void setLoaderMetadata(String loaderMetadata) {
+			this.loaderMetadata = loaderMetadata;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public List<Double> getVector() {
 			return this.vector;
 		}
 
 		public void setVector(List<Double> vector) {
 			this.vector = vector;
+		}
+	}
+
+	public static class RelationsItem {
+
+		private String description;
+
+		private String sourceEntity;
+
+		private String fileName;
+
+		private String id;
+
+		private String targetEntity;
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSourceEntity() {
+			return this.sourceEntity;
+		}
+
+		public void setSourceEntity(String sourceEntity) {
+			this.sourceEntity = sourceEntity;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getTargetEntity() {
+			return this.targetEntity;
+		}
+
+		public void setTargetEntity(String targetEntity) {
+			this.targetEntity = targetEntity;
 		}
 	}
 
@@ -213,23 +286,15 @@ public class QueryContentResponse extends AcsResponse {
 
 		public static class WindowMatchItem {
 
-			private String id;
-
 			private String content;
-
-			private Map<Object,Object> metadata;
 
 			private String fileName;
 
+			private Map<Object,Object> metadata;
+
 			private String loaderMetadata;
 
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
+			private String id;
 
 			public String getContent() {
 				return this.content;
@@ -237,14 +302,6 @@ public class QueryContentResponse extends AcsResponse {
 
 			public void setContent(String content) {
 				this.content = content;
-			}
-
-			public Map<Object,Object> getMetadata() {
-				return this.metadata;
-			}
-
-			public void setMetadata(Map<Object,Object> metadata) {
-				this.metadata = metadata;
 			}
 
 			public String getFileName() {
@@ -255,6 +312,14 @@ public class QueryContentResponse extends AcsResponse {
 				this.fileName = fileName;
 			}
 
+			public Map<Object,Object> getMetadata() {
+				return this.metadata;
+			}
+
+			public void setMetadata(Map<Object,Object> metadata) {
+				this.metadata = metadata;
+			}
+
 			public String getLoaderMetadata() {
 				return this.loaderMetadata;
 			}
@@ -262,6 +327,67 @@ public class QueryContentResponse extends AcsResponse {
 			public void setLoaderMetadata(String loaderMetadata) {
 				this.loaderMetadata = loaderMetadata;
 			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+		}
+	}
+
+	public static class EntitiesItem {
+
+		private String entity;
+
+		private String type;
+
+		private String description;
+
+		private String fileName;
+
+		private String id;
+
+		public String getEntity() {
+			return this.entity;
+		}
+
+		public void setEntity(String entity) {
+			this.entity = entity;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getFileName() {
+			return this.fileName;
+		}
+
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

@@ -52,7 +52,7 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String instanceNetworkType;
 	public DescribeDBInstancesRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstances", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,8 +36,8 @@ public class DescribeDataSharePerformanceResponseUnmarshaller {
 		List<PerformanceItem> performanceKeys = new ArrayList<PerformanceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataSharePerformanceResponse.PerformanceKeys.Length"); i++) {
 			PerformanceItem performanceItem = new PerformanceItem();
-			performanceItem.setName(_ctx.stringValue("DescribeDataSharePerformanceResponse.PerformanceKeys["+ i +"].Name"));
 			performanceItem.setUnit(_ctx.stringValue("DescribeDataSharePerformanceResponse.PerformanceKeys["+ i +"].Unit"));
+			performanceItem.setName(_ctx.stringValue("DescribeDataSharePerformanceResponse.PerformanceKeys["+ i +"].Name"));
 
 			List<SeriesItem> series = new ArrayList<SeriesItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataSharePerformanceResponse.PerformanceKeys["+ i +"].Series.Length"); j++) {

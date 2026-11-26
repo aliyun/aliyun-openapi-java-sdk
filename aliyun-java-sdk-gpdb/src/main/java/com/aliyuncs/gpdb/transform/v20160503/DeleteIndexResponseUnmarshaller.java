@@ -23,8 +23,8 @@ public class DeleteIndexResponseUnmarshaller {
 	public static DeleteIndexResponse unmarshall(DeleteIndexResponse deleteIndexResponse, UnmarshallerContext _ctx) {
 		
 		deleteIndexResponse.setRequestId(_ctx.stringValue("DeleteIndexResponse.RequestId"));
-		deleteIndexResponse.setMessage(_ctx.stringValue("DeleteIndexResponse.Message"));
 		deleteIndexResponse.setStatus(_ctx.stringValue("DeleteIndexResponse.Status"));
+		deleteIndexResponse.setMessage(_ctx.stringValue("DeleteIndexResponse.Message"));
 	 
 	 	return deleteIndexResponse;
 	}

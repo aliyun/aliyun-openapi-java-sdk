@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateExtensionsResponse extends AcsResponse {
 
-	private String extensions;
-
 	private String requestId;
 
-	public String getExtensions() {
-		return this.extensions;
-	}
-
-	public void setExtensions(String extensions) {
-		this.extensions = extensions;
-	}
+	private String extensions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateExtensionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getExtensions() {
+		return this.extensions;
+	}
+
+	public void setExtensions(String extensions) {
+		this.extensions = extensions;
 	}
 
 	@Override

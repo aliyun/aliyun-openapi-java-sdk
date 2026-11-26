@@ -29,7 +29,7 @@ public class DescribeExternalDataServiceRequest extends RpcAcsRequest<DescribeEx
 
 	private String serviceId;
 	public DescribeExternalDataServiceRequest() {
-		super("gpdb", "2016-05-03", "DescribeExternalDataService", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeExternalDataService", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

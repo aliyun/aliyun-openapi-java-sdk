@@ -40,7 +40,7 @@ public class ModifyCollectionRequest extends RpcAcsRequest<ModifyCollectionRespo
 
 	private String workspaceId;
 	public ModifyCollectionRequest() {
-		super("gpdb", "2016-05-03", "ModifyCollection", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyCollection", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

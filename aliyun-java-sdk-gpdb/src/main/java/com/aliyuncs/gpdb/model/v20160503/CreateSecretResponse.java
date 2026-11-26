@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSecretResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
-
-	private String status;
-
 	private String secretArn;
 
 	private String secretName;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String status;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String message;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	private String requestId;
 
 	public String getSecretArn() {
 		return this.secretArn;
@@ -72,6 +48,30 @@ public class CreateSecretResponse extends AcsResponse {
 
 	public void setSecretName(String secretName) {
 		this.secretName = secretName;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

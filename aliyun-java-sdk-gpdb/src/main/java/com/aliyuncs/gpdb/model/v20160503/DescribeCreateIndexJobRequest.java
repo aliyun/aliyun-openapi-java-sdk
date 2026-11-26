@@ -40,7 +40,7 @@ public class DescribeCreateIndexJobRequest extends RpcAcsRequest<DescribeCreateI
 
 	private String workspaceId;
 	public DescribeCreateIndexJobRequest() {
-		super("gpdb", "2016-05-03", "DescribeCreateIndexJob", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeCreateIndexJob", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

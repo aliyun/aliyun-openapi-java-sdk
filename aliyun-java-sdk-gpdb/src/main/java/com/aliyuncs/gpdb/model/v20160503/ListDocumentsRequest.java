@@ -39,7 +39,7 @@ public class ListDocumentsRequest extends RpcAcsRequest<ListDocumentsResponse> {
 
 	private Integer maxResults;
 	public ListDocumentsRequest() {
-		super("gpdb", "2016-05-03", "ListDocuments", "gpdb");
+		super("gpdb", "2016-05-03", "ListDocuments", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

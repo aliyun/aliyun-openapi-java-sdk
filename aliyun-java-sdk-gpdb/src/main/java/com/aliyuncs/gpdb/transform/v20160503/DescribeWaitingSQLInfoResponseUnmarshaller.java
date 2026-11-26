@@ -32,16 +32,16 @@ public class DescribeWaitingSQLInfoResponseUnmarshaller {
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeWaitingSQLInfoResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setPID(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].PID"));
-			item.setUser(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].User"));
+			item.setBlockedBySQLStmt(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedBySQLStmt"));
+			item.setGrantLocks(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].GrantLocks"));
+			item.setBlockedByPID(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByPID"));
 			item.setSQLStmt(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].SQLStmt"));
+			item.setUser(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].User"));
+			item.setBlockedByUser(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByUser"));
+			item.setBlockedByApplication(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByApplication"));
+			item.setPID(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].PID"));
 			item.setApplication(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].Application"));
 			item.setNotGrantLocks(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].NotGrantLocks"));
-			item.setBlockedByPID(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByPID"));
-			item.setBlockedByUser(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByUser"));
-			item.setBlockedBySQLStmt(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedBySQLStmt"));
-			item.setBlockedByApplication(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].BlockedByApplication"));
-			item.setGrantLocks(_ctx.stringValue("DescribeWaitingSQLInfoResponse.Items["+ i +"].GrantLocks"));
 
 			items.add(item);
 		}

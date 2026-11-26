@@ -37,7 +37,7 @@ public class ModifyRemoteADBDataSourceRequest extends RpcAcsRequest<ModifyRemote
 
 	private String userName;
 	public ModifyRemoteADBDataSourceRequest() {
-		super("gpdb", "2016-05-03", "ModifyRemoteADBDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyRemoteADBDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

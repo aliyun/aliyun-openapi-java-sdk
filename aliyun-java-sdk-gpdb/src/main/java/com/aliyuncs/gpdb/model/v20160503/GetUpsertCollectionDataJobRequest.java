@@ -39,7 +39,7 @@ public class GetUpsertCollectionDataJobRequest extends RpcAcsRequest<GetUpsertCo
 
 	private String workspaceId;
 	public GetUpsertCollectionDataJobRequest() {
-		super("gpdb", "2016-05-03", "GetUpsertCollectionDataJob", "gpdb");
+		super("gpdb", "2016-05-03", "GetUpsertCollectionDataJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

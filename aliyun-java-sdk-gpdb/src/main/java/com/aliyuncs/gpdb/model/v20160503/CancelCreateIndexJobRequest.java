@@ -40,7 +40,7 @@ public class CancelCreateIndexJobRequest extends RpcAcsRequest<CancelCreateIndex
 
 	private String workspaceId;
 	public CancelCreateIndexJobRequest() {
-		super("gpdb", "2016-05-03", "CancelCreateIndexJob", "gpdb");
+		super("gpdb", "2016-05-03", "CancelCreateIndexJob", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

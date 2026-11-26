@@ -23,8 +23,8 @@ public class GrantCollectionResponseUnmarshaller {
 	public static GrantCollectionResponse unmarshall(GrantCollectionResponse grantCollectionResponse, UnmarshallerContext _ctx) {
 		
 		grantCollectionResponse.setRequestId(_ctx.stringValue("GrantCollectionResponse.RequestId"));
-		grantCollectionResponse.setMessage(_ctx.stringValue("GrantCollectionResponse.Message"));
 		grantCollectionResponse.setStatus(_ctx.stringValue("GrantCollectionResponse.Status"));
+		grantCollectionResponse.setMessage(_ctx.stringValue("GrantCollectionResponse.Message"));
 	 
 	 	return grantCollectionResponse;
 	}

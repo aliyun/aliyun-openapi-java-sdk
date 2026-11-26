@@ -77,19 +77,11 @@ public class DescribeDataSharePerformanceResponse extends AcsResponse {
 
 	public static class PerformanceItem {
 
-		private String name;
-
 		private String unit;
 
+		private String name;
+
 		private List<SeriesItem> series;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getUnit() {
 			return this.unit;
@@ -97,6 +89,14 @@ public class DescribeDataSharePerformanceResponse extends AcsResponse {
 
 		public void setUnit(String unit) {
 			this.unit = unit;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<SeriesItem> getSeries() {

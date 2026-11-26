@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAccountResponse extends AcsResponse {
 
-	private String requestId;
+	private String accountDescription;
 
 	private String accountStatus;
 
-	private String accountDescription;
+	private String requestId;
 
 	private String dBInstanceId;
 
-	private String accountName;
-
 	private String accountType;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String accountName;
+
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
 	}
 
 	public String getAccountStatus() {
@@ -52,12 +52,12 @@ public class GetAccountResponse extends AcsResponse {
 		this.accountStatus = accountStatus;
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getDBInstanceId() {
@@ -68,20 +68,20 @@ public class GetAccountResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-	}
-
 	public String getAccountType() {
 		return this.accountType;
 	}
 
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class InitVectorDatabaseRequest extends RpcAcsRequest<InitVectorDatabaseR
 
 	private String workspaceId;
 	public InitVectorDatabaseRequest() {
-		super("gpdb", "2016-05-03", "InitVectorDatabase", "gpdb");
+		super("gpdb", "2016-05-03", "InitVectorDatabase", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

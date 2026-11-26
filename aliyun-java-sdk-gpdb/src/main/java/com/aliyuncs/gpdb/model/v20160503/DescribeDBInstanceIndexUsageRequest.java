@@ -35,7 +35,7 @@ public class DescribeDBInstanceIndexUsageRequest extends RpcAcsRequest<DescribeD
 
 	private String orderBy;
 	public DescribeDBInstanceIndexUsageRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceIndexUsage", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceIndexUsage", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

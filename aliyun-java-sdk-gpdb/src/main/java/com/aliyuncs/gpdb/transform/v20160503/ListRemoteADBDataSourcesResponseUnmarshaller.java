@@ -32,17 +32,17 @@ public class ListRemoteADBDataSourcesResponseUnmarshaller {
 		List<RemoteDataSources> dataSourceItems = new ArrayList<RemoteDataSources>();
 		for (int i = 0; i < _ctx.lengthValue("ListRemoteADBDataSourcesResponse.DataSourceItems.Length"); i++) {
 			RemoteDataSources remoteDataSources = new RemoteDataSources();
-			remoteDataSources.setId(_ctx.longValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Id"));
+			remoteDataSources.setStatus(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Status"));
+			remoteDataSources.setRemoteDatabase(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].RemoteDatabase"));
+			remoteDataSources.setManagerUserName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].ManagerUserName"));
+			remoteDataSources.setUserName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].UserName"));
+			remoteDataSources.setDescription(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Description"));
 			remoteDataSources.setDataSourceName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].DataSourceName"));
-			remoteDataSources.setLocalInstanceName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].LocalInstanceName"));
 			remoteDataSources.setLocalDatabase(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].LocalDatabase"));
 			remoteDataSources.setRemoteInstanceName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].RemoteInstanceName"));
-			remoteDataSources.setRemoteDatabase(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].RemoteDatabase"));
-			remoteDataSources.setUserName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].UserName"));
-			remoteDataSources.setManagerUserName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].ManagerUserName"));
-			remoteDataSources.setStatus(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Status"));
-			remoteDataSources.setDescription(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Description"));
+			remoteDataSources.setId(_ctx.longValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].Id"));
 			remoteDataSources.setRegionId(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].RegionId"));
+			remoteDataSources.setLocalInstanceName(_ctx.stringValue("ListRemoteADBDataSourcesResponse.DataSourceItems["+ i +"].LocalInstanceName"));
 
 			dataSourceItems.add(remoteDataSources);
 		}

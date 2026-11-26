@@ -23,8 +23,8 @@ public class UploadDocumentAsyncResponseUnmarshaller {
 	public static UploadDocumentAsyncResponse unmarshall(UploadDocumentAsyncResponse uploadDocumentAsyncResponse, UnmarshallerContext _ctx) {
 		
 		uploadDocumentAsyncResponse.setRequestId(_ctx.stringValue("UploadDocumentAsyncResponse.RequestId"));
-		uploadDocumentAsyncResponse.setMessage(_ctx.stringValue("UploadDocumentAsyncResponse.Message"));
 		uploadDocumentAsyncResponse.setStatus(_ctx.stringValue("UploadDocumentAsyncResponse.Status"));
+		uploadDocumentAsyncResponse.setMessage(_ctx.stringValue("UploadDocumentAsyncResponse.Message"));
 		uploadDocumentAsyncResponse.setJobId(_ctx.stringValue("UploadDocumentAsyncResponse.JobId"));
 	 
 	 	return uploadDocumentAsyncResponse;

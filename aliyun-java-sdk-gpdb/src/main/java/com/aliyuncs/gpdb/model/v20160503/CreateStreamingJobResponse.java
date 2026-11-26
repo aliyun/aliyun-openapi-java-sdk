@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStreamingJobResponse extends AcsResponse {
 
-	private Integer jobId;
-
 	private String requestId;
 
-	public Integer getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Integer jobId) {
-		this.jobId = jobId;
-	}
+	private Integer jobId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateStreamingJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(Integer jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

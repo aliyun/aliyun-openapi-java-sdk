@@ -30,7 +30,7 @@ public class DeleteBackupRequest extends RpcAcsRequest<DeleteBackupResponse> {
 
 	private String backupId;
 	public DeleteBackupRequest() {
-		super("gpdb", "2016-05-03", "DeleteBackup", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteBackup", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

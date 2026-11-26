@@ -33,16 +33,16 @@ public class DescribeDBInstanceIndexUsageResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceIndexUsageResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].DatabaseName"));
-			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].SchemaName"));
-			itemsItem.setTableName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].TableName"));
-			itemsItem.setIsPartitionTable(_ctx.booleanValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IsPartitionTable"));
-			itemsItem.setParentTableName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].ParentTableName"));
 			itemsItem.setIndexName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexName"));
-			itemsItem.setIndexSize(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexSize"));
+			itemsItem.setTableName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].TableName"));
+			itemsItem.setParentTableName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].ParentTableName"));
+			itemsItem.setIsPartitionTable(_ctx.booleanValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IsPartitionTable"));
+			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].DatabaseName"));
 			itemsItem.setIndexScanTimes(_ctx.longValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexScanTimes"));
+			itemsItem.setIndexSize(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexSize"));
 			itemsItem.setIndexDef(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].IndexDef"));
 			itemsItem.setTimeLastUpdated(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].TimeLastUpdated"));
+			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceIndexUsageResponse.Items["+ i +"].SchemaName"));
 
 			items.add(itemsItem);
 		}

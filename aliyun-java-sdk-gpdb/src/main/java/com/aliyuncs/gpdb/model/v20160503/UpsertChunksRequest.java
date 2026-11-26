@@ -48,7 +48,7 @@ public class UpsertChunksRequest extends RpcAcsRequest<UpsertChunksResponse> {
 
 	private String namespace;
 	public UpsertChunksRequest() {
-		super("gpdb", "2016-05-03", "UpsertChunks", "gpdb");
+		super("gpdb", "2016-05-03", "UpsertChunks", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

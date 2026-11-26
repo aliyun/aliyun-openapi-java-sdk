@@ -26,17 +26,40 @@ import com.aliyuncs.gpdb.Endpoint;
 public class ListSupabaseProjectsRequest extends RpcAcsRequest<ListSupabaseProjectsResponse> {
 	   
 
+	private Integer pageNumber;
+
 	private String nextToken;
 
+	private Integer pageSize;
+
+	private String sortOrder;
+
+	private String searchValue;
+
+	private String searchField;
+
 	private Integer maxResults;
+
+	private String sortField;
 	public ListSupabaseProjectsRequest() {
-		super("gpdb", "2016-05-03", "ListSupabaseProjects", "gpdb");
+		super("gpdb", "2016-05-03", "ListSupabaseProjects", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getNextToken() {
@@ -50,6 +73,50 @@ public class ListSupabaseProjectsRequest extends RpcAcsRequest<ListSupabaseProje
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getSearchValue() {
+		return this.searchValue;
+	}
+
+	public void setSearchValue(String searchValue) {
+		this.searchValue = searchValue;
+		if(searchValue != null){
+			putQueryParameter("SearchValue", searchValue);
+		}
+	}
+
+	public String getSearchField() {
+		return this.searchField;
+	}
+
+	public void setSearchField(String searchField) {
+		this.searchField = searchField;
+		if(searchField != null){
+			putQueryParameter("SearchField", searchField);
+		}
+	}
+
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -58,6 +125,17 @@ public class ListSupabaseProjectsRequest extends RpcAcsRequest<ListSupabaseProje
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getSortField() {
+		return this.sortField;
+	}
+
+	public void setSortField(String sortField) {
+		this.sortField = sortField;
+		if(sortField != null){
+			putQueryParameter("SortField", sortField);
 		}
 	}
 

@@ -47,23 +47,15 @@ public class ListBackupJobsResponse extends AcsResponse {
 
 	public static class BackupJob {
 
-		private String backupJobId;
-
 		private String backupMode;
-
-		private String backupStatus;
-
-		private String process;
 
 		private String startTime;
 
-		public String getBackupJobId() {
-			return this.backupJobId;
-		}
+		private String process;
 
-		public void setBackupJobId(String backupJobId) {
-			this.backupJobId = backupJobId;
-		}
+		private String backupJobId;
+
+		private String backupStatus;
 
 		public String getBackupMode() {
 			return this.backupMode;
@@ -73,12 +65,12 @@ public class ListBackupJobsResponse extends AcsResponse {
 			this.backupMode = backupMode;
 		}
 
-		public String getBackupStatus() {
-			return this.backupStatus;
+		public String getStartTime() {
+			return this.startTime;
 		}
 
-		public void setBackupStatus(String backupStatus) {
-			this.backupStatus = backupStatus;
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
 		}
 
 		public String getProcess() {
@@ -89,12 +81,20 @@ public class ListBackupJobsResponse extends AcsResponse {
 			this.process = process;
 		}
 
-		public String getStartTime() {
-			return this.startTime;
+		public String getBackupJobId() {
+			return this.backupJobId;
 		}
 
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
+		public void setBackupJobId(String backupJobId) {
+			this.backupJobId = backupJobId;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
 		}
 	}
 

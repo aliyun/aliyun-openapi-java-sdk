@@ -29,7 +29,7 @@ public class DisableDBResourceGroupRequest extends RpcAcsRequest<DisableDBResour
 
 	private Long ownerId;
 	public DisableDBResourceGroupRequest() {
-		super("gpdb", "2016-05-03", "DisableDBResourceGroup", "gpdb");
+		super("gpdb", "2016-05-03", "DisableDBResourceGroup", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

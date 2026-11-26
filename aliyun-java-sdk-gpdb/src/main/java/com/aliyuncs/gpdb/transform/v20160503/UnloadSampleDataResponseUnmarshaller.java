@@ -24,8 +24,8 @@ public class UnloadSampleDataResponseUnmarshaller {
 		
 		unloadSampleDataResponse.setRequestId(_ctx.stringValue("UnloadSampleDataResponse.RequestId"));
 		unloadSampleDataResponse.setStatus(_ctx.booleanValue("UnloadSampleDataResponse.Status"));
-		unloadSampleDataResponse.setErrorMessage(_ctx.stringValue("UnloadSampleDataResponse.ErrorMessage"));
 		unloadSampleDataResponse.setDBInstanceId(_ctx.stringValue("UnloadSampleDataResponse.DBInstanceId"));
+		unloadSampleDataResponse.setErrorMessage(_ctx.stringValue("UnloadSampleDataResponse.ErrorMessage"));
 	 
 	 	return unloadSampleDataResponse;
 	}

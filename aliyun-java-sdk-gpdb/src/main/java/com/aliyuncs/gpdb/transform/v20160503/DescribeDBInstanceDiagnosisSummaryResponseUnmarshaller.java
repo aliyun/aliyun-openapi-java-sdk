@@ -32,38 +32,38 @@ public class DescribeDBInstanceDiagnosisSummaryResponseUnmarshaller {
 		describeDBInstanceDiagnosisSummaryResponse.setTotalCount(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.TotalCount"));
 		describeDBInstanceDiagnosisSummaryResponse.setPageNumber(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.PageNumber"));
 
-		MasterStatusInfo masterStatusInfo = new MasterStatusInfo();
-		masterStatusInfo.setNormalNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NormalNodeNum"));
-		masterStatusInfo.setExceptionNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.ExceptionNodeNum"));
-		masterStatusInfo.setNotSyncingNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NotSyncingNodeNum"));
-		masterStatusInfo.setSyncedNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.SyncedNodeNum"));
-		masterStatusInfo.setPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.PreferredNodeNum"));
-		masterStatusInfo.setNotPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NotPreferredNodeNum"));
-		describeDBInstanceDiagnosisSummaryResponse.setMasterStatusInfo(masterStatusInfo);
-
 		SegmentStatusInfo segmentStatusInfo = new SegmentStatusInfo();
 		segmentStatusInfo.setNormalNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.NormalNodeNum"));
 		segmentStatusInfo.setExceptionNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.ExceptionNodeNum"));
-		segmentStatusInfo.setNotSyncingNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.NotSyncingNodeNum"));
-		segmentStatusInfo.setSyncedNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.SyncedNodeNum"));
 		segmentStatusInfo.setPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.PreferredNodeNum"));
+		segmentStatusInfo.setSyncedNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.SyncedNodeNum"));
+		segmentStatusInfo.setNotSyncingNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.NotSyncingNodeNum"));
 		segmentStatusInfo.setNotPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.SegmentStatusInfo.NotPreferredNodeNum"));
 		describeDBInstanceDiagnosisSummaryResponse.setSegmentStatusInfo(segmentStatusInfo);
+
+		MasterStatusInfo masterStatusInfo = new MasterStatusInfo();
+		masterStatusInfo.setNormalNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NormalNodeNum"));
+		masterStatusInfo.setExceptionNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.ExceptionNodeNum"));
+		masterStatusInfo.setPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.PreferredNodeNum"));
+		masterStatusInfo.setSyncedNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.SyncedNodeNum"));
+		masterStatusInfo.setNotSyncingNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NotSyncingNodeNum"));
+		masterStatusInfo.setNotPreferredNodeNum(_ctx.integerValue("DescribeDBInstanceDiagnosisSummaryResponse.MasterStatusInfo.NotPreferredNodeNum"));
+		describeDBInstanceDiagnosisSummaryResponse.setMasterStatusInfo(masterStatusInfo);
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceDiagnosisSummaryResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setHostname(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].Hostname"));
-			itemsItem.setNodeAddress(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeAddress"));
-			itemsItem.setNodeType(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeType"));
-			itemsItem.setNodeName(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeName"));
-			itemsItem.setNodePort(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodePort"));
-			itemsItem.setNodeID(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeID"));
-			itemsItem.setNodeStatus(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeStatus"));
 			itemsItem.setNodeRole(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeRole"));
-			itemsItem.setNodePreferredRole(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodePreferredRole"));
+			itemsItem.setNodeName(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeName"));
+			itemsItem.setNodeType(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeType"));
+			itemsItem.setHostname(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].Hostname"));
+			itemsItem.setNodeID(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeID"));
 			itemsItem.setNodeReplicationMode(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeReplicationMode"));
+			itemsItem.setNodeAddress(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeAddress"));
+			itemsItem.setNodePort(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodePort"));
+			itemsItem.setNodePreferredRole(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodePreferredRole"));
 			itemsItem.setNodeCID(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeCID"));
+			itemsItem.setNodeStatus(_ctx.stringValue("DescribeDBInstanceDiagnosisSummaryResponse.Items["+ i +"].NodeStatus"));
 
 			items.add(itemsItem);
 		}

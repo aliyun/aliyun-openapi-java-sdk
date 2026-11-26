@@ -29,7 +29,7 @@ public class DescribeStreamingDataSourceRequest extends RpcAcsRequest<DescribeSt
 
 	private Integer dataSourceId;
 	public DescribeStreamingDataSourceRequest() {
-		super("gpdb", "2016-05-03", "DescribeStreamingDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeStreamingDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

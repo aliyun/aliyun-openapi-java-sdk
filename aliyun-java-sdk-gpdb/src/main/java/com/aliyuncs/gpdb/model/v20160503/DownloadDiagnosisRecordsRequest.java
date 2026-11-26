@@ -41,7 +41,7 @@ public class DownloadDiagnosisRecordsRequest extends RpcAcsRequest<DownloadDiagn
 
 	private String user;
 	public DownloadDiagnosisRecordsRequest() {
-		super("gpdb", "2016-05-03", "DownloadDiagnosisRecords", "gpdb");
+		super("gpdb", "2016-05-03", "DownloadDiagnosisRecords", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

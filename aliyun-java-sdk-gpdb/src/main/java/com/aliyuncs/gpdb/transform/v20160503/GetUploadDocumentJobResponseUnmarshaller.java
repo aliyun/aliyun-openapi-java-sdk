@@ -26,29 +26,30 @@ public class GetUploadDocumentJobResponseUnmarshaller {
 	public static GetUploadDocumentJobResponse unmarshall(GetUploadDocumentJobResponse getUploadDocumentJobResponse, UnmarshallerContext _ctx) {
 		
 		getUploadDocumentJobResponse.setRequestId(_ctx.stringValue("GetUploadDocumentJobResponse.RequestId"));
-		getUploadDocumentJobResponse.setMessage(_ctx.stringValue("GetUploadDocumentJobResponse.Message"));
 		getUploadDocumentJobResponse.setStatus(_ctx.stringValue("GetUploadDocumentJobResponse.Status"));
-
-		Job job = new Job();
-		job.setId(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Id"));
-		job.setCompleted(_ctx.booleanValue("GetUploadDocumentJobResponse.Job.Completed"));
-		job.setCreateTime(_ctx.stringValue("GetUploadDocumentJobResponse.Job.CreateTime"));
-		job.setUpdateTime(_ctx.stringValue("GetUploadDocumentJobResponse.Job.UpdateTime"));
-		job.setStatus(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Status"));
-		job.setError(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Error"));
-		job.setProgress(_ctx.integerValue("GetUploadDocumentJobResponse.Job.Progress"));
-		job.setErrorCode(_ctx.stringValue("GetUploadDocumentJobResponse.Job.ErrorCode"));
-		getUploadDocumentJobResponse.setJob(job);
-
-		ChunkResult chunkResult = new ChunkResult();
-		chunkResult.setChunkFileUrl(_ctx.stringValue("GetUploadDocumentJobResponse.ChunkResult.ChunkFileUrl"));
-		chunkResult.setPlainChunkFileUrl(_ctx.stringValue("GetUploadDocumentJobResponse.ChunkResult.PlainChunkFileUrl"));
-		getUploadDocumentJobResponse.setChunkResult(chunkResult);
+		getUploadDocumentJobResponse.setMessage(_ctx.stringValue("GetUploadDocumentJobResponse.Message"));
 
 		Usage usage = new Usage();
 		usage.setEmbeddingTokens(_ctx.integerValue("GetUploadDocumentJobResponse.Usage.EmbeddingTokens"));
 		usage.setEmbeddingEntries(_ctx.integerValue("GetUploadDocumentJobResponse.Usage.EmbeddingEntries"));
 		getUploadDocumentJobResponse.setUsage(usage);
+
+		ChunkResult chunkResult = new ChunkResult();
+		chunkResult.setPlainChunkFileUrl(_ctx.stringValue("GetUploadDocumentJobResponse.ChunkResult.PlainChunkFileUrl"));
+		chunkResult.setDocumentLoaderResultFileUrl(_ctx.stringValue("GetUploadDocumentJobResponse.ChunkResult.DocumentLoaderResultFileUrl"));
+		chunkResult.setChunkFileUrl(_ctx.stringValue("GetUploadDocumentJobResponse.ChunkResult.ChunkFileUrl"));
+		getUploadDocumentJobResponse.setChunkResult(chunkResult);
+
+		Job job = new Job();
+		job.setStatus(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Status"));
+		job.setProgress(_ctx.integerValue("GetUploadDocumentJobResponse.Job.Progress"));
+		job.setCreateTime(_ctx.stringValue("GetUploadDocumentJobResponse.Job.CreateTime"));
+		job.setCompleted(_ctx.booleanValue("GetUploadDocumentJobResponse.Job.Completed"));
+		job.setUpdateTime(_ctx.stringValue("GetUploadDocumentJobResponse.Job.UpdateTime"));
+		job.setError(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Error"));
+		job.setErrorCode(_ctx.stringValue("GetUploadDocumentJobResponse.Job.ErrorCode"));
+		job.setId(_ctx.stringValue("GetUploadDocumentJobResponse.Job.Id"));
+		getUploadDocumentJobResponse.setJob(job);
 	 
 	 	return getUploadDocumentJobResponse;
 	}

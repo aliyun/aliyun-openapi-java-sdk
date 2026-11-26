@@ -43,77 +43,77 @@ public class DescribeHealthStatusResponseUnmarshaller {
 
 		Status status = new Status();
 
-		Adbpg_status adbpg_status = new Adbpg_status();
-		adbpg_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_status.Status"));
-		adbpg_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_status.Value"));
-		status.setAdbpg_status(adbpg_status);
+		Node_master_connection_status node_master_connection_status = new Node_master_connection_status();
+		node_master_connection_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_master_connection_status.Status"));
+		node_master_connection_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_master_connection_status.Value"));
+		status.setNode_master_connection_status(node_master_connection_status);
 
 		Adbpg_connection_status adbpg_connection_status = new Adbpg_connection_status();
 		adbpg_connection_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_connection_status.Status"));
 		adbpg_connection_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_connection_status.Value"));
 		status.setAdbpg_connection_status(adbpg_connection_status);
 
-		Adbpg_disk_status adbpg_disk_status = new Adbpg_disk_status();
-		adbpg_disk_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_disk_status.Status"));
-		adbpg_disk_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_disk_status.Value"));
-		status.setAdbpg_disk_status(adbpg_disk_status);
+		Node_master_status node_master_status = new Node_master_status();
+		node_master_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_master_status.Status"));
+		node_master_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_master_status.Value"));
+		status.setNode_master_status(node_master_status);
 
-		Adbpg_disk_usage_percent adbpg_disk_usage_percent = new Adbpg_disk_usage_percent();
-		adbpg_disk_usage_percent.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_disk_usage_percent.Status"));
-		adbpg_disk_usage_percent.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_disk_usage_percent.Value"));
-		status.setAdbpg_disk_usage_percent(adbpg_disk_usage_percent);
+		Adbpg_instance_cold_data_gb adbpg_instance_cold_data_gb = new Adbpg_instance_cold_data_gb();
+		adbpg_instance_cold_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_cold_data_gb.Value"));
+		status.setAdbpg_instance_cold_data_gb(adbpg_instance_cold_data_gb);
 
 		Adbpg_master_disk_usage_percent_max adbpg_master_disk_usage_percent_max = new Adbpg_master_disk_usage_percent_max();
 		adbpg_master_disk_usage_percent_max.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_master_disk_usage_percent_max.Status"));
 		adbpg_master_disk_usage_percent_max.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_master_disk_usage_percent_max.Value"));
 		status.setAdbpg_master_disk_usage_percent_max(adbpg_master_disk_usage_percent_max);
 
-		Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max = new Adbgp_segment_disk_usage_percent_max();
-		adbgp_segment_disk_usage_percent_max.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbgp_segment_disk_usage_percent_max.Status"));
-		adbgp_segment_disk_usage_percent_max.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbgp_segment_disk_usage_percent_max.Value"));
-		status.setAdbgp_segment_disk_usage_percent_max(adbgp_segment_disk_usage_percent_max);
-
-		Node_master_status node_master_status = new Node_master_status();
-		node_master_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_master_status.Status"));
-		node_master_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_master_status.Value"));
-		status.setNode_master_status(node_master_status);
-
-		Node_segment_disk_status node_segment_disk_status = new Node_segment_disk_status();
-		node_segment_disk_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_segment_disk_status.Status"));
-		node_segment_disk_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_segment_disk_status.Value"));
-		status.setNode_segment_disk_status(node_segment_disk_status);
-
-		Node_master_connection_status node_master_connection_status = new Node_master_connection_status();
-		node_master_connection_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_master_connection_status.Status"));
-		node_master_connection_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_master_connection_status.Value"));
-		status.setNode_master_connection_status(node_master_connection_status);
-
 		Node_segment_connection_status node_segment_connection_status = new Node_segment_connection_status();
 		node_segment_connection_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_segment_connection_status.Status"));
 		node_segment_connection_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_segment_connection_status.Value"));
 		status.setNode_segment_connection_status(node_segment_connection_status);
 
-		Adbpg_master_status adbpg_master_status = new Adbpg_master_status();
-		adbpg_master_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Status"));
-		adbpg_master_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Value"));
-		status.setAdbpg_master_status(adbpg_master_status);
+		Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb = new Adbpg_instance_hot_data_gb();
+		adbpg_instance_hot_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_hot_data_gb.Value"));
+		status.setAdbpg_instance_hot_data_gb(adbpg_instance_hot_data_gb);
+
+		Adbpg_status adbpg_status = new Adbpg_status();
+		adbpg_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_status.Status"));
+		adbpg_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_status.Value"));
+		status.setAdbpg_status(adbpg_status);
+
+		Adbgp_segment_disk_usage_percent_max adbgp_segment_disk_usage_percent_max = new Adbgp_segment_disk_usage_percent_max();
+		adbgp_segment_disk_usage_percent_max.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbgp_segment_disk_usage_percent_max.Status"));
+		adbgp_segment_disk_usage_percent_max.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbgp_segment_disk_usage_percent_max.Value"));
+		status.setAdbgp_segment_disk_usage_percent_max(adbgp_segment_disk_usage_percent_max);
+
+		Adbpg_disk_usage_percent adbpg_disk_usage_percent = new Adbpg_disk_usage_percent();
+		adbpg_disk_usage_percent.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_disk_usage_percent.Status"));
+		adbpg_disk_usage_percent.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_disk_usage_percent.Value"));
+		status.setAdbpg_disk_usage_percent(adbpg_disk_usage_percent);
+
+		Adbpg_disk_status adbpg_disk_status = new Adbpg_disk_status();
+		adbpg_disk_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_disk_status.Status"));
+		adbpg_disk_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_disk_status.Value"));
+		status.setAdbpg_disk_status(adbpg_disk_status);
+
+		Adbpg_instance_total_data_gb adbpg_instance_total_data_gb = new Adbpg_instance_total_data_gb();
+		adbpg_instance_total_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_total_data_gb.Value"));
+		status.setAdbpg_instance_total_data_gb(adbpg_instance_total_data_gb);
 
 		Adbpg_segment_status adbpg_segment_status = new Adbpg_segment_status();
 		adbpg_segment_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Status"));
 		adbpg_segment_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_segment_status.Value"));
 		status.setAdbpg_segment_status(adbpg_segment_status);
 
-		Adbpg_instance_total_data_gb adbpg_instance_total_data_gb = new Adbpg_instance_total_data_gb();
-		adbpg_instance_total_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_total_data_gb.Value"));
-		status.setAdbpg_instance_total_data_gb(adbpg_instance_total_data_gb);
+		Node_segment_disk_status node_segment_disk_status = new Node_segment_disk_status();
+		node_segment_disk_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.node_segment_disk_status.Status"));
+		node_segment_disk_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.node_segment_disk_status.Value"));
+		status.setNode_segment_disk_status(node_segment_disk_status);
 
-		Adbpg_instance_hot_data_gb adbpg_instance_hot_data_gb = new Adbpg_instance_hot_data_gb();
-		adbpg_instance_hot_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_hot_data_gb.Value"));
-		status.setAdbpg_instance_hot_data_gb(adbpg_instance_hot_data_gb);
-
-		Adbpg_instance_cold_data_gb adbpg_instance_cold_data_gb = new Adbpg_instance_cold_data_gb();
-		adbpg_instance_cold_data_gb.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_instance_cold_data_gb.Value"));
-		status.setAdbpg_instance_cold_data_gb(adbpg_instance_cold_data_gb);
+		Adbpg_master_status adbpg_master_status = new Adbpg_master_status();
+		adbpg_master_status.setStatus(_ctx.stringValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Status"));
+		adbpg_master_status.setValue(_ctx.floatValue("DescribeHealthStatusResponse.Status.adbpg_master_status.Value"));
+		status.setAdbpg_master_status(adbpg_master_status);
 		describeHealthStatusResponse.setStatus(status);
 	 
 	 	return describeHealthStatusResponse;

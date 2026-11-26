@@ -29,7 +29,7 @@ public class ResumeDataRedistributeRequest extends RpcAcsRequest<ResumeDataRedis
 
 	private Long ownerId;
 	public ResumeDataRedistributeRequest() {
-		super("gpdb", "2016-05-03", "ResumeDataRedistribute", "gpdb");
+		super("gpdb", "2016-05-03", "ResumeDataRedistribute", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

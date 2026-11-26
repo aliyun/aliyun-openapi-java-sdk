@@ -24,21 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExternalDataServiceResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
-	private String serviceId;
+	private String modifyTime;
+
+	private String requestId;
 
 	private String serviceName;
 
 	private String serviceDescription;
 
-	private String serviceSpec;
-
-	private String status;
-
 	private String createTime;
 
-	private String modifyTime;
+	private String serviceSpec;
+
+	private String serviceId;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getModifyTime() {
+		return this.modifyTime;
+	}
+
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,14 +62,6 @@ public class DescribeExternalDataServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
 	}
 
 	public String getServiceName() {
@@ -72,22 +80,6 @@ public class DescribeExternalDataServiceResponse extends AcsResponse {
 		this.serviceDescription = serviceDescription;
 	}
 
-	public String getServiceSpec() {
-		return this.serviceSpec;
-	}
-
-	public void setServiceSpec(String serviceSpec) {
-		this.serviceSpec = serviceSpec;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getCreateTime() {
 		return this.createTime;
 	}
@@ -96,12 +88,20 @@ public class DescribeExternalDataServiceResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public String getModifyTime() {
-		return this.modifyTime;
+	public String getServiceSpec() {
+		return this.serviceSpec;
 	}
 
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
+	public void setServiceSpec(String serviceSpec) {
+		this.serviceSpec = serviceSpec;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	@Override

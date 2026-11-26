@@ -26,39 +26,33 @@ public class DescribeStreamingJobResponseUnmarshaller {
 	public static DescribeStreamingJobResponse unmarshall(DescribeStreamingJobResponse describeStreamingJobResponse, UnmarshallerContext _ctx) {
 		
 		describeStreamingJobResponse.setRequestId(_ctx.stringValue("DescribeStreamingJobResponse.RequestId"));
-		describeStreamingJobResponse.setJobId(_ctx.stringValue("DescribeStreamingJobResponse.JobId"));
-		describeStreamingJobResponse.setJobName(_ctx.stringValue("DescribeStreamingJobResponse.JobName"));
-		describeStreamingJobResponse.setJobDescription(_ctx.stringValue("DescribeStreamingJobResponse.JobDescription"));
-		describeStreamingJobResponse.setDataSourceId(_ctx.stringValue("DescribeStreamingJobResponse.DataSourceId"));
-		describeStreamingJobResponse.setAccount(_ctx.stringValue("DescribeStreamingJobResponse.Account"));
-		describeStreamingJobResponse.setPassword(_ctx.stringValue("DescribeStreamingJobResponse.Password"));
-		describeStreamingJobResponse.setDestDatabase(_ctx.stringValue("DescribeStreamingJobResponse.DestDatabase"));
-		describeStreamingJobResponse.setDestSchema(_ctx.stringValue("DescribeStreamingJobResponse.DestSchema"));
-		describeStreamingJobResponse.setDestTable(_ctx.stringValue("DescribeStreamingJobResponse.DestTable"));
-		describeStreamingJobResponse.setWriteMode(_ctx.stringValue("DescribeStreamingJobResponse.WriteMode"));
-		describeStreamingJobResponse.setMode(_ctx.stringValue("DescribeStreamingJobResponse.Mode"));
-		describeStreamingJobResponse.setJobConfig(_ctx.stringValue("DescribeStreamingJobResponse.JobConfig"));
-		describeStreamingJobResponse.setStatus(_ctx.stringValue("DescribeStreamingJobResponse.Status"));
-		describeStreamingJobResponse.setErrorMessage(_ctx.stringValue("DescribeStreamingJobResponse.ErrorMessage"));
-		describeStreamingJobResponse.setCreateTime(_ctx.stringValue("DescribeStreamingJobResponse.CreateTime"));
-		describeStreamingJobResponse.setModifyTime(_ctx.stringValue("DescribeStreamingJobResponse.ModifyTime"));
 		describeStreamingJobResponse.setGroupName(_ctx.stringValue("DescribeStreamingJobResponse.GroupName"));
+		describeStreamingJobResponse.setAccount(_ctx.stringValue("DescribeStreamingJobResponse.Account"));
+		describeStreamingJobResponse.setModifyTime(_ctx.stringValue("DescribeStreamingJobResponse.ModifyTime"));
+		describeStreamingJobResponse.setDestSchema(_ctx.stringValue("DescribeStreamingJobResponse.DestSchema"));
 		describeStreamingJobResponse.setConsistency(_ctx.stringValue("DescribeStreamingJobResponse.Consistency"));
-		describeStreamingJobResponse.setErrorLimitCount(_ctx.integerValue("DescribeStreamingJobResponse.ErrorLimitCount"));
+		describeStreamingJobResponse.setJobName(_ctx.stringValue("DescribeStreamingJobResponse.JobName"));
+		describeStreamingJobResponse.setJobConfig(_ctx.stringValue("DescribeStreamingJobResponse.JobConfig"));
+		describeStreamingJobResponse.setJobDescription(_ctx.stringValue("DescribeStreamingJobResponse.JobDescription"));
 		describeStreamingJobResponse.setFallbackOffset(_ctx.stringValue("DescribeStreamingJobResponse.FallbackOffset"));
+		describeStreamingJobResponse.setDestTable(_ctx.stringValue("DescribeStreamingJobResponse.DestTable"));
+		describeStreamingJobResponse.setJobId(_ctx.stringValue("DescribeStreamingJobResponse.JobId"));
+		describeStreamingJobResponse.setWriteMode(_ctx.stringValue("DescribeStreamingJobResponse.WriteMode"));
+		describeStreamingJobResponse.setPassword(_ctx.stringValue("DescribeStreamingJobResponse.Password"));
+		describeStreamingJobResponse.setStatus(_ctx.stringValue("DescribeStreamingJobResponse.Status"));
+		describeStreamingJobResponse.setMode(_ctx.stringValue("DescribeStreamingJobResponse.Mode"));
+		describeStreamingJobResponse.setCreateTime(_ctx.stringValue("DescribeStreamingJobResponse.CreateTime"));
+		describeStreamingJobResponse.setDestDatabase(_ctx.stringValue("DescribeStreamingJobResponse.DestDatabase"));
 		describeStreamingJobResponse.setDataSourceName(_ctx.stringValue("DescribeStreamingJobResponse.DataSourceName"));
+		describeStreamingJobResponse.setErrorMessage(_ctx.stringValue("DescribeStreamingJobResponse.ErrorMessage"));
+		describeStreamingJobResponse.setDataSourceId(_ctx.stringValue("DescribeStreamingJobResponse.DataSourceId"));
+		describeStreamingJobResponse.setErrorLimitCount(_ctx.integerValue("DescribeStreamingJobResponse.ErrorLimitCount"));
 
 		List<String> srcColumns = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamingJobResponse.SrcColumns.Length"); i++) {
 			srcColumns.add(_ctx.stringValue("DescribeStreamingJobResponse.SrcColumns["+ i +"]"));
 		}
 		describeStreamingJobResponse.setSrcColumns(srcColumns);
-
-		List<String> destColumns = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeStreamingJobResponse.DestColumns.Length"); i++) {
-			destColumns.add(_ctx.stringValue("DescribeStreamingJobResponse.DestColumns["+ i +"]"));
-		}
-		describeStreamingJobResponse.setDestColumns(destColumns);
 
 		List<String> matchColumns = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamingJobResponse.MatchColumns.Length"); i++) {
@@ -71,6 +65,12 @@ public class DescribeStreamingJobResponseUnmarshaller {
 			updateColumns.add(_ctx.stringValue("DescribeStreamingJobResponse.UpdateColumns["+ i +"]"));
 		}
 		describeStreamingJobResponse.setUpdateColumns(updateColumns);
+
+		List<String> destColumns = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeStreamingJobResponse.DestColumns.Length"); i++) {
+			destColumns.add(_ctx.stringValue("DescribeStreamingJobResponse.DestColumns["+ i +"]"));
+		}
+		describeStreamingJobResponse.setDestColumns(destColumns);
 	 
 	 	return describeStreamingJobResponse;
 	}

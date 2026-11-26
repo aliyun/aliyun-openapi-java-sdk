@@ -23,18 +23,18 @@ public class DescribeJDBCDataSourceResponseUnmarshaller {
 	public static DescribeJDBCDataSourceResponse unmarshall(DescribeJDBCDataSourceResponse describeJDBCDataSourceResponse, UnmarshallerContext _ctx) {
 		
 		describeJDBCDataSourceResponse.setRequestId(_ctx.stringValue("DescribeJDBCDataSourceResponse.RequestId"));
-		describeJDBCDataSourceResponse.setDataSourceId(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceId"));
-		describeJDBCDataSourceResponse.setDataSourceName(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceName"));
-		describeJDBCDataSourceResponse.setDataSourceDescription(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceDescription"));
-		describeJDBCDataSourceResponse.setDataSourceStatus(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceStatus"));
-		describeJDBCDataSourceResponse.setStatusMessage(_ctx.stringValue("DescribeJDBCDataSourceResponse.StatusMessage"));
-		describeJDBCDataSourceResponse.setCreateTime(_ctx.stringValue("DescribeJDBCDataSourceResponse.CreateTime"));
-		describeJDBCDataSourceResponse.setDataSourceType(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceType"));
-		describeJDBCDataSourceResponse.setJDBCConnectionString(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCConnectionString"));
-		describeJDBCDataSourceResponse.setJDBCUserName(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCUserName"));
-		describeJDBCDataSourceResponse.setJDBCPassword(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCPassword"));
 		describeJDBCDataSourceResponse.setModifyTime(_ctx.stringValue("DescribeJDBCDataSourceResponse.ModifyTime"));
+		describeJDBCDataSourceResponse.setJDBCPassword(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCPassword"));
+		describeJDBCDataSourceResponse.setJDBCConnectionString(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCConnectionString"));
+		describeJDBCDataSourceResponse.setCreateTime(_ctx.stringValue("DescribeJDBCDataSourceResponse.CreateTime"));
 		describeJDBCDataSourceResponse.setExternalDataServiceId(_ctx.stringValue("DescribeJDBCDataSourceResponse.ExternalDataServiceId"));
+		describeJDBCDataSourceResponse.setStatusMessage(_ctx.stringValue("DescribeJDBCDataSourceResponse.StatusMessage"));
+		describeJDBCDataSourceResponse.setDataSourceName(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceName"));
+		describeJDBCDataSourceResponse.setDataSourceType(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceType"));
+		describeJDBCDataSourceResponse.setJDBCUserName(_ctx.stringValue("DescribeJDBCDataSourceResponse.JDBCUserName"));
+		describeJDBCDataSourceResponse.setDataSourceStatus(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceStatus"));
+		describeJDBCDataSourceResponse.setDataSourceDescription(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceDescription"));
+		describeJDBCDataSourceResponse.setDataSourceId(_ctx.stringValue("DescribeJDBCDataSourceResponse.DataSourceId"));
 	 
 	 	return describeJDBCDataSourceResponse;
 	}

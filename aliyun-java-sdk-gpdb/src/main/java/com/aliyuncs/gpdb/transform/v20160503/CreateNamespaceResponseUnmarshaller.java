@@ -23,8 +23,8 @@ public class CreateNamespaceResponseUnmarshaller {
 	public static CreateNamespaceResponse unmarshall(CreateNamespaceResponse createNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		createNamespaceResponse.setRequestId(_ctx.stringValue("CreateNamespaceResponse.RequestId"));
-		createNamespaceResponse.setMessage(_ctx.stringValue("CreateNamespaceResponse.Message"));
 		createNamespaceResponse.setStatus(_ctx.stringValue("CreateNamespaceResponse.Status"));
+		createNamespaceResponse.setMessage(_ctx.stringValue("CreateNamespaceResponse.Message"));
 	 
 	 	return createNamespaceResponse;
 	}

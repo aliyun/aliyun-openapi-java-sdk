@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUpsertCollectionDataJobResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String message;
 
+	private String requestId;
+
 	private Job job;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -56,6 +48,14 @@ public class GetUpsertCollectionDataJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Job getJob() {
 		return this.job;
 	}
@@ -66,34 +66,34 @@ public class GetUpsertCollectionDataJobResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private Boolean completed;
-
-		private String createTime;
-
-		private String updateTime;
-
 		private String status;
-
-		private String error;
 
 		private Integer progress;
 
-		public String getId() {
-			return this.id;
+		private String createTime;
+
+		private Boolean completed;
+
+		private String updateTime;
+
+		private String error;
+
+		private String id;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public Boolean getCompleted() {
-			return this.completed;
+		public Integer getProgress() {
+			return this.progress;
 		}
 
-		public void setCompleted(Boolean completed) {
-			this.completed = completed;
+		public void setProgress(Integer progress) {
+			this.progress = progress;
 		}
 
 		public String getCreateTime() {
@@ -104,20 +104,20 @@ public class GetUpsertCollectionDataJobResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public Boolean getCompleted() {
+			return this.completed;
+		}
+
+		public void setCompleted(Boolean completed) {
+			this.completed = completed;
+		}
+
 		public String getUpdateTime() {
 			return this.updateTime;
 		}
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getError() {
@@ -128,12 +128,12 @@ public class GetUpsertCollectionDataJobResponse extends AcsResponse {
 			this.error = error;
 		}
 
-		public Integer getProgress() {
-			return this.progress;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setProgress(Integer progress) {
-			this.progress = progress;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

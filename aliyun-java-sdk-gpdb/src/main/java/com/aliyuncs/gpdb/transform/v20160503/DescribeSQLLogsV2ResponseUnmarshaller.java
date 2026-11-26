@@ -28,29 +28,29 @@ public class DescribeSQLLogsV2ResponseUnmarshaller {
 		
 		describeSQLLogsV2Response.setRequestId(_ctx.stringValue("DescribeSQLLogsV2Response.RequestId"));
 		describeSQLLogsV2Response.setAccessDeniedDetail(_ctx.stringValue("DescribeSQLLogsV2Response.AccessDeniedDetail"));
-		describeSQLLogsV2Response.setPageNumber(_ctx.integerValue("DescribeSQLLogsV2Response.PageNumber"));
 		describeSQLLogsV2Response.setPageRecordCount(_ctx.integerValue("DescribeSQLLogsV2Response.PageRecordCount"));
+		describeSQLLogsV2Response.setPageNumber(_ctx.integerValue("DescribeSQLLogsV2Response.PageNumber"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogsV2Response.Items.Length"); i++) {
 			Item item = new Item();
-			item.setAccountName(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].AccountName"));
-			item.setDBName(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].DBName"));
-			item.setDBRole(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].DBRole"));
-			item.setErrorCode(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].ErrorCode"));
-			item.setErrorMsg(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].ErrorMsg"));
 			item.setExecuteCost(_ctx.floatValue("DescribeSQLLogsV2Response.Items["+ i +"].ExecuteCost"));
+			item.setDBRole(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].DBRole"));
+			item.setQueryId(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].QueryId"));
+			item.setErrorMsg(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].ErrorMsg"));
+			item.setSourcePort(_ctx.integerValue("DescribeSQLLogsV2Response.Items["+ i +"].SourcePort"));
+			item.setSQLText(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SQLText"));
+			item.setSourceIP(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SourceIP"));
+			item.setReturnRowCounts(_ctx.longValue("DescribeSQLLogsV2Response.Items["+ i +"].ReturnRowCounts"));
+			item.setDBName(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].DBName"));
+			item.setErrorCode(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].ErrorCode"));
+			item.setOperationType(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].OperationType"));
+			item.setSessionId(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SessionId"));
+			item.setScanRowCounts(_ctx.longValue("DescribeSQLLogsV2Response.Items["+ i +"].ScanRowCounts"));
+			item.setAccountName(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].AccountName"));
 			item.setExecuteState(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].ExecuteState"));
 			item.setOperationClass(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].OperationClass"));
 			item.setOperationExecuteTime(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].OperationExecuteTime"));
-			item.setOperationType(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].OperationType"));
-			item.setReturnRowCounts(_ctx.longValue("DescribeSQLLogsV2Response.Items["+ i +"].ReturnRowCounts"));
-			item.setSQLText(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SQLText"));
-			item.setScanRowCounts(_ctx.longValue("DescribeSQLLogsV2Response.Items["+ i +"].ScanRowCounts"));
-			item.setSourceIP(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SourceIP"));
-			item.setSourcePort(_ctx.integerValue("DescribeSQLLogsV2Response.Items["+ i +"].SourcePort"));
-			item.setQueryId(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].QueryId"));
-			item.setSessionId(_ctx.stringValue("DescribeSQLLogsV2Response.Items["+ i +"].SessionId"));
 
 			items.add(item);
 		}

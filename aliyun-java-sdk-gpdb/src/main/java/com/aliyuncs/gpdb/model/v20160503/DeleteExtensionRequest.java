@@ -31,7 +31,7 @@ public class DeleteExtensionRequest extends RpcAcsRequest<DeleteExtensionRespons
 
 	private String dBNames;
 	public DeleteExtensionRequest() {
-		super("gpdb", "2016-05-03", "DeleteExtension", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteExtension", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

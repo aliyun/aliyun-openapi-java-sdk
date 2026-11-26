@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeLogBackupsResponse extends AcsResponse {
 
-	private Long totalLogSize;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
 	private String requestId;
 
-	private Integer totalCount;
+	private Integer pageNumber;
+
+	private Long totalLogSize;
 
 	private List<Backup> items;
 
-	public Long getTotalLogSize() {
-		return this.totalLogSize;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setTotalLogSize(Long totalLogSize) {
-		this.totalLogSize = totalLogSize;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -53,14 +53,6 @@ public class DescribeLogBackupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -69,12 +61,20 @@ public class DescribeLogBackupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getTotalLogSize() {
+		return this.totalLogSize;
+	}
+
+	public void setTotalLogSize(Long totalLogSize) {
+		this.totalLogSize = totalLogSize;
 	}
 
 	public List<Backup> getItems() {
@@ -87,33 +87,17 @@ public class DescribeLogBackupsResponse extends AcsResponse {
 
 	public static class Backup {
 
-		private Long logFileSize;
-
-		private String logTime;
-
 		private String segmentName;
-
-		private String logFileName;
 
 		private String dBInstanceId;
 
+		private String logTime;
+
+		private Long logFileSize;
+
 		private String backupId;
 
-		public Long getLogFileSize() {
-			return this.logFileSize;
-		}
-
-		public void setLogFileSize(Long logFileSize) {
-			this.logFileSize = logFileSize;
-		}
-
-		public String getLogTime() {
-			return this.logTime;
-		}
-
-		public void setLogTime(String logTime) {
-			this.logTime = logTime;
-		}
+		private String logFileName;
 
 		public String getSegmentName() {
 			return this.segmentName;
@@ -121,14 +105,6 @@ public class DescribeLogBackupsResponse extends AcsResponse {
 
 		public void setSegmentName(String segmentName) {
 			this.segmentName = segmentName;
-		}
-
-		public String getLogFileName() {
-			return this.logFileName;
-		}
-
-		public void setLogFileName(String logFileName) {
-			this.logFileName = logFileName;
 		}
 
 		public String getDBInstanceId() {
@@ -139,12 +115,36 @@ public class DescribeLogBackupsResponse extends AcsResponse {
 			this.dBInstanceId = dBInstanceId;
 		}
 
+		public String getLogTime() {
+			return this.logTime;
+		}
+
+		public void setLogTime(String logTime) {
+			this.logTime = logTime;
+		}
+
+		public Long getLogFileSize() {
+			return this.logFileSize;
+		}
+
+		public void setLogFileSize(Long logFileSize) {
+			this.logFileSize = logFileSize;
+		}
+
 		public String getBackupId() {
 			return this.backupId;
 		}
 
 		public void setBackupId(String backupId) {
 			this.backupId = backupId;
+		}
+
+		public String getLogFileName() {
+			return this.logFileName;
+		}
+
+		public void setLogFileName(String logFileName) {
+			this.logFileName = logFileName;
 		}
 	}
 

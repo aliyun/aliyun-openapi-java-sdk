@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDocumentCollectionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String message;
 
+	private String requestId;
+
 	private Integer count;
 
 	private List<CollectionList> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -57,6 +49,14 @@ public class ListDocumentCollectionsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getCount() {
@@ -77,19 +77,39 @@ public class ListDocumentCollectionsResponse extends AcsResponse {
 
 	public static class CollectionList {
 
+		private String metrics;
+
+		private String sparseRetrievalFields;
+
 		private String collectionName;
 
+		private Boolean supportSparse;
+
 		private String embeddingModel;
+
+		private String metadata;
 
 		private Integer dimension;
 
 		private String fullTextRetrievalFields;
 
-		private String metadata;
-
 		private String parser;
 
-		private String metrics;
+		public String getMetrics() {
+			return this.metrics;
+		}
+
+		public void setMetrics(String metrics) {
+			this.metrics = metrics;
+		}
+
+		public String getSparseRetrievalFields() {
+			return this.sparseRetrievalFields;
+		}
+
+		public void setSparseRetrievalFields(String sparseRetrievalFields) {
+			this.sparseRetrievalFields = sparseRetrievalFields;
+		}
 
 		public String getCollectionName() {
 			return this.collectionName;
@@ -99,12 +119,28 @@ public class ListDocumentCollectionsResponse extends AcsResponse {
 			this.collectionName = collectionName;
 		}
 
+		public Boolean getSupportSparse() {
+			return this.supportSparse;
+		}
+
+		public void setSupportSparse(Boolean supportSparse) {
+			this.supportSparse = supportSparse;
+		}
+
 		public String getEmbeddingModel() {
 			return this.embeddingModel;
 		}
 
 		public void setEmbeddingModel(String embeddingModel) {
 			this.embeddingModel = embeddingModel;
+		}
+
+		public String getMetadata() {
+			return this.metadata;
+		}
+
+		public void setMetadata(String metadata) {
+			this.metadata = metadata;
 		}
 
 		public Integer getDimension() {
@@ -123,28 +159,12 @@ public class ListDocumentCollectionsResponse extends AcsResponse {
 			this.fullTextRetrievalFields = fullTextRetrievalFields;
 		}
 
-		public String getMetadata() {
-			return this.metadata;
-		}
-
-		public void setMetadata(String metadata) {
-			this.metadata = metadata;
-		}
-
 		public String getParser() {
 			return this.parser;
 		}
 
 		public void setParser(String parser) {
 			this.parser = parser;
-		}
-
-		public String getMetrics() {
-			return this.metrics;
-		}
-
-		public void setMetrics(String metrics) {
-			this.metrics = metrics;
 		}
 	}
 

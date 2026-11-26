@@ -23,10 +23,10 @@ public class CreateSecretResponseUnmarshaller {
 	public static CreateSecretResponse unmarshall(CreateSecretResponse createSecretResponse, UnmarshallerContext _ctx) {
 		
 		createSecretResponse.setRequestId(_ctx.stringValue("CreateSecretResponse.RequestId"));
-		createSecretResponse.setMessage(_ctx.stringValue("CreateSecretResponse.Message"));
-		createSecretResponse.setStatus(_ctx.stringValue("CreateSecretResponse.Status"));
 		createSecretResponse.setSecretArn(_ctx.stringValue("CreateSecretResponse.SecretArn"));
 		createSecretResponse.setSecretName(_ctx.stringValue("CreateSecretResponse.SecretName"));
+		createSecretResponse.setStatus(_ctx.stringValue("CreateSecretResponse.Status"));
+		createSecretResponse.setMessage(_ctx.stringValue("CreateSecretResponse.Message"));
 	 
 	 	return createSecretResponse;
 	}

@@ -57,27 +57,91 @@ public class DescribeActiveSQLRecordsResponse extends AcsResponse {
 
 	public static class Query {
 
+		private String sqlTruncated;
+
+		private String user;
+
+		private String clientAddr;
+
+		private String query;
+
+		private String state;
+
+		private String queryDuration;
+
+		private String queryStart;
+
+		private String database;
+
 		private String pID;
 
 		private String sessionID;
 
-		private String state;
-
-		private String queryStart;
-
-		private String queryDuration;
-
-		private String query;
-
-		private String user;
-
-		private String database;
-
-		private String clientAddr;
-
-		private String sqlTruncated;
-
 		private String sqlTruncatedThreshold;
+
+		public String getSqlTruncated() {
+			return this.sqlTruncated;
+		}
+
+		public void setSqlTruncated(String sqlTruncated) {
+			this.sqlTruncated = sqlTruncated;
+		}
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
+		}
+
+		public String getClientAddr() {
+			return this.clientAddr;
+		}
+
+		public void setClientAddr(String clientAddr) {
+			this.clientAddr = clientAddr;
+		}
+
+		public String getQuery() {
+			return this.query;
+		}
+
+		public void setQuery(String query) {
+			this.query = query;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getQueryDuration() {
+			return this.queryDuration;
+		}
+
+		public void setQueryDuration(String queryDuration) {
+			this.queryDuration = queryDuration;
+		}
+
+		public String getQueryStart() {
+			return this.queryStart;
+		}
+
+		public void setQueryStart(String queryStart) {
+			this.queryStart = queryStart;
+		}
+
+		public String getDatabase() {
+			return this.database;
+		}
+
+		public void setDatabase(String database) {
+			this.database = database;
+		}
 
 		public String getPID() {
 			return this.pID;
@@ -93,70 +157,6 @@ public class DescribeActiveSQLRecordsResponse extends AcsResponse {
 
 		public void setSessionID(String sessionID) {
 			this.sessionID = sessionID;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getQueryStart() {
-			return this.queryStart;
-		}
-
-		public void setQueryStart(String queryStart) {
-			this.queryStart = queryStart;
-		}
-
-		public String getQueryDuration() {
-			return this.queryDuration;
-		}
-
-		public void setQueryDuration(String queryDuration) {
-			this.queryDuration = queryDuration;
-		}
-
-		public String getQuery() {
-			return this.query;
-		}
-
-		public void setQuery(String query) {
-			this.query = query;
-		}
-
-		public String getUser() {
-			return this.user;
-		}
-
-		public void setUser(String user) {
-			this.user = user;
-		}
-
-		public String getDatabase() {
-			return this.database;
-		}
-
-		public void setDatabase(String database) {
-			this.database = database;
-		}
-
-		public String getClientAddr() {
-			return this.clientAddr;
-		}
-
-		public void setClientAddr(String clientAddr) {
-			this.clientAddr = clientAddr;
-		}
-
-		public String getSqlTruncated() {
-			return this.sqlTruncated;
-		}
-
-		public void setSqlTruncated(String sqlTruncated) {
-			this.sqlTruncated = sqlTruncated;
 		}
 
 		public String getSqlTruncatedThreshold() {

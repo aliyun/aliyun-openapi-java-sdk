@@ -15,6 +15,9 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.gpdb.Endpoint;
 
@@ -29,9 +32,37 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 
 	private String embeddingModel;
 
-	private Integer externalStorage;
+	private String lLMModel;
+
+	private String language;
 
 	private String fullTextRetrievalFields;
+
+	private String managerAccountPassword;
+
+	private String algorithm;
+
+	private String collection;
+
+	private Long ownerId;
+
+	private String sparseRetrievalFields;
+
+	private Integer hnswM;
+
+	private String parser;
+
+	private Boolean supportSparse;
+
+	private String metrics;
+
+	@SerializedName("vectorIndexConfig")
+	private VectorIndexConfig vectorIndexConfig;
+
+	@SerializedName("sparseVectorIndexConfig")
+	private SparseVectorIndexConfig sparseVectorIndexConfig;
+
+	private Integer externalStorage;
 
 	private String managerAccount;
 
@@ -39,27 +70,23 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 
 	private Integer dimension;
 
-	private String managerAccountPassword;
-
 	private String hnswEfConstruction;
 
-	private String collection;
+	@SerializedName("relationshipTypes")
+	private List<String> relationshipTypes;
 
-	private Long ownerId;
-
-	private Integer hnswM;
-
-	private String parser;
+	private Boolean enableGraph;
 
 	private String metadataIndices;
 
 	private String namespace;
 
-	private String metrics;
+	@SerializedName("entityTypes")
+	private List<String> entityTypes;
 
 	private Integer pqEnable;
 	public CreateDocumentCollectionRequest() {
-		super("gpdb", "2016-05-03", "CreateDocumentCollection", "gpdb");
+		super("gpdb", "2016-05-03", "CreateDocumentCollection", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -89,14 +116,25 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		}
 	}
 
-	public Integer getExternalStorage() {
-		return this.externalStorage;
+	public String getLLMModel() {
+		return this.lLMModel;
 	}
 
-	public void setExternalStorage(Integer externalStorage) {
-		this.externalStorage = externalStorage;
-		if(externalStorage != null){
-			putQueryParameter("ExternalStorage", externalStorage.toString());
+	public void setLLMModel(String lLMModel) {
+		this.lLMModel = lLMModel;
+		if(lLMModel != null){
+			putQueryParameter("LLMModel", lLMModel);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -108,6 +146,138 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		this.fullTextRetrievalFields = fullTextRetrievalFields;
 		if(fullTextRetrievalFields != null){
 			putQueryParameter("FullTextRetrievalFields", fullTextRetrievalFields);
+		}
+	}
+
+	public String getManagerAccountPassword() {
+		return this.managerAccountPassword;
+	}
+
+	public void setManagerAccountPassword(String managerAccountPassword) {
+		this.managerAccountPassword = managerAccountPassword;
+		if(managerAccountPassword != null){
+			putQueryParameter("ManagerAccountPassword", managerAccountPassword);
+		}
+	}
+
+	public String getAlgorithm() {
+		return this.algorithm;
+	}
+
+	public void setAlgorithm(String algorithm) {
+		this.algorithm = algorithm;
+		if(algorithm != null){
+			putQueryParameter("Algorithm", algorithm);
+		}
+	}
+
+	public String getCollection() {
+		return this.collection;
+	}
+
+	public void setCollection(String collection) {
+		this.collection = collection;
+		if(collection != null){
+			putQueryParameter("Collection", collection);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSparseRetrievalFields() {
+		return this.sparseRetrievalFields;
+	}
+
+	public void setSparseRetrievalFields(String sparseRetrievalFields) {
+		this.sparseRetrievalFields = sparseRetrievalFields;
+		if(sparseRetrievalFields != null){
+			putQueryParameter("SparseRetrievalFields", sparseRetrievalFields);
+		}
+	}
+
+	public Integer getHnswM() {
+		return this.hnswM;
+	}
+
+	public void setHnswM(Integer hnswM) {
+		this.hnswM = hnswM;
+		if(hnswM != null){
+			putQueryParameter("HnswM", hnswM.toString());
+		}
+	}
+
+	public String getParser() {
+		return this.parser;
+	}
+
+	public void setParser(String parser) {
+		this.parser = parser;
+		if(parser != null){
+			putQueryParameter("Parser", parser);
+		}
+	}
+
+	public Boolean getSupportSparse() {
+		return this.supportSparse;
+	}
+
+	public void setSupportSparse(Boolean supportSparse) {
+		this.supportSparse = supportSparse;
+		if(supportSparse != null){
+			putQueryParameter("SupportSparse", supportSparse.toString());
+		}
+	}
+
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+		if(metrics != null){
+			putQueryParameter("Metrics", metrics);
+		}
+	}
+
+	public VectorIndexConfig getVectorIndexConfig() {
+		return this.vectorIndexConfig;
+	}
+
+	public void setVectorIndexConfig(VectorIndexConfig vectorIndexConfig) {
+		this.vectorIndexConfig = vectorIndexConfig;	
+		if (vectorIndexConfig != null) {
+			putQueryParameter("VectorIndexConfig" , new Gson().toJson(vectorIndexConfig));
+		}	
+	}
+
+	public SparseVectorIndexConfig getSparseVectorIndexConfig() {
+		return this.sparseVectorIndexConfig;
+	}
+
+	public void setSparseVectorIndexConfig(SparseVectorIndexConfig sparseVectorIndexConfig) {
+		this.sparseVectorIndexConfig = sparseVectorIndexConfig;	
+		if (sparseVectorIndexConfig != null) {
+			putQueryParameter("SparseVectorIndexConfig" , new Gson().toJson(sparseVectorIndexConfig));
+		}	
+	}
+
+	public Integer getExternalStorage() {
+		return this.externalStorage;
+	}
+
+	public void setExternalStorage(Integer externalStorage) {
+		this.externalStorage = externalStorage;
+		if(externalStorage != null){
+			putQueryParameter("ExternalStorage", externalStorage.toString());
 		}
 	}
 
@@ -144,17 +314,6 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		}
 	}
 
-	public String getManagerAccountPassword() {
-		return this.managerAccountPassword;
-	}
-
-	public void setManagerAccountPassword(String managerAccountPassword) {
-		this.managerAccountPassword = managerAccountPassword;
-		if(managerAccountPassword != null){
-			putQueryParameter("ManagerAccountPassword", managerAccountPassword);
-		}
-	}
-
 	public String getHnswEfConstruction() {
 		return this.hnswEfConstruction;
 	}
@@ -166,47 +325,25 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		}
 	}
 
-	public String getCollection() {
-		return this.collection;
+	public List<String> getRelationshipTypes() {
+		return this.relationshipTypes;
 	}
 
-	public void setCollection(String collection) {
-		this.collection = collection;
-		if(collection != null){
-			putQueryParameter("Collection", collection);
-		}
+	public void setRelationshipTypes(List<String> relationshipTypes) {
+		this.relationshipTypes = relationshipTypes;	
+		if (relationshipTypes != null) {
+			putQueryParameter("RelationshipTypes" , new Gson().toJson(relationshipTypes));
+		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Boolean getEnableGraph() {
+		return this.enableGraph;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getHnswM() {
-		return this.hnswM;
-	}
-
-	public void setHnswM(Integer hnswM) {
-		this.hnswM = hnswM;
-		if(hnswM != null){
-			putQueryParameter("HnswM", hnswM.toString());
-		}
-	}
-
-	public String getParser() {
-		return this.parser;
-	}
-
-	public void setParser(String parser) {
-		this.parser = parser;
-		if(parser != null){
-			putQueryParameter("Parser", parser);
+	public void setEnableGraph(Boolean enableGraph) {
+		this.enableGraph = enableGraph;
+		if(enableGraph != null){
+			putQueryParameter("EnableGraph", enableGraph.toString());
 		}
 	}
 
@@ -232,15 +369,15 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		}
 	}
 
-	public String getMetrics() {
-		return this.metrics;
+	public List<String> getEntityTypes() {
+		return this.entityTypes;
 	}
 
-	public void setMetrics(String metrics) {
-		this.metrics = metrics;
-		if(metrics != null){
-			putQueryParameter("Metrics", metrics);
-		}
+	public void setEntityTypes(List<String> entityTypes) {
+		this.entityTypes = entityTypes;	
+		if (entityTypes != null) {
+			putQueryParameter("EntityTypes" , new Gson().toJson(entityTypes));
+		}	
 	}
 
 	public Integer getPqEnable() {
@@ -251,6 +388,67 @@ public class CreateDocumentCollectionRequest extends RpcAcsRequest<CreateDocumen
 		this.pqEnable = pqEnable;
 		if(pqEnable != null){
 			putQueryParameter("PqEnable", pqEnable.toString());
+		}
+	}
+
+	public static class VectorIndexConfig {
+
+		@SerializedName("RabitqBits")
+		private Integer rabitqBits;
+
+		@SerializedName("Nlist")
+		private Integer nlist;
+
+		public Integer getRabitqBits() {
+			return this.rabitqBits;
+		}
+
+		public void setRabitqBits(Integer rabitqBits) {
+			this.rabitqBits = rabitqBits;
+		}
+
+		public Integer getNlist() {
+			return this.nlist;
+		}
+
+		public void setNlist(Integer nlist) {
+			this.nlist = nlist;
+		}
+	}
+
+	public static class SparseVectorIndexConfig {
+
+		@SerializedName("HnswM")
+		private Integer hnswM;
+
+		@SerializedName("HnswEfConstruction")
+		private Integer hnswEfConstruction;
+
+		@SerializedName("Algorithm")
+		private String algorithm;
+
+		public Integer getHnswM() {
+			return this.hnswM;
+		}
+
+		public void setHnswM(Integer hnswM) {
+			this.hnswM = hnswM;
+		}
+
+		public Integer getHnswEfConstruction() {
+			return this.hnswEfConstruction;
+		}
+
+		public void setHnswEfConstruction(Integer hnswEfConstruction) {
+			this.hnswEfConstruction = hnswEfConstruction;
+		}
+
+		public String getAlgorithm() {
+			return this.algorithm;
+		}
+
+		public void setAlgorithm(String algorithm) {
+			this.algorithm = algorithm;
 		}
 	}
 

@@ -28,20 +28,20 @@ public class ListInstanceExtensionsResponseUnmarshaller {
 		
 		listInstanceExtensionsResponse.setRequestId(_ctx.stringValue("ListInstanceExtensionsResponse.RequestId"));
 		listInstanceExtensionsResponse.setTotalRecordCount(_ctx.integerValue("ListInstanceExtensionsResponse.TotalRecordCount"));
-		listInstanceExtensionsResponse.setPageNumber(_ctx.integerValue("ListInstanceExtensionsResponse.PageNumber"));
 		listInstanceExtensionsResponse.setPageRecordCount(_ctx.integerValue("ListInstanceExtensionsResponse.PageRecordCount"));
+		listInstanceExtensionsResponse.setPageNumber(_ctx.integerValue("ListInstanceExtensionsResponse.PageNumber"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceExtensionsResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setExtensionId(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].ExtensionId"));
-			itemsItem.setName(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].Name"));
-			itemsItem.setInstalledDatabases(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].InstalledDatabases"));
-			itemsItem.setCurrentVersion(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].CurrentVersion"));
-			itemsItem.setLatestVersion(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].LatestVersion"));
 			itemsItem.setStatus(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].Status"));
 			itemsItem.setDescription(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].Description"));
 			itemsItem.setIsInstallNeedRestart(_ctx.booleanValue("ListInstanceExtensionsResponse.Items["+ i +"].IsInstallNeedRestart"));
+			itemsItem.setLatestVersion(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].LatestVersion"));
+			itemsItem.setCurrentVersion(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].CurrentVersion"));
+			itemsItem.setExtensionId(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].ExtensionId"));
+			itemsItem.setName(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].Name"));
+			itemsItem.setInstalledDatabases(_ctx.stringValue("ListInstanceExtensionsResponse.Items["+ i +"].InstalledDatabases"));
 
 			items.add(itemsItem);
 		}

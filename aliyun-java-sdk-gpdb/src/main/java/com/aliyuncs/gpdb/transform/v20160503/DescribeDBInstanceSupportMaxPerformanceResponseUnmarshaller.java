@@ -32,10 +32,10 @@ public class DescribeDBInstanceSupportMaxPerformanceResponseUnmarshaller {
 		List<Performance> performances = new ArrayList<Performance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances.Length"); i++) {
 			Performance performance = new Performance();
-			performance.setKey(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Key"));
-			performance.setValue(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Value"));
 			performance.setBottleneck(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Bottleneck"));
+			performance.setValue(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Value"));
 			performance.setUnit(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Unit"));
+			performance.setKey(_ctx.stringValue("DescribeDBInstanceSupportMaxPerformanceResponse.Performances["+ i +"].Key"));
 
 			performances.add(performance);
 		}

@@ -23,8 +23,8 @@ public class CreateVectorIndexResponseUnmarshaller {
 	public static CreateVectorIndexResponse unmarshall(CreateVectorIndexResponse createVectorIndexResponse, UnmarshallerContext _ctx) {
 		
 		createVectorIndexResponse.setRequestId(_ctx.stringValue("CreateVectorIndexResponse.RequestId"));
-		createVectorIndexResponse.setMessage(_ctx.stringValue("CreateVectorIndexResponse.Message"));
 		createVectorIndexResponse.setStatus(_ctx.stringValue("CreateVectorIndexResponse.Status"));
+		createVectorIndexResponse.setMessage(_ctx.stringValue("CreateVectorIndexResponse.Message"));
 	 
 	 	return createVectorIndexResponse;
 	}

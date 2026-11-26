@@ -33,7 +33,7 @@ public class CreateDBResourceGroupRequest extends RpcAcsRequest<CreateDBResource
 
 	private Long ownerId;
 	public CreateDBResourceGroupRequest() {
-		super("gpdb", "2016-05-03", "CreateDBResourceGroup", "gpdb");
+		super("gpdb", "2016-05-03", "CreateDBResourceGroup", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -57,11 +57,19 @@ public class DescribeIMVInfosResponse extends AcsResponse {
 
 	public static class ImvInfo {
 
+		private String detailInfo;
+
 		private String mV;
 
 		private String base;
 
-		private String detailInfo;
+		public String getDetailInfo() {
+			return this.detailInfo;
+		}
+
+		public void setDetailInfo(String detailInfo) {
+			this.detailInfo = detailInfo;
+		}
 
 		public String getMV() {
 			return this.mV;
@@ -77,14 +85,6 @@ public class DescribeIMVInfosResponse extends AcsResponse {
 
 		public void setBase(String base) {
 			this.base = base;
-		}
-
-		public String getDetailInfo() {
-			return this.detailInfo;
-		}
-
-		public void setDetailInfo(String detailInfo) {
-			this.detailInfo = detailInfo;
 		}
 	}
 

@@ -31,7 +31,7 @@ public class CheckHadoopDataSourceRequest extends RpcAcsRequest<CheckHadoopDataS
 
 	private String dataSourceId;
 	public CheckHadoopDataSourceRequest() {
-		super("gpdb", "2016-05-03", "CheckHadoopDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "CheckHadoopDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

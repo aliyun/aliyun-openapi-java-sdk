@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateStreamingDataSourceResponse extends AcsResponse {
 
-	private Integer dataSourceId;
-
 	private String requestId;
 
-	public Integer getDataSourceId() {
-		return this.dataSourceId;
-	}
-
-	public void setDataSourceId(Integer dataSourceId) {
-		this.dataSourceId = dataSourceId;
-	}
+	private Integer dataSourceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +34,14 @@ public class CreateStreamingDataSourceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(Integer dataSourceId) {
+		this.dataSourceId = dataSourceId;
 	}
 
 	@Override

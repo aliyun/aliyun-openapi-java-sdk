@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBackupPolicyResponse extends AcsResponse {
 
-	private Integer backupRetentionPeriod;
+	private String preferredBackupPeriod;
 
 	private String requestId;
 
-	private String preferredBackupPeriod;
-
 	private String preferredBackupTime;
 
-	private String recoveryPointPeriod;
+	private Integer backupRetentionPeriod;
 
 	private Boolean enableRecoveryPoint;
 
-	public Integer getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
+	private String recoveryPointPeriod;
+
+	public String getPreferredBackupPeriod() {
+		return this.preferredBackupPeriod;
 	}
 
-	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
+	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
+		this.preferredBackupPeriod = preferredBackupPeriod;
 	}
 
 	public String getRequestId() {
@@ -52,14 +52,6 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
-
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-	}
-
 	public String getPreferredBackupTime() {
 		return this.preferredBackupTime;
 	}
@@ -68,12 +60,12 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 		this.preferredBackupTime = preferredBackupTime;
 	}
 
-	public String getRecoveryPointPeriod() {
-		return this.recoveryPointPeriod;
+	public Integer getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
 	}
 
-	public void setRecoveryPointPeriod(String recoveryPointPeriod) {
-		this.recoveryPointPeriod = recoveryPointPeriod;
+	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
 	}
 
 	public Boolean getEnableRecoveryPoint() {
@@ -82,6 +74,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setEnableRecoveryPoint(Boolean enableRecoveryPoint) {
 		this.enableRecoveryPoint = enableRecoveryPoint;
+	}
+
+	public String getRecoveryPointPeriod() {
+		return this.recoveryPointPeriod;
+	}
+
+	public void setRecoveryPointPeriod(String recoveryPointPeriod) {
+		this.recoveryPointPeriod = recoveryPointPeriod;
 	}
 
 	@Override

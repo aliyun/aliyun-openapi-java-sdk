@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSecretsResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
+	private String requestId;
 
 	private Long count;
 
 	private List<SecretsItem> secrets;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class ListSecretsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getCount() {
@@ -77,42 +77,26 @@ public class ListSecretsResponse extends AcsResponse {
 
 	public static class SecretsItem {
 
-		private String accountId;
-
-		private String regionId;
-
-		private String dBInstanceId;
+		private String secretArn;
 
 		private String secretName;
 
-		private String secretArn;
+		private String accountId;
 
 		private String description;
 
+		private String dBInstanceId;
+
 		private String username;
 
-		public String getAccountId() {
-			return this.accountId;
+		private String regionId;
+
+		public String getSecretArn() {
+			return this.secretArn;
 		}
 
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
-		}
-
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setSecretArn(String secretArn) {
+			this.secretArn = secretArn;
 		}
 
 		public String getSecretName() {
@@ -123,12 +107,12 @@ public class ListSecretsResponse extends AcsResponse {
 			this.secretName = secretName;
 		}
 
-		public String getSecretArn() {
-			return this.secretArn;
+		public String getAccountId() {
+			return this.accountId;
 		}
 
-		public void setSecretArn(String secretArn) {
-			this.secretArn = secretArn;
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getDescription() {
@@ -139,12 +123,28 @@ public class ListSecretsResponse extends AcsResponse {
 			this.description = description;
 		}
 
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
 		public String getUsername() {
 			return this.username;
 		}
 
 		public void setUsername(String username) {
 			this.username = username;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

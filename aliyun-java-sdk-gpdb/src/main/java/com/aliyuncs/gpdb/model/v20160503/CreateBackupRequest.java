@@ -28,7 +28,7 @@ public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 
 	private String dBInstanceId;
 	public CreateBackupRequest() {
-		super("gpdb", "2016-05-03", "CreateBackup", "gpdb");
+		super("gpdb", "2016-05-03", "CreateBackup", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

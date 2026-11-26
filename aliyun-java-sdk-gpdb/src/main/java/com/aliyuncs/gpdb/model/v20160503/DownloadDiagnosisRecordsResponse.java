@@ -26,9 +26,9 @@ public class DownloadDiagnosisRecordsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String downloadId;
-
 	private String dBInstanceId;
+
+	private String downloadId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DownloadDiagnosisRecordsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDownloadId() {
-		return this.downloadId;
-	}
-
-	public void setDownloadId(String downloadId) {
-		this.downloadId = downloadId;
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getDownloadId() {
+		return this.downloadId;
+	}
+
+	public void setDownloadId(String downloadId) {
+		this.downloadId = downloadId;
 	}
 
 	@Override

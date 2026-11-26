@@ -45,7 +45,7 @@ public class DescribeDBInstanceErrorLogRequest extends RpcAcsRequest<DescribeDBI
 
 	private String user;
 	public DescribeDBInstanceErrorLogRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceErrorLog", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBInstanceErrorLog", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

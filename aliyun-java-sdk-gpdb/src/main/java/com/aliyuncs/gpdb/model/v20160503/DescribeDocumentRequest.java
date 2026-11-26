@@ -37,7 +37,7 @@ public class DescribeDocumentRequest extends RpcAcsRequest<DescribeDocumentRespo
 
 	private String namespace;
 	public DescribeDocumentRequest() {
-		super("gpdb", "2016-05-03", "DescribeDocument", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDocument", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

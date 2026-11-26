@@ -35,7 +35,7 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 
 	private String port;
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "gpdb");
+		super("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

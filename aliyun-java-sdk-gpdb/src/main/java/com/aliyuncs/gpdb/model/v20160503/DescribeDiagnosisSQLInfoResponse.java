@@ -24,70 +24,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiagnosisSQLInfoResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
-	private String queryID;
-
-	private String sessionID;
-
-	private Long startTime;
-
-	private Integer duration;
+	private String sortedMetrics;
 
 	private String sQLStmt;
 
 	private String user;
 
-	private String database;
+	private String requestId;
 
-	private String status;
+	private String queryID;
+
+	private Long startTime;
+
+	private Integer duration;
 
 	private String queryPlan;
 
 	private String textPlan;
 
-	private String sortedMetrics;
-
 	private String maxOutputRows;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String database;
+
+	private String sessionID;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-	public String getQueryID() {
-		return this.queryID;
+	public String getSortedMetrics() {
+		return this.sortedMetrics;
 	}
 
-	public void setQueryID(String queryID) {
-		this.queryID = queryID;
-	}
-
-	public String getSessionID() {
-		return this.sessionID;
-	}
-
-	public void setSessionID(String sessionID) {
-		this.sessionID = sessionID;
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-	}
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
+	public void setSortedMetrics(String sortedMetrics) {
+		this.sortedMetrics = sortedMetrics;
 	}
 
 	public String getSQLStmt() {
@@ -106,20 +82,36 @@ public class DescribeDiagnosisSQLInfoResponse extends AcsResponse {
 		this.user = user;
 	}
 
-	public String getDatabase() {
-		return this.database;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setDatabase(String database) {
-		this.database = database;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getQueryID() {
+		return this.queryID;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setQueryID(String queryID) {
+		this.queryID = queryID;
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
 	}
 
 	public String getQueryPlan() {
@@ -138,20 +130,28 @@ public class DescribeDiagnosisSQLInfoResponse extends AcsResponse {
 		this.textPlan = textPlan;
 	}
 
-	public String getSortedMetrics() {
-		return this.sortedMetrics;
-	}
-
-	public void setSortedMetrics(String sortedMetrics) {
-		this.sortedMetrics = sortedMetrics;
-	}
-
 	public String getMaxOutputRows() {
 		return this.maxOutputRows;
 	}
 
 	public void setMaxOutputRows(String maxOutputRows) {
 		this.maxOutputRows = maxOutputRows;
+	}
+
+	public String getDatabase() {
+		return this.database;
+	}
+
+	public void setDatabase(String database) {
+		this.database = database;
+	}
+
+	public String getSessionID() {
+		return this.sessionID;
+	}
+
+	public void setSessionID(String sessionID) {
+		this.sessionID = sessionID;
 	}
 
 	@Override

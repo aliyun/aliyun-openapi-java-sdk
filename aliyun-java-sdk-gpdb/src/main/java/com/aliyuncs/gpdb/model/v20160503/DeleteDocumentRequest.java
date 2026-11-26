@@ -37,7 +37,7 @@ public class DeleteDocumentRequest extends RpcAcsRequest<DeleteDocumentResponse>
 
 	private String namespace;
 	public DeleteDocumentRequest() {
-		super("gpdb", "2016-05-03", "DeleteDocument", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteDocument", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

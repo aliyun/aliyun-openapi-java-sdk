@@ -27,31 +27,37 @@ public class ListStreamingJobsResponseUnmarshaller {
 	public static ListStreamingJobsResponse unmarshall(ListStreamingJobsResponse listStreamingJobsResponse, UnmarshallerContext _ctx) {
 		
 		listStreamingJobsResponse.setRequestId(_ctx.stringValue("ListStreamingJobsResponse.RequestId"));
-		listStreamingJobsResponse.setPageNumber(_ctx.integerValue("ListStreamingJobsResponse.PageNumber"));
-		listStreamingJobsResponse.setPageRecordCount(_ctx.integerValue("ListStreamingJobsResponse.PageRecordCount"));
 		listStreamingJobsResponse.setTotalRecordCount(_ctx.integerValue("ListStreamingJobsResponse.TotalRecordCount"));
+		listStreamingJobsResponse.setPageRecordCount(_ctx.integerValue("ListStreamingJobsResponse.PageRecordCount"));
+		listStreamingJobsResponse.setPageNumber(_ctx.integerValue("ListStreamingJobsResponse.PageNumber"));
 
 		List<Items> jobItems = new ArrayList<Items>();
 		for (int i = 0; i < _ctx.lengthValue("ListStreamingJobsResponse.JobItems.Length"); i++) {
 			Items items = new Items();
-			items.setJobId(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobId"));
-			items.setJobName(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobName"));
-			items.setDataSourceId(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DataSourceId"));
-			items.setJobDescription(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobDescription"));
-			items.setAccount(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Account"));
-			items.setPassword(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Password"));
-			items.setDestDatabase(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestDatabase"));
-			items.setDestSchema(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestSchema"));
-			items.setDestTable(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestTable"));
-			items.setWriteMode(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].WriteMode"));
-			items.setMode(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Mode"));
-			items.setErrorMessage(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].ErrorMessage"));
 			items.setStatus(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Status"));
-			items.setCreateTime(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].CreateTime"));
+			items.setAccount(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Account"));
 			items.setModifyTime(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].ModifyTime"));
-			items.setFallbackOffset(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].FallbackOffset"));
+			items.setDestSchema(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestSchema"));
+			items.setMode(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Mode"));
+			items.setCreateTime(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].CreateTime"));
 			items.setConsistency(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Consistency"));
+			items.setJobName(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobName"));
+			items.setJobDescription(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobDescription"));
+			items.setDestDatabase(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestDatabase"));
 			items.setDataSourceName(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DataSourceName"));
+			items.setFallbackOffset(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].FallbackOffset"));
+			items.setDestTable(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DestTable"));
+			items.setErrorMessage(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].ErrorMessage"));
+			items.setJobId(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].JobId"));
+			items.setDataSourceId(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].DataSourceId"));
+			items.setWriteMode(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].WriteMode"));
+			items.setPassword(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].Password"));
+
+			List<String> updateColumns = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListStreamingJobsResponse.JobItems["+ i +"].UpdateColumns.Length"); j++) {
+				updateColumns.add(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].UpdateColumns["+ j +"]"));
+			}
+			items.setUpdateColumns(updateColumns);
 
 			List<String> srcColumns = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListStreamingJobsResponse.JobItems["+ i +"].SrcColumns.Length"); j++) {
@@ -70,12 +76,6 @@ public class ListStreamingJobsResponseUnmarshaller {
 				matchColumns.add(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].MatchColumns["+ j +"]"));
 			}
 			items.setMatchColumns(matchColumns);
-
-			List<String> updateColumns = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListStreamingJobsResponse.JobItems["+ i +"].UpdateColumns.Length"); j++) {
-				updateColumns.add(_ctx.stringValue("ListStreamingJobsResponse.JobItems["+ i +"].UpdateColumns["+ j +"]"));
-			}
-			items.setUpdateColumns(updateColumns);
 
 			jobItems.add(items);
 		}

@@ -26,12 +26,12 @@ public class ListCollectionsResponseUnmarshaller {
 	public static ListCollectionsResponse unmarshall(ListCollectionsResponse listCollectionsResponse, UnmarshallerContext _ctx) {
 		
 		listCollectionsResponse.setRequestId(_ctx.stringValue("ListCollectionsResponse.RequestId"));
-		listCollectionsResponse.setCount(_ctx.integerValue("ListCollectionsResponse.Count"));
+		listCollectionsResponse.setStatus(_ctx.stringValue("ListCollectionsResponse.Status"));
+		listCollectionsResponse.setMessage(_ctx.stringValue("ListCollectionsResponse.Message"));
 		listCollectionsResponse.setDBInstanceId(_ctx.stringValue("ListCollectionsResponse.DBInstanceId"));
+		listCollectionsResponse.setCount(_ctx.integerValue("ListCollectionsResponse.Count"));
 		listCollectionsResponse.setRegionId(_ctx.stringValue("ListCollectionsResponse.RegionId"));
 		listCollectionsResponse.setNamespace(_ctx.stringValue("ListCollectionsResponse.Namespace"));
-		listCollectionsResponse.setMessage(_ctx.stringValue("ListCollectionsResponse.Message"));
-		listCollectionsResponse.setStatus(_ctx.stringValue("ListCollectionsResponse.Status"));
 
 		List<String> collections = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListCollectionsResponse.Collections.Length"); i++) {

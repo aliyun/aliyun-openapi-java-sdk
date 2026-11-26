@@ -35,7 +35,7 @@ public class ListCollectionsRequest extends RpcAcsRequest<ListCollectionsRespons
 
 	private String workspaceId;
 	public ListCollectionsRequest() {
-		super("gpdb", "2016-05-03", "ListCollections", "gpdb");
+		super("gpdb", "2016-05-03", "ListCollections", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

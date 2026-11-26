@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListIndicesResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String message;
 
-	private String status;
+	private String requestId;
 
 	private List<IndicesItem> indices;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListIndicesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<IndicesItem> getIndices() {
@@ -67,20 +67,20 @@ public class ListIndicesResponse extends AcsResponse {
 
 	public static class IndicesItem {
 
-		private String namespace;
+		private String indexName;
 
 		private String collection;
 
-		private String indexName;
-
 		private String indexDef;
 
-		public String getNamespace() {
-			return this.namespace;
+		private String namespace;
+
+		public String getIndexName() {
+			return this.indexName;
 		}
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
+		public void setIndexName(String indexName) {
+			this.indexName = indexName;
 		}
 
 		public String getCollection() {
@@ -91,20 +91,20 @@ public class ListIndicesResponse extends AcsResponse {
 			this.collection = collection;
 		}
 
-		public String getIndexName() {
-			return this.indexName;
-		}
-
-		public void setIndexName(String indexName) {
-			this.indexName = indexName;
-		}
-
 		public String getIndexDef() {
 			return this.indexDef;
 		}
 
 		public void setIndexDef(String indexDef) {
 			this.indexDef = indexDef;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 	}
 

@@ -27,27 +27,27 @@ public class DescribeTableResponseUnmarshaller {
 	public static DescribeTableResponse unmarshall(DescribeTableResponse describeTableResponse, UnmarshallerContext _ctx) {
 		
 		describeTableResponse.setRequestId(_ctx.stringValue("DescribeTableResponse.RequestId"));
-		describeTableResponse.setMessage(_ctx.stringValue("DescribeTableResponse.Message"));
 		describeTableResponse.setStatus(_ctx.stringValue("DescribeTableResponse.Status"));
+		describeTableResponse.setMessage(_ctx.stringValue("DescribeTableResponse.Message"));
 
 		List<ColumnListItem> columnList = new ArrayList<ColumnListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTableResponse.ColumnList.Length"); i++) {
 			ColumnListItem columnListItem = new ColumnListItem();
-			columnListItem.setName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].Name"));
-			columnListItem.setDataType(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].DataType"));
+			columnListItem.setComment(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].Comment"));
 			columnListItem.setColumnDefault(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].ColumnDefault"));
+			columnListItem.setScale(_ctx.integerValue("DescribeTableResponse.ColumnList["+ i +"].Scale"));
 			columnListItem.setMaxLength(_ctx.integerValue("DescribeTableResponse.ColumnList["+ i +"].MaxLength"));
-			columnListItem.setNullable(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].Nullable"));
-			columnListItem.setSchemaName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].SchemaName"));
-			columnListItem.setTableName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].TableName"));
+			columnListItem.setUdtName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].UdtName"));
 			columnListItem.setIsCaseSensitive(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].IsCaseSensitive"));
 			columnListItem.setIsCurrency(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].IsCurrency"));
-			columnListItem.setIsSigned(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].IsSigned"));
+			columnListItem.setName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].Name"));
+			columnListItem.setTableName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].TableName"));
 			columnListItem.setPrecision(_ctx.integerValue("DescribeTableResponse.ColumnList["+ i +"].Precision"));
-			columnListItem.setScale(_ctx.integerValue("DescribeTableResponse.ColumnList["+ i +"].Scale"));
+			columnListItem.setDataType(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].DataType"));
+			columnListItem.setIsSigned(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].IsSigned"));
+			columnListItem.setNullable(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].Nullable"));
+			columnListItem.setSchemaName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].SchemaName"));
 			columnListItem.setIsPrimaryKey(_ctx.booleanValue("DescribeTableResponse.ColumnList["+ i +"].IsPrimaryKey"));
-			columnListItem.setComment(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].Comment"));
-			columnListItem.setUdtName(_ctx.stringValue("DescribeTableResponse.ColumnList["+ i +"].UdtName"));
 
 			columnList.add(columnListItem);
 		}

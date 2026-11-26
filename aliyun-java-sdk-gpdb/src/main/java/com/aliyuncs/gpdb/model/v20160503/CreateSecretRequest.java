@@ -41,7 +41,7 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 
 	private String username;
 	public CreateSecretRequest() {
-		super("gpdb", "2016-05-03", "CreateSecret", "gpdb");
+		super("gpdb", "2016-05-03", "CreateSecret", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

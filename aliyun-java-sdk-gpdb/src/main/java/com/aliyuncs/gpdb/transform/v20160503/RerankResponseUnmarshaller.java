@@ -27,15 +27,15 @@ public class RerankResponseUnmarshaller {
 	public static RerankResponse unmarshall(RerankResponse rerankResponse, UnmarshallerContext _ctx) {
 		
 		rerankResponse.setRequestId(_ctx.stringValue("RerankResponse.RequestId"));
-		rerankResponse.setMessage(_ctx.stringValue("RerankResponse.Message"));
 		rerankResponse.setStatus(_ctx.stringValue("RerankResponse.Status"));
+		rerankResponse.setMessage(_ctx.stringValue("RerankResponse.Message"));
 		rerankResponse.setTokens(_ctx.integerValue("RerankResponse.Tokens"));
 
 		List<ResultsItem> results = new ArrayList<ResultsItem>();
 		for (int i = 0; i < _ctx.lengthValue("RerankResponse.Results.Length"); i++) {
 			ResultsItem resultsItem = new ResultsItem();
-			resultsItem.setDocument(_ctx.stringValue("RerankResponse.Results["+ i +"].Document"));
 			resultsItem.setIndex(_ctx.integerValue("RerankResponse.Results["+ i +"].Index"));
+			resultsItem.setDocument(_ctx.stringValue("RerankResponse.Results["+ i +"].Document"));
 			resultsItem.setRelevanceScore(_ctx.floatValue("RerankResponse.Results["+ i +"].RelevanceScore"));
 
 			results.add(resultsItem);

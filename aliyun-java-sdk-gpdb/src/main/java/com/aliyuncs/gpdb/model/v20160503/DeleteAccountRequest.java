@@ -30,7 +30,7 @@ public class DeleteAccountRequest extends RpcAcsRequest<DeleteAccountResponse> {
 
 	private String dBInstanceId;
 	public DeleteAccountRequest() {
-		super("gpdb", "2016-05-03", "DeleteAccount", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteAccount", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

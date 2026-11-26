@@ -23,8 +23,8 @@ public class DeleteNamespaceResponseUnmarshaller {
 	public static DeleteNamespaceResponse unmarshall(DeleteNamespaceResponse deleteNamespaceResponse, UnmarshallerContext _ctx) {
 		
 		deleteNamespaceResponse.setRequestId(_ctx.stringValue("DeleteNamespaceResponse.RequestId"));
-		deleteNamespaceResponse.setMessage(_ctx.stringValue("DeleteNamespaceResponse.Message"));
 		deleteNamespaceResponse.setStatus(_ctx.stringValue("DeleteNamespaceResponse.Status"));
+		deleteNamespaceResponse.setMessage(_ctx.stringValue("DeleteNamespaceResponse.Message"));
 	 
 	 	return deleteNamespaceResponse;
 	}

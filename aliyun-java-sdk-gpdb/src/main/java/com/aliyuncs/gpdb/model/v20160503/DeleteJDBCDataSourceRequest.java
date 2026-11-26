@@ -29,7 +29,7 @@ public class DeleteJDBCDataSourceRequest extends RpcAcsRequest<DeleteJDBCDataSou
 
 	private String dataSourceId;
 	public DeleteJDBCDataSourceRequest() {
-		super("gpdb", "2016-05-03", "DeleteJDBCDataSource", "gpdb");
+		super("gpdb", "2016-05-03", "DeleteJDBCDataSource", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

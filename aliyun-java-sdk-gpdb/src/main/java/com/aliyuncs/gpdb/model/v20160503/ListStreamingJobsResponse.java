@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListStreamingJobsResponse extends AcsResponse {
 
+	private Integer totalRecordCount;
+
+	private Integer pageRecordCount;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageRecordCount;
-
-	private Integer totalRecordCount;
-
 	private List<Items> jobItems;
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class ListStreamingJobsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
 	public List<Items> getJobItems() {
 		return this.jobItems;
 	}
@@ -77,41 +77,43 @@ public class ListStreamingJobsResponse extends AcsResponse {
 
 	public static class Items {
 
-		private String jobId;
-
-		private String jobName;
-
-		private String dataSourceId;
-
-		private String jobDescription;
+		private String status;
 
 		private String account;
 
-		private String password;
-
-		private String destDatabase;
+		private String modifyTime;
 
 		private String destSchema;
 
-		private String destTable;
-
-		private String writeMode;
-
 		private String mode;
-
-		private String errorMessage;
-
-		private String status;
 
 		private String createTime;
 
-		private String modifyTime;
+		private String consistency;
+
+		private String jobName;
+
+		private String jobDescription;
+
+		private String destDatabase;
+
+		private String dataSourceName;
 
 		private String fallbackOffset;
 
-		private String consistency;
+		private String destTable;
 
-		private String dataSourceName;
+		private String errorMessage;
+
+		private String jobId;
+
+		private String dataSourceId;
+
+		private String writeMode;
+
+		private String password;
+
+		private List<String> updateColumns;
 
 		private List<String> srcColumns;
 
@@ -119,38 +121,12 @@ public class ListStreamingJobsResponse extends AcsResponse {
 
 		private List<String> matchColumns;
 
-		private List<String> updateColumns;
-
-		public String getJobId() {
-			return this.jobId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getJobName() {
-			return this.jobName;
-		}
-
-		public void setJobName(String jobName) {
-			this.jobName = jobName;
-		}
-
-		public String getDataSourceId() {
-			return this.dataSourceId;
-		}
-
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
-		}
-
-		public String getJobDescription() {
-			return this.jobDescription;
-		}
-
-		public void setJobDescription(String jobDescription) {
-			this.jobDescription = jobDescription;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getAccount() {
@@ -161,20 +137,12 @@ public class ListStreamingJobsResponse extends AcsResponse {
 			this.account = account;
 		}
 
-		public String getPassword() {
-			return this.password;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
-		public String getDestDatabase() {
-			return this.destDatabase;
-		}
-
-		public void setDestDatabase(String destDatabase) {
-			this.destDatabase = destDatabase;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
 		}
 
 		public String getDestSchema() {
@@ -185,44 +153,12 @@ public class ListStreamingJobsResponse extends AcsResponse {
 			this.destSchema = destSchema;
 		}
 
-		public String getDestTable() {
-			return this.destTable;
-		}
-
-		public void setDestTable(String destTable) {
-			this.destTable = destTable;
-		}
-
-		public String getWriteMode() {
-			return this.writeMode;
-		}
-
-		public void setWriteMode(String writeMode) {
-			this.writeMode = writeMode;
-		}
-
 		public String getMode() {
 			return this.mode;
 		}
 
 		public void setMode(String mode) {
 			this.mode = mode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 
 		public String getCreateTime() {
@@ -233,12 +169,44 @@ public class ListStreamingJobsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public String getConsistency() {
+			return this.consistency;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setConsistency(String consistency) {
+			this.consistency = consistency;
+		}
+
+		public String getJobName() {
+			return this.jobName;
+		}
+
+		public void setJobName(String jobName) {
+			this.jobName = jobName;
+		}
+
+		public String getJobDescription() {
+			return this.jobDescription;
+		}
+
+		public void setJobDescription(String jobDescription) {
+			this.jobDescription = jobDescription;
+		}
+
+		public String getDestDatabase() {
+			return this.destDatabase;
+		}
+
+		public void setDestDatabase(String destDatabase) {
+			this.destDatabase = destDatabase;
+		}
+
+		public String getDataSourceName() {
+			return this.dataSourceName;
+		}
+
+		public void setDataSourceName(String dataSourceName) {
+			this.dataSourceName = dataSourceName;
 		}
 
 		public String getFallbackOffset() {
@@ -249,20 +217,60 @@ public class ListStreamingJobsResponse extends AcsResponse {
 			this.fallbackOffset = fallbackOffset;
 		}
 
-		public String getConsistency() {
-			return this.consistency;
+		public String getDestTable() {
+			return this.destTable;
 		}
 
-		public void setConsistency(String consistency) {
-			this.consistency = consistency;
+		public void setDestTable(String destTable) {
+			this.destTable = destTable;
 		}
 
-		public String getDataSourceName() {
-			return this.dataSourceName;
+		public String getErrorMessage() {
+			return this.errorMessage;
 		}
 
-		public void setDataSourceName(String dataSourceName) {
-			this.dataSourceName = dataSourceName;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public String getWriteMode() {
+			return this.writeMode;
+		}
+
+		public void setWriteMode(String writeMode) {
+			this.writeMode = writeMode;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public List<String> getUpdateColumns() {
+			return this.updateColumns;
+		}
+
+		public void setUpdateColumns(List<String> updateColumns) {
+			this.updateColumns = updateColumns;
 		}
 
 		public List<String> getSrcColumns() {
@@ -287,14 +295,6 @@ public class ListStreamingJobsResponse extends AcsResponse {
 
 		public void setMatchColumns(List<String> matchColumns) {
 			this.matchColumns = matchColumns;
-		}
-
-		public List<String> getUpdateColumns() {
-			return this.updateColumns;
-		}
-
-		public void setUpdateColumns(List<String> updateColumns) {
-			this.updateColumns = updateColumns;
 		}
 	}
 

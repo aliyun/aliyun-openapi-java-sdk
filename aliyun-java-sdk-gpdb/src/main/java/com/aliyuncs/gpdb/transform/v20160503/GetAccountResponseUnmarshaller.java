@@ -23,11 +23,11 @@ public class GetAccountResponseUnmarshaller {
 	public static GetAccountResponse unmarshall(GetAccountResponse getAccountResponse, UnmarshallerContext _ctx) {
 		
 		getAccountResponse.setRequestId(_ctx.stringValue("GetAccountResponse.RequestId"));
-		getAccountResponse.setAccountStatus(_ctx.stringValue("GetAccountResponse.AccountStatus"));
 		getAccountResponse.setAccountDescription(_ctx.stringValue("GetAccountResponse.AccountDescription"));
+		getAccountResponse.setAccountStatus(_ctx.stringValue("GetAccountResponse.AccountStatus"));
 		getAccountResponse.setDBInstanceId(_ctx.stringValue("GetAccountResponse.DBInstanceId"));
-		getAccountResponse.setAccountName(_ctx.stringValue("GetAccountResponse.AccountName"));
 		getAccountResponse.setAccountType(_ctx.stringValue("GetAccountResponse.AccountType"));
+		getAccountResponse.setAccountName(_ctx.stringValue("GetAccountResponse.AccountName"));
 	 
 	 	return getAccountResponse;
 	}

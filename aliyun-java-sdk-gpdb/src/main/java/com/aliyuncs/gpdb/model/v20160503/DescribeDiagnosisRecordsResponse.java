@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
+
+	private String requestId;
 
 	private Integer pageNumber;
 
 	private List<Item> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -47,6 +39,14 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -67,57 +67,25 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String queryID;
-
-		private String sessionID;
-
-		private Long startTime;
-
-		private Integer duration;
-
 		private String status;
 
 		private String sQLStmt;
 
 		private String user;
 
+		private Integer sQLTruncatedThreshold;
+
+		private String queryID;
+
+		private Long startTime;
+
 		private String database;
+
+		private Integer duration;
 
 		private Boolean sQLTruncated;
 
-		private Integer sQLTruncatedThreshold;
-
-		public String getQueryID() {
-			return this.queryID;
-		}
-
-		public void setQueryID(String queryID) {
-			this.queryID = queryID;
-		}
-
-		public String getSessionID() {
-			return this.sessionID;
-		}
-
-		public void setSessionID(String sessionID) {
-			this.sessionID = sessionID;
-		}
-
-		public Long getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(Integer duration) {
-			this.duration = duration;
-		}
+		private String sessionID;
 
 		public String getStatus() {
 			return this.status;
@@ -143,12 +111,44 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 			this.user = user;
 		}
 
+		public Integer getSQLTruncatedThreshold() {
+			return this.sQLTruncatedThreshold;
+		}
+
+		public void setSQLTruncatedThreshold(Integer sQLTruncatedThreshold) {
+			this.sQLTruncatedThreshold = sQLTruncatedThreshold;
+		}
+
+		public String getQueryID() {
+			return this.queryID;
+		}
+
+		public void setQueryID(String queryID) {
+			this.queryID = queryID;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
 		public String getDatabase() {
 			return this.database;
 		}
 
 		public void setDatabase(String database) {
 			this.database = database;
+		}
+
+		public Integer getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Integer duration) {
+			this.duration = duration;
 		}
 
 		public Boolean getSQLTruncated() {
@@ -159,12 +159,12 @@ public class DescribeDiagnosisRecordsResponse extends AcsResponse {
 			this.sQLTruncated = sQLTruncated;
 		}
 
-		public Integer getSQLTruncatedThreshold() {
-			return this.sQLTruncatedThreshold;
+		public String getSessionID() {
+			return this.sessionID;
 		}
 
-		public void setSQLTruncatedThreshold(Integer sQLTruncatedThreshold) {
-			this.sQLTruncatedThreshold = sQLTruncatedThreshold;
+		public void setSessionID(String sessionID) {
+			this.sessionID = sessionID;
 		}
 	}
 

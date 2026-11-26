@@ -39,6 +39,8 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 
 	private String segNodeNum;
 
+	private String effectiveTime;
+
 	private String dBInstanceId;
 
 	private String dBInstanceGroupCount;
@@ -55,7 +57,7 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 
 	private String payType;
 	public UpgradeDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "UpgradeDBInstance", "gpdb");
+		super("gpdb", "2016-05-03", "UpgradeDBInstance", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -137,6 +139,17 @@ public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceRes
 		this.segNodeNum = segNodeNum;
 		if(segNodeNum != null){
 			putQueryParameter("SegNodeNum", segNodeNum);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

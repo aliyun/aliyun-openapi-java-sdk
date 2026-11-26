@@ -57,37 +57,21 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public static class DBInstanceNetInfo {
 
-		private String vSwitchId;
-
-		private String connectionString;
-
 		private String iPType;
+
+		private String vPCId;
+
+		private String vSwitchId;
 
 		private String port;
 
 		private String vpcInstanceId;
 
-		private String vPCId;
+		private String connectionString;
 
 		private String iPAddress;
 
 		private String addressType;
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
 
 		public String getIPType() {
 			return this.iPType;
@@ -95,6 +79,22 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setIPType(String iPType) {
 			this.iPType = iPType;
+		}
+
+		public String getVPCId() {
+			return this.vPCId;
+		}
+
+		public void setVPCId(String vPCId) {
+			this.vPCId = vPCId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public String getPort() {
@@ -113,12 +113,12 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.vpcInstanceId = vpcInstanceId;
 		}
 
-		public String getVPCId() {
-			return this.vPCId;
+		public String getConnectionString() {
+			return this.connectionString;
 		}
 
-		public void setVPCId(String vPCId) {
-			this.vPCId = vPCId;
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
 		}
 
 		public String getIPAddress() {

@@ -25,31 +25,47 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeCollectionResponse extends AcsResponse {
 
+	private String status;
+
+	private String message;
+
 	private String requestId;
+
+	private Map<Object,Object> metadata;
+
+	private String sparseVectorMetrics;
 
 	private Integer dimension;
 
 	private String fullTextRetrievalFields;
 
-	private Map<Object,Object> metadata;
-
-	private String metrics;
+	private String namespace;
 
 	private String parser;
 
+	private String metrics;
+
 	private String dBInstanceId;
-
-	private String regionId;
-
-	private String namespace;
-
-	private String message;
-
-	private String status;
 
 	private Boolean supportSparse;
 
-	private String sparseVectorMetrics;
+	private String regionId;
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +73,22 @@ public class DescribeCollectionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Map<Object,Object> getMetadata() {
+		return this.metadata;
+	}
+
+	public void setMetadata(Map<Object,Object> metadata) {
+		this.metadata = metadata;
+	}
+
+	public String getSparseVectorMetrics() {
+		return this.sparseVectorMetrics;
+	}
+
+	public void setSparseVectorMetrics(String sparseVectorMetrics) {
+		this.sparseVectorMetrics = sparseVectorMetrics;
 	}
 
 	public Integer getDimension() {
@@ -75,20 +107,12 @@ public class DescribeCollectionResponse extends AcsResponse {
 		this.fullTextRetrievalFields = fullTextRetrievalFields;
 	}
 
-	public Map<Object,Object> getMetadata() {
-		return this.metadata;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setMetadata(Map<Object,Object> metadata) {
-		this.metadata = metadata;
-	}
-
-	public String getMetrics() {
-		return this.metrics;
-	}
-
-	public void setMetrics(String metrics) {
-		this.metrics = metrics;
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	public String getParser() {
@@ -99,44 +123,20 @@ public class DescribeCollectionResponse extends AcsResponse {
 		this.parser = parser;
 	}
 
+	public String getMetrics() {
+		return this.metrics;
+	}
+
+	public void setMetrics(String metrics) {
+		this.metrics = metrics;
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public Boolean getSupportSparse() {
@@ -147,12 +147,12 @@ public class DescribeCollectionResponse extends AcsResponse {
 		this.supportSparse = supportSparse;
 	}
 
-	public String getSparseVectorMetrics() {
-		return this.sparseVectorMetrics;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setSparseVectorMetrics(String sparseVectorMetrics) {
-		this.sparseVectorMetrics = sparseVectorMetrics;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
 	@Override

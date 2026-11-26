@@ -29,7 +29,7 @@ public class DescribeDBResourceManagementModeRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeDBResourceManagementModeRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBResourceManagementMode", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBResourceManagementMode", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,17 +26,32 @@ import com.aliyuncs.gpdb.Endpoint;
 public class ModifySupabaseProjectSecurityIpsRequest extends RpcAcsRequest<ModifySupabaseProjectSecurityIpsResponse> {
 	   
 
+	private Boolean updateDb;
+
 	private String projectId;
 
 	private String securityIPList;
+
+	private Boolean updateWeb;
 	public ModifySupabaseProjectSecurityIpsRequest() {
-		super("gpdb", "2016-05-03", "ModifySupabaseProjectSecurityIps", "gpdb");
+		super("gpdb", "2016-05-03", "ModifySupabaseProjectSecurityIps", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getUpdateDb() {
+		return this.updateDb;
+	}
+
+	public void setUpdateDb(Boolean updateDb) {
+		this.updateDb = updateDb;
+		if(updateDb != null){
+			putQueryParameter("UpdateDb", updateDb.toString());
+		}
 	}
 
 	public String getProjectId() {
@@ -58,6 +73,17 @@ public class ModifySupabaseProjectSecurityIpsRequest extends RpcAcsRequest<Modif
 		this.securityIPList = securityIPList;
 		if(securityIPList != null){
 			putQueryParameter("SecurityIPList", securityIPList);
+		}
+	}
+
+	public Boolean getUpdateWeb() {
+		return this.updateWeb;
+	}
+
+	public void setUpdateWeb(Boolean updateWeb) {
+		this.updateWeb = updateWeb;
+		if(updateWeb != null){
+			putQueryParameter("UpdateWeb", updateWeb.toString());
 		}
 	}
 

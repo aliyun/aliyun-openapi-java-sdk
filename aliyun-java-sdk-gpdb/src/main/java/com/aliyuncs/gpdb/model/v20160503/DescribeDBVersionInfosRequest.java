@@ -33,7 +33,7 @@ public class DescribeDBVersionInfosRequest extends RpcAcsRequest<DescribeDBVersi
 
 	private String dBVersion;
 	public DescribeDBVersionInfosRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBVersionInfos", "gpdb");
+		super("gpdb", "2016-05-03", "DescribeDBVersionInfos", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

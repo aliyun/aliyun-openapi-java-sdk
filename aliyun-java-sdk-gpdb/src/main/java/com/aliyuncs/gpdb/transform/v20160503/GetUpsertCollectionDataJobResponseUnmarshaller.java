@@ -28,13 +28,13 @@ public class GetUpsertCollectionDataJobResponseUnmarshaller {
 		getUpsertCollectionDataJobResponse.setMessage(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Message"));
 
 		Job job = new Job();
-		job.setId(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.Id"));
-		job.setCompleted(_ctx.booleanValue("GetUpsertCollectionDataJobResponse.Job.Completed"));
-		job.setCreateTime(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.CreateTime"));
-		job.setUpdateTime(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.UpdateTime"));
 		job.setStatus(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.Status"));
-		job.setError(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.Error"));
 		job.setProgress(_ctx.integerValue("GetUpsertCollectionDataJobResponse.Job.Progress"));
+		job.setCreateTime(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.CreateTime"));
+		job.setCompleted(_ctx.booleanValue("GetUpsertCollectionDataJobResponse.Job.Completed"));
+		job.setUpdateTime(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.UpdateTime"));
+		job.setError(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.Error"));
+		job.setId(_ctx.stringValue("GetUpsertCollectionDataJobResponse.Job.Id"));
 		getUpsertCollectionDataJobResponse.setJob(job);
 	 
 	 	return getUpsertCollectionDataJobResponse;

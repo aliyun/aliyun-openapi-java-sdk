@@ -29,7 +29,7 @@ public class ResumeInstanceRequest extends RpcAcsRequest<ResumeInstanceResponse>
 
 	private Long ownerId;
 	public ResumeInstanceRequest() {
-		super("gpdb", "2016-05-03", "ResumeInstance", "gpdb");
+		super("gpdb", "2016-05-03", "ResumeInstance", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

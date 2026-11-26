@@ -30,7 +30,7 @@ public class GetAccountRequest extends RpcAcsRequest<GetAccountResponse> {
 
 	private String dBInstanceId;
 	public GetAccountRequest() {
-		super("gpdb", "2016-05-03", "GetAccount", "gpdb");
+		super("gpdb", "2016-05-03", "GetAccount", "GPDB");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -33,18 +33,18 @@ public class DescribeDBInstanceDataBloatResponseUnmarshaller {
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceDataBloatResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setSequence(_ctx.integerValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].Sequence"));
-			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].DatabaseName"));
-			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].SchemaName"));
+			itemsItem.setExpectTableSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].ExpectTableSize"));
 			itemsItem.setTableName(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].TableName"));
 			itemsItem.setStorageType(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].StorageType"));
-			itemsItem.setExpectTableSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].ExpectTableSize"));
-			itemsItem.setRealTableSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].RealTableSize"));
-			itemsItem.setBloatSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].BloatSize"));
+			itemsItem.setDatabaseName(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].DatabaseName"));
+			itemsItem.setSequence(_ctx.integerValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].Sequence"));
 			itemsItem.setBloatCeoff(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].BloatCeoff"));
-			itemsItem.setSuggestedAction(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].SuggestedAction"));
-			itemsItem.setTimeLastVacuumed(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].TimeLastVacuumed"));
+			itemsItem.setRealTableSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].RealTableSize"));
 			itemsItem.setTimeLastUpdated(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].TimeLastUpdated"));
+			itemsItem.setSchemaName(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].SchemaName"));
+			itemsItem.setBloatSize(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].BloatSize"));
+			itemsItem.setTimeLastVacuumed(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].TimeLastVacuumed"));
+			itemsItem.setSuggestedAction(_ctx.stringValue("DescribeDBInstanceDataBloatResponse.Items["+ i +"].SuggestedAction"));
 
 			items.add(itemsItem);
 		}

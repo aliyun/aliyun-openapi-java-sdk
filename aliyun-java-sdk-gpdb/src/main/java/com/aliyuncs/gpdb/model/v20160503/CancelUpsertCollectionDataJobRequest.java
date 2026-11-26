@@ -39,7 +39,7 @@ public class CancelUpsertCollectionDataJobRequest extends RpcAcsRequest<CancelUp
 
 	private String workspaceId;
 	public CancelUpsertCollectionDataJobRequest() {
-		super("gpdb", "2016-05-03", "CancelUpsertCollectionDataJob", "gpdb");
+		super("gpdb", "2016-05-03", "CancelUpsertCollectionDataJob", "GPDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

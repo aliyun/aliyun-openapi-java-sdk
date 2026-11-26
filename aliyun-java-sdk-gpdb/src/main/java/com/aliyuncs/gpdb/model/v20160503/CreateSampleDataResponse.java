@@ -24,13 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSampleDataResponse extends AcsResponse {
 
+	private Boolean status;
+
+	private String requestId;
+
 	private String dBInstanceId;
 
 	private String errorMessage;
 
-	private String requestId;
+	public Boolean getStatus() {
+		return this.status;
+	}
 
-	private Boolean status;
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -46,22 +62,6 @@ public class CreateSampleDataResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
 	}
 
 	@Override

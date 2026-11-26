@@ -23,8 +23,8 @@ public class CreateCollectionResponseUnmarshaller {
 	public static CreateCollectionResponse unmarshall(CreateCollectionResponse createCollectionResponse, UnmarshallerContext _ctx) {
 		
 		createCollectionResponse.setRequestId(_ctx.stringValue("CreateCollectionResponse.RequestId"));
-		createCollectionResponse.setMessage(_ctx.stringValue("CreateCollectionResponse.Message"));
 		createCollectionResponse.setStatus(_ctx.stringValue("CreateCollectionResponse.Status"));
+		createCollectionResponse.setMessage(_ctx.stringValue("CreateCollectionResponse.Message"));
 	 
 	 	return createCollectionResponse;
 	}

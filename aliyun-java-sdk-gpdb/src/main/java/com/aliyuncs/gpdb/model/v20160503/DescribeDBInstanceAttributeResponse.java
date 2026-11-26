@@ -47,182 +47,170 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 	public static class DBInstanceAttribute {
 
-		private String availabilityValue;
+		private Integer masterNodeNum;
 
-		private String connectionMode;
-
-		private String connectionString;
-
-		private String coreVersion;
-
-		private Integer cpuCores;
+		private String standbyZoneId;
 
 		private Integer cpuCoresPerNode;
 
-		private String creationTime;
+		private Long dBInstanceMemory;
 
-		private String dBInstanceCategory;
+		private String resourceGroupId;
 
-		private String dBInstanceClass;
+		private String port;
 
-		private String dBInstanceClassType;
+		private Integer segNodeNum;
 
-		private Integer dBInstanceCpuCores;
-
-		private String dBInstanceDescription;
-
-		private Long dBInstanceDiskMBPS;
+		private Integer memoryPerNode;
 
 		private String dBInstanceGroupCount;
 
-		private String dBInstanceId;
+		private String instanceNetworkType;
 
-		private Long dBInstanceMemory;
+		private String masterAISpec;
 
-		private String dBInstanceMode;
+		private String dBInstanceClassType;
 
-		private String dBInstanceNetType;
-
-		private String dBInstanceStatus;
-
-		private Long dBInstanceStorage;
+		private String dBInstanceCategory;
 
 		private String deployMode;
 
-		private String encryptionKey;
+		private String dBInstanceId;
 
-		private String encryptionType;
+		private Long dBInstanceStorage;
 
-		private String engine;
-
-		private String engineVersion;
-
-		private String expireTime;
-
-		private String hostType;
-
-		private Integer idleTime;
-
-		private String instanceNetworkType;
-
-		private String lockMode;
+		private Integer serverlessResource;
 
 		private String lockReason;
 
-		private String maintainEndTime;
+		private String availabilityValue;
 
-		private String maintainStartTime;
+		private String primaryDBInstanceId;
 
-		private Integer masterCU;
+		private String dBInstanceDescription;
 
-		private Integer masterNodeNum;
+		private String engine;
+
+		private String cacheStorageSize;
+
+		private String encryptionType;
+
+		private Integer segmentCounts;
+
+		private Long dBInstanceDiskMBPS;
+
+		private String serverlessMode;
+
+		private String engineVersion;
+
+		private String storageType;
+
+		private String dBInstanceStatus;
 
 		private Integer maxConnections;
 
-		private Integer memoryPerNode;
+		private String dBInstanceClass;
+
+		private Integer dBInstanceCpuCores;
+
+		private String prodType;
+
+		private String graphEngineStatus;
+
+		private String vSwitchId;
+
+		private String startTime;
+
+		private String coreVersion;
+
+		private String lockMode;
+
+		private String payType;
+
+		private Integer masterCU;
+
+		private String vpcId;
+
+		private String connectionMode;
+
+		private Integer cpuCores;
+
+		private String creationTime;
+
+		private String readDelayTime;
+
+		private String connectionString;
+
+		private String expireTime;
+
+		private String segDiskPerformanceLevel;
+
+		private String instanceSpec;
+
+		private String dBInstanceNetType;
+
+		private Integer idleTime;
+
+		private String encryptionKey;
+
+		private Boolean supportRestore;
+
+		private String hostType;
+
+		private String maintainEndTime;
+
+		private String segmentAISpec;
+
+		private String vectorConfigurationStatus;
+
+		private String securityIPList;
+
+		private String segmentDiskLockThreshold;
+
+		private String instanceType;
+
+		private String maintainStartTime;
 
 		private Long memorySize;
 
 		private String memoryUnit;
 
+		private String zoneId;
+
 		private String minorVersion;
-
-		private String payType;
-
-		private String port;
-
-		private String prodType;
-
-		private String readDelayTime;
-
-		private String regionId;
-
-		private String resourceGroupId;
-
-		private String runningTime;
-
-		private String securityIPList;
-
-		private String segDiskPerformanceLevel;
-
-		private Integer segNodeNum;
-
-		private Integer segmentCounts;
-
-		private String serverlessMode;
-
-		private Integer serverlessResource;
-
-		private String standbyZoneId;
-
-		private String startTime;
-
-		private Integer storagePerNode;
 
 		private Long storageSize;
 
-		private String storageType;
-
 		private String storageUnit;
 
-		private Boolean supportRestore;
+		private String diskNotifyThreshold;
 
-		private String vSwitchId;
+		private String masterDiskLockThreshold;
 
-		private String vectorConfigurationStatus;
+		private Integer storagePerNode;
 
-		private String vpcId;
+		private String dBInstanceMode;
 
-		private String zoneId;
+		private String regionId;
 
-		private String segmentAISpec;
-
-		private String masterAISpec;
-
-		private String cacheStorageSize;
-
-		private String instanceSpec;
+		private String runningTime;
 
 		private List<Tag> tags;
 
-		public String getAvailabilityValue() {
-			return this.availabilityValue;
+		public Integer getMasterNodeNum() {
+			return this.masterNodeNum;
 		}
 
-		public void setAvailabilityValue(String availabilityValue) {
-			this.availabilityValue = availabilityValue;
+		public void setMasterNodeNum(Integer masterNodeNum) {
+			this.masterNodeNum = masterNodeNum;
 		}
 
-		public String getConnectionMode() {
-			return this.connectionMode;
+		public String getStandbyZoneId() {
+			return this.standbyZoneId;
 		}
 
-		public void setConnectionMode(String connectionMode) {
-			this.connectionMode = connectionMode;
-		}
-
-		public String getConnectionString() {
-			return this.connectionString;
-		}
-
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
-
-		public String getCoreVersion() {
-			return this.coreVersion;
-		}
-
-		public void setCoreVersion(String coreVersion) {
-			this.coreVersion = coreVersion;
-		}
-
-		public Integer getCpuCores() {
-			return this.cpuCores;
-		}
-
-		public void setCpuCores(Integer cpuCores) {
-			this.cpuCores = cpuCores;
+		public void setStandbyZoneId(String standbyZoneId) {
+			this.standbyZoneId = standbyZoneId;
 		}
 
 		public Integer getCpuCoresPerNode() {
@@ -233,60 +221,44 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.cpuCoresPerNode = cpuCoresPerNode;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public Long getDBInstanceMemory() {
+			return this.dBInstanceMemory;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDBInstanceMemory(Long dBInstanceMemory) {
+			this.dBInstanceMemory = dBInstanceMemory;
 		}
 
-		public String getDBInstanceCategory() {
-			return this.dBInstanceCategory;
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
 		}
 
-		public void setDBInstanceCategory(String dBInstanceCategory) {
-			this.dBInstanceCategory = dBInstanceCategory;
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getDBInstanceClass() {
-			return this.dBInstanceClass;
+		public String getPort() {
+			return this.port;
 		}
 
-		public void setDBInstanceClass(String dBInstanceClass) {
-			this.dBInstanceClass = dBInstanceClass;
+		public void setPort(String port) {
+			this.port = port;
 		}
 
-		public String getDBInstanceClassType() {
-			return this.dBInstanceClassType;
+		public Integer getSegNodeNum() {
+			return this.segNodeNum;
 		}
 
-		public void setDBInstanceClassType(String dBInstanceClassType) {
-			this.dBInstanceClassType = dBInstanceClassType;
+		public void setSegNodeNum(Integer segNodeNum) {
+			this.segNodeNum = segNodeNum;
 		}
 
-		public Integer getDBInstanceCpuCores() {
-			return this.dBInstanceCpuCores;
+		public Integer getMemoryPerNode() {
+			return this.memoryPerNode;
 		}
 
-		public void setDBInstanceCpuCores(Integer dBInstanceCpuCores) {
-			this.dBInstanceCpuCores = dBInstanceCpuCores;
-		}
-
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
-		}
-
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
-		}
-
-		public Long getDBInstanceDiskMBPS() {
-			return this.dBInstanceDiskMBPS;
-		}
-
-		public void setDBInstanceDiskMBPS(Long dBInstanceDiskMBPS) {
-			this.dBInstanceDiskMBPS = dBInstanceDiskMBPS;
+		public void setMemoryPerNode(Integer memoryPerNode) {
+			this.memoryPerNode = memoryPerNode;
 		}
 
 		public String getDBInstanceGroupCount() {
@@ -297,52 +269,36 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dBInstanceGroupCount = dBInstanceGroupCount;
 		}
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getInstanceNetworkType() {
+			return this.instanceNetworkType;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setInstanceNetworkType(String instanceNetworkType) {
+			this.instanceNetworkType = instanceNetworkType;
 		}
 
-		public Long getDBInstanceMemory() {
-			return this.dBInstanceMemory;
+		public String getMasterAISpec() {
+			return this.masterAISpec;
 		}
 
-		public void setDBInstanceMemory(Long dBInstanceMemory) {
-			this.dBInstanceMemory = dBInstanceMemory;
+		public void setMasterAISpec(String masterAISpec) {
+			this.masterAISpec = masterAISpec;
 		}
 
-		public String getDBInstanceMode() {
-			return this.dBInstanceMode;
+		public String getDBInstanceClassType() {
+			return this.dBInstanceClassType;
 		}
 
-		public void setDBInstanceMode(String dBInstanceMode) {
-			this.dBInstanceMode = dBInstanceMode;
+		public void setDBInstanceClassType(String dBInstanceClassType) {
+			this.dBInstanceClassType = dBInstanceClassType;
 		}
 
-		public String getDBInstanceNetType() {
-			return this.dBInstanceNetType;
+		public String getDBInstanceCategory() {
+			return this.dBInstanceCategory;
 		}
 
-		public void setDBInstanceNetType(String dBInstanceNetType) {
-			this.dBInstanceNetType = dBInstanceNetType;
-		}
-
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
-		}
-
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
-		}
-
-		public Long getDBInstanceStorage() {
-			return this.dBInstanceStorage;
-		}
-
-		public void setDBInstanceStorage(Long dBInstanceStorage) {
-			this.dBInstanceStorage = dBInstanceStorage;
+		public void setDBInstanceCategory(String dBInstanceCategory) {
+			this.dBInstanceCategory = dBInstanceCategory;
 		}
 
 		public String getDeployMode() {
@@ -353,76 +309,28 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.deployMode = deployMode;
 		}
 
-		public String getEncryptionKey() {
-			return this.encryptionKey;
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
 		}
 
-		public void setEncryptionKey(String encryptionKey) {
-			this.encryptionKey = encryptionKey;
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
 		}
 
-		public String getEncryptionType() {
-			return this.encryptionType;
+		public Long getDBInstanceStorage() {
+			return this.dBInstanceStorage;
 		}
 
-		public void setEncryptionType(String encryptionType) {
-			this.encryptionType = encryptionType;
+		public void setDBInstanceStorage(Long dBInstanceStorage) {
+			this.dBInstanceStorage = dBInstanceStorage;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public Integer getServerlessResource() {
+			return this.serverlessResource;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
-
-		public String getHostType() {
-			return this.hostType;
-		}
-
-		public void setHostType(String hostType) {
-			this.hostType = hostType;
-		}
-
-		public Integer getIdleTime() {
-			return this.idleTime;
-		}
-
-		public void setIdleTime(Integer idleTime) {
-			this.idleTime = idleTime;
-		}
-
-		public String getInstanceNetworkType() {
-			return this.instanceNetworkType;
-		}
-
-		public void setInstanceNetworkType(String instanceNetworkType) {
-			this.instanceNetworkType = instanceNetworkType;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
+		public void setServerlessResource(Integer serverlessResource) {
+			this.serverlessResource = serverlessResource;
 		}
 
 		public String getLockReason() {
@@ -433,36 +341,100 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.lockReason = lockReason;
 		}
 
-		public String getMaintainEndTime() {
-			return this.maintainEndTime;
+		public String getAvailabilityValue() {
+			return this.availabilityValue;
 		}
 
-		public void setMaintainEndTime(String maintainEndTime) {
-			this.maintainEndTime = maintainEndTime;
+		public void setAvailabilityValue(String availabilityValue) {
+			this.availabilityValue = availabilityValue;
 		}
 
-		public String getMaintainStartTime() {
-			return this.maintainStartTime;
+		public String getPrimaryDBInstanceId() {
+			return this.primaryDBInstanceId;
 		}
 
-		public void setMaintainStartTime(String maintainStartTime) {
-			this.maintainStartTime = maintainStartTime;
+		public void setPrimaryDBInstanceId(String primaryDBInstanceId) {
+			this.primaryDBInstanceId = primaryDBInstanceId;
 		}
 
-		public Integer getMasterCU() {
-			return this.masterCU;
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
 		}
 
-		public void setMasterCU(Integer masterCU) {
-			this.masterCU = masterCU;
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
-		public Integer getMasterNodeNum() {
-			return this.masterNodeNum;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setMasterNodeNum(Integer masterNodeNum) {
-			this.masterNodeNum = masterNodeNum;
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getCacheStorageSize() {
+			return this.cacheStorageSize;
+		}
+
+		public void setCacheStorageSize(String cacheStorageSize) {
+			this.cacheStorageSize = cacheStorageSize;
+		}
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
+		}
+
+		public Integer getSegmentCounts() {
+			return this.segmentCounts;
+		}
+
+		public void setSegmentCounts(Integer segmentCounts) {
+			this.segmentCounts = segmentCounts;
+		}
+
+		public Long getDBInstanceDiskMBPS() {
+			return this.dBInstanceDiskMBPS;
+		}
+
+		public void setDBInstanceDiskMBPS(Long dBInstanceDiskMBPS) {
+			this.dBInstanceDiskMBPS = dBInstanceDiskMBPS;
+		}
+
+		public String getServerlessMode() {
+			return this.serverlessMode;
+		}
+
+		public void setServerlessMode(String serverlessMode) {
+			this.serverlessMode = serverlessMode;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
 		}
 
 		public Integer getMaxConnections() {
@@ -473,12 +445,252 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.maxConnections = maxConnections;
 		}
 
-		public Integer getMemoryPerNode() {
-			return this.memoryPerNode;
+		public String getDBInstanceClass() {
+			return this.dBInstanceClass;
 		}
 
-		public void setMemoryPerNode(Integer memoryPerNode) {
-			this.memoryPerNode = memoryPerNode;
+		public void setDBInstanceClass(String dBInstanceClass) {
+			this.dBInstanceClass = dBInstanceClass;
+		}
+
+		public Integer getDBInstanceCpuCores() {
+			return this.dBInstanceCpuCores;
+		}
+
+		public void setDBInstanceCpuCores(Integer dBInstanceCpuCores) {
+			this.dBInstanceCpuCores = dBInstanceCpuCores;
+		}
+
+		public String getProdType() {
+			return this.prodType;
+		}
+
+		public void setProdType(String prodType) {
+			this.prodType = prodType;
+		}
+
+		public String getGraphEngineStatus() {
+			return this.graphEngineStatus;
+		}
+
+		public void setGraphEngineStatus(String graphEngineStatus) {
+			this.graphEngineStatus = graphEngineStatus;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getCoreVersion() {
+			return this.coreVersion;
+		}
+
+		public void setCoreVersion(String coreVersion) {
+			this.coreVersion = coreVersion;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public Integer getMasterCU() {
+			return this.masterCU;
+		}
+
+		public void setMasterCU(Integer masterCU) {
+			this.masterCU = masterCU;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getConnectionMode() {
+			return this.connectionMode;
+		}
+
+		public void setConnectionMode(String connectionMode) {
+			this.connectionMode = connectionMode;
+		}
+
+		public Integer getCpuCores() {
+			return this.cpuCores;
+		}
+
+		public void setCpuCores(Integer cpuCores) {
+			this.cpuCores = cpuCores;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getReadDelayTime() {
+			return this.readDelayTime;
+		}
+
+		public void setReadDelayTime(String readDelayTime) {
+			this.readDelayTime = readDelayTime;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public String getSegDiskPerformanceLevel() {
+			return this.segDiskPerformanceLevel;
+		}
+
+		public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
+			this.segDiskPerformanceLevel = segDiskPerformanceLevel;
+		}
+
+		public String getInstanceSpec() {
+			return this.instanceSpec;
+		}
+
+		public void setInstanceSpec(String instanceSpec) {
+			this.instanceSpec = instanceSpec;
+		}
+
+		public String getDBInstanceNetType() {
+			return this.dBInstanceNetType;
+		}
+
+		public void setDBInstanceNetType(String dBInstanceNetType) {
+			this.dBInstanceNetType = dBInstanceNetType;
+		}
+
+		public Integer getIdleTime() {
+			return this.idleTime;
+		}
+
+		public void setIdleTime(Integer idleTime) {
+			this.idleTime = idleTime;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
+		public Boolean getSupportRestore() {
+			return this.supportRestore;
+		}
+
+		public void setSupportRestore(Boolean supportRestore) {
+			this.supportRestore = supportRestore;
+		}
+
+		public String getHostType() {
+			return this.hostType;
+		}
+
+		public void setHostType(String hostType) {
+			this.hostType = hostType;
+		}
+
+		public String getMaintainEndTime() {
+			return this.maintainEndTime;
+		}
+
+		public void setMaintainEndTime(String maintainEndTime) {
+			this.maintainEndTime = maintainEndTime;
+		}
+
+		public String getSegmentAISpec() {
+			return this.segmentAISpec;
+		}
+
+		public void setSegmentAISpec(String segmentAISpec) {
+			this.segmentAISpec = segmentAISpec;
+		}
+
+		public String getVectorConfigurationStatus() {
+			return this.vectorConfigurationStatus;
+		}
+
+		public void setVectorConfigurationStatus(String vectorConfigurationStatus) {
+			this.vectorConfigurationStatus = vectorConfigurationStatus;
+		}
+
+		public String getSecurityIPList() {
+			return this.securityIPList;
+		}
+
+		public void setSecurityIPList(String securityIPList) {
+			this.securityIPList = securityIPList;
+		}
+
+		public String getSegmentDiskLockThreshold() {
+			return this.segmentDiskLockThreshold;
+		}
+
+		public void setSegmentDiskLockThreshold(String segmentDiskLockThreshold) {
+			this.segmentDiskLockThreshold = segmentDiskLockThreshold;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getMaintainStartTime() {
+			return this.maintainStartTime;
+		}
+
+		public void setMaintainStartTime(String maintainStartTime) {
+			this.maintainStartTime = maintainStartTime;
 		}
 
 		public Long getMemorySize() {
@@ -497,140 +709,20 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.memoryUnit = memoryUnit;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
 		public String getMinorVersion() {
 			return this.minorVersion;
 		}
 
 		public void setMinorVersion(String minorVersion) {
 			this.minorVersion = minorVersion;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getProdType() {
-			return this.prodType;
-		}
-
-		public void setProdType(String prodType) {
-			this.prodType = prodType;
-		}
-
-		public String getReadDelayTime() {
-			return this.readDelayTime;
-		}
-
-		public void setReadDelayTime(String readDelayTime) {
-			this.readDelayTime = readDelayTime;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
-		}
-
-		public String getRunningTime() {
-			return this.runningTime;
-		}
-
-		public void setRunningTime(String runningTime) {
-			this.runningTime = runningTime;
-		}
-
-		public String getSecurityIPList() {
-			return this.securityIPList;
-		}
-
-		public void setSecurityIPList(String securityIPList) {
-			this.securityIPList = securityIPList;
-		}
-
-		public String getSegDiskPerformanceLevel() {
-			return this.segDiskPerformanceLevel;
-		}
-
-		public void setSegDiskPerformanceLevel(String segDiskPerformanceLevel) {
-			this.segDiskPerformanceLevel = segDiskPerformanceLevel;
-		}
-
-		public Integer getSegNodeNum() {
-			return this.segNodeNum;
-		}
-
-		public void setSegNodeNum(Integer segNodeNum) {
-			this.segNodeNum = segNodeNum;
-		}
-
-		public Integer getSegmentCounts() {
-			return this.segmentCounts;
-		}
-
-		public void setSegmentCounts(Integer segmentCounts) {
-			this.segmentCounts = segmentCounts;
-		}
-
-		public String getServerlessMode() {
-			return this.serverlessMode;
-		}
-
-		public void setServerlessMode(String serverlessMode) {
-			this.serverlessMode = serverlessMode;
-		}
-
-		public Integer getServerlessResource() {
-			return this.serverlessResource;
-		}
-
-		public void setServerlessResource(Integer serverlessResource) {
-			this.serverlessResource = serverlessResource;
-		}
-
-		public String getStandbyZoneId() {
-			return this.standbyZoneId;
-		}
-
-		public void setStandbyZoneId(String standbyZoneId) {
-			this.standbyZoneId = standbyZoneId;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public Integer getStoragePerNode() {
-			return this.storagePerNode;
-		}
-
-		public void setStoragePerNode(Integer storagePerNode) {
-			this.storagePerNode = storagePerNode;
 		}
 
 		public Long getStorageSize() {
@@ -641,14 +733,6 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.storageSize = storageSize;
 		}
 
-		public String getStorageType() {
-			return this.storageType;
-		}
-
-		public void setStorageType(String storageType) {
-			this.storageType = storageType;
-		}
-
 		public String getStorageUnit() {
 			return this.storageUnit;
 		}
@@ -657,76 +741,52 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.storageUnit = storageUnit;
 		}
 
-		public Boolean getSupportRestore() {
-			return this.supportRestore;
+		public String getDiskNotifyThreshold() {
+			return this.diskNotifyThreshold;
 		}
 
-		public void setSupportRestore(Boolean supportRestore) {
-			this.supportRestore = supportRestore;
+		public void setDiskNotifyThreshold(String diskNotifyThreshold) {
+			this.diskNotifyThreshold = diskNotifyThreshold;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getMasterDiskLockThreshold() {
+			return this.masterDiskLockThreshold;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setMasterDiskLockThreshold(String masterDiskLockThreshold) {
+			this.masterDiskLockThreshold = masterDiskLockThreshold;
 		}
 
-		public String getVectorConfigurationStatus() {
-			return this.vectorConfigurationStatus;
+		public Integer getStoragePerNode() {
+			return this.storagePerNode;
 		}
 
-		public void setVectorConfigurationStatus(String vectorConfigurationStatus) {
-			this.vectorConfigurationStatus = vectorConfigurationStatus;
+		public void setStoragePerNode(Integer storagePerNode) {
+			this.storagePerNode = storagePerNode;
 		}
 
-		public String getVpcId() {
-			return this.vpcId;
+		public String getDBInstanceMode() {
+			return this.dBInstanceMode;
 		}
 
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setDBInstanceMode(String dBInstanceMode) {
+			this.dBInstanceMode = dBInstanceMode;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getSegmentAISpec() {
-			return this.segmentAISpec;
+		public String getRunningTime() {
+			return this.runningTime;
 		}
 
-		public void setSegmentAISpec(String segmentAISpec) {
-			this.segmentAISpec = segmentAISpec;
-		}
-
-		public String getMasterAISpec() {
-			return this.masterAISpec;
-		}
-
-		public void setMasterAISpec(String masterAISpec) {
-			this.masterAISpec = masterAISpec;
-		}
-
-		public String getCacheStorageSize() {
-			return this.cacheStorageSize;
-		}
-
-		public void setCacheStorageSize(String cacheStorageSize) {
-			this.cacheStorageSize = cacheStorageSize;
-		}
-
-		public String getInstanceSpec() {
-			return this.instanceSpec;
-		}
-
-		public void setInstanceSpec(String instanceSpec) {
-			this.instanceSpec = instanceSpec;
+		public void setRunningTime(String runningTime) {
+			this.runningTime = runningTime;
 		}
 
 		public List<Tag> getTags() {
@@ -739,17 +799,9 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -757,6 +809,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

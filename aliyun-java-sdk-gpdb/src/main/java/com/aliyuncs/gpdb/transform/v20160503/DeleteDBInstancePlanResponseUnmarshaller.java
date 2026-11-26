@@ -24,9 +24,9 @@ public class DeleteDBInstancePlanResponseUnmarshaller {
 		
 		deleteDBInstancePlanResponse.setRequestId(_ctx.stringValue("DeleteDBInstancePlanResponse.RequestId"));
 		deleteDBInstancePlanResponse.setStatus(_ctx.stringValue("DeleteDBInstancePlanResponse.Status"));
-		deleteDBInstancePlanResponse.setErrorMessage(_ctx.stringValue("DeleteDBInstancePlanResponse.ErrorMessage"));
-		deleteDBInstancePlanResponse.setPlanId(_ctx.stringValue("DeleteDBInstancePlanResponse.PlanId"));
 		deleteDBInstancePlanResponse.setDBInstanceId(_ctx.stringValue("DeleteDBInstancePlanResponse.DBInstanceId"));
+		deleteDBInstancePlanResponse.setPlanId(_ctx.stringValue("DeleteDBInstancePlanResponse.PlanId"));
+		deleteDBInstancePlanResponse.setErrorMessage(_ctx.stringValue("DeleteDBInstancePlanResponse.ErrorMessage"));
 	 
 	 	return deleteDBInstancePlanResponse;
 	}

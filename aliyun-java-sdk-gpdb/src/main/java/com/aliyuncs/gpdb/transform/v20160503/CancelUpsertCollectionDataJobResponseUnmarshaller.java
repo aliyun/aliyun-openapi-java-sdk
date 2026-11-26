@@ -23,8 +23,8 @@ public class CancelUpsertCollectionDataJobResponseUnmarshaller {
 	public static CancelUpsertCollectionDataJobResponse unmarshall(CancelUpsertCollectionDataJobResponse cancelUpsertCollectionDataJobResponse, UnmarshallerContext _ctx) {
 		
 		cancelUpsertCollectionDataJobResponse.setRequestId(_ctx.stringValue("CancelUpsertCollectionDataJobResponse.RequestId"));
-		cancelUpsertCollectionDataJobResponse.setMessage(_ctx.stringValue("CancelUpsertCollectionDataJobResponse.Message"));
 		cancelUpsertCollectionDataJobResponse.setStatus(_ctx.stringValue("CancelUpsertCollectionDataJobResponse.Status"));
+		cancelUpsertCollectionDataJobResponse.setMessage(_ctx.stringValue("CancelUpsertCollectionDataJobResponse.Message"));
 	 
 	 	return cancelUpsertCollectionDataJobResponse;
 	}

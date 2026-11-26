@@ -27,11 +27,11 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 	private String accessDeniedDetail;
 
-	private Integer pageNumber;
-
 	private Integer pageRecordCount;
 
 	private String requestId;
+
+	private Integer pageNumber;
 
 	private List<Item> items;
 
@@ -41,14 +41,6 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 	public void setAccessDeniedDetail(String accessDeniedDetail) {
 		this.accessDeniedDetail = accessDeniedDetail;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageRecordCount() {
@@ -67,6 +59,14 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<Item> getItems() {
 		return this.items;
 	}
@@ -77,17 +77,33 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 	public static class Item {
 
-		private String accountName;
-
-		private String dBName;
+		private Float executeCost;
 
 		private String dBRole;
 
-		private String errorCode;
+		private String queryId;
 
 		private String errorMsg;
 
-		private Float executeCost;
+		private Integer sourcePort;
+
+		private String sQLText;
+
+		private String sourceIP;
+
+		private Long returnRowCounts;
+
+		private String dBName;
+
+		private String errorCode;
+
+		private String operationType;
+
+		private String sessionId;
+
+		private Long scanRowCounts;
+
+		private String accountName;
 
 		private String executeState;
 
@@ -95,36 +111,12 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 		private String operationExecuteTime;
 
-		private String operationType;
-
-		private Long returnRowCounts;
-
-		private String sQLText;
-
-		private Long scanRowCounts;
-
-		private String sourceIP;
-
-		private Integer sourcePort;
-
-		private String queryId;
-
-		private String sessionId;
-
-		public String getAccountName() {
-			return this.accountName;
+		public Float getExecuteCost() {
+			return this.executeCost;
 		}
 
-		public void setAccountName(String accountName) {
-			this.accountName = accountName;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
+		public void setExecuteCost(Float executeCost) {
+			this.executeCost = executeCost;
 		}
 
 		public String getDBRole() {
@@ -135,12 +127,12 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 			this.dBRole = dBRole;
 		}
 
-		public String getErrorCode() {
-			return this.errorCode;
+		public String getQueryId() {
+			return this.queryId;
 		}
 
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
+		public void setQueryId(String queryId) {
+			this.queryId = queryId;
 		}
 
 		public String getErrorMsg() {
@@ -151,12 +143,84 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 			this.errorMsg = errorMsg;
 		}
 
-		public Float getExecuteCost() {
-			return this.executeCost;
+		public Integer getSourcePort() {
+			return this.sourcePort;
 		}
 
-		public void setExecuteCost(Float executeCost) {
-			this.executeCost = executeCost;
+		public void setSourcePort(Integer sourcePort) {
+			this.sourcePort = sourcePort;
+		}
+
+		public String getSQLText() {
+			return this.sQLText;
+		}
+
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
+		}
+
+		public String getSourceIP() {
+			return this.sourceIP;
+		}
+
+		public void setSourceIP(String sourceIP) {
+			this.sourceIP = sourceIP;
+		}
+
+		public Long getReturnRowCounts() {
+			return this.returnRowCounts;
+		}
+
+		public void setReturnRowCounts(Long returnRowCounts) {
+			this.returnRowCounts = returnRowCounts;
+		}
+
+		public String getDBName() {
+			return this.dBName;
+		}
+
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getOperationType() {
+			return this.operationType;
+		}
+
+		public void setOperationType(String operationType) {
+			this.operationType = operationType;
+		}
+
+		public String getSessionId() {
+			return this.sessionId;
+		}
+
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
+		}
+
+		public Long getScanRowCounts() {
+			return this.scanRowCounts;
+		}
+
+		public void setScanRowCounts(Long scanRowCounts) {
+			this.scanRowCounts = scanRowCounts;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
 		}
 
 		public String getExecuteState() {
@@ -181,70 +245,6 @@ public class DescribeSQLLogsV2Response extends AcsResponse {
 
 		public void setOperationExecuteTime(String operationExecuteTime) {
 			this.operationExecuteTime = operationExecuteTime;
-		}
-
-		public String getOperationType() {
-			return this.operationType;
-		}
-
-		public void setOperationType(String operationType) {
-			this.operationType = operationType;
-		}
-
-		public Long getReturnRowCounts() {
-			return this.returnRowCounts;
-		}
-
-		public void setReturnRowCounts(Long returnRowCounts) {
-			this.returnRowCounts = returnRowCounts;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
-		}
-
-		public Long getScanRowCounts() {
-			return this.scanRowCounts;
-		}
-
-		public void setScanRowCounts(Long scanRowCounts) {
-			this.scanRowCounts = scanRowCounts;
-		}
-
-		public String getSourceIP() {
-			return this.sourceIP;
-		}
-
-		public void setSourceIP(String sourceIP) {
-			this.sourceIP = sourceIP;
-		}
-
-		public Integer getSourcePort() {
-			return this.sourcePort;
-		}
-
-		public void setSourcePort(Integer sourcePort) {
-			this.sourcePort = sourcePort;
-		}
-
-		public String getQueryId() {
-			return this.queryId;
-		}
-
-		public void setQueryId(String queryId) {
-			this.queryId = queryId;
-		}
-
-		public String getSessionId() {
-			return this.sessionId;
-		}
-
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
 		}
 	}
 

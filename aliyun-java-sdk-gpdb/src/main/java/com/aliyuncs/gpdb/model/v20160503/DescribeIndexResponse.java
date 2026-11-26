@@ -24,34 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeIndexResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String message;
+	private String indexName;
 
 	private String status;
 
-	private String namespace;
+	private String message;
+
+	private String requestId;
 
 	private String collection;
 
-	private String indexName;
-
 	private String indexDef;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String namespace;
+
+	public String getIndexName() {
+		return this.indexName;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setIndexName(String indexName) {
+		this.indexName = indexName;
 	}
 
 	public String getStatus() {
@@ -62,12 +54,20 @@ public class DescribeIndexResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getNamespace() {
-		return this.namespace;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCollection() {
@@ -78,20 +78,20 @@ public class DescribeIndexResponse extends AcsResponse {
 		this.collection = collection;
 	}
 
-	public String getIndexName() {
-		return this.indexName;
-	}
-
-	public void setIndexName(String indexName) {
-		this.indexName = indexName;
-	}
-
 	public String getIndexDef() {
 		return this.indexDef;
 	}
 
 	public void setIndexDef(String indexDef) {
 		this.indexDef = indexDef;
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
 	}
 
 	@Override

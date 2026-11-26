@@ -47,30 +47,22 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 
 	public static class ChangelogsItem {
 
-		private String parameterValueAfter;
-
-		private String parameterName;
+		private String parameterValueBefore;
 
 		private String effectTime;
 
-		private String parameterValueBefore;
+		private String parameterName;
+
+		private String parameterValueAfter;
 
 		private String parameterValid;
 
-		public String getParameterValueAfter() {
-			return this.parameterValueAfter;
+		public String getParameterValueBefore() {
+			return this.parameterValueBefore;
 		}
 
-		public void setParameterValueAfter(String parameterValueAfter) {
-			this.parameterValueAfter = parameterValueAfter;
-		}
-
-		public String getParameterName() {
-			return this.parameterName;
-		}
-
-		public void setParameterName(String parameterName) {
-			this.parameterName = parameterName;
+		public void setParameterValueBefore(String parameterValueBefore) {
+			this.parameterValueBefore = parameterValueBefore;
 		}
 
 		public String getEffectTime() {
@@ -81,12 +73,20 @@ public class DescribeModifyParameterLogResponse extends AcsResponse {
 			this.effectTime = effectTime;
 		}
 
-		public String getParameterValueBefore() {
-			return this.parameterValueBefore;
+		public String getParameterName() {
+			return this.parameterName;
 		}
 
-		public void setParameterValueBefore(String parameterValueBefore) {
-			this.parameterValueBefore = parameterValueBefore;
+		public void setParameterName(String parameterName) {
+			this.parameterName = parameterName;
+		}
+
+		public String getParameterValueAfter() {
+			return this.parameterValueAfter;
+		}
+
+		public void setParameterValueAfter(String parameterValueAfter) {
+			this.parameterValueAfter = parameterValueAfter;
 		}
 
 		public String getParameterValid() {
